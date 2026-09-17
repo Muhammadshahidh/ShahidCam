@@ -34,7 +34,7 @@ jobs:
 
       - name: Clone patched Media3
         run: |
-          git clone --depth 1 https://github.com/anonfaded/media3-patched.git /tmp/media3-patched
+          git clone --depth 1 https://github.com/Muhammadshahidh/media3-patched.git /tmp/media3-patched
 
       - name: Build Debug APK
         run: ./gradlew assembleDefaultDebug --no-daemon --stacktrace
