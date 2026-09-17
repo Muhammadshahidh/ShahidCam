@@ -39,15 +39,17 @@ jobs:
       - name: Build Debug APK
         run: ./gradlew assembleDefaultDebug --no-daemon --stacktrace
 
-      - name: Upload Debug APK
+      - name: Find and list APKs
+        run: |
+          echo "=== Searching for APK files ==="
+          find app/build/outputs -name "*.apk" -type f
+          echo ""
+          echo "=== Listing all output dirs ==="
+          ls -la app/build/outputs/apk/ || echo "No apk folder"
+
+      - name: Upload all APKs
         uses: actions/upload-artifact@v4
         with:
-          name: ShahidCam-Debug-APK
-          path: app/build/outputs/apk/**/*debug*.apk
-          if-no-files-found: warn
-      - name: Upload Debug APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: ShahidCam-Debug-APK
-          path: app/build/outputs/apk/**/*debug*.apk
-          if-no-files-found: warn
+          name: ShahidCam-APK
+          path: app/build/outputs/apk/**/*.apk
+          if-no-files-found: error
