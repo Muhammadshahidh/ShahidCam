@@ -19,6 +19,14 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
+      - name: Create local.properties
+        run: |
+          echo "sdk.dir=$ANDROID_HOME" > local.properties
+          echo "KEYSTORE_FILE=" >> local.properties
+          echo "KEYSTORE_PASSWORD=" >> local.properties
+          echo "KEY_ALIAS=" >> local.properties
+          echo "KEY_PASSWORD=" >> local.properties
+
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
