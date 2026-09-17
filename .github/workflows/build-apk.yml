@@ -32,9 +32,19 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
+      - name: Clone patched Media3
+        run: |
+          git clone --depth 1 https://github.com/anonfaded/media3-patched.git /tmp/media3-patched
+
       - name: Build Debug APK
         run: ./gradlew assembleDefaultDebug --no-daemon --stacktrace
 
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: ShahidCam-Debug-APK
+          path: app/build/outputs/apk/**/*debug*.apk
+          if-no-files-found: warn
       - name: Upload Debug APK
         uses: actions/upload-artifact@v4
         with:
