@@ -46,7 +46,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <com.fadcam.ui.utils.AnimatedTextView
+                <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView
                     android:id="@+id/title_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
                         android:src="@drawable/ic_stat_playback"
                         android:tint="#CCFFFFFF" />
 
-                    <com.fadcam.ui.utils.AnimatedTextView
+                    <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView
                         android:id="@+id/text_records_stat_videos"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
                         android:src="@drawable/ic_photo"
                         android:tint="#CCFFFFFF" />
 
-                    <com.fadcam.ui.utils.AnimatedTextView
+                    <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView
                         android:id="@+id/text_records_stat_photos"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -104,7 +104,7 @@
                         android:src="@drawable/database_24px"
                         android:tint="#CCFFFFFF" />
 
-                    <com.fadcam.ui.utils.AnimatedTextView
+                    <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView
                         android:id="@+id/text_records_stat_size"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -171,7 +171,7 @@
                     android:src="@drawable/ic_delete_white"
                     android:tint="@android:color/white" />
 
-                <com.fadcam.ui.utils.AnimatedTextView
+                <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView
                     android:id="@+id/records_header_delete_title"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -182,7 +182,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
-                <com.fadcam.ui.utils.AnimatedTextView
+                <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView
                     android:id="@+id/records_header_delete_ok"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -381,7 +381,7 @@
                 app:singleLine="true"
                 app:chipSpacingHorizontal="6dp">
 
-                <com.fadcam.ui.utils.AnimatedChip
+                <com.cybershadowpk.shahidcam.ui.utils.AnimatedChip
                     android:id="@+id/chip_filter_all"
                     style="@style/Widget.FadCam.RecordsFilterChip"
                     android:layout_width="wrap_content"
@@ -389,42 +389,42 @@
                     android:checked="true"
                     android:text="@string/records_filter_all" />
 
-                <com.fadcam.ui.utils.AnimatedChip
+                <com.cybershadowpk.shahidcam.ui.utils.AnimatedChip
                     android:id="@+id/chip_filter_camera"
                     style="@style/Widget.FadCam.RecordsFilterChip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/records_filter_camera" />
 
-                <com.fadcam.ui.utils.AnimatedChip
+                <com.cybershadowpk.shahidcam.ui.utils.AnimatedChip
                     android:id="@+id/chip_filter_screen"
                     style="@style/Widget.FadCam.RecordsFilterChip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/records_filter_screen" />
 
-                <com.fadcam.ui.utils.AnimatedChip
+                <com.cybershadowpk.shahidcam.ui.utils.AnimatedChip
                     android:id="@+id/chip_filter_faditor"
                     style="@style/Widget.FadCam.RecordsFilterChip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/records_filter_faditor" />
 
-                <com.fadcam.ui.utils.AnimatedChip
+                <com.cybershadowpk.shahidcam.ui.utils.AnimatedChip
                     android:id="@+id/chip_filter_stream"
                     style="@style/Widget.FadCam.RecordsFilterChip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/records_filter_stream" />
 
-                <com.fadcam.ui.utils.AnimatedChip
+                <com.cybershadowpk.shahidcam.ui.utils.AnimatedChip
                     android:id="@+id/chip_filter_shot"
                     style="@style/Widget.FadCam.RecordsFilterChip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/records_filter_shot" />
 
-                <com.fadcam.ui.utils.AnimatedChip
+                <com.cybershadowpk.shahidcam.ui.utils.AnimatedChip
                     android:id="@+id/chip_filter_miniapps"
                     style="@style/Widget.FadCam.RecordsFilterChip"
                     android:layout_width="wrap_content"
@@ -491,7 +491,7 @@
                 app:singleLine="true"
                 app:chipSpacingHorizontal="6dp">
 
-                <com.fadcam.ui.utils.AnimatedChip
+                <com.cybershadowpk.shahidcam.ui.utils.AnimatedChip
                     android:id="@+id/chip_camera_all"
                     style="@style/Widget.FadCam.RecordsFilterChip"
                     android:layout_width="wrap_content"
@@ -499,21 +499,21 @@
                     android:checked="true"
                     android:text="@string/records_filter_camera_all" />
 
-                <com.fadcam.ui.utils.AnimatedChip
+                <com.cybershadowpk.shahidcam.ui.utils.AnimatedChip
                     android:id="@+id/chip_camera_back"
                     style="@style/Widget.FadCam.RecordsFilterChip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/records_filter_camera_back" />
 
-                <com.fadcam.ui.utils.AnimatedChip
+                <com.cybershadowpk.shahidcam.ui.utils.AnimatedChip
                     android:id="@+id/chip_camera_front"
                     style="@style/Widget.FadCam.RecordsFilterChip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/records_filter_camera_front" />
 
-                <com.fadcam.ui.utils.AnimatedChip
+                <com.cybershadowpk.shahidcam.ui.utils.AnimatedChip
                     android:id="@+id/chip_camera_dual"
                     style="@style/Widget.FadCam.RecordsFilterChip"
                     android:layout_width="wrap_content"
@@ -568,7 +568,7 @@
                     app:singleLine="true"
                     app:chipSpacingHorizontal="6dp">
 
-                    <com.fadcam.ui.utils.AnimatedChip
+                    <com.cybershadowpk.shahidcam.ui.utils.AnimatedChip
                         android:id="@+id/chip_faditor_all"
                         style="@style/Widget.FadCam.RecordsFilterChip"
                         android:layout_width="wrap_content"
@@ -576,14 +576,14 @@
                         android:checked="true"
                         android:text="@string/records_filter_faditor_all" />
 
-                    <com.fadcam.ui.utils.AnimatedChip
+                    <com.cybershadowpk.shahidcam.ui.utils.AnimatedChip
                         android:id="@+id/chip_faditor_converted"
                         style="@style/Widget.FadCam.RecordsFilterChip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/records_filter_faditor_converted" />
 
-                    <com.fadcam.ui.utils.AnimatedChip
+                    <com.cybershadowpk.shahidcam.ui.utils.AnimatedChip
                         android:id="@+id/chip_faditor_merge"
                         style="@style/Widget.FadCam.RecordsFilterChip"
                         android:layout_width="wrap_content"
@@ -638,7 +638,7 @@
                     app:singleLine="true"
                     app:chipSpacingHorizontal="6dp">
 
-                    <com.fadcam.ui.utils.AnimatedChip
+                    <com.cybershadowpk.shahidcam.ui.utils.AnimatedChip
                         android:id="@+id/chip_shot_all"
                         style="@style/Widget.FadCam.RecordsFilterChip"
                         android:layout_width="wrap_content"
@@ -646,21 +646,21 @@
                         android:checked="true"
                         android:text="@string/records_filter_shot_all" />
 
-                    <com.fadcam.ui.utils.AnimatedChip
+                    <com.cybershadowpk.shahidcam.ui.utils.AnimatedChip
                         android:id="@+id/chip_shot_back"
                         style="@style/Widget.FadCam.RecordsFilterChip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/records_filter_shot_back" />
 
-                    <com.fadcam.ui.utils.AnimatedChip
+                    <com.cybershadowpk.shahidcam.ui.utils.AnimatedChip
                         android:id="@+id/chip_shot_selfie"
                         style="@style/Widget.FadCam.RecordsFilterChip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/records_filter_shot_selfie" />
 
-                    <com.fadcam.ui.utils.AnimatedChip
+                    <com.cybershadowpk.shahidcam.ui.utils.AnimatedChip
                         android:id="@+id/chip_shot_fadrec"
                         style="@style/Widget.FadCam.RecordsFilterChip"
                         android:layout_width="wrap_content"
@@ -708,7 +708,7 @@
                 app:singleLine="true"
                 app:chipSpacingHorizontal="6dp">
 
-                <com.fadcam.ui.utils.AnimatedChip
+                <com.cybershadowpk.shahidcam.ui.utils.AnimatedChip
                     android:id="@+id/chip_miniapps_all"
                     style="@style/Widget.FadCam.RecordsFilterChip"
                     android:layout_width="wrap_content"
@@ -716,7 +716,7 @@
                     android:checked="true"
                     android:text="All" />
 
-                <com.fadcam.ui.utils.AnimatedChip
+                <com.cybershadowpk.shahidcam.ui.utils.AnimatedChip
                     android:id="@+id/chip_miniapps_qr"
                     style="@style/Widget.FadCam.RecordsFilterChip"
                     android:layout_width="wrap_content"
@@ -891,7 +891,7 @@
         android:rotation="-90" />
 
     <!-- Fast scroller overlay (above FABs, below applock) -->
-    <com.fadcam.ui.GalleryFastScroller
+    <com.cybershadowpk.shahidcam.ui.GalleryFastScroller
         android:id="@+id/fast_scroller"
         android:layout_width="0dp"
         android:layout_height="0dp"

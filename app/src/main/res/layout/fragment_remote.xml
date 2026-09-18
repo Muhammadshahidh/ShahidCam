@@ -251,7 +251,7 @@
                             android:textStyle="bold"
                             android:textColor="?attr/colorHeading" />
 
-                        <com.fadcam.ui.utils.AnimatedTextView
+                        <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView
                             android:id="@+id/usage_warning_message"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -285,7 +285,7 @@
                             android:textColor="@android:color/darker_gray"
                             android:textStyle="bold" />
 
-                        <com.fadcam.ui.utils.AnimatedTextView
+                        <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView
                             android:id="@+id/usage_warning_bytes"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -310,7 +310,7 @@
                             android:textColor="@android:color/darker_gray"
                             android:textStyle="bold" />
 
-                        <com.fadcam.ui.utils.AnimatedTextView
+                        <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView
                             android:id="@+id/usage_warning_failures"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -371,7 +371,7 @@
                     android:textStyle="bold"
                     android:textColor="?attr/colorHeading" />
 
-                <com.fadcam.ui.AvatarToggleView
+                <com.cybershadowpk.shahidcam.ui.AvatarToggleView
                     android:id="@+id/streaming_toggle"
                     android:layout_width="52dp"
                     android:layout_height="52dp"
@@ -465,7 +465,7 @@
                         android:layout_marginTop="2dp" />
                 </LinearLayout>
 
-                <com.fadcam.ui.AvatarToggleView
+                <com.cybershadowpk.shahidcam.ui.AvatarToggleView
                     android:id="@+id/cloud_streaming_toggle"
                     android:layout_width="52dp"
                     android:layout_height="52dp"
@@ -630,7 +630,7 @@
                             android:layout_height="28dp"
                             android:layout_marginEnd="8dp"
                             android:layout_gravity="center_vertical">
-                            <com.fadcam.ui.utils.StorageProgressRingView
+                            <com.cybershadowpk.shahidcam.ui.utils.StorageProgressRingView
                                 android:id="@+id/battery_progress_ring"
                                 android:layout_width="22dp"
                                 android:layout_height="22dp"
@@ -860,7 +860,7 @@
                             android:layout_width="32dp"
                             android:layout_height="28dp"
                             android:layout_gravity="center_vertical">
-                            <com.fadcam.ui.utils.StorageProgressRingView
+                            <com.cybershadowpk.shahidcam.ui.utils.StorageProgressRingView
                                 android:id="@+id/remote_storage_progress_ring"
                                 android:layout_width="22dp"
                                 android:layout_height="22dp"
@@ -916,7 +916,7 @@
                             android:layout_width="32dp"
                             android:layout_height="28dp"
                             android:layout_gravity="center_vertical">
-                            <com.fadcam.ui.utils.StorageProgressRingView
+                            <com.cybershadowpk.shahidcam.ui.utils.StorageProgressRingView
                                 android:id="@+id/remote_memory_progress_ring"
                                 android:layout_width="22dp"
                                 android:layout_height="22dp"
@@ -1227,7 +1227,7 @@
                             android:textColor="@android:color/darker_gray" />
                     </LinearLayout>
 
-                    <com.fadcam.ui.AvatarToggleView
+                    <com.cybershadowpk.shahidcam.ui.AvatarToggleView
                         android:id="@+id/remote_auth_toggle"
                         android:layout_width="52dp"
                         android:layout_height="52dp"

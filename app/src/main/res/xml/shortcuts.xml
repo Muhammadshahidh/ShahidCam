@@ -8,8 +8,8 @@
         android:shortcutLongLabel="@string/shortcut_toggle_recording_long">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.fadcam.RecordingToggleActivity"
-            android:targetPackage="com.fadcam" />
+            android:targetClass="com.cybershadowpk.shahidcam.RecordingToggleActivity"
+            android:targetPackage="com.cybershadowpk.shahidcam" />
     </shortcut>
 
     <shortcut
@@ -21,8 +21,8 @@
         android:shortcutDisabledMessage="@string/torch_shortcut_disabled">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.fadcam.TorchToggleActivity"
-            android:targetPackage="com.fadcam" />
+            android:targetClass="com.cybershadowpk.shahidcam.TorchToggleActivity"
+            android:targetPackage="com.cybershadowpk.shahidcam" />
     </shortcut>
 
     <shortcut
@@ -33,8 +33,8 @@
         android:shortcutLongLabel="@string/shortcut_start_back">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.fadcam.RecordingStartActivity"
-            android:targetPackage="com.fadcam">
+            android:targetClass="com.cybershadowpk.shahidcam.RecordingStartActivity"
+            android:targetPackage="com.cybershadowpk.shahidcam">
             <extra
                 android:name="shortcut_camera_mode"
                 android:value="back" />
@@ -49,8 +49,8 @@
         android:shortcutLongLabel="@string/shortcut_start_front">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.fadcam.RecordingStartActivity"
-            android:targetPackage="com.fadcam">
+            android:targetClass="com.cybershadowpk.shahidcam.RecordingStartActivity"
+            android:targetPackage="com.cybershadowpk.shahidcam">
             <extra
                 android:name="shortcut_camera_mode"
                 android:value="front" />
@@ -65,8 +65,8 @@
         android:shortcutLongLabel="@string/shortcut_start_current">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.fadcam.RecordingStartActivity"
-            android:targetPackage="com.fadcam">
+            android:targetClass="com.cybershadowpk.shahidcam.RecordingStartActivity"
+            android:targetPackage="com.cybershadowpk.shahidcam">
             <extra
                 android:name="shortcut_camera_mode"
                 android:value="current" />
@@ -81,8 +81,8 @@
         android:shortcutLongLabel="@string/shortcut_start_dual">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.fadcam.RecordingStartActivity"
-            android:targetPackage="com.fadcam">
+            android:targetClass="com.cybershadowpk.shahidcam.RecordingStartActivity"
+            android:targetPackage="com.cybershadowpk.shahidcam">
             <extra
                 android:name="shortcut_camera_mode"
                 android:value="dual" />
@@ -97,8 +97,8 @@
         android:shortcutLongLabel="@string/stop_recording">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.fadcam.RecordingStopActivity"
-            android:targetPackage="com.fadcam" />
+            android:targetClass="com.cybershadowpk.shahidcam.RecordingStopActivity"
+            android:targetPackage="com.cybershadowpk.shahidcam" />
     </shortcut>
 
     <shortcut
@@ -109,8 +109,8 @@
         android:shortcutLongLabel="@string/shortcut_take_photo">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.fadcam.PhotoCaptureActivity"
-            android:targetPackage="com.fadcam" />
+            android:targetClass="com.cybershadowpk.shahidcam.PhotoCaptureActivity"
+            android:targetPackage="com.cybershadowpk.shahidcam" />
     </shortcut>
 
     <shortcut
@@ -121,8 +121,8 @@
         android:shortcutLongLabel="@string/shortcut_take_photo_front">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.fadcam.PhotoCaptureActivity"
-            android:targetPackage="com.fadcam">
+            android:targetClass="com.cybershadowpk.shahidcam.PhotoCaptureActivity"
+            android:targetPackage="com.cybershadowpk.shahidcam">
             <extra
                 android:name="shortcut_photo_camera_mode"
                 android:value="front" />
@@ -137,7 +137,7 @@
         android:shortcutLongLabel="@string/shortcut_take_screenshot">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.fadcam.ScreenShotCaptureActivity"
-            android:targetPackage="com.fadcam" />
+            android:targetClass="com.cybershadowpk.shahidcam.ScreenShotCaptureActivity"
+            android:targetPackage="com.cybershadowpk.shahidcam" />
     </shortcut>
 </shortcuts>

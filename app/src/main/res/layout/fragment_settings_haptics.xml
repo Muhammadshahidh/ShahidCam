@@ -39,7 +39,7 @@
             android:layout_marginStart="12dp"
             android:textColor="@android:color/white"
             android:textAlignment="viewStart"/>
-        <com.fadcam.ui.AvatarToggleView
+        <com.cybershadowpk.shahidcam.ui.AvatarToggleView
             android:id="@+id/toggle_haptics_master"
             android:layout_width="52dp"
             android:layout_height="52dp"/>
@@ -332,7 +332,7 @@
                             android:textSize="12sp"
                             android:textAlignment="viewStart"/>
                     </LinearLayout>
-                    <com.fadcam.ui.AvatarToggleView
+                    <com.cybershadowpk.shahidcam.ui.AvatarToggleView
                         android:id="@+id/toggle_haptics_ui"
                         android:layout_width="52dp"
                         android:layout_height="52dp"/>
@@ -374,7 +374,7 @@
                             android:textSize="12sp"
                             android:textAlignment="viewStart"/>
                     </LinearLayout>
-                    <com.fadcam.ui.AvatarToggleView
+                    <com.cybershadowpk.shahidcam.ui.AvatarToggleView
                         android:id="@+id/toggle_haptics_picker"
                         android:layout_width="52dp"
                         android:layout_height="52dp"/>

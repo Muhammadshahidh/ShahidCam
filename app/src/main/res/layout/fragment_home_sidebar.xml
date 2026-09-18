@@ -369,7 +369,7 @@
                 </LinearLayout>
 
                 <!-- AvatarToggleView — consistent with all other toggle rows -->
-                <com.fadcam.ui.AvatarToggleView
+                <com.cybershadowpk.shahidcam.ui.AvatarToggleView
                     android:id="@+id/iv_preview_toggle"
                     android:layout_width="52dp"
                     android:layout_height="52dp"
@@ -431,7 +431,7 @@
                         android:textAlignment="viewStart" />
                 </LinearLayout>
 
-                <com.fadcam.ui.AvatarToggleView
+                <com.cybershadowpk.shahidcam.ui.AvatarToggleView
                     android:id="@+id/switch_preview_quick_actions_toggle"
                     android:layout_width="52dp"
                     android:layout_height="52dp"
@@ -494,7 +494,7 @@
                         android:textAlignment="viewStart" />
                 </LinearLayout>
 
-                <com.fadcam.ui.AvatarToggleView
+                <com.cybershadowpk.shahidcam.ui.AvatarToggleView
                     android:id="@+id/switch_grid_lines"
                     android:layout_width="52dp"
                     android:layout_height="52dp"

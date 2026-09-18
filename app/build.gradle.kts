@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.fadcam"
+    namespace = "com.cybershadowpk.shahidcam"
     compileSdk = 36
 
     val isBundle = gradle.startParameter.taskNames.any { it.lowercase().contains("bundle") }
@@ -28,7 +28,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.fadcam"
+        applicationId = "com.cybershadowpk.shahidcam"
         minSdk = 24
         targetSdk = 36
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
