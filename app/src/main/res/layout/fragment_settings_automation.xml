@@ -97,7 +97,7 @@ app:layout_constraintTop_toTopOf="parent"
                             android:textColor="@android:color/darker_gray"
                             android:textSize="12sp"/>
                     </LinearLayout>
-                    <com.cybershadowpk.shahidcam.ui.AvatarToggleView
+                    <com.fadcam.ui.AvatarToggleView
                         android:id="@+id/toggle_volume_shutter"
                         android:layout_width="52dp"
                         android:layout_height="52dp"

@@ -42,7 +42,7 @@
                 android:paddingBottom="0dp"
                 android:clipToPadding="false">
 
-                <com.cybershadowpk.shahidcam.ui.custom.AudioWaveformView
+                <com.fadcam.ui.custom.AudioWaveformView
                     android:id="@+id/audio_waveform"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

@@ -139,7 +139,7 @@
                         android:textSize="16sp"
                         android:textAlignment="viewStart" />
 
-                    <com.cybershadowpk.shahidcam.ui.AvatarToggleView
+                    <com.fadcam.ui.AvatarToggleView
                         android:id="@+id/picker_switch"
                         android:layout_width="52dp"
                         android:layout_height="52dp"

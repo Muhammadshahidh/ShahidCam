@@ -306,7 +306,7 @@
         app:srcCompat="@drawable/ic_double_chevron"
         app:useCompatPadding="true" />
 
-    <com.cybershadowpk.shahidcam.ui.GalleryFastScroller
+    <com.fadcam.ui.GalleryFastScroller
         android:id="@+id/fast_scroller"
         android:layout_width="0dp"
         android:layout_height="0dp"

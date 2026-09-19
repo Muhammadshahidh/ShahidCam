@@ -63,7 +63,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
-            <com.cybershadowpk.shahidcam.ui.ShimmerTextView 
+            <com.fadcam.ui.ShimmerTextView 
                 android:id="@+id/btnGetPro"
                 android:layout_width="wrap_content"
                 android:layout_height="26dp"
@@ -141,14 +141,14 @@
                             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="2dp" android:paddingTop="1dp" android:paddingEnd="2dp" android:paddingBottom="1dp">
 
                                 <FrameLayout android:layout_width="32dp" android:layout_height="28dp" android:layout_marginEnd="6dp">
-                                    <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView android:id="@+id/ivCameraIcon" android:layout_width="28dp" android:layout_height="28dp" android:layout_gravity="center" android:fontFamily="@font/materialicons" android:text="camera_alt" android:textColor="#4CAF50" android:textSize="20sp" android:gravity="center" />
+                                    <com.fadcam.ui.utils.AnimatedTextView android:id="@+id/ivCameraIcon" android:layout_width="28dp" android:layout_height="28dp" android:layout_gravity="center" android:fontFamily="@font/materialicons" android:text="camera_alt" android:textColor="#4CAF50" android:textSize="20sp" android:gravity="center" />
                                 </FrameLayout>
 
                                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
 
-                                    <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView android:id="@+id/tvCameraTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Rear Camera" android:textColor="?attr/homeRailTextPrimary" android:textSize="13sp" android:textStyle="bold" />
+                                    <com.fadcam.ui.utils.AnimatedTextView android:id="@+id/tvCameraTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Rear Camera" android:textColor="?attr/homeRailTextPrimary" android:textSize="13sp" android:textStyle="bold" />
 
-                                    <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView android:id="@+id/tvCameraSubtitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="4K • 60fps" android:textColor="?attr/homeRailTextSecondary" android:textSize="11sp" />
+                                    <com.fadcam.ui.utils.AnimatedTextView android:id="@+id/tvCameraSubtitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="4K • 60fps" android:textColor="?attr/homeRailTextSecondary" android:textSize="11sp" />
                                 </LinearLayout>
 
                                 <ImageView android:layout_width="12dp" android:layout_height="12dp" android:layout_marginStart="2dp" android:src="@drawable/ic_arrow_right" android:tint="#555555" android:contentDescription="Open settings" />
@@ -188,7 +188,7 @@
 
                                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
 
-                                    <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView android:id="@+id/tvEstimateTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1h 30m" android:textColor="#F44336" android:textSize="13sp" android:textStyle="bold" />
+                                    <com.fadcam.ui.utils.AnimatedTextView android:id="@+id/tvEstimateTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1h 30m" android:textColor="#F44336" android:textSize="13sp" android:textStyle="bold" />
 
                                     <TextView android:id="@+id/tvEstimateSubtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/recording_time_left" android:textColor="?attr/homeRailTextSecondary" android:textSize="11sp" />
                                 </LinearLayout>
@@ -224,17 +224,17 @@
                             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="2dp" android:paddingTop="1dp" android:paddingEnd="2dp" android:paddingBottom="1dp">
 
                                 <FrameLayout android:layout_width="32dp" android:layout_height="28dp" android:layout_marginEnd="6dp">
-                                    <com.cybershadowpk.shahidcam.ui.utils.StorageProgressRingView android:id="@+id/storageProgressRing" android:layout_width="22dp" android:layout_height="22dp" android:layout_gravity="center" android:contentDescription="Available space progress" />
+                                    <com.fadcam.ui.utils.StorageProgressRingView android:id="@+id/storageProgressRing" android:layout_width="22dp" android:layout_height="22dp" android:layout_gravity="center" android:contentDescription="Available space progress" />
                                 </FrameLayout>
 
                                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
 
                                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-                                        <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView android:id="@+id/tvSpaceTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1.13 GB" android:textColor="?attr/homeRailTextPrimary" android:textSize="13sp" android:textStyle="bold" />
+                                        <com.fadcam.ui.utils.AnimatedTextView android:id="@+id/tvSpaceTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1.13 GB" android:textColor="?attr/homeRailTextPrimary" android:textSize="13sp" android:textStyle="bold" />
                                         <TextView android:id="@+id/tvSpaceTotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="2dp" android:textColor="?attr/homeRailTextSecondary" android:textSize="11sp" />
                                     </LinearLayout>
 
-                                    <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView android:id="@+id/tvSpaceSubtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/storage_available_space" android:textColor="?attr/homeRailTextSecondary" android:textSize="11sp" />
+                                    <com.fadcam.ui.utils.AnimatedTextView android:id="@+id/tvSpaceSubtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/storage_available_space" android:textColor="?attr/homeRailTextSecondary" android:textSize="11sp" />
                                 </LinearLayout>
 
                                 <ImageView android:layout_width="12dp" android:layout_height="12dp" android:layout_marginStart="2dp" android:src="@drawable/ic_arrow_right" android:tint="#555555" android:contentDescription="Open settings" />
@@ -316,7 +316,7 @@
                                 android:textStyle="bold" />
                             </LinearLayout>
 
-                            <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView
+                            <com.fadcam.ui.utils.AnimatedTextView
                                 android:id="@+id/tvElapsedTitle"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -333,7 +333,7 @@
                                 android:textSize="21sp"
                                 android:textStyle="bold" />
 
-                            <com.cybershadowpk.shahidcam.ui.utils.ElapsedCompactAnimatedView
+                            <com.fadcam.ui.utils.ElapsedCompactAnimatedView
                                 android:id="@+id/viewElapsedCompact"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -373,11 +373,11 @@
 
                             <LinearLayout android:id="@+id/layoutClockContent" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="4dp">
 
-                                <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView android:id="@+id/tvClock" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="15sp" android:textStyle="bold" android:layout_gravity="top" android:textColor="?attr/colorHeading" android:includeFontPadding="false" />
+                                <com.fadcam.ui.utils.AnimatedTextView android:id="@+id/tvClock" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="15sp" android:textStyle="bold" android:layout_gravity="top" android:textColor="?attr/colorHeading" android:includeFontPadding="false" />
 
-                                <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView android:id="@+id/tvDateEnglish" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="13sp" android:layout_gravity="left" android:textColor="?attr/homeRailTextPrimary" android:includeFontPadding="false" />
+                                <com.fadcam.ui.utils.AnimatedTextView android:id="@+id/tvDateEnglish" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="13sp" android:layout_gravity="left" android:textColor="?attr/homeRailTextPrimary" android:includeFontPadding="false" />
 
-                                <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView android:id="@+id/tvDateArabic" android:layout_width="wrap_content" android:layout_gravity="end" android:layout_height="wrap_content" android:textSize="13sp" android:textColor="?attr/homeRailTextPrimary" android:includeFontPadding="false" />
+                                <com.fadcam.ui.utils.AnimatedTextView android:id="@+id/tvDateArabic" android:layout_width="wrap_content" android:layout_gravity="end" android:layout_height="wrap_content" android:textSize="13sp" android:textColor="?attr/homeRailTextPrimary" android:includeFontPadding="false" />
                             </LinearLayout>
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
@@ -392,11 +392,11 @@
                             <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="4dp">
                                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
                                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/stats_label_videos" android:textColor="?attr/homeRailTextPrimary" android:textSize="13sp" android:textStyle="bold" android:layout_marginEnd="4dp" android:tag="preserve_color" />
-                                    <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView android:id="@+id/tvVideoCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="?attr/homeRailTextSecondary" android:textSize="13sp" android:tag="preserve_color" />
+                                    <com.fadcam.ui.utils.AnimatedTextView android:id="@+id/tvVideoCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="?attr/homeRailTextSecondary" android:textSize="13sp" android:tag="preserve_color" />
                                 </LinearLayout>
                                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="1dp">
                                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/stats_label_used" android:textColor="?attr/homeRailTextPrimary" android:textSize="13sp" android:textStyle="bold" android:layout_marginEnd="4dp" android:tag="preserve_color" />
-                                    <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView android:id="@+id/tvVideoSize" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0 B" android:textColor="?attr/homeRailTextSecondary" android:textSize="13sp" android:tag="preserve_color" />
+                                    <com.fadcam.ui.utils.AnimatedTextView android:id="@+id/tvVideoSize" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0 B" android:textColor="?attr/homeRailTextSecondary" android:textSize="13sp" android:tag="preserve_color" />
                                 </LinearLayout>
                             </LinearLayout>
 
@@ -565,7 +565,7 @@
                 <TextureView android:id="@+id/textureView" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_gravity="center" />
 
                 <!-- Rule-of-thirds grid overlay (shown only when Grid Lines setting is on) -->
-                <com.cybershadowpk.shahidcam.ui.GridOverlayView
+                <com.fadcam.ui.GridOverlayView
                     android:id="@+id/grid_overlay"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -661,7 +661,7 @@
 
                     <!-- Compact value line under the label (e.g. "5m", "1h 30m", "45s", "Off").
                          AnimatedTextView: rolls digits like the elapsed display. -->
-                    <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView
+                    <com.fadcam.ui.utils.AnimatedTextView
                         android:id="@+id/tvQuickTimerValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -900,7 +900,7 @@
         </FrameLayout>
 
 
-        <com.cybershadowpk.shahidcam.ui.utils.AnimatedMaterialButton
+        <com.fadcam.ui.utils.AnimatedMaterialButton
             android:id="@+id/buttonStartStop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

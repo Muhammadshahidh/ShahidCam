@@ -38,7 +38,7 @@
             android:layout_marginStart="16dp"
             android:orientation="vertical">
 
-            <com.cybershadowpk.shahidcam.ui.utils.AnimatedTextView
+            <com.fadcam.ui.utils.AnimatedTextView
                 android:id="@+id/title_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -299,7 +299,7 @@
                     android:textSize="11sp"
                     android:layout_marginTop="2dp"/>
             </LinearLayout>
-            <com.cybershadowpk.shahidcam.ui.AvatarToggleView
+            <com.fadcam.ui.AvatarToggleView
                 android:id="@+id/switch_show_trash_in_settings"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
@@ -361,7 +361,7 @@
     </LinearLayout>
 
     <!-- Gallery-style fast scroller (overlays content) -->
-    <com.cybershadowpk.shahidcam.ui.GalleryFastScroller
+    <com.fadcam.ui.GalleryFastScroller
         android:id="@+id/fast_scroller"
         android:layout_width="0dp"
         android:layout_height="0dp"

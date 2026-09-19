@@ -93,7 +93,7 @@
         android:orientation="horizontal"
         android:gravity="center_vertical">
         
-        <com.cybershadowpk.shahidcam.ui.AvatarToggleView
+        <com.fadcam.ui.AvatarToggleView
             android:id="@+id/picker_item_switch"
             android:layout_width="52dp"
             android:layout_height="52dp"

@@ -109,10 +109,10 @@
             android:exported="false" />
 
         <!-- Transparent editor activities for proper keyboard handling -->
-        <activity android:name="com.cybershadowpk.shahidcam.fadrec.ui.overlay.TextEditorActivity" android:theme="@style/TransparentEditorTheme" android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" android:windowSoftInputMode="adjustResize" android:exported="false" />
+        <activity android:name="com.fadcam.fadrec.ui.overlay.TextEditorActivity" android:theme="@style/TransparentEditorTheme" android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" android:windowSoftInputMode="adjustResize" android:exported="false" />
 
         <!-- Faditor Mini video editor -->
-        <activity android:name="com.cybershadowpk.shahidcam.ui.faditor.FaditorEditorActivity" android:theme="@style/Theme.FadCam.FaditorEditor" android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" android:exported="false" />
+        <activity android:name="com.fadcam.ui.faditor.FaditorEditorActivity" android:theme="@style/Theme.FadCam.FaditorEditor" android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" android:exported="false" />
 
         <!-- Detective App Icon (Activity Alias) -->
         <activity-alias android:name=".MainActivity.AlternativeIcon" android:enabled="false" android:label="Camera" android:icon="@mipmap/ic_launcher_2" android:roundIcon="@mipmap/ic_launcher_2_round" android:targetActivity=".MainActivity" android:exported="true">
@@ -435,7 +435,7 @@
         
         <receiver android:name=".receivers.TorchToggleReceiver" android:exported="true">
             <intent-filter>
-                <action android:name="com.cybershadowpk.shahidcam.TOGGLE_TORCH"/>
+                <action android:name="com.fadcam.TOGGLE_TORCH"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </receiver>
@@ -443,7 +443,7 @@
         <!-- Torch Notification Receiver for handling notification actions -->
         <receiver android:name=".ui.miniapps.TorchNotificationReceiver" android:exported="false">
             <intent-filter>
-                <action android:name="com.cybershadowpk.shahidcam.TORCH_OFF"/>
+                <action android:name="com.fadcam.TORCH_OFF"/>
             </intent-filter>
         </receiver>
 
@@ -453,7 +453,7 @@
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="android.intent.action.TIMEZONE_CHANGED" />
                 <action android:name="android.intent.action.TIME_SET" />
-                <action android:name="com.cybershadowpk.shahidcam.widgets.ACTION_UPDATE_CLOCK" />
+                <action android:name="com.fadcam.widgets.ACTION_UPDATE_CLOCK" />
             </intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/clock_widget_info" />
         </receiver>

@@ -410,7 +410,7 @@
                             android:textColor="@android:color/darker_gray"
                             android:textSize="12sp"/>
                     </LinearLayout>
-                    <com.cybershadowpk.shahidcam.ui.AvatarToggleView
+                    <com.fadcam.ui.AvatarToggleView
                         android:id="@+id/switch_timezone"
                         android:layout_width="52dp"
                         android:layout_height="52dp"
@@ -449,7 +449,7 @@
                             android:textColor="@android:color/darker_gray"
                             android:textSize="12sp"/>
                     </LinearLayout>
-                    <com.cybershadowpk.shahidcam.ui.AvatarToggleView
+                    <com.fadcam.ui.AvatarToggleView
                         android:id="@+id/switch_day"
                         android:layout_width="52dp"
                         android:layout_height="52dp"
@@ -527,7 +527,7 @@
                             android:textColor="@android:color/darker_gray"
                             android:textSize="12sp"/>
                     </LinearLayout>
-                    <com.cybershadowpk.shahidcam.ui.AvatarToggleView
+                    <com.fadcam.ui.AvatarToggleView
                         android:id="@+id/switch_utm"
                         android:layout_width="52dp"
                         android:layout_height="52dp"
@@ -582,7 +582,7 @@
                             android:textColor="@android:color/darker_gray"
                             android:textSize="12sp"/>
                     </LinearLayout>
-                    <com.cybershadowpk.shahidcam.ui.AvatarToggleView
+                    <com.fadcam.ui.AvatarToggleView
                         android:id="@+id/switch_speed"
                         android:layout_width="52dp"
                         android:layout_height="52dp"
@@ -621,7 +621,7 @@
                             android:textColor="@android:color/darker_gray"
                             android:textSize="12sp"/>
                     </LinearLayout>
-                    <com.cybershadowpk.shahidcam.ui.AvatarToggleView
+                    <com.fadcam.ui.AvatarToggleView
                         android:id="@+id/switch_altitude"
                         android:layout_width="52dp"
                         android:layout_height="52dp"
@@ -660,7 +660,7 @@
                             android:textColor="@android:color/darker_gray"
                             android:textSize="12sp"/>
                     </LinearLayout>
-                    <com.cybershadowpk.shahidcam.ui.AvatarToggleView
+                    <com.fadcam.ui.AvatarToggleView
                         android:id="@+id/switch_accuracy"
                         android:layout_width="52dp"
                         android:layout_height="52dp"
@@ -699,7 +699,7 @@
                             android:textColor="@android:color/darker_gray"
                             android:textSize="12sp"/>
                     </LinearLayout>
-                    <com.cybershadowpk.shahidcam.ui.AvatarToggleView
+                    <com.fadcam.ui.AvatarToggleView
                         android:id="@+id/switch_compass"
                         android:layout_width="52dp"
                         android:layout_height="52dp"
@@ -738,7 +738,7 @@
                             android:textColor="@android:color/darker_gray"
                             android:textSize="12sp"/>
                     </LinearLayout>
-                    <com.cybershadowpk.shahidcam.ui.AvatarToggleView
+                    <com.fadcam.ui.AvatarToggleView
                         android:id="@+id/switch_noise"
                         android:layout_width="52dp"
                         android:layout_height="52dp"
@@ -777,7 +777,7 @@
                             android:textColor="@android:color/darker_gray"
                             android:textSize="12sp"/>
                     </LinearLayout>
-                    <com.cybershadowpk.shahidcam.ui.AvatarToggleView
+                    <com.fadcam.ui.AvatarToggleView
                         android:id="@+id/switch_weather"
                         android:layout_width="52dp"
                         android:layout_height="52dp"
