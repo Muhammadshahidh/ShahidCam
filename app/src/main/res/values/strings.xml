@@ -2151,7 +2151,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="automation_row_subtitle">Button mapping, Bluetooth remotes, volume keys</string>
     <string name="setting_volume_shutter_title">Volume Shutter</string>
     <string name="setting_volume_shutter_summary">Volume keys act as a camera shutter on the home tab</string>
-    <string name="setting_volume_shutter_footer">Volume keys become your shutter on the home tab:\n\u2022 Tap — snap a photo\n\u2022 Double-tap — flip the camera\n\u2022 Hold — start or stop recording\nBluetooth remote shutters work too, triggering the same actions. Buttons work while the ShahidCam home tab is open — future versions will let any button trigger ShahidCam intents, even in the background.\nFor now, use MacroDroid to map ShahidCam's shortcuts — find them in Settings → Shortcuts &amp; Widgets.</string>
+    <string name="setting_volume_shutter_footer">Volume keys become your shutter on the home tab:\n\u2022Tap — snap a photo\n\u2022Double-tap — flip the camera\n\u2022Hold — start or stop recording\nBluetooth remote shutters work too, triggering the same actions. Buttons work while the ShahidCam home tab is open — future versions will let any button trigger ShahidCam intents, even in the background.\nFor now, use MacroDroid to map ShahidCam's shortcuts — find them in Settings → Shortcuts &amp; Widgets.</string>
 
     <string name="thermal_guardian_title">Thermal Guardian</string>
     <string name="thermal_guardian_row_subtitle">Auto-adjust recording to prevent overheating</string>
@@ -2657,8 +2657,8 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="battery_failed_capacity">Failed to set capacity: %s</string>
     <string name="battery_current_threshold">Current threshold: %d%%</string>
     <string name="battery_current_capacity">Current capacity: %d mAh</string>
-    <string name="battery_estimate_per_hour">\u2022 Per-hour consumption: ~%.1f%%</string>
-    <string name="battery_estimate_at_100">\u2022 At 100%% battery: ~%.1f hours</string>
+    <string name="battery_estimate_per_hour">\u2022Per-hour consumption: ~%.1f%%</string>
+    <string name="battery_estimate_at_100">\u2022At 100%% battery: ~%.1f hours</string>
 
     <string name="home_fps_format">%dfps</string>
     <string name="home_orientation_portrait">Portrait</string>
