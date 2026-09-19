@@ -100,7 +100,7 @@
     <string name="floating_controls_title">Menu</string>
     <string name="floating_controls_permission_needed">Overlay permission required</string>
     <string name="floating_controls_permission_title">Overlay Permission Required</string>
-    <string name="floating_controls_permission_message">The floating quick menu appears as an overlay on top of other apps, providing instant access to recording controls from anywhere.\n\nTo enable this feature, you need to grant \"Display over other apps\" permission in the next screen.</string>
+    <string name="floating_controls_permission_message">The floating quick menu appears as an overlay on top of other apps, providing instant access to recording controls from anywhere.\nTo enable this feature, you need to grant \"Display over other apps\" permission in the next screen.</string>
     <string name="floating_controls_permission_grant">Grant Permission</string>
     <string name="floating_menu_title">Quick Menu</string>
     <string name="floating_menu_start">Start Recording</string>
@@ -548,7 +548,7 @@
     <string name="dual_cam_info_supported_unconfirmed">⚠ Your device has both cameras, but concurrent support is not confirmed. It may or may not work.</string>
     <string name="dual_cam_info_unsupported_status">✗ Your device does not support dual camera recording.</string>
     <string name="dual_cam_info_why_unsupported">Why is dual camera not supported?</string>
-    <string name="dual_cam_info_unsupported_explanation">Dual camera recording requires your device to operate both front and back cameras simultaneously. This is a hardware capability that depends on your device\'s processor and camera hardware. Most flagship phones from 2020 onwards support this feature. Mid-range and older devices typically do not.\n\nThis is NOT a bug — it\'s a hardware limitation of your device.</string>
+    <string name="dual_cam_info_unsupported_explanation">Dual camera recording requires your device to operate both front and back cameras simultaneously. This is a hardware capability that depends on your device\'s processor and camera hardware. Most flagship phones from 2020 onwards support this feature. Mid-range and older devices typically do not.\nThis is NOT a bug — it\'s a hardware limitation of your device.</string>
     <string name="dual_cam_info_which_devices">Which devices support it?</string>
     <string name="dual_cam_info_devices_explanation">Devices with Qualcomm Snapdragon 855 or newer, Google Tensor, Samsung Exynos 990 or newer, and MediaTek Dimensity 1000 or newer typically support concurrent camera access.</string>
 
@@ -876,8 +876,8 @@
     <string name="watermark_custom_text_title">Custom Watermark Text</string>
     <string name="watermark_custom_text_hint">Enter custom text</string>
     <string name="watermark_custom_text_empty">Not set</string>
-    <string name="helper_watermark_custom_text">Add a custom line of text that will appear below the timestamp and location (if enabled) in your watermark.\n\nExamples: ABC-1234 (dashcam), Camera #3, Conference Hall A</string>
-    <string name="helper_app_icon_option" translatable="false">The title is the name of each app icon; the badge is its internal codename.\n\nThe black icon intentionally has no name \u2014 on a dark wallpaper it blends in and the icon becomes nearly invisible, which is useful for privacy.</string>
+    <string name="helper_watermark_custom_text">Add a custom line of text that will appear below the timestamp and location (if enabled) in your watermark.\nExamples: ABC-1234 (dashcam), Camera #3, Conference Hall A</string>
+    <string name="helper_app_icon_option" translatable="false">The title is the name of each app icon; the badge is its internal codename.\nThe black icon intentionally has no name \u2014 on a dark wallpaper it blends in and the icon becomes nearly invisible, which is useful for privacy.</string>
     <string name="torch_shortcut_short_label">Torch</string>
     <string name="torch_shortcut_long_label">Toggle Torch</string>
     <string name="torch_shortcut_disabled">Torch toggle is currently unavailable</string>
@@ -1253,15 +1253,15 @@
     <string name="faditor_info_title">About Editor Mini</string>
     <string name="faditor_info_subtitle">Everything you need to know about the built-in editor</string>
     <string name="faditor_info_how_title">How it works</string>
-    <string name="faditor_info_how_desc">Pick any video from your device or your ShahidCam recordings. Trim it frame-by-frame using the timeline, then export. All processing happens locally on your device — nothing is uploaded.\n\nYour editing progress is auto-saved every few seconds and whenever you leave the editor, so no work is lost if the app closes unexpectedly.</string>
+    <string name="faditor_info_how_desc">Pick any video from your device or your ShahidCam recordings. Trim it frame-by-frame using the timeline, then export. All processing happens locally on your device — nothing is uploaded.\nYour editing progress is auto-saved every few seconds and whenever you leave the editor, so no work is lost if the app closes unexpectedly.</string>
     <string name="faditor_info_convert_title">Smart conversion</string>
-    <string name="faditor_info_convert_desc">ShahidCam records in a crash-safe format called fragmented MP4 (fMP4). Unlike a standard MP4 which has one finalized container, fMP4 writes video in small independent chunks. This means your footage stays intact even if the app crashes or recording stops suddenly.\n\nHowever, external video players, gallery apps, and file managers will not be able to seek, scrub, or display the correct duration of these files. This is not a bug — it is a deliberate design trade-off for reliability.\n\nIf you plan to store your videos outside ShahidCam — on Google Drive, a computer, or any other location — you must convert them first. Otherwise the files will be unusable for normal playback.\n\nTo convert: simply open the video here in Editor Mini and tap Export. The converted standard MP4 will appear in your Records tab, ready to save to your gallery or share anywhere. The process is instant and lossless — no re-encoding or quality loss.</string>
+    <string name="faditor_info_convert_desc">ShahidCam records in a crash-safe format called fragmented MP4 (fMP4). Unlike a standard MP4 which has one finalized container, fMP4 writes video in small independent chunks. This means your footage stays intact even if the app crashes or recording stops suddenly.\nHowever, external video players, gallery apps, and file managers will not be able to seek, scrub, or display the correct duration of these files. This is not a bug — it is a deliberate design trade-off for reliability.\nIf you plan to store your videos outside ShahidCam — on Google Drive, a computer, or any other location — you must convert them first. Otherwise the files will be unusable for normal playback.\nTo convert: simply open the video here in Editor Mini and tap Export. The converted standard MP4 will appear in your Records tab, ready to save to your gallery or share anywhere. The process is instant and lossless — no re-encoding or quality loss.</string>
     <string name="faditor_info_export_title">Exported files</string>
     <string name="faditor_info_export_desc">Exported videos are saved to your active storage location (the same one configured in Settings) with the prefix \"Editor_\" followed by a timestamp. They appear in the Records tab alongside your original recordings.</string>
     <string name="faditor_info_temp_title">Temporary files and cache</string>
-    <string name="faditor_info_temp_desc">When you load an fMP4 video for editing, Editor detects if the file needs \"remuxing\" — a fast conversion that adds seeking markers without re-encoding. Remuxed files are cached on your device so they can be reused if you edit the same video again, saving time and processing.\n\nYou can see the cache size for each project listed next to its modified date. If your device storage is running low, you can delete unused projects to clear their cached remuxed files.\n\nThese temporary cache files are automatically cleaned up when you delete a project from this tab.</string>
+    <string name="faditor_info_temp_desc">When you load an fMP4 video for editing, Editor detects if the file needs \"remuxing\" — a fast conversion that adds seeking markers without re-encoding. Remuxed files are cached on your device so they can be reused if you edit the same video again, saving time and processing.\nYou can see the cache size for each project listed next to its modified date. If your device storage is running low, you can delete unused projects to clear their cached remuxed files.\nThese temporary cache files are automatically cleaned up when you delete a project from this tab.</string>
     <string name="faditor_info_projects_title">Recent projects</string>
-    <string name="faditor_info_projects_desc">All your editing sessions are shown for quick access. Each project is stored as a small JSON file on your device containing the video URI, trim points, and timestamps — no copies of your videos are made. Projects are auto-saved every few seconds, so your progress is never lost.\n\nYou can delete projects you no longer need using the multi-select checklist icon. Deleting a project only removes the editing session data; your original video files remain untouched.</string>
+    <string name="faditor_info_projects_desc">All your editing sessions are shown for quick access. Each project is stored as a small JSON file on your device containing the video URI, trim points, and timestamps — no copies of your videos are made. Projects are auto-saved every few seconds, so your progress is never lost.\nYou can delete projects you no longer need using the multi-select checklist icon. Deleting a project only removes the editing session data; your original video files remain untouched.</string>
     <string name="faditor_your_recordings">Your Recordings</string>
     <string name="faditor_browse_device">Browse Device</string>
     <string name="faditor_no_recordings">No recordings found yet. Start recording with ShahidCam to see your videos here.</string>
@@ -1682,7 +1682,7 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
     <string name="forensics_grid_5">5 columns</string>
     <string name="forensics_serial_strip">evidence</string>
     <string name="forensics_info_title">Evidence Info</string>
-    <string name="forensics_info_body">Evidence Gallery stores snapshots captured during active recording sessions.\n\nSnapshots are standalone evidence files and remain viewable even if the source video is moved or deleted.\n\nFor video-linked items, use evidence details inside the photo viewer to jump to source footage when available.</string>
+    <string name="forensics_info_body">Evidence Gallery stores snapshots captured during active recording sessions.\nSnapshots are standalone evidence files and remain viewable even if the source video is moved or deleted.\nFor video-linked items, use evidence details inside the photo viewer to jump to source footage when available.</string>
     <string name="forensics_info_helper">Evidence appears here as soon as snapshots are captured during recording.</string>
     <string name="forensics_info_line_1">Source video actions are available only while original video link exists.</string>
     <string name="forensics_info_line_2">If video is altered or removed, snapshots remain available as standalone evidence.</string>
@@ -1990,7 +1990,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
     ]]></string>
 
     <string name="codec_hevc_incompatible_title">H.265 Codec Not Supported for Live Streaming</string>
-    <string name="codec_hevc_incompatible_message">📡 Live streaming via HLS requires H.264 codec.\n\nH.265 is not compatible with browser players.\n\nWould you like to switch to H.264 and start recording?</string>
+    <string name="codec_hevc_incompatible_message">📡 Live streaming via HLS requires H.264 codec.\nH.265 is not compatible with browser players.\nWould you like to switch to H.264 and start recording?</string>
     <string name="codec_switch_and_record">Switch to H.264 &amp; Record</string>
     <string name="codec_switch_cancelled">Codec switch cancelled</string>
     <string name="codec_switched_to_h264">✓ Codec switched to H.264. Starting recording...</string>
@@ -2151,7 +2151,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="automation_row_subtitle">Button mapping, Bluetooth remotes, volume keys</string>
     <string name="setting_volume_shutter_title">Volume Shutter</string>
     <string name="setting_volume_shutter_summary">Volume keys act as a camera shutter on the home tab</string>
-    <string name="setting_volume_shutter_footer">Volume keys become your shutter on the home tab:\n• Tap — snap a photo\n• Double-tap — flip the camera\n• Hold — start or stop recording\n\nBluetooth remote shutters work too, triggering the same actions. Buttons work while the ShahidCam home tab is open — future versions will let any button trigger ShahidCam intents, even in the background.\n\nFor now, use MacroDroid to map ShahidCam's shortcuts — find them in Settings → Shortcuts &amp; Widgets.</string>
+    <string name="setting_volume_shutter_footer">Volume keys become your shutter on the home tab:\n\u2022 Tap — snap a photo\n\u2022 Double-tap — flip the camera\n\u2022 Hold — start or stop recording\nBluetooth remote shutters work too, triggering the same actions. Buttons work while the ShahidCam home tab is open — future versions will let any button trigger ShahidCam intents, even in the background.\nFor now, use MacroDroid to map ShahidCam's shortcuts — find them in Settings → Shortcuts &amp; Widgets.</string>
 
     <string name="thermal_guardian_title">Thermal Guardian</string>
     <string name="thermal_guardian_row_subtitle">Auto-adjust recording to prevent overheating</string>
@@ -2233,7 +2233,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="motion_lab_debug_metrics_value">Area %1$.3f, Strong %2$.3f, Mean %3$.3f, BG %4$.3f, Max %5$.3f, Global %6$s</string>
     <string name="motion_lab_info_cd">Motion Lab info</string>
     <string name="motion_lab_info_title">Auto Record on Motion</string>
-    <string name="motion_lab_info_body">This is ShahidCam\'s Auto Record on Motion feature.\n\nHow it works in simple words:\n- Your camera stays active and analyzes frames on-device in real time.\n- The on-device machine learning model and motion logic look for movement.\n- When valid motion is detected, recording starts/resumes.\n- Recording keeps going while motion continues.\n- After motion stops, Post-roll keeps recording for your selected extra seconds.\n- Then recording pauses and waits for the next motion event.\n\nWhen recording is paused, the app is still analyzing frames in memory, but it is not writing new video data until motion is detected again.\n\nHow to use (most users):\n- Keep all options at default values.\n- Turn ON Motion Sensor on this screen.\n- Go to Home tab and start recording normally.\n- Motion-based auto record will run automatically.\n\nEasy test from far distance:\n- Turn ON Auto Torch on this screen.\n- Start recording from Home tab.\n- Place the phone tilted on a table or shelf facing the room.\n- Leave the room, then enter and walk in.\n- Torch turning ON helps you instantly notice from far away that recording started.\n- Recording will continue for your selected Post-roll duration after motion stops.\n\nTip: This feature runs continuously, so very high advanced values can increase heat and can reduce device health over time. For long sessions, keep defaults unless you have a specific reason.</string>
+    <string name="motion_lab_info_body">This is ShahidCam\'s Auto Record on Motion feature.\nHow it works in simple words:\n- Your camera stays active and analyzes frames on-device in real time.\n- The on-device machine learning model and motion logic look for movement.\n- When valid motion is detected, recording starts/resumes.\n- Recording keeps going while motion continues.\n- After motion stops, Post-roll keeps recording for your selected extra seconds.\n- Then recording pauses and waits for the next motion event.\nWhen recording is paused, the app is still analyzing frames in memory, but it is not writing new video data until motion is detected again.\nHow to use (most users):\n- Keep all options at default values.\n- Turn ON Motion Sensor on this screen.\n- Go to Home tab and start recording normally.\n- Motion-based auto record will run automatically.\nEasy test from far distance:\n- Turn ON Auto Torch on this screen.\n- Start recording from Home tab.\n- Place the phone tilted on a table or shelf facing the room.\n- Leave the room, then enter and walk in.\n- Torch turning ON helps you instantly notice from far away that recording started.\n- Recording will continue for your selected Post-roll duration after motion stops.\nTip: This feature runs continuously, so very high advanced values can increase heat and can reduce device health over time. For long sessions, keep defaults unless you have a specific reason.</string>
     <string name="motion_lab_percent_value">%1$d%%</string>
     <string name="motion_lab_fps_value">%1$d fps</string>
     <string name="motion_lab_ms_value">%1$d ms</string>
@@ -2249,12 +2249,12 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="home_sidebar_copyright" translatable="false">© CyberShadowPK 2026</string>
 
     <string name="privacy_black_mode_title">Privacy Black Screen</string>
-    <string name="privacy_black_mode_helper">If your device kills the app in the background, you can use this feature to keep the app running in the foreground.\n\nA black screen overlay appears, making it look like the screen is off while recording continues.\n\nTap the ShahidCam icon in the top header of the Home tab to activate it.</string>
+    <string name="privacy_black_mode_helper">If your device kills the app in the background, you can use this feature to keep the app running in the foreground.\nA black screen overlay appears, making it look like the screen is off while recording continues.\nTap the ShahidCam icon in the top header of the Home tab to activate it.</string>
     <string name="privacy_black_mode_enable_title">Enable Privacy Black Mode</string>
     <string name="privacy_black_mode_enabled_toast">Privacy Mode Enabled</string>
     <string name="privacy_black_mode_disabled_toast">Privacy Mode Disabled</string>
     <string name="privacy_black_gestures_title">Exit Methods</string>
-    <string name="privacy_black_gestures_helper">Choose which gestures can be used to exit Privacy Black Mode.\n\nNote: At least one exit method should remain enabled to prevent getting stuck!</string>
+    <string name="privacy_black_gestures_helper">Choose which gestures can be used to exit Privacy Black Mode.\nNote: At least one exit method should remain enabled to prevent getting stuck!</string>
     <string name="privacy_black_gesture_swipe">Swipe Up to Exit</string>
     <string name="privacy_black_gesture_triple">Triple Tap to Exit</string>
     <string name="privacy_black_gesture_long">Long Press to Exit</string>
@@ -2491,7 +2491,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="watermark_utm_title">UTM Coordinates</string>
     <string name="watermark_utm_off">Off</string>
     <string name="watermark_utm_on">On — Universal Transverse Mercator grid coordinates</string>
-    <string name="watermark_utm_helper">UTM divides Earth into 60 zones and converts lat/lon to easting &amp; northing in meters. Used by military, surveyors, and topographic maps for precise grid positioning.\n\nHow to read: &quot;Zone 42N — 372,684m E, 3,512,334m N&quot; = Zone 42 in Northern hemisphere, 372,684 meters Easting (east-west), 3,512,334 meters Northing (north-south).</string>
+    <string name="watermark_utm_helper">UTM divides Earth into 60 zones and converts lat/lon to easting &amp; northing in meters. Used by military, surveyors, and topographic maps for precise grid positioning.\nHow to read: &quot;Zone 42N — 372,684m E, 3,512,334m N&quot; = Zone 42 in Northern hemisphere, 372,684 meters Easting (east-west), 3,512,334 meters Northing (north-south).</string>
     <string name="mini_app_speedometer_title">Speedometer</string>
     <string name="mini_app_speedometer_desc">Real-time car speedometer with GPS speed tracking</string>
     <string name="mini_app_clinometer_title">Clinometer</string>
@@ -2515,7 +2515,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="mini_app_qr_generator_desc">Create QR codes from text, URLs, and contacts</string>
 
     <string name="mini_apps_planned_shortcuts_title">Planned: Shortcuts &amp; Automation</string>
-    <string name="mini_apps_planned_shortcuts_desc">Home screen shortcuts for instant access to any Mini App without opening ShahidCam first.\n\nIntent-based automation support (Tasker, MacroDroid, etc.) for triggering Mini Apps programmatically — use QR scanning, torch, and more from your automated workflows.</string>
+    <string name="mini_apps_planned_shortcuts_desc">Home screen shortcuts for instant access to any Mini App without opening ShahidCam first.\nIntent-based automation support (Tasker, MacroDroid, etc.) for triggering Mini Apps programmatically — use QR scanning, torch, and more from your automated workflows.</string>
 
     <string name="export_center">Export Center</string>
 
@@ -2598,11 +2598,11 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="badge_new">NEW</string>
 
     <string name="update_pro_title">ShahidCam Pro Update</string>
-    <string name="update_pro_desc">A new version of ShahidCam Pro is available.\n\nFor free users, the stable release will arrive after approximately 60 days. Pro users receive updates immediately.</string>
+    <string name="update_pro_desc">A new version of ShahidCam Pro is available.\nFor free users, the stable release will arrive after approximately 60 days. Pro users receive updates immediately.</string>
     <string name="update_get_pro">Get ShahidCam Pro</string>
     <string name="update_maybe_later">Maybe Later</string>
     <string name="update_beta_title">Beta Update Available</string>
-    <string name="update_beta_desc">The ShahidCam beta is a standalone app that can be installed alongside the stable version. It will not interfere with your stable app or its data.\n\nInstall the beta to test new features before they reach the stable release.</string>
+    <string name="update_beta_desc">The ShahidCam beta is a standalone app that can be installed alongside the stable version. It will not interfere with your stable app or its data.\nInstall the beta to test new features before they reach the stable release.</string>
     <string name="update_get_beta">Get Beta</string>
 
     <string name="mini_apps_about_title">About Mini Apps</string>
@@ -2690,7 +2690,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="setting_coordinates_only">Coordinates Only</string>
 
     <string name="about_update_failed">Failed to check for updates. Please try again later.</string>
-    <string name="about_beta_available">\n\nBeta v%s available</string>
+    <string name="about_beta_available">\nBeta v%s available</string>
     <string name="about_dialog_error">Error</string>
     <string name="about_dialog_ok">OK</string>
     <string name="about_get_beta">Get Beta</string>
