@@ -22,7 +22,7 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     </style>
 
-    <style name="Widget.FadCam.BottomSheetSlider" parent="Widget.Material3.Slider">
+    <style name="Widget.ShahidCam.BottomSheetSlider" parent="Widget.Material3.Slider">
         <item name="trackColorActive">?attr/pickerSliderActive</item>
         <item name="trackColorInactive">?attr/pickerSliderInactive</item>
         <item name="tickColorActive">?attr/pickerSliderActive</item>
@@ -35,7 +35,7 @@
         <item name="haloRadius">18dp</item>
     </style>
 
-    <style name="Widget.FadCam.RecordsFilterChip" parent="Widget.Material3.Chip.Filter">
+    <style name="Widget.ShahidCam.RecordsFilterChip" parent="Widget.Material3.Chip.Filter">
         <item name="chipMinHeight">28dp</item>
         <item name="android:minHeight">28dp</item>
         <item name="ensureMinTouchTargetSize">false</item>

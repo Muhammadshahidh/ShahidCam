@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name" translatable="false">FadCam</string>
+    <string name="app_name" translatable="false">ShahidCam</string>
     <string name="app_icon_description">Vali ikoon ja nimi oma rakendusele. See muudab seda, kuidas see kuvatakse avalehel.</string>
     <string name="check_for_updates">Kontrolli uuendusi</string>
     <string name="accessibility_thumbnail_progress">%1$d%% vaadatud</string>
-    <string name="fadsec_info">FadCam on osa FadSec Labi rakenduste seeriast. Lisateabe saamiseks klõpsa allpool \'lähtekoodi vaatamist\'.</string>
+    <string name="shahid_sec_info">ShahidCam on osa CyberShadowPK Labi rakenduste seeriast. Lisateabe saamiseks klõpsa allpool \'lähtekoodi vaatamist\'.</string>
 
 
     <string name="app_description">
         <![CDATA[
-    FadCam on reklaamivaba, avatud lähtekoodiga videorakendus, mis seab esikohale privaatsuse, jälgimata ega kogumata mingeid andmeid. See on saadaval ainult GitHubis ja README-s mainitud ametlike linkide kaudu.
+    ShahidCam on reklaamivaba, avatud lähtekoodiga videorakendus, mis seab esikohale privaatsuse, jälgimata ega kogumata mingeid andmeid. See on saadaval ainult GitHubis ja README-s mainitud ametlike linkide kaudu.
     <br/><br/>
-    FadCam on olnud esindatud populaarsetes YouTube\'i kanalites nagu <font color="#cfbafd">HowToMen</font> ja <font color="#cfbafd">Xtream Droid</font>, samuti arutatud <font color="#cfbafd">GrapheneOS</font> ja 55+ muus märkimisväärses kohas.
+    ShahidCam on olnud esindatud populaarsetes YouTube\'i kanalites nagu <font color="#cfbafd">HowToMen</font> ja <font color="#cfbafd">Xtream Droid</font>, samuti arutatud <font color="#cfbafd">GrapheneOS</font> ja 55+ muus märkimisväärses kohas.
     ]]>
     </string>
 
@@ -89,7 +89,7 @@
     <string name="button_stop">Peata</string>
     <string name="button_resume">Jätka</string>
 
-    <!-- FadRec Screen Recording Strings -->
+    <!-- ScreenRec Screen Recording Strings -->
     <string name="fadrec_start_screen_recording">Alusta ekraani salvestamist</string>
     <string name="fadrec_stop_screen_recording">Peata ekraani salvestamine</string>
     <string name="fadrec_pause_screen_recording">Ekraani salvestamise paus</string>
@@ -126,14 +126,14 @@
     <string name="fadrec_ready_to_record">Valmis ekraani jäädvustamiseks</string>
     <string name="fadrec_ready_to_record_subtitle">Puuduta alustamiseks</string>
     <string name="fadrec_permission_denied">Ekraani salvestamise luba keelatud</string>
-    <string name="fadrec_mode_title">FadRec • Ekraani salvestamine</string>
+    <string name="fadrec_mode_title">ScreenRec • Ekraani salvestamine</string>
     <string name="fadrec_mute_audio">Vaigista salvestuse heli</string>
     <string name="fadrec_unmute_audio">Heli salvestamine sisse</string>
     <string name="fadrec_mic_permission_needed_title">Mikrofoni luba on vajalik</string>
-    <string name="fadrec_mic_permission_needed_message">FadRec ei pääse mikrofonile ligi. Saad salvestada vaigistatult – heli ei salvestata.</string>
+    <string name="fadrec_mic_permission_needed_message">ScreenRec ei pääse mikrofonile ligi. Saad salvestada vaigistatult – heli ei salvestata.</string>
     <string name="fadrec_record_muted">Salvesta vaigistatult</string>
 
-    <!-- FadRec audio source picker -->
+    <!-- ScreenRec audio source picker -->
     <string name="fadrec_audio_source_title">Heliallikas</string>
     <string name="fadrec_audio_source_choose">Vali heliallikas</string>
 
@@ -203,11 +203,11 @@
     <string name="home_elapsed_font_doto">Doto</string>
     <string name="home_elapsed_font_doto_desc">Kasutab Doto fonti digitaalse taimeri eristuvama välimuse jaoks</string>
     <string name="home_elapsed_flag_option">Lipu aktsent</string>
-    <string name="home_elapsed_flag_option_desc">Kuva või peida FadSec Labi lipu aktsent taimeri taga</string>
-    <string name="home_elapsed_flag_helper">Vali, kas FadSec Labi lipu aktsent kuvatakse kulunud taimeri taga.</string>
-    <string name="home_elapsed_flag_show">Kuva FadSec Labi lipp (vaikimisi)</string>
+    <string name="home_elapsed_flag_option_desc">Kuva või peida CyberShadowPK Labi lipu aktsent taimeri taga</string>
+    <string name="home_elapsed_flag_helper">Vali, kas CyberShadowPK Labi lipu aktsent kuvatakse kulunud taimeri taga.</string>
+    <string name="home_elapsed_flag_show">Kuva CyberShadowPK Labi lipp (vaikimisi)</string>
     <string name="home_elapsed_flag_show_desc">Kuva bränditud lipu aktsent taimeri taga</string>
-    <string name="home_elapsed_flag_hide">Peida FadSec Labi lipp</string>
+    <string name="home_elapsed_flag_hide">Peida CyberShadowPK Labi lipp</string>
     <string name="home_elapsed_flag_hide_desc">Hoia kulunud taimeri ala puhtana ilma lipu aktsendita</string>
     <string name="home_elapsed_background_option">Taust</string>
     <string name="home_elapsed_background_option_desc">Vali, kas kulunud aeg asub mustal, valgel või läbipaistval kaardil</string>
@@ -275,14 +275,14 @@
     <string name="front">Ees</string>
     <string name="video_menu_del">Kustuta</string>
     <string name="video_menu_save">Salvesta galeriisse</string>
-    <string name="video_menu_save_helper_downloads_fadcam">Video salvestatakse aadressile Downloads/FadCam</string>
+    <string name="video_menu_save_helper_downloads_fadcam">Video salvestatakse aadressile Downloads/ShahidCam</string>
     <string name="video_menu_save_copy_or_move_title">Salvesta galeriisse</string>
     <string name="video_menu_save_copy">Kopeeri galeriisse</string>
-    <string name="video_menu_save_copy_desc">Loo koopia aadressile Downloads/FadCam (algne fail säilitatakse)</string>
+    <string name="video_menu_save_copy_desc">Loo koopia aadressile Downloads/ShahidCam (algne fail säilitatakse)</string>
     <string name="video_menu_save_move">Teisalda galeriisse</string>
-    <string name="video_menu_save_move_desc">Teisalda fail aadressile Downloads/FadCam (säästab salvestusruumi)</string>
+    <string name="video_menu_save_move_desc">Teisalda fail aadressile Downloads/ShahidCam (säästab salvestusruumi)</string>
     <string name="video_menu_save_longpress_helper">Vajuta pikalt \"Salvesta galeriisse\", et valida kopeerimise ja teisaldamise vahel</string>
-    <string name="watch_video_saved_toast">Salvestatud aadressile Downloads/FadCam</string>
+    <string name="watch_video_saved_toast">Salvestatud aadressile Downloads/ShahidCam</string>
     <string name="watch_delete_confirm_title">Teisalda prügikasti?</string>
     <string name="watch_delete_confirm_msg">\"%s\" teisaldatakse prügikasti.</string>
     <string name="watch_delete_confirm_action">Teisalda prügikasti</string>
@@ -414,22 +414,22 @@
     <string name="media_type_photo">Foto</string>
     <string name="media_type_photo_back">Taga</string>
     <string name="media_type_photo_selfie">Selfie</string>
-    <string name="media_type_photo_fadrec">FadRec</string>
+    <string name="media_type_photo_fadrec">ScreenRec</string>
     <string name="photo_capture_saved">Foto salvestatud</string>
     <string name="photo_capture_failed">Foto jäädvustamine nurjus</string>
     <string name="photo_capture_preview_unavailable">Eelvaade ei ole saadaval</string>
-    <string name="video_menu_upload_faddrive">Laadi üles FadDrive\'i</string>
+    <string name="video_menu_upload_faddrive">Laadi üles Drive\'i</string>
     <string name="toast_no_youtube_app">YouTube\'i rakendust ei leitud</string>
     <string name="toast_no_drive_app">Google Drive\'i rakendust ei leitud</string>
     <string name="records_title">Salvestised</string>
     <string name="records_filter_all">Kõik</string>
     <string name="mode_all">Kõik</string>
-    <string name="records_filter_camera">FadCam</string>
+    <string name="records_filter_camera">ShahidCam</string>
     <string name="records_filter_dual">Duaal</string>
-    <string name="records_filter_screen">FadRec</string>
-    <string name="records_filter_faditor">Faditor</string>
+    <string name="records_filter_screen">ScreenRec</string>
+    <string name="records_filter_faditor">ShahidEditor</string>
     <string name="records_filter_stream">Voogedastus</string>
-    <string name="records_filter_shot">FadShot</string>
+    <string name="records_filter_shot">ShahidShot</string>
     <string name="records_filter_camera_all">Kõik</string>
     <string name="records_filter_camera_back">Taga</string>
     <string name="records_filter_camera_front">Ees</string>
@@ -441,28 +441,28 @@
     <string name="records_filter_miniapps_all">Kõik</string>
     <string name="records_filter_shot_back">Taga</string>
     <string name="records_filter_shot_selfie">Selfie</string>
-    <string name="records_filter_shot_fadrec">FadRec</string>
+    <string name="records_filter_shot_fadrec">ScreenRec</string>
     <string name="records_filter_checklist_desc">Lülita valikurežiimi</string>
     <string name="records_filter_helper_camera_all">Kaamerasalvestised (Taga, Ees, Duaal)</string>
     <string name="records_filter_helper_camera_back">Jäädvustatud tagakaameraga</string>
     <string name="records_filter_helper_camera_front">Jäädvustatud esikaameraga (selfie)</string>
     <string name="records_filter_helper_camera_dual">Jäädvustatud duaalkaamera režiimis</string>
     <string name="records_filter_helper_dual">Duaalkaamera salvestised</string>
-    <string name="records_filter_helper_screen">Ekraani salvestised (FadRec)</string>
-    <string name="records_filter_helper_faditor">Muudetud/eksporditud videod (Faditor)</string>
-    <string name="records_filter_helper_faditor_all">Kõik Faditori väljundid ja seotud failid.</string>
+    <string name="records_filter_helper_screen">Ekraani salvestised (ScreenRec)</string>
+    <string name="records_filter_helper_faditor">Muudetud/eksporditud videod (ShahidEditor)</string>
+    <string name="records_filter_helper_faditor_all">Kõik ShahidEditori väljundid ja seotud failid.</string>
     <string name="records_filter_helper_faditor_converted">Teisendatud killustatud MP4 standardseks otsitavaks MP4-ks välistele mängijatele.</string>
     <string name="records_filter_helper_faditor_merge">Ühendatud mitu klippi üheks väljundvideoks.</string>
     <string name="records_filter_helper_stream">Salvestatud voogedastuse salvestised</string>
     <string name="records_filter_helper_shot_all">Jäädvustatud fotod ja ekraanipildid</string>
     <string name="records_filter_helper_shot_back">Jäädvustatud fotod tagakaameraga</string>
     <string name="records_filter_helper_shot_selfie">Jäädvustatud fotod esikaameraga (selfie)</string>
-    <string name="records_filter_helper_shot_fadrec">Jäädvustatud ekraanipildid (FadRec)</string>
+    <string name="records_filter_helper_shot_fadrec">Jäädvustatud ekraanipildid (ScreenRec)</string>
     <string name="records_location_format">Asukoht: %1$s/%2$s</string>
     <string name="records_batch_select_all">Vali kõik</string>
     <string name="records_batch_deselect_all">Tühista kõik valikud</string>
     <string name="records_batch_save">Salvesta galeriisse</string>
-    <string name="records_batch_faditor">Faditori automatiseerimised</string>
+    <string name="records_batch_faditor">ShahidEditori automatiseerimised</string>
     <string name="records_batch_delete">Kustuta</string>
     <string name="records_batch_coming_soon">See hulgi tegevus lisatakse järgmisena.</string>
     <string name="records_batch_select_items_first">Vali esmalt üks või enam videot.</string>
@@ -470,7 +470,7 @@
     <string name="records_batch_fab_label">Hulk</string>
     <string name="records_batch_select_all_desc">Vali või tühista kõik videod praeguses filtris.</string>
     <string name="records_batch_save_desc">Kopeeri, teisalda või ekspordi valitud videod teise kausta.</string>
-    <string name="records_batch_faditor_desc">Käivita tausta automatiseerimised ilma Faditori vahekaarti avamata.</string>
+    <string name="records_batch_faditor_desc">Käivita tausta automatiseerimised ilma ShahidEditori vahekaarti avamata.</string>
     <string name="records_batch_delete_desc">Teisalda valitud videod prügikasti.</string>
     <string name="records_batch_save_queued">%1$d salvestustöö(d) lisatud järjekorda.</string>
     <string name="records_batch_faditor_first_only">Avatud esimene video. %1$d valitud; mitme redigeerimise järjekord tuleb järgmisena.</string>
@@ -481,7 +481,7 @@
     <string name="records_batch_custom_export_started">Ekspordin %1$d videot valitud kausta…</string>
     <string name="records_batch_custom_export_invalid_folder">Valitud kausta ei saa kirjutada.</string>
     <string name="records_batch_custom_export_done">Eksport lõpetatud. Õnnestus: %1$d • Nurjus: %2$d</string>
-    <string name="records_batch_faditor_sheet_title">Hulgi Faditori tegevused</string>
+    <string name="records_batch_faditor_sheet_title">Hulgi ShahidEditori tegevused</string>
     <string name="records_batch_faditor_export_standard">Ekspordi standardseks MP4-ks</string>
     <string name="records_batch_faditor_export_standard_desc">Teisendab killustatud MP4 otsitavaks standardseks MP4-ks välistele mängijatele.</string>
     <string name="records_batch_faditor_merge">Ühenda valitud videod</string>
@@ -489,7 +489,7 @@
     <string name="records_batch_faditor_queued">%1$d hulgi elementi järjekorda pandud taustal.</string>
     <string name="records_batch_completed">Hulgitegevus lõpetatud.</string>
     <string name="records_batch_notif_channel_name">Hulgi meedia tegevused</string>
-    <string name="records_batch_notif_channel_desc">Edenemine ja tulemused salvestiste hulgi salvestamise ja Faditori automatiseerimise tööde jaoks.</string>
+    <string name="records_batch_notif_channel_desc">Edenemine ja tulemused salvestiste hulgi salvestamise ja ShahidEditori automatiseerimise tööde jaoks.</string>
     <string name="records_batch_starting">Hulgitegevuse ettevalmistamine…</string>
     <string name="records_batch_progress_item">Töötlen %1$d / %2$d</string>
     <string name="records_batch_progress_counts">Valmis %1$d • Vahele jäetud %2$d • Nurjus %3$d</string>
@@ -502,7 +502,7 @@
     <string name="nav_settings">Seaded</string>
     <string name="nav_about">Teave</string>
     <string name="nav_remote">Kaugjuhtimine</string>
-    <string name="nav_faditor_mini">Faditor</string>
+    <string name="nav_faditor_mini">ShahidEditor</string>
     <string name="nav_lab">Labor</string>
     <string name="button_settings_readme">Loe mind</string>
     <string name="setting_cam_title">Kaamera valik</string>
@@ -591,7 +591,7 @@
     <string name="setting_codec_title">Videokoodek</string>
     <string name="note_codec">Vali koodek\n(vaikimisi: %1$s)\nVihje: H.265 (HEVC) puhul saad kasutada umbes poole väiksemat bitikiirust sama kvaliteedi saavutamiseks kui H.264 puhul. Näide: FHD puhul kasuta 8 Mbps asemel 16 Mbps.</string>
     <string name="setting_watermark">Vesimärk</string>
-    <string name="note_watermark">Vali vesimärgi valik\n(vaikimisi: Ajatempel FadCamiga)</string>
+    <string name="note_watermark">Vali vesimärgi valik\n(vaikimisi: Ajatempel ShahidCamiga)</string>
     <string name="note_watermark_extra">Kiireks salvestamiseks vali \'Vesimärk puudub\'. Soovid vesimärki lisada? See on ootamist väärt, veidi pikem töötlemisaeg!</string>
     <string name="setting_location_title">Asukohaandmed</string>
     <string name="note_location">Lisa asukohaandmed vesimärgile. \nNõuab GPS-i lubamist \n(vaikimisi: Keelatud)</string>
@@ -624,13 +624,13 @@
     </string-array>
     <string-array name="questions_array" tools:ignore="InconsistentArrays">
         <item>TÄHELEPANU</item>
-        <item>Kas FadCam kogub kasutajaandmeid?</item>
-        <item>Kas FadCamis on reklaame?</item>
-        <item>Miks FadCam küsib asukoha juurdepääsu?</item>
+        <item>Kas ShahidCam kogub kasutajaandmeid?</item>
+        <item>Kas ShahidCamis on reklaame?</item>
+        <item>Miks ShahidCam küsib asukoha juurdepääsu?</item>
         <item>Miks on interneti luba vajalik?</item>
         <item>Kas andmeid salvestatakse välistesse serveritesse?</item>
         <item>Mis juhtub minu videote pärast salvestamist?</item>
-        <item>Kas FadCam jagab mu andmeid kolmandate osapooltega?</item>
+        <item>Kas ShahidCam jagab mu andmeid kolmandate osapooltega?</item>
         <item></item>
         <item></item>
         <item>Üldine</item>
@@ -642,15 +642,15 @@
         <item></item>
     </string-array>
     <string-array name="answers_array" tools:ignore="InconsistentArrays">
-        <item>FadCam ei mõista heaks ega toeta selle tarkvara ebaeetilist või ebaseaduslikku kasutamist. Väärkasutus, nagu loata jälgimine või privaatsuse riivamine, on rangelt vastu meie juhistele. Autor ei vastuta rakenduse võimaliku väärkasutuse eest.
+        <item>ShahidCam ei mõista heaks ega toeta selle tarkvara ebaeetilist või ebaseaduslikku kasutamist. Väärkasutus, nagu loata jälgimine või privaatsuse riivamine, on rangelt vastu meie juhistele. Autor ei vastuta rakenduse võimaliku väärkasutuse eest.
         </item>
-        <item>Ei, FadCam ei kogu ühtegi kasutajaandmeid.</item>
-        <item>Ei, FadCam on täiesti reklaamivaba.</item>
+        <item>Ei, ShahidCam ei kogu ühtegi kasutajaandmeid.</item>
+        <item>Ei, ShahidCam on täiesti reklaamivaba.</item>
         <item>Asukoha info lisamiseks vesimärkidele.</item>
         <item>Automaatse uuenduste kontrollimise jaoks.</item>
         <item>Ei, kõik andmed salvestatakse sinu seadmesse.</item>
         <item>Sinu videod salvestatakse kohalikult sinu seadmesse.</item>
-        <item>Ei, FadCam ei jaga ega kogu ühtegi andmeid, isegi mitte kokkujooksmise logisid.</item>
+        <item>Ei, ShahidCam ei jaga ega kogu ühtegi andmeid, isegi mitte kokkujooksmise logisid.</item>
         <item></item>
         <item></item>
         <item></item>
@@ -662,7 +662,7 @@
         <item>Kontrolli ametlikku GitHubi hoidlat uuenduste jaoks.</item>
         <item></item>
     </string-array>
-    <string name="dialog_welcome_title">Tere tulemast FadCam!</string>
+    <string name="dialog_welcome_title">Tere tulemast ShahidCam!</string>
     <string name="note_from_developer_title">Märge arendajalt</string>
     <string name="note_from_developer_subtitle">README, lingid ja uuendused</string>
     <string name="note_under_dev">Tähtis: See rakendus on hetkel arendamisel. Uusi funktsioone lisatakse regulaarselt.</string>
@@ -671,9 +671,9 @@
     <string name="button_readme_github">GitHubi hoidla</string>
     <string name="community_title">Liitu meie kogukonnaga:</string>
     <string name="discord_title">Discordi server</string>
-    <string name="thankyou_msg">Täname FadCam\'i kasutamast!</string>
+    <string name="thankyou_msg">Täname ShahidCam\'i kasutamast!</string>
     <string name="settings_title">Seaded</string>
-    <string name="array_watermark_time_fadcam">Aeg FadCamiga</string>
+    <string name="array_watermark_time_fadcam">Aeg ShahidCamiga</string>
     <string name="array_watermark_timeonly">Ajatempel</string>
     <string name="array_watermark_nomark">Vesimärk puudub</string>
     <string name="watermark_preview_funny">Tõsiselt? :( \n    ＞﹏＜</string>
@@ -686,7 +686,7 @@
     <string name="quick_speed_option_2">2x</string>
     <string name="quick_speed_option_2_5">2.5x</string>
     <string name="quick_speed_option_custom">Kohandatud</string>
-    <string name="toast_video_saved">Video salvestatud FadCam kausta Allalaadimistes</string>
+    <string name="toast_video_saved">Video salvestatud ShahidCam kausta Allalaadimistes</string>
     <string name="toast_video_save_fail">Video salvestamine nurjus</string>
     <string name="rename_video_title">Nimeta video ümber</string>
     <string name="rename_video_hint">Sisesta uus nimi</string>
@@ -857,18 +857,18 @@
     <string name="torch_both">Mõlemad taskulambid</string>
     <string name="setting_debug_title">Silumislogi</string>
     <string name="note_debug">Luba silumislogifailide genereerimine \n(vaikimisi: keelatud)</string>
-    <string name="note_debug_detailed">Kui lubatud, kirjutab FadCam silumislogi HTML-faili (FADCAM_debug.html) avalikku Allalaadimised/FadCam/ kausta. Jaga seda faili probleemidest teatamisel. Lülita välja, et lõpetada tulevased kirjutamised.\nMärkus: Silumislogi võib salvestamise ajal lisada jõudluskulu — hoia see välja, kui sa ei tõrkeotsi.</string>
-    <string name="note_debug_extra">Kui lubatud, luuakse silumislogifail Allalaadimised/FadCam kausta. See aitab diagnoosida rakenduse probleeme.</string>
+    <string name="note_debug_detailed">Kui lubatud, kirjutab ShahidCam silumislogi HTML-faili (FADCAM_debug.html) avalikku Allalaadimised/ShahidCam/ kausta. Jaga seda faili probleemidest teatamisel. Lülita välja, et lõpetada tulevased kirjutamised.\nMärkus: Silumislogi võib salvestamise ajal lisada jõudluskulu — hoia see välja, kui sa ei tõrkeotsi.</string>
+    <string name="note_debug_extra">Kui lubatud, luuakse silumislogifail Allalaadimised/ShahidCam kausta. See aitab diagnoosida rakenduse probleeme.</string>
     <string name="watermark_preview_heading">Eelvaade</string>
     <string name="watermark_options_heading">Valikud</string>
     <string name="watermark_style_row_title">Vesimärgi stiil</string>
-    <string name="watermark_preview_sample_fadcam">Jäädvustatud FadCamiga - %1$s</string>
+    <string name="watermark_preview_sample_fadcam">Jäädvustatud ShahidCamiga - %1$s</string>
     <string name="watermark_preview_sample_timeonly">%1$s</string>
-    <string name="watermark_style_time_fadcam_label">Aeg FadCamiga</string>
+    <string name="watermark_style_time_fadcam_label">Aeg ShahidCamiga</string>
     <string name="watermark_style_timeonly_label">Ajatempel</string>
     <string name="watermark_style_badge_label">Ainult brändisilt</string>
     <string name="watermark_style_none_label">Vesimärk puudub</string>
-    <string name="helper_watermark_preview">Nii kuvatakse vesimärk salvestatud video vasakus ülanurgas.\nLõbus fakt: 10/juuli/2024 16:47 on aeg, mil FadCam v1.0 esmakordselt välja anti.</string>
+    <string name="helper_watermark_preview">Nii kuvatakse vesimärk salvestatud video vasakus ülanurgas.\nLõbus fakt: 10/juuli/2024 16:47 on aeg, mil ShahidCam v1.0 esmakordselt välja anti.</string>
     <string name="helper_location_watermark_option">Lülita seadme asukoha lisamine ülekattena. Vajab asukoha luba.</string>
     <string name="location_format_title">Asukoha vorming</string>
     <string name="location_format_coordinates">Ainult koordinaadid</string>
@@ -894,7 +894,7 @@
     <string name="widgets_pin_unsupported">Vidinate kinnitamine ei ole sinu käivitaja poolt toetatud.</string>
     <string name="widget_clock_title">Kella vidin</string>
     <string name="widget_label_clock">Kell</string>
-    <string name="widgets_pin_fallback">Kui viipa ei ilmu, vajuta pikalt avalehte, ava Vidinad ja lohista FadCam\'i kella vidin.</string>
+    <string name="widgets_pin_fallback">Kui viipa ei ilmu, vajuta pikalt avalehte, ava Vidinad ja lohista ShahidCam\'i kella vidin.</string>
     <string name="widget_customize_title">Kohanda kella vidinat</string>
     <string name="widget_customize_description">Kohanda, kuidas sinu kella vidin aega ja kuupäeva kuvab</string>
     <string name="widget_time_format_title">Aja vorming</string>
@@ -903,7 +903,7 @@
     <string name="widget_black_background_title">Must taust</string>
     <string name="widget_arabic_date_title">Araabia kuupäev</string>
     <string name="widget_arabic_date_format_title">Araabia kuupäeva vorming</string>
-    <string name="widget_branding_title">FadSecLab bränding</string>
+    <string name="widget_branding_title">CyberShadowPKLab bränding</string>
     <string name="widget_time_format_12h">12-tunnine (15:30)</string>
     <string name="widget_time_format_24h">24-tunnine (15:30)</string>
     <string name="widget_option_enabled">Lubatud</string>
@@ -1023,9 +1023,9 @@
     <string name="shortcut_purpose_stop">See otsetee peatab praeguse salvestamise.</string>
     <string name="shortcut_purpose_toggle">Üks dünaamiline otsetee, mis alustab või peatab salvestuse vaikekaameraga — käsitsi juhtimiseks kasuta eraldi Salvesta ja Peata otseteid.</string>
     <string name="shortcut_purpose_torch">See otsetee lülitab taskulampi.</string>
-    <string name="shortcut_purpose_photo">See otsetee jäädvustab tagakaamera foto ja salvestab selle FadCam/FadShot asukohta.</string>
-    <string name="shortcut_purpose_photo_front">See otsetee jäädvustab esikaamera foto ja salvestab selle FadCam/FadShot asukohta.</string>
-    <string name="shortcut_purpose_screenshot">See otsetee jäädvustab ekraanipildi ja salvestab selle FadCam/FadShot asukohta (luba juurdepääsetavuse luba seadetes > Privaatsus > Juurdepääsetavus).</string>
+    <string name="shortcut_purpose_photo">See otsetee jäädvustab tagakaamera foto ja salvestab selle ShahidCam/ShahidShot asukohta.</string>
+    <string name="shortcut_purpose_photo_front">See otsetee jäädvustab esikaamera foto ja salvestab selle ShahidCam/ShahidShot asukohta.</string>
+    <string name="shortcut_purpose_screenshot">See otsetee jäädvustab ekraanipildi ja salvestab selle ShahidCam/ShahidShot asukohta (luba juurdepääsetavuse luba seadetes > Privaatsus > Juurdepääsetavus).</string>
     <string name="widget_customize_action_label">Kohanda</string>
     <string name="widget_customize_action_subtitle">Aeg, kuupäev, teema valikud</string>
     <string-array name="torch_error_messages">
@@ -1051,16 +1051,16 @@
     <string name="stop_recording">Peata</string>
     <string name="shortcut_take_photo">Foto</string>
     <string name="shortcut_take_photo_front">Selfie</string>
-    <string name="shortcut_take_screenshot">FadRec</string>
+    <string name="shortcut_take_screenshot">ScreenRec</string>
     <string name="screenshot_capture_saved">Ekraanipilt salvestatud</string>
     <string name="screenshot_capture_failed">Ekraanipildi jäädvustamine nurjus</string>
     <string name="screenshot_capture_system_saved">Süsteem jäädvustas ekraanipildi. Salvestatud süsteemi ekraanipiltidesse.</string>
-    <string name="screenshot_accessibility_enable_needed">Luba \"FadRec ekraanipilt\" juurdepääsetavuses, et kasutada seda otseteed ilma salvestusviipata.</string>
-    <string name="screenshot_accessibility_service_desc">Jäädvustab ekraanipildi FadRec otsetee jaoks ja salvestab selle FadCam/FadShot kausta.</string>
+    <string name="screenshot_accessibility_enable_needed">Luba \"ScreenRec ekraanipilt\" juurdepääsetavuses, et kasutada seda otseteed ilma salvestusviipata.</string>
+    <string name="screenshot_accessibility_service_desc">Jäädvustab ekraanipildi ScreenRec otsetee jaoks ja salvestab selle ShahidCam/ShahidShot kausta.</string>
     <string name="shortcuts_video_category">Video salvestamine</string>
     <string name="shortcuts_picture_category">Pilt</string>
     <string name="preview_quick_actions_title">Eelvaate kiirtoimingud</string>
-    <string name="preview_quick_actions_sub">Kuva FadShot ja täisekraani ikoonid isegi siis, kui salvestamine on ootel.</string>
+    <string name="preview_quick_actions_sub">Kuva ShahidShot ja täisekraani ikoonid isegi siis, kui salvestamine on ootel.</string>
     <string name="grid_lines_title">Ruudustiku jooned</string>
     <string name="home_icon_picker_title">Avakuva ikoon</string>
     <string name="home_icon_home">Avakuva</string>
@@ -1119,14 +1119,14 @@
     <string name="remote_access_title">Kaugjuhtimine</string>
     <string name="remote_toast_coming_soon">Tulekul! In Sha Allah</string>
     <string name="coming_soon_toast">Tulekul! In Sha Allah</string>
-    <string name="remote_coming_soon">FadCam\'i kaugjuhtimine on tulekul.</string>
-    <string name="remote_feature_description">Paari FadCam kliendid QR-koodi abil turvaliseks kohaliku võrgu kaugjuhtimiseks: alusta/peata salvestamist, eelvaade, suum, vaheta kaamerat ja palju muud — kõik otspunktkrüpteerimisega.</string>
-    <string name="faditor_mini_title">Faditor Mini</string>
+    <string name="remote_coming_soon">ShahidCam\'i kaugjuhtimine on tulekul.</string>
+    <string name="remote_feature_description">Paari ShahidCam kliendid QR-koodi abil turvaliseks kohaliku võrgu kaugjuhtimiseks: alusta/peata salvestamist, eelvaade, suum, vaheta kaamerat ja palju muud — kõik otspunktkrüpteerimisega.</string>
+    <string name="faditor_mini_title">ShahidEditor Mini</string>
     <string name="faditor_mini_coming_soon">Tulekul — kergekaaluline redaktor</string>
     <string name="faditor_mini_subtitle">Lõika ja ekspordi videoid täpsusega</string>
-    <string name="faditor_mini_toast">Faditor Mini — tulekul</string>
+    <string name="faditor_mini_toast">ShahidEditor Mini — tulekul</string>
     <string name="faditor_select_video">Vali video</string>
-    <string name="faditor_editor_title">Faditor Mini</string>
+    <string name="faditor_editor_title">ShahidEditor Mini</string>
     <string name="faditor_close">Sulge redaktor</string>
     <string name="faditor_undo">Võta tagasi</string>
     <string name="faditor_redo">Tee uuesti</string>
@@ -1202,7 +1202,7 @@
     <string name="faditor_export_confirm_action">Ekspordi nüüd</string>
     <string name="faditor_export_confirm_subtitle">Eksportimine jätkub taustal</string>
     <string name="faditor_export_confirm_helper">%1$s • %2$d klippi%3$s\nEksportimine töötab taustateenusena — saad rakenduse sulgeda ja see jätkab eksportimist.</string>
-    <string name="faditor_export_notif_channel">Faditori eksport</string>
+    <string name="faditor_export_notif_channel">ShahidEditori eksport</string>
     <string name="faditor_export_notif_channel_desc">Teavitused käimasolevate video eksportimiste kohta</string>
     <string name="faditor_export_notif_title">Video eksportimine…</string>
     <string name="faditor_export_notif_error_title">Eksportimine nurjus</string>
@@ -1239,31 +1239,31 @@
     <string name="faditor_delete_projects_title">Kustutada projektid?</string>
     <string name="faditor_delete_projects_message">Kustutada %1$d projekti(d)? Seda ei saa tagasi pöörata.</string>
     <string name="faditor_delete_confirm">Kustuta</string>
-    <string name="faditor_version_info">Faditor Mini · 1. etapp · Lõikamine + eksport</string>
+    <string name="faditor_version_info">ShahidEditor Mini · 1. etapp · Lõikamine + eksport</string>
     <string name="faditor_empty_title">Projekte pole veel</string>
     <string name="faditor_empty_desc">Puuduta \"Alusta uut projekti\", et valida video ja alustada redigeerimist</string>
-    <string name="faditor_info_title">Faditor Mini teave</string>
+    <string name="faditor_info_title">ShahidEditor Mini teave</string>
     <string name="faditor_info_subtitle">Kõik, mida pead teadma sisseehitatud redaktori kohta</string>
     <string name="faditor_info_how_title">Kuidas see töötab</string>
-    <string name="faditor_info_how_desc">Vali mis tahes video oma seadmest või FadCam\'i salvestistest. Lõika seda kaadrihaaval ajajoonelise abil, seejärel ekspordi. Kogu töötlemine toimub kohapeal sinu seadmes — midagi ei laadata üles.\n\nSinu redigeerimise edenemine salvestatakse automaatselt iga paari sekundi tagant ja iga kord, kui redaktorist lahkud, nii et töö ei kaoks, kui rakendus ootamatult sulgub.</string>
+    <string name="faditor_info_how_desc">Vali mis tahes video oma seadmest või ShahidCam\'i salvestistest. Lõika seda kaadrihaaval ajajoonelise abil, seejärel ekspordi. Kogu töötlemine toimub kohapeal sinu seadmes — midagi ei laadata üles.\n\nSinu redigeerimise edenemine salvestatakse automaatselt iga paari sekundi tagant ja iga kord, kui redaktorist lahkud, nii et töö ei kaoks, kui rakendus ootamatult sulgub.</string>
     <string name="faditor_info_convert_title">Tark teisendamine</string>
-    <string name="faditor_info_convert_desc">FadCam salvestab kokkujooksmiskindlas vormingus, mida kutsutakse killustatud MP4-ks (fMP4). Erinevalt standardsest MP4-st, millel on üks lõplik konteiner, kirjutab fMP4 video väikestesse sõltumatutesse tükkidesse. See tähendab, et sinu salvestised jäävad puutumata ka siis, kui rakendus jookseb kokku või salvestamine järsult peatub.\n\nKuid välised videomängijad, galeriirakendused ja failihaldurid ei saa neid faile kerida, liikuda ega kuvada õiget kestust. See ei ole viga — see on tahtlik disainikompromiss töökindluse nimel.\n\nKui plaanid salvestada oma videoid väljapoole FadCam\'i — Google Drive\'i, arvutisse või mujale — pead need esmalt teisendama. Vastasel juhul on failid tavapäraseks esitamiseks kasutamatud.\n\nTeisendamiseks: ava video siin Faditor Mini-s ja puuduta Ekspordi. Teisendatud standardne MP4 ilmub sinu Salvestiste vahekaarti, valmis galeriisse salvestamiseks või jagamiseks. Protsess on kohene ja kadudeta — ümberkodeerimist ega kvaliteedikadu pole.</string>
+    <string name="faditor_info_convert_desc">ShahidCam salvestab kokkujooksmiskindlas vormingus, mida kutsutakse killustatud MP4-ks (fMP4). Erinevalt standardsest MP4-st, millel on üks lõplik konteiner, kirjutab fMP4 video väikestesse sõltumatutesse tükkidesse. See tähendab, et sinu salvestised jäävad puutumata ka siis, kui rakendus jookseb kokku või salvestamine järsult peatub.\n\nKuid välised videomängijad, galeriirakendused ja failihaldurid ei saa neid faile kerida, liikuda ega kuvada õiget kestust. See ei ole viga — see on tahtlik disainikompromiss töökindluse nimel.\n\nKui plaanid salvestada oma videoid väljapoole ShahidCam\'i — Google Drive\'i, arvutisse või mujale — pead need esmalt teisendama. Vastasel juhul on failid tavapäraseks esitamiseks kasutamatud.\n\nTeisendamiseks: ava video siin ShahidEditor Mini-s ja puuduta Ekspordi. Teisendatud standardne MP4 ilmub sinu Salvestiste vahekaarti, valmis galeriisse salvestamiseks või jagamiseks. Protsess on kohene ja kadudeta — ümberkodeerimist ega kvaliteedikadu pole.</string>
     <string name="faditor_info_export_title">Eksporditud failid</string>
-    <string name="faditor_info_export_desc">Eksporditud videod salvestatakse sinu aktiivsesse salvestusasukohta (sama, mis seadetes konfigureeritud) eesliitega \"Faditor_\" ja ajatempliga. Need ilmuvad Salvestiste vahekaarti koos algsete salvestistega.</string>
+    <string name="faditor_info_export_desc">Eksporditud videod salvestatakse sinu aktiivsesse salvestusasukohta (sama, mis seadetes konfigureeritud) eesliitega \"ShahidEditor_\" ja ajatempliga. Need ilmuvad Salvestiste vahekaarti koos algsete salvestistega.</string>
     <string name="faditor_info_temp_title">Ajutised failid ja vahemälu</string>
-    <string name="faditor_info_temp_desc">Kui laadid fMP4 video redigeerimiseks, tuvastab Faditor, kas fail vajab \"remuximist\" — kiiret teisendamist, mis lisab kerimismarkerid ilma ümberkodeerimata. Remuxitud failid vahemälusse salvestatakse sinu seadmesse, et neid saaks uuesti kasutada, kui redigeerid sama videot, säästes aega ja töötlemist.\n\nSaad näha iga projekti vahemälu suurust, mis on loetletud muutmiskuupäeva kõrval. Kui sinu seadme mäluruum on otsas, saad kustutada kasutamata projekte, et tühjendada nende vahemälusse salvestatud remuxitud failid.\n\nNeed ajutised vahemälu failid puhastatakse automaatselt, kui kustutad projekti sellelt vahekaardilt.</string>
+    <string name="faditor_info_temp_desc">Kui laadid fMP4 video redigeerimiseks, tuvastab ShahidEditor, kas fail vajab \"remuximist\" — kiiret teisendamist, mis lisab kerimismarkerid ilma ümberkodeerimata. Remuxitud failid vahemälusse salvestatakse sinu seadmesse, et neid saaks uuesti kasutada, kui redigeerid sama videot, säästes aega ja töötlemist.\n\nSaad näha iga projekti vahemälu suurust, mis on loetletud muutmiskuupäeva kõrval. Kui sinu seadme mäluruum on otsas, saad kustutada kasutamata projekte, et tühjendada nende vahemälusse salvestatud remuxitud failid.\n\nNeed ajutised vahemälu failid puhastatakse automaatselt, kui kustutad projekti sellelt vahekaardilt.</string>
     <string name="faditor_info_projects_title">Hiljutised projektid</string>
     <string name="faditor_info_projects_desc">Kõik sinu redigeerimissessioonid on kuvatud kiireks juurdepääsuks. Iga projekt salvestatakse väikese JSON-failina sinu seadmesse, mis sisaldab video URI-d, lõikepunkte ja ajatempleid — videote koopiaid ei tehta. Projektid salvestatakse automaatselt iga paari sekundi tagant, nii et sinu edenemine ei kaotu kunagi.\n\nSaad kustutada projekte, mida enam ei vaja, kasutades mitmevaliku märkeruutu. Projekti kustutamine eemaldab ainult redigeerimissessiooni andmed; sinu originaalsed videofailid jäävad puutumata.</string>
     <string name="faditor_your_recordings">Sinu salvestised</string>
     <string name="faditor_browse_device">Sirvi seadet</string>
-    <string name="faditor_no_recordings">Salvestisi ei leitud. Alusta FadCam\'iga salvestamist, et oma videoid siin näha.</string>
+    <string name="faditor_no_recordings">Salvestisi ei leitud. Alusta ShahidCam\'iga salvestamist, et oma videoid siin näha.</string>
     <string name="faditor_video_count">%1$d videot</string>
-    <string name="faditor_fadcam_source">FadCam</string>
-    <string name="faditor_fadrec_source">FadRec</string>
+    <string name="faditor_fadcam_source">ShahidCam</string>
+    <string name="faditor_fadrec_source">ScreenRec</string>
     <string name="faditor_browse_device_desc">Vali mis tahes video oma seadmest</string>
     <string name="faditor_scanning">Salvestiste skannimine…</string>
-    <string name="faditor_source_chooser_desc">Vali video galeriist või vali FadCam\'i salvestistest</string>
-    <string name="faditor_recordings_helper">FadCam\'iga salvestatud videod sinu aktiivsest salvestusasukohast</string>
+    <string name="faditor_source_chooser_desc">Vali video galeriist või vali ShahidCam\'i salvestistest</string>
+    <string name="faditor_recordings_helper">ShahidCam\'iga salvestatud videod sinu aktiivsest salvestusasukohast</string>
     <string name="setting_audio_title">Heli salvestamine</string>
     <string name="note_audio">Luba või keela video heli salvestamine.\n(vaikimisi: lubatud)</string>
     <string name="button_audio_settings">Heliseaded</string>
@@ -1358,7 +1358,7 @@ Soovitatav: 192000 bps, 48000 Hz enamikele kasutajatele.</string>
     <string name="universal_delete">Kustuta</string>
     <string name="trash_no_items_selected_toast">Ühtegi elementi pole valitud.</string>
     <string name="trash_dialog_restore_title">Taastada valitud?</string>
-    <string name="trash_dialog_restore_message">Taastada %1$d elementi avalikku Allalaadimised/FadCam/ kausta?</string>
+    <string name="trash_dialog_restore_message">Taastada %1$d elementi avalikku Allalaadimised/ShahidCam/ kausta?</string>
     <string name="trash_restore_success_toast">%1$d elementi taastatud.</string>
     <string name="trash_restore_fail_toast">Viga elementide taastamisel. Mõnda faili ei pruugitud taastada või galerii ei pruugi olla uuendatud. Kontrolli rakenduse mälulubasid.</string>
     <string name="trash_restore_cancelled_toast">Taastamine tühistatud.</string>
@@ -1376,7 +1376,7 @@ Soovitatav: 192000 bps, 48000 Hz enamikele kasutajatele.</string>
     <string name="records_search_hint">Otsi salvestisi…</string>
     <string name="saf_permission_missing_dialog_instructions">SAF luba puudub. Palun anna juurdepääs valitud kaustale.</string>
     <string name="saf_permission_missing_dialog_title">SAF luba on vajalik</string>
-    <string name="saf_permission_missing_dialog_message_for_start_recording">Salvestiste salvestamiseks kohandatud asukohta vajab FadCam luba valitud kaustale juurdepääsuks. Palun anna luba, kui seda küsitakse.</string>
+    <string name="saf_permission_missing_dialog_message_for_start_recording">Salvestiste salvestamiseks kohandatud asukohta vajab ShahidCam luba valitud kaustale juurdepääsuks. Palun anna luba, kui seda küsitakse.</string>
     <string name="grant_permission_button">Anna luba</string>
     <plurals name="trash_auto_delete_info_days">
         <item quantity="one">Elemendid kustutatakse automaatselt pärast %1$d päeva.</item>
@@ -1417,7 +1417,7 @@ Soovitatav: 192000 bps, 48000 Hz enamikele kasutajatele.</string>
     <string name="support_ko_fi">Toeta meid Ko-fi-s</string>
     <string name="kofi_description">Kirjeldus määratakse koodis.</string>
     <string name="kofi_button_text">Osta mulle Ko-fi</string>
-    <string name="kofi_footer_text">Tehtud armastusega    FadSec Labis    </string>
+    <string name="kofi_footer_text">Tehtud armastusega    CyberShadowPK Labis    </string>
     <string name="setting_audio_input_source_title">Heli sisendallikas</string>
     <string name="setting_audio_input_source_status_default">Telefoni mikrofon</string>
     <string name="setting_audio_input_source_status_wired">Juhtmega mikrofon</string>
@@ -1430,20 +1430,20 @@ Soovitatav: 192000 bps, 48000 Hz enamikele kasutajatele.</string>
     <string name="choose">Vali</string>
     <string name="audio_input_source_headphones_no_mic">Kõrvaklapid tuvastatud (ilma mikrofonita)</string>
     <string name="setting_onboarding_title">Kuva sissejuhatus</string>
-    <string name="note_onboarding">Luba, et näha rakenduse sissejuhatust ja lubade juhendit järgmisel korral, kui avad FadCam\'i.</string>
+    <string name="note_onboarding">Luba, et näha rakenduse sissejuhatust ja lubade juhendit järgmisel korral, kui avad ShahidCam\'i.</string>
     <string name="choose_language">Vali keel</string>
     <string name="language_change_later_note">Saad seda hiljem seadetes muuta.</string>
     <string name="permissions_required">Load on vajalikud</string>
-    <string name="permissions_description">FadCam vajab juurdepääsu kaamerale, mikrofonile ja mälule, et salvestada ja salvestada videoid.</string>
+    <string name="permissions_description">ShahidCam vajab juurdepääsu kaamerale, mikrofonile ja mälule, et salvestada ja salvestada videoid.</string>
     <string name="grant_permissions">Anna load</string>
     <string name="permissions_note">Jätkamiseks pead andma kõik load.</string>
     <string name="permissions_granted">Kõik load antud!</string>
     <string name="open_settings">Ava seaded</string>
     <string name="disable_battery_optimization">Keela aku optimeerimine</string>
     <string name="onboarding_human_title">Kinnita, et oled inimene</string>
-    <string name="onboarding_human_desc">Hmmmm... olgu. Need reeglid pole läbiräägitavad. Kui sa nendega nõustuda ei saa, palun eemalda FadCam kohe.</string>
-    <string name="onboarding_human_checkbox1">Ma ei kasuta FadCam\'i seaduste rikkumiseks, kellegi privaatsuse riivamiseks ega käitu imelikult. Arendaja ei vastuta, kui ma midagi valesti teen. (See on minu vastutus.)</string>
-    <string name="onboarding_human_checkbox2">Ma juba armastan FadCam\'i enne selle kasutamist. (Pole valikuline)</string>
+    <string name="onboarding_human_desc">Hmmmm... olgu. Need reeglid pole läbiräägitavad. Kui sa nendega nõustuda ei saa, palun eemalda ShahidCam kohe.</string>
+    <string name="onboarding_human_checkbox1">Ma ei kasuta ShahidCam\'i seaduste rikkumiseks, kellegi privaatsuse riivamiseks ega käitu imelikult. Arendaja ei vastuta, kui ma midagi valesti teen. (See on minu vastutus.)</string>
+    <string name="onboarding_human_checkbox2">Ma juba armastan ShahidCam\'i enne selle kasutamist. (Pole valikuline)</string>
     <string name="onboarding_human_checkbox3">Nõustun privaatsuspoliitikaga</string>
     <string name="onboarding_human_button">Lase mind sisse!</string>
     <string name="trash_select_all">Vali kõik</string>
@@ -1472,7 +1472,7 @@ Soovitatav: 192000 bps, 48000 Hz enamikele kasutajatele.</string>
     <string name="applock_verify_to_remove">Kinnita PIN eemaldamiseks</string>
     <string name="applock_verification_canceled">Kinnitamine tühistatud</string>
     <string name="version_format">v%s</string>
-    <string name="edit_with_faditorx">Redigeeri Faditor Mini-ga</string>
+    <string name="edit_with_faditorx">Redigeeri ShahidEditor Mini-ga</string>
     <string name="remote_coming_soon_badge">Tulekul</string>
     <string name="update_sarcastic_heading">📦 Oh vaata, järjekordne uuendus...</string>
     <string name="update_visit_github">Külasta GitHubi</string>
@@ -1494,18 +1494,18 @@ Soovitatav: 192000 bps, 48000 Hz enamikele kasutajatele.</string>
     <string name="eye_color_magenta" translatable="false">Magenta</string>
     <string name="setting_header_logo_title">Päise logo</string>
     <string name="setting_header_logo_desc">Vali päise logo stiil</string>
-    <string name="header_logo_default" translatable="false">FadCam</string>
+    <string name="header_logo_default" translatable="false">ShahidCam</string>
     <string name="header_logo_avatar" translatable="false">Avatar</string>
     <string name="setting_app_icon_desc">Muuda rakenduse käivitaja ikooni ja nime</string>
     <string name="app_icon_dialog_title">Vali rakenduse ikoon</string>
-    <string name="app_icon_default" translatable="false">FadCam</string>
+    <string name="app_icon_default" translatable="false">ShahidCam</string>
     <string name="app_icon_alternative" translatable="false">Camera</string>
     <string name="app_icon_faded" translatable="false">0xFF0000</string>
     <string name="app_icon_palestine" translatable="false">I❤️Palestine</string>
-    <string name="app_icon_pakistan" translatable="false">FadCam</string>
-    <string name="app_icon_fadseclab" translatable="false">FadSec Lab</string>
-    <string name="app_icon_nooristic" translatable="false">FadCam ++</string>
-    <string name="app_icon_bat" translatable="false">FadCam</string>
+    <string name="app_icon_pakistan" translatable="false">ShahidCam</string>
+    <string name="app_icon_fadseclab" translatable="false">CyberShadowPK Lab</string>
+    <string name="app_icon_nooristic" translatable="false">ShahidCam ++</string>
+    <string name="app_icon_bat" translatable="false">ShahidCam</string>
     <string name="app_icon_redbinary" translatable="false">$ ~/r00t</string>
     <string name="app_icon_notes" translatable="false">Notes</string>
     <string name="app_icon_calculator" translatable="false">Calculator</string>
@@ -1519,7 +1519,7 @@ Soovitatav: 192000 bps, 48000 Hz enamikele kasutajatele.</string>
     <string name="app_icon_black_alias_label" translatable="false">\u0020</string>
     <string name="changelog_label">Mis on uut</string>
     <string name="setting_auto_update_check_title">Automaatne uuenduste kontroll</string>
-    <string name="note_auto_update_check">Kui lubatud, kontrollib FadCam uuendusi iga kord, kui rakenduse avad. Lülita välja, et keelata automaatne uuenduste kontrollimisel käivitamisel.\n(vaikimisi: sees)</string>
+    <string name="note_auto_update_check">Kui lubatud, kontrollib ShahidCam uuendusi iga kord, kui rakenduse avad. Lülita välja, et keelata automaatne uuenduste kontrollimisel käivitamisel.\n(vaikimisi: sees)</string>
     <string name="storage_location_title">Salvestusasukoht</string>
     <string name="storage_location_description">Vali, kuhu salvestised salvestatakse.</string>
     <string name="general">Üldine</string>
@@ -1529,7 +1529,7 @@ Soovitatav: 192000 bps, 48000 Hz enamikele kasutajatele.</string>
     <string name="settings_notifications_subtitle">Salvestamine ja eelseadistus</string>
     <string name="settings_security_title">Turvalisus</string>
     <string name="settings_advanced_subtitle">Motion Lab ja jõukasutaja juhtnupud</string>
-    <string name="fadcrypt_title">FadCrypt</string>
+    <string name="fadcrypt_title">Crypt</string>
     <string name="fadcrypt_row_subtitle">Krüpteeri ja kaitse oma salvestisi</string>
     <string name="digital_forensics_title">Digitaalne kohtuekspertiis</string>
     <string name="forensic_intelligence_title">Kohtuekspertiisi analüüs</string>
@@ -1550,7 +1550,7 @@ Soovitatav: 192000 bps, 48000 Hz enamikele kasutajatele.</string>
     <string name="digital_forensics_coming_soon_short">Tulekul</string>
     <string name="digital_forensics_discord_coming_soon_toast">Discordi teavitused lisatakse tulevases uuenduses.</string>
     <string name="digital_forensics_helper">Digitaalsel kohtuekspertiisil on kaks osa: otse-eelvaate ülekate ja salvestatud tõendid. Kui soovid ainult live visuaalseid AI silte, hoia tõendite kogumine väljas. Kui vajad kohtuekspertiisi ajalugu, lülita tõendite kogumine sisse ja vali, mida salvestada.</string>
-    <string name="digital_forensics_enable_helper">Mõtle sellest kui oma targast tõendisensorist. Kui lubatud, hoiab FadCam tuvastatud tegevuste ajajoont, et saad hiljem olulistele hetkedele hüpata.</string>
+    <string name="digital_forensics_enable_helper">Mõtle sellest kui oma targast tõendisensorist. Kui lubatud, hoiab ShahidCam tuvastatud tegevuste ajajoont, et saad hiljem olulistele hetkedele hüpata.</string>
     <string name="digital_forensics_evidence_enable">Luba tõendite kogumine</string>
     <string name="digital_forensics_evidence_helper">Kui lubatud, kirjutatakse tuvastused reaalajas kohtuekspertiisi andmebaasi salvestatud tõendikaadritega. Hoia see väljas, kui soovid ainult otse-eelvaate silte ilma mahu kasvuta.</string>
     <string name="digital_forensics_capture_scope">Tõendite kogumise ulatus</string>
@@ -1697,7 +1697,7 @@ Soovitatav: 192000 bps, 48000 Hz enamikele kasutajatele.</string>
     <string name="storage_location_internal">Sisemine rakenduse mälu (vaikimisi, privaatne)</string>
     <string name="storage_location_custom">Kohandatud asukoht (SD-kaart/muu, galeriis nähtav)</string>
     <string name="storage_location_choose_folder">Vali kaust</string>
-    <string name="storage_location_note">Märkus: Kohandatud asukohtade kasutamine muudab videod teistele rakendustele kättesaadavaks (nt galerii). Sisemälu hoiab need FadCam\'ile privaatsetena.</string>
+    <string name="storage_location_note">Märkus: Kohandatud asukohtade kasutamine muudab videod teistele rakendustele kättesaadavaks (nt galerii). Sisemälu hoiab need ShahidCam\'ile privaatsetena.</string>
     <string name="storage_sheet_title">Salvestusasukoht</string>
     <string name="storage_option_use_internal">Kasuta sisemälu</string>
     <string name="storage_option_switch_internal">Lülitu sisemälule</string>
@@ -1715,7 +1715,7 @@ Soovitatav: 192000 bps, 48000 Hz enamikele kasutajatele.</string>
     <string name="storage_icon_description">Mälu ikoon</string>
     <string name="location_icon_description">Asukoha ikoon</string>
     <string name="location_embedding_icon_description">Asukoha lisamise ikoon</string>
-    <string name="app_icon_minimal" translatable="false">FadCam</string>
+    <string name="app_icon_minimal" translatable="false">ShahidCam</string>
     <string name="onboarding_swipe_instruction">Pühkida paremale jätkamiseks</string>
     <string name="onboarding_select_language">Vali eelistatud rakenduse keel.</string>
     <string name="onboarding_camera">Kaamera</string>
@@ -1797,7 +1797,7 @@ Soovitatav: 192000 bps, 48000 Hz enamikele kasutajatele.</string>
     <string name="universal_stop">Peata</string>
     <string name="notification_settings_saved">Teavituse seaded salvestatud</string>
     <string name="setting_notification_appearance">Teavituse välimus</string>
-    <string name="note_notification_appearance">Kohanda salvestusteavituse välimust\n(vaikimisi: FadCam)</string>
+    <string name="note_notification_appearance">Kohanda salvestusteavituse välimust\n(vaikimisi: ShahidCam)</string>
     <string name="hide_stop_button">Peida peatamisnupp</string>
     <string name="note_hide_stop_button">Peida peatamisnupp teavituses\n(vaikimisi: keelatud)</string>
     <string name="notification_preview">Teavituse eelvaade</string>
@@ -1811,7 +1811,7 @@ Soovitatav: 192000 bps, 48000 Hz enamikele kasutajatele.</string>
     <string name="notification_custom_title_placeholder">Pealkiri (nt Süsteemi uuendus)</string>
     <string name="notification_custom_text_placeholder">Kirjeldus (nt Uuendus pooleli)</string>
     <string-array name="notification_appearance_options">
-        <item>FadCam (vaikimisi)</item>
+        <item>ShahidCam (vaikimisi)</item>
         <item>Süsteemi uuendus</item>
         <item>Allalaadimine</item>
         <item>Sünkroonimine</item>
@@ -1867,7 +1867,7 @@ Soovitatav: 192000 bps, 48000 Hz enamikele kasutajatele.</string>
     <string name="scroll_to_bottom">Keri alla</string>
     <string name="restore_destination_title">Vali taastamise asukoht</string>
     <string name="restore_destination_downloads">Allalaadimiste kaust</string>
-    <string name="restore_destination_downloads_desc">Avalik Allalaadimised/FadCam/ kaust</string>
+    <string name="restore_destination_downloads_desc">Avalik Allalaadimised/ShahidCam/ kaust</string>
     <string name="restore_destination_internal">Sisemälu</string>
     <string name="restore_destination_internal_desc">Rakenduse privaatne mälu</string>
     <string name="restore_destination_original">Algne asukoht</string>
@@ -1892,14 +1892,14 @@ Soovitatav: 192000 bps, 48000 Hz enamikele kasutajatele.</string>
     <string name="manage_projects">Halda projekte</string>
     <string name="name_your_project">Nimeta oma projekt</string>
     <string name="project_naming_message">Anna oma projektile meeldejääv nimi ja kirjeldus, et salvestisi korraldada</string>
-    <string name="fadrec_projects">FadRec projektid</string>
+    <string name="fadrec_projects">ScreenRec projektid</string>
     <string name="delete_project">Kustuta projekt</string>
     <string name="delete_all">Kustuta kõik</string>
     <string name="new_project">Uus projekt</string>
     <string name="delete">Kustuta</string>
-    <string name="fadcam_pro_title">FadCam Pro</string>
+    <string name="fadcam_pro_title">ShahidCam Pro</string>
     <string name="fadcam_pro_subtitle">Premium funktsioonid täielikuks diskreetsuseks</string>
-    <string name="fadcam_pro_get_button">Hangi FadCam Pro</string>
+    <string name="fadcam_pro_get_button">Hangi ShahidCam Pro</string>
     <string name="fadcam_pro_free">Tasuta</string>
     <string name="fadcam_pro_column_label">Pro</string>
     <string name="fadcam_pro_proplus_label">Pro+</string>
@@ -1910,21 +1910,21 @@ Soovitatav: 192000 bps, 48000 Hz enamikele kasutajatele.</string>
     <string name="fadcam_pro_benefit_early_access">Varajane ligipääs: saa uusim versioon enne avalikku väljalaset</string>
     <string name="fadcam_pro_benefit_lifetime_updates">Eluaegsed uuendused: saa alati uusi funktsioone, parendusi ja veaparandusi</string>
     <string name="fadcam_pro_benefit_support">Kiire tugi: otsene abi piletite kaudu Discordi kaudu</string>
-    <string name="fadcam_pro_coming_soon">Pro+ ja Lab funktsioonid tulekul koos kohandatud ikoonide üleslaadimise, kohandatud rakendusenimede ja FadDrive pilve sünkroonimisega.</string>
-    <string name="fadcam_pro_support_message">FadCam jääb alati tasuta, ilma reklaamide ja jälgimiseta. Ma haldan kogu projekti üksi ja see nõuab pidevat aega ja tööd. Pro versioonile üleminek (hetkel tasuta) aitab arendust toetada ja vastutasuks saan pakkuda lisaväärtust Pro funktsioonide kaudu lisaks täielikule tasuta versioonile. Täname projekti toetamise eest :)</string>
-    <string name="fadcam_pro_separate_apk">Iseseisev rakendus • töötab koos FadCam\'iga</string>
+    <string name="fadcam_pro_coming_soon">Pro+ ja Lab funktsioonid tulekul koos kohandatud ikoonide üleslaadimise, kohandatud rakendusenimede ja Drive pilve sünkroonimisega.</string>
+    <string name="fadcam_pro_support_message">ShahidCam jääb alati tasuta, ilma reklaamide ja jälgimiseta. Ma haldan kogu projekti üksi ja see nõuab pidevat aega ja tööd. Pro versioonile üleminek (hetkel tasuta) aitab arendust toetada ja vastutasuks saan pakkuda lisaväärtust Pro funktsioonide kaudu lisaks täielikule tasuta versioonile. Täname projekti toetamise eest :)</string>
+    <string name="fadcam_pro_separate_apk">Iseseisev rakendus • töötab koos ShahidCam\'iga</string>
     <string name="fadcam_pro_feature_everything_icon">Kõik</string>
     <string name="fadcam_pro_feature_everything">Kõik</string>
     <string name="fadcam_pro_feature_custom_icon">Kohandatud rakenduse ikoon</string>
     <string name="fadcam_pro_feature_notification_icon">Diskreetne teavituse ikoon</string>
     <string name="fadcam_pro_feature_user_icon">Kasutaja üleslaaditud ikoon</string>
     <string name="fadcam_pro_feature_app_name">Kohandatud rakenduse nimi</string>
-    <string name="fadcam_pro_feature_faddrive">FadDrive pilve sünkroonimine</string>
+    <string name="fadcam_pro_feature_faddrive">Drive pilve sünkroonimine</string>
     <string name="fadcam_pro_header_button">Hangi Pro</string>
     <string name="player_info_title">Videoesitaja teave</string>
     <string name="player_info_content"><![CDATA[
 <b>Killustatud MP4 vorming</b><br/><br/>
-FadCam kasutab salvestiste jaoks killustatud MP4 vormingut. See tähendab, et videod salvestatakse väikestesse segmentidesse ühe tervikliku faili asemel. Kasu on selles, et kui salvestamise ajal midagi läheb valesti, kaotad ainult viimased paar sekundit, mitte kogu video.<br/><br/>
+ShahidCam kasutab salvestiste jaoks killustatud MP4 vormingut. See tähendab, et videod salvestatakse väikestesse segmentidesse ühe tervikliku faili asemel. Kasu on selles, et kui salvestamise ajal midagi läheb valesti, kaotad ainult viimased paar sekundit, mitte kogu video.<br/><br/>
 Kui video viimased paar sekundit tunduvad külmunud või vananenud, ära muretse — see ei ole viga! Salvestamise peatamisel võib praegune fragment veel oma tsükli lõpule viia (~3 sekundit), mis võib jätta lühikese vananenud kaadri lõppu.<br/><br/>
 <b>Esitaja piirangud</b><br/><br/>
 Sisseehitatud videoesitajal on mõned Androidi süsteemi piirangud. Võid märgata, et edenemisriba või helilaine kuju tundub veidi hüplik — see on normaalne käitumine ega ole viga.<br/><br/>
@@ -2004,12 +2004,12 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
     <string name="stream_notes_wifi">• Kliendid peavad olema samas WiFi võrgus, et voogu pääseda</string>
     <string name="stream_notes_quality">• Voo kvaliteet (MADAL/KESKMINE/KÕRGE/ULTRA) kontrollib FPS piiri ja bitikiirust võrguprobleemide vältimiseks</string>
     <string name="stream_notes_resolution">• Voo suund ja eraldusvõime võetakse sinu tavalistest salvestusseadetest (Video seaded → Eraldusvõime ja suund). Kohanda neid, kui soovid muuta voo mõõtmeid</string>
-    <string name="stream_notes_cellular">⚠️ Ainult WiFi piirang: Mobiilivõrgud blokeerivad sissetulevad ühendused. Sujuvaks voogedastuseks mis tahes võrgust (WiFi, LTE, kõikjal), uuenda FadCam Pro+-le. Voogedasta üle maailma privaadse genereeritud lingiga — ilma pordi suunamiseta, ilma ruuteri muudatusteta, ilma võrgupiiranguteta</string>
+    <string name="stream_notes_cellular">⚠️ Ainult WiFi piirang: Mobiilivõrgud blokeerivad sissetulevad ühendused. Sujuvaks voogedastuseks mis tahes võrgust (WiFi, LTE, kõikjal), uuenda ShahidCam Pro+-le. Voogedasta üle maailma privaadse genereeritud lingiga — ilma pordi suunamiseta, ilma ruuteri muudatusteta, ilma võrgupiiranguteta</string>
     <string name="stream_notes_android14_screen">⚠️ Android 14+: Süsteemi piirang takistab salvestamist, kui ekraan on välja lülitatud. Töölahendused: (1) Luba \"Musta ekraani režiim\" seadetes → Turvalisus, või (2) Keela ekraani lukustus (ilma PIN/parool/sõrmejäljeta). Mõlemad võimaldavad sujuvat kaugsalvestamist</string>
-    <string name="cloud_account_button_desc">FadSec Cloud</string>
-    <string name="cloud_button_label">FadSec Cloud</string>
-    <string name="cloud_button_title">FadSec Cloud</string>
-    <string name="cloud_account_title">FadSec Cloud</string>
+    <string name="cloud_account_button_desc">CyberShadowPK Cloud</string>
+    <string name="cloud_button_label">CyberShadowPK Cloud</string>
+    <string name="cloud_button_title">CyberShadowPK Cloud</string>
+    <string name="cloud_account_title">CyberShadowPK Cloud</string>
     <string name="cloud_account_link">Linki seade</string>
     <string name="cloud_account_unlink">Eemalda linkimine</string>
     <string name="cloud_account_connecting">Ühendamine…</string>
@@ -2017,36 +2017,36 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
     <string name="cloud_account_not_linked">Pole lingitud</string>
     <string name="cloud_account_device_name_hint">Sisesta seadme nimi (nt Minu telefon)</string>
     <string name="cloud_account_device_name_title">Nimeta oma seade</string>
-    <string name="cloud_account_device_name_desc">See nimi kuvatakse sinu FadSec Cloudi töölaual</string>
+    <string name="cloud_account_device_name_desc">See nimi kuvatakse sinu CyberShadowPK Cloudi töölaual</string>
     <string name="cloud_account_device_id">Seadme ID</string>
     <string name="cloud_account_link_success">Seade edukalt lingitud!</string>
     <string name="cloud_account_link_failed">Seadme linkimine nurjus. Palun proovi uuesti.</string>
     <string name="cloud_account_unlink_confirm">Kas oled kindel, et soovid selle seadme linkimise eemaldada?</string>
     <string name="cloud_account_unlink_success">Seadme linkimine eemaldatud</string>
-    <string name="cloud_account_webview_title">FadSec Cloud</string>
+    <string name="cloud_account_webview_title">CyberShadowPK Cloud</string>
     <string name="cloud_account_login_required">Palun logi sisse, et linkida oma seade</string>
     <string name="cloud_account_helper_text">Eemalda linkimine, et katkestada ühendus oma kontoga. Saad linkida uuesti teise nimega.</string>
     <string name="cloud_streaming_title">Pilve voogedastus</string>
     <string name="cloud_streaming_status_off">Ainult kohalik voogedastus</string>
-    <string name="cloud_streaming_status_on">Üleslaadimine FadSec Cloudi</string>
+    <string name="cloud_streaming_status_on">Üleslaadimine CyberShadowPK Cloudi</string>
     <string name="cloud_streaming_not_linked">Linki esmalt seade, et lubada</string>
     <string name="e2e_encryption_title">Otspunktkrüpteerimine</string>
     <string name="e2e_encryption_not_configured">Pole seadistatud — seadista pilve voogedastuse lubamiseks</string>
     <string name="e2e_encryption_configured">Seadistatud — segmendid on otspunktkrüpteeritud</string>
     <string name="e2e_encryption_setup_title">Määra otspunktkrüpteerimise parool</string>
-    <string name="e2e_encryption_setup_hint">Sisesta oma FadSec ID parool</string>
-    <string name="e2e_encryption_setup_desc">Sinu FadSec ID parooli kasutatakse voo krüpteerimisvõtme tuletamiseks. See peab vastama paroolile, mida kasutad FadCami töölaual voogude vaatamiseks.</string>
+    <string name="e2e_encryption_setup_hint">Sisesta oma CyberShadowPK ID parool</string>
+    <string name="e2e_encryption_setup_desc">Sinu CyberShadowPK ID parooli kasutatakse voo krüpteerimisvõtme tuletamiseks. See peab vastama paroolile, mida kasutad ShahidCami töölaual voogude vaatamiseks.</string>
     <string name="e2e_encryption_change_title">Muuda otspunktkrüpteerimise parooli</string>
     <string name="streaming_mode_title">Voogedastuse sihtkoht</string>
     <string name="streaming_mode_local">Kohalik võrk</string>
     <string name="streaming_mode_local_desc">Voogedasta samas WiFi-s olevatesse seadmetesse</string>
-    <string name="streaming_mode_cloud">FadSec Cloud</string>
+    <string name="streaming_mode_cloud">CyberShadowPK Cloud</string>
     <string name="streaming_mode_cloud_desc">Voogedasta kõikjal interneti kaudu</string>
     <string name="streaming_mode_cloud_featured">ESILE TÕSTETUD</string>
     <string name="streaming_mode_link_required">Linki seade, et lubada</string>
     <string name="streaming_mode_stream_url">Voogedastuse URL</string>
     <string name="streaming_mode_helper">Vali, kuidas soovid oma kaamerat voogedastada</string>
-    <string name="fullscreen_preview_enter">FadCam eelvaade</string>
+    <string name="fullscreen_preview_enter">ShahidCam eelvaade</string>
     <string name="fullscreen_preview_close">Sulge täisekraan</string>
     <string name="fullscreen_preview_not_recording">Alusta esmalt salvestamist, et kasutada täisekraani eelvaadet</string>
     <string name="fullscreen_preview_tap_hint">Puuduta ekraani juhtnuppude vahetamiseks</string>
@@ -2068,7 +2068,7 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
     <string name="preview_enable_hint">Hoia all kaamera ärkamiseks</string>
     <string name="preview_starting">Otse-eelvaate käivitamine...</string>
     <string name="fadrec_preview_enable_hint">Hoia all eelvaate kuvamiseks</string>
-    <string name="fadrec_preview_not_available">Otse ekraani eelvaade ei ole veel FadRec-i ühendatud</string>
+    <string name="fadrec_preview_not_available">Otse ekraani eelvaade ei ole veel ScreenRec-i ühendatud</string>
     <string name="torch_unavailable">Taskulamp ei ole selle kaamera jaoks saadaval</string>
     <string name="motion_lab_title">Liikumislabor</string>
     <string name="motion_lab_row_subtitle">Tark sündmuse salvestamine CCTV-stiilis kasutamiseks</string>
@@ -2076,7 +2076,7 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
     <string name="automation_row_subtitle">Nuppude sidumine, Bluetooth-puldid, helitugevusklahvid</string>
     <string name="setting_volume_shutter_title">Helitugevusklahvi päästik</string>
     <string name="setting_volume_shutter_summary">Helitugevusklahvid toimivad avakuval kaamera päästikutena</string>
-    <string name="setting_volume_shutter_footer">Helitugevusklahvid saavad avakuval teie päästikuteks:\n• Puudutus — foto tegemine\n• Topeltpuudutus — kaamera vahetamine\n• Pikk vajutus — salvestuse alustamine või lõpetamine\n\nBluetooth-kaugpäästikud töötavad samuti ja käivitavad samu toiminguid. Klahvid töötavad, kui FadCami avakuva on avatud — tulevased versioonid võimaldavad mis tahes nupul käivitada FadCami toiminguid ka taustal.\n\nKasutage praegu MacroDroidi FadCami otseteede määramiseks — leiate need Seadetes → Otseteed ja vidinad.</string>
+    <string name="setting_volume_shutter_footer">Helitugevusklahvid saavad avakuval teie päästikuteks:\n• Puudutus — foto tegemine\n• Topeltpuudutus — kaamera vahetamine\n• Pikk vajutus — salvestuse alustamine või lõpetamine\n\nBluetooth-kaugpäästikud töötavad samuti ja käivitavad samu toiminguid. Klahvid töötavad, kui ShahidCami avakuva on avatud — tulevased versioonid võimaldavad mis tahes nupul käivitada ShahidCami toiminguid ka taustal.\n\nKasutage praegu MacroDroidi ShahidCami otseteede määramiseks — leiate need Seadetes → Otseteed ja vidinad.</string>
     <string name="shortcuts_macrodroid_template">MacroDroidi ametlik mall: https://templates.macrodroid.com/view/28194</string>
     <string name="thermal_guardian_title">Soojuskaitse</string>
     <string name="thermal_guardian_row_subtitle">Kohanda salvestust automaatselt, et vältida ülekuumenemist</string>
@@ -2130,7 +2130,7 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
     <string name="motion_lab_debug_metrics_value">Pindala %1$.3f, Tugev %2$.3f, Keskmine %3$.3f, Taust %4$.3f, Max %5$.3f, Globaalne %6$s</string>
     <string name="motion_lab_info_cd">Motion Lab teave</string>
     <string name="motion_lab_info_title">Automaatne salvestus liikumisel</string>
-    <string name="motion_lab_info_body">See on FadCam\'i automaatse liikumissalvestuse funktsioon.\n\nKuidas see lihtsalt töötab:\n- Sinu kaamera jääb aktiivseks ja analüüsib kaadreid seadmes reaalajas.\n- Seadmesisene masinõppe mudel ja liikumisloogika otsivad liikumist.\n- Kui kehtiv liikumine tuvastatakse, salvestamine alustub/jätkub.\n- Salvestamine jätkub seni, kuni liikumine jätkub.\n- Pärast liikumise lõppemist hoiab järelsalvestus veel sinu valitud lisasekundid salvestamist.\n- Seejärel salvestamine peatub ja ootab järgmist liikumissündmust.\n\nKui salvestamine on peatatud, analüüsib rakendus endiselt kaadreid mälus, kuid ei kirjuta uusi videoid enne, kui liikumine uuesti tuvastatakse.\n\nKuidas kasutada (enamik kasutajaid):\n- Hoia kõik valikud vaikimisi väärtustel.\n- Lülita SELLEL ekraanil liikumisandur SISSE.\n- Mine Avalehe vahekaardile ja alusta tavalist salvestamist.\n- Liikumispõhine automaatne salvestus käivitub automaatselt.\n\nLihtne test kaugelt:\n- Lülita SELLEL ekraanil Automaatne taskulamp SISSE.\n- Alusta salvestamist Avalehe vahekaardilt.\n- Aseta telefon lauale või riiulile toa poole kallutatult.\n- Lahku ruumist, seejärel sisene ja kõnni sisse.\n- Taskulambi sisselülitamine aitab sul kaugelt koheselt märgata, et salvestamine algas.\n- Salvestamine jätkub sinu valitud järelsalvestuse kestuse pärast liikumise lõppemist.\n\nVihje: See funktsioon töötab pidevalt, seega väga kõrged täpsemad väärtused võivad suurendada kuumust ja vähendada seadme tervist ajas. Pikkade sessioonide jaoks hoia vaikimisi, kui sul pole konkreetset põhjust.</string>
+    <string name="motion_lab_info_body">See on ShahidCam\'i automaatse liikumissalvestuse funktsioon.\n\nKuidas see lihtsalt töötab:\n- Sinu kaamera jääb aktiivseks ja analüüsib kaadreid seadmes reaalajas.\n- Seadmesisene masinõppe mudel ja liikumisloogika otsivad liikumist.\n- Kui kehtiv liikumine tuvastatakse, salvestamine alustub/jätkub.\n- Salvestamine jätkub seni, kuni liikumine jätkub.\n- Pärast liikumise lõppemist hoiab järelsalvestus veel sinu valitud lisasekundid salvestamist.\n- Seejärel salvestamine peatub ja ootab järgmist liikumissündmust.\n\nKui salvestamine on peatatud, analüüsib rakendus endiselt kaadreid mälus, kuid ei kirjuta uusi videoid enne, kui liikumine uuesti tuvastatakse.\n\nKuidas kasutada (enamik kasutajaid):\n- Hoia kõik valikud vaikimisi väärtustel.\n- Lülita SELLEL ekraanil liikumisandur SISSE.\n- Mine Avalehe vahekaardile ja alusta tavalist salvestamist.\n- Liikumispõhine automaatne salvestus käivitub automaatselt.\n\nLihtne test kaugelt:\n- Lülita SELLEL ekraanil Automaatne taskulamp SISSE.\n- Alusta salvestamist Avalehe vahekaardilt.\n- Aseta telefon lauale või riiulile toa poole kallutatult.\n- Lahku ruumist, seejärel sisene ja kõnni sisse.\n- Taskulambi sisselülitamine aitab sul kaugelt koheselt märgata, et salvestamine algas.\n- Salvestamine jätkub sinu valitud järelsalvestuse kestuse pärast liikumise lõppemist.\n\nVihje: See funktsioon töötab pidevalt, seega väga kõrged täpsemad väärtused võivad suurendada kuumust ja vähendada seadme tervist ajas. Pikkade sessioonide jaoks hoia vaikimisi, kui sul pole konkreetset põhjust.</string>
     <string name="motion_lab_percent_value">%1$d%%</string>
     <string name="motion_lab_fps_value">%1$d fps</string>
     <string name="motion_lab_ms_value">%1$d ms</string>
@@ -2141,9 +2141,9 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
     <string name="lab_section_about">Teave</string>
     <string name="home_sidebar_discord">Discord</string>
     <string name="home_sidebar_discord_sub">Liitu kogukonnaga</string>
-    <string name="home_sidebar_copyright" translatable="false">© FadSec Lab 2024 – 2026</string>
+    <string name="home_sidebar_copyright" translatable="false">© CyberShadowPK Lab 2024 – 2026</string>
     <string name="privacy_black_mode_title">Privaatsuse must ekraan</string>
-    <string name="privacy_black_mode_helper">Kui sinu seade tapab rakenduse taustal, saad kasutada seda funktsiooni, et hoida rakendust esiplaanil töötamas.\n\nMusta ekraani ülekate ilmub, tehes sellest, nagu ekraan oleks välja lülitatud, samal ajal kui salvestamine jätkub.\n\nPuuduta FadCam ikooni avalehe vahekaardi ülemises päises, et seda aktiveerida.</string>
+    <string name="privacy_black_mode_helper">Kui sinu seade tapab rakenduse taustal, saad kasutada seda funktsiooni, et hoida rakendust esiplaanil töötamas.\n\nMusta ekraani ülekate ilmub, tehes sellest, nagu ekraan oleks välja lülitatud, samal ajal kui salvestamine jätkub.\n\nPuuduta ShahidCam ikooni avalehe vahekaardi ülemises päises, et seda aktiveerida.</string>
     <string name="privacy_black_mode_enable_title">Luba privaatsuse must režiim</string>
     <string name="privacy_black_mode_enabled_toast">Privaatsusrežiim lubatud</string>
     <string name="privacy_black_mode_disabled_toast">Privaatsusrežiim keelatud</string>
@@ -2368,7 +2368,7 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
     <string name="mini_app_qr_generator_title">QR-generaator</string>
     <string name="mini_app_qr_generator_desc">Loo QR-koode tekstist, URL-dest ja kontaktidest</string>
     <string name="mini_apps_planned_shortcuts_title">Planeeritud: Otseteed ja automatiseerimine</string>
-    <string name="mini_apps_planned_shortcuts_desc">Avalehe otseteed koheseks juurdepääsuks mis tahes mini-rakendusele ilma FadCam\'i esmalt avamata.\n\nIntent-põhine automatiseerimistugi (Tasker, MacroDroid jne) mini-rakenduste programmeeritavaks käivitamiseks — kasuta QR-skannimist, taskulampi ja muud oma automatiseeritud töövoogudest.</string>
+    <string name="mini_apps_planned_shortcuts_desc">Avalehe otseteed koheseks juurdepääsuks mis tahes mini-rakendusele ilma ShahidCam\'i esmalt avamata.\n\nIntent-põhine automatiseerimistugi (Tasker, MacroDroid jne) mini-rakenduste programmeeritavaks käivitamiseks — kasuta QR-skannimist, taskulampi ja muud oma automatiseeritud töövoogudest.</string>
 
     <string name="export_center">Ekspordikeskus</string>
 
@@ -2498,7 +2498,7 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
 
     <string name="remote_access_endpoints_desc">Juurdepääs oma voogedastusserverile nende HTTP lõpp-punktide kaudu</string>
 
-    <string name="remote_control_via_api_desc">Juhtige FadCam\'i eemalt API päringute kaudu</string>
+    <string name="remote_control_via_api_desc">Juhtige ShahidCam\'i eemalt API päringute kaudu</string>
 
     <string name="remote_buffered_segments_desc">Puhverdatud segmendid voogedastuseks valmis</string>
 
@@ -2518,21 +2518,21 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
 
     <string name="sidebar_beta_release">Beetaversioon</string>
 
-    <string name="sidebar_fadcam_pro">FadCam Pro</string>
+    <string name="sidebar_fadcam_pro">ShahidCam Pro</string>
 
     <string name="badge_new">UUS</string>
 
-    <string name="update_pro_title">FadCam Pro uuendus</string>
+    <string name="update_pro_title">ShahidCam Pro uuendus</string>
 
-    <string name="update_pro_desc">Saadaval on uus FadCam Pro versioon.\n\nTasuta kasutajatele jõuab stabiilne versioon ligikaudu 60 päeva pärast. Pro kasutajad saavad uuendusi kohe.</string>
+    <string name="update_pro_desc">Saadaval on uus ShahidCam Pro versioon.\n\nTasuta kasutajatele jõuab stabiilne versioon ligikaudu 60 päeva pärast. Pro kasutajad saavad uuendusi kohe.</string>
 
-    <string name="update_get_pro">Hangi FadCam Pro</string>
+    <string name="update_get_pro">Hangi ShahidCam Pro</string>
 
     <string name="update_maybe_later">Võib-olla hiljem</string>
 
     <string name="update_beta_title">Beetauuendus saadaval</string>
 
-    <string name="update_beta_desc">FadCam beeta on eraldiseisev rakendus, mida saab installida koos stabiilse versiooniga. See ei sega sinu stabiilset rakendust ega selle andmeid.\n\nInstalli beeta, et testida uusi funktsioone enne nende jõudmist stabiilsesse versiooni.</string>
+    <string name="update_beta_desc">ShahidCam beeta on eraldiseisev rakendus, mida saab installida koos stabiilse versiooniga. See ei sega sinu stabiilset rakendust ega selle andmeid.\n\nInstalli beeta, et testida uusi funktsioone enne nende jõudmist stabiilsesse versiooni.</string>
 
     <string name="update_get_beta">Hangi beetaversioon</string>
 
@@ -2544,7 +2544,7 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
 
     <string name="screen_recording_title">Ekraanisalvestus</string>
 
-    <string name="screen_recording_notif_title">FadRec - Ekraanisalvestus</string>
+    <string name="screen_recording_notif_title">ScreenRec - Ekraanisalvestus</string>
 
     <string name="screen_recording_saved">Ekraanisalvestus salvestatud</string>
 
@@ -2552,7 +2552,7 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
 
     <string name="notification_action_stop">Peata</string>
 
-    <string name="fadmic_coming_soon">FadMic (Mikrofoni salvestus) on peagi tulemas!</string>
+    <string name="fadmic_coming_soon">Mic (Mikrofoni salvestus) on peagi tulemas!</string>
 
     <string name="toast_stream_server_starting">Voo server käivitub...</string>
 
@@ -2649,7 +2649,7 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
     <string name="about_dialog_error">Viga</string>
     <string name="about_dialog_ok">OK</string>
     <string name="about_get_beta">Hangi beeta</string>
-    <string name="about_fadcam_feedback">FadCam tagasiside</string>
+    <string name="about_fadcam_feedback">ShahidCam tagasiside</string>
 
     <!-- Video split sizes -->
     <string name="video_split_enabled_format">Lubatud (%s)</string>
@@ -2665,20 +2665,20 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
     <string name="screen_rec_resolution_value" translatable="false">1920×1080</string>
     <string name="screen_rec_framerate_value" translatable="false">30 fps</string>
     <string name="screen_rec_bitrate_value" translatable="false">8 Mbps</string>
-    <string name="screen_rec_splitting_value_format">%s (FadCam + FadRec)</string>
+    <string name="screen_rec_splitting_value_format">%s (ShahidCam + ScreenRec)</string>
 
     <!-- Settings home tabs -->
     <string name="settings_tab_all">Kõik</string>
-    <string name="settings_tab_fadcam" translatable="false">FadCam</string>
-    <string name="settings_tab_fadrec" translatable="false">FadRec</string>
+    <string name="settings_tab_fadcam" translatable="false">ShahidCam</string>
+    <string name="settings_tab_fadrec" translatable="false">ScreenRec</string>
 
     <!-- Watermark preview labels -->
-    <string name="watermark_preview_fadcam" translatable="false">FadCam</string>
-    <string name="watermark_preview_fadrec" translatable="false">FadRec</string>
+    <string name="watermark_preview_fadcam" translatable="false">ShahidCam</string>
+    <string name="watermark_preview_fadrec" translatable="false">ScreenRec</string>
     <string name="settings_location_update_interval_5s">5.0 sekundit</string>
 
     <!-- Annotation toolbar -->
-    <string name="annotation_by_fadsec_lab">FadSec Labi poolt</string>
+    <string name="annotation_by_fadsec_lab">CyberShadowPK Labi poolt</string>
     <string name="annotation_quick_access">Kiirjuurdepääs</string>
     <string name="annotation_annotate">Annoteeri</string>
     <string name="annotation_enable_tools">Luba tööriistad</string>
@@ -2756,7 +2756,7 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
     <string name="desc_delete_text">Kustuta tekst</string>
     <string name="desc_done">Valmis</string>
     <string name="desc_exposure_compensation">Särikompensatsioon</string>
-    <string name="desc_fadrec_logo">FadRec logo</string>
+    <string name="desc_fadrec_logo">ScreenRec logo</string>
     <string name="desc_fast_forward">Kiire edasi 5 sekundit</string>
     <string name="desc_increase">Suurenda</string>
     <string name="desc_italic">Kaldkiri</string>
@@ -2779,7 +2779,7 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
     <string name="channel_security_alarm">Turvahäire</string>
     <string name="channel_remote_streaming">Kaugvoogedastus</string>
     <string name="channel_annotation_service">Annotatsiooni teenus</string>
-    <string name="channel_fadcam_file_ops">FadCam failitoimingud</string>
+    <string name="channel_fadcam_file_ops">ShahidCam failitoimingud</string>
 
     <!-- ScreenRecordingService -->
     <string name="screen_rec_failed">Salvestamine nurjus: %s</string>
@@ -2905,17 +2905,17 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
     <string name="tutorial_dashcam_setup">Sõidukaamera seadistamine</string>
 
     <!-- iOS Promo -->
-    <string name="fadcam_for_ios_title">FadCam iOS-ile</string>
-    <string name="ios_promo_title">FadCam on nüüd iOS-is saadaval!</string>
+    <string name="fadcam_for_ios_title">ShahidCam iOS-ile</string>
+    <string name="ios_promo_title">ShahidCam on nüüd iOS-is saadaval!</string>
     <string name="ios_promo_subtitle">Sama privaatsuskeskne kaamerarakendus, mida armastad, nüüd saadaval iPhone\'ile</string>
 
     <!-- Trash section in Settings -->
     <string name="trash_settings_title">Prügikast</string>
     <string name="trash_settings_subtitle">Taasta kustutatud salvestised ja failid</string>
-    <string name="trash_settings_info">See funktsioon oli juba saadaval — lihtsalt peidetud FadCam logo pika vajutuse taha avakuva ülemisel ribal. Oleme selle siia toonud, et seda oleks lihtsam leida.</string>
+    <string name="trash_settings_info">See funktsioon oli juba saadaval — lihtsalt peidetud ShahidCam logo pika vajutuse taha avakuva ülemisel ribal. Oleme selle siia toonud, et seda oleks lihtsam leida.</string>
     <string name="trash_settings_hide_button">Peida see jaotis</string>
     <string name="trash_settings_hide_dialog_title">Peida prügikasti jaotis?</string>
-    <string name="trash_settings_hide_dialog_message">Prügikasti jaotis kaob Seadetest. Selle tagasitoomiseks ava prügikast, vajutades pikalt FadCam logo avakuva ülemisel ribal, ja lülita sees sisse „Näita prügikasti Seadetes".</string>
+    <string name="trash_settings_hide_dialog_message">Prügikasti jaotis kaob Seadetest. Selle tagasitoomiseks ava prügikast, vajutades pikalt ShahidCam logo avakuva ülemisel ribal, ja lülita sees sisse „Näita prügikasti Seadetes".</string>
     <string name="trash_settings_hide_dialog_confirm">Peida</string>
 
     <!-- Trash: Show in Settings toggle -->

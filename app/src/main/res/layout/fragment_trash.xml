@@ -187,7 +187,7 @@
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_trash_all"
-                        style="@style/Widget.FadCam.RecordsFilterChip"
+                        style="@style/Widget.ShahidCam.RecordsFilterChip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
@@ -195,14 +195,14 @@
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_trash_videos"
-                        style="@style/Widget.FadCam.RecordsFilterChip"
+                        style="@style/Widget.ShahidCam.RecordsFilterChip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/nav_records" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_trash_evidence"
-                        style="@style/Widget.FadCam.RecordsFilterChip"
+                        style="@style/Widget.ShahidCam.RecordsFilterChip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/forensics_gallery_title" />

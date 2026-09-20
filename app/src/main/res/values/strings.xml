@@ -3,7 +3,7 @@
     <string name="app_icon_description">Choose an icon and name for your app. This will change how it appears on your home screen.</string>
     <string name="check_for_updates">Check for Updates</string>
     <string name="accessibility_thumbnail_progress">%1$d%% watched</string>
-    <string name="fadsec_info">ShahidCam is part of the CSP CYBER TOOLKIT. For more information, click on \'view source code\' below.</string>
+    <string name="shahid_sec_info">ShahidCam is part of the CSP CYBER TOOLKIT. For more information, click on \'view source code\' below.</string>
 
 
     <string name="app_description">
@@ -88,7 +88,7 @@
     <string name="button_stop">Stop</string>
     <string name="button_resume">Resume</string>
 
-    <!-- FadRec Screen Recording Strings -->
+    <!-- ScreenRec Screen Recording Strings -->
     <string name="fadrec_start_screen_recording">Start Screen Recording</string>
     <string name="fadrec_stop_screen_recording">Stop Screen Recording</string>
     <string name="fadrec_pause_screen_recording">Pause Screen Recording</string>
@@ -125,14 +125,14 @@
     <string name="fadrec_ready_to_record">Ready to capture screen</string>
     <string name="fadrec_ready_to_record_subtitle">Tap to begin</string>
     <string name="fadrec_permission_denied">Screen recording permission denied</string>
-    <string name="fadrec_mode_title">FadRec • Screen Recording</string>
+    <string name="fadrec_mode_title">ScreenRec • Screen Recording</string>
     <string name="fadrec_mute_audio">Mute recording audio</string>
     <string name="fadrec_unmute_audio">Unmute recording audio</string>
     <string name="fadrec_mic_permission_needed_title">Microphone Permission Needed</string>
-    <string name="fadrec_mic_permission_needed_message">FadRec can\'t access your mic. You can record muted - no audio will be saved.</string>
+    <string name="fadrec_mic_permission_needed_message">ScreenRec can\'t access your mic. You can record muted - no audio will be saved.</string>
     <string name="fadrec_record_muted">Record Muted</string>
 
-    <!-- FadRec audio source picker -->
+    <!-- ScreenRec audio source picker -->
     <string name="fadrec_audio_source_title">Audio Source</string>
     <string name="fadrec_audio_source_choose">Choose audio source</string>
 
@@ -201,11 +201,11 @@
     <string name="home_elapsed_font_doto">Doto</string>
     <string name="home_elapsed_font_doto_desc">Uses the Doto font for a more distinctive digital timer look</string>
     <string name="home_elapsed_flag_option">Flag accent</string>
-    <string name="home_elapsed_flag_option_desc">Show or hide the FadSec Lab flag accent behind the timer</string>
-    <string name="home_elapsed_flag_helper">Choose whether the FadSec Lab flag accent is shown behind the elapsed timer.</string>
-    <string name="home_elapsed_flag_show">Show FadSec Lab flag (Default)</string>
+    <string name="home_elapsed_flag_option_desc">Show or hide the CyberShadowPK flag accent behind the timer</string>
+    <string name="home_elapsed_flag_helper">Choose whether the CyberShadowPK flag accent is shown behind the elapsed timer.</string>
+    <string name="home_elapsed_flag_show">Show CyberShadowPK flag (Default)</string>
     <string name="home_elapsed_flag_show_desc">Display the branded flag accent behind the timer</string>
-    <string name="home_elapsed_flag_hide">Hide FadSec Lab flag</string>
+    <string name="home_elapsed_flag_hide">Hide CyberShadowPK flag</string>
     <string name="home_elapsed_flag_hide_desc">Keep the elapsed timer area clean without the flag accent</string>
     <string name="home_elapsed_background_option">Background</string>
     <string name="home_elapsed_background_option_desc">Choose whether the elapsed timer sits on a black, white, or transparent card</string>
@@ -273,14 +273,14 @@
     <string name="front">Front</string>
     <string name="video_menu_del">Delete</string>
     <string name="video_menu_save">Save to Gallery</string>
-    <string name="video_menu_save_helper_downloads_fadcam">Video will be saved to Downloads/FadCam</string>
+    <string name="video_menu_save_helper_downloads_fadcam">Video will be saved to Downloads/ShahidCam</string>
     <string name="video_menu_save_copy_or_move_title">Save to Gallery</string>
     <string name="video_menu_save_copy">Copy to Gallery</string>
-    <string name="video_menu_save_copy_desc">Create a copy in Downloads/FadCam (original file kept)</string>
+    <string name="video_menu_save_copy_desc">Create a copy in Downloads/ShahidCam (original file kept)</string>
     <string name="video_menu_save_move">Move to Gallery</string>
-    <string name="video_menu_save_move_desc">Move file to Downloads/FadCam (saves storage space)</string>
+    <string name="video_menu_save_move_desc">Move file to Downloads/ShahidCam (saves storage space)</string>
     <string name="video_menu_save_longpress_helper">Long press "Save to Gallery" to choose between copy or move</string>
-    <string name="watch_video_saved_toast">Saved to Downloads/FadCam</string>
+    <string name="watch_video_saved_toast">Saved to Downloads/ShahidCam</string>
     <string name="watch_delete_confirm_title">Move to Trash?</string>
     <string name="watch_delete_confirm_msg">"%s" will be moved to trash.</string>
     <string name="watch_delete_confirm_action">Move to Trash</string>
@@ -412,22 +412,22 @@
     <string name="media_type_photo">Photo</string>
     <string name="media_type_photo_back">Back</string>
     <string name="media_type_photo_selfie">Selfie</string>
-    <string name="media_type_photo_fadrec">FadRec</string>
+    <string name="media_type_photo_fadrec">ScreenRec</string>
     <string name="photo_capture_saved">Photo saved</string>
     <string name="photo_capture_failed">Could not capture photo</string>
     <string name="photo_capture_preview_unavailable">Preview is not available</string>
-    <string name="video_menu_upload_faddrive">Upload to FadDrive</string>
+    <string name="video_menu_upload_faddrive">Upload to Drive</string>
     <string name="toast_no_youtube_app">YouTube app not found</string>
     <string name="toast_no_drive_app">Google Drive app not found</string>
     <string name="records_title">Recordings</string>
     <string name="records_filter_all">All</string>
     <string name="mode_all">All</string>
-    <string name="records_filter_camera">FadCam</string>
+    <string name="records_filter_camera">ShahidCam</string>
     <string name="records_filter_dual">Dual</string>
-    <string name="records_filter_screen">FadRec</string>
-    <string name="records_filter_faditor">Faditor</string>
+    <string name="records_filter_screen">ScreenRec</string>
+    <string name="records_filter_faditor">ShahidEditor</string>
     <string name="records_filter_stream">Stream</string>
-    <string name="records_filter_shot">FadShot</string>
+    <string name="records_filter_shot">ShahidShot</string>
     <string name="records_filter_camera_all">All</string>
     <string name="records_filter_camera_back">Back</string>
     <string name="records_filter_camera_front">Front</string>
@@ -439,28 +439,28 @@
     <string name="records_filter_miniapps_all">All</string>
     <string name="records_filter_shot_back">Back</string>
     <string name="records_filter_shot_selfie">Selfie</string>
-    <string name="records_filter_shot_fadrec">FadRec</string>
+    <string name="records_filter_shot_fadrec">ScreenRec</string>
     <string name="records_filter_checklist_desc">Toggle selection mode</string>
     <string name="records_filter_helper_camera_all">Camera recordings (Back, Front, Dual)</string>
     <string name="records_filter_helper_camera_back">Captured with back camera</string>
     <string name="records_filter_helper_camera_front">Captured with front camera (selfie)</string>
     <string name="records_filter_helper_camera_dual">Captured with dual camera mode</string>
     <string name="records_filter_helper_dual">Dual camera recordings</string>
-    <string name="records_filter_helper_screen">Screen recordings (FadRec)</string>
-    <string name="records_filter_helper_faditor">Edited/Exported videos (Faditor)</string>
-    <string name="records_filter_helper_faditor_all">All Faditor outputs and related files.</string>
+    <string name="records_filter_helper_screen">Screen recordings (ScreenRec)</string>
+    <string name="records_filter_helper_faditor">Edited/Exported videos (ShahidEditor)</string>
+    <string name="records_filter_helper_faditor_all">All ShahidEditor outputs and related files.</string>
     <string name="records_filter_helper_faditor_converted">Converted fragmented MP4 into standard seekable MP4 for external players.</string>
     <string name="records_filter_helper_faditor_merge">Merged multiple clips into one output video.</string>
     <string name="records_filter_helper_stream">Saved stream recordings</string>
     <string name="records_filter_helper_shot_all">Captured photos and screenshots</string>
     <string name="records_filter_helper_shot_back">Captured photos with back camera</string>
     <string name="records_filter_helper_shot_selfie">Captured photos with front camera (selfie)</string>
-    <string name="records_filter_helper_shot_fadrec">Captured screenshots (FadRec)</string>
+    <string name="records_filter_helper_shot_fadrec">Captured screenshots (ScreenRec)</string>
     <string name="records_location_format">Location: %1$s/%2$s</string>
     <string name="records_batch_select_all">Select all</string>
     <string name="records_batch_deselect_all">Deselect all</string>
     <string name="records_batch_save">Save to Gallery</string>
-    <string name="records_batch_faditor">Faditor Automations</string>
+    <string name="records_batch_faditor">ShahidEditor Automations</string>
     <string name="records_batch_delete">Delete</string>
     <string name="records_batch_coming_soon">This batch action will be added next.</string>
     <string name="records_batch_select_items_first">Select one or more videos first.</string>
@@ -468,7 +468,7 @@
     <string name="records_batch_fab_label">Batch</string>
     <string name="records_batch_select_all_desc">Select or clear all videos in the current filter.</string>
     <string name="records_batch_save_desc">Copy, move, or export selected videos to another folder.</string>
-    <string name="records_batch_faditor_desc">Run background automations without opening the Faditor tab.</string>
+    <string name="records_batch_faditor_desc">Run background automations without opening the ShahidEditor tab.</string>
     <string name="records_batch_delete_desc">Move selected videos to Trash.</string>
     <string name="records_batch_save_queued">%1$d save task(s) added to queue.</string>
     <string name="records_batch_faditor_first_only">Opened first video. %1$d selected; multi-edit queue coming next.</string>
@@ -479,7 +479,7 @@
     <string name="records_batch_custom_export_started">Exporting %1$d videos to selected folder…</string>
     <string name="records_batch_custom_export_invalid_folder">Selected folder is not writable.</string>
     <string name="records_batch_custom_export_done">Export finished. Success: %1$d • Failed: %2$d</string>
-    <string name="records_batch_faditor_sheet_title">Batch Faditor Actions</string>
+    <string name="records_batch_faditor_sheet_title">Batch ShahidEditor Actions</string>
     <string name="records_batch_faditor_export_standard">Export to Standard MP4</string>
     <string name="records_batch_faditor_export_standard_desc">Converts fragmented MP4 to seekable standard MP4 for external players.</string>
     <string name="records_batch_faditor_merge">Merge Selected Videos</string>
@@ -487,7 +487,7 @@
     <string name="records_batch_faditor_queued">%1$d batch item(s) queued in background.</string>
     <string name="records_batch_completed">Batch operation completed.</string>
     <string name="records_batch_notif_channel_name">Batch Media Actions</string>
-    <string name="records_batch_notif_channel_desc">Progress and results for Records batch save and Faditor automation tasks.</string>
+    <string name="records_batch_notif_channel_desc">Progress and results for Records batch save and ShahidEditor automation tasks.</string>
     <string name="records_batch_starting">Preparing batch operation…</string>
     <string name="records_batch_progress_item">Processing %1$d of %2$d</string>
     <string name="records_batch_progress_counts">Completed %1$d • Skipped %2$d • Failed %3$d</string>
@@ -500,7 +500,7 @@
     <string name="nav_settings">Settings</string>
     <string name="nav_about">About</string>
     <string name="nav_remote">Remote</string>
-    <string name="nav_faditor_mini">Faditor</string>
+    <string name="nav_faditor_mini">ShahidEditor</string>
     <string name="nav_lab">Lab</string>
     <string name="button_settings_readme">Read Me</string>
     <string name="setting_cam_title">Camera Selection</string>
@@ -589,7 +589,7 @@
     <string name="setting_codec_title">Video Codec</string>
     <string name="note_codec">Choose codec\n(Default: %1$s)\nTip: With H.265 (HEVC), you can use about half the bitrate of H.264 for the same quality. Example: For FHD, use 8 Mbps instead of 16 Mbps.</string>
     <string name="setting_watermark">Watermark</string>
-    <string name="note_watermark">Select watermark option\n(Default: Timestamp with FadCam)</string>
+    <string name="note_watermark">Select watermark option\n(Default: Timestamp with ShahidCam)</string>
     <string name="note_watermark_extra">For a speedy save, pick \'No Watermark\'. Adding a watermark? It\'s worth the wait, just a little longer to process!</string>
     <string name="setting_location_title">Location Data</string>
     <string name="note_location">Include location data in watermark. \nRequires GPS enabled \n(Default: Disabled)</string>
@@ -622,13 +622,13 @@
     </string-array>
     <string-array name="questions_array" tools:ignore="InconsistentArrays">
         <item>DISCLAIMER</item>
-        <item>Does FadCam collect any user data?</item>
-        <item>Are there any ads in FadCam?</item>
-        <item>Why does FadCam request location access?</item>
+        <item>Does ShahidCam collect any user data?</item>
+        <item>Are there any ads in ShahidCam?</item>
+        <item>Why does ShahidCam request location access?</item>
         <item>Why the internet permission is required?</item>
         <item>Is any data stored on external servers?</item>
         <item>What happens to my videos after recording?</item>
-        <item>Does FadCam share my data with third parties?</item>
+        <item>Does ShahidCam share my data with third parties?</item>
         <item></item>
         <item></item>
         <item>General</item>
@@ -640,15 +640,15 @@
         <item></item>
     </string-array>
     <string-array name="answers_array" tools:ignore="InconsistentArrays">
-        <item>FadCam does not condone or support any unethical or illegal use of this software. Misuse, such as unauthorized surveillance or invasion of privacy, is strictly against our guidelines. The author is not responsible for any misuse of the application.
+        <item>ShahidCam does not condone or support any unethical or illegal use of this software. Misuse, such as unauthorized surveillance or invasion of privacy, is strictly against our guidelines. The author is not responsible for any misuse of the application.
         </item>
-        <item>No, FadCam does not collect any user data.</item>
-        <item>No, FadCam is completely ad-free.</item>
+        <item>No, ShahidCam does not collect any user data.</item>
+        <item>No, ShahidCam is completely ad-free.</item>
         <item>For adding location info to your watermarks.</item>
         <item>For auto update checking.</item>
         <item>No, all data is stored on your device.</item>
         <item>Your videos are saved locally on your device.</item>
-        <item>No, FadCam does not share or collect any data, not even crash logs.</item>
+        <item>No, ShahidCam does not share or collect any data, not even crash logs.</item>
         <item></item>
         <item></item>
         <item></item>
@@ -660,7 +660,7 @@
         <item>Check the official GitHub repo for updates.</item>
         <item></item>
     </string-array>
-    <string name="dialog_welcome_title">Welcome to FadCam!</string>
+    <string name="dialog_welcome_title">Welcome to ShahidCam!</string>
     <string name="note_from_developer_title">Note from Developer</string>
     <string name="note_from_developer_subtitle">README, links &amp; updates</string>
     <string name="note_under_dev">Important: This app is currently under development. New features are being added regularly.</string>
@@ -669,7 +669,7 @@
     <string name="button_readme_github">GitHub Repository</string>
     <string name="community_title">Join our Community:</string>
     <string name="discord_title">Discord Server</string>
-    <string name="thankyou_msg">Thank you for using FadCam!</string>
+    <string name="thankyou_msg">Thank you for using ShahidCam!</string>
     <string name="settings_title">Settings</string>
     <string name="array_watermark_time_fadcam">Time with Fadcam</string>
     <string name="array_watermark_timeonly">Timestamp</string>
@@ -684,7 +684,7 @@
     <string name="quick_speed_option_2">2x</string>
     <string name="quick_speed_option_2_5">2.5x</string>
     <string name="quick_speed_option_custom">Custom</string>
-    <string name="toast_video_saved">Video saved to FadCam folder in Downloads</string>
+    <string name="toast_video_saved">Video saved to ShahidCam folder in Downloads</string>
     <string name="toast_video_save_fail">Failed to save video</string>
     <string name="rename_video_title">Rename Video</string>
     <string name="rename_video_hint">Enter new name</string>
@@ -866,19 +866,19 @@
     <string name="torch_both">Both Torches</string>
     <string name="setting_debug_title">Debug Logging</string>
     <string name="note_debug">Enable debug log file generation \n(Default: Disabled)</string>
-    <string name="note_debug_detailed">When enabled, FadCam writes a debug log HTML file (FADCAM_debug.html) into the public Downloads/FadCam/ folder. Share this file when reporting issues. Turn off to stop future writes.\nNote: Debug logging may add performance overhead during recording — keep it off unless you are troubleshooting.</string>
-    <string name="note_debug_extra">When enabled, a debug log file will be created in the Downloads/FadCam folder. This can help diagnose app issues.</string>
+    <string name="note_debug_detailed">When enabled, ShahidCam writes a debug log HTML file (FADCAM_debug.html) into the public Downloads/ShahidCam/ folder. Share this file when reporting issues. Turn off to stop future writes.\nNote: Debug logging may add performance overhead during recording — keep it off unless you are troubleshooting.</string>
+    <string name="note_debug_extra">When enabled, a debug log file will be created in the Downloads/ShahidCam folder. This can help diagnose app issues.</string>
     <!-- Watermark unified strings -->
     <string name="watermark_preview_heading">Preview</string>
     <string name="watermark_options_heading">Options</string>
     <string name="watermark_style_row_title">Watermark Style</string>
-    <string name="watermark_preview_sample_fadcam">Captured by FadCam - %1$s</string>
+    <string name="watermark_preview_sample_fadcam">Captured by ShahidCam - %1$s</string>
     <string name="watermark_preview_sample_timeonly">%1$s</string>
-    <string name="watermark_style_time_fadcam_label">Time with FadCam</string>
+    <string name="watermark_style_time_fadcam_label">Time with ShahidCam</string>
     <string name="watermark_style_timeonly_label">Timestamp</string>
     <string name="watermark_style_badge_label">Brand Label Only</string>
     <string name="watermark_style_none_label">No Watermark</string>
-    <string name="helper_watermark_preview">This is how the watermark will appear at the top-left of your recorded video.\nFun fact: 10/Jul/2024 04:47 PM is when FadCam v1.0 first shipped.</string>
+    <string name="helper_watermark_preview">This is how the watermark will appear at the top-left of your recorded video.\nFun fact: 10/Jul/2024 04:47 PM is when ShahidCam v1.0 first shipped.</string>
     <string name="helper_location_watermark_option">Toggle adding your device location as an overlay. Requires location permission.</string>
     <string name="location_format_title">Location Format</string>
     <string name="location_format_coordinates">Coordinates Only</string>
@@ -905,7 +905,7 @@
     <string name="widgets_pin_unsupported">Pinning widgets is not supported by your launcher.</string>
     <string name="widget_clock_title">Clock widget</string>
     <string name="widget_label_clock">Clock</string>
-    <string name="widgets_pin_fallback">If no prompt appears, long‑press your Home screen, open Widgets, and drag the FadCam Clock widget.</string>
+    <string name="widgets_pin_fallback">If no prompt appears, long‑press your Home screen, open Widgets, and drag the ShahidCam Clock widget.</string>
 
     <!-- Widget Customization -->
     <string name="widget_customize_title">Customize Clock Widget</string>
@@ -916,7 +916,7 @@
     <string name="widget_black_background_title">Black Background</string>
     <string name="widget_arabic_date_title">Arabic Date</string>
     <string name="widget_arabic_date_format_title">Arabic Date Format</string>
-    <string name="widget_branding_title">FadSecLab Branding</string>
+    <string name="widget_branding_title">CyberShadowPKLab Branding</string>
 
     <!-- Widget Option Descriptions -->
     <string name="widget_time_format_12h">12-hour (3:30 PM)</string>
@@ -1050,9 +1050,9 @@
     <string name="shortcut_purpose_stop">This shortcut stops the current recording.</string>
     <string name="shortcut_purpose_toggle">A single dynamic shortcut that starts or stops the recording using the default camera — use the separate Start and Stop shortcuts for manual control.</string>
     <string name="shortcut_purpose_torch">This shortcut toggles the torch.</string>
-    <string name="shortcut_purpose_photo">This shortcut captures a back camera photo and saves it to FadCam/FadShot location.</string>
-    <string name="shortcut_purpose_photo_front">This shortcut captures a front camera photo and saves it to FadCam/FadShot location.</string>
-    <string name="shortcut_purpose_screenshot">This shortcut captures a screen shot and saves it to FadCam/FadShot location (Enable the Accessibility permission from Settings > Privacy > Accessibility).</string>
+    <string name="shortcut_purpose_photo">This shortcut captures a back camera photo and saves it to ShahidCam/ShahidShot location.</string>
+    <string name="shortcut_purpose_photo_front">This shortcut captures a front camera photo and saves it to ShahidCam/ShahidShot location.</string>
+    <string name="shortcut_purpose_screenshot">This shortcut captures a screen shot and saves it to ShahidCam/ShahidShot location (Enable the Accessibility permission from Settings > Privacy > Accessibility).</string>
     <!-- Widget sheet action labels (avoid hardcoded) -->
     <string name="widget_customize_action_label">Customize</string>
     <string name="widget_customize_action_subtitle">Time, date, theme options</string>
@@ -1081,16 +1081,16 @@
     <string name="stop_recording">Stop</string>
     <string name="shortcut_take_photo">Photo</string>
     <string name="shortcut_take_photo_front">Selfie</string>
-    <string name="shortcut_take_screenshot">FadRec</string>
+    <string name="shortcut_take_screenshot">ScreenRec</string>
     <string name="screenshot_capture_saved">Screenshot saved</string>
     <string name="screenshot_capture_failed">Could not capture screenshot</string>
     <string name="screenshot_capture_system_saved">Screenshot captured by system. Saved in system screenshots.</string>
-    <string name="screenshot_accessibility_enable_needed">Enable "FadRec Screenshot" in Accessibility to use this shortcut without recording prompt.</string>
-    <string name="screenshot_accessibility_service_desc">Captures a screenshot for the FadRec shortcut and saves it in FadCam/FadShot.</string>
+    <string name="screenshot_accessibility_enable_needed">Enable "ScreenRec Screenshot" in Accessibility to use this shortcut without recording prompt.</string>
+    <string name="screenshot_accessibility_service_desc">Captures a screenshot for the ScreenRec shortcut and saves it in ShahidCam/ShahidShot.</string>
     <string name="shortcuts_video_category">Video Recording</string>
     <string name="shortcuts_picture_category">Picture</string>
     <string name="preview_quick_actions_title">Preview quick actions</string>
-    <string name="preview_quick_actions_sub">Show FadShot and Fullscreen icons even when recording is idle.</string>
+    <string name="preview_quick_actions_sub">Show ShahidShot and Fullscreen icons even when recording is idle.</string>
     <string name="grid_lines_title">Grid Lines</string>
     <string name="home_icon_picker_title">Home icon</string>
     <string name="home_icon_home">Home</string>
@@ -1155,14 +1155,14 @@
     <string name="remote_access_title">Remote Access/Control</string>
     <string name="remote_toast_coming_soon">Coming soon! In Sha Allah</string>
     <string name="coming_soon_toast">Coming soon! In Sha Allah</string>
-    <string name="remote_coming_soon">Remote control for FadCam is coming soon.</string>
-    <string name="remote_feature_description">Pair FadCam clients using a QR code for secure, local-network remote control: start/stop recording, preview, zoom, switch camera, and more—all with end-to-end encryption.</string>
-    <string name="faditor_mini_title">Faditor Mini</string>
+    <string name="remote_coming_soon">Remote control for ShahidCam is coming soon.</string>
+    <string name="remote_feature_description">Pair ShahidCam clients using a QR code for secure, local-network remote control: start/stop recording, preview, zoom, switch camera, and more—all with end-to-end encryption.</string>
+    <string name="faditor_mini_title">ShahidEditor Mini</string>
     <string name="faditor_mini_coming_soon">Coming soon — lightweight editor</string>
     <string name="faditor_mini_subtitle">Trim and export your videos with precision</string>
-    <string name="faditor_mini_toast">Faditor Mini — coming soon</string>
+    <string name="faditor_mini_toast">ShahidEditor Mini — coming soon</string>
     <string name="faditor_select_video">Select Video</string>
-    <string name="faditor_editor_title">Faditor Mini</string>
+    <string name="faditor_editor_title">ShahidEditor Mini</string>
     <string name="faditor_close">Close editor</string>
     <string name="faditor_undo">Undo</string>
     <string name="faditor_redo">Redo</string>
@@ -1243,12 +1243,12 @@
     <string name="faditor_export_confirm_helper">%1$s • %2$d clip(s)%3$s\nExport runs as a background service — you can close the app and it will keep exporting.</string>
 
     <!-- Export notification -->
-    <string name="faditor_export_notif_channel">Faditor Export</string>
+    <string name="faditor_export_notif_channel">ShahidEditor Export</string>
     <string name="faditor_export_notif_channel_desc">Notifications for ongoing video exports</string>
     <string name="faditor_export_notif_title">Exporting video…</string>
     <string name="faditor_export_notif_error_title">Export Failed</string>
 
-    <!-- Export dock (Faditor Mini tab) -->
+    <!-- Export dock (ShahidEditor Mini tab) -->
     <string name="faditor_export_progress">Exporting…</string>
     <string name="faditor_export_completed">Export Complete</string>
     <string name="faditor_export_cancelled">Export Cancelled</string>
@@ -1284,33 +1284,33 @@
     <string name="faditor_delete_projects_title">Delete projects?</string>
     <string name="faditor_delete_projects_message">Delete %1$d project(s)? This cannot be undone.</string>
     <string name="faditor_delete_confirm">Delete</string>
-    <string name="faditor_version_info">Faditor Mini · Phase 1 · Trim + Export</string>
+    <string name="faditor_version_info">ShahidEditor Mini · Phase 1 · Trim + Export</string>
 
-    <!-- Faditor Info Bottom Sheet -->
+    <!-- ShahidEditor Info Bottom Sheet -->
     <string name="faditor_empty_title">No projects yet</string>
     <string name="faditor_empty_desc">Tap \"Start New Project\" to pick a video and begin editing</string>
-    <string name="faditor_info_title">About Faditor Mini</string>
+    <string name="faditor_info_title">About ShahidEditor Mini</string>
     <string name="faditor_info_subtitle">Everything you need to know about the built-in editor</string>
     <string name="faditor_info_how_title">How it works</string>
-    <string name="faditor_info_how_desc">Pick any video from your device or your FadCam recordings. Trim it frame-by-frame using the timeline, then export. All processing happens locally on your device — nothing is uploaded.\n\nYour editing progress is auto-saved every few seconds and whenever you leave the editor, so no work is lost if the app closes unexpectedly.</string>
+    <string name="faditor_info_how_desc">Pick any video from your device or your ShahidCam recordings. Trim it frame-by-frame using the timeline, then export. All processing happens locally on your device — nothing is uploaded.\n\nYour editing progress is auto-saved every few seconds and whenever you leave the editor, so no work is lost if the app closes unexpectedly.</string>
     <string name="faditor_info_convert_title">Smart conversion</string>
-    <string name="faditor_info_convert_desc">FadCam records in a crash-safe format called fragmented MP4 (fMP4). Unlike a standard MP4 which has one finalized container, fMP4 writes video in small independent chunks. This means your footage stays intact even if the app crashes or recording stops suddenly.\n\nHowever, external video players, gallery apps, and file managers will not be able to seek, scrub, or display the correct duration of these files. This is not a bug — it is a deliberate design trade-off for reliability.\n\nIf you plan to store your videos outside FadCam — on Google Drive, a computer, or any other location — you must convert them first. Otherwise the files will be unusable for normal playback.\n\nTo convert: simply open the video here in Faditor Mini and tap Export. The converted standard MP4 will appear in your Records tab, ready to save to your gallery or share anywhere. The process is instant and lossless — no re-encoding or quality loss.</string>
+    <string name="faditor_info_convert_desc">ShahidCam records in a crash-safe format called fragmented MP4 (fMP4). Unlike a standard MP4 which has one finalized container, fMP4 writes video in small independent chunks. This means your footage stays intact even if the app crashes or recording stops suddenly.\n\nHowever, external video players, gallery apps, and file managers will not be able to seek, scrub, or display the correct duration of these files. This is not a bug — it is a deliberate design trade-off for reliability.\n\nIf you plan to store your videos outside ShahidCam — on Google Drive, a computer, or any other location — you must convert them first. Otherwise the files will be unusable for normal playback.\n\nTo convert: simply open the video here in ShahidEditor Mini and tap Export. The converted standard MP4 will appear in your Records tab, ready to save to your gallery or share anywhere. The process is instant and lossless — no re-encoding or quality loss.</string>
     <string name="faditor_info_export_title">Exported files</string>
-    <string name="faditor_info_export_desc">Exported videos are saved to your active storage location (the same one configured in Settings) with the prefix \"Faditor_\" followed by a timestamp. They appear in the Records tab alongside your original recordings.</string>
+    <string name="faditor_info_export_desc">Exported videos are saved to your active storage location (the same one configured in Settings) with the prefix \"ShahidEditor_\" followed by a timestamp. They appear in the Records tab alongside your original recordings.</string>
     <string name="faditor_info_temp_title">Temporary files and cache</string>
-    <string name="faditor_info_temp_desc">When you load an fMP4 video for editing, Faditor detects if the file needs \"remuxing\" — a fast conversion that adds seeking markers without re-encoding. Remuxed files are cached on your device so they can be reused if you edit the same video again, saving time and processing.\n\nYou can see the cache size for each project listed next to its modified date. If your device storage is running low, you can delete unused projects to clear their cached remuxed files.\n\nThese temporary cache files are automatically cleaned up when you delete a project from this tab.</string>
+    <string name="faditor_info_temp_desc">When you load an fMP4 video for editing, ShahidEditor detects if the file needs \"remuxing\" — a fast conversion that adds seeking markers without re-encoding. Remuxed files are cached on your device so they can be reused if you edit the same video again, saving time and processing.\n\nYou can see the cache size for each project listed next to its modified date. If your device storage is running low, you can delete unused projects to clear their cached remuxed files.\n\nThese temporary cache files are automatically cleaned up when you delete a project from this tab.</string>
     <string name="faditor_info_projects_title">Recent projects</string>
     <string name="faditor_info_projects_desc">All your editing sessions are shown for quick access. Each project is stored as a small JSON file on your device containing the video URI, trim points, and timestamps — no copies of your videos are made. Projects are auto-saved every few seconds, so your progress is never lost.\n\nYou can delete projects you no longer need using the multi-select checklist icon. Deleting a project only removes the editing session data; your original video files remain untouched.</string>
     <string name="faditor_your_recordings">Your Recordings</string>
     <string name="faditor_browse_device">Browse Device</string>
-    <string name="faditor_no_recordings">No recordings found yet. Start recording with FadCam to see your videos here.</string>
+    <string name="faditor_no_recordings">No recordings found yet. Start recording with ShahidCam to see your videos here.</string>
     <string name="faditor_video_count">%1$d video(s)</string>
-    <string name="faditor_fadcam_source">FadCam</string>
-    <string name="faditor_fadrec_source">FadRec</string>
+    <string name="faditor_fadcam_source">ShahidCam</string>
+    <string name="faditor_fadrec_source">ScreenRec</string>
     <string name="faditor_browse_device_desc">Select any video from your device</string>
     <string name="faditor_scanning">Scanning recordings…</string>
-    <string name="faditor_source_chooser_desc">Choose a video from your gallery or pick one from your FadCam recordings</string>
-    <string name="faditor_recordings_helper">Videos recorded with FadCam from your active storage location</string>
+    <string name="faditor_source_chooser_desc">Choose a video from your gallery or pick one from your ShahidCam recordings</string>
+    <string name="faditor_recordings_helper">Videos recorded with ShahidCam from your active storage location</string>
     <string name="setting_audio_title">Audio Recording</string>
     <string name="note_audio">Enable or disable audio recording for videos.\n(Default: Enabled)</string>
     <string name="button_audio_settings">Audio Settings</string>
@@ -1425,7 +1425,7 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
     <!-- For TrashFragment - Restore Action -->
     <string name="trash_no_items_selected_toast">No items selected.</string>
     <string name="trash_dialog_restore_title">Restore Selected?</string>
-    <string name="trash_dialog_restore_message">Restore %1$d item(s) to the public Downloads/FadCam/ folder?</string>
+    <string name="trash_dialog_restore_message">Restore %1$d item(s) to the public Downloads/ShahidCam/ folder?</string>
     <string name="trash_restore_success_toast">%1$d item(s) restored.</string>
     <string name="trash_restore_fail_toast">Error restoring items. Some files might not have been restored or gallery might not be updated. Check app permissions for storage.</string>
     <string name="trash_restore_cancelled_toast">Restore cancelled.</string>
@@ -1446,7 +1446,7 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
     <string name="records_search_hint">Search recordings…</string>
     <string name="saf_permission_missing_dialog_instructions">SAF permission missing. Please grant access to the chosen folder.</string>
     <string name="saf_permission_missing_dialog_title">SAF Permission Required</string>
-    <string name="saf_permission_missing_dialog_message_for_start_recording">To save recordings to a custom location, FadCam needs permission to access the selected folder. Please grant access when prompted.</string>
+    <string name="saf_permission_missing_dialog_message_for_start_recording">To save recordings to a custom location, ShahidCam needs permission to access the selected folder. Please grant access when prompted.</string>
     <string name="grant_permission_button">Grant Permission</string>
 
     <!-- Strings for Trash Auto-Delete Feature -->
@@ -1491,7 +1491,7 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
     <string name="support_ko_fi">Support us on Ko-fi</string>
     <string name="kofi_description">Description will be set in code.</string>
     <string name="kofi_button_text">Buy me a Ko-fi</string>
-    <string name="kofi_footer_text">Made with    at FadSec Lab in   </string>
+    <string name="kofi_footer_text">Made with    at CyberShadowPK in   </string>
 
     <string name="setting_audio_input_source_title">Audio Input Source</string>
     <string name="setting_audio_input_source_status_default">Phone Microphone</string>
@@ -1507,14 +1507,14 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
 
     <!-- Fix Start: Add onboarding toggle strings -->
     <string name="setting_onboarding_title">Show Intro</string>
-    <string name="note_onboarding">Enable to see the app introduction and permissions guide the next time you open FadCam.</string>
+    <string name="note_onboarding">Enable to see the app introduction and permissions guide the next time you open ShahidCam.</string>
     <!-- Fix End: Add onboarding toggle strings -->
 
     <string name="choose_language">Choose Language</string>
     <string name="language_change_later_note">You can change this later in Settings.</string>
 
     <string name="permissions_required">Permissions Required</string>
-    <string name="permissions_description">FadCam needs access to your camera, microphone, and storage to record and save videos.</string>
+    <string name="permissions_description">ShahidCam needs access to your camera, microphone, and storage to record and save videos.</string>
     <string name="grant_permissions">Grant Permissions</string>
     <string name="permissions_note">You must grant all permissions to continue.</string>
     <string name="permissions_granted">All permissions granted!</string>
@@ -1524,9 +1524,9 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
     <string name="disable_battery_optimization">Disable Battery Optimization</string>
 
     <string name="onboarding_human_title">Verify if you are a human</string>
-    <string name="onboarding_human_desc">Hmmmm... alright. These rules are non-negotiable. If you can\'t agree, please uninstall FadCam right now.</string>
-    <string name="onboarding_human_checkbox1">I won\'t use FadCam to break any laws, invade anyone\'s privacy, or be a creep. The dev\'s out of the picture if I mess up. (That\'s on me.)</string>
-    <string name="onboarding_human_checkbox2">I already love FadCam before even using it. (Not optional)</string>
+    <string name="onboarding_human_desc">Hmmmm... alright. These rules are non-negotiable. If you can\'t agree, please uninstall ShahidCam right now.</string>
+    <string name="onboarding_human_checkbox1">I won\'t use ShahidCam to break any laws, invade anyone\'s privacy, or be a creep. The dev\'s out of the picture if I mess up. (That\'s on me.)</string>
+    <string name="onboarding_human_checkbox2">I already love ShahidCam before even using it. (Not optional)</string>
     <string name="onboarding_human_checkbox3">I agree to the Privacy Policy</string>
     <string name="onboarding_human_button">Let me in!</string>
 
@@ -1577,7 +1577,7 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
 
     <string name="version_format">v%s</string>
 
-    <string name="edit_with_faditorx">Edit with Faditor Mini</string>
+    <string name="edit_with_faditorx">Edit with ShahidEditor Mini</string>
     <string name="remote_coming_soon_badge">Coming Soon</string>
 
     <!-- Update Bottom Sheet Strings -->
@@ -1610,19 +1610,19 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
     <!-- Header Logo Style Strings -->
     <string name="setting_header_logo_title">Header Logo</string>
     <string name="setting_header_logo_desc">Choose the header logo style</string>
-    <string name="header_logo_default" translatable="false">FadCam</string>
+    <string name="header_logo_default" translatable="false">ShahidCam</string>
     <string name="header_logo_avatar" translatable="false">Avatar</string>
 
     <string name="setting_app_icon_desc">Change the app\'s launcher icon and name</string>
     <string name="app_icon_dialog_title">Choose App Icon</string>
-    <string name="app_icon_default" translatable="false">FadCam</string>
+    <string name="app_icon_default" translatable="false">ShahidCam</string>
     <string name="app_icon_alternative" translatable="false">Camera</string>
     <string name="app_icon_faded" translatable="false">0xFF0000</string>
     <string name="app_icon_palestine" translatable="false">I❤️Palestine</string>
-    <string name="app_icon_pakistan" translatable="false">FadCam</string>
-    <string name="app_icon_fadseclab" translatable="false">FadSec Lab</string>
-    <string name="app_icon_nooristic" translatable="false">FadCam ++</string>
-    <string name="app_icon_bat" translatable="false">FadCam</string>
+    <string name="app_icon_pakistan" translatable="false">ShahidCam</string>
+    <string name="app_icon_fadseclab" translatable="false">CyberShadowPK</string>
+    <string name="app_icon_nooristic" translatable="false">ShahidCam ++</string>
+    <string name="app_icon_bat" translatable="false">ShahidCam</string>
     <string name="app_icon_redbinary" translatable="false">$ ~/r00t</string>
     <string name="app_icon_notes" translatable="false">Notes</string>
     <string name="app_icon_calculator" translatable="false">Calculator</string>
@@ -1641,7 +1641,7 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
 
     <!-- Fix Start: Add auto update check toggle strings -->
     <string name="setting_auto_update_check_title">Auto Update Check</string>
-    <string name="note_auto_update_check">If enabled, FadCam will check for updates every time you open the app. Turn off to disable automatic update checks on launch.\n(Default: On)</string>
+    <string name="note_auto_update_check">If enabled, ShahidCam will check for updates every time you open the app. Turn off to disable automatic update checks on launch.\n(Default: On)</string>
     <!-- Fix End: Add auto update check toggle strings -->
 
     <!-- Storage Location Settings -->
@@ -1656,7 +1656,7 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
     <string name="settings_notifications_subtitle">Recording &amp; preset</string>
     <string name="settings_security_title">Security</string>
     <string name="settings_advanced_subtitle">Motion Lab and power-user controls</string>
-    <string name="fadcrypt_title">FadCrypt</string>
+    <string name="fadcrypt_title">Crypt</string>
     <string name="fadcrypt_row_subtitle">Encrypt and protect your recordings</string>
     <string name="digital_forensics_title">Digital Forensics</string>
     <string name="forensic_intelligence_title">Forensic Intelligence</string>
@@ -1677,7 +1677,7 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
     <string name="digital_forensics_coming_soon_short">Coming Soon</string>
     <string name="digital_forensics_discord_coming_soon_toast">Discord alerts will be added in a future update.</string>
     <string name="digital_forensics_helper">Digital Forensics has two parts: live preview overlay and saved evidence. If you only want live visual AI labels, keep Evidence Collection off. If you need forensic history, turn Evidence Collection on and choose what to store.</string>
-    <string name="digital_forensics_enable_helper">Think of this as your smart evidence sensor. When enabled, FadCam keeps a timeline of detected activity so you can jump to important moments later.</string>
+    <string name="digital_forensics_enable_helper">Think of this as your smart evidence sensor. When enabled, ShahidCam keeps a timeline of detected activity so you can jump to important moments later.</string>
     <string name="digital_forensics_evidence_enable">Enable Evidence Collection</string>
     <string name="digital_forensics_evidence_helper">When enabled, detections are written to the forensic database with saved proof frames in real time. Keep this off if you only want live preview labels without storage growth.</string>
     <string name="digital_forensics_capture_scope">Evidence Capture Scope</string>
@@ -1826,7 +1826,7 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
     <string name="storage_location_internal">Internal App Storage (Default, Private)</string>
     <string name="storage_location_custom">Custom Location (SD Card/Other, Gallery Visible)</string>
     <string name="storage_location_choose_folder">Choose Folder</string>
-    <string name="storage_location_note">Note: Using custom locations makes videos accessible by other apps (e.g., Gallery). Internal storage keeps them private to FadCam.</string>
+    <string name="storage_location_note">Note: Using custom locations makes videos accessible by other apps (e.g., Gallery). Internal storage keeps them private to ShahidCam.</string>
     <string name="storage_sheet_title">Storage Location</string>
     <string name="storage_option_use_internal">Use Internal Storage</string>
     <string name="storage_option_switch_internal">Switch to Internal Storage</string>
@@ -1845,7 +1845,7 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
     <string name="location_icon_description">Location Icon</string>
     <string name="location_embedding_icon_description">Location Embedding Icon</string>
 
-    <string name="app_icon_minimal" translatable="false">FadCam</string>
+    <string name="app_icon_minimal" translatable="false">ShahidCam</string>
 
     <!-- Onboarding Strings -->
     <string name="onboarding_swipe_instruction">Swipe right to continue</string>
@@ -1939,7 +1939,7 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
     <!-- Additional Notification Customization Strings -->
     <!-- Adding notification appearance strings -->
     <string name="setting_notification_appearance">Notification Appearance</string>
-    <string name="note_notification_appearance">Customize the appearance of the recording notification\n(Default: FadCam)</string>
+    <string name="note_notification_appearance">Customize the appearance of the recording notification\n(Default: ShahidCam)</string>
     <string name="hide_stop_button">Hide stop button</string>
     <string name="note_hide_stop_button">Hide the stop button in the notification\n(Default: Disabled)</string>
     <string name="notification_preview">Notification preview</string>
@@ -1955,7 +1955,7 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
     <string name="notification_custom_text_placeholder">Description (e.g. Update in progress)</string>
 
     <string-array name="notification_appearance_options">
-        <item>FadCam (default)</item>
+        <item>ShahidCam (default)</item>
         <item>System Update</item>
         <item>Download</item>
         <item>Syncing</item>
@@ -2022,7 +2022,7 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
     <!-- Trash Restore Destination Strings -->
     <string name="restore_destination_title">Choose Restore Location</string>
     <string name="restore_destination_downloads">Downloads Folder</string>
-    <string name="restore_destination_downloads_desc">Public Downloads/FadCam/ folder</string>
+    <string name="restore_destination_downloads_desc">Public Downloads/ShahidCam/ folder</string>
     <string name="restore_destination_internal">Internal Storage</string>
     <string name="restore_destination_internal_desc">App\'s private storage</string>
     <string name="restore_destination_original">Original Location</string>
@@ -2051,16 +2051,16 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
     <string name="manage_projects">Manage Projects</string>
     <string name="name_your_project">Name Your Project</string>
     <string name="project_naming_message">Give your project a memorable name and description to organize your recordings</string>
-    <string name="fadrec_projects">FadRec Projects</string>
+    <string name="fadrec_projects">ScreenRec Projects</string>
     <string name="delete_project">Delete Project</string>
     <string name="delete_all">Delete All</string>
     <string name="new_project">New Project</string>
     <string name="delete">Delete</string>
 
-    <!-- FadCam Pro Strings -->
-    <string name="fadcam_pro_title">FadCam Pro</string>
+    <!-- ShahidCam Pro Strings -->
+    <string name="fadcam_pro_title">ShahidCam Pro</string>
     <string name="fadcam_pro_subtitle">Premium features for complete discretion</string>
-    <string name="fadcam_pro_get_button">Get FadCam Pro</string>
+    <string name="fadcam_pro_get_button">Get ShahidCam Pro</string>
     <string name="fadcam_pro_free">Free</string>
     <string name="fadcam_pro_column_label">Pro</string>
     <string name="fadcam_pro_proplus_label">Pro+</string>
@@ -2071,23 +2071,23 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
     <string name="fadcam_pro_benefit_early_access">Early access: Get the latest version before public release</string>
     <string name="fadcam_pro_benefit_lifetime_updates">Lifetime updates: Always receive new features, improvements, and bug fixes</string>
     <string name="fadcam_pro_benefit_support">Instant support: Direct help through tickets via Discord</string>
-    <string name="fadcam_pro_coming_soon">Pro+ and Lab features coming soon with custom icon uploads, custom app names, and FadDrive cloud sync.</string>
-    <string name="fadcam_pro_support_message">FadCam will always remain free, with no ads and no tracking. I handle the entire project on my own, and it takes ongoing time and work. Upgrading to Pro (currently free) helps support development, and in return I’m able to offer additional value through the Pro features on top of the full free version. Thank you for supporting the project :)</string>
-    <string name="fadcam_pro_separate_apk">Standalone app • Works alongside FadCam</string>
+    <string name="fadcam_pro_coming_soon">Pro+ and Lab features coming soon with custom icon uploads, custom app names, and Drive cloud sync.</string>
+    <string name="fadcam_pro_support_message">ShahidCam will always remain free, with no ads and no tracking. I handle the entire project on my own, and it takes ongoing time and work. Upgrading to Pro (currently free) helps support development, and in return I’m able to offer additional value through the Pro features on top of the full free version. Thank you for supporting the project :)</string>
+    <string name="fadcam_pro_separate_apk">Standalone app • Works alongside ShahidCam</string>
     <string name="fadcam_pro_feature_everything_icon">Everything</string>
     <string name="fadcam_pro_feature_everything">Everything</string>
     <string name="fadcam_pro_feature_custom_icon">Custom App Icon</string>
     <string name="fadcam_pro_feature_notification_icon">Notification Discreet Icon</string>
     <string name="fadcam_pro_feature_user_icon">User Uploaded Icon</string>
     <string name="fadcam_pro_feature_app_name">Custom App Name</string>
-    <string name="fadcam_pro_feature_faddrive">FadDrive Cloud Sync</string>
+    <string name="fadcam_pro_feature_faddrive">Drive Cloud Sync</string>
     <string name="fadcam_pro_header_button">Get Pro</string>
 
     <!-- Video Player Info Bottom Sheet -->
     <string name="player_info_title">About the Video Player</string>
     <string name="player_info_content"><![CDATA[
 <b>Fragmented MP4 Format</b><br/><br/>
-FadCam uses a fragmented MP4 format for recordings. This means videos are saved in small segments instead of one complete file. The benefit is that if something goes wrong during recording, you only lose the last few seconds instead of the entire video.<br/><br/>
+ShahidCam uses a fragmented MP4 format for recordings. This means videos are saved in small segments instead of one complete file. The benefit is that if something goes wrong during recording, you only lose the last few seconds instead of the entire video.<br/><br/>
 If the last few seconds of your video appear frozen or stale, don\'t worry — it\'s not a bug! When you stop recording, the current fragment may still complete its cycle (~3 seconds), which can leave a brief stale frame at the end.<br/><br/>
 <b>Player Limitations</b><br/><br/>
 The built-in video player has some Android system limitations. You may notice the progress bar or waveform appearing slightly snappy — this is normal behavior and not a bug.<br/><br/>
@@ -2186,14 +2186,14 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="stream_notes_wifi">• Clients must be on the same WiFi network to access the stream</string>
     <string name="stream_notes_quality">• Stream quality (LOW/MEDIUM/HIGH/ULTRA) controls FPS cap and bitrate to prevent network issues</string>
     <string name="stream_notes_resolution">• Stream orientation and resolution are taken from your normal recording settings (Video Settings → Resolution &amp; Orientation). Adjust those if you want to change stream dimensions</string>
-    <string name="stream_notes_cellular">⚠️ WiFi-only limitation: Cellular networks block incoming connections. For seamless streaming from any network (WiFi, LTE, anywhere), upgrade to FadCam Pro+. Stream from anywhere globally with a private generated link—no port forwarding, no router changes, no network restrictions</string>
+    <string name="stream_notes_cellular">⚠️ WiFi-only limitation: Cellular networks block incoming connections. For seamless streaming from any network (WiFi, LTE, anywhere), upgrade to ShahidCam Pro+. Stream from anywhere globally with a private generated link—no port forwarding, no router changes, no network restrictions</string>
     <string name="stream_notes_android14_screen">⚠️ Android 14+: System restriction prevents recording when screen is off. Workarounds: (1) Enable "Black Screen Mode" in Settings → Security, or (2) Disable screen lock (no PIN/password/fingerprint). Both allow seamless remote recording</string>
     
-    <!-- FadSec Cloud / Remote Streaming -->
-    <string name="cloud_account_button_desc">FadSec Cloud</string>
-    <string name="cloud_button_label">FadSec Cloud</string>
-    <string name="cloud_button_title">FadSec Cloud</string>
-    <string name="cloud_account_title">FadSec Cloud</string>
+    <!-- CyberShadowPK Cloud / Remote Streaming -->
+    <string name="cloud_account_button_desc">CyberShadowPK Cloud</string>
+    <string name="cloud_button_label">CyberShadowPK Cloud</string>
+    <string name="cloud_button_title">CyberShadowPK Cloud</string>
+    <string name="cloud_account_title">CyberShadowPK Cloud</string>
     <string name="cloud_account_link">Link Device</string>
     <string name="cloud_account_unlink">Unlink Device</string>
     <string name="cloud_account_connecting">Connecting…</string>
@@ -2201,20 +2201,20 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="cloud_account_not_linked">Not Linked</string>
     <string name="cloud_account_device_name_hint">Enter device name (e.g., My Phone)</string>
     <string name="cloud_account_device_name_title">Name Your Device</string>
-    <string name="cloud_account_device_name_desc">This name will appear in your FadSec Cloud dashboard</string>
+    <string name="cloud_account_device_name_desc">This name will appear in your CyberShadowPK Cloud dashboard</string>
     <string name="cloud_account_device_id">Device ID</string>
     <string name="cloud_account_link_success">Device linked successfully!</string>
     <string name="cloud_account_link_failed">Failed to link device. Please try again.</string>
     <string name="cloud_account_unlink_confirm">Are you sure you want to unlink this device?</string>
     <string name="cloud_account_unlink_success">Device unlinked</string>
-    <string name="cloud_account_webview_title">FadSec Cloud</string>
+    <string name="cloud_account_webview_title">CyberShadowPK Cloud</string>
     <string name="cloud_account_login_required">Please log in to link your device</string>
     <string name="cloud_account_helper_text">Unlink to disconnect from your account. You can link again with a different name.</string>
     
     <!-- Cloud Streaming -->
     <string name="cloud_streaming_title">Cloud Streaming</string>
     <string name="cloud_streaming_status_off">Stream locally only</string>
-    <string name="cloud_streaming_status_on">Uploading to FadSec Cloud</string>
+    <string name="cloud_streaming_status_on">Uploading to CyberShadowPK Cloud</string>
     <string name="cloud_streaming_not_linked">Link device first to enable</string>
 
     <!-- E2E Stream Encryption -->
@@ -2222,15 +2222,15 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="e2e_encryption_not_configured">Not configured — configure to enable cloud streaming</string>
     <string name="e2e_encryption_configured">Configured — segments are encrypted end-to-end</string>
     <string name="e2e_encryption_setup_title">Set E2E Encryption Password</string>
-    <string name="e2e_encryption_setup_hint">Enter your FadSec ID password</string>
-    <string name="e2e_encryption_setup_desc">Your FadSec ID password is used to derive the stream encryption key. This must match the password you use on the FadCam dashboard to view streams.</string>
+    <string name="e2e_encryption_setup_hint">Enter your CyberShadowPK ID password</string>
+    <string name="e2e_encryption_setup_desc">Your CyberShadowPK ID password is used to derive the stream encryption key. This must match the password you use on the ShahidCam dashboard to view streams.</string>
     <string name="e2e_encryption_change_title">Change E2E Encryption Password</string>
     
     <!-- Streaming Mode Selector -->
     <string name="streaming_mode_title">Streaming Destination</string>
     <string name="streaming_mode_local">Local Network</string>
     <string name="streaming_mode_local_desc">Stream to devices on the same WiFi</string>
-    <string name="streaming_mode_cloud">FadSec Cloud</string>
+    <string name="streaming_mode_cloud">CyberShadowPK Cloud</string>
     <string name="streaming_mode_cloud_desc">Stream anywhere via internet</string>
     <string name="streaming_mode_cloud_featured">FEATURED</string>
     <string name="streaming_mode_link_required">Link device to enable</string>
@@ -2238,7 +2238,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="streaming_mode_helper">Choose how you want to stream your camera</string>
 
     <!-- Fullscreen Preview -->
-    <string name="fullscreen_preview_enter">FadCam Preview</string>
+    <string name="fullscreen_preview_enter">ShahidCam Preview</string>
     <string name="fullscreen_preview_close">Close fullscreen</string>
     <string name="fullscreen_preview_not_recording">Start recording first to use fullscreen preview</string>
     <string name="fullscreen_preview_tap_hint">Tap screen to toggle controls</string>
@@ -2260,7 +2260,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="preview_enable_hint">Hold to wake up the camera</string>
     <string name="preview_starting">Starting live preview...</string>
     <string name="fadrec_preview_enable_hint">Hold to show preview</string>
-    <string name="fadrec_preview_not_available">Live screen preview is not wired into FadRec yet</string>
+    <string name="fadrec_preview_not_available">Live screen preview is not wired into ScreenRec yet</string>
     <string name="torch_unavailable">Torch unavailable for this camera</string>
 
     <!-- Motion Lab -->
@@ -2272,7 +2272,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="automation_row_subtitle">Button mapping, Bluetooth remotes, volume keys</string>
     <string name="setting_volume_shutter_title">Volume Shutter</string>
     <string name="setting_volume_shutter_summary">Volume keys act as a camera shutter on the home tab</string>
-    <string name="setting_volume_shutter_footer">Volume keys become your shutter on the home tab:\n• Tap — snap a photo\n• Double-tap — flip the camera\n• Hold — start or stop recording\n\nBluetooth remote shutters work too, triggering the same actions. Buttons work while the FadCam home tab is open — future versions will let any button trigger FadCam intents, even in the background.\n\nFor now, use MacroDroid to map FadCam\u2019s shortcuts — find them in Settings → Shortcuts &amp; Widgets.</string>
+    <string name="setting_volume_shutter_footer">Volume keys become your shutter on the home tab:\n• Tap — snap a photo\n• Double-tap — flip the camera\n• Hold — start or stop recording\n\nBluetooth remote shutters work too, triggering the same actions. Buttons work while the ShahidCam home tab is open — future versions will let any button trigger ShahidCam intents, even in the background.\n\nFor now, use MacroDroid to map ShahidCam\u2019s shortcuts — find them in Settings → Shortcuts &amp; Widgets.</string>
 
     <!-- Thermal Guardian - coming soon -->
     <string name="thermal_guardian_title">Thermal Guardian</string>
@@ -2301,17 +2301,17 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="tutorial_dashcam_setup">Dashcam Setup</string>
 
     <!-- iOS Promo -->
-    <string name="fadcam_for_ios_title">FadCam for iOS</string>
-    <string name="ios_promo_title">FadCam is now on iOS!</string>
+    <string name="fadcam_for_ios_title">ShahidCam for iOS</string>
+    <string name="ios_promo_title">ShahidCam is now on iOS!</string>
     <string name="ios_promo_subtitle">The same privacy-first camera app you love, now available for iPhone</string>
 
     <!-- Trash section in Settings -->
     <string name="trash_settings_title">Trash</string>
     <string name="trash_settings_subtitle">Recover deleted recordings and files</string>
-    <string name="trash_settings_info">This feature was already available — just hidden behind a long-press on the FadCam logo in the top bar of the home screen. We\'ve surfaced it here so it\'s easier to discover.</string>
+    <string name="trash_settings_info">This feature was already available — just hidden behind a long-press on the ShahidCam logo in the top bar of the home screen. We\'ve surfaced it here so it\'s easier to discover.</string>
     <string name="trash_settings_hide_button">Hide this section</string>
     <string name="trash_settings_hide_dialog_title">Hide Trash section?</string>
-    <string name="trash_settings_hide_dialog_message">The Trash section will disappear from Settings. To bring it back, open Trash by long-pressing the FadCam logo in the top bar of the home screen, then turn on \"Show Trash in Settings\" inside.</string>
+    <string name="trash_settings_hide_dialog_message">The Trash section will disappear from Settings. To bring it back, open Trash by long-pressing the ShahidCam logo in the top bar of the home screen, then turn on \"Show Trash in Settings\" inside.</string>
     <string name="trash_settings_hide_dialog_confirm">Hide</string>
 
     <!-- Trash: Show in Settings toggle -->
@@ -2362,7 +2362,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="motion_lab_debug_metrics_value">Area %1$.3f, Strong %2$.3f, Mean %3$.3f, BG %4$.3f, Max %5$.3f, Global %6$s</string>
     <string name="motion_lab_info_cd">Motion Lab info</string>
     <string name="motion_lab_info_title">Auto Record on Motion</string>
-    <string name="motion_lab_info_body">This is FadCam\'s Auto Record on Motion feature.\n\nHow it works in simple words:\n- Your camera stays active and analyzes frames on-device in real time.\n- The on-device machine learning model and motion logic look for movement.\n- When valid motion is detected, recording starts/resumes.\n- Recording keeps going while motion continues.\n- After motion stops, Post-roll keeps recording for your selected extra seconds.\n- Then recording pauses and waits for the next motion event.\n\nWhen recording is paused, the app is still analyzing frames in memory, but it is not writing new video data until motion is detected again.\n\nHow to use (most users):\n- Keep all options at default values.\n- Turn ON Motion Sensor on this screen.\n- Go to Home tab and start recording normally.\n- Motion-based auto record will run automatically.\n\nEasy test from far distance:\n- Turn ON Auto Torch on this screen.\n- Start recording from Home tab.\n- Place the phone tilted on a table or shelf facing the room.\n- Leave the room, then enter and walk in.\n- Torch turning ON helps you instantly notice from far away that recording started.\n- Recording will continue for your selected Post-roll duration after motion stops.\n\nTip: This feature runs continuously, so very high advanced values can increase heat and can reduce device health over time. For long sessions, keep defaults unless you have a specific reason.</string>
+    <string name="motion_lab_info_body">This is ShahidCam\'s Auto Record on Motion feature.\n\nHow it works in simple words:\n- Your camera stays active and analyzes frames on-device in real time.\n- The on-device machine learning model and motion logic look for movement.\n- When valid motion is detected, recording starts/resumes.\n- Recording keeps going while motion continues.\n- After motion stops, Post-roll keeps recording for your selected extra seconds.\n- Then recording pauses and waits for the next motion event.\n\nWhen recording is paused, the app is still analyzing frames in memory, but it is not writing new video data until motion is detected again.\n\nHow to use (most users):\n- Keep all options at default values.\n- Turn ON Motion Sensor on this screen.\n- Go to Home tab and start recording normally.\n- Motion-based auto record will run automatically.\n\nEasy test from far distance:\n- Turn ON Auto Torch on this screen.\n- Start recording from Home tab.\n- Place the phone tilted on a table or shelf facing the room.\n- Leave the room, then enter and walk in.\n- Torch turning ON helps you instantly notice from far away that recording started.\n- Recording will continue for your selected Post-roll duration after motion stops.\n\nTip: This feature runs continuously, so very high advanced values can increase heat and can reduce device health over time. For long sessions, keep defaults unless you have a specific reason.</string>
     <string name="motion_lab_percent_value">%1$d%%</string>
     <string name="motion_lab_fps_value">%1$d fps</string>
     <string name="motion_lab_ms_value">%1$d ms</string>
@@ -2377,11 +2377,11 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <!-- Home sidebar branding -->
     <string name="home_sidebar_discord">Discord</string>
     <string name="home_sidebar_discord_sub">Join the community</string>
-    <string name="home_sidebar_copyright" translatable="false">© FadSec Lab 2024 – 2026</string>
+    <string name="home_sidebar_copyright" translatable="false">© CyberShadowPK 2024 – 2026</string>
 
     <!-- Privacy Black Mode Settings -->
     <string name="privacy_black_mode_title">Privacy Black Screen</string>
-    <string name="privacy_black_mode_helper">If your device kills the app in the background, you can use this feature to keep the app running in the foreground.\n\nA black screen overlay appears, making it look like the screen is off while recording continues.\n\nTap the FadCam icon in the top header of the Home tab to activate it.</string>
+    <string name="privacy_black_mode_helper">If your device kills the app in the background, you can use this feature to keep the app running in the foreground.\n\nA black screen overlay appears, making it look like the screen is off while recording continues.\n\nTap the ShahidCam icon in the top header of the Home tab to activate it.</string>
     <string name="privacy_black_mode_enable_title">Enable Privacy Black Mode</string>
     <string name="privacy_black_mode_enabled_toast">Privacy Mode Enabled</string>
     <string name="privacy_black_mode_disabled_toast">Privacy Mode Disabled</string>
@@ -2433,7 +2433,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="watch_fullscreen_hint">Camera is recording</string>
     <string name="watch_fullscreen_not_recording">Not recording</string>
 
-    <!-- Screen Recording Settings (FadRec) -->
+    <!-- Screen Recording Settings (ScreenRec) -->
     <string name="screen_rec_settings_title">Screen Recording</string>
     <string name="screen_rec_settings_subtitle">Quality, audio &amp; output settings</string>
     <string name="screen_rec_resolution">Resolution</string>
@@ -2663,7 +2663,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
 
     <!-- Mini Apps Info Sheet -->
     <string name="mini_apps_planned_shortcuts_title">Planned: Shortcuts &amp; Automation</string>
-    <string name="mini_apps_planned_shortcuts_desc">Home screen shortcuts for instant access to any Mini App without opening FadCam first.\n\nIntent-based automation support (Tasker, MacroDroid, etc.) for triggering Mini Apps programmatically — use QR scanning, torch, and more from your automated workflows.</string>
+    <string name="mini_apps_planned_shortcuts_desc">Home screen shortcuts for instant access to any Mini App without opening ShahidCam first.\n\nIntent-based automation support (Tasker, MacroDroid, etc.) for triggering Mini Apps programmatically — use QR scanning, torch, and more from your automated workflows.</string>
 
     <!-- Lab Tab -->
     <string name="export_center">Export Center</string>
@@ -2734,7 +2734,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="remote_pages">Pages</string>
     <string name="remote_layers">Layers</string>
     <string name="remote_access_endpoints_desc">Access your streaming server via these HTTP endpoints</string>
-    <string name="remote_control_via_api_desc">Control FadCam remotely via API calls</string>
+    <string name="remote_control_via_api_desc">Control ShahidCam remotely via API calls</string>
     <string name="remote_buffered_segments_desc">Buffered segments ready for streaming</string>
     <string name="remote_battery_low_warning">⚠️ Low Battery - Plug charger ASAP</string>
     <string name="remote_enter_percentage_hint">Enter percentage</string>
@@ -2746,16 +2746,16 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="sidebar_update_available">Update Available</string>
     <string name="sidebar_stable_release">Stable Release</string>
     <string name="sidebar_beta_release">Beta Release</string>
-    <string name="sidebar_fadcam_pro">FadCam Pro</string>
+    <string name="sidebar_fadcam_pro">ShahidCam Pro</string>
     <string name="badge_new">NEW</string>
 
     <!-- Update Bottom Sheets -->
-    <string name="update_pro_title">FadCam Pro Update</string>
-    <string name="update_pro_desc">A new version of FadCam Pro is available.\n\nFor free users, the stable release will arrive after approximately 60 days. Pro users receive updates immediately.</string>
-    <string name="update_get_pro">Get FadCam Pro</string>
+    <string name="update_pro_title">ShahidCam Pro Update</string>
+    <string name="update_pro_desc">A new version of ShahidCam Pro is available.\n\nFor free users, the stable release will arrive after approximately 60 days. Pro users receive updates immediately.</string>
+    <string name="update_get_pro">Get ShahidCam Pro</string>
     <string name="update_maybe_later">Maybe Later</string>
     <string name="update_beta_title">Beta Update Available</string>
-    <string name="update_beta_desc">The FadCam beta is a standalone app that can be installed alongside the stable version. It will not interfere with your stable app or its data.\n\nInstall the beta to test new features before they reach the stable release.</string>
+    <string name="update_beta_desc">The ShahidCam beta is a standalone app that can be installed alongside the stable version. It will not interfere with your stable app or its data.\n\nInstall the beta to test new features before they reach the stable release.</string>
     <string name="update_get_beta">Get Beta</string>
 
     <!-- Mini Apps Info Sheet -->
@@ -2765,13 +2765,13 @@ For the smoothest playback experience, you can use an external player like VLC. 
 
     <!-- Screen Recording -->
     <string name="screen_recording_title">Screen Recording</string>
-    <string name="screen_recording_notif_title">FadRec - Screen Recording</string>
+    <string name="screen_recording_notif_title">ScreenRec - Screen Recording</string>
     <string name="screen_recording_saved">Screen Recording Saved</string>
     <string name="screen_recording_tap_to_view">Tap to view your recording</string>
     <string name="notification_action_stop">Stop</string>
 
-    <!-- FadMic -->
-    <string name="fadmic_coming_soon">FadMic (Mic Recording) coming soon!</string>
+    <!-- Mic -->
+    <string name="fadmic_coming_soon">Mic (Mic Recording) coming soon!</string>
 
     <!-- Toast messages -->
     <string name="toast_stream_server_starting">Stream server starting...</string>
@@ -2860,7 +2860,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="about_dialog_error">Error</string>
     <string name="about_dialog_ok">OK</string>
     <string name="about_get_beta">Get Beta</string>
-    <string name="about_fadcam_feedback">FadCam Feedback</string>
+    <string name="about_fadcam_feedback">ShahidCam Feedback</string>
 
     <!-- Video split sizes -->
     <string name="video_split_enabled_format">Enabled (%s)</string>
@@ -2876,20 +2876,20 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="screen_rec_resolution_value" translatable="false">1920×1080</string>
     <string name="screen_rec_framerate_value" translatable="false">30 fps</string>
     <string name="screen_rec_bitrate_value" translatable="false">8 Mbps</string>
-    <string name="screen_rec_splitting_value_format">%s (FadCam + FadRec)</string>
+    <string name="screen_rec_splitting_value_format">%s (ShahidCam + ScreenRec)</string>
 
     <!-- Settings home tabs -->
     <string name="settings_tab_all">All</string>
-    <string name="settings_tab_fadcam" translatable="false">FadCam</string>
-    <string name="settings_tab_fadrec" translatable="false">FadRec</string>
+    <string name="settings_tab_fadcam" translatable="false">ShahidCam</string>
+    <string name="settings_tab_fadrec" translatable="false">ScreenRec</string>
 
     <!-- Watermark preview labels -->
-    <string name="watermark_preview_fadcam" translatable="false">FadCam</string>
-    <string name="watermark_preview_fadrec" translatable="false">FadRec</string>
+    <string name="watermark_preview_fadcam" translatable="false">ShahidCam</string>
+    <string name="watermark_preview_fadrec" translatable="false">ScreenRec</string>
     <string name="settings_location_update_interval_5s">5.0 seconds</string>
 
     <!-- Annotation toolbar -->
-    <string name="annotation_by_fadsec_lab">by FadSec Lab</string>
+    <string name="annotation_by_fadsec_lab">by CyberShadowPK</string>
     <string name="annotation_quick_access">Quick Access</string>
     <string name="annotation_annotate">Annotate</string>
     <string name="annotation_enable_tools">Enable tools</string>
@@ -2967,7 +2967,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="desc_delete_text">Delete text</string>
     <string name="desc_done">Done</string>
     <string name="desc_exposure_compensation">Exposure compensation</string>
-    <string name="desc_fadrec_logo">FadRec Logo</string>
+    <string name="desc_fadrec_logo">ScreenRec Logo</string>
     <string name="desc_fast_forward">Fast forward 5 seconds</string>
     <string name="desc_increase">Increase</string>
     <string name="desc_italic">Italic</string>
@@ -2990,7 +2990,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="channel_security_alarm">Security Alarm</string>
     <string name="channel_remote_streaming">Remote Streaming</string>
     <string name="channel_annotation_service">Annotation Service</string>
-    <string name="channel_fadcam_file_ops">FadCam File Operations</string>
+    <string name="channel_fadcam_file_ops">ShahidCam File Operations</string>
 
     <!-- ScreenRecordingService -->
     <string name="screen_rec_failed">Recording failed: %s</string>

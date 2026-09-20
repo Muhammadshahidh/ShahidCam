@@ -3,12 +3,12 @@
     <string name="auto_delete_immediate">Anında</string>
     <string name="trash_auto_delete_info_immediate">Öğeler anında silinir.</string>
     <string name="check_for_updates">Güncellemeleri Kontrol Et</string>
-    <string name="fadsec_info">FadCam, FadSec Lab paketinin bir parçasıdır. Daha fazla bilgi için aşağıda \'kaynak kodu görüntüle\' seçeneğine tıklayın.</string>
+    <string name="shahid_sec_info">ShahidCam, CyberShadowPK Lab paketinin bir parçasıdır. Daha fazla bilgi için aşağıda \'kaynak kodu görüntüle\' seçeneğine tıklayın.</string>
     <string name="app_description">
     <![CDATA[
-    FadCam, herhangi bir veri izleme veya toplama yapmadan gizliliğe öncelik veren, reklamsız ve açık kaynaklı bir video kayıt uygulamasıdır. Yalnızca GitHub ve README\'de belirtilen resmi bağlantılar üzerinden erişilebilir.
+    ShahidCam, herhangi bir veri izleme veya toplama yapmadan gizliliğe öncelik veren, reklamsız ve açık kaynaklı bir video kayıt uygulamasıdır. Yalnızca GitHub ve README\'de belirtilen resmi bağlantılar üzerinden erişilebilir.
     <br/><br/>
-    FadCam, <font color="#cfbafd">HowToMen</font> ve <font color="#cfbafd">Xtream Droid</font> gibi popüler YouTube kanallarında yer almış, ayrıca <font color="#cfbafd">GrapheneOS</font> ve 55+ diğer önemli platformda tartışılmıştır.
+    ShahidCam, <font color="#cfbafd">HowToMen</font> ve <font color="#cfbafd">Xtream Droid</font> gibi popüler YouTube kanallarında yer almış, ayrıca <font color="#cfbafd">GrapheneOS</font> ve 55+ diğer önemli platformda tartışılmıştır.
     ]]>
 </string>
     <string name="view_source_code">Kaynak Kodu Görüntüle</string>
@@ -123,7 +123,7 @@
     <string name="resolution_helper_all">"Her İki Kamera" olarak işaretlenen çözünürlükler, hem ön hem arka kamera tarafından desteklenir ve kayıt sırasında canlı kamera değiştirmeye izin verir. "Mevcut Kamera" olarak işaretlenen çözünürlükler yalnızca seçili kamera ile çalışır.</string>
     <string name="note_quailty">Kalite seçin\n(Varsayılan: HD)</string>
     <string name="setting_watermark">Filigran</string>
-    <string name="note_watermark">Filigran seçeneğini belirleyin\n(Varsayılan: Zaman Damgası ile FadCam)</string>
+    <string name="note_watermark">Filigran seçeneğini belirleyin\n(Varsayılan: Zaman Damgası ile ShahidCam)</string>
     <string name="note_watermark_extra">Hızlı kaydetme için \'Filigran Yok\' seçeneğini tercih edin. Filigran eklemek mi istiyorsunuz? Beklemeye değer, sadece biraz daha uzun sürüyor!</string>
     <string name="setting_location_title">Konum Verileri</string>
     <string name="note_location">Filigrana konum verileri ekleyin. \nGPS\'in etkin olması gerekir \n(Varsayılan: Devre Dışı)</string>
@@ -144,13 +144,13 @@
     </string-array>
     <string-array name="questions_array" tools:ignore="InconsistentArrays">
         <item>FERAGATNAME</item>
-        <item>FadCam kullanıcı verisi topluyor mu?</item>
-        <item>FadCam\'de reklam var mı?</item>
-        <item>FadCam neden konum erişimi istiyor?</item>
+        <item>ShahidCam kullanıcı verisi topluyor mu?</item>
+        <item>ShahidCam\'de reklam var mı?</item>
+        <item>ShahidCam neden konum erişimi istiyor?</item>
         <item>İnternet izni neden gerekiyor?</item>
         <item>Herhangi bir veri harici sunucularda saklanıyor mu?</item>
         <item>Kayıttan sonra videolarıma ne oluyor?</item>
-        <item>FadCam verilerimi üçüncü taraflarla paylaşıyor mu?</item>
+        <item>ShahidCam verilerimi üçüncü taraflarla paylaşıyor mu?</item>
         <item> </item>
         <item> </item>
         <item>Genel</item>
@@ -164,15 +164,15 @@
         <item> </item>
     </string-array>
     <string-array name="answers_array" tools:ignore="InconsistentArrays">
-        <item>FadCam, bu yazılımın etik dışı veya yasa dışı kullanımını onaylamaz veya desteklemez. Yetkisiz gözetim veya gizliliğin ihlali gibi kötüye kullanımlar kesinlikle kurallarımıza aykırıdır. Yazarlar, uygulamanın kötüye kullanımından sorumlu değildir.
+        <item>ShahidCam, bu yazılımın etik dışı veya yasa dışı kullanımını onaylamaz veya desteklemez. Yetkisiz gözetim veya gizliliğin ihlali gibi kötüye kullanımlar kesinlikle kurallarımıza aykırıdır. Yazarlar, uygulamanın kötüye kullanımından sorumlu değildir.
         </item>
-        <item>Hayır, FadCam herhangi bir kullanıcı verisi toplamaz.</item>
-        <item>Hayır, FadCam tamamen reklamsızdır.</item>
+        <item>Hayır, ShahidCam herhangi bir kullanıcı verisi toplamaz.</item>
+        <item>Hayır, ShahidCam tamamen reklamsızdır.</item>
         <item>Filigranlarınıza konum bilgisi eklemek için.</item>
         <item>Otomatik güncelleme kontrolü için.</item>
         <item>Hayır, tüm veriler cihazınızda saklanır.</item>
         <item>Videolarınız cihazınızda yerel olarak saklanır.</item>
-        <item>Hayır, FadCam hiç veri paylaşmaz veya toplamaz, çökme günlükleri bile dahil.</item>
+        <item>Hayır, ShahidCam hiç veri paylaşmaz veya toplamaz, çökme günlükleri bile dahil.</item>
         <item> </item>
         <item> </item>
         <item> </item>
@@ -185,19 +185,19 @@
         <item>Güncellemeler için resmi GitHub deposunu kontrol edin.</item>
         <item> </item>
     </string-array>
-    <string name="dialog_welcome_title">FadCam\'e Hoş Geldiniz!</string>
+    <string name="dialog_welcome_title">ShahidCam\'e Hoş Geldiniz!</string>
     <string name="note_under_dev">Önemli: Bu uygulama şu anda geliştirme aşamasında. Yeni özellikler düzenli olarak ekleniyor.</string>
     <string name="stay_updated_title">Güncel Kalın:</string>
     <string name="button_readme_github">GitHub Deposu</string>
     <string name="community_title">Topluluğumuza Katılın:</string>
     <string name="discord_title">Discord Sunucusu</string>
-    <string name="thankyou_msg">FadCam\'i kullandığınız için teşekkür ederiz!</string>
+    <string name="thankyou_msg">ShahidCam\'i kullandığınız için teşekkür ederiz!</string>
     <string name="settings_title">Ayarlar</string>
-    <string name="array_watermark_time_fadcam">FadCam ile Zaman</string>
+    <string name="array_watermark_time_fadcam">ShahidCam ile Zaman</string>
     <string name="array_watermark_timeonly">Zaman Damgası</string>
     <string name="array_watermark_nomark">Filigran Yok</string>
     <string name="toast_video_not_found">Hata: Video bulunamadı</string>
-    <string name="toast_video_saved">Video, İndirilenler\'deki FadCam klasörüne kaydedildi</string>
+    <string name="toast_video_saved">Video, İndirilenler\'deki ShahidCam klasörüne kaydedildi</string>
     <string name="toast_video_save_fail">Video kaydedilemedi</string>
     <string name="rename_video_title">Videoyu Yeniden Adlandır</string>
     <string name="rename_video_hint">Yeni adı girin</string>
@@ -380,20 +380,20 @@
     <!-- Debug Settings -->
     <string name="setting_debug_title">Hata Ayıklama Günlüğü</string>
     <string name="note_debug">Hata ayıklama günlüğü dosyası oluşturmayı etkinleştir \n(Varsayılan: Devre Dışı)</string>
-    <string name="note_debug_extra">Etkinleştirildiğinde, İndirilenler/FadCam klasöründe bir hata ayıklama günlüğü dosyası oluşturulur. Bu, uygulama sorunlarını teşhis etmeye yardımcı olabilir.</string>
+    <string name="note_debug_extra">Etkinleştirildiğinde, İndirilenler/ShahidCam klasöründe bir hata ayıklama günlüğü dosyası oluşturulur. Bu, uygulama sorunlarını teşhis etmeye yardımcı olabilir.</string>
     <!-- Onboarding Settings -->
     <string name="setting_onboarding_title">Sonraki Başlatmada Karşılama Ekranını Göster</string>
-    <string name="note_onboarding">FadCam\'i bir sonraki açışınızda uygulama tanıtımını ve izin kılavuzunu görmek için etkinleştirin.</string>
+    <string name="note_onboarding">ShahidCam\'i bir sonraki açışınızda uygulama tanıtımını ve izin kılavuzunu görmek için etkinleştirin.</string>
     <!-- Auto Update Settings -->
     <string name="setting_auto_update_check_title">Başlangıçta Otomatik Güncelleme Kontrolü</string>
-    <string name="note_auto_update_check">Etkinleştirilirse, FadCam uygulamayı her açtığınızda güncellemeleri kontrol eder. Başlangıçta otomatik güncelleme kontrollerini devre dışı bırakmak için kapatın.\n(Varsayılan: Açık)</string>
+    <string name="note_auto_update_check">Etkinleştirilirse, ShahidCam uygulamayı her açtığınızda güncellemeleri kontrol eder. Başlangıçta otomatik güncelleme kontrollerini devre dışı bırakmak için kapatın.\n(Varsayılan: Açık)</string>
     <!-- Storage Location Settings -->
     <string name="storage_location_title">Depolama Konumu</string>
     <string name="storage_location_description">Kayıtların nereye kaydedileceğini seçin.</string>
     <string name="storage_location_internal">Dahili Uygulama Depolama (Varsayılan, Özel)</string>
     <string name="storage_location_custom">Özel Konum (SD Kart/Diğer, Galeride Görünür)</string>
     <string name="storage_location_choose_folder">Klasör Seç</string>
-    <string name="storage_location_note">Not: Özel konumlar kullanmak, videoların diğer uygulamalar tarafından erişilebilir olmasını sağlar (örn., Galeri). Dahili depolama, videoları yalnızca FadCam\'e özel tutar.</string>
+    <string name="storage_location_note">Not: Özel konumlar kullanmak, videoların diğer uygulamalar tarafından erişilebilir olmasını sağlar (örn., Galeri). Dahili depolama, videoları yalnızca ShahidCam\'e özel tutar.</string>
     <string name="storage_icon_description">Depolama İkonu</string>
     <string name="location_icon_description">Konum İkonu</string>
     <string name="location_embedding_icon_description">Konum Gömme İkonu</string>
@@ -413,16 +413,16 @@
     <string name="onboarding_intro_line3">ve reklamcılar için değil, sizin için oluşturuldu.</string>
     <string name="language_change_later_note">Bunu daha sonra Ayarlar\'dan değiştirebilirsiniz.</string>
     <string name="permissions_required">İzinler Gerekli</string>
-    <string name="permissions_description">FadCam, video kaydetmek ve kaydetmek için kameranıza, mikrofonunuza ve depolamanıza erişim gerektirir.</string>
+    <string name="permissions_description">ShahidCam, video kaydetmek ve kaydetmek için kameranıza, mikrofonunuza ve depolamanıza erişim gerektirir.</string>
     <string name="grant_permissions">İzinleri Ver</string>
     <string name="permissions_note">Devam etmek için tüm izinleri vermeniz gerekir.</string>
     <string name="permissions_granted">Tüm izinler verildi!</string>
     <string name="open_settings">Ayarları Aç</string>
     <string name="disable_battery_optimization">Pil Optimizasyonunu Devre Dışı Bırak</string>
     <string name="onboarding_human_title">İnsan olduğunuzu doğrulayın</string>
-    <string name="onboarding_human_desc">Hmmmm... tamam. Bu kurallar pazarlık edilemez. Kabul edemiyorsanız, lütfen FadCam\'i hemen kaldırın.</string>
-    <string name="onboarding_human_checkbox1">FadCam\'i herhangi bir yasayı çiğnemek, birinin mahremiyetine saldırmak veya ürkütücü olmak için kullanmayacağım. Eğer hata yaparsam, geliştirici sorumlu değildir. (Bu benim sorumluluğum.)</string>
-    <string name="onboarding_human_checkbox2">FadCam\'i kullanmadan önce bile seviyorum. (İsteğe bağlı değil)</string>
+    <string name="onboarding_human_desc">Hmmmm... tamam. Bu kurallar pazarlık edilemez. Kabul edemiyorsanız, lütfen ShahidCam\'i hemen kaldırın.</string>
+    <string name="onboarding_human_checkbox1">ShahidCam\'i herhangi bir yasayı çiğnemek, birinin mahremiyetine saldırmak veya ürkütücü olmak için kullanmayacağım. Eğer hata yaparsam, geliştirici sorumlu değildir. (Bu benim sorumluluğum.)</string>
+    <string name="onboarding_human_checkbox2">ShahidCam\'i kullanmadan önce bile seviyorum. (İsteğe bağlı değil)</string>
     <string name="onboarding_human_button">İçeri girmeme izin ver!</string>
     <!-- Records Options and Empty State Strings -->
     <string name="sort_by">Sıralama Kriteri</string>
@@ -435,8 +435,8 @@
     <!-- Remote Tab Strings -->
     <string name="remote_access_title">Uzaktan Erişim/Kontrol</string>
     <string name="remote_toast_coming_soon">Yakında! İnşallah</string>
-    <string name="remote_coming_soon">FadCam için uzaktan kontrol yakında geliyor.</string>
-    <string name="remote_feature_description">FadCam cihazlarını QR kodu kullanarak güvenli, yerel ağ uzaktan kontrolü için eşleştirin: kaydetmeyi başlat/durdur, önizleme, yakınlaştırma, kamera değiştirme ve daha fazlası—hepsi uçtan uca şifreleme ile.</string>
+    <string name="remote_coming_soon">ShahidCam için uzaktan kontrol yakında geliyor.</string>
+    <string name="remote_feature_description">ShahidCam cihazlarını QR kodu kullanarak güvenli, yerel ağ uzaktan kontrolü için eşleştirin: kaydetmeyi başlat/durdur, önizleme, yakınlaştırma, kamera değiştirme ve daha fazlası—hepsi uçtan uca şifreleme ile.</string>
     <!-- Fix Start: Add camera cooldown message -->
     <!-- Fix End: Add camera cooldown message -->
 
@@ -457,7 +457,7 @@
     <!-- For TrashFragment - Restore Action -->
     <string name="trash_no_items_selected_toast">Seçili öğe yok.</string>
     <string name="trash_dialog_restore_title">Seçilenleri Geri Yükle?</string>
-    <string name="trash_dialog_restore_message">%1$d öğeyi Downloads/FadCam/ klasörüne geri yüklensin mi?</string>
+    <string name="trash_dialog_restore_message">%1$d öğeyi Downloads/ShahidCam/ klasörüne geri yüklensin mi?</string>
     <string name="trash_restore_success_toast">%1$d öğe geri yüklendi.</string>
     <string name="trash_restore_fail_toast">Öğeleri geri yüklerken hata oluştu. Bazı dosyalar geri yüklenmemiş veya galeri güncellenememiş olabilir. Depolama izinlerini kontrol edin.</string>
     <string name="trash_restore_cancelled_toast">Geri yükleme iptal edildi.</string>
@@ -565,7 +565,7 @@
     <string name="whats_new_title">Yenilikler</string>
     <string name="whats_new_no_browser">Bu bağlantıyı açacak bir uygulama bulunamadı</string>
     <string name="whats_new_subtitle">En son özellikleri ve güncellemeleri görün</string>
-    <string name="watch_video_saved_toast">Downloads/FadCam klasörüne kaydedildi</string>
+    <string name="watch_video_saved_toast">Downloads/ShahidCam klasörüne kaydedildi</string>
     <string name="video_menu_info">Bilgi</string>
     <string name="video_menu_copy_filename">Dosya Adını Kopyala</string>
     <string name="video_info_file_name">Dosya Adı</string>
@@ -585,7 +585,7 @@
     <string name="video_menu_mark_viewed">İzlenmiş Olarak İşaretle</string>
     <string name="video_menu_mark_unviewed">İzlenmemiş Olarak İşaretle</string>
     <string name="video_menu_open_with">Birlikte aç...</string>
-    <string name="video_menu_upload_faddrive">FadDrive\'a Yükle</string>
+    <string name="video_menu_upload_faddrive">Drive\'a Yükle</string>
     <string name="button_settings_cam_dual">Çift (PiP)</string>
     <string name="watch_recording_hardware_not_supported">Bu cihaz, video kaydı için gerekli kamera/mikrofon donanımına sahip değil.</string>
     <string name="setting_zoom_ratio_title">Yakınlaştırma Oranı</string>
@@ -640,13 +640,13 @@
     <string name="watermark_preview_heading">Önizleme</string>
     <string name="watermark_options_heading">Seçenekler</string>
     <string name="watermark_style_row_title">Filigran Stili</string>
-    <string name="watermark_preview_sample_fadcam">FadCam tarafından kaydedildi - %1$s</string>
+    <string name="watermark_preview_sample_fadcam">ShahidCam tarafından kaydedildi - %1$s</string>
     <string name="watermark_preview_sample_timeonly">%1$s</string>
-    <string name="watermark_style_time_fadcam_label">FadCam ile Zaman</string>
+    <string name="watermark_style_time_fadcam_label">ShahidCam ile Zaman</string>
     <string name="watermark_style_timeonly_label">Zaman Damgası</string>
     <string name="watermark_style_badge_label">Sadece Marka Etiketi</string>
     <string name="watermark_style_none_label">Filigran Yok</string>
-    <string name="helper_watermark_preview">Filigran, kaydedilen videonuzun sol üst köşesinde bu şekilde görünecek.\nKomik bilgi: 10/Tem/2024 16:47, FadCam v1.0\'ın ilk yayınlandığı zamandır.</string>
+    <string name="helper_watermark_preview">Filigran, kaydedilen videonuzun sol üst köşesinde bu şekilde görünecek.\nKomik bilgi: 10/Tem/2024 16:47, ShahidCam v1.0\'ın ilk yayınlandığı zamandır.</string>
     <string name="helper_location_watermark_option">Cihaz konumunuzu katman olarak eklemeyi açıp kapatır. Konum izni gerektirir.</string>
     <string name="helper_location_format">Konumun filigranda nasıl görüneceğini seçin: tam koordinatlar veya ters coğrafi kodlama ile tam adres (zoom=18, bina seviyesinde hassasiyet).</string>
     <string name="helper_location_overlay_short">Filigranın altına yaklaşık koordinatlar ekler.</string>
@@ -667,7 +667,7 @@
     <string name="widget_show_date_title">Tarihi Göster</string>
     <string name="widget_date_format_title">Tarih Formatı</string>
     <string name="widget_arabic_date_title">Arapça Tarih</string>
-    <string name="widget_branding_title">FadSecLab Markalaması</string>
+    <string name="widget_branding_title">CyberShadowPKLab Markalaması</string>
     <string name="widget_time_format_12h">12 saat (3:30 ÖS)</string>
     <string name="widget_time_format_24h">24 saat (15:30)</string>
     <string name="widget_date_format_sample">13 Ağu 2025</string>
@@ -727,8 +727,8 @@
     <string name="shortcut_purpose_stop">Bu kısayol, mevcut kaydı durdurur.</string>
     <string name="shortcut_purpose_toggle">Kaydı varsayılan kamerayla başlatan veya durduran tek bir dinamik kısayol — manuel kontrol için ayrı Başlat ve Durdur kısayollarını kullanın.</string>
     <string name="shortcut_purpose_torch">Bu kısayol, feneri açar/kapatır.</string>
-    <string name="shortcut_purpose_photo">Bu kısayol, arka kameradan bir fotoğraf çeker ve FadCam/FadShot konumuna kaydeder.</string>
-    <string name="shortcut_purpose_screenshot">Bu kısayol, bir ekran görüntüsü alır ve FadCam/FadShot konumuna kaydeder (Ayarlar &gt; Gizlilik &gt; Erişilebilirlik\'ten Erişilebilirlik iznini etkinleştirin).</string>
+    <string name="shortcut_purpose_photo">Bu kısayol, arka kameradan bir fotoğraf çeker ve ShahidCam/ShahidShot konumuna kaydeder.</string>
+    <string name="shortcut_purpose_screenshot">Bu kısayol, bir ekran görüntüsü alır ve ShahidCam/ShahidShot konumuna kaydeder (Ayarlar &gt; Gizlilik &gt; Erişilebilirlik\'ten Erişilebilirlik iznini etkinleştirin).</string>
     <string name="widget_customize_action_label">Özelleştir</string>
     <string name="widget_customize_action_subtitle">Saat, tarih, tema seçenekleri</string>
     <string name="shortcut_start_current">Mevcut ile Başlat</string>
@@ -736,12 +736,12 @@
     <string name="shortcut_toggle_recording_long">Kaydı başlat veya durdur</string>
     <string name="shortcut_start_dual">Çift ile Başlat</string>
     <string name="shortcut_take_photo">Fotoğraf</string>
-    <string name="shortcut_take_screenshot">FadRec</string>
+    <string name="shortcut_take_screenshot">ScreenRec</string>
     <string name="screenshot_capture_saved">Ekran görüntüsü kaydedildi</string>
     <string name="screenshot_capture_failed">Ekran görüntüsü alınamadı</string>
     <string name="screenshot_capture_system_saved">Ekran görüntüsü sistem tarafından alındı. Sistem ekran görüntülerine kaydedildi.</string>
-    <string name="screenshot_accessibility_enable_needed">Kayıt istemi olmadan bu kısayolu kullanmak için Erişilebilirlik\'te &quot;FadRec Ekran Görüntüsü&quot;nü etkinleştirin.</string>
-    <string name="screenshot_accessibility_service_desc">FadRec kısayolu için ekran görüntüsü alır ve FadCam/FadShot\'a kaydeder.</string>
+    <string name="screenshot_accessibility_enable_needed">Kayıt istemi olmadan bu kısayolu kullanmak için Erişilebilirlik\'te &quot;ScreenRec Ekran Görüntüsü&quot;nü etkinleştirin.</string>
+    <string name="screenshot_accessibility_service_desc">ScreenRec kısayolu için ekran görüntüsü alır ve ShahidCam/ShahidShot\'a kaydeder.</string>
     <string name="shortcuts_video_category">Video Kaydı</string>
     <string name="shortcuts_picture_category">Resim</string>
     <string name="theme_red">Crimson Bloom</string>
@@ -808,7 +808,7 @@
     <string name="settings_notifications_subtitle">Kayıt ve hazır ayar</string>
     <string name="settings_security_title">Güvenlik</string>
     <string name="settings_advanced_subtitle">Motion Lab ve güç kullanıcı kontrolleri</string>
-    <string name="fadcrypt_title">FadCrypt</string>
+    <string name="fadcrypt_title">Crypt</string>
     <string name="fadcrypt_row_subtitle">Kayıtlarınızı şifreleyin ve koruyun</string>
     <string name="settings_watermark_subtitle">Katman markalama modu</string>
     <string name="shortcuts_pin_to_home">Başlat/Durdur/Feneri Ana Ekrana Sabitle</string>
@@ -905,11 +905,11 @@
     <string name="stream_notes_wifi">• İstemciler yayına erişmek için aynı WiFi ağında olmalıdır</string>
     <string name="stream_notes_quality">• Yayın kalitesi (DÜŞÜK/ORTA/YÜKSEK/ULTRA), ağ sorunlarını önlemek için FPS sınırını ve bit hızını kontrol eder</string>
     <string name="stream_notes_resolution">• Yayın yönü ve çözünürlüğü normal kayıt ayarlarınızdan alınır (Video Ayarları → Çözünürlük ve Yön). Yayın boyutlarını değiştirmek için bunları ayarlayın</string>
-    <string name="stream_notes_cellular">⚠️ Yalnızca WiFi sınırlaması: Hücresel ağlar gelen bağlantıları engeller. Herhangi bir ağdan (WiFi, LTE, her yerden) kesintisiz yayın için FadCam Pro+\'a yükseltin. Özel oluşturulmuş bağlantıyla dünyanın her yerinden yayın yapın—port yönlendirme yok, yönlendirici değişikliği yok, ağ kısıtlaması yok</string>
-    <string name="cloud_account_button_desc">FadSec Cloud</string>
-    <string name="cloud_button_label">FadSec Cloud</string>
-    <string name="cloud_button_title">FadSec Cloud</string>
-    <string name="cloud_account_title">FadSec Cloud</string>
+    <string name="stream_notes_cellular">⚠️ Yalnızca WiFi sınırlaması: Hücresel ağlar gelen bağlantıları engeller. Herhangi bir ağdan (WiFi, LTE, her yerden) kesintisiz yayın için ShahidCam Pro+\'a yükseltin. Özel oluşturulmuş bağlantıyla dünyanın her yerinden yayın yapın—port yönlendirme yok, yönlendirici değişikliği yok, ağ kısıtlaması yok</string>
+    <string name="cloud_account_button_desc">CyberShadowPK Cloud</string>
+    <string name="cloud_button_label">CyberShadowPK Cloud</string>
+    <string name="cloud_button_title">CyberShadowPK Cloud</string>
+    <string name="cloud_account_title">CyberShadowPK Cloud</string>
     <string name="cloud_account_link">Cihazı Bağla</string>
     <string name="cloud_account_unlink">Cihazın Bağlantısını Kes</string>
     <string name="cloud_account_connecting">Bağlanıyor…</string>
@@ -917,30 +917,30 @@
     <string name="cloud_account_not_linked">Bağlı Değil</string>
     <string name="cloud_account_device_name_hint">Cihaz adını girin (örn. Telefonum)</string>
     <string name="cloud_account_device_name_title">Cihazınızı Adlandırın</string>
-    <string name="cloud_account_device_name_desc">Bu ad, FadSec Cloud panonuzda görünecek</string>
+    <string name="cloud_account_device_name_desc">Bu ad, CyberShadowPK Cloud panonuzda görünecek</string>
     <string name="cloud_account_device_id">Cihaz Kimliği</string>
     <string name="cloud_account_link_success">Cihaz başarıyla bağlandı!</string>
     <string name="cloud_account_link_failed">Cihaz bağlanamadı. Lütfen tekrar deneyin.</string>
     <string name="cloud_account_unlink_confirm">Bu cihazın bağlantısını kesmek istediğinize emin misiniz?</string>
     <string name="cloud_account_unlink_success">Cihazın bağlantısı kesildi</string>
-    <string name="cloud_account_webview_title">FadSec Cloud</string>
+    <string name="cloud_account_webview_title">CyberShadowPK Cloud</string>
     <string name="cloud_account_login_required">Cihazınızı bağlamak için lütfen giriş yapın</string>
     <string name="cloud_account_helper_text">Hesabınızla bağlantıyı kesmek için bağlantıyı kaldırın. Farklı bir adla tekrar bağlayabilirsiniz.</string>
     <string name="cloud_streaming_title">Bulut Akışı</string>
     <string name="cloud_streaming_status_off">Yalnızca yerel akış</string>
-    <string name="cloud_streaming_status_on">FadSec Cloud\'a yükleniyor</string>
+    <string name="cloud_streaming_status_on">CyberShadowPK Cloud\'a yükleniyor</string>
     <string name="cloud_streaming_not_linked">Etkinleştirmek için önce cihazı bağlayın</string>
     <string name="e2e_encryption_title">E2E Akış Şifrelemesi</string>
     <string name="e2e_encryption_not_configured">Yapılandırılmamış — bulut akışını etkinleştirmek için yapılandırın</string>
     <string name="e2e_encryption_configured">Yapılandırıldı — segmentler uçtan uca şifrelenir</string>
     <string name="e2e_encryption_setup_title">E2E Şifreleme Şifresi Belirleyin</string>
-    <string name="e2e_encryption_setup_hint">FadSec ID şifrenizi girin</string>
-    <string name="e2e_encryption_setup_desc">FadSec ID şifreniz, akış şifreleme anahtarını oluşturmak için kullanılır. Bu, akışları görüntülemek için FadCam panosunda kullandığınız şifreyle eşleşmelidir.</string>
+    <string name="e2e_encryption_setup_hint">CyberShadowPK ID şifrenizi girin</string>
+    <string name="e2e_encryption_setup_desc">CyberShadowPK ID şifreniz, akış şifreleme anahtarını oluşturmak için kullanılır. Bu, akışları görüntülemek için ShahidCam panosunda kullandığınız şifreyle eşleşmelidir.</string>
     <string name="e2e_encryption_change_title">E2E Şifreleme Şifresini Değiştir</string>
     <string name="streaming_mode_title">Akış Hedefi</string>
     <string name="streaming_mode_local">Yerel Ağ</string>
     <string name="streaming_mode_local_desc">Aynı WiFi\'daki cihazlara akış yapın</string>
-    <string name="streaming_mode_cloud">FadSec Cloud</string>
+    <string name="streaming_mode_cloud">CyberShadowPK Cloud</string>
     <string name="streaming_mode_cloud_desc">İnternet üzerinden her yere akış yapın</string>
     <string name="streaming_mode_cloud_featured">ÖNE ÇIKAN</string>
     <string name="streaming_mode_link_required">Etkinleştirmek için cihazı bağlayın</string>
@@ -950,7 +950,7 @@
     <string name="preview_enable_hint">Kamerayı uyandırmak için basılı tutun</string>
     <string name="preview_starting">Canlı önizleme başlatılıyor…</string>
     <string name="fadrec_preview_enable_hint">Önizlemeyi göstermek için basılı tutun</string>
-    <string name="fadrec_preview_not_available">Canlı ekran önizlemesi henüz FadRec\'e eklenmedi</string>
+    <string name="fadrec_preview_not_available">Canlı ekran önizlemesi henüz ScreenRec\'e eklenmedi</string>
     <string name="torch_unavailable">Bu kamera için flaş kullanılamıyor</string>
     <string name="motion_lab_analysis_2_desc">Güç tasarrufu, daha yavaş yanıt.</string>
     <string name="motion_lab_analysis_3_desc">Dengeli varsayılan.</string>
@@ -974,9 +974,9 @@
     <string name="lab_section_about">Hakkında</string>
     <string name="home_sidebar_discord">Discord</string>
     <string name="home_sidebar_discord_sub">Topluluğa Katıl</string>
-    <string name="home_sidebar_copyright" translatable="false">© FadSec Lab 2024 – 2026</string>
+    <string name="home_sidebar_copyright" translatable="false">© CyberShadowPK Lab 2024 – 2026</string>
     <string name="privacy_black_mode_title">Gizlilik Siyah Ekranı</string>
-    <string name="privacy_black_mode_helper">Cihazınız uygulamayı arka planda kapatıyorsa, uygulamayı ön planda çalışır durumda tutmak için bu özelliği kullanabilirsiniz.\n\nKayıt devam ederken ekranın kapalı görünmesini sağlayan siyah bir ekran katmanı görünür.\n\nEtkinleştirmek için Ana Sayfa sekmesinin üst başlığındaki FadCam simgesine dokunun.</string>
+    <string name="privacy_black_mode_helper">Cihazınız uygulamayı arka planda kapatıyorsa, uygulamayı ön planda çalışır durumda tutmak için bu özelliği kullanabilirsiniz.\n\nKayıt devam ederken ekranın kapalı görünmesini sağlayan siyah bir ekran katmanı görünür.\n\nEtkinleştirmek için Ana Sayfa sekmesinin üst başlığındaki ShahidCam simgesine dokunun.</string>
     <string name="privacy_black_mode_enable_title">Gizlilik Siyah Modu\'nu Etkinleştir</string>
     <string name="privacy_black_gestures_title">Çıkış Yöntemleri</string>
     <string name="privacy_black_gestures_helper">Gizlilik Siyah Modu\'ndan çıkmak için hangi hareketlerin kullanılabileceğini seçin.\n\nNot: Takılıp kalmamak için en az bir çıkış yöntemi etkin kalmalıdır!</string>
@@ -1187,8 +1187,8 @@
     <string name="mini_app_qr_generator_title">QR Oluşturucu</string>
     <string name="mini_app_qr_generator_desc">Metin, URL ve kişilerden QR kodları oluşturun</string>
     <string name="mini_apps_planned_shortcuts_title">Planlanan: Kısayollar ve Otomasyon</string>
-    <string name="mini_apps_planned_shortcuts_desc">Herhangi bir Mini Uygulama\'ya FadCam\'i açmadan anında erişim için ana ekran kısayolları.\n\nMini Uygulamaları programlı olarak tetiklemek için intent tabanlı otomasyon desteği (Tasker, MacroDroid, vb.) — otomatik iş akışlarınızdan QR tarama, fener ve daha fazlasını kullanın.</string>
-    <string name="app_name" translatable="false">FadCam</string>
+    <string name="mini_apps_planned_shortcuts_desc">Herhangi bir Mini Uygulama\'ya ShahidCam\'i açmadan anında erişim için ana ekran kısayolları.\n\nMini Uygulamaları programlı olarak tetiklemek için intent tabanlı otomasyon desteği (Tasker, MacroDroid, vb.) — otomatik iş akışlarınızdan QR tarama, fener ve daha fazlasını kullanın.</string>
+    <string name="app_name" translatable="false">ShahidCam</string>
     <string name="accessibility_thumbnail_progress">%1$d%% izlendi</string>
     <string name="readme_github_subtitle">Kaynak kodu &amp; sürümler</string>
     <string name="readme_discord_subtitle">Topluluğa katıl</string>
@@ -1228,11 +1228,11 @@
     <string name="fadrec_ready_to_record">Ekran yakalamaya hazır</string>
     <string name="fadrec_ready_to_record_subtitle">Başlamak için dokun</string>
     <string name="fadrec_permission_denied">Ekran kaydı izni reddedildi</string>
-    <string name="fadrec_mode_title">FadRec • Ekran Kaydı</string>
+    <string name="fadrec_mode_title">ScreenRec • Ekran Kaydı</string>
     <string name="fadrec_mute_audio">Kayıt sesini kapat</string>
     <string name="fadrec_unmute_audio">Kayıt sesini aç</string>
     <string name="fadrec_mic_permission_needed_title">Mikrofon İzni Gerekli</string>
-    <string name="fadrec_mic_permission_needed_message">FadRec mikrofona erişemiyor. Sessiz kaydedebilirsiniz - hiçbir ses kaydedilmez.</string>
+    <string name="fadrec_mic_permission_needed_message">ScreenRec mikrofona erişemiyor. Sessiz kaydedebilirsiniz - hiçbir ses kaydedilmez.</string>
     <string name="fadrec_record_muted">Sessiz Kaydet</string>
     <string name="fadrec_audio_source_title">Ses Kaynağı</string>
     <string name="fadrec_audio_source_choose">Ses kaynağı seç</string>
@@ -1296,11 +1296,11 @@
     <string name="home_elapsed_font_doto">Doto</string>
     <string name="home_elapsed_font_doto_desc">Daha belirgin bir dijital süre görünümü için Doto yazı tipini kullanır</string>
     <string name="home_elapsed_flag_option">Bayrak vurgusu</string>
-    <string name="home_elapsed_flag_option_desc">Sürenin arkasındaki FadSec Lab bayrak vurgusunu göster veya gizle</string>
-    <string name="home_elapsed_flag_helper">FadSec Lab bayrak vurgusunun geçen sürenin arkasında gösterilip gösterilmeyeceğini seçin.</string>
-    <string name="home_elapsed_flag_show">FadSec Lab bayrağını göster (Varsayılan)</string>
+    <string name="home_elapsed_flag_option_desc">Sürenin arkasındaki CyberShadowPK Lab bayrak vurgusunu göster veya gizle</string>
+    <string name="home_elapsed_flag_helper">CyberShadowPK Lab bayrak vurgusunun geçen sürenin arkasında gösterilip gösterilmeyeceğini seçin.</string>
+    <string name="home_elapsed_flag_show">CyberShadowPK Lab bayrağını göster (Varsayılan)</string>
     <string name="home_elapsed_flag_show_desc">Sürenin arkasında markalı bayrak vurgusunu görüntüle</string>
-    <string name="home_elapsed_flag_hide">FadSec Lab bayrağını gizle</string>
+    <string name="home_elapsed_flag_hide">CyberShadowPK Lab bayrağını gizle</string>
     <string name="home_elapsed_flag_hide_desc">Geçen süre alanını bayrak vurgusu olmadan temiz tut</string>
     <string name="home_elapsed_background_option">Arka Plan</string>
     <string name="home_elapsed_background_option_desc">Geçen sürenin siyah, beyaz veya şeffaf bir kart üzerinde durmasını seçin</string>
@@ -1359,12 +1359,12 @@
     <string name="home_options_title">Ana Sayfa Seçenekleri</string>
     <string name="help_section">Yardım</string>
     <string name="display_settings_title">Görüntü</string>
-    <string name="video_menu_save_helper_downloads_fadcam">Video, Downloads/FadCam konumuna kaydedilecek</string>
+    <string name="video_menu_save_helper_downloads_fadcam">Video, Downloads/ShahidCam konumuna kaydedilecek</string>
     <string name="video_menu_save_copy_or_move_title">Galeriye Kaydet</string>
     <string name="video_menu_save_copy">Galeriye Kopyala</string>
-    <string name="video_menu_save_copy_desc">Downloads/FadCam içinde bir kopya oluştur (orijinal dosya korunur)</string>
+    <string name="video_menu_save_copy_desc">Downloads/ShahidCam içinde bir kopya oluştur (orijinal dosya korunur)</string>
     <string name="video_menu_save_move">Galeriye Taşı</string>
-    <string name="video_menu_save_move_desc">Dosyayı Downloads/FadCam konumuna taşı (depolama alanından tasarruf sağlar)</string>
+    <string name="video_menu_save_move_desc">Dosyayı Downloads/ShahidCam konumuna taşı (depolama alanından tasarruf sağlar)</string>
     <string name="video_menu_save_longpress_helper">\"Galeriye Kaydet\"e uzun basarak kopyalama veya taşıma arasında seçim yapın</string>
     <string name="watch_delete_confirm_title">Çöp Kutusuna Taşınsın mı?</string>
     <string name="watch_delete_confirm_msg">\"%s\" çöp kutusuna taşınacak.</string>
@@ -1469,18 +1469,18 @@
     <string name="media_type_photo">Fotoğraf</string>
     <string name="media_type_photo_back">Arka</string>
     <string name="media_type_photo_selfie">Selfie</string>
-    <string name="media_type_photo_fadrec">FadRec</string>
+    <string name="media_type_photo_fadrec">ScreenRec</string>
     <string name="photo_capture_saved">Fotoğraf kaydedildi</string>
     <string name="photo_capture_failed">Fotoğraf çekilemedi</string>
     <string name="photo_capture_preview_unavailable">Ön izleme kullanılamıyor</string>
     <string name="records_filter_all">Tümü</string>
     <string name="mode_all">Tümü</string>
-    <string name="records_filter_camera">FadCam</string>
+    <string name="records_filter_camera">ShahidCam</string>
     <string name="records_filter_dual">Çift</string>
-    <string name="records_filter_screen">FadRec</string>
-    <string name="records_filter_faditor">Faditor</string>
+    <string name="records_filter_screen">ScreenRec</string>
+    <string name="records_filter_faditor">ShahidEditor</string>
     <string name="records_filter_stream">Yayın</string>
-    <string name="records_filter_shot">FadShot</string>
+    <string name="records_filter_shot">ShahidShot</string>
     <string name="records_filter_camera_all">Tümü</string>
     <string name="records_filter_camera_back">Arka</string>
     <string name="records_filter_camera_front">Ön</string>
@@ -1492,28 +1492,28 @@
     <string name="records_filter_miniapps_all">Tümü</string>
     <string name="records_filter_shot_back">Arka</string>
     <string name="records_filter_shot_selfie">Selfie</string>
-    <string name="records_filter_shot_fadrec">FadRec</string>
+    <string name="records_filter_shot_fadrec">ScreenRec</string>
     <string name="records_filter_checklist_desc">Seçim modunu aç/kapat</string>
     <string name="records_filter_helper_camera_all">Kamera kayıtları (Arka, Ön, Çift)</string>
     <string name="records_filter_helper_camera_back">Arka kamera ile çekildi</string>
     <string name="records_filter_helper_camera_front">Ön kamera ile çekildi (selfie)</string>
     <string name="records_filter_helper_camera_dual">Çift kamera modu ile çekildi</string>
     <string name="records_filter_helper_dual">Çift kamera kayıtları</string>
-    <string name="records_filter_helper_screen">Ekran kayıtları (FadRec)</string>
-    <string name="records_filter_helper_faditor">Düzenlenmiş/Dışa aktarılmış videolar (Faditor)</string>
-    <string name="records_filter_helper_faditor_all">Tüm Faditor çıktıları ve ilgili dosyalar.</string>
+    <string name="records_filter_helper_screen">Ekran kayıtları (ScreenRec)</string>
+    <string name="records_filter_helper_faditor">Düzenlenmiş/Dışa aktarılmış videolar (ShahidEditor)</string>
+    <string name="records_filter_helper_faditor_all">Tüm ShahidEditor çıktıları ve ilgili dosyalar.</string>
     <string name="records_filter_helper_faditor_converted">Parçalanmış MP4\'ü harici oynatıcılar için standart aranabilir MP4\'e dönüştürür.</string>
     <string name="records_filter_helper_faditor_merge">Birden çok klibi tek bir çıktı videosunda birleştirir.</string>
     <string name="records_filter_helper_stream">Kaydedilmiş yayın kayıtları</string>
     <string name="records_filter_helper_shot_all">Çekilen fotoğraflar ve ekran görüntüleri</string>
     <string name="records_filter_helper_shot_back">Arka kamera ile çekilen fotoğraflar</string>
     <string name="records_filter_helper_shot_selfie">Ön kamera ile çekilen fotoğraflar (selfie)</string>
-    <string name="records_filter_helper_shot_fadrec">Çekilen ekran görüntüleri (FadRec)</string>
+    <string name="records_filter_helper_shot_fadrec">Çekilen ekran görüntüleri (ScreenRec)</string>
     <string name="records_location_format">Konum: %1$s/%2$s</string>
     <string name="records_batch_select_all">Tümünü seç</string>
     <string name="records_batch_deselect_all">Tümünün seçimini kaldır</string>
     <string name="records_batch_save">Galeriye Kaydet</string>
-    <string name="records_batch_faditor">Faditor Otomasyonları</string>
+    <string name="records_batch_faditor">ShahidEditor Otomasyonları</string>
     <string name="records_batch_delete">Sil</string>
     <string name="records_batch_coming_soon">Bu toplu işlem bir sonraki sürümde eklenecek.</string>
     <string name="records_batch_select_items_first">Önce bir veya daha fazla video seçin.</string>
@@ -1521,7 +1521,7 @@
     <string name="records_batch_fab_label">Toplu</string>
     <string name="records_batch_select_all_desc">Geçerli filtredeki tüm videoları seçin veya temizleyin.</string>
     <string name="records_batch_save_desc">Seçilen videoları başka bir klasöre kopyalayın, taşıyın veya dışa aktarın.</string>
-    <string name="records_batch_faditor_desc">Faditor sekmesini açmadan arka plan otomasyonlarını çalıştırın.</string>
+    <string name="records_batch_faditor_desc">ShahidEditor sekmesini açmadan arka plan otomasyonlarını çalıştırın.</string>
     <string name="records_batch_delete_desc">Seçilen videoları Çöp Kutusu\'na taşıyın.</string>
     <string name="records_batch_save_queued">%1$d kaydetme görevi kuyruğa eklendi.</string>
     <string name="records_batch_faditor_first_only">İlk video açıldı. %1$d seçildi; çoklu düzenleme kuyruğu bir sonraki sürümde.</string>
@@ -1532,7 +1532,7 @@
     <string name="records_batch_custom_export_started">%1$d video seçilen klasöre aktarılıyor…</string>
     <string name="records_batch_custom_export_invalid_folder">Seçilen klasör yazılabilir değil.</string>
     <string name="records_batch_custom_export_done">Dışa aktarma tamamlandı. Başarılı: %1$d • Başarısız: %2$d</string>
-    <string name="records_batch_faditor_sheet_title">Toplu Faditor İşlemleri</string>
+    <string name="records_batch_faditor_sheet_title">Toplu ShahidEditor İşlemleri</string>
     <string name="records_batch_faditor_export_standard">Standart MP4\'e Dışa Aktar</string>
     <string name="records_batch_faditor_export_standard_desc">Parçalanmış MP4\'ü harici oynatıcılar için aranabilir standart MP4\'e dönüştürür.</string>
     <string name="records_batch_faditor_merge">Seçilen Videoları Birleştir</string>
@@ -1540,7 +1540,7 @@
     <string name="records_batch_faditor_queued">%1$d toplu öğe arka planda kuyruğa alındı.</string>
     <string name="records_batch_completed">Toplu işlem tamamlandı.</string>
     <string name="records_batch_notif_channel_name">Toplu Medya İşlemleri</string>
-    <string name="records_batch_notif_channel_desc">Kayıtlar toplu kaydetme ve Faditor otomasyon görevlerinin ilerlemesi ve sonuçları.</string>
+    <string name="records_batch_notif_channel_desc">Kayıtlar toplu kaydetme ve ShahidEditor otomasyon görevlerinin ilerlemesi ve sonuçları.</string>
     <string name="records_batch_starting">Toplu işlem hazırlanıyor…</string>
     <string name="records_batch_progress_item">%1$d / %2$d işleniyor</string>
     <string name="records_batch_progress_counts">Tamamlanan %1$d • Atlanan %2$d • Başarısız %3$d</string>
@@ -1548,7 +1548,7 @@
     <string name="records_batch_export_done_title">Standart MP4 Dışa Aktarma Tamamlandı</string>
     <string name="records_batch_merge_done_title">Toplu Birleştirme Tamamlandı</string>
     <string name="records_hide_thumbnails_row_title">Gizle</string>
-    <string name="nav_faditor_mini">Faditor</string>
+    <string name="nav_faditor_mini">ShahidEditor</string>
     <string name="nav_lab">Lab</string>
     <string name="note_cam_dual_unsupported">Cihazınız eşzamanlı çift kamera kaydını desteklemiyor.</string>
     <string name="dual_recording_started">Çift kamera kaydı başladı</string>
@@ -1703,7 +1703,7 @@
 <string name="row_raw_audio_title">Ham ses</string>
 <string name="raw_audio_banner">Tamamen ham ses bu cihazda mevcut değil</string>
 <string name="delete_single_video_subtitle">Bu kaydı kaldır</string>
-<string name="note_debug_detailed">Etkinleştirildiğinde, FadCam hata ayıklama günlüğü HTML dosyasını (FADCAM_debug.html) herkese açık İndirilenler/FadCam/ klasörüne yazar. Sorun bildirirken bu dosyayı paylaşın. Gelecekteki yazmaları durdurmak için kapatın.\nNot: Hata ayıklama günlüğü kayıt sırasında performans yükü ekleyebilir — sorun gidermiyorsanız kapalı tutun.</string>
+<string name="note_debug_detailed">Etkinleştirildiğinde, ShahidCam hata ayıklama günlüğü HTML dosyasını (FADCAM_debug.html) herkese açık İndirilenler/ShahidCam/ klasörüne yazar. Sorun bildirirken bu dosyayı paylaşın. Gelecekteki yazmaları durdurmak için kapatın.\nNot: Hata ayıklama günlüğü kayıt sırasında performans yükü ekleyebilir — sorun gidermiyorsanız kapalı tutun.</string>
 <string name="location_format_title">Konum Biçimi</string>
 <string name="location_format_coordinates">Yalnızca Koordinatlar</string>
 <string name="location_format_address">Tam Adres</string>
@@ -1712,7 +1712,7 @@
 <string name="location_watermark_sheet_title">Konum Katmanı</string>
 <string name="location_watermark_switch_label">Konum Katmanı</string>
 <string name="watermark_disabled_message" translatable="false">Watermark disabled (no watermark will appear in recordings).</string>
-<string name="widgets_pin_fallback">İstem görünmezse, Ana ekranınıza uzun basın, Widget\'ları açın ve FadCam Saat widget\'ını sürükleyin.</string>
+<string name="widgets_pin_fallback">İstem görünmezse, Ana ekranınıza uzun basın, Widget\'ları açın ve ShahidCam Saat widget\'ını sürükleyin.</string>
 <string name="widget_black_background_title">Siyah Arka Plan</string>
 <string name="widget_arabic_date_format_title">Arapça Tarih Biçimi</string>
 <string name="widget_option_enabled">Etkin</string>
@@ -1775,12 +1775,12 @@
 <string name="shortcuts_choose_from_app_icons">Uygulama simgelerinden seç</string>
 <string name="shortcuts_choose_from_gallery">Galeriden seç</string>
 <string name="shortcut_purpose_start_front">Bu kısayol, ön kamera ile kaydı başlatır.</string>
-<string name="shortcut_purpose_photo_front">Bu kısayol, ön kamera fotoğrafı çeker ve FadCam/FadShot konumuna kaydeder.</string>
+<string name="shortcut_purpose_photo_front">Bu kısayol, ön kamera fotoğrafı çeker ve ShahidCam/ShahidShot konumuna kaydeder.</string>
 <string name="shortcut_start_back">Arkadan Başlat</string>
 <string name="shortcut_start_front">Önden Başlat</string>
 <string name="shortcut_take_photo_front">Selfie</string>
 <string name="preview_quick_actions_title">Önizleme hızlı işlemleri</string>
-<string name="preview_quick_actions_sub">Kayıt boştayken bile FadShot ve Tam Ekran simgelerini göster.</string>
+<string name="preview_quick_actions_sub">Kayıt boştayken bile ShahidShot ve Tam Ekran simgelerini göster.</string>
 <string name="grid_lines_title">Izgara çizgileri</string>
 <string name="home_icon_picker_title">Ana simge</string>
 <string name="home_icon_home">Ana</string>
@@ -1792,12 +1792,12 @@
 <string name="preview_quick_actions_state_always">Her zaman görünür (boşta + kayıt)</string>
 <string name="preview_quick_actions_state_recording_only">Yalnızca kayıt sırasında görünür</string>
 <string name="coming_soon_toast">Çok yakında! İnşallah</string>
-<string name="faditor_mini_title">Faditor Mini</string>
+<string name="faditor_mini_title">ShahidEditor Mini</string>
 <string name="faditor_mini_coming_soon">Çok yakında — hafif düzenleyici</string>
 <string name="faditor_mini_subtitle">Videolarınızı hassasiyetle kırpın ve dışa aktarın</string>
-<string name="faditor_mini_toast">Faditor Mini — çok yakında</string>
+<string name="faditor_mini_toast">ShahidEditor Mini — çok yakında</string>
 <string name="faditor_select_video">Video Seç</string>
-<string name="faditor_editor_title">Faditor Mini</string>
+<string name="faditor_editor_title">ShahidEditor Mini</string>
 <string name="faditor_close">Düzenleyiciyi kapat</string>
 <string name="faditor_undo">Geri Al</string>
 <string name="faditor_redo">İleri Al</string>
@@ -1873,7 +1873,7 @@
 <string name="faditor_export_confirm_action">Şimdi Dışa Aktar</string>
 <string name="faditor_export_confirm_subtitle">Dışa aktarma arka planda devam edecek</string>
 <string name="faditor_export_confirm_helper">%1$s • %2$d klip%3$s\nDışa aktarma bir arka plan hizmeti olarak çalışır — uygulamayı kapatabilirsiniz ve dışa aktarmaya devam eder.</string>
-<string name="faditor_export_notif_channel">Faditor Dışa Aktarma</string>
+<string name="faditor_export_notif_channel">ShahidEditor Dışa Aktarma</string>
 <string name="faditor_export_notif_channel_desc">Devam eden video dışa aktarımları için bildirimler</string>
 <string name="faditor_export_notif_title">Video dışa aktarılıyor…</string>
 <string name="faditor_export_notif_error_title">Dışa Aktarma Başarısız</string>
@@ -1910,31 +1910,31 @@
 <string name="faditor_delete_projects_title">Projeler silinsin mi?</string>
 <string name="faditor_delete_projects_message">%1$d proje silinsin mi? Bu işlem geri alınamaz.</string>
 <string name="faditor_delete_confirm">Sil</string>
-<string name="faditor_version_info">Faditor Mini · Aşama 1 · Kırpma + Dışa Aktarma</string>
+<string name="faditor_version_info">ShahidEditor Mini · Aşama 1 · Kırpma + Dışa Aktarma</string>
 <string name="faditor_empty_title">Henüz proje yok</string>
 <string name="faditor_empty_desc">Bir video seçip düzenlemeye başlamak için "Yeni Proje Başlat"a dokunun</string>
-<string name="faditor_info_title">Faditor Mini Hakkında</string>
+<string name="faditor_info_title">ShahidEditor Mini Hakkında</string>
 <string name="faditor_info_subtitle">Yerleşik düzenleyici hakkında bilmeniz gereken her şey</string>
 <string name="faditor_info_how_title">Nasıl çalışır</string>
-<string name="faditor_info_how_desc">Cihazınızdan veya FadCam kayıtlarınızdan herhangi bir video seçin. Zaman çizelgesini kullanarak kare kare kırpın, ardından dışa aktarın. Tüm işlemler cihazınızda yerel olarak gerçekleşir — hiçbir şey yüklenmez.\n\nDüzenleme ilerlemeniz her birkaç saniyede bir ve düzenleyiciden her ayrıldığınızda otomatik olarak kaydedilir, böylece uygulama beklenmedik şekilde kapanırsa hiçbir çalışma kaybolmaz.</string>
+<string name="faditor_info_how_desc">Cihazınızdan veya ShahidCam kayıtlarınızdan herhangi bir video seçin. Zaman çizelgesini kullanarak kare kare kırpın, ardından dışa aktarın. Tüm işlemler cihazınızda yerel olarak gerçekleşir — hiçbir şey yüklenmez.\n\nDüzenleme ilerlemeniz her birkaç saniyede bir ve düzenleyiciden her ayrıldığınızda otomatik olarak kaydedilir, böylece uygulama beklenmedik şekilde kapanırsa hiçbir çalışma kaybolmaz.</string>
 <string name="faditor_info_convert_title">Akıllı dönüştürme</string>
-<string name="faditor_info_convert_desc">FadCam, çökmeye dayanıklı bir biçim olan parçalanmış MP4 (fMP4) formatında kayıt yapar. Standart bir MP4\'ün tek bir sonlandırılmış kapsayıcısı varken, fMP4 videoyu küçük bağımsız parçalar halinde yazar. Bu, uygulama çökse veya kayıt aniden dursa bile görüntülerinizin bozulmadan kalması anlamına gelir.\n\nAncak, harici video oynatıcılar, galeri uygulamaları ve dosya yöneticileri bu dosyalarda arama, ilerletme veya doğru süreyi görüntüleme yapamaz. Bu bir hata değil — güvenilirlik için kasıtlı bir tasarım ödünleşimidir.\n\nVideolarınızı FadCam dışında — Google Drive, bir bilgisayar veya başka bir konumda — saklamayı planlıyorsanız, önce dönüştürmelisiniz. Aksi takdirde dosyalar normal oynatma için kullanılamaz.\n\nDönüştürmek için: videoyu burada Faditor Mini\'de açın ve Dışa Aktar\'a dokunun. Dönüştürülen standart MP4, Kayıtlar sekmenizde görünecek, galerinize kaydetmeye veya herhangi bir yerde paylaşmaya hazır olacaktır. İşlem anlık ve kayıpsızdır — yeniden kodlama veya kalite kaybı yoktur.</string>
+<string name="faditor_info_convert_desc">ShahidCam, çökmeye dayanıklı bir biçim olan parçalanmış MP4 (fMP4) formatında kayıt yapar. Standart bir MP4\'ün tek bir sonlandırılmış kapsayıcısı varken, fMP4 videoyu küçük bağımsız parçalar halinde yazar. Bu, uygulama çökse veya kayıt aniden dursa bile görüntülerinizin bozulmadan kalması anlamına gelir.\n\nAncak, harici video oynatıcılar, galeri uygulamaları ve dosya yöneticileri bu dosyalarda arama, ilerletme veya doğru süreyi görüntüleme yapamaz. Bu bir hata değil — güvenilirlik için kasıtlı bir tasarım ödünleşimidir.\n\nVideolarınızı ShahidCam dışında — Google Drive, bir bilgisayar veya başka bir konumda — saklamayı planlıyorsanız, önce dönüştürmelisiniz. Aksi takdirde dosyalar normal oynatma için kullanılamaz.\n\nDönüştürmek için: videoyu burada ShahidEditor Mini\'de açın ve Dışa Aktar\'a dokunun. Dönüştürülen standart MP4, Kayıtlar sekmenizde görünecek, galerinize kaydetmeye veya herhangi bir yerde paylaşmaya hazır olacaktır. İşlem anlık ve kayıpsızdır — yeniden kodlama veya kalite kaybı yoktur.</string>
 <string name="faditor_info_export_title">Dışa aktarılan dosyalar</string>
-<string name="faditor_info_export_desc">Dışa aktarılan videolar, "Faditor_" öneki ve ardından bir zaman damgası ile aktif depolama konumunuza (Ayarlar\'da yapılandırılanla aynı) kaydedilir. Orijinal kayıtlarınızla birlikte Kayıtlar sekmesinde görünürler.</string>
+<string name="faditor_info_export_desc">Dışa aktarılan videolar, "ShahidEditor_" öneki ve ardından bir zaman damgası ile aktif depolama konumunuza (Ayarlar\'da yapılandırılanla aynı) kaydedilir. Orijinal kayıtlarınızla birlikte Kayıtlar sekmesinde görünürler.</string>
 <string name="faditor_info_temp_title">Geçici dosyalar ve önbellek</string>
-<string name="faditor_info_temp_desc">Düzenleme için bir fMP4 videosu yüklediğinizde, Faditor dosyanın "remuxing" gerektirip gerektirmediğini algılar — yeniden kodlama olmadan arama işaretçileri ekleyen hızlı bir dönüştürme. Remuxlanmış dosyalar cihazınızda önbelleğe alınır, böylece aynı videoyu tekrar düzenlerseniz yeniden kullanılabilir, zamandan ve işlemden tasarruf edilir.\n\nHer proje için önbellek boyutunu, değiştirilme tarihinin yanında görebilirsiniz. Cihaz depolama alanınız azalıyorsa, kullanılmayan projeleri silerek önbelleğe alınmış remuxlanmış dosyalarını temizleyebilirsiniz.\n\nBu geçici önbellek dosyaları, bu sekmeden bir proje sildiğinizde otomatik olarak temizlenir.</string>
+<string name="faditor_info_temp_desc">Düzenleme için bir fMP4 videosu yüklediğinizde, ShahidEditor dosyanın "remuxing" gerektirip gerektirmediğini algılar — yeniden kodlama olmadan arama işaretçileri ekleyen hızlı bir dönüştürme. Remuxlanmış dosyalar cihazınızda önbelleğe alınır, böylece aynı videoyu tekrar düzenlerseniz yeniden kullanılabilir, zamandan ve işlemden tasarruf edilir.\n\nHer proje için önbellek boyutunu, değiştirilme tarihinin yanında görebilirsiniz. Cihaz depolama alanınız azalıyorsa, kullanılmayan projeleri silerek önbelleğe alınmış remuxlanmış dosyalarını temizleyebilirsiniz.\n\nBu geçici önbellek dosyaları, bu sekmeden bir proje sildiğinizde otomatik olarak temizlenir.</string>
 <string name="faditor_info_projects_title">Son projeler</string>
 <string name="faditor_info_projects_desc">Tüm düzenleme oturumlarınız hızlı erişim için gösterilir. Her proje, video URI\'si, kırpma noktaları ve zaman damgalarını içeren küçük bir JSON dosyası olarak cihazınızda saklanır — videolarınızın hiçbir kopyası oluşturulmaz. Projeler her birkaç saniyede bir otomatik kaydedilir, böylece ilerlemeniz asla kaybolmaz.\n\nArtık ihtiyacınız olmayan projeleri çoklu seçim kontrol listesi simgesini kullanarak silebilirsiniz. Bir projeyi silmek yalnızca düzenleme oturumu verilerini kaldırır; orijinal video dosyalarınız dokunulmadan kalır.</string>
 <string name="faditor_your_recordings">Kayıtlarınız</string>
 <string name="faditor_browse_device">Cihazda Gözat</string>
-<string name="faditor_no_recordings">Henüz kayıt bulunamadı. Videolarınızı burada görmek için FadCam ile kayda başlayın.</string>
+<string name="faditor_no_recordings">Henüz kayıt bulunamadı. Videolarınızı burada görmek için ShahidCam ile kayda başlayın.</string>
 <string name="faditor_video_count">%1$d video</string>
-<string name="faditor_fadcam_source">FadCam</string>
-<string name="faditor_fadrec_source">FadRec</string>
+<string name="faditor_fadcam_source">ShahidCam</string>
+<string name="faditor_fadrec_source">ScreenRec</string>
 <string name="faditor_browse_device_desc">Cihazınızdan herhangi bir video seçin</string>
 <string name="faditor_scanning">Kayıtlar taranıyor…</string>
-<string name="faditor_source_chooser_desc">Galerinizden bir video seçin veya FadCam kayıtlarınızdan birini seçin</string>
-<string name="faditor_recordings_helper">Aktif depolama konumunuzdan FadCam ile kaydedilmiş videolar</string>
+<string name="faditor_source_chooser_desc">Galerinizden bir video seçin veya ShahidCam kayıtlarınızdan birini seçin</string>
+<string name="faditor_recordings_helper">Aktif depolama konumunuzdan ShahidCam ile kaydedilmiş videolar</string>
 <string name="label_recommended">(Önerilen)</string>
 <string name="universal_back">Geri</string>
 <string name="audio_bitrate_recommended_line">Önerilen: 192000 bps</string>
@@ -1962,31 +1962,31 @@
 <string name="records_search_hint">Kayıtlarda ara…</string>
 <string name="saf_permission_missing_dialog_instructions">SAF izni eksik. Lütfen seçilen klasöre erişim izni verin.</string>
 <string name="saf_permission_missing_dialog_title">SAF İzni Gerekli</string>
-<string name="saf_permission_missing_dialog_message_for_start_recording">Kayıtları özel bir konuma kaydetmek için FadCam\'in seçilen klasöre erişmesi gerekir. İstendiğinde erişim izni verin.</string>
+<string name="saf_permission_missing_dialog_message_for_start_recording">Kayıtları özel bir konuma kaydetmek için ShahidCam\'in seçilen klasöre erişmesi gerekir. İstendiğinde erişim izni verin.</string>
 <string name="grant_permission_button">İzin Ver</string>
 <string name="trash_auto_delete_picker_helper">Çöp\'teki öğelerin ne zaman otomatik silineceğini seçin.</string>
 <string name="kofi_description">Açıklama kod içinde ayarlanacak.</string>
 <string name="kofi_button_text">Bana bir Ko-fi ısmarla</string>
-<string name="kofi_footer_text">Made with    at FadSec Lab in   </string>
+<string name="kofi_footer_text">Made with    at CyberShadowPK Lab in   </string>
 <string name="choose_language">Dil Seç</string>
 <string name="onboarding_human_checkbox3">Gizlilik Politikası\'nı kabul ediyorum</string>
 <string name="applock_set_pin_enable">PIN Belirle &amp; Etkinleştir</string>
 <string name="applock_helper_create">Kayıtlar sekmesi için 4 haneli PIN, şifre veya parmak izi kullanarak koruma oluşturun. Uygulama arka plana geçtiğinde otomatik kilitlenir.</string>
 <string name="applock_helper_manage_disabled">Sekme Kilidi PIN\'i ayarlandı. Uygulamaya dönerken PIN\'i gerektirmek için açın.</string>
 <string name="applock_helper_enabled">Sekme Kilidi aktif. Uygulamadan ayrıldıktan sonra Kayıtlar sekmesini açarken PIN\'e ihtiyacınız olacak.</string>
-<string name="edit_with_faditorx">Faditor Mini ile Düzenle</string>
+<string name="edit_with_faditorx">ShahidEditor Mini ile Düzenle</string>
 <string name="remote_coming_soon_badge">Çok Yakında</string>
 <string name="update_visit_github">GitHub\'ı Ziyaret Et</string>
-<string name="header_logo_default" translatable="false">FadCam</string>
+<string name="header_logo_default" translatable="false">ShahidCam</string>
 <string name="header_logo_avatar" translatable="false">Avatar</string>
-<string name="app_icon_default" translatable="false">FadCam</string>
+<string name="app_icon_default" translatable="false">ShahidCam</string>
 <string name="app_icon_alternative" translatable="false">Camera</string>
 <string name="app_icon_faded" translatable="false">0xFF0000</string>
 <string name="app_icon_palestine" translatable="false">I❤️Palestine</string>
-<string name="app_icon_pakistan" translatable="false">FadCam</string>
-<string name="app_icon_fadseclab" translatable="false">FadSec Lab</string>
-<string name="app_icon_nooristic" translatable="false">FadCam ++</string>
-    <string name="app_icon_bat" translatable="false">FadCam</string>
+<string name="app_icon_pakistan" translatable="false">ShahidCam</string>
+<string name="app_icon_fadseclab" translatable="false">CyberShadowPK Lab</string>
+<string name="app_icon_nooristic" translatable="false">ShahidCam ++</string>
+    <string name="app_icon_bat" translatable="false">ShahidCam</string>
     <string name="app_icon_redbinary" translatable="false">$ ~/r00t</string>
     <string name="app_icon_notes" translatable="false">Notes</string>
     <string name="app_icon_calculator" translatable="false">Calculator</string>
@@ -2018,7 +2018,7 @@
     <string name="digital_forensics_coming_soon_short">Çok Yakında</string>
     <string name="digital_forensics_discord_coming_soon_toast">Discord bildirimleri gelecek bir güncellemede eklenecek.</string>
     <string name="digital_forensics_helper">Dijital Adli Bilişim iki bölümden oluşur: canlı önizleme katmanı ve kaydedilmiş kanıtlar. Yalnızca canlı görsel AI etiketleri istiyorsanız, Kanıt Toplamayı kapalı tutun. Adli geçmişe ihtiyacınız varsa, Kanıt Toplamayı açın ve ne saklanacağını seçin.</string>
-    <string name="digital_forensics_enable_helper">Bunu akıllı kanıt sensörünüz olarak düşünün. Etkinleştirildiğinde, FadCam algılanan aktivitenin bir zaman çizelgesini tutar, böylece daha sonra önemli anlara atlayabilirsiniz.</string>
+    <string name="digital_forensics_enable_helper">Bunu akıllı kanıt sensörünüz olarak düşünün. Etkinleştirildiğinde, ShahidCam algılanan aktivitenin bir zaman çizelgesini tutar, böylece daha sonra önemli anlara atlayabilirsiniz.</string>
     <string name="digital_forensics_evidence_enable">Kanıt Toplamayı Etkinleştir</string>
     <string name="digital_forensics_evidence_helper">Etkinleştirildiğinde, tespitler gerçek zamanlı olarak kaydedilmiş kanıt kareleriyle adli veritabanına yazılır. Yalnızca depolama büyümesi olmadan canlı önizleme etiketleri istiyorsanız bunu kapalı tutun.</string>
     <string name="digital_forensics_capture_scope">Kanıt Yakalama Kapsamı</string>
@@ -2162,7 +2162,7 @@
     <string name="share_feedback">Geri bildirim paylaş</string>
     <string name="storage_helper_current_custom_prefix">Mevcut özel klasör:</string>
     <string name="storage_helper_current_custom_uri_prefix">URI:</string>
-    <string name="app_icon_minimal" translatable="false">FadCam</string>
+    <string name="app_icon_minimal" translatable="false">ShahidCam</string>
     <string name="onboarding_intro_line4">açık kaynak. reklamsız. senin.</string>
     <string name="records_sort_helper">Kayıtların listede nasıl sıralanacağını seçin.</string>
     <string name="records_sort_order_title">Sıralama düzeni</string>
@@ -2181,7 +2181,7 @@
     <string name="notification_stop_button_visible">Görünür</string>
     <string name="notification_stop_button_hidden">Gizli</string>
     <string name="notification_setup_ok">Tamam</string>
-    <string name="note_notification_appearance">Kayıt bildiriminin görünümünü özelleştirin\n(Varsayılan: FadCam)</string>
+    <string name="note_notification_appearance">Kayıt bildiriminin görünümünü özelleştirin\n(Varsayılan: ShahidCam)</string>
     <string name="hide_stop_button">Durdur butonunu gizle</string>
     <string name="note_hide_stop_button">Bildirimdeki durdur butonunu gizle\n(Varsayılan: Devre Dışı)</string>
     <string name="notification_stop">DURDUR</string>
@@ -2226,7 +2226,7 @@
     <string name="debug_log_max_lines_message">Hata ayıklama günlük dosyasında en eski girdiler kesilmeden önce tutulan maksimum satır sayısı. Aralık: 100 – 50000.</string>
     <string name="restore_destination_title">Geri Yükleme Konumu Seç</string>
     <string name="restore_destination_downloads">İndirilenler Klasörü</string>
-    <string name="restore_destination_downloads_desc">Genel Downloads/FadCam/ klasörü</string>
+    <string name="restore_destination_downloads_desc">Genel Downloads/ShahidCam/ klasörü</string>
     <string name="restore_destination_internal">Dahili Depolama</string>
     <string name="restore_destination_internal_desc">Uygulamanın özel depolaması</string>
     <string name="restore_destination_original">Orijinal Konum</string>
@@ -2249,14 +2249,14 @@
     <string name="manage_projects">Projeleri Yönet</string>
     <string name="name_your_project">Projenizi Adlandırın</string>
     <string name="project_naming_message">Kayıtlarınızı düzenlemek için projenize akılda kalıcı bir ad ve açıklama verin</string>
-    <string name="fadrec_projects">FadRec Projeleri</string>
+    <string name="fadrec_projects">ScreenRec Projeleri</string>
     <string name="delete_project">Projeyi Sil</string>
     <string name="delete_all">Tümünü Sil</string>
     <string name="new_project">Yeni Proje</string>
     <string name="delete">Sil</string>
-    <string name="fadcam_pro_title" translatable="false">FadCam Pro</string>
+    <string name="fadcam_pro_title" translatable="false">ShahidCam Pro</string>
     <string name="fadcam_pro_subtitle">Tam gizlilik için premium özellikler</string>
-    <string name="fadcam_pro_get_button">FadCam Pro\'yu Al</string>
+    <string name="fadcam_pro_get_button">ShahidCam Pro\'yu Al</string>
     <string name="fadcam_pro_free">Ücretsiz</string>
     <string name="fadcam_pro_column_label" translatable="false">Pro</string>
     <string name="fadcam_pro_proplus_label" translatable="false">Pro+</string>
@@ -2267,21 +2267,21 @@
     <string name="fadcam_pro_benefit_early_access">Erken erişim: Herkese açık sürümden önce en son sürümü alın</string>
     <string name="fadcam_pro_benefit_lifetime_updates">Ömür boyu güncellemeler: Her zaman yeni özellikler, iyileştirmeler ve hata düzeltmeleri alın</string>
     <string name="fadcam_pro_benefit_support">Anında destek: Discord üzerinden biletlerle doğrudan yardım</string>
-    <string name="fadcam_pro_coming_soon">Pro+ ve Lab özellikleri, özel simge yüklemeleri, özel uygulama adları ve FadDrive bulut senkronizasyonuyla çok yakında geliyor.</string>
-    <string name="fadcam_pro_support_message">FadCam her zaman reklamsız ve izlemesiz olarak ücretsiz kalacak. Tüm projeyi kendi başıma yürütüyorum ve bu sürekli zaman ve çalışma gerektiriyor. Pro\'ya yükseltmek (şu anda ücretsiz) geliştirmeyi desteklemeye yardımcı oluyor ve karşılığında tam ücretsiz sürümün üzerine Pro özellikleri aracılığıyla ek değer sunabiliyorum. Projeyi desteklediğiniz için teşekkürler :)</string>
-    <string name="fadcam_pro_separate_apk">Bağımsız uygulama • FadCam ile birlikte çalışır</string>
+    <string name="fadcam_pro_coming_soon">Pro+ ve Lab özellikleri, özel simge yüklemeleri, özel uygulama adları ve Drive bulut senkronizasyonuyla çok yakında geliyor.</string>
+    <string name="fadcam_pro_support_message">ShahidCam her zaman reklamsız ve izlemesiz olarak ücretsiz kalacak. Tüm projeyi kendi başıma yürütüyorum ve bu sürekli zaman ve çalışma gerektiriyor. Pro\'ya yükseltmek (şu anda ücretsiz) geliştirmeyi desteklemeye yardımcı oluyor ve karşılığında tam ücretsiz sürümün üzerine Pro özellikleri aracılığıyla ek değer sunabiliyorum. Projeyi desteklediğiniz için teşekkürler :)</string>
+    <string name="fadcam_pro_separate_apk">Bağımsız uygulama • ShahidCam ile birlikte çalışır</string>
     <string name="fadcam_pro_feature_everything_icon">Her Şey</string>
     <string name="fadcam_pro_feature_everything">Her Şey</string>
     <string name="fadcam_pro_feature_custom_icon">Özel Uygulama Simgesi</string>
     <string name="fadcam_pro_feature_notification_icon">Bildirim Gizli Simgesi</string>
     <string name="fadcam_pro_feature_user_icon">Kullanıcı Yüklemeli Simge</string>
     <string name="fadcam_pro_feature_app_name">Özel Uygulama Adı</string>
-    <string name="fadcam_pro_feature_faddrive">FadDrive Bulut Senkronizasyonu</string>
+    <string name="fadcam_pro_feature_faddrive">Drive Bulut Senkronizasyonu</string>
     <string name="fadcam_pro_header_button">Pro\'yu Al</string>
     <string name="player_info_title">Video Oynatıcı Hakkında</string>
     <string name="player_info_content"><![CDATA[
 <b>Parçalı MP4 Formatı</b><br/><br/>
-FadCam, kayıtlar için parçalı MP4 formatı kullanır. Bu, videoların tek bir tam dosya yerine küçük bölümler halinde kaydedildiği anlamına gelir. Bunun avantajı, kayıt sırasında bir sorun olursa, tüm video yerine yalnızca son birkaç saniyeyi kaybetmenizdir.<br/><br/>
+ShahidCam, kayıtlar için parçalı MP4 formatı kullanır. Bu, videoların tek bir tam dosya yerine küçük bölümler halinde kaydedildiği anlamına gelir. Bunun avantajı, kayıt sırasında bir sorun olursa, tüm video yerine yalnızca son birkaç saniyeyi kaybetmenizdir.<br/><br/>
 Videonuzun son birkaç saniyesi donuk veya eski görünüyorsa, endişelenmeyin — bu bir hata değil! Kaydı durdurduğunuzda, mevcut parça döngüsünü tamamlayabilir (~3 saniye), bu da sonunda kısa bir donuk kare bırakabilir.<br/><br/>
 <b>Oynatıcı Sınırlamaları</b><br/><br/>
 Yerleşik video oynatıcının bazı Android sistemi sınırlamaları vardır. İlerleme çubuğunun veya dalga formunun biraz hızlı göründüğünü fark edebilirsiniz — bu normal davranıştır ve bir hata değildir.<br/><br/>
@@ -2294,7 +2294,7 @@ En sorunsuz oynatma deneyimi için VLC gibi harici bir oynatıcı kullanabilirsi
     <string name="codec_switched_to_h264">✓ Kodek H.264\'e değiştirildi. Kayıt başlatılıyor...</string>
     <string name="codec_go_to_settings">Ayarlara Git</string>
     <string name="stream_notes_android14_screen">⚠️ Android 14+: Sistem kısıtlaması, ekran kapalıyken kaydı engeller. Geçici çözümler: (1) Ayarlar → Güvenlik\'te \"Siyah Ekran Modu\"nu etkinleştirin veya (2) Ekran kilidini devre dışı bırakın (PIN/parmak izi olmadan). Her ikisi de kesintisiz uzaktan kayda izin verir</string>
-    <string name="fullscreen_preview_enter">FadCam Önizlemesi</string>
+    <string name="fullscreen_preview_enter">ShahidCam Önizlemesi</string>
     <string name="fullscreen_preview_close">Tam ekranı kapat</string>
     <string name="fullscreen_preview_not_recording">Tam ekran önizlemeyi kullanmak için önce kayda başlayın</string>
     <string name="fullscreen_preview_tap_hint">Kontrolleri açıp kapatmak için ekrana dokunun</string>
@@ -2318,7 +2318,7 @@ En sorunsuz oynatma deneyimi için VLC gibi harici bir oynatıcı kullanabilirsi
     <string name="automation_row_subtitle">Tuş atama, Bluetooth kumandalar, ses tuşları</string>
     <string name="setting_volume_shutter_title">Ses Tuşu Deklanşörü</string>
     <string name="setting_volume_shutter_summary">Ses tuşları ana sekmede kamera deklanşörü görevi görür</string>
-    <string name="setting_volume_shutter_footer">Ses tuşları ana sekmede deklanşörünüz olur:\n• Dokun — fotoğraf çek\n• Çift dokun — kamerayı değiştir\n• Basılı tut — kaydı başlat veya durdur\n\nBluetooth uzaktan deklanşörler de çalışır ve aynı eylemleri tetikler. Tuşlar FadCam ana sekmesi açıkken çalışır — gelecek sürümler herhangi bir tuşun FadCam eylemlerini arka planda bile tetiklemesini sağlayacak.\n\nŞimdilik FadCam kısayollarını eşlemek için MacroDroid kullanın — bunları Ayarlar → Kısayollar ve Widget\'lar bölümünde bulabilirsiniz.</string>
+    <string name="setting_volume_shutter_footer">Ses tuşları ana sekmede deklanşörünüz olur:\n• Dokun — fotoğraf çek\n• Çift dokun — kamerayı değiştir\n• Basılı tut — kaydı başlat veya durdur\n\nBluetooth uzaktan deklanşörler de çalışır ve aynı eylemleri tetikler. Tuşlar ShahidCam ana sekmesi açıkken çalışır — gelecek sürümler herhangi bir tuşun ShahidCam eylemlerini arka planda bile tetiklemesini sağlayacak.\n\nŞimdilik ShahidCam kısayollarını eşlemek için MacroDroid kullanın — bunları Ayarlar → Kısayollar ve Widget\'lar bölümünde bulabilirsiniz.</string>
     <string name="shortcuts_macrodroid_template">Resmi MacroDroid şablonu: https://templates.macrodroid.com/view/28194</string>
     <string name="thermal_guardian_title">Isı Koruyucu</string>
     <string name="thermal_guardian_row_subtitle">Aşırı ısınmayı önlemek için kaydı otomatik ayarla</string>
@@ -2355,7 +2355,7 @@ En sorunsuz oynatma deneyimi için VLC gibi harici bir oynatıcı kullanabilirsi
     <string name="motion_lab_debug_copy_done">Hareket anlık görüntüsü kopyalandı</string>
     <string name="motion_lab_info_cd">Motion Lab bilgisi</string>
     <string name="motion_lab_info_title">Hareketle Otomatik Kayıt</string>
-    <string name="motion_lab_info_body">Bu, FadCam\'in Hareketle Otomatik Kayıt özelliğidir.\n\nBasit kelimelerle nasıl çalışır:\n- Kameranız aktif kalır ve kareleri cihaz üzerinde gerçek zamanlı olarak analiz eder.\n- Cihaz içi makine öğrenimi modeli ve hareket mantığı hareket arar.\n- Geçerli bir hareket tespit edildiğinde, kayıt başlar/devam eder.\n- Hareket devam ettiği sürece kayıt devam eder.\n- Hareket durduktan sonra, Kayıt Sonrası süresi boyunca seçtiğiniz ek saniyeler kadar kayıt devam eder.\n- Ardından kayıt duraklar ve bir sonraki hareket olayını bekler.\n\nKayıt duraklatıldığında, uygulama hâlâ kareleri bellekte analiz ediyordur, ancak hareket tekrar algılanana kadar yeni video verisi yazmaz.\n\nNasıl kullanılır (çoğu kullanıcı için):\n- Tüm seçenekleri varsayılan değerlerde bırakın.\n- Bu ekranda Hareket Sensörü\'nü AÇIN.\n- Ana Sayfa sekmesine gidin ve normal şekilde kayda başlayın.\n- Hareket tabanlı otomatik kayıt otomatik olarak çalışacaktır.\n\nUzak mesafeden kolay test:\n- Bu ekranda Hareketle Otomatik Flaş\'ı AÇIN.\n- Ana Sayfa sekmesinden kayda başlayın.\n- Telefonu odaya bakan bir masaya veya rafa eğimli olarak yerleştirin.\n- Odadan çıkın, ardından girin ve yürüyün.\n- Flaşın yanması, kaydın başladığını uzaktan fark etmenize yardımcı olur.\n- Kayıt, hareket durduktan sonra seçtiğiniz Kayıt Sonrası süresi boyunca devam edecektir.\n\nİpucu: Bu özellik sürekli çalışır, bu nedenle çok yüksek gelişmiş değerler ısıyı artırabilir ve zamanla cihaz sağlığını azaltabilir. Uzun oturumlar için, belirli bir nedeniniz yoksa varsayılanları koruyun.</string>
+    <string name="motion_lab_info_body">Bu, ShahidCam\'in Hareketle Otomatik Kayıt özelliğidir.\n\nBasit kelimelerle nasıl çalışır:\n- Kameranız aktif kalır ve kareleri cihaz üzerinde gerçek zamanlı olarak analiz eder.\n- Cihaz içi makine öğrenimi modeli ve hareket mantığı hareket arar.\n- Geçerli bir hareket tespit edildiğinde, kayıt başlar/devam eder.\n- Hareket devam ettiği sürece kayıt devam eder.\n- Hareket durduktan sonra, Kayıt Sonrası süresi boyunca seçtiğiniz ek saniyeler kadar kayıt devam eder.\n- Ardından kayıt duraklar ve bir sonraki hareket olayını bekler.\n\nKayıt duraklatıldığında, uygulama hâlâ kareleri bellekte analiz ediyordur, ancak hareket tekrar algılanana kadar yeni video verisi yazmaz.\n\nNasıl kullanılır (çoğu kullanıcı için):\n- Tüm seçenekleri varsayılan değerlerde bırakın.\n- Bu ekranda Hareket Sensörü\'nü AÇIN.\n- Ana Sayfa sekmesine gidin ve normal şekilde kayda başlayın.\n- Hareket tabanlı otomatik kayıt otomatik olarak çalışacaktır.\n\nUzak mesafeden kolay test:\n- Bu ekranda Hareketle Otomatik Flaş\'ı AÇIN.\n- Ana Sayfa sekmesinden kayda başlayın.\n- Telefonu odaya bakan bir masaya veya rafa eğimli olarak yerleştirin.\n- Odadan çıkın, ardından girin ve yürüyün.\n- Flaşın yanması, kaydın başladığını uzaktan fark etmenize yardımcı olur.\n- Kayıt, hareket durduktan sonra seçtiğiniz Kayıt Sonrası süresi boyunca devam edecektir.\n\nİpucu: Bu özellik sürekli çalışır, bu nedenle çok yüksek gelişmiş değerler ısıyı artırabilir ve zamanla cihaz sağlığını azaltabilir. Uzun oturumlar için, belirli bir nedeniniz yoksa varsayılanları koruyun.</string>
     <string name="motion_lab_percent_value">%1$d%%</string>
     <string name="motion_lab_fps_value">%1$d fps</string>
     <string name="motion_lab_ms_value">%1$d ms</string>
@@ -2439,7 +2439,7 @@ En sorunsuz oynatma deneyimi için VLC gibi harici bir oynatıcı kullanabilirsi
     <string name="remote_pages">Sayfalar</string>
     <string name="remote_layers">Katmanlar</string>
     <string name="remote_access_endpoints_desc">Bu HTTP uç noktaları üzerinden yayın sunucunuza erişin</string>
-    <string name="remote_control_via_api_desc">API çağrılarıyla FadCam\'i uzaktan kontrol edin</string>
+    <string name="remote_control_via_api_desc">API çağrılarıyla ShahidCam\'i uzaktan kontrol edin</string>
     <string name="remote_buffered_segments_desc">Yayına hazır arabelleğe alınmış segmentler</string>
     <string name="remote_battery_low_warning">⚠️ Düşük Pil - Hemen şarj cihazını takın</string>
     <string name="remote_enter_percentage_hint">Yüzde girin</string>
@@ -2449,24 +2449,24 @@ En sorunsuz oynatma deneyimi için VLC gibi harici bir oynatıcı kullanabilirsi
     <string name="sidebar_update_available">Güncelleme Mevcut</string>
     <string name="sidebar_stable_release">Kararlı Sürüm</string>
     <string name="sidebar_beta_release">Beta Sürümü</string>
-    <string name="sidebar_fadcam_pro">FadCam Pro</string>
+    <string name="sidebar_fadcam_pro">ShahidCam Pro</string>
     <string name="badge_new">YENİ</string>
-    <string name="update_pro_title">FadCam Pro Güncellemesi</string>
-    <string name="update_pro_desc">Yeni bir FadCam Pro sürümü mevcut.\n\nÜcretsiz kullanıcılar için kararlı sürüm yaklaşık 60 gün sonra gelecek. Pro kullanıcıları güncellemeleri hemen alır.</string>
-    <string name="update_get_pro">FadCam Pro\'yu Al</string>
+    <string name="update_pro_title">ShahidCam Pro Güncellemesi</string>
+    <string name="update_pro_desc">Yeni bir ShahidCam Pro sürümü mevcut.\n\nÜcretsiz kullanıcılar için kararlı sürüm yaklaşık 60 gün sonra gelecek. Pro kullanıcıları güncellemeleri hemen alır.</string>
+    <string name="update_get_pro">ShahidCam Pro\'yu Al</string>
     <string name="update_maybe_later">Belki Sonra</string>
     <string name="update_beta_title">Beta Güncellemesi Mevcut</string>
-    <string name="update_beta_desc">FadCam beta, kararlı sürümün yanına kurulabilen bağımsız bir uygulamadır. Kararlı uygulamanızı veya verilerini etkilemez.\n\nYeni özellikleri kararlı sürüme çıkmadan önce test etmek için beta sürümünü yükleyin.</string>
+    <string name="update_beta_desc">ShahidCam beta, kararlı sürümün yanına kurulabilen bağımsız bir uygulamadır. Kararlı uygulamanızı veya verilerini etkilemez.\n\nYeni özellikleri kararlı sürüme çıkmadan önce test etmek için beta sürümünü yükleyin.</string>
     <string name="update_get_beta">Beta\'yı Al</string>
     <string name="mini_apps_about_title">Mini Uygulamalar Hakkında</string>
     <string name="mini_apps_current_tools">Mevcut Araçlar</string>
     <string name="mini_apps_qr_scanner_reference">QR Tarayıcı referansı</string>
     <string name="screen_recording_title">Ekran Kaydı</string>
-    <string name="screen_recording_notif_title">FadRec - Ekran Kaydı</string>
+    <string name="screen_recording_notif_title">ScreenRec - Ekran Kaydı</string>
     <string name="screen_recording_saved">Ekran Kaydı Kaydedildi</string>
     <string name="screen_recording_tap_to_view">Kaydınızı görüntülemek için dokunun</string>
     <string name="notification_action_stop">Durdur</string>
-    <string name="fadmic_coming_soon">FadMic (Mikrofon Kaydı) çok yakında!</string>
+    <string name="fadmic_coming_soon">Mic (Mikrofon Kaydı) çok yakında!</string>
     <string name="toast_stream_server_starting">Yayın sunucusu başlatılıyor...</string>
     <string name="toast_stream_server_stopped">Yayın sunucusu durduruldu</string>
     <string name="toast_no_cloud_viewers">Bağlı bulut izleyici yok</string>
@@ -2553,7 +2553,7 @@ En sorunsuz oynatma deneyimi için VLC gibi harici bir oynatıcı kullanabilirsi
     <string name="about_dialog_error">Hata</string>
     <string name="about_dialog_ok">Tamam</string>
     <string name="about_get_beta">Beta Al</string>
-    <string name="about_fadcam_feedback">FadCam Geri Bildirimi</string>
+    <string name="about_fadcam_feedback">ShahidCam Geri Bildirimi</string>
 
     <!-- Video split sizes -->
     <string name="video_split_enabled_format">Etkin (%s)</string>
@@ -2566,7 +2566,7 @@ En sorunsuz oynatma deneyimi için VLC gibi harici bir oynatıcı kullanabilirsi
     <string name="video_split_custom_title">Özel Bölme Boyutu (MB)</string>
 
     <!-- Screen recording values -->
-    <string name="screen_rec_splitting_value_format">%s (FadCam + FadRec)</string>
+    <string name="screen_rec_splitting_value_format">%s (ShahidCam + ScreenRec)</string>
 
     <!-- Settings home tabs -->
     <string name="settings_tab_all">Tümü</string>
@@ -2575,7 +2575,7 @@ En sorunsuz oynatma deneyimi için VLC gibi harici bir oynatıcı kullanabilirsi
     <string name="settings_location_update_interval_5s">5.0 saniye</string>
 
     <!-- Annotation toolbar -->
-    <string name="annotation_by_fadsec_lab">FadSec Lab tarafından</string>
+    <string name="annotation_by_fadsec_lab">CyberShadowPK Lab tarafından</string>
     <string name="annotation_quick_access">Hızlı Erişim</string>
     <string name="annotation_annotate">Not Ekle</string>
     <string name="annotation_enable_tools">Araçları etkinleştir</string>
@@ -2653,7 +2653,7 @@ En sorunsuz oynatma deneyimi için VLC gibi harici bir oynatıcı kullanabilirsi
     <string name="desc_delete_text">Metni sil</string>
     <string name="desc_done">Tamam</string>
     <string name="desc_exposure_compensation">Poz telafisi</string>
-    <string name="desc_fadrec_logo">FadRec Logosu</string>
+    <string name="desc_fadrec_logo">ScreenRec Logosu</string>
     <string name="desc_fast_forward">5 saniye ileri sar</string>
     <string name="desc_increase">Artır</string>
     <string name="desc_italic">İtalik</string>
@@ -2676,7 +2676,7 @@ En sorunsuz oynatma deneyimi için VLC gibi harici bir oynatıcı kullanabilirsi
     <string name="channel_security_alarm">Güvenlik Alarmı</string>
     <string name="channel_remote_streaming">Uzaktan Yayın</string>
     <string name="channel_annotation_service">Not Servisi</string>
-    <string name="channel_fadcam_file_ops">FadCam Dosya İşlemleri</string>
+    <string name="channel_fadcam_file_ops">ShahidCam Dosya İşlemleri</string>
 
     <!-- ScreenRecordingService -->
     <string name="screen_rec_failed">Kayıt başarısız: %s</string>
@@ -2802,17 +2802,17 @@ En sorunsuz oynatma deneyimi için VLC gibi harici bir oynatıcı kullanabilirsi
     <string name="tutorial_dashcam_setup">Dashcam Kurulumu</string>
 
     <!-- iOS Promo -->
-    <string name="fadcam_for_ios_title">iOS için FadCam</string>
-    <string name="ios_promo_title">FadCam artık iOS\'ta!</string>
+    <string name="fadcam_for_ios_title">iOS için ShahidCam</string>
+    <string name="ios_promo_title">ShahidCam artık iOS\'ta!</string>
     <string name="ios_promo_subtitle">Sevdiğiniz gizlilik odaklı kamera uygulaması, artık iPhone için de kullanılabilir</string>
 
     <!-- Trash section in Settings -->
     <string name="trash_settings_title">Çöp</string>
     <string name="trash_settings_subtitle">Silinen kayıtları ve dosyaları kurtar</string>
-    <string name="trash_settings_info">Bu özellik zaten mevcuttu — sadece ana ekranın üst çubuğundaki FadCam logosuna uzun basmanın arkasında gizliydi. Buraya keşfedilmesi daha kolay olsun diye koyduk.</string>
+    <string name="trash_settings_info">Bu özellik zaten mevcuttu — sadece ana ekranın üst çubuğundaki ShahidCam logosuna uzun basmanın arkasında gizliydi. Buraya keşfedilmesi daha kolay olsun diye koyduk.</string>
     <string name="trash_settings_hide_button">Bu bölümü gizle</string>
     <string name="trash_settings_hide_dialog_title">Çöp bölümü gizlensin mi?</string>
-    <string name="trash_settings_hide_dialog_message">Çöp bölümü Ayarlar\'dan kaybolacak. Geri getirmek için ana ekranın üst çubuğundaki FadCam logosuna uzun basarak Çöp\'ü açın ve içerideki \"Ayarlar\'da Çöp\'ü Göster\" seçeneğini etkinleştirin.</string>
+    <string name="trash_settings_hide_dialog_message">Çöp bölümü Ayarlar\'dan kaybolacak. Geri getirmek için ana ekranın üst çubuğundaki ShahidCam logosuna uzun basarak Çöp\'ü açın ve içerideki \"Ayarlar\'da Çöp\'ü Göster\" seçeneğini etkinleştirin.</string>
     <string name="trash_settings_hide_dialog_confirm">Gizle</string>
 
     <!-- Trash: Show in Settings toggle -->

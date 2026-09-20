@@ -105,7 +105,7 @@
             android:textColor="?attr/colorOnPrimary" />
         
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/fadsec_info_card"
+            android:id="@+id/shahid_sec_info_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -114,11 +114,11 @@
             app:strokeColor="?attr/colorButton" >
 
             <TextView
-                android:id="@+id/fadsec_info_text"
+                android:id="@+id/shahid_sec_info_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
-                android:text="@string/fadsec_info"
+                android:text="@string/shahid_sec_info"
                 android:textColor="?attr/colorButton" />
 
         </com.google.android.material.card.MaterialCardView>

@@ -14,12 +14,12 @@
         <item name="colorSwitchTrack">@color/gray500</item>
         <item name="colorDialog">@color/gray</item>
         <item name="colorStatusBar">@color/gray</item>
-        <item name="toolbarStyle">@style/Widget.FadCam.Toolbar</item>
-        <item name="bottomNavigationStyle">@style/Widget.FadCam.BottomNavigationView</item>
+        <item name="toolbarStyle">@style/Widget.ShahidCam.Toolbar</item>
+        <item name="bottomNavigationStyle">@style/Widget.ShahidCam.BottomNavigationView</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.FadCam.Dialog</item>
         <!-- Switch styling -->
-        <item name="switchStyle">@style/Widget.FadCam.Switch</item>
-        <item name="materialSwitchStyle">@style/Widget.FadCam.Switch</item>
+        <item name="switchStyle">@style/Widget.ShahidCam.Switch</item>
+        <item name="materialSwitchStyle">@style/Widget.ShahidCam.Switch</item>
         <!-- Picker gradient colors -->
         <item name="pickerGradientStart">@color/black</item>
         <item name="pickerGradientMid">@color/red_theme_primary_variant</item>
@@ -102,8 +102,8 @@
         <item name="cardViewStyle">@style/Theme.FadCam.AmoledCardView</item>
         <item name="bottomNavigationStyle">@style/Theme.FadCam.AmoledBottomNavigation</item>
         <!-- Switch styling -->
-        <item name="switchStyle">@style/Widget.FadCam.Switch</item>
-        <item name="materialSwitchStyle">@style/Widget.FadCam.Switch</item>
+        <item name="switchStyle">@style/Widget.ShahidCam.Switch</item>
+        <item name="materialSwitchStyle">@style/Widget.ShahidCam.Switch</item>
         <item name="colorTopBar">@color/amoled_black_pure</item>
         <item name="colorBottomNav">@color/amoled_black_pure</item>
         <item name="colorHeading">@color/amoled_heading</item>
@@ -140,8 +140,8 @@
         <item name="pickerIconTint">@color/amoled_picker_icon_tint</item>
         <item name="pickerSliderActive">@color/amoled_picker_slider_active</item>
         <item name="pickerSliderInactive">@color/amoled_picker_slider_inactive</item>
-        <item name="toolbarStyle">@style/Widget.FadCam.Toolbar</item>
-        <item name="bottomNavigationStyle">@style/Widget.FadCam.BottomNavigationView</item>
+        <item name="toolbarStyle">@style/Widget.ShahidCam.Toolbar</item>
+        <item name="bottomNavigationStyle">@style/Widget.ShahidCam.BottomNavigationView</item>
     </style>
 
     <style name="Theme.FadCam.AmoledCardView" parent="Widget.MaterialComponents.CardView">
@@ -198,16 +198,16 @@
         <item name="android:textColorPrimary">@color/white</item>
         <item name="android:textColorSecondary">@color/red_theme_text_secondary_dark</item>
         <item name="android:dialogTheme">@style/ThemeOverlay.FadCam.Red.Dialog</item>
-        <item name="android:buttonStyle">@style/Widget.FadCam.Red.Button</item>
+        <item name="android:buttonStyle">@style/Widget.ShahidCam.Red.Button</item>
         <item name="android:editTextBackground">@drawable/red_theme_edittext_bg</item>
-        <item name="android:popupMenuStyle">@style/Widget.FadCam.Red.PopupMenu</item>
-        <item name="toolbarStyle">@style/Widget.FadCam.Toolbar</item>
-        <item name="bottomNavigationStyle">@style/Widget.FadCam.BottomNavigationView</item>
+        <item name="android:popupMenuStyle">@style/Widget.ShahidCam.Red.PopupMenu</item>
+        <item name="toolbarStyle">@style/Widget.ShahidCam.Toolbar</item>
+        <item name="bottomNavigationStyle">@style/Widget.ShahidCam.BottomNavigationView</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.FadCam.Red.Dialog</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogTheme</item>
         <!-- Switch styling -->
-        <item name="switchStyle">@style/Widget.FadCam.Switch</item>
-        <item name="materialSwitchStyle">@style/Widget.FadCam.Switch</item>
+        <item name="switchStyle">@style/Widget.ShahidCam.Switch</item>
+        <item name="materialSwitchStyle">@style/Widget.ShahidCam.Switch</item>
         <!-- Picker gradient colors - subtle red gradient for red theme -->
         <item name="pickerGradientStart">@color/black</item>
         <item name="pickerGradientMid">#FF2B0000</item>
@@ -247,18 +247,18 @@
         <item name="colorOnPrimary">@android:color/white</item>
     </style>
 
-    <style name="Widget.FadCam.Red.Button" parent="Widget.Material3.Button">
+    <style name="Widget.ShahidCam.Red.Button" parent="Widget.Material3.Button">
         <item name="android:background">@color/red_theme_primary</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="Widget.FadCam.Red.PopupMenu" parent="Widget.Material3.PopupMenu">
+    <style name="Widget.ShahidCam.Red.PopupMenu" parent="Widget.Material3.PopupMenu">
         <item name="android:popupBackground">@color/red_theme_surface_dark</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <!-- Universal switch style that adapts to theme colors -->
-    <style name="Widget.FadCam.Switch" parent="Widget.MaterialComponents.CompoundButton.Switch">
+    <style name="Widget.ShahidCam.Switch" parent="Widget.MaterialComponents.CompoundButton.Switch">
         <item name="thumbTint">@color/switch_thumb</item>
         <item name="trackTint">@color/switch_track</item>
     </style>
@@ -290,16 +290,16 @@
         <item name="android:textColorPrimary">@color/white</item>
         <item name="android:textColorSecondary">@color/gold_theme_text_secondary_dark</item>
         <item name="android:dialogTheme">@style/ThemeOverlay.FadCam.Gold.Dialog</item>
-        <item name="android:buttonStyle">@style/Widget.FadCam.Gold.Button</item>
+        <item name="android:buttonStyle">@style/Widget.ShahidCam.Gold.Button</item>
         <item name="android:editTextBackground">@drawable/gold_theme_edittext_bg</item>
-        <item name="android:popupMenuStyle">@style/Widget.FadCam.Gold.PopupMenu</item>
-        <item name="toolbarStyle">@style/Widget.FadCam.Toolbar</item>
-        <item name="bottomNavigationStyle">@style/Widget.FadCam.BottomNavigationView</item>
+        <item name="android:popupMenuStyle">@style/Widget.ShahidCam.Gold.PopupMenu</item>
+        <item name="toolbarStyle">@style/Widget.ShahidCam.Toolbar</item>
+        <item name="bottomNavigationStyle">@style/Widget.ShahidCam.BottomNavigationView</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.FadCam.Gold.Dialog</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogTheme</item>
         <!-- Switch styling -->
-        <item name="switchStyle">@style/Widget.FadCam.Switch</item>
-        <item name="materialSwitchStyle">@style/Widget.FadCam.Switch</item>
+        <item name="switchStyle">@style/Widget.ShahidCam.Switch</item>
+        <item name="materialSwitchStyle">@style/Widget.ShahidCam.Switch</item>
         <!-- Picker gradient colors - subtle gold gradient -->
         <item name="pickerGradientStart">@color/black</item>
         <item name="pickerGradientMid">#FF2B1A00</item>
@@ -339,12 +339,12 @@
         <item name="colorOnPrimary">@color/black</item>
     </style>
 
-    <style name="Widget.FadCam.Gold.Button" parent="Widget.Material3.Button">
+    <style name="Widget.ShahidCam.Gold.Button" parent="Widget.Material3.Button">
         <item name="android:background">@color/gold_theme_primary</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="Widget.FadCam.Gold.PopupMenu" parent="Widget.Material3.PopupMenu">
+    <style name="Widget.ShahidCam.Gold.PopupMenu" parent="Widget.Material3.PopupMenu">
         <item name="android:popupBackground">@color/gold_theme_surface_dark</item>
         <item name="android:textColor">@color/white</item>
     </style>
@@ -376,16 +376,16 @@
         <item name="android:textColorPrimary">@color/white</item>
         <item name="android:textColorSecondary">@color/silentforest_theme_text_secondary_dark</item>
         <item name="android:dialogTheme">@style/ThemeOverlay.FadCam.SilentForest.Dialog</item>
-        <item name="android:buttonStyle">@style/Widget.FadCam.SilentForest.Button</item>
+        <item name="android:buttonStyle">@style/Widget.ShahidCam.SilentForest.Button</item>
         <item name="android:editTextBackground">@drawable/silentforest_theme_edittext_bg</item>
-        <item name="android:popupMenuStyle">@style/Widget.FadCam.SilentForest.PopupMenu</item>
-        <item name="toolbarStyle">@style/Widget.FadCam.Toolbar</item>
-        <item name="bottomNavigationStyle">@style/Widget.FadCam.BottomNavigationView</item>
+        <item name="android:popupMenuStyle">@style/Widget.ShahidCam.SilentForest.PopupMenu</item>
+        <item name="toolbarStyle">@style/Widget.ShahidCam.Toolbar</item>
+        <item name="bottomNavigationStyle">@style/Widget.ShahidCam.BottomNavigationView</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.FadCam.SilentForest.Dialog</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogTheme</item>
         <!-- Switch styling -->
-        <item name="switchStyle">@style/Widget.FadCam.Switch</item>
-        <item name="materialSwitchStyle">@style/Widget.FadCam.Switch</item>
+        <item name="switchStyle">@style/Widget.ShahidCam.Switch</item>
+        <item name="materialSwitchStyle">@style/Widget.ShahidCam.Switch</item>
         <!-- Picker gradient colors - subtle forest gradient -->
         <item name="pickerGradientStart">@color/black</item>
         <item name="pickerGradientMid">#FF001A17</item>
@@ -425,12 +425,12 @@
         <item name="colorOnPrimary">@color/black</item>
     </style>
 
-    <style name="Widget.FadCam.SilentForest.Button" parent="Widget.Material3.Button">
+    <style name="Widget.ShahidCam.SilentForest.Button" parent="Widget.Material3.Button">
         <item name="android:background">@color/silentforest_theme_primary</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="Widget.FadCam.SilentForest.PopupMenu" parent="Widget.Material3.PopupMenu">
+    <style name="Widget.ShahidCam.SilentForest.PopupMenu" parent="Widget.Material3.PopupMenu">
         <item name="android:popupBackground">@color/silentforest_theme_surface_dark</item>
         <item name="android:textColor">@color/white</item>
     </style>
@@ -462,16 +462,16 @@
         <item name="android:textColorPrimary">@color/white</item>
         <item name="android:textColorSecondary">@color/shadowalloy_theme_text_secondary_dark</item>
         <item name="android:dialogTheme">@style/ThemeOverlay.FadCam.ShadowAlloy.Dialog</item>
-        <item name="android:buttonStyle">@style/Widget.FadCam.ShadowAlloy.Button</item>
+        <item name="android:buttonStyle">@style/Widget.ShahidCam.ShadowAlloy.Button</item>
         <item name="android:editTextBackground">@drawable/shadowalloy_theme_edittext_bg</item>
-        <item name="android:popupMenuStyle">@style/Widget.FadCam.ShadowAlloy.PopupMenu</item>
-        <item name="toolbarStyle">@style/Widget.FadCam.Toolbar</item>
-        <item name="bottomNavigationStyle">@style/Widget.FadCam.BottomNavigationView</item>
+        <item name="android:popupMenuStyle">@style/Widget.ShahidCam.ShadowAlloy.PopupMenu</item>
+        <item name="toolbarStyle">@style/Widget.ShahidCam.Toolbar</item>
+        <item name="bottomNavigationStyle">@style/Widget.ShahidCam.BottomNavigationView</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.FadCam.ShadowAlloy.Dialog</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogTheme</item>
         <!-- Switch styling -->
-        <item name="switchStyle">@style/Widget.FadCam.Switch</item>
-        <item name="materialSwitchStyle">@style/Widget.FadCam.Switch</item>
+        <item name="switchStyle">@style/Widget.ShahidCam.Switch</item>
+        <item name="materialSwitchStyle">@style/Widget.ShahidCam.Switch</item>
         <!-- Picker gradient colors - subtle silver gradient -->
         <item name="pickerGradientStart">@color/black</item>
         <item name="pickerGradientMid">#FF1A1A1A</item>
@@ -511,12 +511,12 @@
         <item name="colorOnPrimary">@color/black</item>
     </style>
 
-    <style name="Widget.FadCam.ShadowAlloy.Button" parent="Widget.Material3.Button">
+    <style name="Widget.ShahidCam.ShadowAlloy.Button" parent="Widget.Material3.Button">
         <item name="android:background">@color/shadowalloy_theme_primary</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="Widget.FadCam.ShadowAlloy.PopupMenu" parent="Widget.Material3.PopupMenu">
+    <style name="Widget.ShahidCam.ShadowAlloy.PopupMenu" parent="Widget.Material3.PopupMenu">
         <item name="android:popupBackground">@color/shadowalloy_theme_surface_dark</item>
         <item name="android:textColor">@color/white</item>
     </style>
@@ -548,16 +548,16 @@
         <item name="android:textColorPrimary">@color/white</item>
         <item name="android:textColorSecondary">@color/pookiepink_theme_text_secondary_dark</item>
         <item name="android:dialogTheme">@style/ThemeOverlay.FadCam.PookiePink.Dialog</item>
-        <item name="android:buttonStyle">@style/Widget.FadCam.PookiePink.Button</item>
+        <item name="android:buttonStyle">@style/Widget.ShahidCam.PookiePink.Button</item>
         <item name="android:editTextBackground">@drawable/pookiepink_theme_edittext_bg</item>
-        <item name="android:popupMenuStyle">@style/Widget.FadCam.PookiePink.PopupMenu</item>
-        <item name="toolbarStyle">@style/Widget.FadCam.Toolbar</item>
-        <item name="bottomNavigationStyle">@style/Widget.FadCam.BottomNavigationView</item>
+        <item name="android:popupMenuStyle">@style/Widget.ShahidCam.PookiePink.PopupMenu</item>
+        <item name="toolbarStyle">@style/Widget.ShahidCam.Toolbar</item>
+        <item name="bottomNavigationStyle">@style/Widget.ShahidCam.BottomNavigationView</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.FadCam.PookiePink.Dialog</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogTheme</item>
         <!-- Switch styling -->
-        <item name="switchStyle">@style/Widget.FadCam.Switch</item>
-        <item name="materialSwitchStyle">@style/Widget.FadCam.Switch</item>
+        <item name="switchStyle">@style/Widget.ShahidCam.Switch</item>
+        <item name="materialSwitchStyle">@style/Widget.ShahidCam.Switch</item>
         <!-- Picker gradient colors - subtle pink gradient -->
         <item name="pickerGradientStart">@color/black</item>
         <item name="pickerGradientMid">#FF2B0A1A</item>
@@ -597,12 +597,12 @@
         <item name="colorOnPrimary">@color/black</item>
     </style>
 
-    <style name="Widget.FadCam.PookiePink.Button" parent="Widget.Material3.Button">
+    <style name="Widget.ShahidCam.PookiePink.Button" parent="Widget.Material3.Button">
         <item name="android:background">@color/pookiepink_theme_primary</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="Widget.FadCam.PookiePink.PopupMenu" parent="Widget.Material3.PopupMenu">
+    <style name="Widget.ShahidCam.PookiePink.PopupMenu" parent="Widget.Material3.PopupMenu">
         <item name="android:popupBackground">@color/pookiepink_theme_surface_dark</item>
         <item name="android:textColor">@color/white</item>
     </style>
@@ -634,11 +634,11 @@
         <item name="android:textColorPrimary">@color/black</item>
         <item name="android:textColorSecondary">@color/snowveil_theme_text_secondary_light</item>
         <item name="android:dialogTheme">@style/ThemeOverlay.FadCam.SnowVeil.Dialog</item>
-        <item name="android:buttonStyle">@style/Widget.FadCam.SnowVeil.Button</item>
+        <item name="android:buttonStyle">@style/Widget.ShahidCam.SnowVeil.Button</item>
         <item name="android:editTextBackground">@drawable/snowveil_theme_edittext_bg</item>
-        <item name="android:popupMenuStyle">@style/Widget.FadCam.SnowVeil.PopupMenu</item>
-        <item name="toolbarStyle">@style/Widget.FadCam.Toolbar.Light</item>
-        <item name="bottomNavigationStyle">@style/Widget.FadCam.BottomNavigationView.Light</item>
+        <item name="android:popupMenuStyle">@style/Widget.ShahidCam.SnowVeil.PopupMenu</item>
+        <item name="toolbarStyle">@style/Widget.ShahidCam.Toolbar.Light</item>
+        <item name="bottomNavigationStyle">@style/Widget.ShahidCam.BottomNavigationView.Light</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.FadCam.SnowVeil.Dialog</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogTheme</item>
         <!-- Force pure white CardView backgrounds for better contrast with black text -->
@@ -651,10 +651,10 @@
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowLightNavigationBar">true</item>
         <!-- Switch styling -->
-        <item name="switchStyle">@style/Widget.FadCam.Switch</item>
-        <item name="materialSwitchStyle">@style/Widget.FadCam.Switch</item>
-        <item name="checkboxStyle">@style/Widget.FadCam.SnowVeil.Checkbox</item>
-        <item name="radioButtonStyle">@style/Widget.FadCam.SnowVeil.RadioButton</item>
+        <item name="switchStyle">@style/Widget.ShahidCam.Switch</item>
+        <item name="materialSwitchStyle">@style/Widget.ShahidCam.Switch</item>
+        <item name="checkboxStyle">@style/Widget.ShahidCam.SnowVeil.Checkbox</item>
+        <item name="radioButtonStyle">@style/Widget.ShahidCam.SnowVeil.RadioButton</item>
         <!-- Picker gradient colors - subtle blue gradient like other themes -->
         <item name="pickerGradientStart">@color/black</item>
         <item name="pickerGradientMid">#FF001A2B</item>
@@ -693,17 +693,17 @@
     </style>
 
     <!-- Add additional styles for Snow Veil theme components -->
-    <style name="Widget.FadCam.SnowVeil.Switch" parent="Widget.MaterialComponents.CompoundButton.Switch">
+    <style name="Widget.ShahidCam.SnowVeil.Switch" parent="Widget.MaterialComponents.CompoundButton.Switch">
         <item name="thumbTint">@color/black</item>
         <item name="trackTint">@color/snowveil_theme_accent</item>
     </style>
 
-    <style name="Widget.FadCam.SnowVeil.Checkbox" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
+    <style name="Widget.ShahidCam.SnowVeil.Checkbox" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
         <item name="android:buttonTint">@color/black</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="Widget.FadCam.SnowVeil.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+    <style name="Widget.ShahidCam.SnowVeil.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
         <item name="android:buttonTint">@color/black</item>
         <item name="android:textColor">@color/black</item>
     </style>
@@ -717,23 +717,23 @@
         <item name="colorOnPrimary">@color/black</item>
     </style>
 
-    <style name="Widget.FadCam.SnowVeil.Button" parent="Widget.Material3.Button">
+    <style name="Widget.ShahidCam.SnowVeil.Button" parent="Widget.Material3.Button">
         <item name="android:background">@color/snowveil_theme_primary</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="Widget.FadCam.SnowVeil.PopupMenu" parent="Widget.Material3.PopupMenu">
+    <style name="Widget.ShahidCam.SnowVeil.PopupMenu" parent="Widget.Material3.PopupMenu">
         <item name="android:popupBackground">@color/snowveil_theme_surface_light</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="Widget.FadCam.Toolbar.Light" parent="Widget.MaterialComponents.Toolbar">
+    <style name="Widget.ShahidCam.Toolbar.Light" parent="Widget.MaterialComponents.Toolbar">
         <item name="android:background">?attr/colorTopBar</item>
         <item name="titleTextColor">@android:color/black</item>
         <item name="subtitleTextColor">@android:color/black</item>
     </style>
 
-    <style name="Widget.FadCam.BottomNavigationView.Light" parent="Widget.Material3.BottomNavigationView">
+    <style name="Widget.ShahidCam.BottomNavigationView.Light" parent="Widget.Material3.BottomNavigationView">
         <item name="android:minHeight">64dp</item>
         <item name="android:background">?attr/colorBottomNav</item>
         <item name="itemIconTint">@color/black</item>
@@ -746,13 +746,13 @@
         <item name="itemTextAppearanceInactive">@style/TextAppearance.FadCam.BottomNav.Inactive</item>
     </style>
 
-    <style name="Widget.FadCam.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+    <style name="Widget.ShahidCam.Toolbar" parent="Widget.MaterialComponents.Toolbar">
         <item name="android:background">?attr/colorTopBar</item>
         <item name="titleTextColor">@android:color/white</item>
         <item name="subtitleTextColor">@android:color/white</item>
     </style>
 
-    <style name="Widget.FadCam.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+    <style name="Widget.ShahidCam.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
         <item name="android:minHeight">64dp</item>
         <item name="android:background">?attr/colorBottomNav</item>
         <item name="itemIconTint">@color/white</item>
@@ -794,7 +794,7 @@
         <item name="android:textColorSecondary">@android:color/black</item>
         <item name="colorPrimary">@color/snowveil_theme_primary</item>
         <item name="colorOnPrimary">@android:color/black</item>
-        <item name="radioButtonStyle">@style/Widget.FadCam.SnowVeil.RadioButton</item>
+        <item name="radioButtonStyle">@style/Widget.ShahidCam.SnowVeil.RadioButton</item>
     </style>
 
     <style name="ThemeOverlay.FadCam.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
@@ -819,8 +819,8 @@
         <item name="colorSwitchTrack">@color/gray500</item>
         <item name="colorDialog">@color/gray</item>
         <item name="colorStatusBar">@color/gray</item>
-        <item name="toolbarStyle">@style/Widget.FadCam.Toolbar</item>
-        <item name="bottomNavigationStyle">@style/Widget.FadCam.BottomNavigationView</item>
+        <item name="toolbarStyle">@style/Widget.ShahidCam.Toolbar</item>
+        <item name="bottomNavigationStyle">@style/Widget.ShahidCam.BottomNavigationView</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.FadCam.Dialog</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogTheme</item>
         <item name="android:colorBackground">@color/black</item>
@@ -841,8 +841,8 @@
         <item name="android:textColorPrimary">@color/white</item>
         <item name="android:textColorSecondary">@color/gray_text_light</item>
         <!-- Switch styling -->
-        <item name="switchStyle">@style/Widget.FadCam.Switch</item>
-        <item name="materialSwitchStyle">@style/Widget.FadCam.Switch</item>
+        <item name="switchStyle">@style/Widget.ShahidCam.Switch</item>
+        <item name="materialSwitchStyle">@style/Widget.ShahidCam.Switch</item>
         <!-- Picker gradient colors - subtle purple gradient for midnight dusk -->
         <item name="pickerGradientStart">@color/black</item>
         <item name="pickerGradientMid">#FF1A0D2B</item>

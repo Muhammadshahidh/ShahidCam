@@ -141,7 +141,7 @@
 
                         <com.google.android.material.slider.Slider
                             android:id="@+id/picker_slider"
-                            style="@style/Widget.FadCam.BottomSheetSlider"
+                            style="@style/Widget.ShahidCam.BottomSheetSlider"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="6dp"
