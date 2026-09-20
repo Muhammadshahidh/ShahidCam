@@ -1,16 +1,16 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name" translatable="false">FadCam</string>
+    <string name="app_name" translatable="false">ShahidCam</string>
     <string name="app_icon_description">Choose an icon and name for your app. This will change how it appears on your home screen.</string>
     <string name="check_for_updates">Check for Updates</string>
     <string name="accessibility_thumbnail_progress">%1$d%% watched</string>
-    <string name="fadsec_info">FadCam is part of the FadSec Lab suite. For more information, click on \'view source code\' below.</string>
+    <string name="Shahidsec_info">ShahidCam is part of the CSP CYBER TOOLKIT. For more information, click on \'view source code\' below.</string>
 
 
     <string name="app_description">
         <![CDATA[
-    FadCam is an ad-free, open-source video recording app that prioritizes privacy by not tracking or collecting any data. It is available exclusively on GitHub and through the official links mentioned in the README.
+    ShahidCam is an ad-free, open-source video recording app that prioritizes privacy by not tracking or collecting any data. It is available exclusively on GitHub and through the official links mentioned in the README.
     <br/><br/>
-    FadCam has been featured in popular YouTube channels like <font color="#cfbafd">HowToMen</font> and <font color="#cfbafd">Xtream Droid</font>, as well as discussed in <font color="#cfbafd">GrapheneOS</font> and 55+ other notable spots.
+    ShahidCam has been featured in popular YouTube channels like <font color="#cfbafd">HowToMen</font> and <font color="#cfbafd">Xtream Droid</font>, as well as discussed in <font color="#cfbafd">GrapheneOS</font> and 55+ other notable spots.
     ]]>
     </string>
 
