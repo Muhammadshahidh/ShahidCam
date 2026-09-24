@@ -145,7 +145,7 @@ public class VolumeControlBottomSheet extends BottomSheetDialogFragment {
         sliderRow.addView(volumeIcon);
 
         // Material Slider
-        Slider slider = new Slider(new ContextThemeWrapper(requireContext(), R.style.Widget_FadCam_BottomSheetSlider));
+        Slider slider = new Slider(new ContextThemeWrapper(requireContext(), R.style.Widget_ShahidCam_BottomSheetSlider));
         slider.setValueFrom(0f);
         slider.setValueTo(200f); // 0% – 200%
         slider.setStepSize(1f);

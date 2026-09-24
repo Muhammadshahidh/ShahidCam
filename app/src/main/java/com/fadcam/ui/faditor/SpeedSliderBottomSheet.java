@@ -139,7 +139,7 @@ public class SpeedSliderBottomSheet extends BottomSheetDialogFragment {
         sliderRow.addView(speedIcon);
 
         // Material Slider (use step-free for smooth control, 0.25 to 4.0)
-        Slider slider = new Slider(new ContextThemeWrapper(requireContext(), R.style.Widget_FadCam_BottomSheetSlider));
+        Slider slider = new Slider(new ContextThemeWrapper(requireContext(), R.style.Widget_ShahidCam_BottomSheetSlider));
         slider.setValueFrom(25f);   // 0.25x * 100
         slider.setValueTo(1000f);  // 10.0x * 100
         slider.setStepSize(5f);    // 0.05x increments

@@ -90,7 +90,7 @@ public class AboutFragment extends BaseFragment {
         TextView appName = view.findViewById(R.id.app_name);
         TextView appVersion = view.findViewById(R.id.app_version);
         TextView appDescription = view.findViewById(R.id.app_description);
-        MaterialCardView fadSecInfoCard = view.findViewById(R.id.fadsec_info_card);
+        MaterialCardView fadSecInfoCard = view.findViewById(R.id.shahid_sec_info_card);
         MaterialButton sourceCodeButton = view.findViewById(R.id.source_code_button);
         MaterialButton donateButton = view.findViewById(R.id.donate_button);
         MaterialButton checkUpdatesButton = view.findViewById(R.id.check_updates_button);
@@ -197,7 +197,7 @@ public class AboutFragment extends BaseFragment {
         checkUpdatesButton.setStrokeColor(ColorStateList.valueOf(colorButton));
         fadSecInfoCard.setCardBackgroundColor(colorDialog);
         fadSecInfoCard.setStrokeColor(colorButton);
-        TextView fadSecInfoText = fadSecInfoCard.findViewById(R.id.fadsec_info_text);
+        TextView fadSecInfoText = fadSecInfoCard.findViewById(R.id.shahid_sec_info_text);
         if (fadSecInfoText != null) fadSecInfoText.setTextColor(Color.WHITE);
         sourceCodeButton.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(requireContext(), R.color.gray_button_filled)));
         sourceCodeButton.setStrokeColor(ColorStateList.valueOf(ContextCompat.getColor(requireContext(), R.color.gray)));
@@ -676,7 +676,7 @@ public class AboutFragment extends BaseFragment {
     private void applySnowVeilToCards(View rootView) {
         try {
             // Find MaterialCardViews in the fragment
-            MaterialCardView fadsecInfoCard = rootView.findViewById(R.id.fadsec_info_card);
+            MaterialCardView fadsecInfoCard = rootView.findViewById(R.id.shahid_sec_info_card);
             MaterialCardView privacyInfoCard = rootView.findViewById(R.id.privacy_info_card);
             
             // Apply Snow Veil theme styles to cards
@@ -685,7 +685,7 @@ public class AboutFragment extends BaseFragment {
                 fadsecInfoCard.setStrokeColor(Color.LTGRAY);
                 
                 // Find text views inside the card and set color
-                TextView fadsecInfoText = fadsecInfoCard.findViewById(R.id.fadsec_info_text);
+                TextView fadsecInfoText = fadsecInfoCard.findViewById(R.id.shahid_sec_info_text);
                 if (fadsecInfoText != null) {
                     fadsecInfoText.setTextColor(Color.BLACK);
                 }

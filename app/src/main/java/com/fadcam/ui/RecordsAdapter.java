@@ -1500,10 +1500,10 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         SharedPreferencesManager spm = SharedPreferencesManager.getInstance(context);
         String currentTheme = spm.sharedPreferences.getString(Constants.PREF_APP_THEME, Constants.DEFAULT_APP_THEME);
         if ("Crimson Bloom".equals(currentTheme)) {
-            popupMenuStyle = R.style.Widget_FadCam_Red_PopupMenu; // Use underscore, not dot
+            popupMenuStyle = R.style.Widget_ShahidCam_Red_PopupMenu; // Use underscore, not dot
         } else if ("Faded Night".equals(currentTheme)) {
             // If you have a custom style for AMOLED, set it here
-            // popupMenuStyle = R.style.Widget_FadCam_Amoled_PopupMenu;
+            // popupMenuStyle = R.style.Widget_ShahidCam_Amoled_PopupMenu;
             popupMenuStyle = 0; // fallback to default
         }
         PopupMenu popup = (popupMenuStyle != 0)
