@@ -68,7 +68,7 @@ android {
             applicationIdSuffix = ".beta"
             isDebuggable = true
             versionNameSuffix = "-beta10.6" // Increment the beta version suffix for each release. Use `beta1` for the first beta release, then `beta2`, etc.
-            resValue("string", "app_name", "FadCam Beta")
+            resValue("string", "app_name", "ShahidCam Beta")
         }
         
         release {
@@ -111,7 +111,7 @@ android {
             }
             versionNameSuffix = "-Pro+"
             // Custom app name via gradle property
-            val customAppName = project.findProperty("customAppName")?.toString() ?: "FadCam Pro+"
+            val customAppName = project.findProperty("customAppName")?.toString() ?: "ShahidCam Pro+"
             resValue("string", "app_name", customAppName)
         }
     }
@@ -166,7 +166,7 @@ android {
         }
     }
 
-    // Dynamic APK output names: FadCam_<flavor>_v<versionName><suffix>-<abi>.apk
+    // Dynamic APK output names: ShahidCam_<flavor>_v<versionName><suffix>-<abi>.apk
     // (default flavor has no <flavor> part; universal APK gets the literal "-universal")
     applicationVariants.all {
         val versionName = "${defaultConfig.versionName}${buildType.versionNameSuffix.orEmpty()}"
@@ -178,7 +178,7 @@ android {
                 ?.identifier
                 ?: "universal"
             output.outputFileName =
-                "FadCam_${flavor}v${versionName}-${abiType}.apk"
+                "ShahidCam_${flavor}v${versionName}-${abiType}.apk"
         }
     }
 
