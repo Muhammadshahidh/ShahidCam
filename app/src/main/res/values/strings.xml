@@ -878,7 +878,7 @@
     <string name="watermark_style_timeonly_label">Timestamp</string>
     <string name="watermark_style_badge_label">Brand Label Only</string>
     <string name="watermark_style_none_label">No Watermark</string>
-    <string name="helper_watermark_preview">This is how the watermark will appear at the top-left of your recorded video.\nFun fact: 10/Jul/2024 04:47 PM is when ShahidCam v1.0 first shipped.</string>
+    <string name="helper_watermark_preview">This is how the watermark will appear at the top-left of your recorded video.\nFun fact: 10/Jul/2026 04:47 PM is when ShahidCam v1.0 first shipped.</string>
     <string name="helper_location_watermark_option">Toggle adding your device location as an overlay. Requires location permission.</string>
     <string name="location_format_title">Location Format</string>
     <string name="location_format_coordinates">Coordinates Only</string>
@@ -924,7 +924,7 @@
     <string name="widget_option_enabled">Enabled</string>
     <string name="widget_option_disabled">Disabled</string>
     <string name="widget_background_transparent">Disabled (Transparent)</string>
-    <string name="widget_date_format_sample">Aug 13, 2025</string>
+    <string name="widget_date_format_sample">Aug 13, 2026</string>
     <string name="widget_branding_enabled">Enabled (with Black Background)</string>
     <string name="widget_branding_disabled">Disabled</string>
     <string name="widget_branding_requires_background">Requires Black Background</string>
@@ -1628,7 +1628,7 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
     <string name="app_icon_calculator" translatable="false">Calculator</string>
     <string name="app_icon_clock" translatable="false">Clock</string>
     <string name="app_icon_weather" translatable="false">Weather</string>
-    <string name="app_icon_football" translatable="false">FootballX 2024</string>
+    <string name="app_icon_football" translatable="false">FootballX 2026</string>
     <string name="app_icon_car" translatable="false">ClutchX</string>
     <string name="app_icon_jet" translatable="false">JF-17: ThunderX</string>
     <string name="app_icon_changed">App icon changed</string>
@@ -2066,8 +2066,8 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
     <string name="fadcam_pro_proplus_label">Pro+</string>
     <string name="fadcam_pro_lab_label">Lab</string>
     <string name="fadcam_pro_plus_label">Pro</string>
-    <string name="fadcam_pro_early_bird">🎉 Free until December 23, 2025! After that, get lifetime access for just $15.</string>
-    <string name="fadcam_pro_paid_offer">After December 23, 2025, get Lifetime Access for $15 — one-time payment, forever updates.</string>
+    <string name="fadcam_pro_early_bird">🎉 Free until December 23, 2026! After that, get lifetime access for just $15.</string>
+    <string name="fadcam_pro_paid_offer">After December 23, 2026, get Lifetime Access for $15 — one-time payment, forever updates.</string>
     <string name="fadcam_pro_benefit_early_access">Early access: Get the latest version before public release</string>
     <string name="fadcam_pro_benefit_lifetime_updates">Lifetime updates: Always receive new features, improvements, and bug fixes</string>
     <string name="fadcam_pro_benefit_support">Instant support: Direct help through tickets via Discord</string>
@@ -2377,7 +2377,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <!-- Home sidebar branding -->
     <string name="home_sidebar_discord">Discord</string>
     <string name="home_sidebar_discord_sub">Join the community</string>
-    <string name="home_sidebar_copyright" translatable="false">© CyberShadowPK 2024 – 2026</string>
+    <string name="home_sidebar_copyright" translatable="false">© CyberShadowPK 2026 – 2026</string>
 
     <!-- Privacy Black Mode Settings -->
     <string name="privacy_black_mode_title">Privacy Black Screen</string>
