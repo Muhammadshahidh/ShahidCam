@@ -473,7 +473,6 @@ public class SettingsHomeFragment extends Fragment {
         bindRow(root, R.id.group_readme, () -> openReadmeDialog());
 
         // Tutorial YouTube CTA
-        View tutorialYt = root.findViewById(R.id.group_tutorials_youtube);
         if (tutorialYt != null) {
             tutorialYt.setOnClickListener(v -> {
                 try {
@@ -517,7 +516,6 @@ public class SettingsHomeFragment extends Fragment {
         }
 
         // Promo card — whole card opens App Store
-        bindRow(root, R.id.group_ios_promo, () -> openUrl("https://apps.apple.com/app/id6778121848"));
     }
 
     private void openUrl(String url) {
