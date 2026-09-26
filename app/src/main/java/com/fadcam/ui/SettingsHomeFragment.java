@@ -473,16 +473,6 @@ public class SettingsHomeFragment extends Fragment {
         bindRow(root, R.id.group_readme, () -> openReadmeDialog());
 
         // Tutorial YouTube CTA
-        if (tutorialYt != null) {
-            tutorialYt.setOnClickListener(v -> {
-                try {
-                    startActivity(new android.content.Intent(android.content.Intent.ACTION_VIEW,
-                        android.net.Uri.parse("https://www.youtube.com/@fadseclab")));
-                } catch (Exception e) {
-                    FLog.w("SettingsHome", "Could not open YouTube", e);
-                }
-            });
-        }
 
         // Trash section
         com.fadcam.SharedPreferencesManager prefs = com.fadcam.SharedPreferencesManager.getInstance(requireContext());
