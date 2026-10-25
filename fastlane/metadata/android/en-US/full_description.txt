@@ -1,1 +1,13 @@
-<p>FadCam is a privacy-focused, open-source multimedia recorder designed for continuous and crash-safe reliable recording use cases.</p><p><b>Key Features:</b> Background video recording with screen off • Dashcam-style recording for driving/riding • Android screen recording with annotation tools • Live streaming over local network • Remote camera control through web UI • Fragmented MP4 format (zero corruption risk) • Custom watermark text overlays</p><p><b>Perfect for:</b> CCTV camera at home - monitor and control via FadCam Remote web UI • Dashcam while driving or riding • Feature-rich screen recorder for Android (no watermarks) • Security monitoring and content creation</p><p>All features work without ads or trackers.</p><p><b>FadCam Pro</b> is also available for lifetime access purchase - check my Patreon link inside the app for details.</p>
+ShahidCam is an advanced, privacy-first dashcam and multimedia recording suite designed for security, automotive safety, and high-performance video capture.
+
+KEY FEATURES:
+• Intelligent Dashcam Mode: High-fidelity loop recording with automated speed and timestamp watermarking.
+• Emergency Collision Detection: Real-time 3-axis accelerometer sensor locks accident footage to protect it from being overwritten.
+• Smart Thermal & Battery Guard: Proactively monitors device battery temperature to prevent overheating and file corruption.
+• Dual Camera Recording: Capture front and rear cameras simultaneously with customizable picture-in-picture layout (on supported hardware).
+• Local Web Studio: Stream live video and monitor your camera securely over your local Wi-Fi network with zero third-party cloud dependency.
+• Storage Auto-Recycler: Continuously maintains available storage by recycling only the oldest unprotected clips.
+• In-App Video Editor: Trim, split, and export videos quickly with hardware-accelerated processing.
+• Privacy & Biometric Lock: Protect your recordings with biometric fingerprint and PIN authentication.
+
+100% ad-free, transparent, and built with user privacy as the top priority.

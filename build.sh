@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 
 # FadCam Build Script with TUI & Progress Bar
 # Interactive menu when run without arguments
@@ -8,7 +8,10 @@ set -e
 # Clear screen immediately
 clear
 
-export JAVA_HOME="/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home"
+# Use system JAVA_HOME if available
+if [ -z "$JAVA_HOME" ] && command -v java >/dev/null 2>&1; then
+    export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
+fi
 
 # ANSI Colors (Red Theme)
 RED='\033[0;31m'
