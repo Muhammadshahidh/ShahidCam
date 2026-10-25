@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-import com.fadcam.R;
+import com.shahid.cam.R;
 import com.guardanis.applock.activities.UnlockActivity;
 import com.guardanis.applock.services.FingerprintLockService;
 import com.guardanis.applock.services.LockService;

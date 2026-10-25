@@ -2,7 +2,7 @@
     
 <!-- <img src="https://github.com/user-attachments/assets/9c1c7f9e-8798-4baa-b803-fa82cf1a6bd7" style="width: 700px; height: auto;" >  this is the old banner -->
 
-<img src="https://github.com/anonfaded/FadCam/blob/master/fastlane/metadata/android/en-US/images/tvBanner.jpg" style="width: 900px; height: auto;" >
+<img src="https://github.com/Muhammadshahidh/ShahidCam/blob/master/fastlane/metadata/android/en-US/images/tvBanner.jpg" style="width: 900px; height: auto;" >
 
 <!-- https://github.com/user-attachments/assets/c9eeaf74-6649-4810-b420-e2c4ad4bd365 -->
 
@@ -21,7 +21,7 @@
 
 <div align="center">
     
-<img src="https://github.com/anonfaded/FadCam/assets/124708903/d6f99201-65c7-4c93-bf13-d4a0d65172ac" style="width: 100px; height: auto;" >
+<img src="https://github.com/Muhammadshahidh/ShahidCam/assets/124708903/d6f99201-65c7-4c93-bf13-d4a0d65172ac" style="width: 100px; height: auto;" >
 
 # `>_` FadCam
 
@@ -29,11 +29,11 @@
 
 <a href="https://trendshift.io/repositories/12830" target="_blank"><img src="https://trendshift.io/api/badge/repositories/12830" alt="anonfaded%2FFadCam | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
-[![GitHub all releases](https://img.shields.io/github/downloads/anonfaded/FadCam/total?label=Downloads&logo=github)](https://github.com/anonfaded/FadCam/releases/)
-![Downloads (F-Droid)](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2Fkitswas%2Ffdroid-metrics-dashboard%2Fraw%2Frefs%2Fheads%2Fmain%2Fprocessed%2Ftotal%2Fcom.fadcam.json&query=%24.total_downloads&logo=fdroid&label=Downloads%20(F-Droid))
+[![GitHub all releases](https://img.shields.io/github/downloads/anonfaded/FadCam/total?label=Downloads&logo=github)](https://github.com/Muhammadshahidh/ShahidCam/releases/)
+![Downloads (F-Droid)](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2Fkitswas%2Ffdroid-metrics-dashboard%2Fraw%2Frefs%2Fheads%2Fmain%2Fprocessed%2Ftotal%2Fcom.shahid.cam.json&query=%24.total_downloads&logo=fdroid&label=Downloads%20(F-Droid))
 [![SourceForge Downloads](https://img.shields.io/sourceforge/dt/fadcam.svg?label=SourceForge%20Downloads&color=red)](https://sourceforge.net/projects/fadcam/files/latest/download)
 
-[<img src="https://shields.rbtlog.dev/simple/com.fadcam" alt="badge">](https://shields.rbtlog.dev/com.fadcam)
+[<img src="https://shields.rbtlog.dev/simple/com.shahid.cam" alt="badge">](https://shields.rbtlog.dev/com.shahid.cam)
 
 [![ko-fi badge](https://img.shields.io/badge/buy_me_a-coffee-red)](https://ko-fi.com/D1D510FNSV)
 [![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3DFadedx%26type%3Dpatrons%26suffix%3Dpatrons%2520%257C%2520Shop&style=social)](https://www.patreon.com/cw/Fadedx/shop)
@@ -54,14 +54,14 @@
 <br>
 
 <!--
-<a href="https://play.google.com/store/apps/details?id=com.fadcam">
-    <img src="https://github.com/anonfaded/FadCam/blob/a75be2fe8e6fca539c18af8e0a208508ff1ad4ed/app/src/main/assets/PreRegisterOnGooglePlay_Badge.png"
+<a href="https://play.google.com/store/apps/details?id=com.shahid.cam">
+    <img src="https://github.com/Muhammadshahidh/ShahidCam/blob/a75be2fe8e6fca539c18af8e0a208508ff1ad4ed/app/src/main/assets/PreRegisterOnGooglePlay_Badge.png"
     alt="Pre-Register on Google Play"
     height="50"></a>
 -->
 <br>
     
-<a href="https://apt.izzysoft.de/packages/com.fadcam">
+<a href="https://apt.izzysoft.de/packages/com.shahid.cam">
     <img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png"
     alt="Get it on IoD"
     height="70"></a>
@@ -69,7 +69,7 @@
 <a href="https://apps.apple.com/us/app/fadcam-dashcam-bodycam/id6778121848?itscg=30200&itsct=apps_box_badge&mttnsubad=6778121848" style="display: inline-block;">
     <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1782345600" alt="Download on the App Store" style="width: auto; height: 60px; vertical-align: middle; object-fit: contain;" /></a>
 
-<a href="https://f-droid.org/packages/com.fadcam">
+<a href="https://f-droid.org/packages/com.shahid.cam">
     <img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
     alt="Get it on F-Droid"
     height="70"></a>
@@ -77,9 +77,9 @@
 <br>
 
 <!--
-[![Pre-Register on Google Play](https://github.com/anonfaded/FadCam/blob/a75be2fe8e6fca539c18af8e0a208508ff1ad4ed/app/src/main/assets/PreRegisterOnGooglePlay_Badge.png)](https://play.google.com/store/apps/details?id=com.fadcam)
+[![Pre-Register on Google Play](https://github.com/Muhammadshahidh/ShahidCam/blob/a75be2fe8e6fca539c18af8e0a208508ff1ad4ed/app/src/main/assets/PreRegisterOnGooglePlay_Badge.png)](https://play.google.com/store/apps/details?id=com.shahid.cam)
 
-[![Get it on Google Play](https://github.com/anonfaded/FadCam/blob/a75be2fe8e6fca539c18af8e0a208508ff1ad4ed/app/src/main/assets/GetItOnGooglePlay_Badge.png)](https://play.google.com/store/apps/details?id=com.fadcam)
+[![Get it on Google Play](https://github.com/Muhammadshahidh/ShahidCam/blob/a75be2fe8e6fca539c18af8e0a208508ff1ad4ed/app/src/main/assets/GetItOnGooglePlay_Badge.png)](https://play.google.com/store/apps/details?id=com.shahid.cam)
 -->
 
 | ⭐ |<img src="https://github.com/user-attachments/assets/c730eda3-5887-458d-8df1-971a74807b73" style="width: 100px; height: auto;" > | *New app from FadSec-Lab suite:🎉* <br> Also, check out our new Windows app! Visit here: [FadCrypt](https://github.com/anonfaded/FadCrypt)  |
@@ -103,7 +103,7 @@
 - [Purpose](#purpose)
 - [Screenshots](#-screenshots)
 - [Featured on](#featured-on)
-- [Download](https://github.com/anonfaded/FadCam#-download)
+- [Download](https://github.com/Muhammadshahidh/ShahidCam#-download)
 - [Features](#features)
 - [Upcoming Features](#upcoming-features)
 - [Join Community](#join-community)
@@ -132,20 +132,20 @@ FadCam is developed with the goal of providing a powerful, privacy-focused multi
 ## `>_` 📱 Screenshots
 
 <div align="center">
-<!--     <img src="https://github.com/anonfaded/FadCam/assets/124708903/4a93c111-fc67-4d75-94b1-fa4e01822998" style="width: 50px; height: auto;" >
+<!--     <img src="https://github.com/Muhammadshahidh/ShahidCam/assets/124708903/4a93c111-fc67-4d75-94b1-fa4e01822998" style="width: 50px; height: auto;" >
     <br>
     <em>apk icon</em> -->
     <br><br>
-    <img src="https://github.com/anonfaded/FadCam/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/1.jpg" style="width: 200px; height: auto;" >
-    <img src="https://github.com/anonfaded/FadCam/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/2.jpg" style="width: 200px; height: auto;" >
-    <img src="https://github.com/anonfaded/FadCam/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/3.jpg" style="width: 200px; height: auto;" >
-    <img src="https://github.com/anonfaded/FadCam/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/4.jpg" style="width: 200px; height: auto;" >
-    <img src="https://github.com/anonfaded/FadCam/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/5.jpg" style="width: 200px; height: auto;" >
-    <img src="https://github.com/anonfaded/FadCam/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/6.jpg" style="width: 200px; height: auto;" >
-    <img src="https://github.com/anonfaded/FadCam/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/7.jpg" style="width: 200px; height: auto;" >
-    <img src="https://github.com/anonfaded/FadCam/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/8.jpg" style="width: 200px; height: auto;" >
-    <img src="https://github.com/anonfaded/FadCam/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/9.jpg" style="width: 200px; height: auto;" >
-    <img src="https://github.com/anonfaded/FadCam/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/10.jpg" style="width: 200px; height: auto;" >
+    <img src="https://github.com/Muhammadshahidh/ShahidCam/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/1.jpg" style="width: 200px; height: auto;" >
+    <img src="https://github.com/Muhammadshahidh/ShahidCam/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/2.jpg" style="width: 200px; height: auto;" >
+    <img src="https://github.com/Muhammadshahidh/ShahidCam/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/3.jpg" style="width: 200px; height: auto;" >
+    <img src="https://github.com/Muhammadshahidh/ShahidCam/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/4.jpg" style="width: 200px; height: auto;" >
+    <img src="https://github.com/Muhammadshahidh/ShahidCam/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/5.jpg" style="width: 200px; height: auto;" >
+    <img src="https://github.com/Muhammadshahidh/ShahidCam/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/6.jpg" style="width: 200px; height: auto;" >
+    <img src="https://github.com/Muhammadshahidh/ShahidCam/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/7.jpg" style="width: 200px; height: auto;" >
+    <img src="https://github.com/Muhammadshahidh/ShahidCam/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/8.jpg" style="width: 200px; height: auto;" >
+    <img src="https://github.com/Muhammadshahidh/ShahidCam/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/9.jpg" style="width: 200px; height: auto;" >
+    <img src="https://github.com/Muhammadshahidh/ShahidCam/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/10.jpg" style="width: 200px; height: auto;" >
  <br>
 
 <!--     <br> -->
@@ -217,7 +217,7 @@ FadCam is developed with the goal of providing a powerful, privacy-focused multi
 - [offa repo](https://github.com/offa/android-foss#-camera)
 - [geeky-gadgets.com](https://www.geeky-gadgets.com/awesome-android-apps-to-try-out-in-august/)
 - [GrowingGit repo](https://github.com/GrowingGit/GitHub-English-Top-Charts/blob/main/content/charts/new_repo/software/Java.md)
-- [openapk.net](https://www.openapk.net/fadcam/com.fadcam/)
+- [openapk.net](https://www.openapk.net/fadcam/com.shahid.cam/)
 - [popMODS on Telegram](https://t.me/popmodschat/447936)
 - [VPN Club on Telegram](https://t.me/wbnet/99735)
 - [Mobile Applications on Telegram](https://t.me/appCentre/18006)
@@ -281,32 +281,32 @@ FadCam is developed with the goal of providing a powerful, privacy-focused multi
 
 ## `>_` ⬇️ Download
 
-Download the latest `apk` file directly from the [releases page](https://github.com/anonfaded/FadCam/releases).
+Download the latest `apk` file directly from the [releases page](https://github.com/Muhammadshahidh/ShahidCam/releases).
 
-[<img src="https://raw.githubusercontent.com/vadret/android/master/assets/get-github.png" alt="Get it on GitHub" height="70">](https://github.com/anonfaded/FadCam/releases)
+[<img src="https://raw.githubusercontent.com/vadret/android/master/assets/get-github.png" alt="Get it on GitHub" height="70">](https://github.com/Muhammadshahidh/ShahidCam/releases)
 
 Or:
 
 <!--
-<a href="https://play.google.com/store/apps/details?id=com.fadcam">
-    <img src="https://github.com/anonfaded/FadCam/blob/a75be2fe8e6fca539c18af8e0a208508ff1ad4ed/app/src/main/assets/PreRegisterOnGooglePlay_Badge.png"
+<a href="https://play.google.com/store/apps/details?id=com.shahid.cam">
+    <img src="https://github.com/Muhammadshahidh/ShahidCam/blob/a75be2fe8e6fca539c18af8e0a208508ff1ad4ed/app/src/main/assets/PreRegisterOnGooglePlay_Badge.png"
     alt="Pre-Register on Google Play"
     height="50"></a>
 -->
 
 <br>
 
-<a href="https://apt.izzysoft.de/packages/com.fadcam">
+<a href="https://apt.izzysoft.de/packages/com.shahid.cam">
     <img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png"
     alt="Get it on F-Droid"
     height="70"></a>
-<a href="https://f-droid.org/packages/com.fadcam">
+<a href="https://f-droid.org/packages/com.shahid.cam">
     <img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
     alt="Get it on F-Droid"
     height="70"></a>
 
 <a href="http://www.amazon.com/gp/product/B0CZKWZ8PG/ref=mas_pm_FadCam">
-    <img src="https://github.com/anonfaded/FadCam/assets/124708903/43550ba6-dcf2-46cb-8aa5-2a882968c529"
+    <img src="https://github.com/Muhammadshahidh/ShahidCam/assets/124708903/43550ba6-dcf2-46cb-8aa5-2a882968c529"
     alt="Get it on Amazon appstore"
     height="47"></a>
 
@@ -450,7 +450,7 @@ Buy FadCam Pro (lifetime access) from my Patreon shop. Your purchases help fund 
 We welcome any contributions to improve this project! Whether it's bug fixes or new features, your help is appreciated.
 
 ### `>_` How to Contribute
-1. **Open an Issue First**: Before starting any work, please open an [issue](https://github.com/anonfaded/FadCam/issues) to discuss your proposed changes and get approval.
+1. **Open an Issue First**: Before starting any work, please open an [issue](https://github.com/Muhammadshahidh/ShahidCam/issues) to discuss your proposed changes and get approval.
 2. **Fork the Repo**: Fork the repository to make your changes.
 3. **Submit a PR**: Create a pull request with a clear description of your changes.
 

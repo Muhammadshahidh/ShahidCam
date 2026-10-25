@@ -3,7 +3,7 @@ package com.guardanis.applock.pin;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
 
-import com.fadcam.R;
+import com.shahid.cam.R;
 
 import java.lang.ref.WeakReference;
 

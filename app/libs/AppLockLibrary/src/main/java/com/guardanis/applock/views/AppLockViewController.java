@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.guardanis.applock.AppLock;
-import com.fadcam.R;
+import com.shahid.cam.R;
 import com.guardanis.applock.password.PasswordInputController;
 import com.guardanis.applock.password.PasswordInputView;
 import com.guardanis.applock.pin.PINInputController;

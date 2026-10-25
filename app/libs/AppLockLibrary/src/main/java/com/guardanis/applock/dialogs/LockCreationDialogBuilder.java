@@ -3,7 +3,7 @@ package com.guardanis.applock.dialogs;
 import android.app.Activity;
 import android.view.View;
 
-import com.fadcam.R;
+import com.shahid.cam.R;
 import com.guardanis.applock.views.LockCreationViewController;
 
 public class LockCreationDialogBuilder extends AppLockDialogBuilder<LockCreationViewController> implements LockCreationViewController.Delegate {

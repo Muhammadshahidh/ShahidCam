@@ -16,7 +16,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.fadcam.R;
+import com.shahid.cam.R;
 
 import java.util.WeakHashMap;
 

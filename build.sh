@@ -290,13 +290,13 @@ execute_build() {
             echo ""
             print_status "🚀" "Launching app on all devices..."
             
-            local PACKAGE_NAME="com.fadcam.beta"
-            [ "$BUILD_TYPE" = "release" ] && PACKAGE_NAME="com.fadcam"
+            local PACKAGE_NAME="com.shahid.cam.beta"
+            [ "$BUILD_TYPE" = "release" ] && PACKAGE_NAME="com.shahid.cam"
             
             # Use am start with proper activity path - this is the Android standard
             adb devices | grep -E '^[a-zA-Z0-9].*[[:space:]]device$' | while read -r device _; do
                 # Launch the app (Android's official way) - note: full class path needed
-                if adb -s "$device" shell am start -W -n "${PACKAGE_NAME}/com.fadcam.SplashActivity" 2>/dev/null; then
+                if adb -s "$device" shell am start -W -n "${PACKAGE_NAME}/com.shahid.cam.SplashActivity" 2>/dev/null; then
                     echo -e "  ${BRIGHT_RED}[${device:0:16}]${RESET} ✅ Launched successfully"
                 else
                     echo -e "  ${BRIGHT_RED}[${device:0:16}]${RESET} ⚠️ Launch may have failed"

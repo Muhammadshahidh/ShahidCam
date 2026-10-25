@@ -59,22 +59,22 @@ re-invent these steps.
 ```
 
 **Package names** (CRITICAL — debug has `applicationIdSuffix = ".beta"`):
-- App package: `com.fadcam.beta` (stable release is `com.fadcam` — never record into it)
-- Manifest classes resolve against the *namespace* `com.fadcam`, NOT the app id.
-  Relative names (`com.fadcam.beta/.RecordingStartActivity`) FAIL with "does not exist".
-  Always use the full component: `com.fadcam.beta/com.fadcam.RecordingStartActivity`.
+- App package: `com.shahid.cam.beta` (stable release is `com.shahid.cam` — never record into it)
+- Manifest classes resolve against the *namespace* `com.shahid.cam`, NOT the app id.
+  Relative names (`com.shahid.cam.beta/.RecordingStartActivity`) FAIL with "does not exist".
+  Always use the full component: `com.shahid.cam.beta/com.shahid.cam.RecordingStartActivity`.
 
 **Record** (start → wait → stop):
 ```bash
-adb -s <SERIAL> shell am start -n com.fadcam.beta/com.fadcam.RecordingStartActivity
+adb -s <SERIAL> shell am start -n com.shahid.cam.beta/com.shahid.cam.RecordingStartActivity
 sleep 15   # recording duration
-adb -s <SERIAL> shell am start -n com.fadcam.beta/com.fadcam.RecordingStopActivity
+adb -s <SERIAL> shell am start -n com.shahid.cam.beta/com.shahid.cam.RecordingStopActivity
 ```
 
 **Find the file** (app saves to a custom SAF download folder; the path may be
 double-prefixed e.g. `Download/FadCam/Camera/Back/Camera/Back/` — do not hardcode it):
 ```bash
-adb -s <SERIAL> shell "find /storage/emulated/0/Download /storage/emulated/0/Android/data/com.fadcam.beta -name '*.mp4' -mmin -5 2>/dev/null"
+adb -s <SERIAL> shell "find /storage/emulated/0/Download /storage/emulated/0/Android/data/com.shahid.cam.beta -name '*.mp4' -mmin -5 2>/dev/null"
 adb -s <SERIAL> pull "<PATH>" /tmp/fadcam_session/out/
 ```
 

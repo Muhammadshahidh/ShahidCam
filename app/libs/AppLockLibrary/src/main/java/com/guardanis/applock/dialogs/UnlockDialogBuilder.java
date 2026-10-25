@@ -5,7 +5,7 @@ import android.app.Dialog;
 import android.view.View;
 
 import com.guardanis.applock.AppLock;
-import com.fadcam.R;
+import com.shahid.cam.R;
 import com.guardanis.applock.views.UnlockViewController;
 import androidx.appcompat.app.AppCompatDialog;
 import java.lang.ref.WeakReference;

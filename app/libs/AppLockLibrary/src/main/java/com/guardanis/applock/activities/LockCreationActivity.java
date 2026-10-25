@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.fadcam.R;
+import com.shahid.cam.R;
 import com.guardanis.applock.AppLock;
 import com.guardanis.applock.views.LockCreationViewController;
 

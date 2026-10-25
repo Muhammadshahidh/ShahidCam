@@ -29,15 +29,15 @@ CameraX 1.6.0 | Media3 1.8.0 | FFmpeg-kit 6.0-2 LTS | NanoHTTPD 2.3.1 | MP4Parse
 ## Architecture Pattern
 ```
 Type: Monolithic Android App
-Package: com.fadcam
-Structure: Feature-based packages under com.fadcam.*
+Package: com.shahid.cam
+Structure: Feature-based packages under com.shahid.cam.*
 ```
 
 ### Project Structure
 ```
 app/src/main/java/com/fadcam/
 ├── MainActivity.java              # Shell activity w/ BottomNavigationView (2149 lines)
-├── FadCamApplication.java         # Application-level init
+├── ShahidCamApplication.java         # Application-level init
 ├── Constants.java                 # All SharedPreferences keys + constants (704 lines)
 ├── SharedPreferencesManager.java  # Centralized singleton prefs access
 ├── RecordingState.java            # Enum: STARTING, IN_PROGRESS, PAUSED, NONE, WAITING_FOR_CAMERA
@@ -131,7 +131,7 @@ public abstract class VideoIndexDatabase extends RoomDatabase {
 | Type | Convention | Example |
 |------|-----------|---------|
 | Java files | PascalCase | `MainActivity.java`, `RecordingService.java` |
-| Packages | lowercase | `com.fadcam.utils`, `com.fadcam.services` |
+| Packages | lowercase | `com.shahid.cam.utils`, `com.shahid.cam.services` |
 | Classes | PascalCase | `VideoStatsCache`, `FragmentedMp4Muxer` |
 | Methods | camelCase | `startRecording()`, `getCachedStats()` |
 | Constants (public static final) | UPPER_SNAKE_CASE | `PREFS_NAME`, `PREF_VIDEO_FRAME_RATE` |

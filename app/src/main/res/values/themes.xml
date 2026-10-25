@@ -1,6 +1,6 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Base.Theme.FadCam" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.ShahidCam" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:fontFamily">@font/ubuntu_regular</item>
@@ -54,8 +54,8 @@
         <item name="android:windowBackground">@color/black</item>
         <item name="android:navigationBarColor">@color/black</item></style>
 
-    <!-- Splash theme leveraging AndroidX SplashScreen attributes (Fix Start Theme.FadCam.Splash) -->
-    <style name="Theme.FadCam.Splash" parent="Theme.Material3.DayNight.NoActionBar">
+    <!-- Splash theme leveraging AndroidX SplashScreen attributes (Fix Start Theme.ShahidCam.Splash) -->
+    <style name="Theme.ShahidCam.Splash" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Solid dark background -->
         <item name="android:windowBackground">@color/black</item>
         <!-- SplashScreen API attrs -->
@@ -64,11 +64,11 @@
         <item name="android:statusBarColor">@color/black</item>
         <item name="android:navigationBarColor">@color/black</item>
         <item name="android:windowLightStatusBar">false</item>
-        <item name="postSplashScreenTheme">@style/Base.Theme.FadCam</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.ShahidCam</item>
     </style>
-    <!-- Splash theme end (Fix End Theme.FadCam.Splash) -->
+    <!-- Splash theme end (Fix End Theme.ShahidCam.Splash) -->
 
-    <style name="Theme.FadCam.Amoled" parent="Theme.Material3.Dark.NoActionBar">
+    <style name="Theme.ShahidCam.Amoled" parent="Theme.Material3.Dark.NoActionBar">
         <!-- Completely black background everywhere - using explicit black colors -->
         <item name="android:colorBackground">@color/black</item>
         <item name="colorSurface">@color/amoled_card</item>
@@ -99,8 +99,8 @@
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.FadCam.Amoled.MaterialAlertDialog</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogTheme</item>
         <!-- Card and surface styles -->
-        <item name="cardViewStyle">@style/Theme.FadCam.AmoledCardView</item>
-        <item name="bottomNavigationStyle">@style/Theme.FadCam.AmoledBottomNavigation</item>
+        <item name="cardViewStyle">@style/Theme.ShahidCam.AmoledCardView</item>
+        <item name="bottomNavigationStyle">@style/Theme.ShahidCam.AmoledBottomNavigation</item>
         <!-- Switch styling -->
         <item name="switchStyle">@style/Widget.ShahidCam.Switch</item>
         <item name="materialSwitchStyle">@style/Widget.ShahidCam.Switch</item>
@@ -144,11 +144,11 @@
         <item name="bottomNavigationStyle">@style/Widget.ShahidCam.BottomNavigationView</item>
     </style>
 
-    <style name="Theme.FadCam.AmoledCardView" parent="Widget.MaterialComponents.CardView">
+    <style name="Theme.ShahidCam.AmoledCardView" parent="Widget.MaterialComponents.CardView">
         <item name="cardBackgroundColor">@color/amoled_surface</item>
     </style>
 
-    <style name="Theme.FadCam.AmoledBottomNavigation" parent="Widget.Material3.BottomNavigationView">
+    <style name="Theme.ShahidCam.AmoledBottomNavigation" parent="Widget.Material3.BottomNavigationView">
         <item name="android:minHeight">64dp</item>
         <item name="android:background">@color/amoled_background</item>
         <item name="itemIconTint">@color/amoled_text_primary</item>
@@ -171,7 +171,7 @@
         <item name="android:textColor">@color/amoled_text_primary</item>
     </style>
 
-    <style name="Theme.FadCam.Red" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.ShahidCam.Red" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorTopBar">@color/red_theme_primary_variant</item>
         <item name="colorBottomNav">@color/red_theme_primary_variant</item>
         <item name="colorHeading">@color/red_theme_primary</item>
@@ -263,7 +263,7 @@
         <item name="trackTint">@color/switch_track</item>
     </style>
 
-    <style name="Theme.FadCam.Gold" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.ShahidCam.Gold" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorTopBar">@color/gold_theme_primary_variant</item>
         <item name="colorBottomNav">@color/gold_theme_primary_variant</item>
         <item name="colorHeading">@color/gold_theme_primary</item>
@@ -349,7 +349,7 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="Theme.FadCam.SilentForest" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.ShahidCam.SilentForest" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorTopBar">@color/silentforest_theme_primary_variant</item>
         <item name="colorBottomNav">@color/silentforest_theme_primary_variant</item>
         <item name="colorHeading">@color/silentforest_theme_primary</item>
@@ -435,7 +435,7 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="Theme.FadCam.ShadowAlloy" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.ShahidCam.ShadowAlloy" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorTopBar">@color/shadowalloy_theme_primary_variant</item>
         <item name="colorBottomNav">@color/shadowalloy_theme_primary_variant</item>
         <item name="colorHeading">@color/shadowalloy_theme_primary</item>
@@ -521,7 +521,7 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="Theme.FadCam.PookiePink" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.ShahidCam.PookiePink" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorTopBar">@color/pookiepink_theme_primary_variant</item>
         <item name="colorBottomNav">@color/pookiepink_theme_primary_variant</item>
         <item name="colorHeading">@color/pookiepink_theme_primary</item>
@@ -607,7 +607,7 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="Theme.FadCam.SnowVeil" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.ShahidCam.SnowVeil" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorTopBar">@color/snowveil_theme_primary_variant</item>
         <item name="colorBottomNav">@color/snowveil_theme_primary_variant</item>
         <item name="colorHeading">@color/snowveil_theme_heading_on_blue</item>
@@ -642,7 +642,7 @@
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.FadCam.SnowVeil.Dialog</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogTheme</item>
         <!-- Force pure white CardView backgrounds for better contrast with black text -->
-        <item name="cardViewStyle">@style/Theme.FadCam.SnowVeilCardView</item>
+        <item name="cardViewStyle">@style/Theme.ShahidCam.SnowVeilCardView</item>
         <!-- Improve contrast for Snow Veil theme -->
         <item name="android:iconTint">@color/black</item>
         <item name="colorControlNormal">@color/black</item>
@@ -686,7 +686,7 @@
     </style>
 
     <!-- Add CardView style for Snow Veil theme with dark background for better contrast -->
-    <style name="Theme.FadCam.SnowVeilCardView" parent="Widget.MaterialComponents.CardView">
+    <style name="Theme.ShahidCam.SnowVeilCardView" parent="Widget.MaterialComponents.CardView">
         <item name="cardBackgroundColor">#2E2E2E</item>
         <item name="cardElevation">2dp</item>
         <item name="cardCornerRadius">12dp</item>
@@ -808,7 +808,7 @@
     <!-- Fix End: Add theme overlays for bottom sheets and dialogs for all themes -->
 
     <!-- Fix Start: Add always-dark Midnight Dusk theme -->
-    <style name="Theme.FadCam.MidnightDusk" parent="Theme.Material3.Dark.NoActionBar">
+    <style name="Theme.ShahidCam.MidnightDusk" parent="Theme.Material3.Dark.NoActionBar">
         <item name="android:fontFamily">@font/ubuntu_regular</item>
         <item name="android:statusBarColor">@color/gray</item>
         <item name="colorTopBar">@color/gray</item>
@@ -869,7 +869,7 @@
     <!-- Fix End: Add always-dark Midnight Dusk theme -->
 
     <!-- Transparent dialog theme for overlay activities -->
-    <style name="Theme.FadCam.TransparentDialog" parent="Theme.Material3.DayNight.Dialog.Alert">
+    <style name="Theme.ShahidCam.TransparentDialog" parent="Theme.Material3.DayNight.Dialog.Alert">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowContentOverlay">@null</item>
@@ -903,7 +903,7 @@
     <!-- WATCH-SPECIFIC THEME: MaterialComponents for better Wear OS compatibility
          Material3 has rendering issues on small round Wear OS screens.
          This theme is applied programmatically in WatchMainActivity.onCreate(). -->
-    <style name="Theme.FadCam.WatchCompat" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.ShahidCam.WatchCompat" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Explicit window background to prevent rendering issues -->
         <item name="android:windowBackground">@color/black</item>
         <item name="android:windowNoTitle">true</item>

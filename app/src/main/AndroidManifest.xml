@@ -82,14 +82,14 @@
 
 
 
-    <application android:name=".FadCamApplication" android:allowBackup="false" android:dataExtractionRules="@xml/data_extraction_rules" android:fullBackupContent="@xml/backup_rules" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/Base.Theme.FadCam" android:requestLegacyExternalStorage="true" android:networkSecurityConfig="@xml/network_security_config" android:enableOnBackInvokedCallback="true" android:largeHeap="true" tools:targetApi="q">
+    <application android:name=".ShahidCamApplication" android:allowBackup="false" android:dataExtractionRules="@xml/data_extraction_rules" android:fullBackupContent="@xml/backup_rules" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/Base.Theme.ShahidCam" android:requestLegacyExternalStorage="true" android:networkSecurityConfig="@xml/network_security_config" android:enableOnBackInvokedCallback="true" android:largeHeap="true" tools:targetApi="q">
 
         <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts" />
 
         <provider android:name="androidx.core.content.FileProvider" android:authorities="${applicationId}.provider" android:exported="false" android:grantUriPermissions="true">
             <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths" />
         </provider>
-        <activity android:name=".SplashActivity" android:exported="true" android:theme="@style/Theme.FadCam.Splash">
+        <activity android:name=".SplashActivity" android:exported="true" android:theme="@style/Theme.ShahidCam.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -105,14 +105,14 @@
             android:name=".ui.WatchMainActivity"
             android:launchMode="singleTop"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode"
-            android:theme="@style/Base.Theme.FadCam"
+            android:theme="@style/Base.Theme.ShahidCam"
             android:exported="false" />
 
         <!-- Transparent editor activities for proper keyboard handling -->
-        <activity android:name="com.fadcam.fadrec.ui.overlay.TextEditorActivity" android:theme="@style/TransparentEditorTheme" android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" android:windowSoftInputMode="adjustResize" android:exported="false" />
+        <activity android:name="com.shahid.cam.fadrec.ui.overlay.TextEditorActivity" android:theme="@style/TransparentEditorTheme" android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" android:windowSoftInputMode="adjustResize" android:exported="false" />
 
         <!-- Faditor Mini video editor -->
-        <activity android:name="com.fadcam.ui.faditor.FaditorEditorActivity" android:theme="@style/Theme.FadCam.FaditorEditor" android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" android:exported="false" />
+        <activity android:name="com.shahid.cam.ui.faditor.FaditorEditorActivity" android:theme="@style/Theme.ShahidCam.FaditorEditor" android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" android:exported="false" />
 
         <!-- Detective App Icon (Activity Alias) -->
         <activity-alias android:name=".MainActivity.AlternativeIcon" android:enabled="false" android:label="Camera" android:icon="@mipmap/ic_launcher_2" android:roundIcon="@mipmap/ic_launcher_2_round" android:targetActivity=".MainActivity" android:exported="true">
@@ -250,27 +250,27 @@
             </intent-filter>
         </activity-alias>
 
-        <activity android:name=".ui.VideoPlayerActivity" android:theme="@style/Base.Theme.FadCam" />
+        <activity android:name=".ui.VideoPlayerActivity" android:theme="@style/Base.Theme.ShahidCam" />
         <activity
             android:name=".ui.WatchVideoPlayerActivity"
-            android:theme="@style/Base.Theme.FadCam"
+            android:theme="@style/Base.Theme.ShahidCam"
             android:screenOrientation="portrait"
             android:configChanges="orientation|screenSize" />
         <activity
             android:name=".ui.WatchFullscreenActivity"
-            android:theme="@style/Base.Theme.FadCam"
+            android:theme="@style/Base.Theme.ShahidCam"
             android:screenOrientation="portrait"
             android:configChanges="orientation|screenSize" />
-        <activity android:name=".ui.ImageViewerActivity" android:theme="@style/Base.Theme.FadCam" />
+        <activity android:name=".ui.ImageViewerActivity" android:theme="@style/Base.Theme.ShahidCam" />
         <activity
             android:name=".ui.FullscreenPreviewActivity"
-            android:theme="@style/Base.Theme.FadCam"
+            android:theme="@style/Base.Theme.ShahidCam"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:screenOrientation="unspecified"
             android:exported="false" />
         <activity android:name=".ui.WebViewActivity" />
         <activity android:name=".ui.CloudAccountActivity" 
-            android:theme="@style/Base.Theme.FadCam" 
+            android:theme="@style/Base.Theme.ShahidCam" 
             android:exported="false" />
         
         <!-- Transparent activity for requesting screen recording permission without bringing app to foreground -->
@@ -416,13 +416,13 @@
         <service android:name=".fadrec.ui.AnnotationService" android:enabled="true" android:exported="false" android:foregroundServiceType="specialUse" />
 
         <!-- Transparent dialog activity for color picker -->
-        <activity android:name=".fadrec.ui.ColorPickerDialogActivity" android:theme="@style/Theme.FadCam.TransparentDialog" android:excludeFromRecents="true" android:exported="false" />
+        <activity android:name=".fadrec.ui.ColorPickerDialogActivity" android:theme="@style/Theme.ShahidCam.TransparentDialog" android:excludeFromRecents="true" android:exported="false" />
 
         <!-- Transparent dialog activity for project naming -->
-        <activity android:name=".fadrec.ui.ProjectNamingDialogActivity" android:theme="@style/Theme.FadCam.TransparentDialog" android:excludeFromRecents="true" android:exported="false" />
+        <activity android:name=".fadrec.ui.ProjectNamingDialogActivity" android:theme="@style/Theme.ShahidCam.TransparentDialog" android:excludeFromRecents="true" android:exported="false" />
 
         <!-- Transparent dialog activity for project selection -->
-        <activity android:name=".fadrec.ui.ProjectSelectionDialogActivity" android:theme="@style/Theme.FadCam.TransparentDialog" android:excludeFromRecents="true" android:exported="false" />
+        <activity android:name=".fadrec.ui.ProjectSelectionDialogActivity" android:theme="@style/Theme.ShahidCam.TransparentDialog" android:excludeFromRecents="true" android:exported="false" />
 
         <!-- Privacy Black Screen Activity -->
         <activity android:name=".ui.PrivacyBlackActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:screenOrientation="portrait" android:excludeFromRecents="true" android:exported="false" />
@@ -435,7 +435,7 @@
         
         <receiver android:name=".receivers.TorchToggleReceiver" android:exported="true">
             <intent-filter>
-                <action android:name="com.fadcam.TOGGLE_TORCH"/>
+                <action android:name="com.shahid.cam.TOGGLE_TORCH"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </receiver>
@@ -443,7 +443,7 @@
         <!-- Torch Notification Receiver for handling notification actions -->
         <receiver android:name=".ui.miniapps.TorchNotificationReceiver" android:exported="false">
             <intent-filter>
-                <action android:name="com.fadcam.TORCH_OFF"/>
+                <action android:name="com.shahid.cam.TORCH_OFF"/>
             </intent-filter>
         </receiver>
 
@@ -453,7 +453,7 @@
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="android.intent.action.TIMEZONE_CHANGED" />
                 <action android:name="android.intent.action.TIME_SET" />
-                <action android:name="com.fadcam.widgets.ACTION_UPDATE_CLOCK" />
+                <action android:name="com.shahid.cam.widgets.ACTION_UPDATE_CLOCK" />
             </intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/clock_widget_info" />
         </receiver>

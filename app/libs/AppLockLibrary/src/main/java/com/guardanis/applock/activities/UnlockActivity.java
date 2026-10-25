@@ -7,7 +7,7 @@ import android.view.KeyEvent;
 import android.widget.Toast;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
-import com.fadcam.R;
+import com.shahid.cam.R;
 import com.guardanis.applock.views.UnlockViewController;
 
 public class UnlockActivity extends AppCompatActivity implements UnlockViewController.Delegate {
