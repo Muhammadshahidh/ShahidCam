@@ -1,0 +1,413 @@
+<?xml version='1.0' encoding='utf-8'?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:ns0="http://schemas.android.com/apk/res/android" xmlns:ns1="http://schemas.android.com/apk/res-auto" ns0:layout_width="match_parent" ns0:layout_height="match_parent" ns0:background="?android:attr/colorBackground">
+
+    
+    <LinearLayout ns0:id="@+id/fixed_header" ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:orientation="horizontal" ns0:gravity="center_vertical" ns0:paddingStart="16dp" ns0:paddingEnd="16dp" ns0:paddingTop="16dp" ns0:paddingBottom="12dp" ns0:background="@drawable/header_bar_rounded_bg" ns0:elevation="8dp" ns1:layout_constraintTop_toTopOf="parent" ns1:layout_constraintStart_toStartOf="parent" ns1:layout_constraintEnd_toEndOf="parent">
+        <TextView ns0:id="@+id/header_settings_title" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/settings_title" ns0:textStyle="bold" ns0:textSize="20sp" ns0:textColor="@android:color/white" />
+        
+        <LinearLayout ns0:id="@+id/mode_selector_btn" ns0:layout_width="wrap_content" ns0:layout_height="28dp" ns0:layout_marginStart="10dp" ns0:orientation="horizontal" ns0:gravity="center_vertical" ns0:background="@drawable/mode_selector_bg" ns0:paddingStart="10dp" ns0:paddingEnd="8dp" ns0:clickable="true" ns0:focusable="true">
+            <FrameLayout ns0:id="@+id/mode_selector_icon" ns0:layout_width="16dp" ns0:layout_height="16dp" ns0:layout_marginEnd="6dp">
+                <TextView ns0:id="@+id/mode_selector_icon_text" ns0:layout_width="match_parent" ns0:layout_height="match_parent" ns0:fontFamily="@font/materialicons" ns0:text="apps" ns0:textColor="#A0A0A0" ns0:textSize="14sp" ns0:gravity="center" ns0:visibility="visible" />
+                <ImageView ns0:id="@+id/mode_selector_icon_image" ns0:layout_width="match_parent" ns0:layout_height="match_parent" ns0:src="@drawable/screen_recorder" ns0:tint="#A0A0A0" ns0:scaleType="centerInside" ns0:visibility="gone" />
+            </FrameLayout>
+            <TextView ns0:id="@+id/mode_selector_text" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/mode_all" ns0:textColor="#A0A0A0" ns0:textSize="11sp" ns0:textStyle="bold" />
+            <ImageView ns0:layout_width="12dp" ns0:layout_height="12dp" ns0:layout_marginStart="4dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="#A0A0A0" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView ns0:id="@+id/content_scroll" ns0:layout_width="0dp" ns0:layout_height="0dp" ns1:layout_constraintTop_toBottomOf="@id/fixed_header" ns1:layout_constraintBottom_toBottomOf="parent" ns1:layout_constraintStart_toStartOf="parent" ns1:layout_constraintEnd_toEndOf="parent" ns0:clipToPadding="false" ns0:paddingBottom="76dp" ns0:focusable="false">
+
+        <LinearLayout ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="vertical" ns0:paddingStart="16dp" ns0:paddingEnd="16dp" ns0:paddingTop="16dp" ns0:focusable="false">
+
+        
+        <TextView ns0:id="@+id/header_readme" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:layout_marginTop="4dp" ns0:layout_marginBottom="8dp" ns0:text="@string/button_settings_readme" ns0:textColor="?attr/sectionHeaderColor" ns0:textStyle="bold" />
+
+        
+        <LinearLayout ns0:id="@+id/group_card_readme" ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="vertical" ns0:background="@drawable/settings_group_card_bg">
+
+            <LinearLayout ns0:id="@+id/group_readme" style="@style/SettingsGroupRow" ns0:clickable="true" ns0:focusable="true" ns0:nextFocusUp="@+id/mode_selector_btn" ns0:nextFocusDown="@+id/group_video_quick">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_info" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/note_from_developer_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/note_from_developer_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+        </LinearLayout>
+
+        
+        <TextView ns0:id="@+id/header_recording_quick_access" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:layout_marginTop="20dp" ns0:layout_marginBottom="8dp" ns0:text="@string/recording_quick_access" ns0:textColor="?attr/sectionHeaderColor" ns0:textStyle="bold" />
+
+        
+        <LinearLayout ns0:id="@+id/group_card_quick_access" ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="vertical" ns0:background="@drawable/settings_group_card_bg">
+
+            
+            <LinearLayout ns0:id="@+id/group_video_quick" style="@style/SettingsGroupRow" ns0:clickable="true" ns0:focusable="true" ns0:nextFocusUp="@+id/group_readme" ns0:nextFocusDown="@+id/group_audio_quick">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/play_button_rounded" ns0:padding="2dp" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/settings_video_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/setting_video_bitrate_title" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+            <View style="@style/SettingsDivider" />
+
+            
+            <LinearLayout ns0:id="@+id/group_audio_quick" style="@style/SettingsGroupRow" ns0:clickable="true" ns0:focusable="true" ns0:nextFocusUp="@+id/group_video_quick" ns0:nextFocusDown="@+id/group_watermark_quick">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_audio" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/setting_audio_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/button_audio_settings" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+            <View style="@style/SettingsDivider" />
+
+            
+            <FrameLayout ns0:layout_width="match_parent" ns0:layout_height="wrap_content">
+                
+                <LinearLayout ns0:id="@+id/group_watermark_quick" style="@style/SettingsGroupRow" ns0:clickable="true" ns0:focusable="true" ns0:nextFocusUp="@+id/group_audio_quick">
+                    <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_watermark" ns0:tint="@android:color/darker_gray" />
+                    <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                        <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/settings_watermark_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                        <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/settings_watermark_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                    </LinearLayout>
+                    <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+                </LinearLayout>
+                
+                
+                <TextView ns0:id="@+id/watermark_new_badge" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/remote_coming_soon_badge" ns0:textColor="@android:color/white" ns0:textSize="9sp" ns0:textStyle="bold" ns0:background="@drawable/new_badge_background" ns0:paddingStart="6dp" ns0:paddingEnd="6dp" ns0:paddingTop="2dp" ns0:paddingBottom="2dp" ns0:layout_gravity="top|end" ns0:layout_marginTop="8dp" ns0:layout_marginEnd="20dp" />
+            </FrameLayout>
+            <View style="@style/SettingsDivider" />
+
+            
+            <LinearLayout ns0:id="@+id/group_screen_recording" style="@style/SettingsGroupRow">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/screen_recorder" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/screen_rec_settings_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/screen_rec_settings_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+        </LinearLayout>
+
+        
+        <TextView ns0:id="@+id/header_general" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:layout_marginTop="20dp" ns0:layout_marginBottom="8dp" ns0:text="@string/general" ns0:textColor="?attr/sectionHeaderColor" ns0:textStyle="bold" />
+
+        
+        <LinearLayout ns0:id="@+id/group_card_general" ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="vertical" ns0:background="@drawable/settings_group_card_bg">
+
+            
+            <LinearLayout ns0:id="@+id/group_appearance" style="@style/SettingsGroupRow">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_theme" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/setting_theme_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/settings_option_theme" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+            <View style="@style/SettingsDivider" />
+
+            
+            <LinearLayout ns0:id="@+id/group_video_player_settings" style="@style/SettingsGroupRow">
+                
+                <TextView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:gravity="center" ns0:text="speed" ns0:textSize="20sp" ns0:textColor="@android:color/darker_gray" ns0:fontFamily="@font/materialicons" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/video_player_settings_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/video_player_settings_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+            <View style="@style/SettingsDivider" />
+
+            
+            <LinearLayout ns0:id="@+id/group_storage" style="@style/SettingsGroupRow">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_custom_location" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/storage_location_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/storage_location_description" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+            <View style="@style/SettingsDivider" />
+
+            
+            <LinearLayout ns0:id="@+id/group_notifications" style="@style/SettingsGroupRow">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_info" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/settings_notifications_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/settings_notifications_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+            <View style="@style/SettingsDivider" />
+
+
+            
+            <LinearLayout ns0:id="@+id/group_security" style="@style/SettingsGroupRow">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_lock" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/settings_security_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/setting_applock_title" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+            <View style="@style/SettingsDivider" />
+
+
+            
+            <LinearLayout ns0:id="@+id/group_widgets" style="@style/SettingsGroupRow">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_home" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/shortcuts_widgets_screen_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/shortcuts_pin_to_home" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+            
+        </LinearLayout>
+
+        
+        <TextView ns0:id="@+id/header_advanced" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:layout_marginTop="20dp" ns0:layout_marginBottom="8dp" ns0:text="@string/settings_advanced_title" ns0:textColor="?attr/sectionHeaderColor" ns0:textStyle="bold" />
+
+        
+        <LinearLayout ns0:id="@+id/group_card_advanced_nav" ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="vertical" ns0:background="@drawable/settings_group_card_bg">
+
+            <LinearLayout ns0:id="@+id/row_haptics_settings" style="@style/SettingsGroupRow">
+                <TextView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:fontFamily="@font/materialicons" ns0:gravity="center" ns0:text="vibration" ns0:textColor="@android:color/darker_gray" ns0:textSize="22sp" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/settings_haptics_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/settings_haptics_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+
+            <View style="@style/SettingsDivider" />
+
+            <LinearLayout ns0:id="@+id/group_motion_lab" style="@style/SettingsGroupRow">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_focus_target" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/motion_lab_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/motion_lab_row_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+
+            <View style="@style/SettingsDivider" />
+
+            <LinearLayout ns0:id="@+id/group_digital_forensics" style="@style/SettingsGroupRow">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_lock" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/digital_forensics_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/digital_forensics_row_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+
+            <View style="@style/SettingsDivider" />
+
+            <LinearLayout ns0:id="@+id/group_automation" style="@style/SettingsGroupRow">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_settings" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/automation_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/automation_row_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+
+            <View style="@style/SettingsDivider" />
+
+            <LinearLayout ns0:id="@+id/group_thermal_guardian" style="@style/SettingsGroupRow">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_thermometer" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <LinearLayout ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:orientation="horizontal" ns0:gravity="center_vertical">
+                        <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/thermal_guardian_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                        <TextView ns0:id="@+id/thermal_guardian_coming_soon_badge" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:paddingHorizontal="6dp" ns0:paddingVertical="2dp" ns0:text="@string/remote_coming_soon_badge" ns0:textColor="#FFFFFF" ns0:textSize="8sp" ns0:textStyle="bold" ns0:background="@drawable/bg_coming_soon_badge" />
+                    </LinearLayout>
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/thermal_guardian_row_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+
+            <View style="@style/SettingsDivider" />
+
+            <LinearLayout ns0:id="@+id/group_audio_vision" style="@style/SettingsGroupRow">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_audio" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <LinearLayout ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:orientation="horizontal" ns0:gravity="center_vertical">
+                        <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/audio_vision_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                        <TextView ns0:id="@+id/audio_vision_coming_soon_badge" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:paddingHorizontal="6dp" ns0:paddingVertical="2dp" ns0:text="@string/remote_coming_soon_badge" ns0:textColor="#FFFFFF" ns0:textSize="8sp" ns0:textStyle="bold" ns0:background="@drawable/bg_coming_soon_badge" />
+                    </LinearLayout>
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/audio_vision_row_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+
+            <View style="@style/SettingsDivider" />
+
+            <LinearLayout ns0:id="@+id/group_scheduled_recording" style="@style/SettingsGroupRow">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_schedule" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <LinearLayout ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:orientation="horizontal" ns0:gravity="center_vertical">
+                        <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/scheduled_recording_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                        <TextView ns0:id="@+id/scheduled_recording_coming_soon_badge" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:paddingHorizontal="6dp" ns0:paddingVertical="2dp" ns0:text="@string/remote_coming_soon_badge" ns0:textColor="#FFFFFF" ns0:textSize="8sp" ns0:textStyle="bold" ns0:background="@drawable/bg_coming_soon_badge" />
+                    </LinearLayout>
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/scheduled_recording_row_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+
+            <View style="@style/SettingsDivider" />
+
+            <LinearLayout ns0:id="@+id/group_profiles" style="@style/SettingsGroupRow">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_profiles" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <LinearLayout ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:orientation="horizontal" ns0:gravity="center_vertical">
+                        <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/profiles_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                        <TextView ns0:id="@+id/profiles_coming_soon_badge" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:paddingHorizontal="6dp" ns0:paddingVertical="2dp" ns0:text="@string/remote_coming_soon_badge" ns0:textColor="#FFFFFF" ns0:textSize="8sp" ns0:textStyle="bold" ns0:background="@drawable/bg_coming_soon_badge" />
+                    </LinearLayout>
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/profiles_row_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        
+        <TextView ns0:id="@+id/header_mini_apps" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:layout_marginTop="20dp" ns0:layout_marginBottom="8dp" ns0:text="@string/mini_apps_title" ns0:textColor="?attr/sectionHeaderColor" ns0:textStyle="bold" />
+
+        
+        <LinearLayout ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="horizontal" ns0:paddingStart="2dp" ns0:paddingEnd="2dp" ns0:layout_marginTop="4dp" ns0:layout_marginBottom="3dp">
+
+            <include ns0:id="@+id/group_mini_torch" layout="@layout/item_mini_app_card" />
+            <include ns0:id="@+id/group_mini_qr_scanner" layout="@layout/item_mini_app_card" />
+            <include ns0:id="@+id/group_mini_sound_meter" layout="@layout/item_mini_app_card" />
+        </LinearLayout>
+
+        <LinearLayout ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="horizontal" ns0:paddingStart="2dp" ns0:paddingEnd="2dp" ns0:layout_marginTop="0dp" ns0:layout_marginBottom="3dp">
+
+            <include ns0:id="@+id/group_mini_sensor" layout="@layout/item_mini_app_card" />
+            <include ns0:id="@+id/group_mini_speedometer" layout="@layout/item_mini_app_card" />
+            <include ns0:id="@+id/group_mini_clinometer" layout="@layout/item_mini_app_card" />
+        </LinearLayout>
+
+        <LinearLayout ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="horizontal" ns0:paddingStart="2dp" ns0:paddingEnd="2dp" ns0:layout_marginTop="0dp" ns0:layout_marginBottom="3dp">
+
+            <include ns0:id="@+id/group_mini_compass" layout="@layout/item_mini_app_card" />
+            <include ns0:id="@+id/group_mini_pedometer" layout="@layout/item_mini_app_card" />
+            <include ns0:id="@+id/group_mini_metal_detector" layout="@layout/item_mini_app_card" />
+        </LinearLayout>
+
+        
+        <LinearLayout ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="horizontal" ns0:paddingStart="2dp" ns0:paddingEnd="2dp" ns0:layout_marginTop="0dp" ns0:layout_marginBottom="3dp">
+
+            <View ns0:layout_width="0dp" ns0:layout_height="match_parent" ns0:layout_weight="0.5" />
+            <include ns0:id="@+id/group_mini_parking_marker" layout="@layout/item_mini_app_card" />
+            <include ns0:id="@+id/group_mini_qr_generator" layout="@layout/item_mini_app_card" />
+            <View ns0:layout_width="0dp" ns0:layout_height="match_parent" ns0:layout_weight="0.5" />
+        </LinearLayout>
+
+        
+        <TextView ns0:id="@+id/header_about" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:layout_marginTop="32dp" ns0:layout_marginBottom="8dp" ns0:text="@string/settings_section_app" ns0:textColor="?attr/sectionHeaderColor" ns0:textStyle="bold" />
+
+        
+        <LinearLayout ns0:id="@+id/group_card_about" ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="vertical" ns0:background="@drawable/settings_group_card_bg">
+
+            
+            <LinearLayout ns0:id="@+id/group_onboarding" style="@style/SettingsGroupRow">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_info" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/setting_onboarding_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:id="@+id/value_onboarding" ns0:text="-" ns0:layout_marginEnd="12dp" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+            <View style="@style/SettingsDivider" />
+
+            
+            <LinearLayout ns0:id="@+id/group_auto_update" style="@style/SettingsGroupRow">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_update" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/setting_auto_update_check_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                    <TextView ns0:id="@+id/value_auto_update" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="-" ns0:layout_marginEnd="12dp" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+            <View style="@style/SettingsDivider" />
+
+            
+            <LinearLayout ns0:id="@+id/group_debug_logging" style="@style/SettingsGroupRow">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_debug" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/setting_debug_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                    <TextView ns0:id="@+id/value_debug_logging" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="-" ns0:layout_marginEnd="12dp" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+            <View style="@style/SettingsDivider" />
+
+            
+            <LinearLayout ns0:id="@+id/group_prefs_backup" style="@style/SettingsGroupRow">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_content_copy" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/prefs_import_export_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/prefs_import_export_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+            <View style="@style/SettingsDivider" />
+
+            <LinearLayout ns0:id="@+id/group_about" style="@style/SettingsGroupRow">
+                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_info" ns0:tint="@android:color/darker_gray" />
+                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/nav_about" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/about_version_update_licenses" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                </LinearLayout>
+                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+            </LinearLayout>
+            <View style="@style/SettingsDivider" />
+
+            
+            </LinearLayout>
+
+        
+        
+        
+
+        <LinearLayout ns0:id="@+id/section_trash" ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="vertical" ns0:visibility="gone">
+
+            <LinearLayout ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:layout_marginTop="20dp" ns0:layout_marginBottom="8dp" ns0:gravity="center_vertical" ns0:orientation="horizontal">
+
+                <TextView ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:text="@string/trash_settings_title" ns0:textColor="?attr/colorHeading" ns0:textSize="14sp" ns0:textStyle="bold" ns0:letterSpacing="0.05" />
+
+                <LinearLayout ns0:id="@+id/group_trash_hide" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:gravity="center_vertical" ns0:orientation="horizontal" ns0:clickable="true" ns0:focusable="true" ns0:background="?attr/selectableItemBackground" ns0:paddingHorizontal="4dp" ns0:paddingVertical="2dp">
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/trash_settings_hide_button" ns0:textColor="#CC6666" ns0:textSize="11sp" />
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="2dp" ns0:text="?" ns0:textColor="#CC6666" ns0:textSize="13sp" ns0:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="vertical" ns0:background="@drawable/settings_group_card_bg">
+
+                <LinearLayout ns0:id="@+id/group_trash" style="@style/SettingsGroupRow">
+                    <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_delete" ns0:tint="@android:color/darker_gray" />
+                    <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
+                        <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/trash_settings_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                        <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/trash_settings_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                    </LinearLayout>
+                    <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
+                </LinearLayout>
+            </LinearLayout>
+
+            
+            <TextView ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:layout_marginHorizontal="16dp" ns0:layout_marginTop="6dp" ns0:text="@string/trash_settings_info" ns0:textColor="#8E8E93" ns0:textSize="12sp" ns0:lineSpacingExtra="3dp" />
+
+        </LinearLayout>
+
+        
+        
+        
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

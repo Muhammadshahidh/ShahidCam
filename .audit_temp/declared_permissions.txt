@@ -1,0 +1,43 @@
+8:    <!-- Bluetooth permissions -->
+9:    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+10:    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="neverForLocation" />
+12:    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+13:    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
+15:    <!-- Media permissions -->
+16:    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+17:    <uses-permission android:name="android.permission.WRITE_MEDIA_VIDEO" />
+18:    <!-- <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" /> -->
+19:    <!--    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />-->
+21:    <!-- Audio permissions -->
+22:    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+23:    <uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS" />
+33:    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+34:    <uses-permission android:name="android.permission.VIBRATE" />
+35:    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+38:    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+40:    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+41:    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+43:    <!-- Network permissions -->
+44:    <uses-permission android:name="android.permission.INTERNET"/>
+45:    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+46:    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+48:    <uses-permission android:name="android.permission.CAMERA"/>
+50:    <!-- Overlay permission for floating controls and touch indicator -->
+51:    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+53:    <!-- Foreground service permissions for AnnotationService overlay -->
+54:    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+65:    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+67:    <uses-permission android:name="android.permission.WAKE_LOCK" />
+69:    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+70:    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+71:    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+73:    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA" />
+74:    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
+75:    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+76:    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+78:    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+80:    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+81:    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+276:        <!-- Transparent activity for requesting screen recording permission without bringing app to foreground -->
+314:            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+397:            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
