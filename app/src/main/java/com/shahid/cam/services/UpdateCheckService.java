@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 public class UpdateCheckService {
 
     private static final String TAG = "UpdateCheckService";
-    private static final String ORG = "anonfaded";
+    private static final String ORG = "Muhammadshahidh";
     private static final String FREE_REPO = "FadCam";
     private static final String PRO_REPO = "FadCamPro";
     private static final String FREE_FEED = feedUrl(FREE_REPO);

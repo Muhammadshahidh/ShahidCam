@@ -35,7 +35,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     
     <!-- For Android 13+ - MANAGE_EXTERNAL_STORAGE for access to Documents directory -->
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <!-- MANAGE_EXTERNAL_STORAGE removed for Google Play Store compliance -->
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -308,18 +308,7 @@
 
         <service android:name=".service.RecordsDeletionService" android:exported="false" android:foregroundServiceType="dataSync" />
 
-        <!-- Accessibility screenshot service for FadRec screenshot shortcut -->
-        <service
-            android:name=".service.FadRecScreenshotAccessibilityService"
-            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.accessibilityservice.AccessibilityService" />
-            </intent-filter>
-            <meta-data
-                android:name="android.accessibilityservice"
-                android:resource="@xml/fadrec_screenshot_accessibility_service" />
-        </service>
+        <!-- Accessibility screenshot service removed for Google Play Store compliance -->
 
         <!-- Faditor export service for background video export -->
         <service android:name=".ui.faditor.export.ExportService" android:exported="false" android:foregroundServiceType="dataSync" />
