@@ -75,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:overScrollMode="never"
                     android:scrollbars="none"
-                    android:requiresShahidingEdge="horizontal"
+                    android:requiresFadingEdge="horizontal"
                     android:fadingEdgeLength="24dp"
                     android:paddingStart="8dp"
                     android:paddingTop="4dp"
