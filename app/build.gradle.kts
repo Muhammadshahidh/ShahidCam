@@ -68,7 +68,7 @@ android {
             applicationIdSuffix = ".beta"
             isDebuggable = true
             versionNameSuffix = "-beta10.6" // Increment the beta version suffix for each release. Use `beta1` for the first beta release, then `beta2`, etc.
-            resValue("string", "app_name", "ShahidCam Beta")
+            resValue("string", "app_name", "ShahidCam")
         }
         
         release {

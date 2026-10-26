@@ -2755,7 +2755,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="update_get_pro">Get ShahidCam Pro</string>
     <string name="update_maybe_later">Maybe Later</string>
     <string name="update_beta_title">Beta Update Available</string>
-    <string name="update_beta_desc">The ShahidCam beta is a standalone app that can be installed alongside the stable version. It will not interfere with your stable app or its data.\n\nInstall the beta to test new features before they reach the stable release.</string>
+    <string name="update_beta_desc">The ShahidCam is a standalone app that can be installed alongside the stable version. It will not interfere with your stable app or its data.\n\nInstall the beta to test new features before they reach the stable release.</string>
     <string name="update_get_beta">Get Beta</string>
 
     <!-- Mini Apps Info Sheet -->

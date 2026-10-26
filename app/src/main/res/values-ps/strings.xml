@@ -2553,7 +2553,7 @@ How to read: "Zone 42N — 372,684m E, 3,512,334m N" = Zone 42 pa Northern hemis
     <string name="update_maybe_later">Shaied wrasta</string>
 
     <string name="update_beta_title">Beta Update Mojood</string>
-    <string name="update_beta_desc">Da ShahidCam beta yao separata app de che da stable version pa neben instala kedale shi. Da ba sta stable app ya da data se nalara kai.\n\nBeta install ka da nawi khasiatono test kolo dapara che stable release ta ra sawlao.</string>
+    <string name="update_beta_desc">Da ShahidCam yao separata app de che da stable version pa neben instala kedale shi. Da ba sta stable app ya da data se nalara kai.\n\nBeta install ka da nawi khasiatono test kolo dapara che stable release ta ra sawlao.</string>
 
     <string name="update_get_beta">Beta wala ka</string>
 
