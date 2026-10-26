@@ -65,7 +65,6 @@ android {
 
     buildTypes {
         debug {
-            applicationIdSuffix ""
             isDebuggable = true
             versionNameSuffix = "-beta10.6" // Increment the beta version suffix for each release. Use `beta1` for the first beta release, then `beta2`, etc.
             resValue("string", "app_name", "ShahidCam")
@@ -89,7 +88,6 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            applicationIdSuffix = ".pro"
             isDebuggable = false
             if (releaseSigningConfigValid) {
                 signingConfig = signingConfigs.getByName("release")
@@ -104,7 +102,6 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            applicationIdSuffix = ".proplus"
             isDebuggable = false
             if (releaseSigningConfigValid) {
                 signingConfig = signingConfigs.getByName("release")
@@ -121,17 +118,14 @@ android {
     productFlavors {
         create("notesPro") {
             dimension = "pro"
-            applicationIdSuffix = ".notes"
             resValue("string", "app_name", "Notes")
         }
         create("calcPro") {
             dimension = "pro"
-            applicationIdSuffix = ".calc"
             resValue("string", "app_name", "Calculator")
         }
         create("weatherPro") {
             dimension = "pro"
-            applicationIdSuffix = ".weather"
             resValue("string", "app_name", "Weather")
         }
         create("default") {
