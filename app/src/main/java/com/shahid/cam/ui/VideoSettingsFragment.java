@@ -114,7 +114,7 @@ public class VideoSettingsFragment extends Fragment {
         bindRowHandlers(view);
         // Cache stabilization hardware support before the first value refresh.
         videoStabilizationSupported = isVideoStabilizationHardwareSupported();
-        FLog.i("FadCamEIS", "UI: stabilization supported on selected camera = " + videoStabilizationSupported);
+        FLog.i("ShahidCamEIS", "UI: stabilization supported on selected camera = " + videoStabilizationSupported);
         // Detect back cameras early
         detectAvailableBackCameras();
         // Preload codecs
@@ -164,7 +164,7 @@ public class VideoSettingsFragment extends Fragment {
                     i.putExtra(Constants.EXTRA_VIDEO_STABILIZATION_ENABLED, state);
                     requireContext().startService(i);
                 } catch (Exception e) {
-                    FLog.w("FadCamEIS", "UI: failed to dispatch stabilization change: " + e.getMessage());
+                    FLog.w("ShahidCamEIS", "UI: failed to dispatch stabilization change: " + e.getMessage());
                 }
                 refreshAllValues();
             }
@@ -246,10 +246,10 @@ public class VideoSettingsFragment extends Fragment {
                     }
                 }
             }
-            FLog.i("FadCamEIS", "UI: camera=" + cameraId + " eis=" + eis + " ois=" + ois);
+            FLog.i("ShahidCamEIS", "UI: camera=" + cameraId + " eis=" + eis + " ois=" + ois);
             return eis || ois;
         } catch (Exception e) {
-            FLog.w("FadCamEIS", "UI: stabilization capability check failed, treated as unsupported: "
+            FLog.w("ShahidCamEIS", "UI: stabilization capability check failed, treated as unsupported: "
                     + e.getMessage());
             return false;
         }
@@ -874,7 +874,7 @@ public class VideoSettingsFragment extends Fragment {
         }
 
         // Build the resolution list from the INTERSECTION of BOTH cameras'
-        // SurfaceTexture output sizes.  FadCam uses SurfaceTexture for the
+        // SurfaceTexture output sizes.  ShahidCam uses SurfaceTexture for the
         // GL pipeline, not MediaRecorder, so we query SurfaceTexture.class.
         // Intersection guarantees that every listed resolution works on both
         // cameras, making live switching during recording safe.

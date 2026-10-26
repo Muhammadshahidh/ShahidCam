@@ -1,4 +1,4 @@
-package com.shahid.cam.ui.faditor;
+package com.shahid.cam.ui.shahideditor;
 
 import android.app.Dialog;
 import android.graphics.Typeface;
@@ -105,7 +105,7 @@ public class SpeedPickerBottomSheet extends BottomSheetDialogFragment {
 
         // ── Title ───────────────────────────────────────────────
         TextView title = new TextView(requireContext());
-        title.setText(R.string.faditor_speed_title);
+        title.setText(R.string.shahideditor_speed_title);
         title.setTextColor(0xFFFFFFFF);
         title.setTextSize(18);
         title.setTypeface(null, Typeface.BOLD);

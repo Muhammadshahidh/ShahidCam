@@ -260,7 +260,7 @@ public final class PreferencesBackupUtil {
      * Generates a suggested filename for export.
      */
     public static String buildSuggestedFileName(){
-        return "fadcam_prefs_" + new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(new Date()) + ".json";
+        return "shahidcam_prefs_" + new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(new Date()) + ".json";
     }
 
     // ── Structured preview + validation ──────────────────────────────

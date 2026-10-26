@@ -24,7 +24,7 @@
     <string name="website_title">Веб-сайт</string>
     <string name="readme_website_subtitle">Официальный сайт</string>
     <string name="privacy_information">Политика конфиденциальности</string>
-    <string name="copyright_info">2024-2025 https://fadcam.faded.dev\nЛицензировано по GPL-3.0</string>
+    <string name="copyright_info">2024-2025 https://shahidcam.shahidcam.app\nЛицензировано по GPL-3.0</string>
     <string-array name="video_resolutions_keys">
         <item>7680x4320</item>        <!-- 8K -->
         <item>3840x2160</item>        <!-- 4K -->
@@ -86,17 +86,17 @@
     <string name="button_resume">Возобновить</string>
 
     <!-- ScreenRec Screen Recording Strings -->
-    <string name="fadrec_start_screen_recording">Начать запись экрана</string>
-    <string name="fadrec_stop_screen_recording">Остановить запись экрана</string>
-    <string name="fadrec_pause_screen_recording">Приостановить запись экрана</string>
-    <string name="fadrec_resume_screen_recording">Возобновить запись экрана</string>
-    <string name="fadrec_screen_recording_started">Запись экрана начата</string>
-    <string name="fadrec_screen_recording_stopped">Запись экрана остановлена</string>
-    <string name="fadrec_screen_recording_paused">Запись экрана приостановлена</string>
-    <string name="fadrec_screen_recording_resumed">Запись экрана возобновлена</string>
-    <string name="fadrec_notification_title">Запись экрана</string>
-    <string name="fadrec_notification_recording">Запись экрана…</string>
-    <string name="fadrec_notification_paused">Запись приостановлена</string>
+    <string name="shahidrec_start_screen_recording">Начать запись экрана</string>
+    <string name="shahidrec_stop_screen_recording">Остановить запись экрана</string>
+    <string name="shahidrec_pause_screen_recording">Приостановить запись экрана</string>
+    <string name="shahidrec_resume_screen_recording">Возобновить запись экрана</string>
+    <string name="shahidrec_screen_recording_started">Запись экрана начата</string>
+    <string name="shahidrec_screen_recording_stopped">Запись экрана остановлена</string>
+    <string name="shahidrec_screen_recording_paused">Запись экрана приостановлена</string>
+    <string name="shahidrec_screen_recording_resumed">Запись экрана возобновлена</string>
+    <string name="shahidrec_notification_title">Запись экрана</string>
+    <string name="shahidrec_notification_recording">Запись экрана…</string>
+    <string name="shahidrec_notification_paused">Запись приостановлена</string>
     <string name="floating_controls_title">Меню</string>
     <string name="floating_controls_permission_needed">Требуется разрешение на наложение</string>
     <string name="floating_controls_permission_title">Требуется разрешение на наложение</string>
@@ -119,10 +119,10 @@
     <string name="snap_guides">Направляющие</string>
     <string name="add_text">Добавить текст</string>
     <string name="add_shape">Добавить фигуру</string>
-    <string name="fadrec_ready_to_record">Готов к записи экрана</string>
-    <string name="fadrec_ready_to_record_subtitle">Нажмите, чтобы начать</string>
-    <string name="fadrec_permission_denied">Разрешение на запись экрана отказано</string>
-    <string name="fadrec_mode_title">ScreenRec • Запись экрана</string>
+    <string name="shahidrec_ready_to_record">Готов к записи экрана</string>
+    <string name="shahidrec_ready_to_record_subtitle">Нажмите, чтобы начать</string>
+    <string name="shahidrec_permission_denied">Разрешение на запись экрана отказано</string>
+    <string name="shahidrec_mode_title">ScreenRec • Запись экрана</string>
 
     <string name="video_recording_started">Запись началась</string>
     <string name="video_recording_stopped">Запись остановлена</string>
@@ -151,7 +151,7 @@
     <string name="front">Фронтальная</string>
     <string name="video_menu_del">Удалить</string>
     <string name="video_menu_save">Сохранить в галерею</string>
-    <string name="video_menu_save_helper_downloads_fadcam">Видео будет сохранено в Downloads/ShahidCam</string>
+    <string name="video_menu_save_helper_downloads_shahidcam">Видео будет сохранено в Downloads/ShahidCam</string>
     <string name="video_menu_save_copy_or_move_title">Сохранить в галерею</string>
     <string name="video_menu_save_copy">Копировать в галерею</string>
     <string name="video_menu_save_copy_desc">Создать копию в Downloads/ShahidCam (оригинальный файл сохранён)</string>
@@ -194,7 +194,7 @@
     <string name="video_menu_upload_drive">Загрузить на Google Drive</string>
     <string name="video_menu_open_with">Открыть с помощью...</string>
     <string name="chooser_open_with">Открыть с помощью</string>
-    <string name="video_menu_upload_faddrive">Загрузить на Drive</string>
+    <string name="video_menu_upload_shahiddrive">Загрузить на Drive</string>
     <string name="toast_no_youtube_app">Приложение YouTube не найдено</string>
     <string name="toast_no_drive_app">Приложение Google Drive не найдено</string>
     <string name="records_title">Записи</string>
@@ -204,7 +204,7 @@
     <string name="nav_settings">Настройки</string>
     <string name="nav_about">О программе</string>
     <string name="nav_remote">Удалённый</string>
-    <string name="nav_faditor_mini">ShahidEditor</string>
+    <string name="nav_shahideditor_mini">ShahidEditor</string>
     <string name="button_settings_readme">Прочитать</string>
     <string name="setting_cam_title">Выбор камеры</string>
     <string name="note_cam_sele">Выберите камеру \n(По умолчанию: Задняя)</string>
@@ -311,7 +311,7 @@
     <string name="discord_title">Сервер Discord</string>
     <string name="thankyou_msg">Спасибо за использование ShahidCam!</string>
     <string name="settings_title">Настройки</string>
-    <string name="array_watermark_time_fadcam">Время с Fadcam</string>
+    <string name="array_watermark_time_shahidcam">Время с Fadcam</string>
     <string name="array_watermark_timeonly">Временная метка</string>
     <string name="array_watermark_nomark">Без водяного знака</string>
     <string name="watermark_preview_funny">По-настоящему? :( \n    ＞﹏＜</string>
@@ -496,15 +496,15 @@
     <string name="torch_both">Оба фонарика</string>
     <string name="setting_debug_title">Отладочное логирование</string>
     <string name="note_debug">Включить генерацию файла отладочного журнала \n(По умолчанию: Отключено)</string>
-    <string name="note_debug_detailed">При включении ShahidCam записывает файл отладочного журнала HTML (FADCAM_debug.html) в общедоступную папку Downloads/ShahidCam/. Поделитесь этим файлом при сообщении о проблемах. Выключите, чтобы остановить будущие записи.\nПримечание: Отладочное логирование может добавить накладные расходы на производительность во время записи — держите выключенным, если не устраняете неисправности.</string>
+    <string name="note_debug_detailed">При включении ShahidCam записывает файл отладочного журнала HTML (SHAHIDCAM_debug.html) в общедоступную папку Downloads/ShahidCam/. Поделитесь этим файлом при сообщении о проблемах. Выключите, чтобы остановить будущие записи.\nПримечание: Отладочное логирование может добавить накладные расходы на производительность во время записи — держите выключенным, если не устраняете неисправности.</string>
     <string name="note_debug_extra">При включении файл отладочного журнала будет создан в папке Downloads/ShahidCam. Это может помочь диагностировать проблемы с приложением.</string>
     <!-- Watermark unified strings -->
     <string name="watermark_preview_heading">Предпросмотр</string>
     <string name="watermark_options_heading">Параметры</string>
     <string name="watermark_style_row_title">Стиль водяного знака</string>
-    <string name="watermark_preview_sample_fadcam">Записано ShahidCam - %1$s</string>
+    <string name="watermark_preview_sample_shahidcam">Записано ShahidCam - %1$s</string>
     <string name="watermark_preview_sample_timeonly">%1$s</string>
-    <string name="watermark_style_time_fadcam_label">Время с ShahidCam</string>
+    <string name="watermark_style_time_shahidcam_label">Время с ShahidCam</string>
     <string name="watermark_style_timeonly_label">Временная метка</string>
     <string name="watermark_style_badge_label">Только метка бренда</string>
     <string name="watermark_style_none_label">Без водяного знака</string>
@@ -732,9 +732,9 @@
     <string name="coming_soon_toast">Скоро! Инша Аллах</string>
     <string name="remote_coming_soon">Удалённое управление для ShahidCam скоро появится.</string>
     <string name="remote_feature_description">Свяжите клиенты ShahidCam с помощью QR-кода для безопасного удалённого управления в локальной сети: запуск/остановка записи, превью, зум, переключение камеры и многое другое — всё с end-to-end шифрованием.</string>
-    <string name="faditor_mini_title">ShahidEditor Mini</string>
-    <string name="faditor_mini_coming_soon">Скоро — лёгкий редактор</string>
-    <string name="faditor_mini_toast">ShahidEditor Mini — скоро</string>
+    <string name="shahideditor_mini_title">ShahidEditor Mini</string>
+    <string name="shahideditor_mini_coming_soon">Скоро — лёгкий редактор</string>
+    <string name="shahideditor_mini_toast">ShahidEditor Mini — скоро</string>
     <string name="setting_audio_title">Audio Recording</string>
     <string name="note_audio">Включить или отключить запись аудио для видео.\n(По умолчанию: Включено)</string>
     <string name="button_audio_settings">Настройки аудио</string>
@@ -1001,7 +1001,7 @@
 
     <string name="version_format">v%s</string>
 
-    <string name="edit_with_faditorx">Edit with ShahidEditorX</string>
+    <string name="edit_with_shahideditorx">Edit with ShahidEditorX</string>
     <string name="remote_coming_soon_badge">NEW</string>
 
     <!-- Update Bottom Sheet Strings -->
@@ -1025,7 +1025,7 @@
     <string name="app_icon_faded" translatable="false">0xFF0000</string>
     <string name="app_icon_palestine" translatable="false">I❤️Palestine</string>
     <string name="app_icon_pakistan" translatable="false">ShahidCam</string>
-    <string name="app_icon_fadseclab" translatable="false">CyberShadowPK Lab</string>
+    <string name="app_icon_shahidlabs" translatable="false">CyberShadowPK Lab</string>
     <string name="app_icon_nooristic" translatable="false">ShahidCam ++</string>
     <string name="app_icon_bat" translatable="false">ShahidCam</string>
     <string name="app_icon_redbinary" translatable="false">$ ~/r00t</string>
@@ -1232,8 +1232,8 @@
 
     <!-- Debug Log Tools -->
     <string name="debug_log_tools_title">Журнал отладки</string>
-    <string name="debug_log_tools_subtitle">Предпросмотр, поиск, поделиться или удалить FADCAM_debug.html</string>
-    <string name="debug_log_tools_helper">Показывает файл журнала отладки (FADCAM_debug.html). Включение логирования отладки может добавить накладные расходы на производительность—не включайте его, если вы не сталкиваетесь с ошибкой и не нуждаетесь в поделиться логом. Используйте поле поиска для фильтрации.</string>
+    <string name="debug_log_tools_subtitle">Предпросмотр, поиск, поделиться или удалить SHAHIDCAM_debug.html</string>
+    <string name="debug_log_tools_helper">Показывает файл журнала отладки (SHAHIDCAM_debug.html). Включение логирования отладки может добавить накладные расходы на производительность—не включайте его, если вы не сталкиваетесь с ошибкой и не нуждаетесь в поделиться логом. Используйте поле поиска для фильтрации.</string>
     <string name="debug_log_share_title">Поделиться журналом отладки</string>
     <string name="debug_log_share_subtitle">Открыть системный лист поделиться</string>
     <string name="debug_log_delete_title">Удалить журнал отладки</string>
@@ -1285,37 +1285,37 @@
     <string name="manage_projects">Управление проектами</string>
     <string name="name_your_project">Назовите свой проект</string>
     <string name="project_naming_message">Дайте своему проекту запоминающееся имя и описание, чтобы организовать свои записи</string>
-    <string name="fadrec_projects">Проекты ScreenRec</string>
+    <string name="shahidrec_projects">Проекты ScreenRec</string>
     <string name="delete_project">Удалить проект</string>
     <string name="delete_all">Удалить все</string>
     <string name="new_project">Новый проект</string>
     <string name="delete">Удалить</string>
 
     <!-- ShahidCam Pro Strings -->
-    <string name="fadcam_pro_title">ShahidCam Pro</string>
-    <string name="fadcam_pro_subtitle">Премиум-функции для полной дискретности</string>
-    <string name="fadcam_pro_get_button">Получить ShahidCam Pro</string>
-    <string name="fadcam_pro_free">Бесплатно</string>
-    <string name="fadcam_pro_column_label">Pro</string>
-    <string name="fadcam_pro_proplus_label">Pro+</string>
-    <string name="fadcam_pro_lab_label">Lab</string>
-    <string name="fadcam_pro_plus_label">Pro</string>
-    <string name="fadcam_pro_early_bird">🎉 Бесплатно до 23 декабря 2025! После этого получите пожизненный доступ всего за $15.</string>
-    <string name="fadcam_pro_paid_offer">После 23 декабря 2025, получите Пожизненный Доступ за $15 — однократная оплата, навсегда обновления.</string>
-    <string name="fadcam_pro_benefit_early_access">Ранний доступ: Получите последнюю версию перед публичным выпуском</string>
-    <string name="fadcam_pro_benefit_lifetime_updates">Пожизненные обновления: Всегда получайте новые функции, улучшения и исправления ошибок</string>
-    <string name="fadcam_pro_benefit_support">Мгновенная поддержка: Прямая помощь через тикеты в Discord</string>
-    <string name="fadcam_pro_coming_soon">Pro+ и Lab функции скоро с загрузкой пользовательских иконок, пользовательскими именами приложений и Drive облачным синком.</string>
-    <string name="fadcam_pro_support_message">ShahidCam will always remain free, with no ads and no tracking. I handle the entire project on my own, and it takes ongoing time and work. Upgrading to Pro (currently free) helps support development, and in return I’m able to offer additional value through the Pro features on top of the full free version. Thank you for supporting the project :)</string>
-    <string name="fadcam_pro_separate_apk">Отдельное приложение • Работает рядом с ShahidCam</string>
-    <string name="fadcam_pro_feature_everything_icon">Всё</string>
-    <string name="fadcam_pro_feature_everything">Всё</string>
-    <string name="fadcam_pro_feature_custom_icon">Пользовательская иконка приложения</string>
-    <string name="fadcam_pro_feature_notification_icon">Дискретная иконка уведомления</string>
-    <string name="fadcam_pro_feature_user_icon">Пользовательская загруженная иконка</string>
-    <string name="fadcam_pro_feature_app_name">Пользовательское имя приложения</string>
-    <string name="fadcam_pro_feature_faddrive">Облачный синк Drive</string>
-    <string name="fadcam_pro_header_button">Получить Pro</string>
+    <string name="shahidcam_pro_title">ShahidCam Pro</string>
+    <string name="shahidcam_pro_subtitle">Премиум-функции для полной дискретности</string>
+    <string name="shahidcam_pro_get_button">Получить ShahidCam Pro</string>
+    <string name="shahidcam_pro_free">Бесплатно</string>
+    <string name="shahidcam_pro_column_label">Pro</string>
+    <string name="shahidcam_pro_proplus_label">Pro+</string>
+    <string name="shahidcam_pro_lab_label">Lab</string>
+    <string name="shahidcam_pro_plus_label">Pro</string>
+    <string name="shahidcam_pro_early_bird">🎉 Бесплатно до 23 декабря 2025! После этого получите пожизненный доступ всего за $15.</string>
+    <string name="shahidcam_pro_paid_offer">После 23 декабря 2025, получите Пожизненный Доступ за $15 — однократная оплата, навсегда обновления.</string>
+    <string name="shahidcam_pro_benefit_early_access">Ранний доступ: Получите последнюю версию перед публичным выпуском</string>
+    <string name="shahidcam_pro_benefit_lifetime_updates">Пожизненные обновления: Всегда получайте новые функции, улучшения и исправления ошибок</string>
+    <string name="shahidcam_pro_benefit_support">Мгновенная поддержка: Прямая помощь через тикеты в Discord</string>
+    <string name="shahidcam_pro_coming_soon">Pro+ и Lab функции скоро с загрузкой пользовательских иконок, пользовательскими именами приложений и Drive облачным синком.</string>
+    <string name="shahidcam_pro_support_message">ShahidCam will always remain free, with no ads and no tracking. I handle the entire project on my own, and it takes ongoing time and work. Upgrading to Pro (currently free) helps support development, and in return I’m able to offer additional value through the Pro features on top of the full free version. Thank you for supporting the project :)</string>
+    <string name="shahidcam_pro_separate_apk">Отдельное приложение • Работает рядом с ShahidCam</string>
+    <string name="shahidcam_pro_feature_everything_icon">Всё</string>
+    <string name="shahidcam_pro_feature_everything">Всё</string>
+    <string name="shahidcam_pro_feature_custom_icon">Пользовательская иконка приложения</string>
+    <string name="shahidcam_pro_feature_notification_icon">Дискретная иконка уведомления</string>
+    <string name="shahidcam_pro_feature_user_icon">Пользовательская загруженная иконка</string>
+    <string name="shahidcam_pro_feature_app_name">Пользовательское имя приложения</string>
+    <string name="shahidcam_pro_feature_shahiddrive">Облачный синк Drive</string>
+    <string name="shahidcam_pro_header_button">Получить Pro</string>
 
     <!-- Video Player Info Bottom Sheet -->
     <string name="player_info_title">О видеоплеере</string>
@@ -1427,28 +1427,28 @@ ShahidCam использует фрагментированный формат M
 
     <string name="stats_label_used">Использовано:</string>
 
-    <string name="fadrec_mute_audio">Отключить звук записи</string>
+    <string name="shahidrec_mute_audio">Отключить звук записи</string>
 
-    <string name="fadrec_unmute_audio">Включить звук записи</string>
+    <string name="shahidrec_unmute_audio">Включить звук записи</string>
 
-    <string name="fadrec_mic_permission_needed_title">Требуется разрешение на микрофон</string>
+    <string name="shahidrec_mic_permission_needed_title">Требуется разрешение на микрофон</string>
 
-    <string name="fadrec_mic_permission_needed_message">ScreenRec не может получить доступ к микрофону. Вы можете записывать без звука — аудио не будет сохранено.</string>
+    <string name="shahidrec_mic_permission_needed_message">ScreenRec не может получить доступ к микрофону. Вы можете записывать без звука — аудио не будет сохранено.</string>
 
-    <string name="fadrec_record_muted">Запись без звука</string>
+    <string name="shahidrec_record_muted">Запись без звука</string>
 
-    <string name="fadrec_audio_source_title">Источник аудио</string>
+    <string name="shahidrec_audio_source_title">Источник аудио</string>
 
-    <string name="fadrec_audio_source_choose">Выберите источник аудио</string>
+    <string name="shahidrec_audio_source_choose">Выберите источник аудио</string>
 
-	<string name="fadrec_audio_source_helper">Выберите, какой звук будут захватывать записи экрана. «По умолчанию (маршрутизация системы)» рекомендуется для USB- и проводных микрофонов — или выберите конкретное устройство для явной маршрутизации.</string>
-	<string name="fadrec_audio_source_mic_default">Микрофон (маршрутизация по умолчанию)</string>
+	<string name="shahidrec_audio_source_helper">Выберите, какой звук будут захватывать записи экрана. «По умолчанию (маршрутизация системы)» рекомендуется для USB- и проводных микрофонов — или выберите конкретное устройство для явной маршрутизации.</string>
+	<string name="shahidrec_audio_source_mic_default">Микрофон (маршрутизация по умолчанию)</string>
 
-    <string name="fadrec_audio_source_none">Без аудио</string>
+    <string name="shahidrec_audio_source_none">Без аудио</string>
 
-    <string name="fadrec_audio_source_mic">Микрофон</string>
+    <string name="shahidrec_audio_source_mic">Микрофон</string>
 
-    <string name="fadrec_audio_source_internal">Аудио устройства (Внутренний)</string>
+    <string name="shahidrec_audio_source_internal">Аудио устройства (Внутренний)</string>
 
 	<string name="screen_rec_audio_device_title">Устройство ввода звука</string>
 	<string name="screen_rec_audio_device_default">По умолчанию (маршрутизация системы)</string>
@@ -1828,7 +1828,7 @@ ShahidCam использует фрагментированный формат M
 
     <string name="media_type_photo_selfie">Селфи</string>
 
-    <string name="media_type_photo_fadrec">ScreenRec</string>
+    <string name="media_type_photo_shahidrec">ScreenRec</string>
 
     <string name="photo_capture_saved">Фото сохранено</string>
 
@@ -1845,7 +1845,7 @@ ShahidCam использует фрагментированный формат M
 
     <string name="records_filter_screen">ScreenRec</string>
 
-    <string name="records_filter_faditor">ShahidEditor</string>
+    <string name="records_filter_shahideditor">ShahidEditor</string>
 
     <string name="records_filter_stream">Поток</string>
 
@@ -1859,11 +1859,11 @@ ShahidCam использует фрагментированный формат M
 
     <string name="records_filter_camera_dual">Двойная</string>
 
-    <string name="records_filter_faditor_all">Все</string>
+    <string name="records_filter_shahideditor_all">Все</string>
 
-    <string name="records_filter_faditor_converted">Конвертированные</string>
+    <string name="records_filter_shahideditor_converted">Конвертированные</string>
 
-    <string name="records_filter_faditor_merge">Объединение</string>
+    <string name="records_filter_shahideditor_merge">Объединение</string>
 
     <string name="records_filter_shot_all">Все</string>
 
@@ -1873,7 +1873,7 @@ ShahidCam использует фрагментированный формат M
 
     <string name="records_filter_shot_selfie">Селфи</string>
 
-    <string name="records_filter_shot_fadrec">ScreenRec</string>
+    <string name="records_filter_shot_shahidrec">ScreenRec</string>
 
     <string name="records_filter_checklist_desc">Режим выбора</string>
 
@@ -1889,13 +1889,13 @@ ShahidCam использует фрагментированный формат M
 
     <string name="records_filter_helper_screen">Записи экрана (ScreenRec)</string>
 
-    <string name="records_filter_helper_faditor">Отредактированные/экспортированные видео (ShahidEditor)</string>
+    <string name="records_filter_helper_shahideditor">Отредактированные/экспортированные видео (ShahidEditor)</string>
 
-    <string name="records_filter_helper_faditor_all">Все выходные файлы ShahidEditor и связанные файлы.</string>
+    <string name="records_filter_helper_shahideditor_all">Все выходные файлы ShahidEditor и связанные файлы.</string>
 
-    <string name="records_filter_helper_faditor_converted">Конвертация фрагментированного MP4 в стандартный MP4 с поиском для внешних плееров.</string>
+    <string name="records_filter_helper_shahideditor_converted">Конвертация фрагментированного MP4 в стандартный MP4 с поиском для внешних плееров.</string>
 
-    <string name="records_filter_helper_faditor_merge">Объединение нескольких клипов в одно выходное видео.</string>
+    <string name="records_filter_helper_shahideditor_merge">Объединение нескольких клипов в одно выходное видео.</string>
 
     <string name="records_filter_helper_stream">Сохранённые записи потока</string>
 
@@ -1905,7 +1905,7 @@ ShahidCam использует фрагментированный формат M
 
     <string name="records_filter_helper_shot_selfie">Снятые фото фронтальной камерой (селфи)</string>
 
-    <string name="records_filter_helper_shot_fadrec">Скриншоты (ScreenRec)</string>
+    <string name="records_filter_helper_shot_shahidrec">Скриншоты (ScreenRec)</string>
 
     <string name="records_location_format">Местоположение: %1$s/%2$s</string>
 
@@ -1915,7 +1915,7 @@ ShahidCam использует фрагментированный формат M
 
     <string name="records_batch_save">Сохранить в галерею</string>
 
-    <string name="records_batch_faditor">Автоматизация ShahidEditor</string>
+    <string name="records_batch_shahideditor">Автоматизация ShahidEditor</string>
 
     <string name="records_batch_delete">Удалить</string>
 
@@ -1931,13 +1931,13 @@ ShahidCam использует фрагментированный формат M
 
     <string name="records_batch_save_desc">Копировать, переместить или экспортировать выбранные видео в другую папку.</string>
 
-    <string name="records_batch_faditor_desc">Запуск фоновой автоматизации без открытия вкладки ShahidEditor.</string>
+    <string name="records_batch_shahideditor_desc">Запуск фоновой автоматизации без открытия вкладки ShahidEditor.</string>
 
     <string name="records_batch_delete_desc">Переместить выбранные видео в корзину.</string>
 
     <string name="records_batch_save_queued">%1$d задача(ч) сохранения добавлена(ы) в очередь.</string>
 
-    <string name="records_batch_faditor_first_only">Открыто первое видео. Выбрано %1$d; очередь мульти-редактирования скоро.</string>
+    <string name="records_batch_shahideditor_first_only">Открыто первое видео. Выбрано %1$d; очередь мульти-редактирования скоро.</string>
 
     <string name="records_batch_save_copy_helper">Сохраняет оригиналы; сохраняет копии в %1$s.</string>
 
@@ -1953,17 +1953,17 @@ ShahidCam использует фрагментированный формат M
 
     <string name="records_batch_custom_export_done">Экспорт завершён. Успешно: %1$d • Ошибки: %2$d</string>
 
-    <string name="records_batch_faditor_sheet_title">Групповые действия ShahidEditor</string>
+    <string name="records_batch_shahideditor_sheet_title">Групповые действия ShahidEditor</string>
 
-    <string name="records_batch_faditor_export_standard">Экспорт в стандартный MP4</string>
+    <string name="records_batch_shahideditor_export_standard">Экспорт в стандартный MP4</string>
 
-    <string name="records_batch_faditor_export_standard_desc">Конвертация фрагментированного MP4 в стандартный MP4 с поиском для внешних плееров.</string>
+    <string name="records_batch_shahideditor_export_standard_desc">Конвертация фрагментированного MP4 в стандартный MP4 с поиском для внешних плееров.</string>
 
-    <string name="records_batch_faditor_merge">Объединить выбранные видео</string>
+    <string name="records_batch_shahideditor_merge">Объединить выбранные видео</string>
 
-    <string name="records_batch_faditor_merge_desc">Объединяет выбранные клипы в одно видео в фоне.</string>
+    <string name="records_batch_shahideditor_merge_desc">Объединяет выбранные клипы в одно видео в фоне.</string>
 
-    <string name="records_batch_faditor_queued">%1$d групповой элемент(ов) добавлен(ы) в очередь в фоне.</string>
+    <string name="records_batch_shahideditor_queued">%1$d групповой элемент(ов) добавлен(ы) в очередь в фоне.</string>
 
     <string name="records_batch_completed">Групповая операция завершена.</string>
 
@@ -2165,7 +2165,7 @@ ShahidCam использует фрагментированный формат M
 
     <string-array name="theme_options" translatable="false">
         <item>Midnight Dusk</item>
-        <item>Faded Night</item>
+        <item>Shahid Dark</item>
         <item>Crimson Bloom</item>
         <item>Silent Forest</item>
         <item>Shadow Alloy</item>
@@ -2173,177 +2173,177 @@ ShahidCam использует фрагментированный формат M
         <item>Snow Veil</item>
     </string-array>
 
-    <string name="faditor_mini_subtitle">Обрезка и экспорт видео с точностью</string>
+    <string name="shahideditor_mini_subtitle">Обрезка и экспорт видео с точностью</string>
 
-    <string name="faditor_select_video">Выбрать видео</string>
+    <string name="shahideditor_select_video">Выбрать видео</string>
 
-    <string name="faditor_editor_title">ShahidEditor Mini</string>
+    <string name="shahideditor_editor_title">ShahidEditor Mini</string>
 
-    <string name="faditor_close">Закрыть редактор</string>
+    <string name="shahideditor_close">Закрыть редактор</string>
 
-    <string name="faditor_undo">Отменить</string>
+    <string name="shahideditor_undo">Отменить</string>
 
-    <string name="faditor_redo">Повторить</string>
+    <string name="shahideditor_redo">Повторить</string>
 
-    <string name="faditor_play_pause">Воспроизведение или пауза</string>
+    <string name="shahideditor_play_pause">Воспроизведение или пауза</string>
 
-    <string name="faditor_export">Экспорт</string>
+    <string name="shahideditor_export">Экспорт</string>
 
-    <string name="faditor_cancel">Отмена</string>
+    <string name="shahideditor_cancel">Отмена</string>
 
-    <string name="faditor_exporting">Экспорт…</string>
+    <string name="shahideditor_exporting">Экспорт…</string>
 
-    <string name="faditor_exporting_percent">Экспорт… %1$d%%</string>
+    <string name="shahideditor_exporting_percent">Экспорт… %1$d%%</string>
 
-    <string name="faditor_export_success">Видео успешно экспортировано</string>
+    <string name="shahideditor_export_success">Видео успешно экспортировано</string>
 
-    <string name="faditor_export_error">Ошибка экспорта: %1$s</string>
+    <string name="shahideditor_export_error">Ошибка экспорта: %1$s</string>
 
-    <string name="faditor_export_in_progress">Экспорт уже выполняется</string>
+    <string name="shahideditor_export_in_progress">Экспорт уже выполняется</string>
 
-    <string name="faditor_remuxing">Оптимизация для предпросмотра…</string>
+    <string name="shahideditor_remuxing">Оптимизация для предпросмотра…</string>
 
-    <string name="faditor_remuxing_percent">Оптимизация… обработано %1$dс</string>
+    <string name="shahideditor_remuxing_percent">Оптимизация… обработано %1$dс</string>
 
-    <string name="faditor_error_no_video">Видео не выбрано</string>
+    <string name="shahideditor_error_no_video">Видео не выбрано</string>
 
-    <string name="faditor_error_picker">Не удалось открыть выбор файлов</string>
+    <string name="shahideditor_error_picker">Не удалось открыть выбор файлов</string>
 
-    <string name="faditor_tool_trim">Обрезка</string>
+    <string name="shahideditor_tool_trim">Обрезка</string>
 
-    <string name="faditor_tool_speed">1x</string>
+    <string name="shahideditor_tool_speed">1x</string>
 
-    <string name="faditor_tool_muted">Без звука</string>
+    <string name="shahideditor_tool_muted">Без звука</string>
 
-    <string name="faditor_tool_sound">Звук</string>
+    <string name="shahideditor_tool_sound">Звук</string>
 
-    <string name="faditor_speed_title">Скорость воспроизведения</string>
+    <string name="shahideditor_speed_title">Скорость воспроизведения</string>
 
-    <string name="faditor_speed_reset">Сбросить на 1x</string>
+    <string name="shahideditor_speed_reset">Сбросить на 1x</string>
 
-    <string name="faditor_volume_title">Громкость</string>
+    <string name="shahideditor_volume_title">Громкость</string>
 
-    <string name="faditor_volume_warning">Выше 100%% может ухудшить качество аудио</string>
+    <string name="shahideditor_volume_warning">Выше 100%% может ухудшить качество аудио</string>
 
-    <string name="faditor_volume_mute">Отключить звук</string>
+    <string name="shahideditor_volume_mute">Отключить звук</string>
 
-    <string name="faditor_volume_unmute">Включить звук</string>
+    <string name="shahideditor_volume_unmute">Включить звук</string>
 
-    <string name="faditor_tool_volume">Громкость</string>
+    <string name="shahideditor_tool_volume">Громкость</string>
 
-    <string name="faditor_tool_rotate">Поворот</string>
+    <string name="shahideditor_tool_rotate">Поворот</string>
 
-    <string name="faditor_tool_flip">Отражение</string>
+    <string name="shahideditor_tool_flip">Отражение</string>
 
-    <string name="faditor_tool_crop">Кадрирование</string>
+    <string name="shahideditor_tool_crop">Кадрирование</string>
 
-    <string name="faditor_tool_crop_free">Свободное</string>
+    <string name="shahideditor_tool_crop_free">Свободное</string>
 
-    <string name="faditor_tool_canvas">Холст</string>
+    <string name="shahideditor_tool_canvas">Холст</string>
 
-    <string name="faditor_canvas_title">Холст</string>
+    <string name="shahideditor_canvas_title">Холст</string>
 
-    <string name="faditor_canvas_applied">Холст установлен на %s</string>
+    <string name="shahideditor_canvas_applied">Холст установлен на %s</string>
 
-    <string name="faditor_tool_audio">Извлечь аудио</string>
+    <string name="shahideditor_tool_audio">Извлечь аудио</string>
 
-    <string name="faditor_audio_extract_current">Извлечь из видео</string>
+    <string name="shahideditor_audio_extract_current">Извлечь из видео</string>
 
-    <string name="faditor_audio_extract_current_desc">Извлечь аудиодорожку из текущего видео</string>
+    <string name="shahideditor_audio_extract_current_desc">Извлечь аудиодорожку из текущего видео</string>
 
-    <string name="faditor_audio_extracting">Извлечение аудио…</string>
+    <string name="shahideditor_audio_extracting">Извлечение аудио…</string>
 
-    <string name="faditor_audio_extracted">Аудио извлечено и добавлено на таймлайн</string>
+    <string name="shahideditor_audio_extracted">Аудио извлечено и добавлено на таймлайн</string>
 
-    <string name="faditor_audio_extract_failed">Не удалось извлечь аудио</string>
+    <string name="shahideditor_audio_extract_failed">Не удалось извлечь аудио</string>
 
-    <string name="faditor_audio_added">Аудио добавлено на таймлайн</string>
+    <string name="shahideditor_audio_added">Аудио добавлено на таймлайн</string>
 
-    <string name="faditor_audio_no_track">Аудиодорожка не найдена в этом видео</string>
+    <string name="shahideditor_audio_no_track">Аудиодорожка не найдена в этом видео</string>
 
-    <string name="faditor_tool_split">Разделить</string>
+    <string name="shahideditor_tool_split">Разделить</string>
 
-    <string name="faditor_tool_delete">Удалить</string>
+    <string name="shahideditor_tool_delete">Удалить</string>
 
-    <string name="faditor_tool_duplicate">Дублировать</string>
+    <string name="shahideditor_tool_duplicate">Дублировать</string>
 
-    <string name="faditor_tool_add">Добавить</string>
+    <string name="shahideditor_tool_add">Добавить</string>
 
-    <string name="faditor_add_asset_title">Добавить ресурс</string>
+    <string name="shahideditor_add_asset_title">Добавить ресурс</string>
 
-    <string name="faditor_add_asset_image">Изображение (5с статичное)</string>
+    <string name="shahideditor_add_asset_image">Изображение (5с статичное)</string>
 
-    <string name="faditor_add_asset_video">Видеоклип</string>
+    <string name="shahideditor_add_asset_video">Видеоклип</string>
 
-    <string name="faditor_asset_added">Ресурс добавлен на таймлайн</string>
+    <string name="shahideditor_asset_added">Ресурс добавлен на таймлайн</string>
 
-    <string name="faditor_asset_error">Не удалось добавить ресурс</string>
+    <string name="shahideditor_asset_error">Не удалось добавить ресурс</string>
 
-    <string name="faditor_split_success">Сегмент разделён на два</string>
+    <string name="shahideditor_split_success">Сегмент разделён на два</string>
 
-    <string name="faditor_split_error">Невозможно разделить — слишком близко к краю</string>
+    <string name="shahideditor_split_error">Невозможно разделить — слишком близко к краю</string>
 
-    <string name="faditor_delete_last_segment">Невозможно удалить единственный сегмент</string>
+    <string name="shahideditor_delete_last_segment">Невозможно удалить единственный сегмент</string>
 
-    <string name="faditor_segment_deleted">Сегмент удалён</string>
+    <string name="shahideditor_segment_deleted">Сегмент удалён</string>
 
-    <string name="faditor_segment_duplicated">Сегмент дублирован</string>
+    <string name="shahideditor_segment_duplicated">Сегмент дублирован</string>
 
-    <string name="faditor_crop_title">Соотношение сторон кадрирования</string>
+    <string name="shahideditor_crop_title">Соотношение сторон кадрирования</string>
 
-    <string name="faditor_crop_free">Свободное</string>
+    <string name="shahideditor_crop_free">Свободное</string>
 
-    <string name="faditor_crop_applied">Кадрирование применено</string>
+    <string name="shahideditor_crop_applied">Кадрирование применено</string>
 
-    <string name="faditor_crop_cancelled">Кадрирование отменено</string>
+    <string name="shahideditor_crop_cancelled">Кадрирование отменено</string>
 
-    <string name="faditor_crop_reset">Кадрирование сброшено</string>
+    <string name="shahideditor_crop_reset">Кадрирование сброшено</string>
 
-    <string name="faditor_close_confirm_title">Закрыть редактор?</string>
+    <string name="shahideditor_close_confirm_title">Закрыть редактор?</string>
 
-    <string name="faditor_close_confirm_action">Закрыть и сохранить</string>
+    <string name="shahideditor_close_confirm_action">Закрыть и сохранить</string>
 
-    <string name="faditor_close_confirm_subtitle">Сохранить проект и вернуться</string>
+    <string name="shahideditor_close_confirm_subtitle">Сохранить проект и вернуться</string>
 
-    <string name="faditor_close_confirm_helper">Ваш проект будет сохранён автоматически. Вы можете reopening его из недавних проектов в любое время.</string>
+    <string name="shahideditor_close_confirm_helper">Ваш проект будет сохранён автоматически. Вы можете reopening его из недавних проектов в любое время.</string>
 
-    <string name="faditor_back_press_exit">Нажмите ещё раз для выхода из редактора</string>
+    <string name="shahideditor_back_press_exit">Нажмите ещё раз для выхода из редактора</string>
 
-    <string name="faditor_export_back_confirm">Экспорт выполняется. Вернуться в редактор?</string>
+    <string name="shahideditor_export_back_confirm">Экспорт выполняется. Вернуться в редактор?</string>
 
-    <string name="faditor_export_done">Готово</string>
+    <string name="shahideditor_export_done">Готово</string>
 
-    <string name="faditor_export_back">Назад</string>
+    <string name="shahideditor_export_back">Назад</string>
 
-    <string name="faditor_export_eta">Примерное время: %s</string>
+    <string name="shahideditor_export_eta">Примерное время: %s</string>
 
-    <string name="faditor_export_complete_title">Экспорт завершён</string>
+    <string name="shahideditor_export_complete_title">Экспорт завершён</string>
 
-    <string name="faditor_export_complete_summary">Ваше видео сохранено во вкладке Записи.</string>
+    <string name="shahideditor_export_complete_summary">Ваше видео сохранено во вкладке Записи.</string>
 
-    <string name="faditor_export_confirm_title">Экспорт видео</string>
+    <string name="shahideditor_export_confirm_title">Экспорт видео</string>
 
-    <string name="faditor_export_confirm_action">Экспортировать</string>
+    <string name="shahideditor_export_confirm_action">Экспортировать</string>
 
-    <string name="faditor_export_confirm_subtitle">Экспорт продолжится в фоне</string>
+    <string name="shahideditor_export_confirm_subtitle">Экспорт продолжится в фоне</string>
 
-    <string name="faditor_export_confirm_helper">%1$s • %2$d клип(ов)%3$s\nЭкспорт выполняется как фоновая служба — вы можете закрыть приложение, и он продолжит экспорт.</string>
+    <string name="shahideditor_export_confirm_helper">%1$s • %2$d клип(ов)%3$s\nЭкспорт выполняется как фоновая служба — вы можете закрыть приложение, и он продолжит экспорт.</string>
 
-    <string name="faditor_export_notif_channel">Экспорт ShahidEditor</string>
+    <string name="shahideditor_export_notif_channel">Экспорт ShahidEditor</string>
 
-    <string name="faditor_export_notif_channel_desc">Уведомления о текущем экспорте видео</string>
+    <string name="shahideditor_export_notif_channel_desc">Уведомления о текущем экспорте видео</string>
 
-    <string name="faditor_export_notif_title">Экспорт видео…</string>
+    <string name="shahideditor_export_notif_title">Экспорт видео…</string>
 
-    <string name="faditor_export_notif_error_title">Ошибка экспорта</string>
+    <string name="shahideditor_export_notif_error_title">Ошибка экспорта</string>
 
-    <string name="faditor_export_progress">Экспорт…</string>
+    <string name="shahideditor_export_progress">Экспорт…</string>
 
-    <string name="faditor_export_completed">Экспорт завершён</string>
+    <string name="shahideditor_export_completed">Экспорт завершён</string>
 
-    <string name="faditor_export_cancelled">Экспорт отменён</string>
+    <string name="shahideditor_export_cancelled">Экспорт отменён</string>
 
-    <string name="faditor_export_failed">Экспорт не удался</string>
+    <string name="shahideditor_export_failed">Экспорт не удался</string>
 
     <string name="export_eta_seconds">ETA %d с</string>
 
@@ -2359,99 +2359,99 @@ ShahidCam использует фрагментированный формат M
 
     <string name="export_status">Статус экспорта</string>
 
-    <string name="faditor_export_info">%1$s • %2$d клип(ов)%3$s • H.264 + AAC</string>
+    <string name="shahideditor_export_info">%1$s • %2$d клип(ов)%3$s • H.264 + AAC</string>
 
-    <string name="faditor_flip_title">Отражение</string>
+    <string name="shahideditor_flip_title">Отражение</string>
 
-    <string name="faditor_home_tagline">Лёгкий видеоредактор</string>
+    <string name="shahideditor_home_tagline">Лёгкий видеоредактор</string>
 
-    <string name="faditor_new_project">Новый проект</string>
+    <string name="shahideditor_new_project">Новый проект</string>
 
-    <string name="faditor_start_project">Начать новый проект</string>
+    <string name="shahideditor_start_project">Начать новый проект</string>
 
-    <string name="faditor_recent_projects">Недавние проекты</string>
+    <string name="shahideditor_recent_projects">Недавние проекты</string>
 
-    <string name="faditor_capabilities_title">Что вы можете делать</string>
+    <string name="shahideditor_capabilities_title">Что вы можете делать</string>
 
-    <string name="faditor_feature_trim">Точная обрезка</string>
+    <string name="shahideditor_feature_trim">Точная обрезка</string>
 
-    <string name="faditor_feature_trim_desc">Обрежьте видео до точного кадра</string>
+    <string name="shahideditor_feature_trim_desc">Обрежьте видео до точного кадра</string>
 
-    <string name="faditor_feature_export">Быстрый экспорт</string>
+    <string name="shahideditor_feature_export">Быстрый экспорт</string>
 
-    <string name="faditor_feature_export_desc">Экспорт в MP4 с аппаратным кодированием</string>
+    <string name="shahideditor_feature_export_desc">Экспорт в MP4 с аппаратным кодированием</string>
 
-    <string name="faditor_feature_preview">Живой предпросмотр</string>
+    <string name="shahideditor_feature_preview">Живой предпросмотр</string>
 
-    <string name="faditor_feature_preview_desc">Мгновенное воспроизведение обрезанных клипов</string>
+    <string name="shahideditor_feature_preview_desc">Мгновенное воспроизведение обрезанных клипов</string>
 
-    <string name="faditor_feature_privacy">100% Оффлайн</string>
+    <string name="shahideditor_feature_privacy">100% Оффлайн</string>
 
-    <string name="faditor_feature_privacy_desc">Всё редактирование происходит локально — без загрузок, без облака</string>
+    <string name="shahideditor_feature_privacy_desc">Всё редактирование происходит локально — без загрузок, без облака</string>
 
-    <string name="faditor_feature_convert">Умная конвертация</string>
+    <string name="shahideditor_feature_convert">Умная конвертация</string>
 
-    <string name="faditor_feature_convert_desc">Авто-конвертация записей с защитой от сбоев в MP4 с поиском для плавного воспроизведения везде</string>
+    <string name="shahideditor_feature_convert_desc">Авто-конвертация записей с защитой от сбоев в MP4 с поиском для плавного воспроизведения везде</string>
 
-    <string name="faditor_select_items">Выбрать элементы</string>
+    <string name="shahideditor_select_items">Выбрать элементы</string>
 
-    <string name="faditor_selected_count">Выбрано %1$d</string>
+    <string name="shahideditor_selected_count">Выбрано %1$d</string>
 
-    <string name="faditor_delete_projects_title">Удалить проекты?</string>
+    <string name="shahideditor_delete_projects_title">Удалить проекты?</string>
 
-    <string name="faditor_delete_projects_message">Удалить %1$d проект(ов)? Это действие нельзя отменить.</string>
+    <string name="shahideditor_delete_projects_message">Удалить %1$d проект(ов)? Это действие нельзя отменить.</string>
 
-    <string name="faditor_delete_confirm">Удалить</string>
+    <string name="shahideditor_delete_confirm">Удалить</string>
 
-    <string name="faditor_version_info">ShahidEditor Mini · Фаза 1 · Обрезка + Экспорт</string>
+    <string name="shahideditor_version_info">ShahidEditor Mini · Фаза 1 · Обрезка + Экспорт</string>
 
-    <string name="faditor_empty_title">Проектов пока нет</string>
+    <string name="shahideditor_empty_title">Проектов пока нет</string>
 
-    <string name="faditor_empty_desc">Нажмите «Начать новый проект» для выбора видео и начала редактирования</string>
+    <string name="shahideditor_empty_desc">Нажмите «Начать новый проект» для выбора видео и начала редактирования</string>
 
-    <string name="faditor_info_title">О ShahidEditor Mini</string>
+    <string name="shahideditor_info_title">О ShahidEditor Mini</string>
 
-    <string name="faditor_info_subtitle">Всё, что нужно знать о встроенном редакторе</string>
+    <string name="shahideditor_info_subtitle">Всё, что нужно знать о встроенном редакторе</string>
 
-    <string name="faditor_info_how_title">Как это работает</string>
+    <string name="shahideditor_info_how_title">Как это работает</string>
 
-    <string name="faditor_info_how_desc">Выберите любое видео с устройства или записей ShahidCam. Обрежьте покадрово с помощью таймлайна, затем экспортируйте. Вся обработка происходит локально на вашем устройстве — ничего не загружается.\n\nВаш прогресс редактирования сохраняется автоматически каждые несколько секунд и при выходе из редактора, поэтому работа не будет потеряна при неожиданном закрытии приложения.</string>
+    <string name="shahideditor_info_how_desc">Выберите любое видео с устройства или записей ShahidCam. Обрежьте покадрово с помощью таймлайна, затем экспортируйте. Вся обработка происходит локально на вашем устройстве — ничего не загружается.\n\nВаш прогресс редактирования сохраняется автоматически каждые несколько секунд и при выходе из редактора, поэтому работа не будет потеряна при неожиданном закрытии приложения.</string>
 
-    <string name="faditor_info_convert_title">Умная конвертация</string>
+    <string name="shahideditor_info_convert_title">Умная конвертация</string>
 
-    <string name="faditor_info_convert_desc">ShahidCam записывает в формате фрагментированного MP4 (fMP4) с защитой от сбоев. В отличие от стандартного MP4 с одним финализированным контейнером, fMP4 записывает видео небольшими независимыми фрагментами. Это означает, что ваши записи остаются целыми даже при сбое приложения или внезапной остановке записи.\n\nОднако внешние видеоплееры, приложения галереи и файловые менеджеры не смогут выполнять поиск, перемотку или отображать правильную длительность этих файлов. Это не баг — это преднамеренная жертва надёжности.\n\nЕсли вы планируете хранить видео за пределами ShahidCam — на Google Drive, компьютере или в другом месте — вы должны сначала конвертировать их. Иначе файлы будут непригодны для обычного воспроизведения.\n\nДля конвертации: просто откройте видео здесь в ShahidEditor Mini и нажмите Экспорт. Конвертированный стандартный MP4 появится во вкладке Записи, готовый к сохранению в галерею или отправке куда угодно. Процесс мгновенный и без потерь — без перекодирования или потери качества.</string>
+    <string name="shahideditor_info_convert_desc">ShahidCam записывает в формате фрагментированного MP4 (fMP4) с защитой от сбоев. В отличие от стандартного MP4 с одним финализированным контейнером, fMP4 записывает видео небольшими независимыми фрагментами. Это означает, что ваши записи остаются целыми даже при сбое приложения или внезапной остановке записи.\n\nОднако внешние видеоплееры, приложения галереи и файловые менеджеры не смогут выполнять поиск, перемотку или отображать правильную длительность этих файлов. Это не баг — это преднамеренная жертва надёжности.\n\nЕсли вы планируете хранить видео за пределами ShahidCam — на Google Drive, компьютере или в другом месте — вы должны сначала конвертировать их. Иначе файлы будут непригодны для обычного воспроизведения.\n\nДля конвертации: просто откройте видео здесь в ShahidEditor Mini и нажмите Экспорт. Конвертированный стандартный MP4 появится во вкладке Записи, готовый к сохранению в галерею или отправке куда угодно. Процесс мгновенный и без потерь — без перекодирования или потери качества.</string>
 
-    <string name="faditor_info_export_title">Экспортированные файлы</string>
+    <string name="shahideditor_info_export_title">Экспортированные файлы</string>
 
-    <string name="faditor_info_export_desc">Экспортированные видео сохраняются в активное место хранения (то же, что настроено в Настройках) с префиксом «ShahidEditor_» и меткой времени. Они появляются во вкладке Записи рядом с оригинальными записями.</string>
+    <string name="shahideditor_info_export_desc">Экспортированные видео сохраняются в активное место хранения (то же, что настроено в Настройках) с префиксом «ShahidEditor_» и меткой времени. Они появляются во вкладке Записи рядом с оригинальными записями.</string>
 
-    <string name="faditor_info_temp_title">Временные файлы и кэш</string>
+    <string name="shahideditor_info_temp_title">Временные файлы и кэш</string>
 
-    <string name="faditor_info_temp_desc">При загрузке видео fMP4 для редактирования ShahidEditor определяет, нужен ли файлу «ремультиплексинг» — быстрая конвертация, добавляющая маркеры поиска без перекодирования. Ремультиплексированные файлы кэшируются на устройстве, чтобы их можно было повторно использовать при редактировании того же видео, экономя время и обработку.\n\nВы можете увидеть размер кэша для каждого проекта рядом с датой изменения. Если место на устройстве заканчивается, вы можете удалить неиспользуемые проекты для очистки их кэшированных ремультиплексированных файлов.\n\nЭти временные файлы кэша автоматически очищаются при удалении проекта из этой вкладки.</string>
+    <string name="shahideditor_info_temp_desc">При загрузке видео fMP4 для редактирования ShahidEditor определяет, нужен ли файлу «ремультиплексинг» — быстрая конвертация, добавляющая маркеры поиска без перекодирования. Ремультиплексированные файлы кэшируются на устройстве, чтобы их можно было повторно использовать при редактировании того же видео, экономя время и обработку.\n\nВы можете увидеть размер кэша для каждого проекта рядом с датой изменения. Если место на устройстве заканчивается, вы можете удалить неиспользуемые проекты для очистки их кэшированных ремультиплексированных файлов.\n\nЭти временные файлы кэша автоматически очищаются при удалении проекта из этой вкладки.</string>
 
-    <string name="faditor_info_projects_title">Недавние проекты</string>
+    <string name="shahideditor_info_projects_title">Недавние проекты</string>
 
-    <string name="faditor_info_projects_desc">Все ваши сессии редактирования отображаются для быстрого доступа. Каждый проект хранится как небольшой файл JSON на вашем устройстве, содержащий URI видео, точки обрезки и метки времени — копии ваших видео не создаются. Проекты сохраняются автоматически каждые несколько секунд, поэтому прогресс никогда не теряется.\n\nВы можете удалить ненужные проекты с помощью иконки мульти-выбора. Удаление проекта удаляет только данные сессии редактирования; ваши оригинальные видеофайлы остаются нетронутыми.</string>
+    <string name="shahideditor_info_projects_desc">Все ваши сессии редактирования отображаются для быстрого доступа. Каждый проект хранится как небольшой файл JSON на вашем устройстве, содержащий URI видео, точки обрезки и метки времени — копии ваших видео не создаются. Проекты сохраняются автоматически каждые несколько секунд, поэтому прогресс никогда не теряется.\n\nВы можете удалить ненужные проекты с помощью иконки мульти-выбора. Удаление проекта удаляет только данные сессии редактирования; ваши оригинальные видеофайлы остаются нетронутыми.</string>
 
-    <string name="faditor_your_recordings">Ваши записи</string>
+    <string name="shahideditor_your_recordings">Ваши записи</string>
 
-    <string name="faditor_browse_device">Обзор устройства</string>
+    <string name="shahideditor_browse_device">Обзор устройства</string>
 
-    <string name="faditor_no_recordings">Записей пока не найдено. Начните запись с ShahidCam, чтобы увидеть ваши видео здесь.</string>
+    <string name="shahideditor_no_recordings">Записей пока не найдено. Начните запись с ShahidCam, чтобы увидеть ваши видео здесь.</string>
 
-    <string name="faditor_video_count">%1$d видео</string>
+    <string name="shahideditor_video_count">%1$d видео</string>
 
-    <string name="faditor_fadcam_source">ShahidCam</string>
+    <string name="shahideditor_shahidcam_source">ShahidCam</string>
 
-    <string name="faditor_fadrec_source">ScreenRec</string>
+    <string name="shahideditor_shahidrec_source">ScreenRec</string>
 
-    <string name="faditor_browse_device_desc">Выберите любое видео с устройства</string>
+    <string name="shahideditor_browse_device_desc">Выберите любое видео с устройства</string>
 
-    <string name="faditor_scanning">Сканирование записей…</string>
+    <string name="shahideditor_scanning">Сканирование записей…</string>
 
-    <string name="faditor_source_chooser_desc">Выберите видео из галереи или из записей ShahidCam</string>
+    <string name="shahideditor_source_chooser_desc">Выберите видео из галереи или из записей ShahidCam</string>
 
-    <string name="faditor_recordings_helper">Видео, записанные ShahidCam из активного места хранения</string>
+    <string name="shahideditor_recordings_helper">Видео, записанные ShahidCam из активного места хранения</string>
 
     <string name="setting_eye_color_title">Цвет глаз</string>
 
@@ -2482,8 +2482,8 @@ ShahidCam использует фрагментированный формат M
     <string name="header_logo_avatar" translatable="false">Avatar</string>
 
     <string name="settings_advanced_subtitle">Лаборатория движения и расширенные настройки</string>
-    <string name="fadcrypt_title">Crypt</string>
-    <string name="fadcrypt_row_subtitle">Шифруйте и защищайте свои записи</string>
+    <string name="shahidvault_title">Crypt</string>
+    <string name="shahidvault_row_subtitle">Шифруйте и защищайте свои записи</string>
 
     <string name="digital_forensics_title">Цифровая форензика</string>
 
@@ -2698,8 +2698,8 @@ ShahidCam использует фрагментированный формат M
     <string name="e2e_encryption_title">E2E-шифрование трансляции</string>
 
     <!-- ScreenRec Preview -->
-    <string name="fadrec_preview_enable_hint">Удерживайте для показа предпросмотра</string>
-    <string name="fadrec_preview_not_available">Живой предпросмотр экрана ещё не подключён к ScreenRec</string>
+    <string name="shahidrec_preview_enable_hint">Удерживайте для показа предпросмотра</string>
+    <string name="shahidrec_preview_not_available">Живой предпросмотр экрана ещё не подключён к ScreenRec</string>
 
     <!-- Forensics Appearance -->
     <string name="forensics_clip_black">Чёрная скрепка</string>
@@ -3100,8 +3100,8 @@ ShahidCam использует фрагментированный формат M
     <string name="watch_pause_desc">Пауза или возобновление записи</string>
     <string name="watch_fullscreen_label">Вид</string>
     <string name="watch_fullscreen_desc">Полноэкранный</string>
-    <string name="watch_fadshot_label">Кадр</string>
-    <string name="watch_fadshot_desc">Сделать фото</string>
+    <string name="watch_shahidshot_label">Кадр</string>
+    <string name="watch_shahidshot_desc">Сделать фото</string>
     <string name="watch_trash_title">Недавно удалённые</string>
     <string name="watch_trash_empty">Ничего не удалено</string>
     <string name="watch_trash_delete_all">Удалить все</string>
@@ -3221,7 +3221,7 @@ ShahidCam использует фрагментированный формат M
     <string name="sidebar_update_available">Доступно обновление</string>
     <string name="sidebar_stable_release">Стабильный релиз</string>
     <string name="sidebar_beta_release">Бета-релиз</string>
-    <string name="sidebar_fadcam_pro">ShahidCam Pro</string>
+    <string name="sidebar_shahidcam_pro">ShahidCam Pro</string>
     <string name="badge_new">НОВОЕ</string>
     <string name="update_pro_title">Обновление ShahidCam Pro</string>
     <string name="update_pro_desc">Доступна новая версия ShahidCam Pro.\n\nДля бесплатных пользователей стабильный релиз появится примерно через 60 дней. Пользователи Pro получают обновления сразу.</string>
@@ -3238,7 +3238,7 @@ ShahidCam использует фрагментированный формат M
     <string name="screen_recording_saved">Запись экрана сохранена</string>
     <string name="screen_recording_tap_to_view">Нажмите, чтобы просмотреть запись</string>
     <string name="notification_action_stop">Стоп</string>
-    <string name="fadmic_coming_soon">Mic (Запись с микрофона) скоро!</string>
+    <string name="shahidmic_coming_soon">Mic (Запись с микрофона) скоро!</string>
     <string name="toast_stream_server_starting">Запуск сервера трансляции...</string>
     <string name="toast_stream_server_stopped">Сервер трансляции остановлен</string>
     <string name="toast_no_cloud_viewers">Нет подключённых облачных зрителей</string>
@@ -3325,7 +3325,7 @@ ShahidCam использует фрагментированный формат M
     <string name="about_dialog_error">Ошибка</string>
     <string name="about_dialog_ok">ОК</string>
     <string name="about_get_beta">Получить бета-версию</string>
-    <string name="about_fadcam_feedback">Обратная связь ShahidCam</string>
+    <string name="about_shahidcam_feedback">Обратная связь ShahidCam</string>
 
     <!-- Video split sizes -->
     <string name="video_split_enabled_format">Включено (%s)</string>
@@ -3347,7 +3347,7 @@ ShahidCam использует фрагментированный формат M
     <string name="settings_location_update_interval_5s">5.0 секунд</string>
 
     <!-- Annotation toolbar -->
-    <string name="annotation_by_fadsec_lab">от CyberShadowPK Lab</string>
+    <string name="annotation_by_shahidlabs_lab">от CyberShadowPK Lab</string>
     <string name="annotation_quick_access">Быстрый доступ</string>
     <string name="annotation_annotate">Аннотировать</string>
     <string name="annotation_enable_tools">Включить инструменты</string>
@@ -3425,7 +3425,7 @@ ShahidCam использует фрагментированный формат M
     <string name="desc_delete_text">Удалить текст</string>
     <string name="desc_done">Готово</string>
     <string name="desc_exposure_compensation">Компенсация экспозиции</string>
-    <string name="desc_fadrec_logo">Логотип ScreenRec</string>
+    <string name="desc_shahidrec_logo">Логотип ScreenRec</string>
     <string name="desc_fast_forward">Перемотка вперёд на 5 секунд</string>
     <string name="desc_increase">Увеличить</string>
     <string name="desc_italic">Курсив</string>
@@ -3448,7 +3448,7 @@ ShahidCam использует фрагментированный формат M
     <string name="channel_security_alarm">Охранная сигнализация</string>
     <string name="channel_remote_streaming">Удалённая трансляция</string>
     <string name="channel_annotation_service">Служба аннотаций</string>
-    <string name="channel_fadcam_file_ops">Файловые операции ShahidCam</string>
+    <string name="channel_shahidcam_file_ops">Файловые операции ShahidCam</string>
 
     <!-- ScreenRecordingService -->
     <string name="screen_rec_failed">Запись не удалась: %s</string>
@@ -3574,7 +3574,7 @@ ShahidCam использует фрагментированный формат M
     <string name="tutorial_dashcam_setup">Настройка видеорегистратора</string>
 
     <!-- iOS Promo -->
-    <string name="fadcam_for_ios_title">ShahidCam для iOS</string>
+    <string name="shahidcam_for_ios_title">ShahidCam для iOS</string>
     <string name="ios_promo_title">ShahidCam теперь на iOS!</string>
     <string name="ios_promo_subtitle">То же приложение камеры, уважающее вашу конфиденциальность, теперь доступно для iPhone</string>
 

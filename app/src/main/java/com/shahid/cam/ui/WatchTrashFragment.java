@@ -198,7 +198,7 @@ public class WatchTrashFragment extends Fragment {
                         TrashManager.saveTrashMetadata(requireContext(), meta);
                     }
                 } else {
-                    // Fallback: use the generic TrashManager restore (goes to Downloads/FadCam)
+                    // Fallback: use the generic TrashManager restore (goes to Downloads/ShahidCam)
                     final List<TrashItem> single = new ArrayList<>();
                     single.add(item);
                     ok = TrashManager.restoreItemsFromTrash(requireContext(), single);

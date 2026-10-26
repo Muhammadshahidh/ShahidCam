@@ -151,13 +151,13 @@
         <item name="android:windowAnimationStyle">@null</item>
     </style>
 
-    <!-- FadCam Pro Activity Theme with Ubuntu Font -->
-    <style name="FadCamProTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <!-- ShahidCam Pro Activity Theme with Ubuntu Font -->
+    <style name="ShahidCamProTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:fontFamily">@font/ubuntu_regular</item>
     </style>
 
-    <!-- Faditor Editor dark immersive theme -->
-    <style name="Theme.ShahidCam.FaditorEditor" parent="Theme.Material3.Dark.NoActionBar">
+    <!-- ShahidEditor Editor dark immersive theme -->
+    <style name="Theme.ShahidCam.ShahidEditorEditor" parent="Theme.Material3.Dark.NoActionBar">
         <item name="colorSurface">#FF1A1A1A</item>
         <item name="colorSurfaceVariant">#FF252525</item>
         <item name="colorOnSurface">#FFFFFFFF</item>

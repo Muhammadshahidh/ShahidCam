@@ -109,10 +109,10 @@
             android:exported="false" />
 
         <!-- Transparent editor activities for proper keyboard handling -->
-        <activity android:name="com.shahid.cam.fadrec.ui.overlay.TextEditorActivity" android:theme="@style/TransparentEditorTheme" android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" android:windowSoftInputMode="adjustResize" android:exported="false" />
+        <activity android:name="com.shahid.cam.shahidrec.ui.overlay.TextEditorActivity" android:theme="@style/TransparentEditorTheme" android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" android:windowSoftInputMode="adjustResize" android:exported="false" />
 
-        <!-- Faditor Mini video editor -->
-        <activity android:name="com.shahid.cam.ui.faditor.FaditorEditorActivity" android:theme="@style/Theme.ShahidCam.FaditorEditor" android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" android:exported="false" />
+        <!-- ShahidEditor Mini video editor -->
+        <activity android:name="com.shahid.cam.ui.shahideditor.ShahidEditorActivity" android:theme="@style/Theme.ShahidCam.ShahidEditorEditor" android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" android:exported="false" />
 
         <!-- Detective App Icon (Activity Alias) -->
         <activity-alias android:name=".MainActivity.AlternativeIcon" android:enabled="false" android:label="Camera" android:icon="@mipmap/ic_launcher_2" android:roundIcon="@mipmap/ic_launcher_2_round" android:targetActivity=".MainActivity" android:exported="true">
@@ -139,7 +139,7 @@
         </activity-alias>
 
         <!-- MadeInPK App Icon (Activity Alias) -->
-        <activity-alias android:name=".MainActivity.PakistanIcon" android:enabled="false" android:label="FadCam" android:icon="@mipmap/ic_launcher_pakistan" android:roundIcon="@mipmap/ic_launcher_pakistan_round" android:targetActivity=".MainActivity" android:exported="true">
+        <activity-alias android:name=".MainActivity.PakistanIcon" android:enabled="false" android:label="ShahidCam" android:icon="@mipmap/ic_launcher_pakistan" android:roundIcon="@mipmap/ic_launcher_pakistan_round" android:targetActivity=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -147,7 +147,7 @@
         </activity-alias>
 
         <!-- $ ~/r00t App Icon (Activity Alias) -->
-        <activity-alias android:name=".MainActivity.FadSecLabIcon" android:enabled="false" android:label="FadSec Lab" android:icon="@mipmap/ic_launcher_fadseclab" android:roundIcon="@mipmap/ic_launcher_fadseclab_round" android:targetActivity=".MainActivity" android:exported="true">
+        <activity-alias android:name=".MainActivity.ShahidLabsIcon" android:enabled="false" android:label="Shahid Labs" android:icon="@mipmap/ic_launcher_shahidlabs" android:roundIcon="@mipmap/ic_launcher_shahidlabs_round" android:targetActivity=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -155,7 +155,7 @@
         </activity-alias>
 
         <!-- Nooristic App Icon (Activity Alias) -->
-        <activity-alias android:name=".MainActivity.NooristicIcon" android:enabled="false" android:label="FadCam ++" android:icon="@mipmap/ic_launcher_nooristic" android:roundIcon="@mipmap/ic_launcher_nooristic_round" android:targetActivity=".MainActivity" android:exported="true">
+        <activity-alias android:name=".MainActivity.NooristicIcon" android:enabled="false" android:label="ShahidCam ++" android:icon="@mipmap/ic_launcher_nooristic" android:roundIcon="@mipmap/ic_launcher_nooristic_round" android:targetActivity=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -163,7 +163,7 @@
         </activity-alias>
 
         <!-- FadBat App Icon (Activity Alias) -->
-        <activity-alias android:name=".MainActivity.BatIcon" android:enabled="false" android:label="FadCam" android:icon="@mipmap/ic_launcher_bat" android:roundIcon="@mipmap/ic_launcher_bat_round" android:targetActivity=".MainActivity" android:exported="true">
+        <activity-alias android:name=".MainActivity.BatIcon" android:enabled="false" android:label="ShahidCam" android:icon="@mipmap/ic_launcher_bat" android:roundIcon="@mipmap/ic_launcher_bat_round" android:targetActivity=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -235,7 +235,7 @@
         </activity-alias>
 
         <!-- Minimal App Icon (Activity Alias) -->
-        <activity-alias android:name=".MainActivity.MinimalIcon" android:enabled="false" android:label="FadCam" android:icon="@mipmap/ic_launcher_minimal" android:roundIcon="@mipmap/ic_launcher_minimal_round" android:targetActivity=".MainActivity" android:exported="true">
+        <activity-alias android:name=".MainActivity.MinimalIcon" android:enabled="false" android:label="ShahidCam" android:icon="@mipmap/ic_launcher_minimal" android:roundIcon="@mipmap/ic_launcher_minimal_round" android:targetActivity=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -275,7 +275,7 @@
         
         <!-- Transparent activity for requesting screen recording permission without bringing app to foreground -->
         <activity 
-            android:name=".fadrec.ui.TransparentPermissionActivity" 
+            android:name=".shahidrec.ui.TransparentPermissionActivity" 
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:excludeFromRecents="true" 
             android:noHistory="true" 
@@ -310,8 +310,8 @@
 
         <!-- Accessibility screenshot service removed for Google Play Store compliance -->
 
-        <!-- Faditor export service for background video export -->
-        <service android:name=".ui.faditor.export.ExportService" android:exported="false" android:foregroundServiceType="dataSync" />
+        <!-- ShahidEditor export service for background video export -->
+        <service android:name=".ui.shahideditor.export.ExportService" android:exported="false" android:foregroundServiceType="dataSync" />
 
         <!-- Media button receiver to satisfy MediaSessionCompat requirement for a unique receiver -->
         <receiver android:name=".services.MediaButtonReceiver" android:exported="false">
@@ -370,8 +370,8 @@
         <activity android:name=".ui.WhatsNewActivity" android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
 
         <activity 
-            android:name=".ui.FadCamProActivity" 
-            android:theme="@style/FadCamProTheme"
+            android:name=".ui.ShahidCamProActivity" 
+            android:theme="@style/ShahidCamProTheme"
             android:exported="false" />
 
         <!-- Services and receivers remain unchanged -->
@@ -395,23 +395,23 @@
         <!-- Remote Streaming Service for HTTP LAN streaming -->
         <service android:name=".streaming.RemoteStreamService" android:enabled="true" android:exported="false" android:foregroundServiceType="dataSync" />
 
-        <!-- Screen Recording Service for FadRec feature -->
-        <service android:name=".fadrec.services.ScreenRecordingService" android:enabled="true" android:exported="false" android:foregroundServiceType="mediaProjection|microphone" />
+        <!-- Screen Recording Service for ShahidRec feature -->
+        <service android:name=".shahidrec.services.ScreenRecordingService" android:enabled="true" android:exported="false" android:foregroundServiceType="mediaProjection|microphone" />
 
-        <!-- Floating controls overlay service for FadRec -->
-        <service android:name=".fadrec.ui.FloatingControlsService" android:enabled="true" android:exported="false" />
+        <!-- Floating controls overlay service for ShahidRec -->
+        <service android:name=".shahidrec.ui.FloatingControlsService" android:enabled="true" android:exported="false" />
 
-        <!-- Annotation overlay service for FadRec -->
-        <service android:name=".fadrec.ui.AnnotationService" android:enabled="true" android:exported="false" android:foregroundServiceType="specialUse" />
+        <!-- Annotation overlay service for ShahidRec -->
+        <service android:name=".shahidrec.ui.AnnotationService" android:enabled="true" android:exported="false" android:foregroundServiceType="specialUse" />
 
         <!-- Transparent dialog activity for color picker -->
-        <activity android:name=".fadrec.ui.ColorPickerDialogActivity" android:theme="@style/Theme.ShahidCam.TransparentDialog" android:excludeFromRecents="true" android:exported="false" />
+        <activity android:name=".shahidrec.ui.ColorPickerDialogActivity" android:theme="@style/Theme.ShahidCam.TransparentDialog" android:excludeFromRecents="true" android:exported="false" />
 
         <!-- Transparent dialog activity for project naming -->
-        <activity android:name=".fadrec.ui.ProjectNamingDialogActivity" android:theme="@style/Theme.ShahidCam.TransparentDialog" android:excludeFromRecents="true" android:exported="false" />
+        <activity android:name=".shahidrec.ui.ProjectNamingDialogActivity" android:theme="@style/Theme.ShahidCam.TransparentDialog" android:excludeFromRecents="true" android:exported="false" />
 
         <!-- Transparent dialog activity for project selection -->
-        <activity android:name=".fadrec.ui.ProjectSelectionDialogActivity" android:theme="@style/Theme.ShahidCam.TransparentDialog" android:excludeFromRecents="true" android:exported="false" />
+        <activity android:name=".shahidrec.ui.ProjectSelectionDialogActivity" android:theme="@style/Theme.ShahidCam.TransparentDialog" android:excludeFromRecents="true" android:exported="false" />
 
         <!-- Privacy Black Screen Activity -->
         <activity android:name=".ui.PrivacyBlackActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:screenOrientation="portrait" android:excludeFromRecents="true" android:exported="false" />

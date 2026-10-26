@@ -72,9 +72,9 @@ public class AdvancedSettingsFragment extends Fragment {
                 android.widget.Toast.makeText(requireContext(), R.string.mini_app_coming_soon_desc, android.widget.Toast.LENGTH_SHORT).show()
             );
         }
-        View fadcrypt = view.findViewById(R.id.row_fadcrypt);
-        if (fadcrypt != null) {
-            fadcrypt.setOnClickListener(v ->
+        View shahidvault = view.findViewById(R.id.row_shahidvault);
+        if (shahidvault != null) {
+            shahidvault.setOnClickListener(v ->
                 android.widget.Toast.makeText(requireContext(), R.string.mini_app_coming_soon_desc, android.widget.Toast.LENGTH_SHORT).show()
             );
         }

@@ -110,18 +110,18 @@ public class ShortcutsSettingsFragment extends Fragment {
                 getString(R.string.torch_shortcut_short_label),
                 new Intent(Intent.ACTION_VIEW).setClassName(requireContext(), "com.shahid.cam.TorchToggleActivity"),
                 ShortcutsManager.ID_TORCH);
-        wireShortcutRow(view, R.id.cell_photo, R.id.icon_photo, R.drawable.fadshot_shortcut,
+        wireShortcutRow(view, R.id.cell_photo, R.id.icon_photo, R.drawable.shahidshot_shortcut,
                 getString(R.string.shortcut_take_photo),
                 new Intent(Intent.ACTION_VIEW).setClassName(requireContext(), "com.shahid.cam.PhotoCaptureActivity"),
                 ShortcutsManager.ID_SHOT);
-        wireShortcutRow(view, R.id.cell_photo_front, R.id.icon_photo_front, R.drawable.fadshot_front_shortcut,
+        wireShortcutRow(view, R.id.cell_photo_front, R.id.icon_photo_front, R.drawable.shahidshot_front_shortcut,
                 getString(R.string.shortcut_take_photo_front),
                 new Intent(Intent.ACTION_VIEW)
                         .setClassName(requireContext(), "com.shahid.cam.PhotoCaptureActivity")
                         .putExtra(com.shahid.cam.PhotoCaptureActivity.EXTRA_SHORTCUT_PHOTO_CAMERA_MODE,
                                 com.shahid.cam.PhotoCaptureActivity.PHOTO_CAMERA_MODE_FRONT),
                 ShortcutsManager.ID_SHOT_FRONT);
-        wireShortcutRow(view, R.id.cell_screenshot, R.id.icon_screenshot, R.drawable.fadrec_screenshot_shortcut,
+        wireShortcutRow(view, R.id.cell_screenshot, R.id.icon_screenshot, R.drawable.shahidrec_screenshot_shortcut,
                 getString(R.string.shortcut_take_screenshot),
                 new Intent(Intent.ACTION_VIEW).setClassName(requireContext(), "com.shahid.cam.ScreenShotCaptureActivity"),
                 ShortcutsManager.ID_SCREENSHOT);
@@ -434,9 +434,9 @@ public class ShortcutsSettingsFragment extends Fragment {
         } else if (ShortcutsManager.ID_TORCH.equals(shortcutId)) {
             return "Torch";
         } else if (ShortcutsManager.ID_SHOT.equals(shortcutId)) {
-            return "FadShot Back";
+            return "ShahidShot Back";
         } else if (ShortcutsManager.ID_SHOT_FRONT.equals(shortcutId)) {
-            return "FadShot Front";
+            return "ShahidShot Front";
         } else if (ShortcutsManager.ID_SCREENSHOT.equals(shortcutId)) {
             return "Screen Rec";
         }
@@ -517,18 +517,18 @@ public class ShortcutsSettingsFragment extends Fragment {
                 new Intent(Intent.ACTION_VIEW).setClassName(requireContext(), "com.shahid.cam.TorchToggleActivity"),
                 ShortcutsManager.ID_TORCH);
         // Photo
-        wireShortcutRow(view, R.id.cell_photo, R.id.icon_photo, R.drawable.fadshot_shortcut,
+        wireShortcutRow(view, R.id.cell_photo, R.id.icon_photo, R.drawable.shahidshot_shortcut,
                 getString(R.string.shortcut_take_photo),
                 new Intent(Intent.ACTION_VIEW).setClassName(requireContext(), "com.shahid.cam.PhotoCaptureActivity"),
                 ShortcutsManager.ID_SHOT);
-        wireShortcutRow(view, R.id.cell_photo_front, R.id.icon_photo_front, R.drawable.fadshot_front_shortcut,
+        wireShortcutRow(view, R.id.cell_photo_front, R.id.icon_photo_front, R.drawable.shahidshot_front_shortcut,
                 getString(R.string.shortcut_take_photo_front),
                 new Intent(Intent.ACTION_VIEW)
                         .setClassName(requireContext(), "com.shahid.cam.PhotoCaptureActivity")
                         .putExtra(com.shahid.cam.PhotoCaptureActivity.EXTRA_SHORTCUT_PHOTO_CAMERA_MODE,
                                 com.shahid.cam.PhotoCaptureActivity.PHOTO_CAMERA_MODE_FRONT),
                 ShortcutsManager.ID_SHOT_FRONT);
-        wireShortcutRow(view, R.id.cell_screenshot, R.id.icon_screenshot, R.drawable.fadrec_screenshot_shortcut,
+        wireShortcutRow(view, R.id.cell_screenshot, R.id.icon_screenshot, R.drawable.shahidrec_screenshot_shortcut,
                 getString(R.string.shortcut_take_screenshot),
                 new Intent(Intent.ACTION_VIEW).setClassName(requireContext(), "com.shahid.cam.ScreenShotCaptureActivity"),
                 ShortcutsManager.ID_SCREENSHOT);
@@ -697,7 +697,7 @@ public class ShortcutsSettingsFragment extends Fragment {
         items.add(new com.shahid.cam.ui.picker.OptionItem(
                 "branding",
                 getString(R.string.widget_branding_title),
-                R.drawable.fadseclab_flag,
+                R.drawable.shahidlabs_flag,
                 prefs.showBranding()));
 
         com.shahid.cam.ui.picker.PickerBottomSheetFragment sheet = com.shahid.cam.ui.picker.PickerBottomSheetFragment

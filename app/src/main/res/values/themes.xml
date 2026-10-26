@@ -16,7 +16,7 @@
         <item name="colorStatusBar">@color/gray</item>
         <item name="toolbarStyle">@style/Widget.ShahidCam.Toolbar</item>
         <item name="bottomNavigationStyle">@style/Widget.ShahidCam.BottomNavigationView</item>
-        <item name="materialAlertDialogTheme">@style/ThemeOverlay.FadCam.Dialog</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.ShahidCam.Dialog</item>
         <!-- Switch styling -->
         <item name="switchStyle">@style/Widget.ShahidCam.Switch</item>
         <item name="materialSwitchStyle">@style/Widget.ShahidCam.Switch</item>
@@ -60,7 +60,7 @@
         <item name="android:windowBackground">@color/black</item>
         <!-- SplashScreen API attrs -->
         <item name="windowSplashScreenBackground">@color/black</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/fadseclab_flag</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/shahidcam_server_room_bg_flag</item>
         <item name="android:statusBarColor">@color/black</item>
         <item name="android:navigationBarColor">@color/black</item>
         <item name="android:windowLightStatusBar">false</item>
@@ -96,7 +96,7 @@
         <item name="colorSurface">@color/amoled_surface</item>
         <item name="colorOnSurface">@color/amoled_text_primary</item>
         <!-- Dialog theme override -->
-        <item name="materialAlertDialogTheme">@style/ThemeOverlay.FadCam.Amoled.MaterialAlertDialog</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.ShahidCam.Amoled.MaterialAlertDialog</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogTheme</item>
         <!-- Card and surface styles -->
         <item name="cardViewStyle">@style/Theme.ShahidCam.AmoledCardView</item>
@@ -134,7 +134,7 @@
         <item name="homeRailTextPrimary">#F3F4F6</item>
         <item name="homeRailTextSecondary">#AFB4BA</item>
         <item name="homeRailAccent">#C2CEDA</item>
-        <!-- AMOLED theme picker colors with proper contrast for Faded Night -->
+        <!-- AMOLED theme picker colors with proper contrast for Shahid Dark -->
         <item name="pickerButtonBackground">@color/amoled_picker_button_background</item>
         <item name="pickerButtonText">@color/amoled_picker_button_text</item>
         <item name="pickerIconTint">@color/amoled_picker_icon_tint</item>
@@ -159,7 +159,7 @@
         <item name="itemPaddingBottom">0dp</item>
     </style>
 
-    <style name="ThemeOverlay.FadCam.Amoled.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+    <style name="ThemeOverlay.ShahidCam.Amoled.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="android:textColorPrimary">@color/amoled_text_primary</item>
         <item name="android:textColorSecondary">@color/amoled_text_primary</item>
         <item name="android:background">@color/amoled_surface</item>
@@ -197,13 +197,13 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textColorPrimary">@color/white</item>
         <item name="android:textColorSecondary">@color/red_theme_text_secondary_dark</item>
-        <item name="android:dialogTheme">@style/ThemeOverlay.FadCam.Red.Dialog</item>
+        <item name="android:dialogTheme">@style/ThemeOverlay.ShahidCam.Red.Dialog</item>
         <item name="android:buttonStyle">@style/Widget.ShahidCam.Red.Button</item>
         <item name="android:editTextBackground">@drawable/red_theme_edittext_bg</item>
         <item name="android:popupMenuStyle">@style/Widget.ShahidCam.Red.PopupMenu</item>
         <item name="toolbarStyle">@style/Widget.ShahidCam.Toolbar</item>
         <item name="bottomNavigationStyle">@style/Widget.ShahidCam.BottomNavigationView</item>
-        <item name="materialAlertDialogTheme">@style/ThemeOverlay.FadCam.Red.Dialog</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.ShahidCam.Red.Dialog</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogTheme</item>
         <!-- Switch styling -->
         <item name="switchStyle">@style/Widget.ShahidCam.Switch</item>
@@ -238,7 +238,7 @@
         <item name="pickerSliderInactive">@color/red_theme_slider_inactive</item>
     </style>
 
-    <style name="ThemeOverlay.FadCam.Red.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+    <style name="ThemeOverlay.ShahidCam.Red.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="android:background">@color/red_theme_surface_dark</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textColorPrimary">@android:color/white</item>
@@ -289,13 +289,13 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textColorPrimary">@color/white</item>
         <item name="android:textColorSecondary">@color/gold_theme_text_secondary_dark</item>
-        <item name="android:dialogTheme">@style/ThemeOverlay.FadCam.Gold.Dialog</item>
+        <item name="android:dialogTheme">@style/ThemeOverlay.ShahidCam.Gold.Dialog</item>
         <item name="android:buttonStyle">@style/Widget.ShahidCam.Gold.Button</item>
         <item name="android:editTextBackground">@drawable/gold_theme_edittext_bg</item>
         <item name="android:popupMenuStyle">@style/Widget.ShahidCam.Gold.PopupMenu</item>
         <item name="toolbarStyle">@style/Widget.ShahidCam.Toolbar</item>
         <item name="bottomNavigationStyle">@style/Widget.ShahidCam.BottomNavigationView</item>
-        <item name="materialAlertDialogTheme">@style/ThemeOverlay.FadCam.Gold.Dialog</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.ShahidCam.Gold.Dialog</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogTheme</item>
         <!-- Switch styling -->
         <item name="switchStyle">@style/Widget.ShahidCam.Switch</item>
@@ -330,7 +330,7 @@
         <item name="pickerSliderInactive">@color/gold_theme_slider_inactive</item>
     </style>
 
-    <style name="ThemeOverlay.FadCam.Gold.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+    <style name="ThemeOverlay.ShahidCam.Gold.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="android:background">@color/gold_theme_surface_dark</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textColorPrimary">@android:color/white</item>
@@ -375,13 +375,13 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textColorPrimary">@color/white</item>
         <item name="android:textColorSecondary">@color/silentforest_theme_text_secondary_dark</item>
-        <item name="android:dialogTheme">@style/ThemeOverlay.FadCam.SilentForest.Dialog</item>
+        <item name="android:dialogTheme">@style/ThemeOverlay.ShahidCam.SilentForest.Dialog</item>
         <item name="android:buttonStyle">@style/Widget.ShahidCam.SilentForest.Button</item>
         <item name="android:editTextBackground">@drawable/silentforest_theme_edittext_bg</item>
         <item name="android:popupMenuStyle">@style/Widget.ShahidCam.SilentForest.PopupMenu</item>
         <item name="toolbarStyle">@style/Widget.ShahidCam.Toolbar</item>
         <item name="bottomNavigationStyle">@style/Widget.ShahidCam.BottomNavigationView</item>
-        <item name="materialAlertDialogTheme">@style/ThemeOverlay.FadCam.SilentForest.Dialog</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.ShahidCam.SilentForest.Dialog</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogTheme</item>
         <!-- Switch styling -->
         <item name="switchStyle">@style/Widget.ShahidCam.Switch</item>
@@ -416,7 +416,7 @@
         <item name="pickerSliderInactive">@color/silentforest_theme_slider_inactive</item>
     </style>
 
-    <style name="ThemeOverlay.FadCam.SilentForest.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+    <style name="ThemeOverlay.ShahidCam.SilentForest.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="android:background">@color/silentforest_theme_surface_dark</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textColorPrimary">@android:color/white</item>
@@ -461,13 +461,13 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textColorPrimary">@color/white</item>
         <item name="android:textColorSecondary">@color/shadowalloy_theme_text_secondary_dark</item>
-        <item name="android:dialogTheme">@style/ThemeOverlay.FadCam.ShadowAlloy.Dialog</item>
+        <item name="android:dialogTheme">@style/ThemeOverlay.ShahidCam.ShadowAlloy.Dialog</item>
         <item name="android:buttonStyle">@style/Widget.ShahidCam.ShadowAlloy.Button</item>
         <item name="android:editTextBackground">@drawable/shadowalloy_theme_edittext_bg</item>
         <item name="android:popupMenuStyle">@style/Widget.ShahidCam.ShadowAlloy.PopupMenu</item>
         <item name="toolbarStyle">@style/Widget.ShahidCam.Toolbar</item>
         <item name="bottomNavigationStyle">@style/Widget.ShahidCam.BottomNavigationView</item>
-        <item name="materialAlertDialogTheme">@style/ThemeOverlay.FadCam.ShadowAlloy.Dialog</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.ShahidCam.ShadowAlloy.Dialog</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogTheme</item>
         <!-- Switch styling -->
         <item name="switchStyle">@style/Widget.ShahidCam.Switch</item>
@@ -502,7 +502,7 @@
         <item name="pickerSliderInactive">@color/shadowalloy_theme_slider_inactive</item>
     </style>
 
-    <style name="ThemeOverlay.FadCam.ShadowAlloy.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+    <style name="ThemeOverlay.ShahidCam.ShadowAlloy.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="android:background">@color/shadowalloy_theme_surface_dark</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textColorPrimary">@android:color/white</item>
@@ -547,13 +547,13 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textColorPrimary">@color/white</item>
         <item name="android:textColorSecondary">@color/pookiepink_theme_text_secondary_dark</item>
-        <item name="android:dialogTheme">@style/ThemeOverlay.FadCam.PookiePink.Dialog</item>
+        <item name="android:dialogTheme">@style/ThemeOverlay.ShahidCam.PookiePink.Dialog</item>
         <item name="android:buttonStyle">@style/Widget.ShahidCam.PookiePink.Button</item>
         <item name="android:editTextBackground">@drawable/pookiepink_theme_edittext_bg</item>
         <item name="android:popupMenuStyle">@style/Widget.ShahidCam.PookiePink.PopupMenu</item>
         <item name="toolbarStyle">@style/Widget.ShahidCam.Toolbar</item>
         <item name="bottomNavigationStyle">@style/Widget.ShahidCam.BottomNavigationView</item>
-        <item name="materialAlertDialogTheme">@style/ThemeOverlay.FadCam.PookiePink.Dialog</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.ShahidCam.PookiePink.Dialog</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogTheme</item>
         <!-- Switch styling -->
         <item name="switchStyle">@style/Widget.ShahidCam.Switch</item>
@@ -588,7 +588,7 @@
         <item name="pickerSliderInactive">@color/pookiepink_theme_slider_inactive</item>
     </style>
 
-    <style name="ThemeOverlay.FadCam.PookiePink.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+    <style name="ThemeOverlay.ShahidCam.PookiePink.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="android:background">@color/pookiepink_theme_surface_dark</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textColorPrimary">@android:color/white</item>
@@ -633,13 +633,13 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textColorPrimary">@color/black</item>
         <item name="android:textColorSecondary">@color/snowveil_theme_text_secondary_light</item>
-        <item name="android:dialogTheme">@style/ThemeOverlay.FadCam.SnowVeil.Dialog</item>
+        <item name="android:dialogTheme">@style/ThemeOverlay.ShahidCam.SnowVeil.Dialog</item>
         <item name="android:buttonStyle">@style/Widget.ShahidCam.SnowVeil.Button</item>
         <item name="android:editTextBackground">@drawable/snowveil_theme_edittext_bg</item>
         <item name="android:popupMenuStyle">@style/Widget.ShahidCam.SnowVeil.PopupMenu</item>
         <item name="toolbarStyle">@style/Widget.ShahidCam.Toolbar.Light</item>
         <item name="bottomNavigationStyle">@style/Widget.ShahidCam.BottomNavigationView.Light</item>
-        <item name="materialAlertDialogTheme">@style/ThemeOverlay.FadCam.SnowVeil.Dialog</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.ShahidCam.SnowVeil.Dialog</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogTheme</item>
         <!-- Force pure white CardView backgrounds for better contrast with black text -->
         <item name="cardViewStyle">@style/Theme.ShahidCam.SnowVeilCardView</item>
@@ -708,7 +708,7 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="ThemeOverlay.FadCam.SnowVeil.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+    <style name="ThemeOverlay.ShahidCam.SnowVeil.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="android:background">@color/snowveil_theme_surface_light</item>
         <item name="android:textColor">@android:color/black</item>
         <item name="android:textColorPrimary">@android:color/black</item>
@@ -742,8 +742,8 @@
         <item name="labelVisibilityMode">selected</item>
         <item name="itemPaddingTop">0dp</item>
         <item name="itemPaddingBottom">0dp</item>
-        <item name="itemTextAppearanceActive">@style/TextAppearance.FadCam.BottomNav.Active</item>
-        <item name="itemTextAppearanceInactive">@style/TextAppearance.FadCam.BottomNav.Inactive</item>
+        <item name="itemTextAppearanceActive">@style/TextAppearance.ShahidCam.BottomNav.Active</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.ShahidCam.BottomNav.Inactive</item>
     </style>
 
     <style name="Widget.ShahidCam.Toolbar" parent="Widget.MaterialComponents.Toolbar">
@@ -761,24 +761,24 @@
         <item name="labelVisibilityMode">selected</item>
         <item name="itemPaddingTop">0dp</item>
         <item name="itemPaddingBottom">0dp</item>
-        <item name="itemTextAppearanceActive">@style/TextAppearance.FadCam.BottomNav.Active</item>
-        <item name="itemTextAppearanceInactive">@style/TextAppearance.FadCam.BottomNav.Inactive</item>
+        <item name="itemTextAppearanceActive">@style/TextAppearance.ShahidCam.BottomNav.Active</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.ShahidCam.BottomNav.Inactive</item>
     </style>
 
-    <style name="TextAppearance.FadCam.BottomNav.Active" parent="TextAppearance.MaterialComponents.Caption">
+    <style name="TextAppearance.ShahidCam.BottomNav.Active" parent="TextAppearance.MaterialComponents.Caption">
         <item name="android:textSize">10sp</item>
         <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:includeFontPadding">true</item>
     </style>
 
-    <style name="TextAppearance.FadCam.BottomNav.Inactive" parent="TextAppearance.MaterialComponents.Caption">
+    <style name="TextAppearance.ShahidCam.BottomNav.Inactive" parent="TextAppearance.MaterialComponents.Caption">
         <item name="android:textSize">10sp</item>
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:includeFontPadding">true</item>
     </style>
 
     <!-- Fix Start: Add theme overlays for bottom sheets and dialogs for all themes -->
-    <style name="ThemeOverlay.FadCam.BottomSheet" parent="ThemeOverlay.Material3.BottomSheetDialog">
+    <style name="ThemeOverlay.ShahidCam.BottomSheet" parent="ThemeOverlay.Material3.BottomSheetDialog">
         <item name="android:background">?attr/colorDialog</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textColorPrimary">@android:color/white</item>
@@ -787,7 +787,7 @@
     </style>
 
     <!-- Add Snow Veil specific bottom sheet style -->
-    <style name="ThemeOverlay.FadCam.SnowVeil.BottomSheet" parent="ThemeOverlay.Material3.BottomSheetDialog">
+    <style name="ThemeOverlay.ShahidCam.SnowVeil.BottomSheet" parent="ThemeOverlay.Material3.BottomSheetDialog">
         <item name="android:background">@color/snowveil_theme_surface_light</item>
         <item name="android:textColor">@android:color/black</item>
         <item name="android:textColorPrimary">@android:color/black</item>
@@ -797,7 +797,7 @@
         <item name="radioButtonStyle">@style/Widget.ShahidCam.SnowVeil.RadioButton</item>
     </style>
 
-    <style name="ThemeOverlay.FadCam.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+    <style name="ThemeOverlay.ShahidCam.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="android:background">?attr/colorDialog</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textColorPrimary">@android:color/white</item>
@@ -821,7 +821,7 @@
         <item name="colorStatusBar">@color/gray</item>
         <item name="toolbarStyle">@style/Widget.ShahidCam.Toolbar</item>
         <item name="bottomNavigationStyle">@style/Widget.ShahidCam.BottomNavigationView</item>
-        <item name="materialAlertDialogTheme">@style/ThemeOverlay.FadCam.Dialog</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.ShahidCam.Dialog</item>
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogTheme</item>
         <item name="android:colorBackground">@color/black</item>
         <item name="colorSurface">@color/midnight_dusk_bg</item>

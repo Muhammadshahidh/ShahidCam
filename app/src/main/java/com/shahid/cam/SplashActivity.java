@@ -11,7 +11,7 @@ import com.shahid.cam.ui.WatchMainActivity;
 import com.shahid.cam.utils.RuntimeCompat;
 
 /**
- * Simple splash screen activity showing the FadSecLab flag centered.
+ * Simple splash screen activity showing the ShahidLabs flag centered.
  * Uses a short delay, then routes to the appropriate main activity:
  * - Wear OS: {@link WatchMainActivity} (minimal watch UI)
  * - Phone/tablet: {@link MainActivity}

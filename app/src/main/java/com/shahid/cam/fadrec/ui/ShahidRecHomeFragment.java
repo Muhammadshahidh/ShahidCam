@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.ui;
+package com.shahid.cam.shahidrec.ui;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -32,9 +32,9 @@ import androidx.core.content.ContextCompat;
 import com.shahid.cam.Constants;
 import com.shahid.cam.R;
 import com.shahid.cam.SharedPreferencesManager;
-import com.shahid.cam.fadrec.MediaProjectionHelper;
-import com.shahid.cam.fadrec.ScreenRecordingState;
-import com.shahid.cam.fadrec.services.ScreenRecordingService;
+import com.shahid.cam.shahidrec.MediaProjectionHelper;
+import com.shahid.cam.shahidrec.ScreenRecordingState;
+import com.shahid.cam.shahidrec.services.ScreenRecordingService;
 import com.shahid.cam.ui.HomeFragment;
 import com.shahid.cam.ui.picker.OptionItem;
 import com.shahid.cam.ui.picker.PickerBottomSheetFragment;
@@ -47,7 +47,7 @@ import com.google.android.material.button.MaterialButton;
 import android.os.Parcelable;
 
 /**
- * FadRec Home Fragment - Extends HomeFragment for screen recording functionality.
+ * ShahidRec Home Fragment - Extends HomeFragment for screen recording functionality.
  * Uses inheritance to reuse camera recording UI while adapting for screen recording.
  * 
  * Key differences from parent HomeFragment:
@@ -56,9 +56,9 @@ import android.os.Parcelable;
  * - Shows screen resolution instead of camera info
  * - Uses ScreenRecordingService instead of RecordingService
  */
-public class FadRecHomeFragment extends HomeFragment {
+public class ShahidRecHomeFragment extends HomeFragment {
     
-    private static final String TAG = "FadRecHomeFragment";
+    private static final String TAG = "ShahidRecHomeFragment";
 
     // MediaProjection permission handling
     private MediaProjectionHelper mediaProjectionHelper;
@@ -98,7 +98,7 @@ public class FadRecHomeFragment extends HomeFragment {
     // Timer handler for live updates of elapsed/remaining time
     private android.os.Handler timerHandler = new android.os.Handler(android.os.Looper.getMainLooper());
     private Runnable timerUpdateRunnable;
-    private MaterialButton buttonFadRecMute;
+    private MaterialButton buttonShahidRecMute;
     private boolean screenCardInfoInitialized = false;
     private final Runnable pendingStopStateReconcileRunnable = this::queryScreenRecordingState;
     
@@ -108,10 +108,10 @@ public class FadRecHomeFragment extends HomeFragment {
     private boolean isRecordingForcedMuted = false;
 
     /**
-     * Create a new instance of FadRecHomeFragment.
+     * Create a new instance of ShahidRecHomeFragment.
      */
-    public static FadRecHomeFragment newInstance() {
-        return new FadRecHomeFragment();
+    public static ShahidRecHomeFragment newInstance() {
+        return new ShahidRecHomeFragment();
     }
 
     @Override
@@ -171,7 +171,7 @@ public class FadRecHomeFragment extends HomeFragment {
                     updateUIForRecordingState();
                     pendingPreviewOnlyPermission = false;
                     Toast.makeText(requireContext(), 
-                        com.shahid.cam.R.string.fadrec_permission_denied, 
+                        com.shahid.cam.R.string.shahidrec_permission_denied, 
                         Toast.LENGTH_SHORT).show();
                 }
             }
@@ -210,7 +210,7 @@ public class FadRecHomeFragment extends HomeFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         
-        // Apply FadRec-specific UI customizations
+        // Apply ShahidRec-specific UI customizations
         customizeUIForScreenRecording(view);
         view.post(this::updateScreenRecordingCardInfo);
         
@@ -225,7 +225,7 @@ public class FadRecHomeFragment extends HomeFragment {
                 if (getActivity() != null) {
                     com.shahid.cam.ui.OverlayNavUtil.show(
                             getActivity(),
-                            new com.shahid.cam.fadrec.ui.ScreenRecordingSettingsFragment(),
+                            new com.shahid.cam.shahidrec.ui.ScreenRecordingSettingsFragment(),
                             "ScreenRecordingSettingsFragment"
                     );
                 }
@@ -275,8 +275,8 @@ public class FadRecHomeFragment extends HomeFragment {
                 @Override
                 public void onReceive(Context context, Intent intent) {
                     String action = intent.getAction();
-                    if ("com.shahid.cam.fadrec.ANNOTATION_SERVICE_STOPPED".equals(action) || 
-                        "com.shahid.cam.fadrec.ACTION_SERVICE_TERMINATED".equals(action)) {
+                    if ("com.shahid.cam.shahidrec.ANNOTATION_SERVICE_STOPPED".equals(action) || 
+                        "com.shahid.cam.shahidrec.ACTION_SERVICE_TERMINATED".equals(action)) {
                         // Service stopped or terminated, turn off the menu switch
                         if (getView() != null) {
                             View cardFloatingControls = getView().findViewById(com.shahid.cam.R.id.cardFloatingControls);
@@ -291,13 +291,13 @@ public class FadRecHomeFragment extends HomeFragment {
                         // Update SharedPreferences
                         sharedPreferencesManager.setFloatingControlsEnabled(false);
                         FLog.d(TAG, "Annotation service stopped/terminated - menu switch turned off");
-                    } else if ("com.shahid.cam.fadrec.ANNOTATION_SERVICE_READY".equals(action)) {
+                    } else if ("com.shahid.cam.shahidrec.ANNOTATION_SERVICE_READY".equals(action)) {
                         // Service initialization complete, dismiss loading dialog
                         if (loadingDialog != null && loadingDialog.isShowing()) {
                             loadingDialog.dismiss();
                             FLog.d(TAG, "Annotation service ready - loading dialog dismissed");
                         }
-                    } else if ("com.shahid.cam.fadrec.ANNOTATION_SERVICE_PERMISSION_ERROR".equals(action)) {
+                    } else if ("com.shahid.cam.shahidrec.ANNOTATION_SERVICE_PERMISSION_ERROR".equals(action)) {
                         // Overlay permission error, turn off the menu switch
                         if (getView() != null) {
                             View cardFloatingControls = getView().findViewById(com.shahid.cam.R.id.cardFloatingControls);
@@ -326,10 +326,10 @@ public class FadRecHomeFragment extends HomeFragment {
         
         try {
             IntentFilter filter = new IntentFilter();
-            filter.addAction("com.shahid.cam.fadrec.ANNOTATION_SERVICE_STOPPED");
-            filter.addAction("com.shahid.cam.fadrec.ACTION_SERVICE_TERMINATED");
-            filter.addAction("com.shahid.cam.fadrec.ANNOTATION_SERVICE_READY");
-            filter.addAction("com.shahid.cam.fadrec.ANNOTATION_SERVICE_PERMISSION_ERROR");
+            filter.addAction("com.shahid.cam.shahidrec.ANNOTATION_SERVICE_STOPPED");
+            filter.addAction("com.shahid.cam.shahidrec.ACTION_SERVICE_TERMINATED");
+            filter.addAction("com.shahid.cam.shahidrec.ANNOTATION_SERVICE_READY");
+            filter.addAction("com.shahid.cam.shahidrec.ANNOTATION_SERVICE_PERMISSION_ERROR");
             
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
                 requireContext().registerReceiver(annotationServiceReceiver, filter, android.content.Context.RECEIVER_NOT_EXPORTED);
@@ -346,12 +346,12 @@ public class FadRecHomeFragment extends HomeFragment {
     }
         /**
      * Override parent's method to handle button reset for screen recording mode.
-     * In FadRec mode, we don't have camera switch or torch, and pause is always enabled.
+     * In ShahidRec mode, we don't have camera switch or torch, and pause is always enabled.
      * IMPORTANT: Only reset to idle if truly idle - preserve recording state.
      */
     @Override
     protected void resetUIButtonsToIdleState() {
-        FLog.d(TAG, "FadRec: Reset UI to idle state");
+        FLog.d(TAG, "ShahidRec: Reset UI to idle state");
         if (!isAdded() || getContext() == null || getView() == null) {
             FLog.w(TAG, "resetUIButtonsToIdleState: Fragment/context unavailable");
             return;
@@ -365,7 +365,7 @@ public class FadRecHomeFragment extends HomeFragment {
             if (currentState == ScreenRecordingState.NONE) {
                 // Reset Start/Stop button to green "Start Screen Recording" state
                 if (buttonStartStop != null) {
-                    buttonStartStop.setText(com.shahid.cam.R.string.fadrec_start_screen_recording);  // ALWAYS use full text
+                    buttonStartStop.setText(com.shahid.cam.R.string.shahidrec_start_screen_recording);  // ALWAYS use full text
                     buttonStartStop.setIcon(
                         AppCompatResources.getDrawable(getContext(), com.shahid.cam.R.drawable.play_button_rounded)
                     );
@@ -373,7 +373,7 @@ public class FadRecHomeFragment extends HomeFragment {
                     buttonStartStop.setEnabled(true);
                     buttonStartStop.setAlpha(1.0f);
                 }
-                FLog.d(TAG, "FadRec: Start button reset to idle (Start Screen Recording)");
+                FLog.d(TAG, "ShahidRec: Start button reset to idle (Start Screen Recording)");
             } else {
                 // Recording in progress or paused - keep stop button state
                 if (buttonStartStop != null) {
@@ -385,7 +385,7 @@ public class FadRecHomeFragment extends HomeFragment {
                     buttonStartStop.setEnabled(true);
                     buttonStartStop.setAlpha(1.0f);
                 }
-                FLog.d(TAG, "FadRec: Start button kept as Stop (recording active: " + currentState + ")");
+                FLog.d(TAG, "ShahidRec: Start button kept as Stop (recording active: " + currentState + ")");
             }
             
             // Keep pause button ENABLED (different from parent which disables it)
@@ -403,7 +403,7 @@ public class FadRecHomeFragment extends HomeFragment {
                     buttonPauseResume.setAlpha(1.0f);
                 }
                 
-                // Icon-only, no text label (like FadCam)
+                // Icon-only, no text label (like ShahidCam)
                 if (currentState == ScreenRecordingState.PAUSED) {
                     buttonPauseResume.setIcon(
                         AppCompatResources.getDrawable(getContext(), com.shahid.cam.R.drawable.play_button_rounded)
@@ -425,7 +425,7 @@ public class FadRecHomeFragment extends HomeFragment {
             View torchWrapperGone = getView() != null ? getView().findViewById(com.shahid.cam.R.id.torch_btn_wrapper) : null;
             if (torchWrapperGone != null) torchWrapperGone.setVisibility(View.GONE);
             
-            FLog.d(TAG, "FadRec: UI elements reset complete (screen recording mode, state: " + currentState + ")");
+            FLog.d(TAG, "ShahidRec: UI elements reset complete (screen recording mode, state: " + currentState + ")");
         } catch (Exception e) {
             FLog.e(TAG, "Error in resetUIButtonsToIdleState", e);
         }
@@ -433,7 +433,7 @@ public class FadRecHomeFragment extends HomeFragment {
 
     /**
      * Override parent's method to prevent camera-specific button state updates.
-     * In FadRec mode, start button is always available (no camera dependency).
+     * In ShahidRec mode, start button is always available (no camera dependency).
      */
     @Override
     protected void updateStartButtonAvailability() {
@@ -548,7 +548,7 @@ public class FadRecHomeFragment extends HomeFragment {
     private void configurePreviewCardForScreenRecording(View rootView) {
         TextView tvPreviewHint = rootView.findViewById(com.shahid.cam.R.id.tvPreviewHint);
         if (tvPreviewHint != null) {
-            tvPreviewHint.setText(com.shahid.cam.R.string.fadrec_preview_enable_hint);
+            tvPreviewHint.setText(com.shahid.cam.R.string.shahidrec_preview_enable_hint);
         }
     }
     
@@ -916,15 +916,15 @@ public class FadRecHomeFragment extends HomeFragment {
         // This ensures we override the parent's camera click listener with screen recording logic
         buttonStartStop = rootView.findViewById(com.shahid.cam.R.id.buttonStartStop);
         buttonPauseResume = rootView.findViewById(com.shahid.cam.R.id.buttonPauseResume);
-        buttonFadRecMute = rootView.findViewById(com.shahid.cam.R.id.buttonFadRecMute);
+        buttonShahidRecMute = rootView.findViewById(com.shahid.cam.R.id.buttonShahidRecMute);
         
         // NOTE: Don't load persisted state here - it interferes with broadcast-based state
         // State will be loaded from broadcasts or set to NONE if no broadcasts arrive
 
-        // Pill-style tap animations for the FadRec controls.
+        // Pill-style tap animations for the ShahidRec controls.
         com.shahid.cam.Utils.attachPressScale(buttonStartStop);
         com.shahid.cam.Utils.attachPressScale(buttonPauseResume);
-        com.shahid.cam.Utils.attachPressScale(buttonFadRecMute);
+        com.shahid.cam.Utils.attachPressScale(buttonShahidRecMute);
         
         // Start/Stop button
         if (buttonStartStop != null) {
@@ -983,11 +983,11 @@ public class FadRecHomeFragment extends HomeFragment {
             FLog.e(TAG, "buttonStartStop is NULL - cannot setup click listener!");
         }
 
-        if (buttonFadRecMute != null) {
-            buttonFadRecMute.setVisibility(View.VISIBLE);
-            View muteWrapperV = rootView != null ? rootView.findViewById(com.shahid.cam.R.id.fadrec_mute_wrapper) : null;
+        if (buttonShahidRecMute != null) {
+            buttonShahidRecMute.setVisibility(View.VISIBLE);
+            View muteWrapperV = rootView != null ? rootView.findViewById(com.shahid.cam.R.id.shahidrec_mute_wrapper) : null;
             if (muteWrapperV != null) muteWrapperV.setVisibility(View.VISIBLE);
-            buttonFadRecMute.setOnClickListener(v -> {
+            buttonShahidRecMute.setOnClickListener(v -> {
                 boolean isRecordingActive = screenRecordingState == ScreenRecordingState.IN_PROGRESS
                     || screenRecordingState == ScreenRecordingState.PAUSED;
                 
@@ -1003,7 +1003,7 @@ public class FadRecHomeFragment extends HomeFragment {
         }
         
         // Safety: HomeFragment can disable this button based on camera resources.
-        // FadRec must keep it enabled at all times.
+        // ShahidRec must keep it enabled at all times.
         try {
             if (buttonStartStop != null) {
                 buttonStartStop.setEnabled(true);
@@ -1099,9 +1099,9 @@ public class FadRecHomeFragment extends HomeFragment {
     private void showMicPermissionDeniedDialog() {
         if (!isAdded()) return;
         new com.google.android.material.dialog.MaterialAlertDialogBuilder(requireContext())
-            .setTitle(com.shahid.cam.R.string.fadrec_mic_permission_needed_title)
-            .setMessage(com.shahid.cam.R.string.fadrec_mic_permission_needed_message)
-            .setPositiveButton(com.shahid.cam.R.string.fadrec_record_muted, (dialog, which) -> {
+            .setTitle(com.shahid.cam.R.string.shahidrec_mic_permission_needed_title)
+            .setMessage(com.shahid.cam.R.string.shahidrec_mic_permission_needed_message)
+            .setPositiveButton(com.shahid.cam.R.string.shahidrec_record_muted, (dialog, which) -> {
                 forceMutedNoAudioThisStart = true;
                 if (sharedPreferencesManager != null) {
                     sharedPreferencesManager.setScreenRecordingMuted(true);
@@ -1135,7 +1135,7 @@ public class FadRecHomeFragment extends HomeFragment {
         
         // Launch TransparentPermissionActivity to handle permission request
         // This activity is transparent and won't bring the main app to foreground
-        Intent intent = new Intent(requireContext(), com.shahid.cam.fadrec.ui.TransparentPermissionActivity.class);
+        Intent intent = new Intent(requireContext(), com.shahid.cam.shahidrec.ui.TransparentPermissionActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
@@ -1159,7 +1159,7 @@ public class FadRecHomeFragment extends HomeFragment {
             buttonStartStop,
             recordingActive
                 ? getString(com.shahid.cam.R.string.button_stop)
-                : getString(com.shahid.cam.R.string.fadrec_start_screen_recording),
+                : getString(com.shahid.cam.R.string.shahidrec_start_screen_recording),
             AppCompatResources.getDrawable(
                 requireContext(),
                 recordingActive
@@ -1215,7 +1215,7 @@ public class FadRecHomeFragment extends HomeFragment {
                             persistRecordingState(screenRecordingState);
                             updateUIForRecordingState();
                             syncMuteUiState();
-                            // Toast.makeText(context, com.shahid.cam.R.string.fadrec_screen_recording_started, 
+                            // Toast.makeText(context, com.shahid.cam.R.string.shahidrec_screen_recording_started, 
                             //     Toast.LENGTH_SHORT).show();
                             break;
                             
@@ -1230,7 +1230,7 @@ public class FadRecHomeFragment extends HomeFragment {
                             isRecordingForcedMuted = false;
                             updateUIForRecordingState();
                             syncMuteUiState();
-                            // Toast.makeText(context, com.shahid.cam.R.string.fadrec_screen_recording_stopped, 
+                            // Toast.makeText(context, com.shahid.cam.R.string.shahidrec_screen_recording_stopped, 
                             //     Toast.LENGTH_SHORT).show();
                             break;
                             
@@ -1241,7 +1241,7 @@ public class FadRecHomeFragment extends HomeFragment {
                             persistRecordingState(screenRecordingState);
                             updateUIForRecordingState();
                             syncMuteUiState();
-                            // Toast.makeText(context, com.shahid.cam.R.string.fadrec_screen_recording_paused, 
+                            // Toast.makeText(context, com.shahid.cam.R.string.shahidrec_screen_recording_paused, 
                             //     Toast.LENGTH_SHORT).show();
                             break;
                             
@@ -1252,7 +1252,7 @@ public class FadRecHomeFragment extends HomeFragment {
                             persistRecordingState(screenRecordingState);
                             updateUIForRecordingState();
                             syncMuteUiState();
-                            // Toast.makeText(context, com.shahid.cam.R.string.fadrec_screen_recording_resumed, 
+                            // Toast.makeText(context, com.shahid.cam.R.string.shahidrec_screen_recording_resumed, 
                             //     Toast.LENGTH_SHORT).show();
                             break;
 
@@ -1392,14 +1392,14 @@ public class FadRecHomeFragment extends HomeFragment {
         
         // Update Start/Stop button with animation
         if (buttonStartStop != null) {
-            // Never allow this button to be disabled in FadRec.
+            // Never allow this button to be disabled in ShahidRec.
             buttonStartStop.setEnabled(true);
             buttonStartStop.setClickable(true);
             buttonStartStop.setAlpha(1.0f);
             applyButtonTransition(
                 buttonStartStop,
                 screenRecordingState == ScreenRecordingState.NONE
-                    ? getString(com.shahid.cam.R.string.fadrec_start_screen_recording)
+                    ? getString(com.shahid.cam.R.string.shahidrec_start_screen_recording)
                     : getString(com.shahid.cam.R.string.button_stop),
                 AppCompatResources.getDrawable(
                     requireContext(),
@@ -1415,7 +1415,7 @@ public class FadRecHomeFragment extends HomeFragment {
             );
         }
         
-        // Update Pause/Resume button (always visible, icon-only like FadCam)
+        // Update Pause/Resume button (always visible, icon-only like ShahidCam)
         if (buttonPauseResume != null) {
             buttonPauseResume.setVisibility(View.VISIBLE); // Always visible
             
@@ -1444,8 +1444,8 @@ public class FadRecHomeFragment extends HomeFragment {
             }
         }
 
-        if (buttonFadRecMute != null) {
-            buttonFadRecMute.setVisibility(View.VISIBLE);
+        if (buttonShahidRecMute != null) {
+            buttonShahidRecMute.setVisibility(View.VISIBLE);
             syncMuteUiState();
         }
 
@@ -1473,7 +1473,7 @@ public class FadRecHomeFragment extends HomeFragment {
     }
     
     private void updateMuteButtonUi() {
-        if (buttonFadRecMute == null || !isAdded()) return;
+        if (buttonShahidRecMute == null || !isAdded()) return;
         String audioSource = sharedPreferencesManager != null
             ? sharedPreferencesManager.getScreenRecordingAudioSource()
             : Constants.AUDIO_SOURCE_MIC;
@@ -1505,38 +1505,38 @@ public class FadRecHomeFragment extends HomeFragment {
         } else {
             iconLigature = "mic"; // Microphone
         }
-        TextView muteIcon = getView() != null ? getView().findViewById(com.shahid.cam.R.id.fadrec_mute_icon) : null;
+        TextView muteIcon = getView() != null ? getView().findViewById(com.shahid.cam.R.id.shahidrec_mute_icon) : null;
         if (muteIcon != null) muteIcon.setText(iconLigature);
 
         // Button always enabled - behavior changes based on recording state
-        buttonFadRecMute.setEnabled(true);
-        buttonFadRecMute.setAlpha(1.0f);
+        buttonShahidRecMute.setEnabled(true);
+        buttonShahidRecMute.setAlpha(1.0f);
 
         // Content description reflects the CURRENT selection (not a static hint).
         if (isRecordingActive) {
-            buttonFadRecMute.setContentDescription("Toggle mute (during recording)");
+            buttonShahidRecMute.setContentDescription("Toggle mute (during recording)");
         } else if (Constants.AUDIO_SOURCE_NONE.equals(audioSource)) {
-            buttonFadRecMute.setContentDescription(getString(R.string.fadrec_audio_source_none));
+            buttonShahidRecMute.setContentDescription(getString(R.string.shahidrec_audio_source_none));
         } else if (Constants.AUDIO_SOURCE_INTERNAL.equals(audioSource)) {
-            buttonFadRecMute.setContentDescription(getString(R.string.fadrec_audio_source_internal));
+            buttonShahidRecMute.setContentDescription(getString(R.string.shahidrec_audio_source_internal));
         } else if (micWithDevice) {
-            buttonFadRecMute.setContentDescription(deviceName);
+            buttonShahidRecMute.setContentDescription(deviceName);
         } else {
-            buttonFadRecMute.setContentDescription(getString(R.string.fadrec_audio_source_mic_default));
+            buttonShahidRecMute.setContentDescription(getString(R.string.shahidrec_audio_source_mic_default));
         }
 
         // Tint: red when off, default when active
         boolean isOff = Constants.AUDIO_SOURCE_NONE.equals(audioSource);
-        buttonFadRecMute.setBackgroundResource(
+        buttonShahidRecMute.setBackgroundResource(
             isOff
                 ? com.shahid.cam.R.drawable.control_button_bg_red
                 : com.shahid.cam.R.drawable.control_button_bg
         );
-        buttonFadRecMute.setIconTint(android.content.res.ColorStateList.valueOf(android.graphics.Color.WHITE));
+        buttonShahidRecMute.setIconTint(android.content.res.ColorStateList.valueOf(android.graphics.Color.WHITE));
 
         // Tiny status label (bottom-right): OFF / MUTED / INT / MIC / USB / AUX / BT —
         // reflects the current selection, including the chosen external device.
-        TextView muteLabel = getView() != null ? getView().findViewById(com.shahid.cam.R.id.fadrec_mute_status_label) : null;
+        TextView muteLabel = getView() != null ? getView().findViewById(com.shahid.cam.R.id.shahidrec_mute_status_label) : null;
         if (muteLabel != null) {
             String label;
             int color;
@@ -1605,7 +1605,7 @@ public class FadRecHomeFragment extends HomeFragment {
         // Add audio source options with icons
         items.add(new OptionItem(
             Constants.AUDIO_SOURCE_NONE,
-            getString(R.string.fadrec_audio_source_none),
+            getString(R.string.shahidrec_audio_source_none),
             null,
             null,
             null,
@@ -1616,7 +1616,7 @@ public class FadRecHomeFragment extends HomeFragment {
         ));
         items.add(new OptionItem(
             Constants.AUDIO_SOURCE_MIC,
-            getString(R.string.fadrec_audio_source_mic),
+            getString(R.string.shahidrec_audio_source_mic),
             null,
             null,
             null,
@@ -1627,7 +1627,7 @@ public class FadRecHomeFragment extends HomeFragment {
         ));
         items.add(new OptionItem(
             Constants.AUDIO_SOURCE_INTERNAL,
-            getString(R.string.fadrec_audio_source_internal),
+            getString(R.string.shahidrec_audio_source_internal),
             null,
             null,
             null,
@@ -1727,11 +1727,11 @@ public class FadRecHomeFragment extends HomeFragment {
         });
         
         PickerBottomSheetFragment picker = PickerBottomSheetFragment.newInstance(
-            getString(R.string.fadrec_audio_source_title),
+            getString(R.string.shahidrec_audio_source_title),
             items,
             selectionBeforePick,
             resultKey,
-            getString(R.string.fadrec_audio_source_helper)
+            getString(R.string.shahidrec_audio_source_helper)
         );
         picker.show(getParentFragmentManager(), "audio_source_picker");
     }
@@ -1837,7 +1837,7 @@ public class FadRecHomeFragment extends HomeFragment {
     }
 
     private void syncMuteUiState() {
-        if (buttonFadRecMute == null || !isAdded()) return;
+        if (buttonShahidRecMute == null || !isAdded()) return;
         boolean isRecordingActive = screenRecordingState == ScreenRecordingState.IN_PROGRESS
             || screenRecordingState == ScreenRecordingState.PAUSED;
         boolean audioAvailable = isAudioEffectivelyAvailable();
@@ -1849,11 +1849,11 @@ public class FadRecHomeFragment extends HomeFragment {
                     mediaProjectionHelper.setScreenRecordingMuted(true);
                 }
             }
-            buttonFadRecMute.setEnabled(false);
-            buttonFadRecMute.setAlpha(0.5f);
+            buttonShahidRecMute.setEnabled(false);
+            buttonShahidRecMute.setAlpha(0.5f);
         } else {
-            buttonFadRecMute.setEnabled(true);
-            buttonFadRecMute.setAlpha(1.0f);
+            buttonShahidRecMute.setEnabled(true);
+            buttonShahidRecMute.setAlpha(1.0f);
         }
         updateMuteButtonUi();
     }
@@ -1925,7 +1925,7 @@ public class FadRecHomeFragment extends HomeFragment {
     }
 
     /**
-     * Unified storage/timer UI update for FadRec (screen recording).
+     * Unified storage/timer UI update for ShahidRec (screen recording).
      *
      * <p>Both STREAM_ONLY and STREAM_AND_SAVE share the same view bindings; only the
      * deduction logic and the remaining-time label differ:
@@ -1935,7 +1935,7 @@ public class FadRecHomeFragment extends HomeFragment {
      * </ul>
      *
      * <p>Reads elapsed time from {@code "screen_recording_start_time"} saved by
-     * {@link com.shahid.cam.fadrec.services.ScreenRecordingService}, uses
+     * {@link com.shahid.cam.shahidrec.services.ScreenRecordingService}, uses
      * {@code tvEstimateTitle} / {@code tvEstimateSubtitle} (the actual layout views) for
      * the time-left row, and respects the elapsed-labels visibility preference.
      */
@@ -2122,7 +2122,7 @@ public class FadRecHomeFragment extends HomeFragment {
 
     @Override
     protected int getPreviewEnableHintResId() {
-        return com.shahid.cam.R.string.fadrec_preview_enable_hint;
+        return com.shahid.cam.R.string.shahidrec_preview_enable_hint;
     }
 
     @Override
@@ -2514,7 +2514,7 @@ public class FadRecHomeFragment extends HomeFragment {
                         ? com.shahid.cam.R.drawable.play_button_rounded
                         : com.shahid.cam.R.drawable.stop_rounded));
         buttonStartStop.setText(screenRecordingState == ScreenRecordingState.NONE
-                ? getString(com.shahid.cam.R.string.fadrec_start_screen_recording)
+                ? getString(com.shahid.cam.R.string.shahidrec_start_screen_recording)
                 : getString(com.shahid.cam.R.string.button_stop));
     }
 
@@ -2572,10 +2572,10 @@ public class FadRecHomeFragment extends HomeFragment {
         
         super.onResume(); // MUST call super - Android requirement
         // NOTE: Parent's onResume() calls fetchRecordingState() which starts RecordingService (camera recording)
-        // This is WRONG for FadRec. We use ScreenRecordingService which broadcasts state via LocalBroadcastManager
+        // This is WRONG for ShahidRec. We use ScreenRecordingService which broadcasts state via LocalBroadcastManager
         // Workaround: We create shadow methods below that do nothing to prevent parent from affecting us
         
-        FLog.d(TAG, "FadRecHomeFragment resumed");
+        FLog.d(TAG, "ShahidRecHomeFragment resumed");
         
         // CRITICAL FIX: Re-setup button handlers after parent's onResume() to ensure
         // screen recording click listeners override any camera recording listeners
@@ -2704,7 +2704,7 @@ public class FadRecHomeFragment extends HomeFragment {
     @Override
     public void onPause() {
         super.onPause();
-        FLog.d(TAG, "FadRecHomeFragment paused");
+        FLog.d(TAG, "ShahidRecHomeFragment paused");
         
         // Stop timer updates when fragment is paused
         stopTimerUpdates();
@@ -2721,7 +2721,7 @@ public class FadRecHomeFragment extends HomeFragment {
     public void onStop() {
         unregisterAudioDeviceCallback();
         super.onStop();
-        FLog.d(TAG, "FadRecHomeFragment onStop");
+        FLog.d(TAG, "ShahidRecHomeFragment onStop");
         // Note: Broadcast receivers remain registered to continue receiving state updates
         // even when fragment is stopped but still in the backstack
     }
@@ -2828,25 +2828,25 @@ public class FadRecHomeFragment extends HomeFragment {
 
     /**
      * Override fetchRecordingState to prevent parent from starting RecordingService (camera recording).
-     * FadRec uses ScreenRecordingService (screen recording) which broadcasts state via LocalBroadcastManager.
+     * ShahidRec uses ScreenRecordingService (screen recording) which broadcasts state via LocalBroadcastManager.
      * State is received automatically by screenRecordingStateReceiver registered in onCreate().
      */
     @Override
     protected void fetchRecordingState() {
         // DO NOT call super.fetchRecordingState() - it starts RecordingService (camera recording)
-        // FadRec uses ScreenRecordingService (screen recording) which broadcasts state automatically
+        // ShahidRec uses ScreenRecordingService (screen recording) which broadcasts state automatically
         // The broadcast is received by screenRecordingStateReceiver when it arrives
-        FLog.d(TAG, "fetchRecordingState: Overridden (skipped) - FadRec uses screen recording service");
+        FLog.d(TAG, "fetchRecordingState: Overridden (skipped) - ShahidRec uses screen recording service");
     }
 
     /**
      * Override registerBroadcastReceivers to prevent parent from registering camera recording receivers.
-     * FadRec uses screen recording receivers which are already registered in onCreate().
+     * ShahidRec uses screen recording receivers which are already registered in onCreate().
      */
     @Override
     protected void registerBroadcastReceivers() {
         // DO NOT call super.registerBroadcastReceivers() - it registers RecordingService (camera recording) receivers
-        // FadRec screen recording receivers are already registered in onCreate() via registerScreenRecordingStateReceiver()
-        FLog.d(TAG, "registerBroadcastReceivers: Overridden (skipped) - FadRec receivers already registered");
+        // ShahidRec screen recording receivers are already registered in onCreate() via registerScreenRecordingStateReceiver()
+        FLog.d(TAG, "registerBroadcastReceivers: Overridden (skipped) - ShahidRec receivers already registered");
     }
 }

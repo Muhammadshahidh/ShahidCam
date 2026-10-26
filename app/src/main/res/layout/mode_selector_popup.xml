@@ -61,9 +61,9 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- FadCam -->
+        <!-- ShahidCam -->
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/mode_fadcam"
+            android:id="@+id/mode_shahidcam"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
@@ -92,11 +92,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="FadCam"
+                    android:text="ShahidCam"
                     android:textColor="@android:color/white"
                     android:textSize="13sp"/>
                 <TextView
-                    android:id="@+id/check_fadcam"
+                    android:id="@+id/check_shahidcam"
                     android:layout_width="18dp"
                     android:layout_height="18dp"
                     android:fontFamily="@font/materialicons"
@@ -107,9 +107,9 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- FadRec -->
+        <!-- ShahidRec -->
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/mode_fadrec"
+            android:id="@+id/mode_shahidrec"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
@@ -137,11 +137,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="FadRec"
+                    android:text="ShahidRec"
                     android:textColor="@android:color/white"
                     android:textSize="13sp"/>
                 <TextView
-                    android:id="@+id/check_fadrec"
+                    android:id="@+id/check_shahidrec"
                     android:layout_width="18dp"
                     android:layout_height="18dp"
                     android:fontFamily="@font/materialicons"

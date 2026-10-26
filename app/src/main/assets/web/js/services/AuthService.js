@@ -1,5 +1,5 @@
 /**
- * AuthService - Handles authentication for FadCam Remote
+ * AuthService - Handles authentication for ShahidCam Remote
  * Manages session tokens, login/logout, and auth state
  */
 class AuthService {
@@ -18,8 +18,8 @@ class AuthService {
      */
     loadFromStorage() {
         try {
-            this.token = localStorage.getItem('fadcam_auth_token');
-            this.rememberMe = localStorage.getItem('fadcam_remember_me') === 'true';
+            this.token = localStorage.getItem('shahidcam_auth_token');
+            this.rememberMe = localStorage.getItem('shahidcam_remember_me') === 'true';
             
             if (this.token && !this.rememberMe) {
                 // Token exists but remember me is off - clear it
@@ -39,13 +39,13 @@ class AuthService {
         
         try {
             if (rememberMe) {
-                localStorage.setItem('fadcam_auth_token', token);
-                localStorage.setItem('fadcam_remember_me', 'true');
+                localStorage.setItem('shahidcam_auth_token', token);
+                localStorage.setItem('shahidcam_remember_me', 'true');
             } else {
                 // Store in sessionStorage for current session only
-                sessionStorage.setItem('fadcam_auth_token', token);
-                localStorage.removeItem('fadcam_auth_token');
-                localStorage.setItem('fadcam_remember_me', 'false');
+                sessionStorage.setItem('shahidcam_auth_token', token);
+                localStorage.removeItem('shahidcam_auth_token');
+                localStorage.setItem('shahidcam_remember_me', 'false');
             }
         } catch (e) {
             console.error('[AuthService] Error saving token:', e);
@@ -60,9 +60,9 @@ class AuthService {
         this.authenticated = false;
         
         try {
-            localStorage.removeItem('fadcam_auth_token');
-            sessionStorage.removeItem('fadcam_auth_token');
-            localStorage.removeItem('fadcam_remember_me');
+            localStorage.removeItem('shahidcam_auth_token');
+            sessionStorage.removeItem('shahidcam_auth_token');
+            localStorage.removeItem('shahidcam_remember_me');
         } catch (e) {
             console.error('[AuthService] Error clearing token:', e);
         }
@@ -215,7 +215,7 @@ class AuthService {
         let token = this.token;
         if (!token) {
             try {
-                token = sessionStorage.getItem('fadcam_auth_token');
+                token = sessionStorage.getItem('shahidcam_auth_token');
             } catch (e) {
                 // Ignore
             }

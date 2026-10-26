@@ -18,7 +18,7 @@
     <string name="send_email">E-Mail senden</string>
     <string name="join_community">Tritt der Community bei für Hilfe, Ideenaustausch und zukünftige App-Updates</string>
     <string name="privacy_information">Datenschutzinformationen</string>
-    <string name="copyright_info"> 2024-2025 https://fadcam.faded.dev\nLizenziert unter GPL-3.0</string>
+    <string name="copyright_info"> 2024-2025 https://shahidcam.shahidcam.app\nLizenziert unter GPL-3.0</string>
     <string-array name="video_resolutions_keys">
         <item>7680x4320</item>
         <!-- 8K -->
@@ -214,7 +214,7 @@
     <string name="discord_title">Discord-Server</string>
     <string name="thankyou_msg">Danke, dass du ShahidCam nutzt!</string>
     <string name="settings_title">Einstellungen</string>
-    <string name="array_watermark_time_fadcam">Zeit mit Fadcam</string>
+    <string name="array_watermark_time_shahidcam">Zeit mit Fadcam</string>
     <string name="array_watermark_timeonly">Zeitstempel</string>
     <string name="array_watermark_nomark">Kein Wasserzeichen</string>
     <!-- recent_features and upcoming_features removed (not used in bottom sheet) -->
@@ -513,7 +513,7 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="applock_verify_to_remove">PIN zum Entfernen bestätigen</string>
     <string name="applock_verification_canceled">Bestätigung abgebrochen</string>
     <string name="version_format">v%s</string>
-    <string name="edit_with_faditorx">Mit ShahidEditorX bearbeiten</string>
+    <string name="edit_with_shahideditorx">Mit ShahidEditorX bearbeiten</string>
     <!-- Update Bottom Sheet Strings -->
     <string name="update_sarcastic_heading">📦 Oh schau, noch ein Update...</string>
     <string name="update_visit_github">GitHub besuchen</string>
@@ -532,7 +532,7 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="app_icon_faded" translatable="false">0xFF0000</string>
     <string name="app_icon_palestine" translatable="false">Sumud (صُمود)</string>
     <string name="app_icon_pakistan" translatable="false">ShahidCam</string>
-    <string name="app_icon_fadseclab" translatable="false">CyberShadowPK Lab</string>
+    <string name="app_icon_shahidlabs" translatable="false">CyberShadowPK Lab</string>
     <string name="app_icon_nooristic" translatable="false">ShahidCam ++</string>
     <string name="app_icon_bat" translatable="false">ShahidCam</string>
     <string name="app_icon_redbinary" translatable="false">$ ~/r00t</string>
@@ -676,17 +676,17 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="readme_website_subtitle">Offizielle Seite</string>
     <string name="stats_label_videos">Videos:</string>
     <string name="stats_label_used">Verwendet:</string>
-    <string name="fadrec_start_screen_recording">Bildschirmaufnahme starten</string>
-    <string name="fadrec_stop_screen_recording">Bildschirmaufnahme stoppen</string>
-    <string name="fadrec_pause_screen_recording">Bildschirmaufnahme pausieren</string>
-    <string name="fadrec_resume_screen_recording">Bildschirmaufnahme fortsetzen</string>
-    <string name="fadrec_screen_recording_started">Bildschirmaufnahme gestartet</string>
-    <string name="fadrec_screen_recording_stopped">Bildschirmaufnahme gestoppt</string>
-    <string name="fadrec_screen_recording_paused">Bildschirmaufnahme pausiert</string>
-    <string name="fadrec_screen_recording_resumed">Bildschirmaufnahme fortgesetzt</string>
-    <string name="fadrec_notification_title">Bildschirmaufnahme</string>
-    <string name="fadrec_notification_recording">Bildschirm wird aufgenommen…</string>
-    <string name="fadrec_notification_paused">Aufnahme pausiert</string>
+    <string name="shahidrec_start_screen_recording">Bildschirmaufnahme starten</string>
+    <string name="shahidrec_stop_screen_recording">Bildschirmaufnahme stoppen</string>
+    <string name="shahidrec_pause_screen_recording">Bildschirmaufnahme pausieren</string>
+    <string name="shahidrec_resume_screen_recording">Bildschirmaufnahme fortsetzen</string>
+    <string name="shahidrec_screen_recording_started">Bildschirmaufnahme gestartet</string>
+    <string name="shahidrec_screen_recording_stopped">Bildschirmaufnahme gestoppt</string>
+    <string name="shahidrec_screen_recording_paused">Bildschirmaufnahme pausiert</string>
+    <string name="shahidrec_screen_recording_resumed">Bildschirmaufnahme fortgesetzt</string>
+    <string name="shahidrec_notification_title">Bildschirmaufnahme</string>
+    <string name="shahidrec_notification_recording">Bildschirm wird aufgenommen…</string>
+    <string name="shahidrec_notification_paused">Aufnahme pausiert</string>
     <string name="floating_controls_title">Menü</string>
     <string name="floating_controls_permission_needed">Overlay-Berechtigung erforderlich</string>
     <string name="floating_controls_permission_title">Overlay-Berechtigung erforderlich</string>
@@ -709,23 +709,23 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="snap_guides">Einrast-Hilfslinien</string>
     <string name="add_text">Text hinzufügen</string>
     <string name="add_shape">Form hinzufügen</string>
-    <string name="fadrec_ready_to_record">Bereit zur Bildschirmaufnahme</string>
-    <string name="fadrec_ready_to_record_subtitle">Tippen zum Starten</string>
-    <string name="fadrec_permission_denied">Bildschirmaufnahme-Berechtigung verweigert</string>
-    <string name="fadrec_mode_title">ScreenRec • Bildschirmaufnahme</string>
-    <string name="fadrec_mute_audio">Aufnahme-Audio stummschalten</string>
-    <string name="fadrec_unmute_audio">Aufnahme-Audio einschalten</string>
-    <string name="fadrec_mic_permission_needed_title">Mikrofon-Berechtigung erforderlich</string>
-    <string name="fadrec_mic_permission_needed_message">ScreenRec kann nicht auf dein Mikrofon zugreifen. Du kannst stumm aufnehmen – kein Audio wird gespeichert.</string>
-    <string name="fadrec_record_muted">Stumm aufnehmen</string>
-    <string name="fadrec_audio_source_title">Audioquelle</string>
-    <string name="fadrec_audio_source_choose">Audioquelle wählen</string>
+    <string name="shahidrec_ready_to_record">Bereit zur Bildschirmaufnahme</string>
+    <string name="shahidrec_ready_to_record_subtitle">Tippen zum Starten</string>
+    <string name="shahidrec_permission_denied">Bildschirmaufnahme-Berechtigung verweigert</string>
+    <string name="shahidrec_mode_title">ScreenRec • Bildschirmaufnahme</string>
+    <string name="shahidrec_mute_audio">Aufnahme-Audio stummschalten</string>
+    <string name="shahidrec_unmute_audio">Aufnahme-Audio einschalten</string>
+    <string name="shahidrec_mic_permission_needed_title">Mikrofon-Berechtigung erforderlich</string>
+    <string name="shahidrec_mic_permission_needed_message">ScreenRec kann nicht auf dein Mikrofon zugreifen. Du kannst stumm aufnehmen – kein Audio wird gespeichert.</string>
+    <string name="shahidrec_record_muted">Stumm aufnehmen</string>
+    <string name="shahidrec_audio_source_title">Audioquelle</string>
+    <string name="shahidrec_audio_source_choose">Audioquelle wählen</string>
 
-	<string name="fadrec_audio_source_helper">Wählen Sie, welchen Ton Bildschirmaufnahmen erfassen. „Standard (System-Routing)“ wird für USB- und kabelgebundene Mikrofone empfohlen – oder wählen Sie ein bestimmtes Gerät für explizites Routing.</string>
-	<string name="fadrec_audio_source_mic_default">Mikrofon (Standard-Routing)</string>
-    <string name="fadrec_audio_source_none">Kein Audio</string>
-    <string name="fadrec_audio_source_mic">Mikrofon</string>
-    <string name="fadrec_audio_source_internal">Geräte-Audio (Intern)</string>
+	<string name="shahidrec_audio_source_helper">Wählen Sie, welchen Ton Bildschirmaufnahmen erfassen. „Standard (System-Routing)“ wird für USB- und kabelgebundene Mikrofone empfohlen – oder wählen Sie ein bestimmtes Gerät für explizites Routing.</string>
+	<string name="shahidrec_audio_source_mic_default">Mikrofon (Standard-Routing)</string>
+    <string name="shahidrec_audio_source_none">Kein Audio</string>
+    <string name="shahidrec_audio_source_mic">Mikrofon</string>
+    <string name="shahidrec_audio_source_internal">Geräte-Audio (Intern)</string>
 
 	<string name="screen_rec_audio_device_title">Audio-Eingabegerät</string>
 	<string name="screen_rec_audio_device_default">Standard (System-Routing)</string>
@@ -849,7 +849,7 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="home_options_title">Home-Optionen</string>
     <string name="help_section">Hilfe</string>
     <string name="display_settings_title">Anzeige</string>
-    <string name="video_menu_save_helper_downloads_fadcam">Video wird unter Downloads/ShahidCam gespeichert</string>
+    <string name="video_menu_save_helper_downloads_shahidcam">Video wird unter Downloads/ShahidCam gespeichert</string>
     <string name="video_menu_save_copy_or_move_title">In Galerie speichern</string>
     <string name="video_menu_save_copy">In Galerie kopieren</string>
     <string name="video_menu_save_copy_desc">Eine Kopie in Downloads/ShahidCam erstellen (Originaldatei bleibt erhalten)</string>
@@ -975,31 +975,31 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="media_type_photo">Foto</string>
     <string name="media_type_photo_back">Rückseite</string>
     <string name="media_type_photo_selfie">Selfie</string>
-    <string name="media_type_photo_fadrec">ScreenRec</string>
+    <string name="media_type_photo_shahidrec">ScreenRec</string>
     <string name="photo_capture_saved">Foto gespeichert</string>
     <string name="photo_capture_failed">Foto konnte nicht aufgenommen werden</string>
     <string name="photo_capture_preview_unavailable">Vorschau ist nicht verfügbar</string>
-    <string name="video_menu_upload_faddrive">Auf Drive hochladen</string>
+    <string name="video_menu_upload_shahiddrive">Auf Drive hochladen</string>
     <string name="records_filter_all">Alle</string>
     <string name="mode_all">Alle</string>
     <string name="records_filter_camera">ShahidCam</string>
     <string name="records_filter_dual">Dual</string>
     <string name="records_filter_screen">ScreenRec</string>
-    <string name="records_filter_faditor">ShahidEditor</string>
+    <string name="records_filter_shahideditor">ShahidEditor</string>
     <string name="records_filter_stream">Stream</string>
     <string name="records_filter_shot">ShahidShot</string>
     <string name="records_filter_camera_all">Alle</string>
     <string name="records_filter_camera_back">Rückseite</string>
     <string name="records_filter_camera_front">Vorderseite</string>
     <string name="records_filter_camera_dual">Dual</string>
-    <string name="records_filter_faditor_all">Alle</string>
-    <string name="records_filter_faditor_converted">Konvertiert</string>
-    <string name="records_filter_faditor_merge">Zusammenführen</string>
+    <string name="records_filter_shahideditor_all">Alle</string>
+    <string name="records_filter_shahideditor_converted">Konvertiert</string>
+    <string name="records_filter_shahideditor_merge">Zusammenführen</string>
     <string name="records_filter_shot_all">Alle</string>
     <string name="records_filter_miniapps_all">Alle</string>
     <string name="records_filter_shot_back">Rückseite</string>
     <string name="records_filter_shot_selfie">Selfie</string>
-    <string name="records_filter_shot_fadrec">ScreenRec</string>
+    <string name="records_filter_shot_shahidrec">ScreenRec</string>
     <string name="records_filter_checklist_desc">Auswahlmodus umschalten</string>
     <string name="records_filter_helper_camera_all">Kameraaufnahmen (Rückseite, Vorderseite, Dual)</string>
     <string name="records_filter_helper_camera_back">Mit Rückkamera aufgenommen</string>
@@ -1007,20 +1007,20 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="records_filter_helper_camera_dual">Im Dual-Kamera-Modus aufgenommen</string>
     <string name="records_filter_helper_dual">Dual-Kamera-Aufnahmen</string>
     <string name="records_filter_helper_screen">Bildschirmaufnahmen (ScreenRec)</string>
-    <string name="records_filter_helper_faditor">Bearbeitete/Exportierte Videos (ShahidEditor)</string>
-    <string name="records_filter_helper_faditor_all">Alle ShahidEditor-Ausgaben und zugehörigen Dateien.</string>
-    <string name="records_filter_helper_faditor_converted">Fragmentiertes MP4 in standardkonformes suchbares MP4 für externe Player konvertiert.</string>
-    <string name="records_filter_helper_faditor_merge">Mehrere Clips zu einem Ausgabevideo zusammengeführt.</string>
+    <string name="records_filter_helper_shahideditor">Bearbeitete/Exportierte Videos (ShahidEditor)</string>
+    <string name="records_filter_helper_shahideditor_all">Alle ShahidEditor-Ausgaben und zugehörigen Dateien.</string>
+    <string name="records_filter_helper_shahideditor_converted">Fragmentiertes MP4 in standardkonformes suchbares MP4 für externe Player konvertiert.</string>
+    <string name="records_filter_helper_shahideditor_merge">Mehrere Clips zu einem Ausgabevideo zusammengeführt.</string>
     <string name="records_filter_helper_stream">Gespeicherte Stream-Aufnahmen</string>
     <string name="records_filter_helper_shot_all">Aufgenommene Fotos und Screenshots</string>
     <string name="records_filter_helper_shot_back">Fotos mit Rückkamera aufgenommen</string>
     <string name="records_filter_helper_shot_selfie">Fotos mit Frontkamera aufgenommen (Selfie)</string>
-    <string name="records_filter_helper_shot_fadrec">Screenshots aufgenommen (ScreenRec)</string>
+    <string name="records_filter_helper_shot_shahidrec">Screenshots aufgenommen (ScreenRec)</string>
     <string name="records_location_format">Standort: %1$s/%2$s</string>
     <string name="records_batch_select_all">Alle auswählen</string>
     <string name="records_batch_deselect_all">Alle abwählen</string>
     <string name="records_batch_save">In Galerie speichern</string>
-    <string name="records_batch_faditor">ShahidEditor-Automatisierungen</string>
+    <string name="records_batch_shahideditor">ShahidEditor-Automatisierungen</string>
     <string name="records_batch_delete">Löschen</string>
     <string name="records_batch_coming_soon">Diese Batch-Aktion wird als Nächstes hinzugefügt.</string>
     <string name="records_batch_select_items_first">Wähle zuerst ein oder mehrere Videos aus.</string>
@@ -1028,10 +1028,10 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="records_batch_fab_label">Batch</string>
     <string name="records_batch_select_all_desc">Alle Videos im aktuellen Filter auswählen oder abwählen.</string>
     <string name="records_batch_save_desc">Ausgewählte Videos in einen anderen Ordner kopieren, verschieben oder exportieren.</string>
-    <string name="records_batch_faditor_desc">Hintergrund-Automatisierungen ausführen, ohne den ShahidEditor-Tab zu öffnen.</string>
+    <string name="records_batch_shahideditor_desc">Hintergrund-Automatisierungen ausführen, ohne den ShahidEditor-Tab zu öffnen.</string>
     <string name="records_batch_delete_desc">Ausgewählte Videos in den Papierkorb verschieben.</string>
     <string name="records_batch_save_queued">%1$d Speicher-Aufgabe(n) zur Warteschlange hinzugefügt.</string>
-    <string name="records_batch_faditor_first_only">Erstes Video geöffnet. %1$d ausgewählt; Multi-Bearbeitungs-Warteschlange kommt als Nächstes.</string>
+    <string name="records_batch_shahideditor_first_only">Erstes Video geöffnet. %1$d ausgewählt; Multi-Bearbeitungs-Warteschlange kommt als Nächstes.</string>
     <string name="records_batch_save_copy_helper">Originale behalten; Kopien unter %1$s speichern.</string>
     <string name="records_batch_save_move_helper">Verschiebt ausgewählte Videos nach %1$s und entfernt Originale nach erfolgreichem Speichern.</string>
     <string name="records_batch_save_custom_location">An neuen Ort exportieren</string>
@@ -1039,12 +1039,12 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="records_batch_custom_export_started">Exportiere %1$d Videos in den ausgewählten Ordner…</string>
     <string name="records_batch_custom_export_invalid_folder">Ausgewählter Ordner ist nicht beschreibbar.</string>
     <string name="records_batch_custom_export_done">Export abgeschlossen. Erfolg: %1$d • Fehlgeschlagen: %2$d</string>
-    <string name="records_batch_faditor_sheet_title">Batch-ShahidEditor-Aktionen</string>
-    <string name="records_batch_faditor_export_standard">Als Standard-MP4 exportieren</string>
-    <string name="records_batch_faditor_export_standard_desc">Konvertiert fragmentiertes MP4 zu suchbarem Standard-MP4 für externe Player.</string>
-    <string name="records_batch_faditor_merge">Ausgewählte Videos zusammenführen</string>
-    <string name="records_batch_faditor_merge_desc">Kombiniert ausgewählte Clips im Hintergrund zu einem Video.</string>
-    <string name="records_batch_faditor_queued">%1$d Batch-Element(e) im Hintergrund in die Warteschlange gestellt.</string>
+    <string name="records_batch_shahideditor_sheet_title">Batch-ShahidEditor-Aktionen</string>
+    <string name="records_batch_shahideditor_export_standard">Als Standard-MP4 exportieren</string>
+    <string name="records_batch_shahideditor_export_standard_desc">Konvertiert fragmentiertes MP4 zu suchbarem Standard-MP4 für externe Player.</string>
+    <string name="records_batch_shahideditor_merge">Ausgewählte Videos zusammenführen</string>
+    <string name="records_batch_shahideditor_merge_desc">Kombiniert ausgewählte Clips im Hintergrund zu einem Video.</string>
+    <string name="records_batch_shahideditor_queued">%1$d Batch-Element(e) im Hintergrund in die Warteschlange gestellt.</string>
     <string name="records_batch_completed">Batch-Vorgang abgeschlossen.</string>
     <string name="records_batch_notif_channel_name">Batch-Medienaktionen</string>
     <string name="records_batch_notif_channel_desc">Fortschritt und Ergebnisse für Batch-Speicher- und ShahidEditor-Automatisierungsaufgaben.</string>
@@ -1055,7 +1055,7 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="records_batch_export_done_title">Standard-MP4-Export abgeschlossen</string>
     <string name="records_batch_merge_done_title">Batch-Zusammenführung abgeschlossen</string>
     <string name="records_hide_thumbnails_row_title">Ausblenden</string>
-    <string name="nav_faditor_mini">ShahidEditor</string>
+    <string name="nav_shahideditor_mini">ShahidEditor</string>
     <string name="nav_lab">Labor</string>
     <string name="button_settings_cam_dual">Dual (PiP)</string>
     <string name="note_cam_dual_unsupported">Dein Gerät unterstützt keine gleichzeitige Dual-Kamera-Aufnahme.</string>
@@ -1258,13 +1258,13 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="raw_audio_banner">Vollständig unverarbeitetes Audio ist auf diesem Gerät nicht verfügbar</string>
     <string name="settings_location_watermark_title">Standort-Wasserzeichen</string>
     <string name="delete_single_video_subtitle">Diese Aufnahme entfernen</string>
-    <string name="note_debug_detailed">Wenn aktiviert, schreibt ShahidCam eine Debug-Protokoll-HTML-Datei (FADCAM_debug.html) im öffentlichen Ordner Downloads/ShahidCam/. Teile diese Datei beim Melden von Problemen. Deaktivieren, um zukünftige Schreibvorgänge zu stoppen.\nHinweis: Debug-Protokollierung kann während der Aufnahme Performance-Overhead hinzufügen – deaktiviert lassen, außer zur Fehlersuche.</string>
+    <string name="note_debug_detailed">Wenn aktiviert, schreibt ShahidCam eine Debug-Protokoll-HTML-Datei (SHAHIDCAM_debug.html) im öffentlichen Ordner Downloads/ShahidCam/. Teile diese Datei beim Melden von Problemen. Deaktivieren, um zukünftige Schreibvorgänge zu stoppen.\nHinweis: Debug-Protokollierung kann während der Aufnahme Performance-Overhead hinzufügen – deaktiviert lassen, außer zur Fehlersuche.</string>
     <string name="watermark_preview_heading">Vorschau</string>
     <string name="watermark_options_heading">Optionen</string>
     <string name="watermark_style_row_title">Wasserzeichen-Stil</string>
-    <string name="watermark_preview_sample_fadcam">Aufgenommen mit ShahidCam - %1$s</string>
+    <string name="watermark_preview_sample_shahidcam">Aufgenommen mit ShahidCam - %1$s</string>
     <string name="watermark_preview_sample_timeonly">%1$s</string>
-    <string name="watermark_style_time_fadcam_label">Zeit mit ShahidCam</string>
+    <string name="watermark_style_time_shahidcam_label">Zeit mit ShahidCam</string>
     <string name="watermark_style_timeonly_label">Zeitstempel</string>
     <string name="watermark_style_badge_label">Nur Marken-Label</string>
     <string name="watermark_style_none_label">Kein Wasserzeichen</string>
@@ -1464,8 +1464,8 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="debug_log_share_fail">Teilen fehlgeschlagen</string>
     <string name="debug_log_share_subtitle">System-Share-Blatt öffnen</string>
     <string name="debug_log_share_title">Debug-Protokoll teilen</string>
-    <string name="debug_log_tools_helper">Zeigt die Debug-Protokolldatei (FADCAM_debug.html). Die Aktivierung der Debug-Protokollierung kann die Leistung beeinträchtigen – aktiviere sie nur, wenn du auf einen Fehler stößt und das Protokoll teilen möchtest. Verwende das Suchfeld zum Filtern.</string>
-    <string name="debug_log_tools_subtitle">FADCAM_debug.html anzeigen, durchsuchen, teilen oder löschen</string>
+    <string name="debug_log_tools_helper">Zeigt die Debug-Protokolldatei (SHAHIDCAM_debug.html). Die Aktivierung der Debug-Protokollierung kann die Leistung beeinträchtigen – aktiviere sie nur, wenn du auf einen Fehler stößt und das Protokoll teilen möchtest. Verwende das Suchfeld zum Filtern.</string>
+    <string name="debug_log_tools_subtitle">SHAHIDCAM_debug.html anzeigen, durchsuchen, teilen oder löschen</string>
     <string name="debug_log_tools_title">Debug-Protokoll</string>
     <string name="delete">Löschen</string>
     <string name="delete_all">Alle löschen</string>
@@ -1539,169 +1539,169 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="eye_color_teal" translatable="false">Cyan</string>
     <string name="eye_color_violet" translatable="false">Violet</string>
     <string name="eye_color_white" translatable="false">White</string>
-    <string name="fadcam_pro_benefit_early_access">Frühzugang: Erhalte die neueste Version vor der öffentlichen Veröffentlichung</string>
-    <string name="fadcam_pro_benefit_lifetime_updates">Lebenslange Updates: Erhalte stets neue Funktionen, Verbesserungen und Fehlerbehebungen</string>
-    <string name="fadcam_pro_benefit_support">Sofortiger Support: Direkte Hilfe via Tickets über Discord</string>
-    <string name="fadcam_pro_column_label">Pro</string>
-    <string name="fadcam_pro_coming_soon">Pro+- und Lab-Funktionen demnächst mit benutzerdefinierten Icon-Uploads, benutzerdefinierten App-Namen und Drive-Cloud-Sync.</string>
+    <string name="shahidcam_pro_benefit_early_access">Frühzugang: Erhalte die neueste Version vor der öffentlichen Veröffentlichung</string>
+    <string name="shahidcam_pro_benefit_lifetime_updates">Lebenslange Updates: Erhalte stets neue Funktionen, Verbesserungen und Fehlerbehebungen</string>
+    <string name="shahidcam_pro_benefit_support">Sofortiger Support: Direkte Hilfe via Tickets über Discord</string>
+    <string name="shahidcam_pro_column_label">Pro</string>
+    <string name="shahidcam_pro_coming_soon">Pro+- und Lab-Funktionen demnächst mit benutzerdefinierten Icon-Uploads, benutzerdefinierten App-Namen und Drive-Cloud-Sync.</string>
 
-    <string name="fadcam_pro_feature_app_name">Benutzerdefinierter App-Name</string>
-    <string name="fadcam_pro_feature_custom_icon">Benutzerdefiniertes App-Symbol</string>
-    <string name="fadcam_pro_feature_everything">Alles</string>
-    <string name="fadcam_pro_feature_everything_icon">Alles</string>
-    <string name="fadcam_pro_feature_faddrive">Drive-Cloud-Sync</string>
-    <string name="fadcam_pro_feature_notification_icon">Diskretes Benachrichtigungssymbol</string>
-    <string name="fadcam_pro_feature_user_icon">Vom Benutzer hochgeladenes Symbol</string>
-    <string name="fadcam_pro_free">Kostenlos</string>
-    <string name="fadcam_pro_get_button">ShahidCam Pro holen</string>
-    <string name="fadcam_pro_header_button">Pro holen</string>
-    <string name="fadcam_pro_lab_label">Lab</string>
-    <string name="fadcam_pro_paid_offer">Nach dem 23. Dezember 2025 lebenslangen Zugang für 15 $ erhalten – einmalige Zahlung, für immer Updates.</string>
-    <string name="fadcam_pro_plus_label">Pro</string>
-    <string name="fadcam_pro_proplus_label">Pro+</string>
-    <string name="fadcam_pro_separate_apk">Eigenständige App – funktioniert neben ShahidCam</string>
-    <string name="fadcam_pro_subtitle">Premium-Funktionen für absolute Diskretion</string>
-    <string name="fadcam_pro_support_message">ShahidCam wird für immer kostenlos bleiben, ohne Werbung und ohne Tracking. Ich betreibe das gesamte Projekt allein, und es erfordert kontinuierliche Zeit und Arbeit. Das Upgrade auf Pro (derzeit kostenlos) hilft, die Entwicklung zu unterstützen, und im Gegenzug kann ich durch die Pro-Funktionen zusätzlichen Mehrwert über die vollständige kostenlose Version hinaus bieten. Vielen Dank, dass du das Projekt unterstützt :)</string>
-    <string name="fadcam_pro_title">ShahidCam Pro</string>
-    <string name="faditor_add_asset_image">Bild (5s Standbild)</string>
-    <string name="faditor_add_asset_title">Asset hinzufügen</string>
-    <string name="faditor_add_asset_video">Videoclip</string>
-    <string name="faditor_asset_added">Asset zur Zeitleiste hinzugefügt</string>
-    <string name="faditor_asset_error">Asset konnte nicht hinzugefügt werden</string>
-    <string name="faditor_audio_added">Audio zur Zeitleiste hinzugefügt</string>
-    <string name="faditor_audio_extract_current">Aus Video extrahieren</string>
-    <string name="faditor_audio_extract_current_desc">Audiospur aus dem aktuellen Video extrahieren</string>
-    <string name="faditor_audio_extract_failed">Audio konnte nicht extrahiert werden</string>
-    <string name="faditor_audio_extracted">Audio extrahiert und zur Zeitleiste hinzugefügt</string>
-    <string name="faditor_audio_extracting">Extrahiere Audio…</string>
-    <string name="faditor_audio_no_track">Keine Audiospur in diesem Video gefunden</string>
-    <string name="faditor_back_press_exit">Erneut drücken, um den Editor zu verlassen</string>
-    <string name="faditor_browse_device">Gerät durchsuchen</string>
-    <string name="faditor_browse_device_desc">Wähle ein beliebiges Video von deinem Gerät</string>
-    <string name="faditor_cancel">Abbrechen</string>
-    <string name="faditor_canvas_applied">Canvas auf %s gesetzt</string>
-    <string name="faditor_canvas_title">Canvas</string>
-    <string name="faditor_capabilities_title">Was du tun kannst</string>
-    <string name="faditor_close">Editor schließen</string>
-    <string name="faditor_close_confirm_action">Schließen &amp; Speichern</string>
-    <string name="faditor_close_confirm_helper">Dein Projekt wird automatisch gespeichert. Du kannst es jederzeit aus den letzten Projekten wieder öffnen.</string>
-    <string name="faditor_close_confirm_subtitle">Projekt speichern und zurückkehren</string>
-    <string name="faditor_close_confirm_title">Editor schließen?</string>
-    <string name="faditor_crop_applied">Beschnitt angewendet</string>
-    <string name="faditor_crop_cancelled">Beschnitt abgebrochen</string>
-    <string name="faditor_crop_free">Frei</string>
-    <string name="faditor_crop_reset">Beschnitt zurückgesetzt</string>
-    <string name="faditor_crop_title">Seitenverhältnis zuschneiden</string>
-    <string name="faditor_delete_confirm">Löschen</string>
-    <string name="faditor_delete_last_segment">Das einzige Segment kann nicht gelöscht werden</string>
-    <string name="faditor_delete_projects_message">%1$d Projekt(e) löschen? Dies kann nicht rückgängig gemacht werden.</string>
-    <string name="faditor_delete_projects_title">Projekte löschen?</string>
-    <string name="faditor_editor_title">ShahidEditor Mini</string>
-    <string name="faditor_empty_desc">Tippe auf „Neues Projekt starten", um ein Video auszuwählen und mit der Bearbeitung zu beginnen</string>
-    <string name="faditor_empty_title">Noch keine Projekte</string>
-    <string name="faditor_error_no_video">Kein Video ausgewählt</string>
-    <string name="faditor_error_picker">Dateiauswahl konnte nicht geöffnet werden</string>
-    <string name="faditor_export">Exportieren</string>
-    <string name="faditor_export_back">Zurück</string>
-    <string name="faditor_export_back_confirm">Export läuft. Zurück zum Editor?</string>
-    <string name="faditor_export_cancelled">Export abgebrochen</string>
-    <string name="faditor_export_complete_summary">Dein Video wurde im Aufnahmen-Tab gespeichert.</string>
-    <string name="faditor_export_complete_title">Export abgeschlossen</string>
-    <string name="faditor_export_completed">Export abgeschlossen</string>
-    <string name="faditor_export_confirm_action">Jetzt exportieren</string>
-    <string name="faditor_export_confirm_helper">%1$s • %2$d Clip(s)%3$s\nDer Export läuft als Hintergrunddienst – du kannst die App schließen, und er wird weiter exportieren.</string>
-    <string name="faditor_export_confirm_subtitle">Export wird im Hintergrund fortgesetzt</string>
-    <string name="faditor_export_confirm_title">Video exportieren</string>
-    <string name="faditor_export_done">Fertig</string>
-    <string name="faditor_export_error">Export fehlgeschlagen: %1$s</string>
-    <string name="faditor_export_eta">Voraussichtliche Zeit: %s</string>
-    <string name="faditor_export_failed">Export fehlgeschlagen</string>
-    <string name="faditor_export_in_progress">Export läuft bereits</string>
-    <string name="faditor_export_info">%1$s • %2$d Clip(s)%3$s • H.264 + AAC</string>
-    <string name="faditor_export_notif_channel">ShahidEditor-Export</string>
-    <string name="faditor_export_notif_channel_desc">Benachrichtigungen für laufende Video-Exporte</string>
-    <string name="faditor_export_notif_error_title">Export fehlgeschlagen</string>
-    <string name="faditor_export_notif_title">Exportiere Video…</string>
-    <string name="faditor_export_progress">Exportiere…</string>
-    <string name="faditor_export_success">Video erfolgreich exportiert</string>
-    <string name="faditor_exporting">Exportiere…</string>
-    <string name="faditor_exporting_percent">Exportiere… %1$d%%</string>
-    <string name="faditor_fadcam_source">ShahidCam</string>
-    <string name="faditor_fadrec_source">ScreenRec</string>
-    <string name="faditor_feature_convert">Intelligente Konvertierung</string>
-    <string name="faditor_feature_convert_desc">Konvertiert absturzsichere Aufnahmen automatisch in suchbares MP4 für reibungslose Wiedergabe überall</string>
-    <string name="faditor_feature_export">Schnellexport</string>
-    <string name="faditor_feature_export_desc">Exportiere als MP4 mit hardwarebeschleunigter Codierung</string>
-    <string name="faditor_feature_preview">Live-Vorschau</string>
-    <string name="faditor_feature_preview_desc">Sofortige Wiedergabe deiner zugeschnittenen Clips</string>
-    <string name="faditor_feature_privacy">100% offline</string>
-    <string name="faditor_feature_privacy_desc">Die gesamte Bearbeitung erfolgt lokal – kein Hochladen, keine Cloud</string>
-    <string name="faditor_feature_trim">Präzisionsschnitt</string>
-    <string name="faditor_feature_trim_desc">Schneide deine Videos auf den genauen Frame, den du möchtest</string>
-    <string name="faditor_flip_title">Spiegeln</string>
-    <string name="faditor_home_tagline">Leichter Video-Editor</string>
-    <string name="faditor_info_convert_desc">ShahidCam zeichnet in einem absturzsicheren Format namens fragmentiertes MP4 (fMP4) auf. Im Gegensatz zu einem standard MP4 mit einem finalisierten Container schreibt fMP4 Video in kleinen unabhängigen Blöcken. Das bedeutet, dass dein Filmmaterial intakt bleibt, selbst wenn die App abstürzt oder die Aufnahme plötzlich stoppt.\n\nExterne Videoplayer, Galerie-Apps und Dateimanager können jedoch nicht in diesen Dateien suchen, durchspulen oder die korrekte Dauer anzeigen. Dies ist kein Fehler – es ist ein bewusster Design-Kompromiss für Zuverlässigkeit.\n\nWenn du deine Videos außerhalb von ShahidCam speichern möchtest – auf Google Drive, einem Computer oder einem anderen Ort – musst du sie zuerst konvertieren. Andernfalls sind die Dateien für die normale Wiedergabe unbrauchbar.\n\nSo konvertierst du: öffne das Video einfach hier im ShahidEditor Mini und tippe auf Exportieren. Das konvertierte Standard-MP4 erscheint in deinem Aufnahmen-Tab und kann in deiner Galerie gespeichert oder überall geteilt werden. Der Vorgang ist sofort und verlustfrei – keine Neucodierung oder Qualitätsverlust.</string>
-    <string name="faditor_info_convert_title">Intelligente Konvertierung</string>
-    <string name="faditor_info_export_desc">Exportierte Videos werden an deinem aktiven Speicherort gespeichert (dem gleichen, der in den Einstellungen konfiguriert ist) mit dem Präfix „ShahidEditor_", gefolgt von einem Zeitstempel. Sie erscheinen im Aufnahmen-Tab neben deinen Originalaufnahmen.</string>
-    <string name="faditor_info_export_title">Exportierte Dateien</string>
-    <string name="faditor_info_how_desc">Wähle ein beliebiges Video von deinem Gerät oder deinen ShahidCam-Aufnahmen aus. Schneide es Frame für Frame mit der Zeitleiste zu und exportiere es dann. Die gesamte Verarbeitung erfolgt lokal auf deinem Gerät – es wird nichts hochgeladen.\n\nDein Bearbeitungsfortschritt wird alle paar Sekunden automatisch gespeichert, auch wenn du den Editor verlässt, damit keine Arbeit verloren geht, falls die App unerwartet geschlossen wird.</string>
-    <string name="faditor_info_how_title">So funktioniert es</string>
-    <string name="faditor_info_projects_desc">Alle deine Bearbeitungssitzungen werden für den schnellen Zugriff angezeigt. Jedes Projekt wird als kleine JSON-Datei auf deinem Gerät gespeichert, die die Video-URI, Schnittpunkte und Zeitstempel enthält – es werden keine Kopien deiner Videos erstellt. Projekte werden alle paar Sekunden automatisch gespeichert, sodass dein Fortschritt nie verloren geht.\n\nDu kannst Projekte, die du nicht mehr benötigst, über das Multi-Auswahl-Checklisten-Symbol löschen. Das Löschen eines Projekts entfernt nur die Bearbeitungssitzungsdaten; deine Originalvideodateien bleiben unberührt.</string>
-    <string name="faditor_info_projects_title">Letzte Projekte</string>
-    <string name="faditor_info_subtitle">Alles, was du über den integrierten Editor wissen musst</string>
-    <string name="faditor_info_temp_desc">Wenn du ein fMP4-Video zum Bearbeiten lädst, erkennt ShahidEditor, ob die Datei „geremuxt" werden muss – eine schnelle Konvertierung, die Suchmarkierungen ohne Neucodierung hinzufügt. Remuxte Dateien werden auf deinem Gerät zwischengespeichert, sodass sie wiederverwendet werden können, wenn du dasselbe Video erneut bearbeitest, was Zeit und Verarbeitung spart.\n\nDu kannst die Cache-Größe für jedes Projekt neben dem Änderungsdatum sehen. Wenn dein Gerätespeicher knapp wird, kannst du nicht verwendete Projekte löschen, um ihre zwischengespeicherten Remux-Dateien zu entfernen.\n\nDiese temporären Cache-Dateien werden automatisch bereinigt, wenn du ein Projekt aus diesem Tab löschst.</string>
-    <string name="faditor_info_temp_title">Temporäre Dateien und Cache</string>
-    <string name="faditor_info_title">Über ShahidEditor Mini</string>
-    <string name="faditor_mini_coming_soon">Demnächst – leichter Editor</string>
-    <string name="faditor_mini_subtitle">Schneide und exportiere deine Videos mit Präzision</string>
-    <string name="faditor_mini_title">ShahidEditor Mini</string>
-    <string name="faditor_mini_toast">ShahidEditor Mini – demnächst verfügbar</string>
-    <string name="faditor_new_project">Neues Projekt</string>
-    <string name="faditor_no_recordings">Noch keine Aufnahmen gefunden. Starte eine Aufnahme mit ShahidCam, um deine Videos hier zu sehen.</string>
-    <string name="faditor_play_pause">Abspielen oder pausieren</string>
-    <string name="faditor_recent_projects">Letzte Projekte</string>
-    <string name="faditor_recordings_helper">Mit ShahidCam aufgenommene Videos von deinem aktiven Speicherort</string>
-    <string name="faditor_redo">Wiederholen</string>
-    <string name="faditor_remuxing">Optimiere für Vorschau…</string>
-    <string name="faditor_remuxing_percent">Optimiere… %1$ds verarbeitet</string>
-    <string name="faditor_scanning">Durchsuche Aufnahmen…</string>
-    <string name="faditor_segment_deleted">Segment gelöscht</string>
-    <string name="faditor_segment_duplicated">Segment dupliziert</string>
-    <string name="faditor_select_items">Elemente auswählen</string>
-    <string name="faditor_select_video">Video auswählen</string>
-    <string name="faditor_selected_count">%1$d ausgewählt</string>
-    <string name="faditor_source_chooser_desc">Wähle ein Video aus deiner Galerie oder eines deiner ShahidCam-Aufnahmen</string>
-    <string name="faditor_speed_reset">Zurücksetzen auf 1x</string>
-    <string name="faditor_speed_title">Wiedergabegeschwindigkeit</string>
-    <string name="faditor_split_error">Kann hier nicht teilen – zu nah am Rand</string>
-    <string name="faditor_split_success">Segment in zwei geteilt</string>
-    <string name="faditor_start_project">Neues Projekt starten</string>
-    <string name="faditor_tool_add">Hinzufügen</string>
-    <string name="faditor_tool_audio">Audio extrahieren</string>
-    <string name="faditor_tool_canvas">Canvas</string>
-    <string name="faditor_tool_crop">Zuschneiden</string>
-    <string name="faditor_tool_crop_free">Frei</string>
-    <string name="faditor_tool_delete">Löschen</string>
-    <string name="faditor_tool_duplicate">Duplizieren</string>
-    <string name="faditor_tool_flip">Spiegeln</string>
-    <string name="faditor_tool_muted">Stumm</string>
-    <string name="faditor_tool_rotate">Drehen</string>
-    <string name="faditor_tool_sound">Ton</string>
-    <string name="faditor_tool_speed">1x</string>
-    <string name="faditor_tool_split">Teilen</string>
-    <string name="faditor_tool_trim">Trimmen</string>
-    <string name="faditor_tool_volume">Lautstärke</string>
-    <string name="faditor_undo">Rückgängig</string>
-    <string name="faditor_version_info">ShahidEditor Mini · Phase 1 · Trimmen + Export</string>
-    <string name="faditor_video_count">%1$d Video(s)</string>
-    <string name="faditor_volume_mute">Audio stummschalten</string>
-    <string name="faditor_volume_title">Lautstärke</string>
-    <string name="faditor_volume_unmute">Audio einschalten</string>
-    <string name="faditor_volume_warning">Über 100%% kann die Audioqualität beeinträchtigen</string>
-    <string name="faditor_your_recordings">Deine Aufnahmen</string>
-    <string name="fadrec_preview_enable_hint">Halten, um Vorschau anzuzeigen</string>
-    <string name="fadrec_preview_not_available">Live-Bildschirmvorschau ist in ScreenRec noch nicht integriert</string>
-    <string name="fadrec_projects">ScreenRec-Projekte</string>
+    <string name="shahidcam_pro_feature_app_name">Benutzerdefinierter App-Name</string>
+    <string name="shahidcam_pro_feature_custom_icon">Benutzerdefiniertes App-Symbol</string>
+    <string name="shahidcam_pro_feature_everything">Alles</string>
+    <string name="shahidcam_pro_feature_everything_icon">Alles</string>
+    <string name="shahidcam_pro_feature_shahiddrive">Drive-Cloud-Sync</string>
+    <string name="shahidcam_pro_feature_notification_icon">Diskretes Benachrichtigungssymbol</string>
+    <string name="shahidcam_pro_feature_user_icon">Vom Benutzer hochgeladenes Symbol</string>
+    <string name="shahidcam_pro_free">Kostenlos</string>
+    <string name="shahidcam_pro_get_button">ShahidCam Pro holen</string>
+    <string name="shahidcam_pro_header_button">Pro holen</string>
+    <string name="shahidcam_pro_lab_label">Lab</string>
+    <string name="shahidcam_pro_paid_offer">Nach dem 23. Dezember 2025 lebenslangen Zugang für 15 $ erhalten – einmalige Zahlung, für immer Updates.</string>
+    <string name="shahidcam_pro_plus_label">Pro</string>
+    <string name="shahidcam_pro_proplus_label">Pro+</string>
+    <string name="shahidcam_pro_separate_apk">Eigenständige App – funktioniert neben ShahidCam</string>
+    <string name="shahidcam_pro_subtitle">Premium-Funktionen für absolute Diskretion</string>
+    <string name="shahidcam_pro_support_message">ShahidCam wird für immer kostenlos bleiben, ohne Werbung und ohne Tracking. Ich betreibe das gesamte Projekt allein, und es erfordert kontinuierliche Zeit und Arbeit. Das Upgrade auf Pro (derzeit kostenlos) hilft, die Entwicklung zu unterstützen, und im Gegenzug kann ich durch die Pro-Funktionen zusätzlichen Mehrwert über die vollständige kostenlose Version hinaus bieten. Vielen Dank, dass du das Projekt unterstützt :)</string>
+    <string name="shahidcam_pro_title">ShahidCam Pro</string>
+    <string name="shahideditor_add_asset_image">Bild (5s Standbild)</string>
+    <string name="shahideditor_add_asset_title">Asset hinzufügen</string>
+    <string name="shahideditor_add_asset_video">Videoclip</string>
+    <string name="shahideditor_asset_added">Asset zur Zeitleiste hinzugefügt</string>
+    <string name="shahideditor_asset_error">Asset konnte nicht hinzugefügt werden</string>
+    <string name="shahideditor_audio_added">Audio zur Zeitleiste hinzugefügt</string>
+    <string name="shahideditor_audio_extract_current">Aus Video extrahieren</string>
+    <string name="shahideditor_audio_extract_current_desc">Audiospur aus dem aktuellen Video extrahieren</string>
+    <string name="shahideditor_audio_extract_failed">Audio konnte nicht extrahiert werden</string>
+    <string name="shahideditor_audio_extracted">Audio extrahiert und zur Zeitleiste hinzugefügt</string>
+    <string name="shahideditor_audio_extracting">Extrahiere Audio…</string>
+    <string name="shahideditor_audio_no_track">Keine Audiospur in diesem Video gefunden</string>
+    <string name="shahideditor_back_press_exit">Erneut drücken, um den Editor zu verlassen</string>
+    <string name="shahideditor_browse_device">Gerät durchsuchen</string>
+    <string name="shahideditor_browse_device_desc">Wähle ein beliebiges Video von deinem Gerät</string>
+    <string name="shahideditor_cancel">Abbrechen</string>
+    <string name="shahideditor_canvas_applied">Canvas auf %s gesetzt</string>
+    <string name="shahideditor_canvas_title">Canvas</string>
+    <string name="shahideditor_capabilities_title">Was du tun kannst</string>
+    <string name="shahideditor_close">Editor schließen</string>
+    <string name="shahideditor_close_confirm_action">Schließen &amp; Speichern</string>
+    <string name="shahideditor_close_confirm_helper">Dein Projekt wird automatisch gespeichert. Du kannst es jederzeit aus den letzten Projekten wieder öffnen.</string>
+    <string name="shahideditor_close_confirm_subtitle">Projekt speichern und zurückkehren</string>
+    <string name="shahideditor_close_confirm_title">Editor schließen?</string>
+    <string name="shahideditor_crop_applied">Beschnitt angewendet</string>
+    <string name="shahideditor_crop_cancelled">Beschnitt abgebrochen</string>
+    <string name="shahideditor_crop_free">Frei</string>
+    <string name="shahideditor_crop_reset">Beschnitt zurückgesetzt</string>
+    <string name="shahideditor_crop_title">Seitenverhältnis zuschneiden</string>
+    <string name="shahideditor_delete_confirm">Löschen</string>
+    <string name="shahideditor_delete_last_segment">Das einzige Segment kann nicht gelöscht werden</string>
+    <string name="shahideditor_delete_projects_message">%1$d Projekt(e) löschen? Dies kann nicht rückgängig gemacht werden.</string>
+    <string name="shahideditor_delete_projects_title">Projekte löschen?</string>
+    <string name="shahideditor_editor_title">ShahidEditor Mini</string>
+    <string name="shahideditor_empty_desc">Tippe auf „Neues Projekt starten", um ein Video auszuwählen und mit der Bearbeitung zu beginnen</string>
+    <string name="shahideditor_empty_title">Noch keine Projekte</string>
+    <string name="shahideditor_error_no_video">Kein Video ausgewählt</string>
+    <string name="shahideditor_error_picker">Dateiauswahl konnte nicht geöffnet werden</string>
+    <string name="shahideditor_export">Exportieren</string>
+    <string name="shahideditor_export_back">Zurück</string>
+    <string name="shahideditor_export_back_confirm">Export läuft. Zurück zum Editor?</string>
+    <string name="shahideditor_export_cancelled">Export abgebrochen</string>
+    <string name="shahideditor_export_complete_summary">Dein Video wurde im Aufnahmen-Tab gespeichert.</string>
+    <string name="shahideditor_export_complete_title">Export abgeschlossen</string>
+    <string name="shahideditor_export_completed">Export abgeschlossen</string>
+    <string name="shahideditor_export_confirm_action">Jetzt exportieren</string>
+    <string name="shahideditor_export_confirm_helper">%1$s • %2$d Clip(s)%3$s\nDer Export läuft als Hintergrunddienst – du kannst die App schließen, und er wird weiter exportieren.</string>
+    <string name="shahideditor_export_confirm_subtitle">Export wird im Hintergrund fortgesetzt</string>
+    <string name="shahideditor_export_confirm_title">Video exportieren</string>
+    <string name="shahideditor_export_done">Fertig</string>
+    <string name="shahideditor_export_error">Export fehlgeschlagen: %1$s</string>
+    <string name="shahideditor_export_eta">Voraussichtliche Zeit: %s</string>
+    <string name="shahideditor_export_failed">Export fehlgeschlagen</string>
+    <string name="shahideditor_export_in_progress">Export läuft bereits</string>
+    <string name="shahideditor_export_info">%1$s • %2$d Clip(s)%3$s • H.264 + AAC</string>
+    <string name="shahideditor_export_notif_channel">ShahidEditor-Export</string>
+    <string name="shahideditor_export_notif_channel_desc">Benachrichtigungen für laufende Video-Exporte</string>
+    <string name="shahideditor_export_notif_error_title">Export fehlgeschlagen</string>
+    <string name="shahideditor_export_notif_title">Exportiere Video…</string>
+    <string name="shahideditor_export_progress">Exportiere…</string>
+    <string name="shahideditor_export_success">Video erfolgreich exportiert</string>
+    <string name="shahideditor_exporting">Exportiere…</string>
+    <string name="shahideditor_exporting_percent">Exportiere… %1$d%%</string>
+    <string name="shahideditor_shahidcam_source">ShahidCam</string>
+    <string name="shahideditor_shahidrec_source">ScreenRec</string>
+    <string name="shahideditor_feature_convert">Intelligente Konvertierung</string>
+    <string name="shahideditor_feature_convert_desc">Konvertiert absturzsichere Aufnahmen automatisch in suchbares MP4 für reibungslose Wiedergabe überall</string>
+    <string name="shahideditor_feature_export">Schnellexport</string>
+    <string name="shahideditor_feature_export_desc">Exportiere als MP4 mit hardwarebeschleunigter Codierung</string>
+    <string name="shahideditor_feature_preview">Live-Vorschau</string>
+    <string name="shahideditor_feature_preview_desc">Sofortige Wiedergabe deiner zugeschnittenen Clips</string>
+    <string name="shahideditor_feature_privacy">100% offline</string>
+    <string name="shahideditor_feature_privacy_desc">Die gesamte Bearbeitung erfolgt lokal – kein Hochladen, keine Cloud</string>
+    <string name="shahideditor_feature_trim">Präzisionsschnitt</string>
+    <string name="shahideditor_feature_trim_desc">Schneide deine Videos auf den genauen Frame, den du möchtest</string>
+    <string name="shahideditor_flip_title">Spiegeln</string>
+    <string name="shahideditor_home_tagline">Leichter Video-Editor</string>
+    <string name="shahideditor_info_convert_desc">ShahidCam zeichnet in einem absturzsicheren Format namens fragmentiertes MP4 (fMP4) auf. Im Gegensatz zu einem standard MP4 mit einem finalisierten Container schreibt fMP4 Video in kleinen unabhängigen Blöcken. Das bedeutet, dass dein Filmmaterial intakt bleibt, selbst wenn die App abstürzt oder die Aufnahme plötzlich stoppt.\n\nExterne Videoplayer, Galerie-Apps und Dateimanager können jedoch nicht in diesen Dateien suchen, durchspulen oder die korrekte Dauer anzeigen. Dies ist kein Fehler – es ist ein bewusster Design-Kompromiss für Zuverlässigkeit.\n\nWenn du deine Videos außerhalb von ShahidCam speichern möchtest – auf Google Drive, einem Computer oder einem anderen Ort – musst du sie zuerst konvertieren. Andernfalls sind die Dateien für die normale Wiedergabe unbrauchbar.\n\nSo konvertierst du: öffne das Video einfach hier im ShahidEditor Mini und tippe auf Exportieren. Das konvertierte Standard-MP4 erscheint in deinem Aufnahmen-Tab und kann in deiner Galerie gespeichert oder überall geteilt werden. Der Vorgang ist sofort und verlustfrei – keine Neucodierung oder Qualitätsverlust.</string>
+    <string name="shahideditor_info_convert_title">Intelligente Konvertierung</string>
+    <string name="shahideditor_info_export_desc">Exportierte Videos werden an deinem aktiven Speicherort gespeichert (dem gleichen, der in den Einstellungen konfiguriert ist) mit dem Präfix „ShahidEditor_", gefolgt von einem Zeitstempel. Sie erscheinen im Aufnahmen-Tab neben deinen Originalaufnahmen.</string>
+    <string name="shahideditor_info_export_title">Exportierte Dateien</string>
+    <string name="shahideditor_info_how_desc">Wähle ein beliebiges Video von deinem Gerät oder deinen ShahidCam-Aufnahmen aus. Schneide es Frame für Frame mit der Zeitleiste zu und exportiere es dann. Die gesamte Verarbeitung erfolgt lokal auf deinem Gerät – es wird nichts hochgeladen.\n\nDein Bearbeitungsfortschritt wird alle paar Sekunden automatisch gespeichert, auch wenn du den Editor verlässt, damit keine Arbeit verloren geht, falls die App unerwartet geschlossen wird.</string>
+    <string name="shahideditor_info_how_title">So funktioniert es</string>
+    <string name="shahideditor_info_projects_desc">Alle deine Bearbeitungssitzungen werden für den schnellen Zugriff angezeigt. Jedes Projekt wird als kleine JSON-Datei auf deinem Gerät gespeichert, die die Video-URI, Schnittpunkte und Zeitstempel enthält – es werden keine Kopien deiner Videos erstellt. Projekte werden alle paar Sekunden automatisch gespeichert, sodass dein Fortschritt nie verloren geht.\n\nDu kannst Projekte, die du nicht mehr benötigst, über das Multi-Auswahl-Checklisten-Symbol löschen. Das Löschen eines Projekts entfernt nur die Bearbeitungssitzungsdaten; deine Originalvideodateien bleiben unberührt.</string>
+    <string name="shahideditor_info_projects_title">Letzte Projekte</string>
+    <string name="shahideditor_info_subtitle">Alles, was du über den integrierten Editor wissen musst</string>
+    <string name="shahideditor_info_temp_desc">Wenn du ein fMP4-Video zum Bearbeiten lädst, erkennt ShahidEditor, ob die Datei „geremuxt" werden muss – eine schnelle Konvertierung, die Suchmarkierungen ohne Neucodierung hinzufügt. Remuxte Dateien werden auf deinem Gerät zwischengespeichert, sodass sie wiederverwendet werden können, wenn du dasselbe Video erneut bearbeitest, was Zeit und Verarbeitung spart.\n\nDu kannst die Cache-Größe für jedes Projekt neben dem Änderungsdatum sehen. Wenn dein Gerätespeicher knapp wird, kannst du nicht verwendete Projekte löschen, um ihre zwischengespeicherten Remux-Dateien zu entfernen.\n\nDiese temporären Cache-Dateien werden automatisch bereinigt, wenn du ein Projekt aus diesem Tab löschst.</string>
+    <string name="shahideditor_info_temp_title">Temporäre Dateien und Cache</string>
+    <string name="shahideditor_info_title">Über ShahidEditor Mini</string>
+    <string name="shahideditor_mini_coming_soon">Demnächst – leichter Editor</string>
+    <string name="shahideditor_mini_subtitle">Schneide und exportiere deine Videos mit Präzision</string>
+    <string name="shahideditor_mini_title">ShahidEditor Mini</string>
+    <string name="shahideditor_mini_toast">ShahidEditor Mini – demnächst verfügbar</string>
+    <string name="shahideditor_new_project">Neues Projekt</string>
+    <string name="shahideditor_no_recordings">Noch keine Aufnahmen gefunden. Starte eine Aufnahme mit ShahidCam, um deine Videos hier zu sehen.</string>
+    <string name="shahideditor_play_pause">Abspielen oder pausieren</string>
+    <string name="shahideditor_recent_projects">Letzte Projekte</string>
+    <string name="shahideditor_recordings_helper">Mit ShahidCam aufgenommene Videos von deinem aktiven Speicherort</string>
+    <string name="shahideditor_redo">Wiederholen</string>
+    <string name="shahideditor_remuxing">Optimiere für Vorschau…</string>
+    <string name="shahideditor_remuxing_percent">Optimiere… %1$ds verarbeitet</string>
+    <string name="shahideditor_scanning">Durchsuche Aufnahmen…</string>
+    <string name="shahideditor_segment_deleted">Segment gelöscht</string>
+    <string name="shahideditor_segment_duplicated">Segment dupliziert</string>
+    <string name="shahideditor_select_items">Elemente auswählen</string>
+    <string name="shahideditor_select_video">Video auswählen</string>
+    <string name="shahideditor_selected_count">%1$d ausgewählt</string>
+    <string name="shahideditor_source_chooser_desc">Wähle ein Video aus deiner Galerie oder eines deiner ShahidCam-Aufnahmen</string>
+    <string name="shahideditor_speed_reset">Zurücksetzen auf 1x</string>
+    <string name="shahideditor_speed_title">Wiedergabegeschwindigkeit</string>
+    <string name="shahideditor_split_error">Kann hier nicht teilen – zu nah am Rand</string>
+    <string name="shahideditor_split_success">Segment in zwei geteilt</string>
+    <string name="shahideditor_start_project">Neues Projekt starten</string>
+    <string name="shahideditor_tool_add">Hinzufügen</string>
+    <string name="shahideditor_tool_audio">Audio extrahieren</string>
+    <string name="shahideditor_tool_canvas">Canvas</string>
+    <string name="shahideditor_tool_crop">Zuschneiden</string>
+    <string name="shahideditor_tool_crop_free">Frei</string>
+    <string name="shahideditor_tool_delete">Löschen</string>
+    <string name="shahideditor_tool_duplicate">Duplizieren</string>
+    <string name="shahideditor_tool_flip">Spiegeln</string>
+    <string name="shahideditor_tool_muted">Stumm</string>
+    <string name="shahideditor_tool_rotate">Drehen</string>
+    <string name="shahideditor_tool_sound">Ton</string>
+    <string name="shahideditor_tool_speed">1x</string>
+    <string name="shahideditor_tool_split">Teilen</string>
+    <string name="shahideditor_tool_trim">Trimmen</string>
+    <string name="shahideditor_tool_volume">Lautstärke</string>
+    <string name="shahideditor_undo">Rückgängig</string>
+    <string name="shahideditor_version_info">ShahidEditor Mini · Phase 1 · Trimmen + Export</string>
+    <string name="shahideditor_video_count">%1$d Video(s)</string>
+    <string name="shahideditor_volume_mute">Audio stummschalten</string>
+    <string name="shahideditor_volume_title">Lautstärke</string>
+    <string name="shahideditor_volume_unmute">Audio einschalten</string>
+    <string name="shahideditor_volume_warning">Über 100%% kann die Audioqualität beeinträchtigen</string>
+    <string name="shahideditor_your_recordings">Deine Aufnahmen</string>
+    <string name="shahidrec_preview_enable_hint">Halten, um Vorschau anzuzeigen</string>
+    <string name="shahidrec_preview_not_available">Live-Bildschirmvorschau ist in ScreenRec noch nicht integriert</string>
+    <string name="shahidrec_projects">ScreenRec-Projekte</string>
     <string name="forensic_intelligence_title">Forensische Intelligenz</string>
     <string name="forensics_clip_black">Schwarze Klammer</string>
     <string name="forensics_clip_red">Rote Klammer</string>
@@ -2120,8 +2120,8 @@ Für die flüssigste Wiedergabe kannst du einen externen Player wie VLC verwende
     <string name="setting_header_logo_desc">Wähle den Stil des Header-Logos</string>
     <string name="setting_header_logo_title">Header-Logo</string>
     <string name="settings_advanced_subtitle">Motion Lab und Power-User-Steuerungen</string>
-    <string name="fadcrypt_title">Crypt</string>
-    <string name="fadcrypt_row_subtitle">Verschlüsseln und schützen Sie Ihre Aufnahmen</string>
+    <string name="shahidvault_title">Crypt</string>
+    <string name="shahidvault_row_subtitle">Verschlüsseln und schützen Sie Ihre Aufnahmen</string>
     <string name="settings_notifications_subtitle">Aufnahme &amp; Voreinstellung</string>
     <string name="settings_notifications_title">Benachrichtigungen</string>
     <string name="settings_section_app">App</string>
@@ -2254,7 +2254,7 @@ Für die flüssigste Wiedergabe kannst du einen externen Player wie VLC verwende
     <string name="tap_to_add_description">Tippen, um Beschreibung hinzuzufügen</string>
     <string-array name="theme_options" translatable="false">
         <item>Midnight Dusk</item>
-        <item>Faded Night</item>
+        <item>Shahid Dark</item>
         <item>Crimson Bloom</item>
         <item>Silent Forest</item>
         <item>Shadow Alloy</item>
@@ -2346,8 +2346,8 @@ Für die flüssigste Wiedergabe kannst du einen externen Player wie VLC verwende
     <string name="watch_cam_flip_desc">Kamera wechseln</string>
     <string name="watch_cam_front">Vorderseite</string>
     <string name="watch_cam_label">Kamera</string>
-    <string name="watch_fadshot_desc">Foto aufnehmen</string>
-    <string name="watch_fadshot_label">Aufnahme</string>
+    <string name="watch_shahidshot_desc">Foto aufnehmen</string>
+    <string name="watch_shahidshot_label">Aufnahme</string>
     <string name="watch_fullscreen_desc">Vollbild</string>
     <string name="watch_fullscreen_hint">Kamera nimmt auf</string>
     <string name="watch_fullscreen_label">Ansicht</string>
@@ -2413,7 +2413,7 @@ Für die flüssigste Wiedergabe kannst du einen externen Player wie VLC verwende
     <string name="watermark_weather_title">Wetter</string>
     <string name="widget_customize_action_label">Anpassen</string>
     <string name="widget_customize_action_subtitle">Zeit-, Datums- und Themenoptionen</string>
-    <string name="fadcam_pro_early_bird">🎉 Kostenlos bis zum 23. Dezember 2025! Danach lebenslangen Zugang für nur 15 $ erhalten.</string>
+    <string name="shahidcam_pro_early_bird">🎉 Kostenlos bis zum 23. Dezember 2025! Danach lebenslangen Zugang für nur 15 $ erhalten.</string>
     <string name="export_center">Exportzentrum</string>
     <string name="remote_server_status">Serverstatus</string>
     <string name="remote_server_endpoints">Server-Endpunkte</string>
@@ -2488,7 +2488,7 @@ Für die flüssigste Wiedergabe kannst du einen externen Player wie VLC verwende
     <string name="sidebar_update_available">Update verfügbar</string>
     <string name="sidebar_stable_release">Stabile Version</string>
     <string name="sidebar_beta_release">Beta-Version</string>
-    <string name="sidebar_fadcam_pro">ShahidCam Pro</string>
+    <string name="sidebar_shahidcam_pro">ShahidCam Pro</string>
     <string name="badge_new">NEU</string>
     <string name="update_pro_title">ShahidCam Pro-Update</string>
     <string name="update_pro_desc">Eine neue Version von ShahidCam Pro ist verfügbar.\n\nFür kostenlose Benutzer wird die stabile Version nach etwa 60 Tagen veröffentlicht. Pro-Benutzer erhalten Updates sofort.</string>
@@ -2505,7 +2505,7 @@ Für die flüssigste Wiedergabe kannst du einen externen Player wie VLC verwende
     <string name="screen_recording_saved">Bildschirmaufnahme gespeichert</string>
     <string name="screen_recording_tap_to_view">Tippe, um deine Aufnahme anzusehen</string>
     <string name="notification_action_stop">Stopp</string>
-    <string name="fadmic_coming_soon">Mic (Mikrofonaufnahme) kommt bald!</string>
+    <string name="shahidmic_coming_soon">Mic (Mikrofonaufnahme) kommt bald!</string>
     <string name="toast_stream_server_starting">Streamserver wird gestartet...</string>
     <string name="toast_stream_server_stopped">Streamserver gestoppt</string>
     <string name="toast_no_cloud_viewers">Keine Cloud-Zuschauer verbunden</string>
@@ -2591,7 +2591,7 @@ Für die flüssigste Wiedergabe kannst du einen externen Player wie VLC verwende
     <string name="about_dialog_error">Fehler</string>
     <string name="about_dialog_ok">OK</string>
     <string name="about_get_beta">Beta holen</string>
-    <string name="about_fadcam_feedback">ShahidCam Feedback</string>
+    <string name="about_shahidcam_feedback">ShahidCam Feedback</string>
 
     <!-- Video split sizes -->
     <string name="video_split_enabled_format">Aktiviert (%s)</string>
@@ -2611,16 +2611,16 @@ Für die flüssigste Wiedergabe kannst du einen externen Player wie VLC verwende
 
     <!-- Settings home tabs -->
     <string name="settings_tab_all">Alle</string>
-    <string name="settings_tab_fadcam" translatable="false">ShahidCam</string>
-    <string name="settings_tab_fadrec" translatable="false">ScreenRec</string>
+    <string name="settings_tab_shahidcam" translatable="false">ShahidCam</string>
+    <string name="settings_tab_shahidrec" translatable="false">ScreenRec</string>
 
     <!-- Watermark preview labels -->
-    <string name="watermark_preview_fadcam" translatable="false">ShahidCam</string>
-    <string name="watermark_preview_fadrec" translatable="false">ScreenRec</string>
+    <string name="watermark_preview_shahidcam" translatable="false">ShahidCam</string>
+    <string name="watermark_preview_shahidrec" translatable="false">ScreenRec</string>
     <string name="settings_location_update_interval_5s">5,0 Sekunden</string>
 
     <!-- Annotation toolbar -->
-    <string name="annotation_by_fadsec_lab">von CyberShadowPK Lab</string>
+    <string name="annotation_by_shahidlabs_lab">von CyberShadowPK Lab</string>
     <string name="annotation_quick_access">Schnellzugriff</string>
     <string name="annotation_annotate">Annotieren</string>
     <string name="annotation_enable_tools">Werkzeuge aktivieren</string>
@@ -2698,7 +2698,7 @@ Für die flüssigste Wiedergabe kannst du einen externen Player wie VLC verwende
     <string name="desc_delete_text">Text löschen</string>
     <string name="desc_done">Fertig</string>
     <string name="desc_exposure_compensation">Belichtungskorrektur</string>
-    <string name="desc_fadrec_logo">ScreenRec-Logo</string>
+    <string name="desc_shahidrec_logo">ScreenRec-Logo</string>
     <string name="desc_fast_forward">5 Sekunden vorspulen</string>
     <string name="desc_increase">Erhöhen</string>
     <string name="desc_italic">Kursiv</string>
@@ -2721,7 +2721,7 @@ Für die flüssigste Wiedergabe kannst du einen externen Player wie VLC verwende
     <string name="channel_security_alarm">Sicherheitsalarm</string>
     <string name="channel_remote_streaming">Fern-Streaming</string>
     <string name="channel_annotation_service">Annotationsdienst</string>
-    <string name="channel_fadcam_file_ops">ShahidCam-Dateioperationen</string>
+    <string name="channel_shahidcam_file_ops">ShahidCam-Dateioperationen</string>
 
     <!-- ScreenRecordingService -->
     <string name="screen_rec_failed">Aufnahme fehlgeschlagen: %s</string>
@@ -2847,7 +2847,7 @@ Für die flüssigste Wiedergabe kannst du einen externen Player wie VLC verwende
     <string name="tutorial_dashcam_setup">Dashcam einrichten</string>
 
     <!-- iOS Promo -->
-    <string name="fadcam_for_ios_title">ShahidCam für iOS</string>
+    <string name="shahidcam_for_ios_title">ShahidCam für iOS</string>
     <string name="ios_promo_title">ShahidCam ist jetzt auf iOS!</string>
     <string name="ios_promo_subtitle">Dieselbe datenschutzorientierte Kamera-App, die du liebst, jetzt auch für iPhone verfügbar</string>
 

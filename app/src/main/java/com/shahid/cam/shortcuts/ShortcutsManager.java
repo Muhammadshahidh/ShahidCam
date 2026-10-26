@@ -291,7 +291,7 @@ public class ShortcutsManager {
                     ctx,
                     "com.shahid.cam.PhotoCaptureActivity"
                 ),
-                com.shahid.cam.R.drawable.fadshot_shortcut,
+                com.shahid.cam.R.drawable.shahidshot_shortcut,
                 ctx.getString(com.shahid.cam.R.string.shortcut_take_photo)
             )
         );
@@ -306,7 +306,7 @@ public class ShortcutsManager {
                     com.shahid.cam.PhotoCaptureActivity.EXTRA_SHORTCUT_PHOTO_CAMERA_MODE,
                     com.shahid.cam.PhotoCaptureActivity.PHOTO_CAMERA_MODE_FRONT
                 ),
-                com.shahid.cam.R.drawable.fadshot_front_shortcut,
+                com.shahid.cam.R.drawable.shahidshot_front_shortcut,
                 ctx.getString(com.shahid.cam.R.string.shortcut_take_photo_front)
             )
         );
@@ -419,7 +419,7 @@ public class ShortcutsManager {
                             ctx,
                             "com.shahid.cam.PhotoCaptureActivity"
                         ),
-                        com.shahid.cam.R.drawable.fadshot_shortcut,
+                        com.shahid.cam.R.drawable.shahidshot_shortcut,
                         ctx.getString(com.shahid.cam.R.string.shortcut_take_photo)
                     )
                 );
@@ -475,7 +475,7 @@ public class ShortcutsManager {
                             com.shahid.cam.PhotoCaptureActivity.EXTRA_SHORTCUT_PHOTO_CAMERA_MODE,
                             com.shahid.cam.PhotoCaptureActivity.PHOTO_CAMERA_MODE_FRONT
                         ),
-                        com.shahid.cam.R.drawable.fadshot_front_shortcut,
+                        com.shahid.cam.R.drawable.shahidshot_front_shortcut,
                         ctx.getString(com.shahid.cam.R.string.shortcut_take_photo_front)
                     )
                 );

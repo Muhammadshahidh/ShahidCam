@@ -318,7 +318,7 @@ public class RecordingService extends Service {
 
         // Initialize PowerManager and WakeLock
         android.os.PowerManager powerManager = (android.os.PowerManager) getSystemService(Context.POWER_SERVICE);
-        recordingWakeLock = powerManager.newWakeLock(android.os.PowerManager.PARTIAL_WAKE_LOCK, "FadCam:RecordingService");
+        recordingWakeLock = powerManager.newWakeLock(android.os.PowerManager.PARTIAL_WAKE_LOCK, "ShahidCam:RecordingService");
         try {
             digitalForensicsEventRecorder = new DigitalForensicsEventRecorder(getApplicationContext());
         } catch (Exception e) {
@@ -1364,7 +1364,7 @@ public class RecordingService extends Service {
             String s = uriString;
             int q = s.indexOf('?');
             if (q >= 0) s = s.substring(0, q);
-            // content://.../document/primary%3ADownload%2FFadCam%2F...%2FFadCam_x.mp4
+            // content://.../document/primary%3ADownload%2FShahidCam%2F...%2FShahidCam_x.mp4
             if (s.contains("%2F")) {
                 s = s.substring(s.lastIndexOf("%2F") + 3);
             } else {
@@ -1622,10 +1622,10 @@ public class RecordingService extends Service {
             
             // STREAM ENFORCEMENT GATE: Validate and gate streaming mode
             boolean streamingEnabled = com.shahid.cam.streaming.RemoteStreamManager.getInstance().isStreamingEnabled();
-            android.content.SharedPreferences fadcamPrefs = getSharedPreferences("FadCamPrefs", Context.MODE_PRIVATE);
-            String presetName = fadcamPrefs.getString("quality_preset", "HIGH");
-            int presetBitrate = fadcamPrefs.getInt("stream_bitrate", 5_000_000);
-            int presetFps = fadcamPrefs.getInt("stream_fps_cap", 30);
+            android.content.SharedPreferences shahidcamPrefs = getSharedPreferences("ShahidCamPrefs", Context.MODE_PRIVATE);
+            String presetName = shahidcamPrefs.getString("quality_preset", "HIGH");
+            int presetBitrate = shahidcamPrefs.getInt("stream_bitrate", 5_000_000);
+            int presetFps = shahidcamPrefs.getInt("stream_fps_cap", 30);
             
             if (streamingEnabled) {
                 FLog.i(TAG, "🔴 [STREAM MODE ENFORCED] Starting recording with streaming server ACTIVE");
@@ -3594,11 +3594,11 @@ public class RecordingService extends Service {
         String customTextLine = (customText != null && !customText.isEmpty()) ? "\n" + customText : "";
         String finalText;
         switch (watermarkOption) {
-            case "timestamp_fadcam":
-                finalText = "Captured by <FADCAM_ICON> - " + getCurrentTimestamp() + getTimezoneSuffix() + locationText + customTextLine;
+            case "timestamp_shahidcam":
+                finalText = "Captured by <SHAHIDCAM_ICON> - " + getCurrentTimestamp() + getTimezoneSuffix() + locationText + customTextLine;
                 break;
-            case "badge_fadcam":
-                finalText = "Captured by <FADCAM_ICON>" + customTextLine;
+            case "badge_shahidcam":
+                finalText = "Captured by <SHAHIDCAM_ICON>" + customTextLine;
                 break;
             case "timestamp":
                 finalText = getCurrentTimestamp() + getTimezoneSuffix() + locationText + customTextLine;
@@ -3607,7 +3607,7 @@ public class RecordingService extends Service {
                 finalText = "";
                 break;
             default:
-                finalText = "Captured by FadCam - " + getCurrentTimestamp() + getTimezoneSuffix() + locationText + customTextLine;
+                finalText = "Captured by ShahidCam - " + getCurrentTimestamp() + getTimezoneSuffix() + locationText + customTextLine;
         }
         if (!finalText.isEmpty()) {
             finalText += getExtendedSensorData();
@@ -3633,11 +3633,11 @@ public class RecordingService extends Service {
                 String customTextLine = (customText != null && !customText.isEmpty()) ? "\n" + customText : "";
                 String finalText;
                 switch (watermarkOption) {
-                    case "timestamp_fadcam":
-                        finalText = "Captured by <FADCAM_ICON> - " + getCurrentTimestamp() + getTimezoneSuffix() + locationText + customTextLine;
+                    case "timestamp_shahidcam":
+                        finalText = "Captured by <SHAHIDCAM_ICON> - " + getCurrentTimestamp() + getTimezoneSuffix() + locationText + customTextLine;
                         break;
-                    case "badge_fadcam":
-                        finalText = "Captured by <FADCAM_ICON>" + customTextLine;
+                    case "badge_shahidcam":
+                        finalText = "Captured by <SHAHIDCAM_ICON>" + customTextLine;
                         break;
                     case "timestamp":
                         finalText = getCurrentTimestamp() + getTimezoneSuffix() + locationText + customTextLine;
@@ -3646,7 +3646,7 @@ public class RecordingService extends Service {
                         finalText = "";
                         break;
                     default:
-                        finalText = "Captured by FadCam - " + getCurrentTimestamp() + getTimezoneSuffix() + locationText + customTextLine;
+                        finalText = "Captured by ShahidCam - " + getCurrentTimestamp() + getTimezoneSuffix() + locationText + customTextLine;
                 }
                 if (!finalText.isEmpty()) {
                     // Watermark text built; logging omitted (fires every second during recording)
@@ -4575,9 +4575,9 @@ public class RecordingService extends Service {
             
             // Apply streaming FPS cap only when server is actually ON
             boolean isStreamingForFps1 = com.shahid.cam.streaming.RemoteStreamManager.getInstance().isStreamingEnabled();
-            android.content.SharedPreferences fadcamPrefs = getSharedPreferences("FadCamPrefs", Context.MODE_PRIVATE);
+            android.content.SharedPreferences shahidcamPrefs = getSharedPreferences("ShahidCamPrefs", Context.MODE_PRIVATE);
             if (isStreamingForFps1) {
-                int streamFpsCap = fadcamPrefs.getInt("stream_fps_cap", -1);
+                int streamFpsCap = shahidcamPrefs.getInt("stream_fps_cap", -1);
                 if (streamFpsCap > 0 && targetFrameRate > streamFpsCap) {
                     FLog.i(TAG, "[STREAM PRESET] Capping camera FPS: " + targetFrameRate + " → " + streamFpsCap + "fps (server ON)");
                     targetFrameRate = streamFpsCap;
@@ -4657,9 +4657,9 @@ public class RecordingService extends Service {
             
             // Apply streaming FPS cap only when server is actually ON
             boolean isStreamingForFps2 = com.shahid.cam.streaming.RemoteStreamManager.getInstance().isStreamingEnabled();
-            android.content.SharedPreferences fadcamPrefs = getSharedPreferences("FadCamPrefs", Context.MODE_PRIVATE);
+            android.content.SharedPreferences shahidcamPrefs = getSharedPreferences("ShahidCamPrefs", Context.MODE_PRIVATE);
             if (isStreamingForFps2) {
-                int streamFpsCap = fadcamPrefs.getInt("stream_fps_cap", -1);
+                int streamFpsCap = shahidcamPrefs.getInt("stream_fps_cap", -1);
                 if (streamFpsCap > 0 && targetFrameRate > streamFpsCap) {
                     FLog.i(TAG, "[STREAM PRESET] Capping camera FPS: " + targetFrameRate + " → " + streamFpsCap + "fps (server ON)");
                     targetFrameRate = streamFpsCap;
@@ -5041,9 +5041,9 @@ public class RecordingService extends Service {
         
         if (isStreaming) {
             // Server is ON: enforce stream quality preset bitrate, ignore user settings
-            android.content.SharedPreferences fadcamPrefs = getSharedPreferences("FadCamPrefs", android.content.Context.MODE_PRIVATE);
-            int streamBitrate = fadcamPrefs.getInt("stream_bitrate", -1);
-            String preset = fadcamPrefs.getString("quality_preset", "HIGH");
+            android.content.SharedPreferences shahidcamPrefs = getSharedPreferences("ShahidCamPrefs", android.content.Context.MODE_PRIVATE);
+            int streamBitrate = shahidcamPrefs.getInt("stream_bitrate", -1);
+            String preset = shahidcamPrefs.getString("quality_preset", "HIGH");
             if (streamBitrate > 0) {
                 videoBitrate = streamBitrate;
                 FLog.i(TAG, "[STREAM PRESET] Bitrate enforced: " + (videoBitrate / 1_000_000) + " Mbps (preset=" + preset + ") — user settings ignored");
@@ -6482,12 +6482,12 @@ public class RecordingService extends Service {
      * throws — every failure path falls back to stabilization OFF so a quirky
      * HAL can never take the camera down.
      *
-     * Tagged "FadCamEIS" for logcat grepping to verify the feature is active.
+     * Tagged "ShahidCamEIS" for logcat grepping to verify the feature is active.
      */
     private void applyVideoStabilization(CaptureRequest.Builder builder) {
         try {
             if (builder == null || currentCameraCharacteristics == null) {
-                FLog.w("FadCamEIS", "applyVideoStabilization skipped (builder/chars null)");
+                FLog.w("ShahidCamEIS", "applyVideoStabilization skipped (builder/chars null)");
                 return;
             }
             boolean prefEnabled = sharedPreferencesManager != null
@@ -6525,13 +6525,13 @@ public class RecordingService extends Service {
                     : CameraMetadata.LENS_OPTICAL_STABILIZATION_MODE_OFF;
             builder.set(CaptureRequest.LENS_OPTICAL_STABILIZATION_MODE, oisMode);
 
-            FLog.i("FadCamEIS", "VideoStab applied -> pref=" + prefEnabled
+            FLog.i("ShahidCamEIS", "VideoStab applied -> pref=" + prefEnabled
                     + " eisSupported=" + eisSupported + " eis=" + eisMode
                     + " oisSupported=" + oisSupported + " ois=" + oisMode
                     + " cameraId=" + (cameraDevice != null ? cameraDevice.getId() : "null"));
         } catch (Throwable t) {
             // Catch Throwable: a stabilization bug must never crash the recorder.
-            FLog.w("FadCamEIS", "applyVideoStabilization failed, falling back to OFF: " + t.getMessage());
+            FLog.w("ShahidCamEIS", "applyVideoStabilization failed, falling back to OFF: " + t.getMessage());
         }
     }
 
@@ -6544,15 +6544,15 @@ public class RecordingService extends Service {
         try {
             if (captureSession == null || captureRequestBuilder == null
                     || cameraDevice == null || isStopping) {
-                FLog.w("FadCamEIS", "reapply skipped (session/builder/device not ready)");
+                FLog.w("ShahidCamEIS", "reapply skipped (session/builder/device not ready)");
                 return;
             }
             applyVideoStabilization(captureRequestBuilder);
             captureSession.setRepeatingRequest(
                     captureRequestBuilder.build(), null, backgroundHandler);
-            FLog.i("FadCamEIS", "Repeating request re-issued with new stabilization state");
+            FLog.i("ShahidCamEIS", "Repeating request re-issued with new stabilization state");
         } catch (Throwable t) {
-            FLog.w("FadCamEIS", "reapplyVideoStabilizationToSession failed safely: " + t.getMessage());
+            FLog.w("ShahidCamEIS", "reapplyVideoStabilizationToSession failed safely: " + t.getMessage());
         }
     }
 
@@ -7172,7 +7172,7 @@ public class RecordingService extends Service {
 
             // Re-fetch streaming state and config at actual recording start
             boolean isStreamingActive = com.shahid.cam.streaming.RemoteStreamManager.getInstance().isStreamingEnabled();
-            android.content.SharedPreferences fadcamPrefs = getSharedPreferences("FadCamPrefs", Context.MODE_PRIVATE);
+            android.content.SharedPreferences shahidcamPrefs = getSharedPreferences("ShahidCamPrefs", Context.MODE_PRIVATE);
             
             // Resolution always from Recording Settings — presets only control bitrate + FPS
             String orientation = sharedPreferencesManager.getVideoOrientation();
@@ -7183,7 +7183,7 @@ public class RecordingService extends Service {
             int recordingBitrate = getVideoBitrate();  // Reads preset bitrate if streaming
             int recordingFps = sharedPreferencesManager.getSpecificVideoFrameRate(sharedPreferencesManager.getCameraSelection());
             if (isStreamingActive && recordingFps > 0) {
-                int streamFpsCap = fadcamPrefs.getInt("stream_fps_cap", -1);
+                int streamFpsCap = shahidcamPrefs.getInt("stream_fps_cap", -1);
                 if (streamFpsCap > 0 && recordingFps > streamFpsCap) {
                     recordingFps = streamFpsCap;  // Apply FPS cap
                 }
@@ -7212,7 +7212,7 @@ public class RecordingService extends Service {
             // Get camera's target framerate and apply streaming FPS cap if server is ON
             int videoFramerate = sharedPreferencesManager.getSpecificVideoFrameRate(cameraType);
             if (isStreamingActive) {
-                int streamFpsCap = fadcamPrefs.getInt("stream_fps_cap", -1);
+                int streamFpsCap = shahidcamPrefs.getInt("stream_fps_cap", -1);
                 if (streamFpsCap > 0 && videoFramerate > streamFpsCap) {
                     FLog.i(TAG, "[STREAM PRESET] Applying FPS cap at MediaRecorder: " + videoFramerate + " → " + streamFpsCap + "fps");
                     videoFramerate = streamFpsCap;

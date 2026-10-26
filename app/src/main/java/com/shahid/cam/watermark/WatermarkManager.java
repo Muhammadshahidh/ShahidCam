@@ -153,12 +153,12 @@ public class WatermarkManager implements WatermarkInfoProvider {
 
         String finalText;
         switch (watermarkOption) {
-            case "timestamp_fadcam":
-                finalText = "Captured by <FADCAM_ICON> - " + getCurrentTimestamp() + getTimezoneSuffix()
+            case "timestamp_shahidcam":
+                finalText = "Captured by <SHAHIDCAM_ICON> - " + getCurrentTimestamp() + getTimezoneSuffix()
                         + locationText + customTextLine;
                 break;
-            case "badge_fadcam":
-                finalText = "Captured by <FADCAM_ICON>" + customTextLine;
+            case "badge_shahidcam":
+                finalText = "Captured by <SHAHIDCAM_ICON>" + customTextLine;
                 break;
             case "timestamp":
                 finalText = getCurrentTimestamp() + getTimezoneSuffix() + locationText + customTextLine;
@@ -167,7 +167,7 @@ public class WatermarkManager implements WatermarkInfoProvider {
                 finalText = "";
                 break;
             default:
-                finalText = "Captured by FadCam - " + getCurrentTimestamp() + getTimezoneSuffix()
+                finalText = "Captured by ShahidCam - " + getCurrentTimestamp() + getTimezoneSuffix()
                         + locationText + customTextLine;
         }
 

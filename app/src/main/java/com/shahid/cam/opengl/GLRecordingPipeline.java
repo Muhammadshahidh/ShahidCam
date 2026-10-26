@@ -284,7 +284,7 @@ public class GLRecordingPipeline {
             android.graphics.Bitmap bitmap = null;
             try {
                 // Capture raw camera frame from GL path (without GL watermark),
-                // then let PhotoStorageHelper apply the exact normal FadShot watermark style.
+                // then let PhotoStorageHelper apply the exact normal ShahidShot watermark style.
                 glRenderer.setSuppressWatermarkForSnapshot(true);
                 // Render and discard enough frames to flush any previously-watermarked
                 // frames from the encoder pipeline. 6 frames ensures the encoder's
@@ -478,9 +478,9 @@ public class GLRecordingPipeline {
     private int getEffectiveVideoBitrate(Context context) {
         boolean isStreaming = com.shahid.cam.streaming.RemoteStreamManager.getInstance().isStreamingEnabled();
         if (isStreaming) {
-            android.content.SharedPreferences fadcamPrefs =
-                    context.getSharedPreferences("FadCamPrefs", Context.MODE_PRIVATE);
-            int streamBitrate = fadcamPrefs.getInt("stream_bitrate", -1);
+            android.content.SharedPreferences shahidcamPrefs =
+                    context.getSharedPreferences("ShahidCamPrefs", Context.MODE_PRIVATE);
+            int streamBitrate = shahidcamPrefs.getInt("stream_bitrate", -1);
             if (streamBitrate > 0) {
                 FLog.i(TAG, "[STREAM PRESET] GL encoder bitrate enforced: " + (streamBitrate / 1_000_000)
                         + " Mbps");

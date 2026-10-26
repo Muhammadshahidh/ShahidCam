@@ -68,8 +68,8 @@ public class BatchMediaActionService extends Service {
         }
 
         String title = task.actionType == BatchMediaActionTask.ActionType.EXPORT_STANDARD_MP4
-                ? getString(R.string.records_batch_faditor_export_standard)
-                : getString(R.string.records_batch_faditor_merge);
+                ? getString(R.string.records_batch_shahideditor_export_standard)
+                : getString(R.string.records_batch_shahideditor_merge);
 
         startForeground(
                 FOREGROUND_ID,
@@ -110,7 +110,7 @@ public class BatchMediaActionService extends Service {
 
                     String eta = buildEtaText(startedAtMs, done - 1, task.inputUris.size());
                     notificationManager.updateProgress(
-                            getString(R.string.records_batch_faditor_export_standard),
+                            getString(R.string.records_batch_shahideditor_export_standard),
                             getString(R.string.records_batch_progress_item, done, task.inputUris.size()) + eta,
                             done - 1,
                             task.inputUris.size());
@@ -132,7 +132,7 @@ public class BatchMediaActionService extends Service {
                     session.setFailedItemCount(failed);
 
                     notificationManager.updateProgress(
-                            getString(R.string.records_batch_faditor_export_standard),
+                            getString(R.string.records_batch_shahideditor_export_standard),
                             getString(R.string.records_batch_progress_counts, completed, skipped, failed),
                             done,
                             task.inputUris.size());
@@ -140,7 +140,7 @@ public class BatchMediaActionService extends Service {
                 }
             } else {
                 notificationManager.updateProgress(
-                        getString(R.string.records_batch_faditor_merge),
+                        getString(R.string.records_batch_shahideditor_merge),
                         getString(R.string.records_batch_starting),
                         0,
                         task.inputUris.size() + 2);
@@ -151,7 +151,7 @@ public class BatchMediaActionService extends Service {
                     session.setCurrentItemIndex(copied);
                     String eta = buildEtaText(startedAtMs, copied, totalInputs + 2);
                     notificationManager.updateProgress(
-                            getString(R.string.records_batch_faditor_merge),
+                            getString(R.string.records_batch_shahideditor_merge),
                             "Preparing merge " + copied + "/" + totalInputs + eta,
                             copied,
                             totalInputs + 2
@@ -169,7 +169,7 @@ public class BatchMediaActionService extends Service {
                 session.setSkippedItemCount(skipped);
 
                 notificationManager.updateProgress(
-                        getString(R.string.records_batch_faditor_merge),
+                        getString(R.string.records_batch_shahideditor_merge),
                         getString(R.string.records_batch_progress_counts, completed, skipped, failed),
                         task.inputUris.size() + 2,
                         task.inputUris.size() + 2);
@@ -241,7 +241,7 @@ public class BatchMediaActionService extends Service {
 
             String displayName = getDisplayName(inputUri);
             String baseName = stripExtension(displayName == null ? ("video_" + index + ".mp4") : displayName);
-            String outputName = Constants.RECORDING_FILE_PREFIX_FADITOR_STANDARD
+            String outputName = Constants.RECORDING_FILE_PREFIX_SHAHIDEDITOR_STANDARD
                     + baseName
                     + "_"
                     + timestampSuffix()
@@ -306,13 +306,13 @@ public class BatchMediaActionService extends Service {
                 return new MergeResult(false, skippedCount);
             }
 
-            String outputName = Constants.RECORDING_FILE_PREFIX_FADITOR_MERGE
+            String outputName = Constants.RECORDING_FILE_PREFIX_SHAHIDEDITOR_MERGE
                     + timestampSuffix()
                     + ".mp4";
             outputTarget = resolveOutputTarget(task, outputName);
             if (outputTarget == null) return new MergeResult(false, skippedCount);
 
-            concatFile = new File(getCacheDir(), "faditor_batch_concat_" + System.currentTimeMillis() + ".txt");
+            concatFile = new File(getCacheDir(), "shahideditor_batch_concat_" + System.currentTimeMillis() + ".txt");
             try (FileOutputStream fos = new FileOutputStream(concatFile)) {
                 for (String path : mergePaths) {
                     String escapedPath = path.replace("'", "'\\''");
@@ -470,13 +470,13 @@ public class BatchMediaActionService extends Service {
                 }
             }
 
-            if (task.outputMode == BatchMediaActionTask.OutputMode.DEFAULT_FADITOR) {
-                RecordingStoragePaths.FaditorOutputType outputType =
+            if (task.outputMode == BatchMediaActionTask.OutputMode.DEFAULT_SHAHIDEDITOR) {
+                RecordingStoragePaths.ShahidEditorOutputType outputType =
                         task.actionType == BatchMediaActionTask.ActionType.MERGE_VIDEOS
-                                ? RecordingStoragePaths.FaditorOutputType.MERGE
-                                : RecordingStoragePaths.FaditorOutputType.CONVERTED;
+                                ? RecordingStoragePaths.ShahidEditorOutputType.MERGE
+                                : RecordingStoragePaths.ShahidEditorOutputType.CONVERTED;
                 String customUri = sharedPreferencesManager.getCustomStorageUri();
-                DocumentFile safDir = RecordingStoragePaths.getSafFaditorOutputDir(
+                DocumentFile safDir = RecordingStoragePaths.getSafShahidEditorOutputDir(
                         this,
                         customUri,
                         outputType,
@@ -490,7 +490,7 @@ public class BatchMediaActionService extends Service {
                     }
                 }
 
-                File outDir = RecordingStoragePaths.getInternalFaditorOutputDir(
+                File outDir = RecordingStoragePaths.getInternalShahidEditorOutputDir(
                         this,
                         outputType,
                         true

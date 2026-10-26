@@ -1,7 +1,7 @@
 package com.shahid.cam.opengl;
 
 /**
- * WatermarkInfoProvider provides the current watermark text (timestamp, FadCam, location, etc).
+ * WatermarkInfoProvider provides the current watermark text (timestamp, ShahidCam, location, etc).
  */
 public interface WatermarkInfoProvider {
     /**

@@ -96,7 +96,7 @@ public class RemoteStreamService extends Service {
         startForeground(NOTIFICATION_ID, buildNotification("Ready. Start recording to begin streaming.", "http://..."));
         
         // Check streaming mode (0 = local, 1 = cloud)
-        int streamingMode = getSharedPreferences("FadCamCloudPrefs", MODE_PRIVATE).getInt("streaming_mode", 0);
+        int streamingMode = getSharedPreferences("ShahidCamCloudPrefs", MODE_PRIVATE).getInt("streaming_mode", 0);
         boolean isCloudMode = streamingMode == 1;
         
         FLog.i(TAG, (isCloudMode ? "☁️" : "📱") + " Streaming mode: " + (isCloudMode ? "CLOUD" : "LOCAL"));
@@ -111,7 +111,7 @@ public class RemoteStreamService extends Service {
             }
             
             // Save port to preferences for local dashboard
-            getSharedPreferences("FadCamPrefs", MODE_PRIVATE)
+            getSharedPreferences("ShahidCamPrefs", MODE_PRIVATE)
                 .edit()
                 .putInt("stream_server_port", activePort)
                 .apply();
@@ -176,7 +176,7 @@ public class RemoteStreamService extends Service {
      */
     public void updateStreamingMode() {
         // Get current mode from preferences (0 = local, 1 = cloud)
-        int streamingMode = getSharedPreferences("FadCamCloudPrefs", MODE_PRIVATE)
+        int streamingMode = getSharedPreferences("ShahidCamCloudPrefs", MODE_PRIVATE)
             .getInt("streaming_mode", 0);
         boolean isCloudMode = streamingMode == 1;
         
@@ -199,7 +199,7 @@ public class RemoteStreamService extends Service {
                 FLog.i(TAG, "📱 Starting HTTP server (switching to local mode)");
                 if (startHttpServer()) {
                     // Save port to preferences
-                    getSharedPreferences("FadCamPrefs", MODE_PRIVATE)
+                    getSharedPreferences("ShahidCamPrefs", MODE_PRIVATE)
                         .edit()
                         .putInt("stream_server_port", activePort)
                         .apply();
@@ -478,7 +478,7 @@ public class RemoteStreamService extends Service {
      */
     private void updateNotification() {
         // Check if cloud mode is enabled
-        android.content.SharedPreferences cloudPrefs = getSharedPreferences("FadCamCloudPrefs", Context.MODE_PRIVATE);
+        android.content.SharedPreferences cloudPrefs = getSharedPreferences("ShahidCamCloudPrefs", Context.MODE_PRIVATE);
         int streamingMode = cloudPrefs.getInt("streaming_mode", 0); // 0 = local, 1 = cloud
         boolean isCloudMode = streamingMode == 1;
         
@@ -489,7 +489,7 @@ public class RemoteStreamService extends Service {
         if (isCloudMode) {
             // Cloud mode - show cloud dashboard URL with device ID (even if activePort == -1)
             String deviceId = android.provider.Settings.Secure.getString(getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
-            dashboardUrl = "https://fadcam.fadseclab.com/stream/" + deviceId + "/";
+            dashboardUrl = "https://shahidcam.shahidlabs.com/stream/" + deviceId + "/";
             
             if (fragmentCount > 0) {
                 contentText = "Cloud Streaming: " + dashboardUrl + " (" + fragmentCount + " fragments)";
@@ -550,14 +550,14 @@ public class RemoteStreamService extends Service {
         }
         
         // Check if cloud mode is enabled
-        android.content.SharedPreferences cloudPrefs = getSharedPreferences("FadCamCloudPrefs", Context.MODE_PRIVATE);
+        android.content.SharedPreferences cloudPrefs = getSharedPreferences("ShahidCamCloudPrefs", Context.MODE_PRIVATE);
         int streamingMode = cloudPrefs.getInt("streaming_mode", 0); // 0 = local, 1 = cloud
         boolean isCloudMode = streamingMode == 1;
         
         if (isCloudMode) {
             // Cloud mode - return cloud dashboard URL with device ID
             String deviceId = android.provider.Settings.Secure.getString(getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
-            return "https://fadcam.fadseclab.com/stream/" + deviceId + "/";
+            return "https://shahidcam.shahidlabs.com/stream/" + deviceId + "/";
         } else {
             // Local mode - return local dashboard URL (root)
             String ipAddress = getLocalIpAddress();

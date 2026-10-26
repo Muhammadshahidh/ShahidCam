@@ -50,7 +50,7 @@ public class VideoIndexEntity {
     @ColumnInfo(name = "duration_resolved")
     public boolean durationResolved;
 
-    /** Category string: CAMERA, SCREEN, FADITOR, SHOT, STREAM, DUAL, UNKNOWN. */
+    /** Category string: CAMERA, SCREEN, SHAHIDEDITOR, SHOT, STREAM, DUAL, UNKNOWN. */
     @ColumnInfo(name = "category")
     public String category;
 
@@ -58,7 +58,7 @@ public class VideoIndexEntity {
     @ColumnInfo(name = "media_type")
     public String mediaType;
 
-    /** Shot subtype: BACK, SELFIE, FADREC, UNKNOWN. */
+    /** Shot subtype: BACK, SELFIE, SHAHIDREC, UNKNOWN. */
     @ColumnInfo(name = "shot_subtype")
     public String shotSubtype;
 
@@ -66,9 +66,9 @@ public class VideoIndexEntity {
     @ColumnInfo(name = "camera_subtype")
     public String cameraSubtype;
 
-    /** Faditor subtype: CONVERTED, MERGE, OTHER, UNKNOWN. */
-    @ColumnInfo(name = "faditor_subtype")
-    public String faditorSubtype;
+    /** ShahidEditor subtype: CONVERTED, MERGE, OTHER, UNKNOWN. */
+    @ColumnInfo(name = "shahideditor_subtype")
+    public String shahideditorSubtype;
 
     /** Absolute path to the cached thumbnail file on disk. Null if not yet generated. */
     @ColumnInfo(name = "thumbnail_path")

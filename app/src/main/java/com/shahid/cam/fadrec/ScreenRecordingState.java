@@ -1,7 +1,7 @@
-package com.shahid.cam.fadrec;
+package com.shahid.cam.shahidrec;
 
 /**
- * Represents the current state of screen recording in the FadRec feature.
+ * Represents the current state of screen recording in the ShahidRec feature.
  * Follows the same pattern as RecordingState for camera recording.
  */
 public enum ScreenRecordingState {

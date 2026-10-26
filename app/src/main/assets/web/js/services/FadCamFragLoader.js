@@ -1,8 +1,8 @@
 /**
- * FadCamFragLoader — HLS.js custom fragment loader with AES-256-GCM decryption.
+ * ShahidCamFragLoader — HLS.js custom fragment loader with AES-256-GCM decryption.
  *
  * Intercepts HLS media segment (*.m4s) downloads and transparently decrypts
- * FadCam E2E-encrypted payloads before passing the cleartext to HLS.js.
+ * ShahidCam E2E-encrypted payloads before passing the cleartext to HLS.js.
  *
  * Wire format expected for every media segment:
  *   [ magic 4 B: 0xFADCE245 ][ nonce 12 B ][ AES-256-GCM ciphertext + 16-B auth tag ]
@@ -11,7 +11,7 @@
  *
  * Requirements:
  *  - window.E2EKeyManager must be loaded before this script.
- *  - window.FadCamRemote must be available when a stream is active.
+ *  - window.ShahidCamRemote must be available when a stream is active.
  *  - HLS.js must be loaded before this script (uses Hls.DefaultConfig.loader).
  */
 (function () {
@@ -23,7 +23,7 @@
   const HEADER_LEN  = MAGIC_BYTES.length + NONCE_LEN; // 16 bytes total
 
   /**
-   * Check the first 4 bytes of |buf| for the FadCam magic.
+   * Check the first 4 bytes of |buf| for the ShahidCam magic.
    * @param {ArrayBuffer} buf
    * @returns {boolean}
    */
@@ -38,13 +38,13 @@
    */
   function buildLoader() {
     if (typeof Hls === 'undefined') {
-      console.error('[FadCamFragLoader] HLS.js is not loaded — cannot create loader');
+      console.error('[ShahidCamFragLoader] HLS.js is not loaded — cannot create loader');
       return null;
     }
 
     const DefaultLoader = Hls.DefaultConfig.loader;
 
-    class FadCamFragLoader extends DefaultLoader {
+    class ShahidCamFragLoader extends DefaultLoader {
       /**
        * @param {Object} config  HLS.js loader config (passed by HLS.js internals).
        */
@@ -82,7 +82,7 @@
               const patchedResponse = Object.assign({}, response, { data: decrypted });
               originalOnSuccess(patchedResponse, stats, ctx, networkDetails);
             } catch (err) {
-              console.error('[FadCamFragLoader] Decryption error:', err.message);
+              console.error('[ShahidCamFragLoader] Decryption error:', err.message);
               // Dispatch event so UI can prompt for re-unlock
               window.dispatchEvent(new CustomEvent('e2e-decryption-failed', { detail: { error: err.message } }));
               callbacks.onError(
@@ -99,7 +99,7 @@
       }
     }
 
-    return FadCamFragLoader;
+    return ShahidCamFragLoader;
   }
 
   /**
@@ -141,12 +141,12 @@
   }
 
   /**
-   * Get the current stream device ID from FadCamRemote (cloud mode).
+   * Get the current stream device ID from ShahidCamRemote (cloud mode).
    * @returns {string|null}
    */
   function getStreamDeviceId() {
-    if (typeof FadCamRemote !== 'undefined' && typeof FadCamRemote.getStreamDeviceId === 'function') {
-      return FadCamRemote.getStreamDeviceId();
+    if (typeof ShahidCamRemote !== 'undefined' && typeof ShahidCamRemote.getStreamDeviceId === 'function') {
+      return ShahidCamRemote.getStreamDeviceId();
     }
     return null;
   }
@@ -154,8 +154,8 @@
   // Build and export — HLS.js must already be on the page
   const loader = buildLoader();
   if (loader) {
-    window.FadCamFragLoader = loader;
-    console.log('[FadCamFragLoader] Loaded and ready');
+    window.ShahidCamFragLoader = loader;
+    console.log('[ShahidCamFragLoader] Loaded and ready');
   }
 
 })();

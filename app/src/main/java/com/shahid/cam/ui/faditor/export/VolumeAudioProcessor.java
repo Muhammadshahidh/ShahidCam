@@ -1,4 +1,4 @@
-package com.shahid.cam.ui.faditor.export;
+package com.shahid.cam.ui.shahideditor.export;
 
 import androidx.media3.common.C;
 import androidx.media3.common.audio.BaseAudioProcessor;

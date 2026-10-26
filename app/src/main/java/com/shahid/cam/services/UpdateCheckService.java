@@ -16,8 +16,8 @@ public class UpdateCheckService {
 
     private static final String TAG = "UpdateCheckService";
     private static final String ORG = "Muhammadshahidh";
-    private static final String FREE_REPO = "FadCam";
-    private static final String PRO_REPO = "FadCamPro";
+    private static final String FREE_REPO = "ShahidCam";
+    private static final String PRO_REPO = "ShahidCamPro";
     private static final String FREE_FEED = feedUrl(FREE_REPO);
     private static final String PRO_FEED = feedUrl(PRO_REPO);
 

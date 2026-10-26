@@ -1,8 +1,8 @@
 /**
- * FadCam Remote Cloud Integration
+ * ShahidCam Remote Cloud Integration
  * 
  * Adds cloud features to the dashboard when accessed via web.
- * Shows on: fadseclab.com, localhost
+ * Shows on: shahidlabs.com, localhost
  * Hidden on: IP addresses (phone/LAN access like 192.168.x.x)
  * 
  * Per-device streaming:
@@ -10,12 +10,12 @@
  * - /dashboard/ → demo mode (no real streaming)
  * 
  * Cross-domain authentication:
- * - User clicks "Open Stream" at id.fadseclab.com
+ * - User clicks "Open Stream" at id.shahidlabs.com
  * - Lab generates handoff token and redirects here with ?token=xxx
  * - We exchange token for session data via Edge Function
  * - Session stored in localStorage for subsequent API calls
  * 
- * Real device management happens at id.fadseclab.com/lab (Phase 6).
+ * Real device management happens at id.shahidlabs.com/lab (Phase 6).
  */
 (function() {
   'use strict';
@@ -29,21 +29,21 @@
       const returnUrl = params.get('return');
       if (returnUrl) return decodeURIComponent(returnUrl);
       // Direct stream access without id dashboard — use production.
-      return 'https://id.fadseclab.com/lab';
+      return 'https://id.shahidlabs.com/lab';
     },
     SUPABASE_URL: 'https://vfhehknmxxedvesdvpew.supabase.co',
     SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZmaGVoa25teHhlZHZlc2R2cGV3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc3NDI2ODIsImV4cCI6MjA1MzMxODY4Mn0.1F8NF0IwBE-GYmR8Yrq4FKfFGKBRIUhWs0_fzFqF0gc',
     // Domains where cloud features should show
     WEB_DOMAINS: [
-      'fadseclab.com',
+      'shahidlabs.com',
       'localhost'
     ],
     // Local storage keys
     STORAGE_KEYS: {
-      SESSION: 'fadcam_session',
-      USER: 'fadcam_user',
-      STREAM_TOKEN: 'fadcam_stream_token', // JWT for relay API calls
-      E2E_VERIFY_TAG: 'fadcam_e2e_verify_tag' // HMAC verify tag from Supabase
+      SESSION: 'shahidcam_session',
+      USER: 'shahidcam_user',
+      STREAM_TOKEN: 'shahidcam_stream_token', // JWT for relay API calls
+      E2E_VERIFY_TAG: 'shahidcam_e2e_verify_tag' // HMAC verify tag from Supabase
     }
   };
   
@@ -51,7 +51,7 @@
   let streamContext = null;
   let viewerHeartbeatTimer = null;
   let viewerStats = null;
-  const VIEWER_SESSION_KEY = 'fadcam_viewer_session_id';
+  const VIEWER_SESSION_KEY = 'shahidcam_viewer_session_id';
   const VIEWER_HEARTBEAT_MS = 20000;
   
   // Check if running on web (not phone/LAN access)
@@ -82,7 +82,7 @@
   function getHandoffToken() {
     const params = new URLSearchParams(window.location.search);
     const token = params.get('token');
-    console.log('[FadCamRemote] getHandoffToken:', { 
+    console.log('[ShahidCamRemote] getHandoffToken:', { 
       search: window.location.search, 
       hasToken: !!token,
       tokenLength: token?.length 
@@ -127,9 +127,9 @@
     // that were already unlocked.
     if (e2eVerifyTag) {
       localStorage.setItem(CLOUD_CONFIG.STORAGE_KEYS.E2E_VERIFY_TAG, e2eVerifyTag);
-      console.log('[FadCamRemote] E2E verify_tag stored from token exchange');
+      console.log('[ShahidCamRemote] E2E verify_tag stored from token exchange');
     } else {
-      console.log('[FadCamRemote] Token exchange returned null e2e_verify_tag — keeping existing tag if any');
+      console.log('[ShahidCamRemote] Token exchange returned null e2e_verify_tag — keeping existing tag if any');
     }
   }
 
@@ -179,7 +179,7 @@
 
   async function updateViewerLease(action) {
     if (!streamContext?.streamToken) throw new Error('Stream session unavailable');
-    const response = await fetch('https://live.fadseclab.com:8443/api/viewer-session', {
+    const response = await fetch('https://live.shahidlabs.com:8443/api/viewer-session', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${streamContext.streamToken}`,
@@ -210,7 +210,7 @@
     if (viewerHeartbeatTimer) clearInterval(viewerHeartbeatTimer);
     viewerHeartbeatTimer = setInterval(() => {
       updateViewerLease('heartbeat').catch((error) => {
-        console.error('[FadCamRemote] Viewer heartbeat failed:', error);
+        console.error('[ShahidCamRemote] Viewer heartbeat failed:', error);
         viewerStats = null;
         if (error.status === 401) {
           clearInterval(viewerHeartbeatTimer);
@@ -218,8 +218,8 @@
           clearStoredStreamSession();
           showStreamOverlay(
             'Session Expired',
-            'Open the stream again from FadSec ID to continue.',
-            { actionLabel: 'Open FadSec ID', actionHref: CLOUD_CONFIG.LAB_URL }
+            'Open the stream again from Shahid Labs ID to continue.',
+            { actionLabel: 'Open Shahid Labs ID', actionHref: CLOUD_CONFIG.LAB_URL }
           );
         }
       });
@@ -233,7 +233,7 @@
   
   // Exchange handoff token for session (called when arriving from Lab)
   async function exchangeHandoffToken(token, deviceId) {
-    console.log('[FadCamRemote] Exchanging handoff token...');
+    console.log('[ShahidCamRemote] Exchanging handoff token...');
     
     try {
       const response = await fetch(`${CLOUD_CONFIG.SUPABASE_URL}/functions/v1/exchange-handoff-token`, {
@@ -258,11 +258,11 @@
       cleanUrl.searchParams.delete('token');
       window.history.replaceState({}, document.title, cleanUrl.toString());
       
-      console.log('[FadCamRemote] Token exchanged successfully for user:', result.user.email);
+      console.log('[ShahidCamRemote] Token exchanged successfully for user:', result.user.email);
       return result;
       
     } catch (error) {
-      console.error('[FadCamRemote] Token exchange failed:', error);
+      console.error('[ShahidCamRemote] Token exchange failed:', error);
       throw error;
     }
   }
@@ -339,7 +339,7 @@
             LabPass
           </label>
           <p style="margin:0 0 8px;font-size:11px;color:#71717a;line-height:1.4;">
-            Your <strong style="color:#a1a1aa;font-weight:600;">FadSec ID</strong> password — the one you use to sign in at <span style="color:#dc2626;">id.fadseclab.com</span>
+            Your <strong style="color:#a1a1aa;font-weight:600;">Shahid Labs ID</strong> password — the one you use to sign in at <span style="color:#dc2626;">id.shahidlabs.com</span>
           </p>
           <input
             id="e2e-unlock-input"
@@ -420,7 +420,7 @@
           // Race condition: verify_tag not yet in Supabase (PBKDF2 still running on device).
           // Derive and store the key without server validation. If the password is wrong the
           // stream decryption will fail and the e2e-decryption-failed event will re-prompt.
-          console.log('[FadCamRemote] No verify_tag available — unlocking without server validation (first-time / race condition)');
+          console.log('[ShahidCamRemote] No verify_tag available — unlocking without server validation (first-time / race condition)');
           await E2EKeyManager.unlockNoVerify(pw, userId);
         } else {
           const ok = await E2EKeyManager.unlock(pw, userId, verifyTag);
@@ -439,11 +439,11 @@
           setTimeout(() => el.remove(), 300);
         }
         delete window.__e2eUnlockSubmit;
-        console.log('[FadCamRemote] E2E unlocked successfully');
+        console.log('[ShahidCamRemote] E2E unlocked successfully');
         // Notify the stream player to reload so it can decrypt with the new key
         window.dispatchEvent(new CustomEvent('e2e-stream-ready'));
       } catch (err) {
-        console.error('[FadCamRemote] E2E unlock error:', err);
+        console.error('[ShahidCamRemote] E2E unlock error:', err);
         if (errEl) errEl.textContent = err.message || 'Unlock failed. Please try again.';
         if (btn) { btn.disabled = false; btn.textContent = 'Unlock Stream'; }
       }
@@ -457,21 +457,21 @@
   async function checkAndShowE2EUnlock() {
     const verifyTag = getE2EVerifyTag();
     if (!verifyTag) {
-      console.log('[FadCamRemote] No E2E verify_tag — stream is not encrypted');
+      console.log('[ShahidCamRemote] No E2E verify_tag — stream is not encrypted');
       return;
     }
 
     if (typeof E2EKeyManager === 'undefined') {
-      console.warn('[FadCamRemote] E2EKeyManager not loaded — cannot check E2E state');
+      console.warn('[ShahidCamRemote] E2EKeyManager not loaded — cannot check E2E state');
       return;
     }
 
     const initialized = await E2EKeyManager.isInitialized();
     if (!initialized) {
-      console.log('[FadCamRemote] E2E key not in IndexedDB — showing unlock modal');
+      console.log('[ShahidCamRemote] E2E key not in IndexedDB — showing unlock modal');
       showE2EUnlockModal();
     } else {
-      console.log('[FadCamRemote] E2E key already in IndexedDB — stream ready');
+      console.log('[ShahidCamRemote] E2E key already in IndexedDB — stream ready');
     }
   }
 
@@ -482,7 +482,7 @@
   // (handled inside showE2EUnlockModal's submit handler).
   let _e2eModalShowing = false;
   window.addEventListener('e2e-decryption-failed', async (ev) => {
-    console.warn('[FadCamRemote] e2e-decryption-failed event received:', ev.detail);
+    console.warn('[ShahidCamRemote] e2e-decryption-failed event received:', ev.detail);
     // Skip if the unlock modal is already visible (avoid overlapping prompts)
     if (_e2eModalShowing || document.getElementById('e2e-unlock-overlay')) {
       return;
@@ -501,22 +501,22 @@
   
   // Initialize stream context for device
   async function initStreamContext(deviceId) {
-    console.log('[FadCamRemote] Initializing stream for device:', deviceId);
+    console.log('[ShahidCamRemote] Initializing stream for device:', deviceId);
     
     // Show connecting overlay
-    showStreamOverlay('Connecting...', 'Authenticating with FadSec Cloud');
+    showStreamOverlay('Connecting...', 'Authenticating with Shahid Labs Cloud');
     
     try {
       // Check for handoff token first (coming from Lab)
       const handoffToken = getHandoffToken();
-      console.log('[FadCamRemote] Token check result:', { 
+      console.log('[ShahidCamRemote] Token check result:', { 
         handoffToken: handoffToken ? handoffToken.substring(0, 8) + '...' : null,
         willExchange: !!handoffToken 
       });
       let session = null;
       
       if (handoffToken) {
-        console.log('[FadCamRemote] HAS handoff token, will exchange...');
+        console.log('[ShahidCamRemote] HAS handoff token, will exchange...');
         // Exchange handoff token for session
         try {
           const result = await exchangeHandoffToken(handoffToken, deviceId);
@@ -536,18 +536,18 @@
           return;
         }
       } else {
-        console.log('[FadCamRemote] NO handoff token, checking stored session...');
+        console.log('[ShahidCamRemote] NO handoff token, checking stored session...');
         // No handoff token - check for stored session
         session = getStoredSession();
         const storedStreamToken = getStreamToken();
-        console.log('[FadCamRemote] Stored session:', session ? 'exists' : 'none', 'Stream token:', storedStreamToken ? 'exists' : 'none');
+        console.log('[ShahidCamRemote] Stored session:', session ? 'exists' : 'none', 'Stream token:', storedStreamToken ? 'exists' : 'none');
         
         if (!session || !storedStreamToken) {
-          console.log('[FadCamRemote] No session or token, will redirect to Lab in 1.5s');
+          console.log('[ShahidCamRemote] No session or token, will redirect to Lab in 1.5s');
           // No session - redirect to Lab to login
           showStreamOverlay('Not Logged In', 'Redirecting to login...');
           setTimeout(() => {
-            console.log('[FadCamRemote] Redirecting NOW to:', CLOUD_CONFIG.LAB_URL);
+            console.log('[ShahidCamRemote] Redirecting NOW to:', CLOUD_CONFIG.LAB_URL);
             window.location.href = CLOUD_CONFIG.LAB_URL;
           }, 1500);
           return;
@@ -556,7 +556,7 @@
         // CRITICAL SECURITY: Validate stored session with server before granting access
         // This ensures users with revoked access cannot bypass tier restrictions
         // If tier/beta status changed since last login, this will catch it
-        console.log('[FadCamRemote] 🔐 Validating stored session with server...');
+        console.log('[ShahidCamRemote] 🔐 Validating stored session with server...');
         try {
           const validationResponse = await fetch(`${CLOUD_CONFIG.SUPABASE_URL}/functions/v1/verify-stream-token`, {
             method: 'POST',
@@ -570,23 +570,23 @@
           });
           
           if (validationResponse.ok) {
-            console.log('[FadCamRemote] ✅ Session validated - user has current access');
+            console.log('[ShahidCamRemote] ✅ Session validated - user has current access');
           } else {
-            console.error(`[FadCamRemote] ❌ Stored session rejected (${validationResponse.status})`);
+            console.error(`[ShahidCamRemote] ❌ Stored session rejected (${validationResponse.status})`);
             clearStoredStreamSession();
             showStreamOverlay(
               validationResponse.status === 401 ? 'Session Expired' : 'Streaming Access Unavailable',
-              'Open the stream again from FadSec ID after confirming your membership.',
-              { actionLabel: 'Open FadSec ID', actionHref: CLOUD_CONFIG.LAB_URL }
+              'Open the stream again from Shahid Labs ID after confirming your membership.',
+              { actionLabel: 'Open Shahid Labs ID', actionHref: CLOUD_CONFIG.LAB_URL }
             );
             return;
           }
         } catch (validationError) {
-          console.error('[FadCamRemote] ❌ Stored session validation unavailable:', validationError.message);
+          console.error('[ShahidCamRemote] ❌ Stored session validation unavailable:', validationError.message);
           showStreamOverlay(
             'Unable to Verify Access',
-            'FadSec ID could not verify this stored stream session. Try again from the Lab dashboard.',
-            { actionLabel: 'Open FadSec ID', actionHref: CLOUD_CONFIG.LAB_URL }
+            'Shahid Labs ID could not verify this stored stream session. Try again from the Lab dashboard.',
+            { actionLabel: 'Open Shahid Labs ID', actionHref: CLOUD_CONFIG.LAB_URL }
           );
           return;
         }
@@ -609,10 +609,10 @@
       // Initialize CloudApiService for cloud mode
       if (typeof initCloudApiService === 'function') {
         initCloudApiService(streamContext);
-        console.log('[FadCamRemote] CloudApiService initialized');
+        console.log('[ShahidCamRemote] CloudApiService initialized');
       }
       
-      console.log('[FadCamRemote] Stream context ready:', streamContext);
+      console.log('[ShahidCamRemote] Stream context ready:', streamContext);
 
       // Add Open Lab menu item to profile dropdown
       addCloudMenuItem();
@@ -626,7 +626,7 @@
       }
       
     } catch (error) {
-      console.error('[FadCamRemote] Stream init failed:', error);
+      console.error('[ShahidCamRemote] Stream init failed:', error);
       const viewerLease = error.viewerLease || viewerStats || null;
       if (error.message && error.message.includes('Concurrent viewer limit reached')) {
         const copy = viewerLimitCopy(viewerLease?.max_viewers || streamContext?.maxViewers || 0);
@@ -741,7 +741,7 @@
   function addCloudMenuItem() {
     const dropdown = document.getElementById('profileDropdown');
     if (!dropdown) {
-      console.error('[FadCamRemote] Profile dropdown not found');
+      console.error('[ShahidCamRemote] Profile dropdown not found');
       return;
     }
     
@@ -764,22 +764,22 @@
       dropdown.appendChild(menuItem);
     }
     
-    console.log('[FadCamRemote] Menu item added');
+    console.log('[ShahidCamRemote] Menu item added');
   }
   
   // Initialize
   function init() {
     if (!isWebAccess()) {
-      console.log('[FadCamRemote] Local/LAN access, skipping cloud features');
+      console.log('[ShahidCamRemote] Local/LAN access, skipping cloud features');
       return;
     }
     
-    console.log('[FadCamRemote] Web access detected, adding cloud features...');
+    console.log('[ShahidCamRemote] Web access detected, adding cloud features...');
     
     // Check if we're in streaming mode
     const deviceId = getStreamDeviceId();
     if (deviceId) {
-      console.log('[FadCamRemote] Streaming mode for device:', deviceId);
+      console.log('[ShahidCamRemote] Streaming mode for device:', deviceId);
       initStreamContext(deviceId);
     } else {
       // Demo mode - just add menu item
@@ -796,7 +796,7 @@
   window.addEventListener('pagehide', releaseViewerLease);
   
   // Export for testing and integration
-  window.FadCamRemote = {
+  window.ShahidCamRemote = {
     getStreamDeviceId,
     isStreamingMode,
     isCloudMode,
@@ -810,15 +810,15 @@
       if (!streamContext?.userId || !streamContext?.deviceId) return null;
       // Return the base URL without token — HlsService.xhrSetup handles auth injection.
       // This prevents token duplication when xhrSetup and the URL both carry the token.
-      return `https://live.fadseclab.com:8443/stream/${streamContext.userId}/${streamContext.deviceId}/live.m3u8`;
+      return `https://live.shahidlabs.com:8443/stream/${streamContext.userId}/${streamContext.deviceId}/live.m3u8`;
     },
     getRelayStatusUrl: () => {
       if (!streamContext?.userId || !streamContext?.deviceId) return null;
-      return `https://live.fadseclab.com:8443/api/status/${streamContext.userId}/${streamContext.deviceId}`;
+      return `https://live.shahidlabs.com:8443/api/status/${streamContext.userId}/${streamContext.deviceId}`;
     },
     getRelayCommandUrl: () => {
       if (!streamContext?.userId || !streamContext?.deviceId) return null;
-      return `https://live.fadseclab.com:8443/api/command/${streamContext.userId}/${streamContext.deviceId}`;
+      return `https://live.shahidlabs.com:8443/api/command/${streamContext.userId}/${streamContext.deviceId}`;
     },
     showE2EUnlockModal,
     checkAndShowE2EUnlock,

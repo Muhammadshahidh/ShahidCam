@@ -1,15 +1,15 @@
-package com.shahid.cam.ui.faditor.undo;
+package com.shahid.cam.ui.shahideditor.undo;
 
 import androidx.annotation.NonNull;
 
-import com.shahid.cam.ui.faditor.model.AudioClip;
-import com.shahid.cam.ui.faditor.model.Clip;
-import com.shahid.cam.ui.faditor.model.FaditorProject;
-import com.shahid.cam.ui.faditor.model.Timeline;
+import com.shahid.cam.ui.shahideditor.model.AudioClip;
+import com.shahid.cam.ui.shahideditor.model.Clip;
+import com.shahid.cam.ui.shahideditor.model.ShahidEditorProject;
+import com.shahid.cam.ui.shahideditor.model.Timeline;
 
 /**
  * Collection of concrete {@link EditAction} implementations for all
- * Faditor editor operations.
+ * ShahidEditor editor operations.
  *
  * <p>Each action captures the old and new state so it can be reversed.
  * Actions operate directly on the project model.</p>
@@ -206,10 +206,10 @@ public final class EditActions {
 
     /** Canvas preset change (project-level). */
     public static final class CanvasPresetAction implements EditAction {
-        private final FaditorProject project;
+        private final ShahidEditorProject project;
         private final String oldPreset, newPreset;
 
-        public CanvasPresetAction(@NonNull FaditorProject project,
+        public CanvasPresetAction(@NonNull ShahidEditorProject project,
                                   @NonNull String oldPreset,
                                   @NonNull String newPreset) {
             this.project = project;

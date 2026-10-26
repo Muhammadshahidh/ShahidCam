@@ -20,7 +20,7 @@ public class BatchMediaActionTask {
     }
 
     public enum OutputMode {
-        DEFAULT_FADITOR,
+        DEFAULT_SHAHIDEDITOR,
         CUSTOM_TREE_URI
     }
 
@@ -74,7 +74,7 @@ public class BatchMediaActionTask {
         String modeString = intent.getStringExtra(Constants.EXTRA_BATCH_OUTPUT_MODE);
         OutputMode outputMode = Constants.BATCH_OUTPUT_MODE_CUSTOM_TREE_URI.equals(modeString)
                 ? OutputMode.CUSTOM_TREE_URI
-                : OutputMode.DEFAULT_FADITOR;
+                : OutputMode.DEFAULT_SHAHIDEDITOR;
 
         Uri customTreeUri = null;
         String customTreeUriString = intent.getStringExtra(Constants.EXTRA_BATCH_CUSTOM_TREE_URI);

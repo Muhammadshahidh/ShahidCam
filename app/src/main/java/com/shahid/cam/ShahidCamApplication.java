@@ -74,10 +74,10 @@ public class ShahidCamApplication extends Application implements DefaultLifecycl
                 if (topActivity != null) {
                     String activityClassName = topActivity.getClassName();
                     
-                    // Only send ACTION_APP_FOREGROUND for MainActivity (camera) or FadRecHomeFragment
+                    // Only send ACTION_APP_FOREGROUND for MainActivity (camera) or ShahidRecHomeFragment
                     // Skip for transparent activities like TextEditorActivity, TransparentPermissionActivity
                     boolean isRecordingRelated = activityClassName.contains("MainActivity") || 
-                                               activityClassName.contains("FadRecHomeActivity") ||
+                                               activityClassName.contains("ShahidRecHomeActivity") ||
                                                activityClassName.contains("RecordingActivity");
                     
                     if (isRecordingRelated) {

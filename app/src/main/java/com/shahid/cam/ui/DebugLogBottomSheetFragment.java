@@ -38,7 +38,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 /**
  * DebugLogBottomSheetFragment
- * Full-screen style bottom sheet to Preview/Search/Share/Delete the FADCAM_debug.html log.
+ * Full-screen style bottom sheet to Preview/Search/Share/Delete the SHAHIDCAM_debug.html log.
  */
 public class DebugLogBottomSheetFragment extends BottomSheetDialogFragment {
     private static final int MAX_LINES = 1000; // viewer cap
@@ -224,7 +224,7 @@ public class DebugLogBottomSheetFragment extends BottomSheetDialogFragment {
             Intent send = new Intent(Intent.ACTION_SEND);
             send.setType("text/html");
             send.putExtra(Intent.EXTRA_STREAM, uri);
-            send.putExtra(Intent.EXTRA_SUBJECT, "FADCAM_debug.html");
+            send.putExtra(Intent.EXTRA_SUBJECT, "SHAHIDCAM_debug.html");
             send.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             Intent chooser = Intent.createChooser(send, getString(R.string.debug_log_share_title));
             shareLauncher.launch(chooser);
@@ -353,7 +353,7 @@ public class DebugLogBottomSheetFragment extends BottomSheetDialogFragment {
     private LinearLayout buildMaxLinesRow() {
         SharedPreferencesManager prefs = SharedPreferencesManager.getInstance(requireContext());
         int current = prefs.getDebugMaxLines();
-        LinearLayout row = buildActionRow(R.drawable.ic_fadcrypt,
+        LinearLayout row = buildActionRow(R.drawable.ic_shahidvault,
                 getString(R.string.debug_log_max_lines_title),
                 getString(R.string.debug_log_max_lines_current, current));
         row.setOnClickListener(v -> {

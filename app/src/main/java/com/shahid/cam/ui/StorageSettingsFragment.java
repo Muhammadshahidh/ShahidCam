@@ -198,7 +198,7 @@ public class StorageSettingsFragment extends Fragment {
             return "";
         try {
             // Typical SAF tree URI:
-            // content://com.android.externalstorage.documents/tree/primary%3ADownload%2FFadCam
+            // content://com.android.externalstorage.documents/tree/primary%3ADownload%2FShahidCam
             int idx = uriString.indexOf("tree/");
             if (idx >= 0) {
                 String after = uriString.substring(idx + 5); // skip 'tree/'

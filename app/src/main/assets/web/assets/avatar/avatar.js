@@ -1,6 +1,6 @@
 /**
  * Interactive Avatar Component
- * Created by Faded - https://github.com/anonfaded
+ * Created by Faded - https://github.com/Muhammadshahidh
  * December 9, 2025
  */
 

@@ -425,7 +425,7 @@ public class DigitalForensicsEventRecorder {
                 FLog.e(TAG, "Snapshot persistence failed: external files dir unavailable");
                 return null;
             }
-            File root = new File(externalRoot, "FadCam/Forensics/Snapshots");
+            File root = new File(externalRoot, "ShahidCam/Forensics/Snapshots");
             String day = new SimpleDateFormat("yyyyMMdd", Locale.US).format(new Date());
             File dir = new File(root, day + "/" + mediaUid);
             if (!dir.exists() && !dir.mkdirs()) {
@@ -649,7 +649,7 @@ public class DigitalForensicsEventRecorder {
     @NonNull
     private String formatWatermark(long captureEpochMs, long timelineMs) {
         String date = new SimpleDateFormat("dd/MMM/yyyy hh:mm:ss a", Locale.ENGLISH).format(new Date(Math.max(0L, captureEpochMs)));
-        return "Captured by FadCam - " + date;
+        return "Captured by ShahidCam - " + date;
     }
 
     @NonNull

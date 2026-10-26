@@ -1,4 +1,4 @@
-package com.shahid.cam.ui.faditor.timeline;
+package com.shahid.cam.ui.shahideditor.timeline;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -21,7 +21,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.shahid.cam.ui.faditor.model.Clip;
+import com.shahid.cam.ui.shahideditor.model.Clip;
 
 import java.util.ArrayList;
 import java.util.List;

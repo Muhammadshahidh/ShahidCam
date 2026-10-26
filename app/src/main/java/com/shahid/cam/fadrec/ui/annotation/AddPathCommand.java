@@ -1,9 +1,9 @@
-package com.shahid.cam.fadrec.ui.annotation;
+package com.shahid.cam.shahidrec.ui.annotation;
 
 import android.graphics.Paint;
 import android.graphics.Path;
 
-import com.shahid.cam.fadrec.ui.annotation.objects.AnnotationObject;
+import com.shahid.cam.shahidrec.ui.annotation.objects.AnnotationObject;
 
 import org.json.JSONException;
 import org.json.JSONObject;

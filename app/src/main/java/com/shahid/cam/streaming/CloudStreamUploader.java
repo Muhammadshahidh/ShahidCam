@@ -39,7 +39,7 @@ import okhttp3.Response;
  * Architecture:
  * - Singleton pattern for efficient connection pooling
  * - Uses OkHttp for async HTTP uploads
- * - Uploads to: https://live.fadseclab.com:8443/upload/{user_uuid}/{device_id}/{filename}
+ * - Uploads to: https://live.shahidlabs.com:8443/upload/{user_uuid}/{device_id}/{filename}
  * - Authorization via JWT Bearer token
  * 
  * Upload format:
@@ -53,7 +53,7 @@ public class CloudStreamUploader {
     private static final String TAG = "CloudStreamUploader";
     
     // Relay server configuration
-    public static final String RELAY_BASE_URL = "https://live.fadseclab.com:8443";
+    public static final String RELAY_BASE_URL = "https://live.shahidlabs.com:8443";
     
     // Media types
     private static final MediaType MEDIA_TYPE_MP4 = MediaType.parse("video/mp4");
@@ -109,7 +109,7 @@ public class CloudStreamUploader {
             .build();
         
         // Initialize enabled state from preferences (in case app restarted with cloud mode already enabled)
-        android.content.SharedPreferences prefs = this.context.getSharedPreferences("FadCamCloudPrefs", Context.MODE_PRIVATE);
+        android.content.SharedPreferences prefs = this.context.getSharedPreferences("ShahidCamCloudPrefs", Context.MODE_PRIVATE);
         int streamingMode = prefs.getInt("streaming_mode", 0); // 0=Local, 1=Cloud
         this.isEnabled = (streamingMode == 1);
         FLog.i(TAG, "Initialized from preferences: isEnabled=" + isEnabled + " (streaming_mode=" + streamingMode + ")");
@@ -314,7 +314,7 @@ public class CloudStreamUploader {
     
     /**
      * Build the upload URL for a file.
-     * Format: https://live.fadseclab.com:8443/upload/{user_uuid}/{device_id}/{filename}
+     * Format: https://live.shahidlabs.com:8443/upload/{user_uuid}/{device_id}/{filename}
      */
     @Nullable
     private String buildUploadUrl(String filename) {
@@ -565,7 +565,7 @@ public class CloudStreamUploader {
     
     /**
      * Build the status API URL.
-     * Format: https://live.fadseclab.com:8443/api/status/{user_uuid}/{device_id}
+     * Format: https://live.shahidlabs.com:8443/api/status/{user_uuid}/{device_id}
      */
     @Nullable
     private String buildStatusUrl() {
@@ -758,7 +758,7 @@ public class CloudStreamUploader {
     
     /**
      * Build the command API URL.
-     * Format: https://live.fadseclab.com:8443/api/command/{user_uuid}/{device_id}
+     * Format: https://live.shahidlabs.com:8443/api/command/{user_uuid}/{device_id}
      */
     @Nullable
     private String buildCommandUrl() {

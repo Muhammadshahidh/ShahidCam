@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.services;
+package com.shahid.cam.shahidrec.services;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -39,8 +39,8 @@ import com.shahid.cam.Constants;
 import com.shahid.cam.MainActivity;
 import com.shahid.cam.R;
 import com.shahid.cam.SharedPreferencesManager;
-import com.shahid.cam.fadrec.ScreenRecordingState;
-import com.shahid.cam.fadrec.encoding.ScreenRecordingPipeline;
+import com.shahid.cam.shahidrec.ScreenRecordingState;
+import com.shahid.cam.shahidrec.encoding.ScreenRecordingPipeline;
 import com.shahid.cam.opengl.WatermarkInfoProvider;
 import com.shahid.cam.utils.RecordingStoragePaths;
 
@@ -597,7 +597,7 @@ public class ScreenRecordingService extends Service {
                                     String timestamp = new java.text.SimpleDateFormat("yyyyMMdd_HHmmss",
                                             java.util.Locale.US).format(new java.util.Date());
                                     String segmentSuffix = "_part" + nextSegmentNumber;
-                                    String baseFilename = Constants.RECORDING_FILE_PREFIX_FADREC + timestamp
+                                    String baseFilename = Constants.RECORDING_FILE_PREFIX_SHAHIDREC + timestamp
                                             + segmentSuffix + "." + Constants.RECORDING_FILE_EXTENSION;
 
                                     androidx.documentfile.provider.DocumentFile videoFile =
@@ -727,7 +727,7 @@ public class ScreenRecordingService extends Service {
                 // Start notification updates
                 startNotificationUpdates();
                 
-                // Broadcast recording started (FadRecHomeFragment will show toast)
+                // Broadcast recording started (ShahidRecHomeFragment will show toast)
                 broadcastRecordingStarted();
                 
                 // Save state to preferences
@@ -788,7 +788,7 @@ public class ScreenRecordingService extends Service {
     
     /**
      * Creates watermark info provider for screen recordings.
-     * Respects the same watermark settings as FadCam mode.
+     * Respects the same watermark settings as ShahidCam mode.
      */
     private WatermarkInfoProvider createWatermarkInfoProvider() {
         return () -> {
@@ -802,9 +802,9 @@ public class ScreenRecordingService extends Service {
             switch (watermarkOption) {
                 case "timestamp":
                     return timestamp + customLine;
-                case "badge_fadcam":
+                case "badge_shahidcam":
                     return "Recorded by <ICON>" + customLine;
-                case "timestamp_fadcam":
+                case "timestamp_shahidcam":
                 default:
                     return "Recorded by <ICON> - " + timestamp + customLine;
             }
@@ -1134,7 +1134,7 @@ public class ScreenRecordingService extends Service {
     }
 
     /**
-     * Creates output file with FadRec prefix.
+     * Creates output file with ShahidRec prefix.
      * Supports both internal storage and custom storage location (SAF).
      * For custom storage, sets safRecordingPfd instead of returning a File.
      * @return File object for internal storage, or null for SAF mode (check safRecordingPfd)
@@ -1143,7 +1143,7 @@ public class ScreenRecordingService extends Service {
     private File createOutputFile() {
         try {
             String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(new Date());
-            String baseFilename = Constants.RECORDING_FILE_PREFIX_FADREC + timestamp + "." 
+            String baseFilename = Constants.RECORDING_FILE_PREFIX_SHAHIDREC + timestamp + "." 
                 + Constants.RECORDING_FILE_EXTENSION;
             
             String storageMode = sharedPreferencesManager.getStorageMode();
@@ -1400,7 +1400,7 @@ public class ScreenRecordingService extends Service {
             if (powerManager != null) {
                 recordingWakeLock = powerManager.newWakeLock(
                     PowerManager.PARTIAL_WAKE_LOCK,
-                    "FadCam:ScreenRecordingWakeLock"
+                    "ShahidCam:ScreenRecordingWakeLock"
                 );
                 recordingWakeLock.acquire(10 * 60 * 60 * 1000L); // 10 hours max
                 FLog.d(TAG, "WakeLock acquired");

@@ -1,4 +1,4 @@
-package com.shahid.cam.ui.faditor;
+package com.shahid.cam.ui.shahideditor;
 
 import android.app.Dialog;
 import android.graphics.Canvas;
@@ -113,7 +113,7 @@ public class CanvasPickerBottomSheet extends BottomSheetDialogFragment {
 
         // Title
         TextView title = new TextView(requireContext());
-        title.setText(R.string.faditor_canvas_title);
+        title.setText(R.string.shahideditor_canvas_title);
         title.setTextColor(0xFFFFFFFF);
         title.setTextSize(18);
         title.setTypeface(null, Typeface.BOLD);

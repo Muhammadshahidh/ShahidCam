@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec;
+package com.shahid.cam.shahidrec;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -12,11 +12,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.shahid.cam.Constants;
-import com.shahid.cam.fadrec.services.ScreenRecordingService;
+import com.shahid.cam.shahidrec.services.ScreenRecordingService;
 
 /**
  * Helper class for handling MediaProjection permission requests.
- * Manages screen capture permission flow for FadRec screen recording.
+ * Manages screen capture permission flow for ShahidRec screen recording.
  * 
  * Usage:
  * 1. Create instance in Fragment/Activity
@@ -193,7 +193,7 @@ public class MediaProjectionHelper {
     }
 
     /**
-     * Toggle live mute state for FadRec while recording.
+     * Toggle live mute state for ShahidRec while recording.
      */
     public void setScreenRecordingMuted(boolean muted) {
         try {

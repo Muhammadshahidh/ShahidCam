@@ -1512,7 +1512,7 @@ public class DualCameraRecordingService extends Service {
     private void acquireWakeLock() {
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
         if (pm != null) {
-            wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "FadCam:DualCamRecording");
+            wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "ShahidCam:DualCamRecording");
             wakeLock.acquire(4 * 60 * 60 * 1000L); // Max 4 hours
         }
     }

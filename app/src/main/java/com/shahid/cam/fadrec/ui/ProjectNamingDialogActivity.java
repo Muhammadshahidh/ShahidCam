@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.ui;
+package com.shahid.cam.shahidrec.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -16,7 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 
 import com.shahid.cam.R;
-import com.shahid.cam.fadrec.ui.annotation.ProjectFileManager;
+import com.shahid.cam.shahidrec.ui.annotation.ProjectFileManager;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 /**
@@ -26,7 +26,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
  */
 public class ProjectNamingDialogActivity extends Activity {
     
-    public static final String ACTION_PROJECT_RENAMED = "com.shahid.cam.fadrec.PROJECT_RENAMED";
+    public static final String ACTION_PROJECT_RENAMED = "com.shahid.cam.shahidrec.PROJECT_RENAMED";
     public static final String EXTRA_PROJECT_NAME = "project_name";
     public static final String EXTRA_PROJECT_DESCRIPTION = "project_description";
     

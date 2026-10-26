@@ -1,5 +1,5 @@
 /**
- * Configuration constants for FadCam Server Room Dashboard
+ * Configuration constants for ShahidCam Server Room Dashboard
  */
 const CONFIG = {
     // API Configuration

@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.encoding;
+package com.shahid.cam.shahidrec.encoding;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -704,7 +704,7 @@ public class ScreenRecordingPipeline {
                 String inputSource = prefs.getScreenRecordingAudioInputSource();
                 int savedDeviceType = prefs.getScreenRecordingAudioDeviceType();
                 String savedDeviceName = prefs.getScreenRecordingAudioDeviceName();
-                FLog.i(TAG, "FadRec: cast audio input source=" + inputSource
+                FLog.i(TAG, "ShahidRec: cast audio input source=" + inputSource
                         + " | savedDeviceType=" + savedDeviceType
                         + " | savedDeviceName=" + savedDeviceName);
 
@@ -717,7 +717,7 @@ public class ScreenRecordingPipeline {
                 // setPreferredDevice() after build is best-effort and unreliable.
                 audioRecord = buildAudioRecord(sampleRate, channelConfig, audioFormat, bufferSize, preferredDevice);
                 if (audioRecord == null || audioRecord.getState() != AudioRecord.STATE_INITIALIZED) {
-                    FLog.w(TAG, "FadRec: AudioRecord with forced device "
+                    FLog.w(TAG, "ShahidRec: AudioRecord with forced device "
                             + (preferredDevice != null ? preferredDevice.getProductName() : "null")
                             + " failed to initialize — retrying with system default routing");
                     audioRecord = buildAudioRecord(sampleRate, channelConfig, audioFormat, bufferSize, null);
@@ -725,10 +725,10 @@ public class ScreenRecordingPipeline {
 
                 if (audioRecord != null && preferredDevice != null
                         && audioRecord.getState() == AudioRecord.STATE_INITIALIZED) {
-                    FLog.i(TAG, "FadRec: AudioRecord routed to " + preferredDevice.getProductName()
+                    FLog.i(TAG, "ShahidRec: AudioRecord routed to " + preferredDevice.getProductName()
                             + " (type=" + preferredDevice.getType() + ")");
                 } else {
-                    FLog.i(TAG, "FadRec: Using system default routing (no forced device)");
+                    FLog.i(TAG, "ShahidRec: Using system default routing (no forced device)");
                 }
 
                 if (isBtSco) {
@@ -737,7 +737,7 @@ public class ScreenRecordingPipeline {
                     if (am != null) {
                         am.startBluetoothSco();
                         am.setBluetoothScoOn(true);
-                        FLog.i(TAG, "FadRec: BT SCO started for external mic");
+                        FLog.i(TAG, "ShahidRec: BT SCO started for external mic");
                     }
                 }
             }
@@ -748,7 +748,7 @@ public class ScreenRecordingPipeline {
             // Diagnostics: capture-session baseline — routing, buffering and
             // mute state at init, so silent recordings can be traced to the
             // capture, the mute path or the encoder.
-            FLog.i(TAG, "FadRec audio init: source=" + audioSource
+            FLog.i(TAG, "ShahidRec audio init: source=" + audioSource
                     + " sampleRate=" + sampleRate + " muted=" + audioMuted
                     + " minBuffer=" + minBufferSize + " buffer=" + bufferSize
                     + " recordState=" + audioRecord.getState());
@@ -793,12 +793,12 @@ public class ScreenRecordingPipeline {
                     .build();
             if (device != null) {
                 boolean routed = record.setPreferredDevice(device);
-                FLog.i(TAG, "FadRec: setPreferredDevice -> " + device.getProductName()
+                FLog.i(TAG, "ShahidRec: setPreferredDevice -> " + device.getProductName()
                         + ": " + (routed ? "SUCCESS" : "FAILED"));
             }
             return record;
         } catch (Exception e) {
-            FLog.e(TAG, "FadRec: AudioRecord build failed (device="
+            FLog.e(TAG, "ShahidRec: AudioRecord build failed (device="
                     + (device != null ? device.getProductName() : "default") + ")", e);
             return null;
         }
@@ -1042,7 +1042,7 @@ public class ScreenRecordingPipeline {
                     // sample (RMS + device dB) so a silent capture is visible
                     // in logs from the very first chunk.
                     if (readCount <= 3 || readCount % 300 == 0) {
-                        FLog.i(TAG, "FadRec audio health: chunk#" + readCount
+                        FLog.i(TAG, "ShahidRec audio health: chunk#" + readCount
                                 + " bytes=" + bytesRead
                                 + " rms=" + computeRms(audioBuffer, bytesRead)
                                 + " muted=" + audioMuted
@@ -1057,11 +1057,11 @@ public class ScreenRecordingPipeline {
                 } else {
                     // read() <= 0: overrun, dead object, or stopped — capture
                     // problems must be visible, not silent.
-                    FLog.w(TAG, "FadRec audio: read() returned " + bytesRead
+                    FLog.w(TAG, "ShahidRec audio: read() returned " + bytesRead
                             + " (chunk#" + readCount + ")");
                 }
             }
-            FLog.i(TAG, "FadRec audio loop ended: chunks=" + readCount
+            FLog.i(TAG, "ShahidRec audio loop ended: chunks=" + readCount
                     + " bytes=" + audioBytesCaptured
                     + " droppedInput=" + audioChunksDropped
                     + " droppedMuxerWindow=" + audioSamplesDroppedDuringRollover);
@@ -1104,7 +1104,7 @@ public class ScreenRecordingPipeline {
             // starve the encoder and can cascade into an AudioRecord overrun.
             audioChunksDropped++;
             if (audioChunksDropped <= 3 || audioChunksDropped % 100 == 0) {
-                FLog.w(TAG, "FadRec audio: encoder input full — chunk dropped (total="
+                FLog.w(TAG, "ShahidRec audio: encoder input full — chunk dropped (total="
                         + audioChunksDropped + ")");
             }
         }
@@ -1176,7 +1176,7 @@ public class ScreenRecordingPipeline {
                     // recreated (rollover) or paused is silently discarded.
                     audioSamplesDroppedDuringRollover += bufferInfo.size;
                     if (audioSamplesDroppedDuringRollover <= 4 * 1024) {
-                        FLog.w(TAG, "FadRec audio: " + bufferInfo.size + " bytes skipped"
+                        FLog.w(TAG, "ShahidRec audio: " + bufferInfo.size + " bytes skipped"
                                 + " (muxerStarted=" + muxerStarted + ", paused=" + isPaused + ")");
                     }
                 }
@@ -1515,7 +1515,7 @@ public class ScreenRecordingPipeline {
      */
     public void setAudioMuted(boolean muted) {
         this.audioMuted = muted;
-        FLog.i(TAG, "FadRec audio muted=" + muted);
+        FLog.i(TAG, "ShahidRec audio muted=" + muted);
     }
     
     /**
@@ -1557,10 +1557,10 @@ public class ScreenRecordingPipeline {
                 if (am != null) {
                     am.stopBluetoothSco();
                     am.setBluetoothScoOn(false);
-                    FLog.i(TAG, "FadRec: BT SCO stopped");
+                    FLog.i(TAG, "ShahidRec: BT SCO stopped");
                 }
             } catch (Exception e) {
-                FLog.w(TAG, "FadRec: Error stopping BT SCO", e);
+                FLog.w(TAG, "ShahidRec: Error stopping BT SCO", e);
             }
         }
 

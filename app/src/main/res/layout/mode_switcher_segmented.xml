@@ -23,31 +23,31 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal" android:clipChildren="false" android:clipToPadding="false">
 
-        <!-- FadCam Segment -->
-        <FrameLayout android:id="@+id/segment_fadcam" android:layout_width="0dp" android:layout_height="@dimen/home_switcher_height" android:layout_weight="1" android:clickable="true" android:focusable="true"
+        <!-- ShahidCam Segment -->
+        <FrameLayout android:id="@+id/segment_shahidcam" android:layout_width="0dp" android:layout_height="@dimen/home_switcher_height" android:layout_weight="1" android:clickable="true" android:focusable="true"
             android:nextFocusUp="@+id/btnGetPro"
             android:nextFocusDown="@+id/rowCamera" android:clipChildren="false" android:clipToPadding="false">
 
-            <TextView android:id="@+id/text_fadcam" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="FadCam" android:textSize="@dimen/home_switcher_text" />
+            <TextView android:id="@+id/text_shahidcam" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="ShahidCam" android:textSize="@dimen/home_switcher_text" />
         </FrameLayout>
 
-        <!-- FadRec Segment -->
-        <FrameLayout android:id="@+id/segment_fadrec" android:layout_width="0dp" android:layout_height="@dimen/home_switcher_height" android:layout_weight="1" android:clickable="true" android:focusable="true"
+        <!-- ShahidRec Segment -->
+        <FrameLayout android:id="@+id/segment_shahidrec" android:layout_width="0dp" android:layout_height="@dimen/home_switcher_height" android:layout_weight="1" android:clickable="true" android:focusable="true"
             android:nextFocusUp="@+id/btnGetPro"
             android:nextFocusDown="@+id/rowCamera" android:clipChildren="false" android:clipToPadding="false">
 
-            <TextView android:id="@+id/text_fadrec" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="FadRec" android:textSize="@dimen/home_switcher_text" />
+            <TextView android:id="@+id/text_shahidrec" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="ShahidRec" android:textSize="@dimen/home_switcher_text" />
 
-            <!-- NEW Badge for FadRec -->
-            <TextView android:id="@+id/badge_fadrec" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/new_badge_background" android:text="@string/badge_new" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="7sp" android:paddingStart="3dp" android:paddingEnd="3dp" android:paddingTop="1dp" android:paddingBottom="1dp" android:minWidth="10dp" android:gravity="center" android:layout_gravity="top|end" android:layout_marginTop="1dp" android:layout_marginEnd="1dp" android:visibility="visible" />
+            <!-- NEW Badge for ShahidRec -->
+            <TextView android:id="@+id/badge_shahidrec" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/new_badge_background" android:text="@string/badge_new" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="7sp" android:paddingStart="3dp" android:paddingEnd="3dp" android:paddingTop="1dp" android:paddingBottom="1dp" android:minWidth="10dp" android:gravity="center" android:layout_gravity="top|end" android:layout_marginTop="1dp" android:layout_marginEnd="1dp" android:visibility="visible" />
         </FrameLayout>
 
-        <!-- FadMic Segment -->
-        <FrameLayout android:id="@+id/segment_fadmic" android:layout_width="0dp" android:layout_height="@dimen/home_switcher_height" android:layout_weight="1" android:clickable="true" android:focusable="true"
+        <!-- ShahidMic Segment -->
+        <FrameLayout android:id="@+id/segment_shahidmic" android:layout_width="0dp" android:layout_height="@dimen/home_switcher_height" android:layout_weight="1" android:clickable="true" android:focusable="true"
             android:nextFocusUp="@+id/btnGetPro"
             android:nextFocusDown="@+id/rowCamera" android:clipChildren="false" android:clipToPadding="false">
 
-            <TextView android:id="@+id/text_fadmic" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="FadMic" android:textSize="@dimen/home_switcher_text" />
+            <TextView android:id="@+id/text_shahidmic" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="ShahidMic" android:textSize="@dimen/home_switcher_text" />
         </FrameLayout>
 
     </LinearLayout>

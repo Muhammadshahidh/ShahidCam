@@ -23,12 +23,12 @@
 ## What the app uses media3 for
 
 - **Playback** (`PlaybackService`, `VideoPlayerActivity`, `PlayerHolder`,
-  `FaditorEditorActivity` etc.)
+  `ShahidEditorActivity` etc.)
 - **Custom seekable fMP4 source** (`FragmentedMp4SeekableMediaSource`,
   `SeekableFragmentedMp4MediaSourceFactory`) — wraps recordings in a
   `ClippingMediaSource` to enforce correct duration + enable seeking on hybrid
   MP4 files (fragmented files without `sidx`).
-- **Faditor (video editor)** — `media3-transformer` + `media3-effect` for
+- **ShahidEditor (video editor)** — `media3-transformer` + `media3-effect` for
   editing/export (including waveform generation via MediaCodec).
 - **Export service** (`ExportService`) — transformer-based export with progress
   broadcasts.
@@ -116,7 +116,7 @@
        `trun` sample sizes for both tracks (0 mismatches = PASS)
    - Test crash-recovery (kill app mid-record, verify file is finalized/playable)
    - Test seeking on hybrid files (with and without the custom source)
-5. **Verify playback/editor** — normal playback, Faditor open/export, playback
+5. **Verify playback/editor** — normal playback, ShahidEditor open/export, playback
    position notifications.
 6. If native `mfra` seeking works, evaluate **removing
    `FragmentedMp4SeekableMediaSource`** (the workaround may become redundant).
@@ -130,5 +130,5 @@
 - Do our finalized hybrid files already seek without the custom source (they
   have a proper `stsz`)? If yes, the `mfra` feature is irrelevant and the only
   upgrade value is bug fixes / transformer improvements.
-- Is the transformer-based Faditor export worth the upgrade risk? (1.10/1.11
+- Is the transformer-based ShahidEditor export worth the upgrade risk? (1.10/1.11
   changed transformer muxer defaults and export APIs.)

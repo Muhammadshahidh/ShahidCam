@@ -201,7 +201,7 @@ public class VideoPlayerActivity extends AppCompatActivity {
 
         if ("Crimson Bloom".equals(savedTheme)) {
             setTheme(R.style.Theme_ShahidCam_Red);
-        } else if ("Faded Night".equals(savedTheme)) {
+        } else if ("Shahid Dark".equals(savedTheme)) {
             setTheme(R.style.Theme_ShahidCam_Amoled);
         } else {
             setTheme(R.style.Base_Theme_ShahidCam);
@@ -3449,7 +3449,7 @@ public class VideoPlayerActivity extends AppCompatActivity {
     // --- End Lifecycle Management ---
 
     private MaterialAlertDialogBuilder themedDialogBuilder() {
-        int dialogTheme = R.style.ThemeOverlay_FadCam_Dialog;
+        int dialogTheme = R.style.ThemeOverlay_ShahidCam_Dialog;
         return new MaterialAlertDialogBuilder(this, dialogTheme);
     }
 

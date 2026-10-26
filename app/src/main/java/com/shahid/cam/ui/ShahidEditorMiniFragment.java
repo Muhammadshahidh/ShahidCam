@@ -30,14 +30,14 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.res.ResourcesCompat;
 
 import com.shahid.cam.R;
-import com.shahid.cam.ui.faditor.FaditorEditorActivity;
-import com.shahid.cam.ui.faditor.FaditorInfoBottomSheet;
-import com.shahid.cam.ui.faditor.VideoSourceBottomSheet;
-import com.shahid.cam.ui.faditor.model.AudioClip;
-import com.shahid.cam.ui.faditor.model.Clip;
-import com.shahid.cam.ui.faditor.model.FaditorProject;
-import com.shahid.cam.ui.faditor.model.Timeline;
-import com.shahid.cam.ui.faditor.project.ProjectStorage;
+import com.shahid.cam.ui.shahideditor.ShahidEditorActivity;
+import com.shahid.cam.ui.shahideditor.ShahidEditorInfoBottomSheet;
+import com.shahid.cam.ui.shahideditor.VideoSourceBottomSheet;
+import com.shahid.cam.ui.shahideditor.model.AudioClip;
+import com.shahid.cam.ui.shahideditor.model.Clip;
+import com.shahid.cam.ui.shahideditor.model.ShahidEditorProject;
+import com.shahid.cam.ui.shahideditor.model.Timeline;
+import com.shahid.cam.ui.shahideditor.project.ProjectStorage;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.io.File;
@@ -52,16 +52,16 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Entry-point fragment for the Faditor Mini tab.
+ * Entry-point fragment for the ShahidEditor Mini tab.
  *
  * <p>Shows a hero section with "Start Project" button, recent projects list
  * with video thumbnails and multi-select deletion, and feature capability
- * cards. Launches {@link FaditorEditorActivity} for full-screen editing
+ * cards. Launches {@link ShahidEditorActivity} for full-screen editing
  * via a video source bottom sheet.</p>
  */
-public class FaditorMiniFragment extends BaseFragment {
+public class ShahidEditorMiniFragment extends BaseFragment {
 
-    private static final String TAG = "FaditorMiniFragment";
+    private static final String TAG = "ShahidEditorMiniFragment";
 
     /** Launcher for the system video file picker. */
     private ActivityResultLauncher<Intent> videoPickerLauncher;
@@ -109,7 +109,7 @@ public class FaditorMiniFragment extends BaseFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FLog.d("FaditorMiniFragment", "✅ onCreate called!");
+        FLog.d("ShahidEditorMiniFragment", "✅ onCreate called!");
         projectStorage = new ProjectStorage(requireContext());
 
         // Initialize the broadcast receiver early
@@ -118,18 +118,18 @@ public class FaditorMiniFragment extends BaseFragment {
         // Register receiver immediately in onCreate so it persists across fragment lifecycle
         if (exportProgressReceiver != null && !isExportReceiverRegistered) {
             try {
-                FLog.d("FaditorMiniFragment", "Registering receiver in onCreate");
+                FLog.d("ShahidEditorMiniFragment", "Registering receiver in onCreate");
                 android.content.IntentFilter filter = new android.content.IntentFilter();
-                filter.addAction(com.shahid.cam.ui.faditor.export.ExportService.ACTION_EXPORT_STARTED);
-                filter.addAction(com.shahid.cam.ui.faditor.export.ExportService.ACTION_EXPORT_PROGRESS);
-                filter.addAction(com.shahid.cam.ui.faditor.export.ExportService.ACTION_EXPORT_COMPLETED);
-                filter.addAction(com.shahid.cam.ui.faditor.export.ExportService.ACTION_EXPORT_ERROR);
-                filter.addAction(com.shahid.cam.ui.faditor.export.ExportService.ACTION_EXPORT_CANCELLED);
+                filter.addAction(com.shahid.cam.ui.shahideditor.export.ExportService.ACTION_EXPORT_STARTED);
+                filter.addAction(com.shahid.cam.ui.shahideditor.export.ExportService.ACTION_EXPORT_PROGRESS);
+                filter.addAction(com.shahid.cam.ui.shahideditor.export.ExportService.ACTION_EXPORT_COMPLETED);
+                filter.addAction(com.shahid.cam.ui.shahideditor.export.ExportService.ACTION_EXPORT_ERROR);
+                filter.addAction(com.shahid.cam.ui.shahideditor.export.ExportService.ACTION_EXPORT_CANCELLED);
                 androidx.core.content.ContextCompat.registerReceiver(requireContext(), exportProgressReceiver, filter, android.content.Context.RECEIVER_NOT_EXPORTED);
                 isExportReceiverRegistered = true;
-                FLog.d("FaditorMiniFragment", "✅ Export receiver registered in onCreate");
+                FLog.d("ShahidEditorMiniFragment", "✅ Export receiver registered in onCreate");
             } catch (Exception e) {
-                FLog.e("FaditorMiniFragment", "Error registering export receiver in onCreate: " + e.getMessage(), e);
+                FLog.e("ShahidEditorMiniFragment", "Error registering export receiver in onCreate: " + e.getMessage(), e);
             }
         }
 
@@ -172,8 +172,8 @@ public class FaditorMiniFragment extends BaseFragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        FLog.d("FaditorMiniFragment", "✅ onCreateView called!");
-        View view = inflater.inflate(R.layout.fragment_faditor_mini, container, false);
+        FLog.d("ShahidEditorMiniFragment", "✅ onCreateView called!");
+        View view = inflater.inflate(R.layout.fragment_shahideditor_mini, container, false);
 
         // Request focus on first focusable element for D-pad/TV remote support.
         view.post(() -> {
@@ -187,12 +187,12 @@ public class FaditorMiniFragment extends BaseFragment {
             selectButton.setOnClickListener(v -> showVideoSourceChooser());
         }
 
-        // Info icon → opens Faditor info bottom sheet
+        // Info icon → opens ShahidEditor info bottom sheet
         View btnInfo = view.findViewById(R.id.btn_info);
         if (btnInfo != null) {
             btnInfo.setOnClickListener(v -> {
-                FaditorInfoBottomSheet.newInstance()
-                        .show(getChildFragmentManager(), "faditor_info");
+                ShahidEditorInfoBottomSheet.newInstance()
+                        .show(getChildFragmentManager(), "shahideditor_info");
             });
         }
 
@@ -234,14 +234,14 @@ public class FaditorMiniFragment extends BaseFragment {
         }
 
         // ── Export dock initialization ────────────────────────────────
-        exportDock = view.findViewById(R.id.faditor_export_dock);
-        exportDockIcon = view.findViewById(R.id.faditor_export_dock_icon);
-        exportDockTitle = view.findViewById(R.id.faditor_export_dock_title);
-        exportDockProgress = view.findViewById(R.id.faditor_export_dock_progress);
-        exportDockCurrent = view.findViewById(R.id.faditor_export_dock_current);
-        exportDockEta = view.findViewById(R.id.faditor_export_dock_eta);
-        exportDockSummary = view.findViewById(R.id.faditor_export_dock_summary);
-        exportDockOk = view.findViewById(R.id.faditor_export_dock_ok);
+        exportDock = view.findViewById(R.id.shahideditor_export_dock);
+        exportDockIcon = view.findViewById(R.id.shahideditor_export_dock_icon);
+        exportDockTitle = view.findViewById(R.id.shahideditor_export_dock_title);
+        exportDockProgress = view.findViewById(R.id.shahideditor_export_dock_progress);
+        exportDockCurrent = view.findViewById(R.id.shahideditor_export_dock_current);
+        exportDockEta = view.findViewById(R.id.shahideditor_export_dock_eta);
+        exportDockSummary = view.findViewById(R.id.shahideditor_export_dock_summary);
+        exportDockOk = view.findViewById(R.id.shahideditor_export_dock_ok);
 
         // OK/Cancel button: Cancel during export, dismiss after completion
         if (exportDockOk != null) {
@@ -249,8 +249,8 @@ public class FaditorMiniFragment extends BaseFragment {
                 if (isExportActive) {
                     // Send cancel intent to ExportService
                     Intent cancelIntent = new Intent(requireContext(), 
-                        com.shahid.cam.ui.faditor.export.ExportService.class);
-                    cancelIntent.setAction(com.shahid.cam.ui.faditor.export.ExportService.ACTION_CANCEL_EXPORT);
+                        com.shahid.cam.ui.shahideditor.export.ExportService.class);
+                    cancelIntent.setAction(com.shahid.cam.ui.shahideditor.export.ExportService.ACTION_CANCEL_EXPORT);
                     requireContext().startService(cancelIntent);
                     FLog.d(TAG, "Sent cancel intent to ExportService");
                 } else {
@@ -270,78 +270,78 @@ public class FaditorMiniFragment extends BaseFragment {
     private void initializeExportProgressReceiver() {
         if (exportProgressReceiver != null) return; // Already initialized
         
-        FLog.d("FaditorMiniFragment", "Initializing export progress broadcast receiver...");
+        FLog.d("ShahidEditorMiniFragment", "Initializing export progress broadcast receiver...");
 
         exportProgressReceiver = new android.content.BroadcastReceiver() {
             @Override
             public void onReceive(android.content.Context context, android.content.Intent intent) {
                 if (!isAdded()) {
-                    FLog.d("FaditorMiniFragment", "Received broadcast but fragment not added, ignoring");
+                    FLog.d("ShahidEditorMiniFragment", "Received broadcast but fragment not added, ignoring");
                     return; // Fragment detached
                 }
                 
                 String action = intent.getAction();
                 if (action == null) {
-                    FLog.d("FaditorMiniFragment", "Received broadcast with null action");
+                    FLog.d("ShahidEditorMiniFragment", "Received broadcast with null action");
                     return;
                 }
                 
-                FLog.d("FaditorMiniFragment", "Export broadcast received: action=" + action);
+                FLog.d("ShahidEditorMiniFragment", "Export broadcast received: action=" + action);
 
-                if (com.shahid.cam.ui.faditor.export.ExportService.ACTION_EXPORT_STARTED.equals(action)) {
+                if (com.shahid.cam.ui.shahideditor.export.ExportService.ACTION_EXPORT_STARTED.equals(action)) {
                     String outputPath = intent.getStringExtra(
-                        com.shahid.cam.ui.faditor.export.ExportService.EXTRA_OUTPUT_PATH);
-                    FLog.d("FaditorMiniFragment", "Export started: " + outputPath);
+                        com.shahid.cam.ui.shahideditor.export.ExportService.EXTRA_OUTPUT_PATH);
+                    FLog.d("ShahidEditorMiniFragment", "Export started: " + outputPath);
                     // Post to main thread
                     new android.os.Handler(android.os.Looper.getMainLooper()).post(() -> 
                         onExportStarted(outputPath));
 
-                } else if (com.shahid.cam.ui.faditor.export.ExportService.ACTION_EXPORT_PROGRESS.equals(action)) {
+                } else if (com.shahid.cam.ui.shahideditor.export.ExportService.ACTION_EXPORT_PROGRESS.equals(action)) {
                     float progress = intent.getFloatExtra(
-                        com.shahid.cam.ui.faditor.export.ExportService.EXTRA_PROGRESS, 0f);
-                    FLog.d("FaditorMiniFragment", "Export progress: " + progress);
+                        com.shahid.cam.ui.shahideditor.export.ExportService.EXTRA_PROGRESS, 0f);
+                    FLog.d("ShahidEditorMiniFragment", "Export progress: " + progress);
                     // Post to main thread
                     new android.os.Handler(android.os.Looper.getMainLooper()).post(() -> 
                         onExportProgress(progress));
 
-                } else if (com.shahid.cam.ui.faditor.export.ExportService.ACTION_EXPORT_COMPLETED.equals(action)) {
+                } else if (com.shahid.cam.ui.shahideditor.export.ExportService.ACTION_EXPORT_COMPLETED.equals(action)) {
                     String outputPath = intent.getStringExtra(
-                        com.shahid.cam.ui.faditor.export.ExportService.EXTRA_OUTPUT_PATH);
-                    FLog.d("FaditorMiniFragment", "Export completed: " + outputPath);
+                        com.shahid.cam.ui.shahideditor.export.ExportService.EXTRA_OUTPUT_PATH);
+                    FLog.d("ShahidEditorMiniFragment", "Export completed: " + outputPath);
                     // Post to main thread
                     new android.os.Handler(android.os.Looper.getMainLooper()).post(() -> 
                         onExportCompleted(outputPath));
 
-                } else if (com.shahid.cam.ui.faditor.export.ExportService.ACTION_EXPORT_ERROR.equals(action)) {
+                } else if (com.shahid.cam.ui.shahideditor.export.ExportService.ACTION_EXPORT_ERROR.equals(action)) {
                     String errorMsg = intent.getStringExtra(
-                        com.shahid.cam.ui.faditor.export.ExportService.EXTRA_ERROR_MESSAGE);
-                    FLog.d("FaditorMiniFragment", "Export error: " + errorMsg);
+                        com.shahid.cam.ui.shahideditor.export.ExportService.EXTRA_ERROR_MESSAGE);
+                    FLog.d("ShahidEditorMiniFragment", "Export error: " + errorMsg);
                     // Post to main thread
                     new android.os.Handler(android.os.Looper.getMainLooper()).post(() -> 
                         onExportError(errorMsg != null ? errorMsg : "Unknown error"));
 
-                } else if (com.shahid.cam.ui.faditor.export.ExportService.ACTION_EXPORT_CANCELLED.equals(action)) {
-                    FLog.d("FaditorMiniFragment", "Export cancelled");
+                } else if (com.shahid.cam.ui.shahideditor.export.ExportService.ACTION_EXPORT_CANCELLED.equals(action)) {
+                    FLog.d("ShahidEditorMiniFragment", "Export cancelled");
                     // Post to main thread
                     new android.os.Handler(android.os.Looper.getMainLooper()).post(() -> 
                         onExportCancelled());
                 }
             }
         };
-        FLog.d("FaditorMiniFragment", "Broadcast receiver initialized successfully");
+        FLog.d("ShahidEditorMiniFragment", "Broadcast receiver initialized successfully");
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        FLog.d("FaditorMiniFragment", "onResume called");
+        FLog.d("ShahidEditorMiniFragment", "onResume called");
         refreshRecentProjects();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        FLog.d("FaditorMiniFragment", "onPause called");
+        FLog.d("ShahidEditorMiniFragment", "onPause called");
     }
 
     @Override
@@ -353,7 +353,7 @@ public class FaditorMiniFragment extends BaseFragment {
             try {
                 requireContext().unregisterReceiver(exportProgressReceiver);
             } catch (Exception e) {
-                FLog.w("FaditorMiniFragment", "Error unregistering export receiver: " + e.getMessage());
+                FLog.w("ShahidEditorMiniFragment", "Error unregistering export receiver: " + e.getMessage());
             }
             isExportReceiverRegistered = false;
         }
@@ -391,9 +391,9 @@ public class FaditorMiniFragment extends BaseFragment {
         int count = selectedIds.size();
         if (tvSelectionCount != null) {
             if (count == 0) {
-                tvSelectionCount.setText(R.string.faditor_select_items);
+                tvSelectionCount.setText(R.string.shahideditor_select_items);
             } else {
-                tvSelectionCount.setText(getString(R.string.faditor_selected_count, count));
+                tvSelectionCount.setText(getString(R.string.shahideditor_selected_count, count));
             }
         }
         if (btnDeleteSelected != null) {
@@ -439,16 +439,16 @@ public class FaditorMiniFragment extends BaseFragment {
         if (count == 0) return;
 
         new MaterialAlertDialogBuilder(requireContext())
-                .setTitle(R.string.faditor_delete_projects_title)
-                .setMessage(getString(R.string.faditor_delete_projects_message, count))
-                .setPositiveButton(R.string.faditor_delete_confirm, (dialog, which) -> {
+                .setTitle(R.string.shahideditor_delete_projects_title)
+                .setMessage(getString(R.string.shahideditor_delete_projects_message, count))
+                .setPositiveButton(R.string.shahideditor_delete_confirm, (dialog, which) -> {
                     for (String id : selectedIds) {
                         projectStorage.delete(id);
                     }
                     exitSelectionMode();
                     refreshRecentProjects();
                 })
-                .setNegativeButton(R.string.faditor_cancel, null)
+                .setNegativeButton(R.string.shahideditor_cancel, null)
                 .show();
     }
 
@@ -721,7 +721,7 @@ public class FaditorMiniFragment extends BaseFragment {
             // Try extracting from path
             String path = uri.getPath();
             if (path != null) {
-                // Handle SAF-style paths like /tree/primary:Android/data/.../FadCam_xxx.mp4
+                // Handle SAF-style paths like /tree/primary:Android/data/.../ShahidCam_xxx.mp4
                 if (path.contains(":")) {
                     String afterColon = path.substring(path.lastIndexOf(':') + 1);
                     if (afterColon.contains("/")) {
@@ -805,7 +805,7 @@ public class FaditorMiniFragment extends BaseFragment {
 
     /**
      * Show the video source bottom sheet, offering "Browse Device" and
-     * "FadCam Recordings" options.
+     * "ShahidCam Recordings" options.
      */
     private void showVideoSourceChooser() {
         VideoSourceBottomSheet sheet = new VideoSourceBottomSheet();
@@ -838,7 +838,7 @@ public class FaditorMiniFragment extends BaseFragment {
         } catch (Exception e) {
             FLog.e(TAG, "Failed to open video picker", e);
             Toast.makeText(requireContext(),
-                    R.string.faditor_error_picker, Toast.LENGTH_SHORT).show();
+                    R.string.shahideditor_error_picker, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -856,11 +856,11 @@ public class FaditorMiniFragment extends BaseFragment {
      * @param projectId the saved project ID to restore, or null for a new project
      */
     private void launchEditor(@NonNull Uri videoUri, @Nullable String projectId) {
-        Intent intent = new Intent(requireContext(), FaditorEditorActivity.class);
+        Intent intent = new Intent(requireContext(), ShahidEditorActivity.class);
         intent.setData(videoUri);
         intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         if (projectId != null) {
-            intent.putExtra(FaditorEditorActivity.EXTRA_PROJECT_ID, projectId);
+            intent.putExtra(ShahidEditorActivity.EXTRA_PROJECT_ID, projectId);
         }
         editorLauncher.launch(intent);
     }
@@ -873,7 +873,7 @@ public class FaditorMiniFragment extends BaseFragment {
     private String getCacheSizeText(@NonNull ProjectStorage.ProjectSummary summary) {
         try {
             // Load project to get all clip source URIs
-            FaditorProject project = projectStorage.load(summary.id);
+            ShahidEditorProject project = projectStorage.load(summary.id);
             if (project == null || project.getTimeline() == null) {
                 return "Cache: 0 KB";
             }
@@ -1074,7 +1074,7 @@ public class FaditorMiniFragment extends BaseFragment {
 
         // Update title
         if (exportDockTitle != null) {
-            exportDockTitle.animateSlot(getString(R.string.faditor_export_completed), 300);
+            exportDockTitle.animateSlot(getString(R.string.shahideditor_export_completed), 300);
         }
 
         // Ensure progress is at 100%
@@ -1126,7 +1126,7 @@ public class FaditorMiniFragment extends BaseFragment {
 
         // Update title
         if (exportDockTitle != null) {
-            exportDockTitle.animateSlot(getString(R.string.faditor_export_failed), 300);
+            exportDockTitle.animateSlot(getString(R.string.shahideditor_export_failed), 300);
         }
 
         // Show error message
@@ -1158,7 +1158,7 @@ public class FaditorMiniFragment extends BaseFragment {
                 if (!isAdded()) return;
                 
                 // This would be called from ExportService callbacks in a real implementation
-                // For now, the Faditor editor will notify us when it launches the service
+                // For now, the ShahidEditor editor will notify us when it launches the service
             }, 100);
         } catch (Exception e) {
             FLog.e(TAG, "Error checking export service", e);
@@ -1167,7 +1167,7 @@ public class FaditorMiniFragment extends BaseFragment {
 
     /**
      * Global notification receiver for export notifications.
-     * Should be called by the ExportService or from the Faditor editor.
+     * Should be called by the ExportService or from the ShahidEditor editor.
      */
     public void onExportStarted(String outputPath) {
         if (!isAdded()) return;
@@ -1179,7 +1179,7 @@ public class FaditorMiniFragment extends BaseFragment {
 
         // Update dock content
         if (exportDockTitle != null) {
-            exportDockTitle.setText(getString(R.string.faditor_export_progress));
+            exportDockTitle.setText(getString(R.string.shahideditor_export_progress));
         }
         if (exportDockCurrent != null) {
             // Extract just the filename from the full path
@@ -1243,7 +1243,7 @@ public class FaditorMiniFragment extends BaseFragment {
 
         // Update title
         if (exportDockTitle != null) {
-            exportDockTitle.animateSlot(getString(R.string.faditor_export_cancelled), 300);
+            exportDockTitle.animateSlot(getString(R.string.shahideditor_export_cancelled), 300);
         }
 
         // Show progress at current state (don't reset)

@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.ui;
+package com.shahid.cam.shahidrec.ui;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -11,7 +11,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 
 import com.shahid.cam.Constants;
-import com.shahid.cam.fadrec.MediaProjectionHelper;
+import com.shahid.cam.shahidrec.MediaProjectionHelper;
 
 /**
  * Transparent activity to request screen capture permission without showing the main app.

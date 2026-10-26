@@ -1,8 +1,8 @@
-package com.shahid.cam.fadrec.ui.annotation;
+package com.shahid.cam.shahidrec.ui.annotation;
 
 import android.graphics.Paint;
 
-import com.shahid.cam.fadrec.ui.annotation.objects.TextObject;
+import com.shahid.cam.shahidrec.ui.annotation.objects.TextObject;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -151,7 +151,7 @@ public class ModifyTextObjectCommand implements DrawingCommand {
         
         // Find text object by ID
         TextObject textObject = null;
-        for (com.shahid.cam.fadrec.ui.annotation.objects.AnnotationObject obj : layer.getObjects()) {
+        for (com.shahid.cam.shahidrec.ui.annotation.objects.AnnotationObject obj : layer.getObjects()) {
             if (obj instanceof TextObject && obj.getId().equals(objectId)) {
                 textObject = (TextObject) obj;
                 break;

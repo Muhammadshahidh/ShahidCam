@@ -223,7 +223,7 @@ import fi.iki.elonen.NanoHTTPD;
         if (!streamManager.isStreamingEnabled()) {
             FLog.w(TAG, "❌ Streaming is disabled - recording not started or streaming mode is DISABLED");
             String message = "❌ Streaming Disabled\n\n" +
-                "Please start recording on FadCam with streaming enabled (STREAM_ONLY or STREAM_AND_SAVE mode).\n\n" +
+                "Please start recording on ShahidCam with streaming enabled (STREAM_ONLY or STREAM_AND_SAVE mode).\n\n" +
                 "Check /status endpoint for current state.";
             return newFixedLengthResponse(
                 Response.Status.SERVICE_UNAVAILABLE,
@@ -1905,14 +1905,14 @@ import fi.iki.elonen.NanoHTTPD;
      */
     private Response fetchGitHubNotification() {
         try {
-            String githubUrl = "https://raw.githubusercontent.com/anonfaded/FadCam/master/app/src/main/assets/web/fadex/pushnotification.jsonc";
+            String githubUrl = "https://raw.githubusercontent.com/Muhammadshahidh/ShahidCam/master/app/src/main/assets/web/fadex/pushnotification.jsonc";
             
             // Create URL connection
             java.net.URL url = new java.net.URL(githubUrl);
             java.net.URLConnection conn = url.openConnection();
             conn.setConnectTimeout(5000);
             conn.setReadTimeout(5000);
-            conn.setRequestProperty("User-Agent", "FadCam-NotificationManager");
+            conn.setRequestProperty("User-Agent", "ShahidCam-NotificationManager");
             
             // Read response
             java.io.BufferedReader reader = new java.io.BufferedReader(

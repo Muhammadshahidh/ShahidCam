@@ -1,4 +1,4 @@
-package com.shahid.cam.ui.faditor.util;
+package com.shahid.cam.ui.shahideditor.util;
 
 import androidx.annotation.NonNull;
 

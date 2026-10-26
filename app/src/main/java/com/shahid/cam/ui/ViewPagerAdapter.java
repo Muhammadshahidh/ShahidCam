@@ -7,12 +7,12 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.shahid.cam.Constants;
 import com.shahid.cam.SharedPreferencesManager;
-import com.shahid.cam.fadrec.ui.FadRecHomeFragment;
+import com.shahid.cam.shahidrec.ui.ShahidRecHomeFragment;
 import com.shahid.cam.forensics.ui.ForensicIntelligenceFragment;
 
 /**
  * ViewPagerAdapter manages fragments for the main ViewPager.
- * Creates appropriate HomeFragment based on current recording mode (FadCam/FadRec).
+ * Creates appropriate HomeFragment based on current recording mode (ShahidCam/ShahidRec).
  */
 public class ViewPagerAdapter extends FragmentStateAdapter {
 
@@ -35,7 +35,7 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
             case 2:
                 return new RemoteFragment();
             case 3:
-                return new FaditorMiniFragment();
+                return new ShahidEditorMiniFragment();
             case 4:
                 // Phase 1: Use new SettingsHomeFragment (legacy fragment accessible from inside)
                 return new SettingsHomeFragment();
@@ -48,7 +48,7 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
 
     /**
      * Creates the appropriate HomeFragment based on current recording mode.
-     * @return HomeFragment or FadRecHomeFragment depending on mode
+     * @return HomeFragment or ShahidRecHomeFragment depending on mode
      */
     private Fragment createHomeFragment() {
         SharedPreferencesManager prefsManager = 
@@ -56,17 +56,17 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
         
         String currentMode = prefsManager.getCurrentRecordingMode();
         
-        if (Constants.MODE_FADREC.equals(currentMode)) {
-            // FadRec mode - create screen recording fragment
-            return FadRecHomeFragment.newInstance();
+        if (Constants.MODE_SHAHIDREC.equals(currentMode)) {
+            // ShahidRec mode - create screen recording fragment
+            return ShahidRecHomeFragment.newInstance();
         } else {
-            // FadCam mode (default) - create camera recording fragment
+            // ShahidCam mode (default) - create camera recording fragment
             return new HomeFragment();
         }
     }
 
     @Override
     public int getItemCount() {
-        return 6; // Home, Records, Remote, Faditor Mini, Settings, Lab
+        return 6; // Home, Records, Remote, ShahidEditor Mini, Settings, Lab
     }
 }

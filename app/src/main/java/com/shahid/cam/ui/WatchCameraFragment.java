@@ -32,7 +32,7 @@ import java.util.Locale;
 /**
  * Watch camera screen — the main screen of the watch UI.
  *
- * <p>Shows the FadCam avatar eye toggle as the primary record/stop button,
+ * <p>Shows the ShahidCam avatar eye toggle as the primary record/stop button,
  * a live recording timer, available storage, and quick-action icons for
  * toggling audio and flipping the camera.
  *
@@ -54,7 +54,7 @@ public class WatchCameraFragment extends Fragment {
     private ImageView        ivWatchPauseResume;
     private TextView         tvWatchPauseLabel;   // "Pause" / "Resume"
     private TextView         ivWatchFullscreen;   // TextView using Material Icons font
-    private TextView         ivWatchFadShot;      // TextView using Material Icons font
+    private TextView         ivWatchShahidShot;      // TextView using Material Icons font
 
     // ── State ─────────────────────────────────────────────────────────────────
 
@@ -139,7 +139,7 @@ public class WatchCameraFragment extends Fragment {
         ivWatchPauseResume = view.findViewById(R.id.iv_watch_pause_resume);
         tvWatchPauseLabel  = view.findViewById(R.id.tv_watch_pause_label);
         ivWatchFullscreen  = view.findViewById(R.id.iv_watch_fullscreen);
-        ivWatchFadShot     = view.findViewById(R.id.iv_watch_fadshot);
+        ivWatchShahidShot     = view.findViewById(R.id.iv_watch_shahidshot);
 
         // Hamburger opens HomeSidebarFragment (sidebar with preview controls, tips, etc.)
         View hamburger = view.findViewById(R.id.btn_watch_hamburger);
@@ -148,7 +148,7 @@ public class WatchCameraFragment extends Fragment {
                     HomeSidebarFragment.newInstance().show(getChildFragmentManager(), "watch_sidebar"));
         }
 
-        // FadCam logo click → open PrivacyBlackActivity if privacy mode is enabled
+        // ShahidCam logo click → open PrivacyBlackActivity if privacy mode is enabled
         // long press → open WatchTrashFragment overlay (watch-optimised delete screen)
         View appTitle = view.findViewById(R.id.iv_watch_app_title);
         if (appTitle != null) {
@@ -190,7 +190,7 @@ public class WatchCameraFragment extends Fragment {
         ivWatchAudioToggle.setOnClickListener(v -> toggleAudio());
         if (ivWatchPauseResume != null) ivWatchPauseResume.setOnClickListener(v -> pauseResumeRecording());
         if (ivWatchFullscreen  != null) ivWatchFullscreen.setOnClickListener(v -> toggleFullscreen());
-        if (ivWatchFadShot     != null) ivWatchFadShot.setOnClickListener(v -> takeFadShot());
+        if (ivWatchShahidShot     != null) ivWatchShahidShot.setOnClickListener(v -> takeShahidShot());
 
         // Initial UI state
         updateAudioIcon();
@@ -294,7 +294,7 @@ public class WatchCameraFragment extends Fragment {
      * - During recording: sends INTENT_ACTION_CAPTURE_PHOTO to RecordingService.
      * - While idle: launches PhotoCaptureActivity.
      */
-    private void takeFadShot() {
+    private void takeShahidShot() {
         try {
             if (isRecording) {
                 final Intent intent = new Intent(requireContext(), RecordingService.class);
@@ -306,9 +306,9 @@ public class WatchCameraFragment extends Fragment {
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
             }
-            FLog.d(TAG, "takeFadShot: recording=" + isRecording);
+            FLog.d(TAG, "takeShahidShot: recording=" + isRecording);
         } catch (Exception e) {
-            FLog.e(TAG, "takeFadShot error", e);
+            FLog.e(TAG, "takeShahidShot error", e);
         }
     }
 

@@ -22,7 +22,7 @@ import com.shahid.cam.R;
 import com.shahid.cam.SharedPreferencesManager;
 
 /**
- * Component for handling the mode switcher (FadCam, FadRec, FadMic) functionality
+ * Component for handling the mode switcher (ShahidCam, ShahidRec, ShahidMic) functionality
  * Follows modular design principles with clean separation of concerns
  * Features smooth animated transitions between modes
  */
@@ -32,13 +32,13 @@ public class ModeSwitcherComponent {
     
     private final Context context;
     private final SharedPreferencesManager sharedPreferencesManager;
-    private String currentMode = Constants.MODE_FADCAM;
+    private String currentMode = Constants.MODE_SHAHIDCAM;
     private ModeSwitcherListener listener;
     
     // UI References
-    private FrameLayout segmentFadCam;
-    private FrameLayout segmentFadRec;
-    private FrameLayout segmentFadMic;
+    private FrameLayout segmentShahidCam;
+    private FrameLayout segmentShahidRec;
+    private FrameLayout segmentShahidMic;
     private FrameLayout switcherRoot;
     private View activeIndicator;
     private LinearLayout segmentsContainer;
@@ -86,9 +86,9 @@ public class ModeSwitcherComponent {
         try {
             isInitializing = true;
 
-            segmentFadCam = rootView.findViewById(R.id.segment_fadcam);
-            segmentFadRec = rootView.findViewById(R.id.segment_fadrec);
-            segmentFadMic = rootView.findViewById(R.id.segment_fadmic);
+            segmentShahidCam = rootView.findViewById(R.id.segment_shahidcam);
+            segmentShahidRec = rootView.findViewById(R.id.segment_shahidrec);
+            segmentShahidMic = rootView.findViewById(R.id.segment_shahidmic);
             switcherRoot = rootView.findViewById(R.id.mode_switcher_root);
             activeIndicator = rootView.findViewById(R.id.segment_active_indicator);
             segmentsContainer = rootView.findViewById(R.id.mode_switcher_segments);
@@ -104,7 +104,7 @@ public class ModeSwitcherComponent {
                     + " activeIndicator=" + (activeIndicator != null)
                     + " segmentsContainer=" + (segmentsContainer != null));
 
-            if (segmentFadCam == null || segmentFadRec == null || segmentFadMic == null) {
+            if (segmentShahidCam == null || segmentShahidRec == null || segmentShahidMic == null) {
                 FLog.e(TAG, "Segment views missing");
                 return;
             }
@@ -121,48 +121,48 @@ public class ModeSwitcherComponent {
                 }
             });
 
-            // Show/hide FadRec NEW badge based on NewFeatureManager
-            View badgeFadRec = rootView.findViewById(R.id.badge_fadrec);
-            if (badgeFadRec != null) {
+            // Show/hide ShahidRec NEW badge based on NewFeatureManager
+            View badgeShahidRec = rootView.findViewById(R.id.badge_shahidrec);
+            if (badgeShahidRec != null) {
                 try {
-                    boolean shouldShowFadRecBadge = com.shahid.cam.ui.utils.NewFeatureManager.shouldShowBadge(context, "fadrec");
-                    badgeFadRec.setVisibility(shouldShowFadRecBadge ? View.VISIBLE : View.GONE);
-                    FLog.d(TAG, "FadRec badge visibility: " + (shouldShowFadRecBadge ? "VISIBLE" : "GONE"));
+                    boolean shouldShowShahidRecBadge = com.shahid.cam.ui.utils.NewFeatureManager.shouldShowBadge(context, "shahidrec");
+                    badgeShahidRec.setVisibility(shouldShowShahidRecBadge ? View.VISIBLE : View.GONE);
+                    FLog.d(TAG, "ShahidRec badge visibility: " + (shouldShowShahidRecBadge ? "VISIBLE" : "GONE"));
                 } catch (Exception e) {
-                    FLog.e(TAG, "Error managing FadRec badge visibility", e);
-                    badgeFadRec.setVisibility(View.GONE);
+                    FLog.e(TAG, "Error managing ShahidRec badge visibility", e);
+                    badgeShahidRec.setVisibility(View.GONE);
                 }
             }
 
             // Resolve persisted mode (fallback if invalid / coming soon)
             String persisted = sharedPreferencesManager.getCurrentRecordingMode();
-            if (Constants.MODE_FADMIC.equals(persisted)) persisted = Constants.MODE_FADCAM;
+            if (Constants.MODE_FADMIC.equals(persisted)) persisted = Constants.MODE_SHAHIDCAM;
             currentMode = persisted;
 
-            segmentFadCam.setBackground(null);
-            segmentFadRec.setBackground(null);
-            segmentFadMic.setBackground(null);
+            segmentShahidCam.setBackground(null);
+            segmentShahidRec.setBackground(null);
+            segmentShahidMic.setBackground(null);
 
             // Set text colors immediately (before view is shown) to prevent flicker
             // This must happen synchronously, not in post()
-            android.widget.TextView tvFadCam = (android.widget.TextView) segmentFadCam.getChildAt(0);
-            android.widget.TextView tvFadRec = (android.widget.TextView) segmentFadRec.getChildAt(0);
-            android.widget.TextView tvFadMic = (android.widget.TextView) segmentFadMic.getChildAt(0);
+            android.widget.TextView tvShahidCam = (android.widget.TextView) segmentShahidCam.getChildAt(0);
+            android.widget.TextView tvShahidRec = (android.widget.TextView) segmentShahidRec.getChildAt(0);
+            android.widget.TextView tvShahidMic = (android.widget.TextView) segmentShahidMic.getChildAt(0);
             
             int whiteColor = ContextCompat.getColor(context, android.R.color.white);
             int grayColor = ContextCompat.getColor(context, R.color.amoled_text_secondary);
             
-            if (tvFadCam != null) {
-                tvFadCam.setTextColor(Constants.MODE_FADCAM.equals(currentMode) ? whiteColor : grayColor);
-                tvFadCam.setTypeface(null, Constants.MODE_FADCAM.equals(currentMode) ? android.graphics.Typeface.BOLD : android.graphics.Typeface.NORMAL);
+            if (tvShahidCam != null) {
+                tvShahidCam.setTextColor(Constants.MODE_SHAHIDCAM.equals(currentMode) ? whiteColor : grayColor);
+                tvShahidCam.setTypeface(null, Constants.MODE_SHAHIDCAM.equals(currentMode) ? android.graphics.Typeface.BOLD : android.graphics.Typeface.NORMAL);
             }
-            if (tvFadRec != null) {
-                tvFadRec.setTextColor(Constants.MODE_FADREC.equals(currentMode) ? whiteColor : grayColor);
-                tvFadRec.setTypeface(null, Constants.MODE_FADREC.equals(currentMode) ? android.graphics.Typeface.BOLD : android.graphics.Typeface.NORMAL);
+            if (tvShahidRec != null) {
+                tvShahidRec.setTextColor(Constants.MODE_SHAHIDREC.equals(currentMode) ? whiteColor : grayColor);
+                tvShahidRec.setTypeface(null, Constants.MODE_SHAHIDREC.equals(currentMode) ? android.graphics.Typeface.BOLD : android.graphics.Typeface.NORMAL);
             }
-            if (tvFadMic != null) {
-                tvFadMic.setTextColor(Constants.MODE_FADMIC.equals(currentMode) ? whiteColor : grayColor);
-                tvFadMic.setTypeface(null, Constants.MODE_FADMIC.equals(currentMode) ? android.graphics.Typeface.BOLD : android.graphics.Typeface.NORMAL);
+            if (tvShahidMic != null) {
+                tvShahidMic.setTextColor(Constants.MODE_FADMIC.equals(currentMode) ? whiteColor : grayColor);
+                tvShahidMic.setTypeface(null, Constants.MODE_FADMIC.equals(currentMode) ? android.graphics.Typeface.BOLD : android.graphics.Typeface.NORMAL);
             }
 
             // Set backgrounds after text is set
@@ -203,39 +203,39 @@ public class ModeSwitcherComponent {
         } else {
             FLog.d(TAG, "setExclusiveSelected - user click, current=" + previousMode + ", new=" + mode);
 
-            if (Constants.MODE_FADCAM.equals(previousMode) && !Constants.MODE_FADCAM.equals(mode)) {
-                styleText(segmentFadCam, false, false);
-                FLog.d(TAG, "Deactivating FadCam (was active)");
-            } else if (Constants.MODE_FADREC.equals(previousMode) && !Constants.MODE_FADREC.equals(mode)) {
-                styleText(segmentFadRec, false, false);
-                FLog.d(TAG, "Deactivating FadRec (was active)");
+            if (Constants.MODE_SHAHIDCAM.equals(previousMode) && !Constants.MODE_SHAHIDCAM.equals(mode)) {
+                styleText(segmentShahidCam, false, false);
+                FLog.d(TAG, "Deactivating ShahidCam (was active)");
+            } else if (Constants.MODE_SHAHIDREC.equals(previousMode) && !Constants.MODE_SHAHIDREC.equals(mode)) {
+                styleText(segmentShahidRec, false, false);
+                FLog.d(TAG, "Deactivating ShahidRec (was active)");
             } else if (Constants.MODE_FADMIC.equals(previousMode) && !Constants.MODE_FADMIC.equals(mode)) {
-                styleText(segmentFadMic, false, false);
-                FLog.d(TAG, "Deactivating FadMic (was active)");
+                styleText(segmentShahidMic, false, false);
+                FLog.d(TAG, "Deactivating ShahidMic (was active)");
             }
 
-            if (Constants.MODE_FADCAM.equals(mode)) {
-                styleText(segmentFadCam, true, true);
-                FLog.d(TAG, "Activating FadCam (animating)");
-            } else if (Constants.MODE_FADREC.equals(mode)) {
-                styleText(segmentFadRec, true, true);
-                FLog.d(TAG, "Activating FadRec (animating)");
+            if (Constants.MODE_SHAHIDCAM.equals(mode)) {
+                styleText(segmentShahidCam, true, true);
+                FLog.d(TAG, "Activating ShahidCam (animating)");
+            } else if (Constants.MODE_SHAHIDREC.equals(mode)) {
+                styleText(segmentShahidRec, true, true);
+                FLog.d(TAG, "Activating ShahidRec (animating)");
             } else if (Constants.MODE_FADMIC.equals(mode)) {
-                styleText(segmentFadMic, true, true);
-                FLog.d(TAG, "Activating FadMic (animating)");
+                styleText(segmentShahidMic, true, true);
+                FLog.d(TAG, "Activating ShahidMic (animating)");
             }
         }
 
-        FLog.d(TAG, String.format("setExclusiveSelected(%s): FadCam=%b FadRec=%b FadMic=%b",
-            mode, Constants.MODE_FADCAM.equals(mode),
-            Constants.MODE_FADREC.equals(mode),
+        FLog.d(TAG, String.format("setExclusiveSelected(%s): ShahidCam=%b ShahidRec=%b ShahidMic=%b",
+            mode, Constants.MODE_SHAHIDCAM.equals(mode),
+            Constants.MODE_SHAHIDREC.equals(mode),
             Constants.MODE_FADMIC.equals(mode)));
     }
 
     private void applyTextStatesInstant(String mode) {
-        styleText(segmentFadCam, Constants.MODE_FADCAM.equals(mode), false);
-        styleText(segmentFadRec, Constants.MODE_FADREC.equals(mode), false);
-        styleText(segmentFadMic, Constants.MODE_FADMIC.equals(mode), false);
+        styleText(segmentShahidCam, Constants.MODE_SHAHIDCAM.equals(mode), false);
+        styleText(segmentShahidRec, Constants.MODE_SHAHIDREC.equals(mode), false);
+        styleText(segmentShahidMic, Constants.MODE_FADMIC.equals(mode), false);
     }
     
     /**
@@ -387,9 +387,9 @@ public class ModeSwitcherComponent {
     }
 
     private void animatePillFlow(String fromMode, String toMode, Runnable onTransitionComplete) {
-        applyBackground(segmentFadCam, false, false);
-        applyBackground(segmentFadRec, false, false);
-        applyBackground(segmentFadMic, false, false);
+        applyBackground(segmentShahidCam, false, false);
+        applyBackground(segmentShahidRec, false, false);
+        applyBackground(segmentShahidMic, false, false);
 
         FrameLayout fromSegment = getSegmentForMode(fromMode);
         FrameLayout toSegment = getSegmentForMode(toMode);
@@ -448,16 +448,16 @@ public class ModeSwitcherComponent {
      * Setup click listeners for all segments
      */
     private void setupClickListeners() {
-        if (segmentFadCam != null) {
-            segmentFadCam.setOnClickListener(v -> handleModeClick(Constants.MODE_FADCAM));
+        if (segmentShahidCam != null) {
+            segmentShahidCam.setOnClickListener(v -> handleModeClick(Constants.MODE_SHAHIDCAM));
         }
         
-        if (segmentFadRec != null) {
-            segmentFadRec.setOnClickListener(v -> handleModeClick(Constants.MODE_FADREC));
+        if (segmentShahidRec != null) {
+            segmentShahidRec.setOnClickListener(v -> handleModeClick(Constants.MODE_SHAHIDREC));
         }
         
-        if (segmentFadMic != null) {
-            segmentFadMic.setOnClickListener(v -> handleModeClick(Constants.MODE_FADMIC));
+        if (segmentShahidMic != null) {
+            segmentShahidMic.setOnClickListener(v -> handleModeClick(Constants.MODE_FADMIC));
             setupDragToSwitch();
         }
 
@@ -479,26 +479,26 @@ public class ModeSwitcherComponent {
         if (mode.equals(currentMode)) return; // no-op
 
         if (Constants.MODE_FADMIC.equals(mode)) { // blocked mode
-            showComingSoonToast(context.getString(R.string.fadmic_coming_soon));
-            if (listener != null) listener.onComingSoonRequested("FadMic");
+            showComingSoonToast(context.getString(R.string.shahidmic_coming_soon));
+            if (listener != null) listener.onComingSoonRequested("ShahidMic");
             return;
         }
 
         Runnable modeSelectionAction = () -> {
             if (listener == null) return;
             switch (mode) {
-                case Constants.MODE_FADCAM:
+                case Constants.MODE_SHAHIDCAM:
                     listener.onModeSelected(mode);
                     break;
-                case Constants.MODE_FADREC:
+                case Constants.MODE_SHAHIDREC:
                     try {
-                        com.shahid.cam.ui.utils.NewFeatureManager.markFeatureAsSeen(context, "fadrec");
-                        View badgeFadRec = segmentFadRec.getRootView().findViewById(R.id.badge_fadrec);
-                        if (badgeFadRec != null) {
-                            badgeFadRec.setVisibility(View.GONE);
+                        com.shahid.cam.ui.utils.NewFeatureManager.markFeatureAsSeen(context, "shahidrec");
+                        View badgeShahidRec = segmentShahidRec.getRootView().findViewById(R.id.badge_shahidrec);
+                        if (badgeShahidRec != null) {
+                            badgeShahidRec.setVisibility(View.GONE);
                         }
                     } catch (Exception e) {
-                        FLog.e(TAG, "Error marking FadRec badge as seen", e);
+                        FLog.e(TAG, "Error marking ShahidRec badge as seen", e);
                     }
                     listener.onModeSelected(mode);
                     break;
@@ -599,7 +599,7 @@ public class ModeSwitcherComponent {
                             // Mode change: let handleModeClick drive ONE smooth
                             // slide+pulse to the segment — no settle-then-jump.
                             handleModeClick(mode);
-                            // Blocked mode (e.g. FadMic): glide back to the current mode.
+                            // Blocked mode (e.g. ShahidMic): glide back to the current mode.
                             if (!mode.equals(currentMode)) {
                                 settlePillToSegment(segmentIndexForMode(currentMode));
                             }
@@ -615,7 +615,7 @@ public class ModeSwitcherComponent {
                     return false;
             }
         };
-        FrameLayout[] segments = { segmentFadCam, segmentFadRec, segmentFadMic };
+        FrameLayout[] segments = { segmentShahidCam, segmentShahidRec, segmentShahidMic };
         for (FrameLayout seg : segments) {
             if (seg != null) seg.setOnTouchListener(dragListener);
         }
@@ -707,13 +707,13 @@ public class ModeSwitcherComponent {
     }
 
     private String modeForSegment(int index) {
-        if (index == 1) return Constants.MODE_FADREC;
+        if (index == 1) return Constants.MODE_SHAHIDREC;
         if (index == 2) return Constants.MODE_FADMIC;
-        return Constants.MODE_FADCAM;
+        return Constants.MODE_SHAHIDCAM;
     }
 
     private int segmentIndexForMode(String mode) {
-        if (Constants.MODE_FADREC.equals(mode)) return 1;
+        if (Constants.MODE_SHAHIDREC.equals(mode)) return 1;
         if (Constants.MODE_FADMIC.equals(mode)) return 2;
         return 0;
     }
@@ -793,9 +793,9 @@ public class ModeSwitcherComponent {
      */
     private FrameLayout getSegmentForMode(String mode) {
         switch (mode) {
-            case Constants.MODE_FADCAM: return segmentFadCam;
-            case Constants.MODE_FADREC: return segmentFadRec;
-            case Constants.MODE_FADMIC: return segmentFadMic;
+            case Constants.MODE_SHAHIDCAM: return segmentShahidCam;
+            case Constants.MODE_SHAHIDREC: return segmentShahidRec;
+            case Constants.MODE_FADMIC: return segmentShahidMic;
             default: return null;
         }
     }
@@ -805,7 +805,7 @@ public class ModeSwitcherComponent {
      * @param modeName The name of the mode
      */
     private void showComingSoonToast(String modeName) {
-        // modeName is already a complete sentence (e.g. "FadMic (Mic Recording)
+        // modeName is already a complete sentence (e.g. "ShahidMic (Mic Recording)
         // coming soon!") — never append, that duplicated "coming soon" in the toast.
         Toast.makeText(context, modeName, Toast.LENGTH_SHORT).show();
         FLog.d(TAG, "Showed coming soon toast for: " + modeName);
@@ -840,6 +840,6 @@ public class ModeSwitcherComponent {
      * @return true if initialized, false otherwise
      */
     public boolean isInitialized() {
-        return segmentFadCam != null && segmentFadRec != null && segmentFadMic != null;
+        return segmentShahidCam != null && segmentShahidRec != null && segmentShahidMic != null;
     }
 }

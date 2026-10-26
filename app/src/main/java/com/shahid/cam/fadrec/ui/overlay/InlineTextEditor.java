@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.ui.overlay;
+package com.shahid.cam.shahidrec.ui.overlay;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -25,7 +25,7 @@ import android.widget.SeekBar;
 import androidx.core.content.res.ResourcesCompat;
 
 import com.shahid.cam.R;
-import com.shahid.cam.fadrec.ui.annotation.objects.TextObject;
+import com.shahid.cam.shahidrec.ui.annotation.objects.TextObject;
 
 /**
  * Inline text editor overlay for creating and editing text annotations.

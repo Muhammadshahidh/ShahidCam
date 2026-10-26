@@ -42,17 +42,17 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="39dp"
-                        android:src="@drawable/fadrec"
+                        android:src="@drawable/shahidrec"
                         android:adjustViewBounds="true"
                         android:scaleType="fitCenter"
-                        android:contentDescription="@string/desc_fadrec_logo"
+                        android:contentDescription="@string/desc_shahidrec_logo"
                         android:padding="0dp"
                         android:layout_marginEnd="4dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/annotation_by_fadsec_lab"
+                        android:text="@string/annotation_by_shahidlabs_lab"
                         android:textSize="11sp"
                         android:textColor="#B0B0B0"
                         android:fontFamily="@font/ubuntu_regular"
@@ -103,7 +103,7 @@
                             android:id="@+id/txtRecordingReadyTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/fadrec_ready_to_record"
+                            android:text="@string/shahidrec_ready_to_record"
                             android:textSize="15sp"
                             android:textStyle="bold"
                             android:textColor="#FFFFFF"
@@ -115,7 +115,7 @@
                             android:id="@+id/txtRecordingReadySubtitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/fadrec_ready_to_record_subtitle"
+                            android:text="@string/shahidrec_ready_to_record_subtitle"
                             android:textSize="12sp"
                             android:textColor="#B3FFFFFF"
                             android:fontFamily="@font/ubuntu_regular"

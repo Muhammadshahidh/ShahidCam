@@ -35,7 +35,7 @@ public final class PhotoStorageHelper {
     public enum ShotSource {
         BACK,
         SELFIE,
-        FADREC
+        SHAHIDREC
     }
 
     private PhotoStorageHelper() {
@@ -184,7 +184,7 @@ public final class PhotoStorageHelper {
 
     @NonNull
     private static String buildShotFileName(@NonNull ShotSource shotSource) {
-        return Constants.RECORDING_FILE_PREFIX_FADSHOT
+        return Constants.RECORDING_FILE_PREFIX_SHAHIDSHOT
                 + shotSourceLabel(shotSource)
                 + "_"
                 + new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(new Date())
@@ -197,8 +197,8 @@ public final class PhotoStorageHelper {
         switch (shotSource) {
             case SELFIE:
                 return "Selfie";
-            case FADREC:
-                return "FadRec";
+            case SHAHIDREC:
+                return "ShahidRec";
             case BACK:
             default:
                 return "Back";
@@ -210,8 +210,8 @@ public final class PhotoStorageHelper {
         switch (shotSource) {
             case SELFIE:
                 return RecordingStoragePaths.ShotSource.SELFIE;
-            case FADREC:
-                return RecordingStoragePaths.ShotSource.FADREC;
+            case SHAHIDREC:
+                return RecordingStoragePaths.ShotSource.SHAHIDREC;
             case BACK:
             default:
                 return RecordingStoragePaths.ShotSource.BACK;
@@ -288,15 +288,15 @@ public final class PhotoStorageHelper {
 
         String base;
         switch (option) {
-            case "badge_fadcam":
-                base = "Captured by <FADCAM_ICON>" + customLine;
+            case "badge_shahidcam":
+                base = "Captured by <SHAHIDCAM_ICON>" + customLine;
                 break;
             case "timestamp":
                 base = timestamp + timezoneSuffix + customLine;
                 break;
-            case "timestamp_fadcam":
+            case "timestamp_shahidcam":
             default:
-                base = "Captured by <FADCAM_ICON> - " + timestamp + timezoneSuffix + customLine;
+                base = "Captured by <SHAHIDCAM_ICON> - " + timestamp + timezoneSuffix + customLine;
                 break;
         }
 
@@ -331,10 +331,10 @@ public final class PhotoStorageHelper {
                 paint.setTypeface(Typeface.create(Typeface.DEFAULT_BOLD, Typeface.BOLD));
             }
 
-            // Load FadCam icon - same resource used by video watermark
-            Bitmap fadcamIcon = null;
+            // Load ShahidCam icon - same resource used by video watermark
+            Bitmap shahidcamIcon = null;
             try {
-                fadcamIcon = BitmapFactory.decodeResource(context.getResources(), R.drawable.menu_icon_unknown);
+                shahidcamIcon = BitmapFactory.decodeResource(context.getResources(), R.drawable.menu_icon_unknown);
             } catch (Exception ignored) {}
 
             // Icon bigger than text like video watermark (icon is ~2x text height)
@@ -348,20 +348,20 @@ public final class PhotoStorageHelper {
             float lineHeight = (fm.descent - fm.ascent) + 4f;
 
             Bitmap scaledIcon = null;
-            if (fadcamIcon != null) {
+            if (shahidcamIcon != null) {
                 // Keep aspect ratio — don't stretch square
-                float ratio = (float) fadcamIcon.getWidth() / fadcamIcon.getHeight();
+                float ratio = (float) shahidcamIcon.getWidth() / shahidcamIcon.getHeight();
                 int iconW = Math.round(iconHeight * ratio);
                 int iconH = Math.round(iconHeight);
-                scaledIcon = Bitmap.createScaledBitmap(fadcamIcon, iconW, iconH, true);
+                scaledIcon = Bitmap.createScaledBitmap(shahidcamIcon, iconW, iconH, true);
             }
 
             float y = padding - fm.ascent;
             for (String line : lines) {
                 float x = padding;
-                if (line.contains("<FADCAM_ICON>") && scaledIcon != null) {
+                if (line.contains("<SHAHIDCAM_ICON>") && scaledIcon != null) {
                     // Draw inline icon, then text after it (same as video watermark)
-                    String[] parts = line.split("<FADCAM_ICON>", 2);
+                    String[] parts = line.split("<SHAHIDCAM_ICON>", 2);
                     if (parts.length > 0 && !parts[0].isEmpty()) {
                         canvas.drawText(parts[0], x, y, paint);
                         x += paint.measureText(parts[0]) + 6f;
@@ -379,7 +379,7 @@ public final class PhotoStorageHelper {
                 }
                 y += lineHeight;
             }
-            if (fadcamIcon != null && !fadcamIcon.isRecycled()) fadcamIcon.recycle();
+            if (shahidcamIcon != null && !shahidcamIcon.isRecycled()) shahidcamIcon.recycle();
             return result;
         } catch (Exception ignored) {
             return null;

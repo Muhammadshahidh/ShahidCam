@@ -24,16 +24,16 @@ import com.shahid.cam.security.StreamKeyManager;
 import com.shahid.cam.streaming.CloudAuthManager;
 
 /**
- * Activity for linking device to FadCam Remote cloud account.
- * Opens a WebView to id.fadseclab.com/device-link for authentication.
+ * Activity for linking device to ShahidCam Remote cloud account.
+ * Opens a WebView to id.shahidlabs.com/device-link for authentication.
  * Uses JavaScript interface to receive JWT token after successful login.
  */
 public class CloudAccountActivity extends AppCompatActivity {
     private static final String TAG = "CloudAccountActivity";
 
     /**
-     * Plaintext password received from Login page via {@link FadCamBridge#initE2E}.
-     * Used once to derive the E2E master key in {@link FadCamBridge#onLinkSuccess},
+     * Plaintext password received from Login page via {@link ShahidCamBridge#initE2E}.
+     * Used once to derive the E2E master key in {@link ShahidCamBridge#onLinkSuccess},
      * then cleared immediately. Volatile for cross-thread visibility.
      */
     private volatile String pendingE2EPassword = null;
@@ -67,7 +67,7 @@ public class CloudAccountActivity extends AppCompatActivity {
         boolean alreadyLinked = getIntent().getBooleanExtra(EXTRA_ALREADY_LINKED, false);
         
         if (deviceName == null || deviceName.isEmpty()) {
-            deviceName = "FadCam Device";
+            deviceName = "ShahidCam Device";
         }
         
         // Initialize views
@@ -131,7 +131,7 @@ public class CloudAccountActivity extends AppCompatActivity {
         settings.setAllowContentAccess(true);
         
         // Add JavaScript interface for receiving auth callbacks
-        webView.addJavascriptInterface(new FadCamBridge(), "FadCamBridge");
+        webView.addJavascriptInterface(new ShahidCamBridge(), "ShahidCamBridge");
         
         webView.setWebViewClient(new WebViewClient() {
             @Override
@@ -173,9 +173,9 @@ public class CloudAccountActivity extends AppCompatActivity {
     
     /**
      * JavaScript interface for receiving auth callbacks from the web page.
-     * The device-link page will call these methods via window.FadCamBridge
+     * The device-link page will call these methods via window.ShahidCamBridge
      */
-    public class FadCamBridge {
+    public class ShahidCamBridge {
         /**
          * Called when device linking is successful.
          *

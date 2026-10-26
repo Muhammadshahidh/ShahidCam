@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.ui;
+package com.shahid.cam.shahidrec.ui;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -24,10 +24,10 @@ import androidx.annotation.Nullable;
 import com.shahid.cam.Constants;
 import com.shahid.cam.R;
 import com.shahid.cam.ui.AvatarToggleView;
-import com.shahid.cam.fadrec.ScreenRecordingState;
+import com.shahid.cam.shahidrec.ScreenRecordingState;
 
 /**
- * Floating assistive touch overlay for FadRec screen recording controls.
+ * Floating assistive touch overlay for ShahidRec screen recording controls.
  * Provides a draggable button that expands to show recording controls.
  */
 public class FloatingControlsService extends Service {
@@ -224,20 +224,20 @@ public class FloatingControlsService extends Service {
         // Snap guides switch listener
         snapGuidesSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             // Send broadcast to AnnotationView to toggle snap guides
-            Intent intent = new Intent("com.shahid.cam.fadrec.TOGGLE_SNAP_GUIDES");
+            Intent intent = new Intent("com.shahid.cam.shahidrec.TOGGLE_SNAP_GUIDES");
             intent.putExtra("enabled", isChecked);
             sendBroadcast(intent);
         });
         
         // Add text button
         btnAddText.setOnClickListener(v -> {
-            Intent intent = new Intent("com.shahid.cam.fadrec.ADD_TEXT");
+            Intent intent = new Intent("com.shahid.cam.shahidrec.ADD_TEXT");
             sendBroadcast(intent);
         });
         
         // Add shape button
         btnAddShape.setOnClickListener(v -> {
-            Intent intent = new Intent("com.shahid.cam.fadrec.ADD_SHAPE");
+            Intent intent = new Intent("com.shahid.cam.shahidrec.ADD_SHAPE");
             sendBroadcast(intent);
         });
         

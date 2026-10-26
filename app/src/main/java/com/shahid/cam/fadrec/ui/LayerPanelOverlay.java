@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.ui;
+package com.shahid.cam.shahidrec.ui;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -16,7 +16,7 @@ import android.view.LayoutInflater;
 import android.view.DragEvent;
 import android.view.HapticFeedbackConstants;
 
-import com.shahid.cam.fadrec.ui.annotation.objects.AnnotationObject;
+import com.shahid.cam.shahidrec.ui.annotation.objects.AnnotationObject;
 import android.view.View;
 import android.view.View.DragShadowBuilder;
 import android.view.ViewConfiguration;
@@ -32,8 +32,8 @@ import androidx.core.view.ViewCompat;
 import java.util.List;
 
 import com.shahid.cam.R;
-import com.shahid.cam.fadrec.ui.annotation.AnnotationPage;
-import com.shahid.cam.fadrec.ui.annotation.AnnotationLayer;
+import com.shahid.cam.shahidrec.ui.annotation.AnnotationPage;
+import com.shahid.cam.shahidrec.ui.annotation.AnnotationLayer;
 
 /**
  * Overlay showing layer hierarchy panel at the side of the screen.
@@ -505,7 +505,7 @@ public class LayerPanelOverlay {
                 FLog.d("LayerPanelOverlay", "Layer name: " + layer.getName());
                 
                 // Broadcast to show rename dialog
-                android.content.Intent intent = new android.content.Intent("com.shahid.cam.fadrec.RENAME_LAYER");
+                android.content.Intent intent = new android.content.Intent("com.shahid.cam.shahidrec.RENAME_LAYER");
                 intent.putExtra("layer_id", layerId);
                 intent.putExtra("layer_name", layer.getName());
                 context.sendBroadcast(intent);

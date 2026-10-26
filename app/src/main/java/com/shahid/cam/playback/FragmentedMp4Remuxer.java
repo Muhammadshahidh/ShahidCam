@@ -40,7 +40,7 @@ public class FragmentedMp4Remuxer {
      * <p>Inspects the first 64 KB of the file for the presence of a
      * {@code moof} (movie fragment) box, which is the definitive marker
      * of a fragmented MP4 container. Fragmented MP4 files recorded by
-     * FadCam (or any other recorder using Media3's FragmentedMp4Muxer)
+     * ShahidCam (or any other recorder using Media3's FragmentedMp4Muxer)
      * lack sidx boxes, so ExoPlayer cannot seek within them.</p>
      *
      * @param file The file to check.
@@ -85,8 +85,8 @@ public class FragmentedMp4Remuxer {
             return false;
         } catch (IOException e) {
             FLog.w(TAG, "Could not check file for fMP4 structure: " + file.getName(), e);
-            // Fallback: assume FadCam-named files are fragmented
-            return name.startsWith("fadcam_");
+            // Fallback: assume ShahidCam-named files are fragmented
+            return name.startsWith("shahidcam_");
         }
     }
     

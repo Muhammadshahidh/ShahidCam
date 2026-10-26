@@ -31,7 +31,7 @@ import androidx.fragment.app.Fragment;
 import com.shahid.cam.ui.RecordsFragment;
 import com.shahid.cam.ui.RemoteFragment;
 import com.shahid.cam.ui.HomeFragment;
-import com.shahid.cam.ui.FaditorMiniFragment;
+import com.shahid.cam.ui.ShahidEditorMiniFragment;
 import com.shahid.cam.ui.SettingsHomeFragment;
 import com.shahid.cam.forensics.ui.ForensicIntelligenceFragment;
 import com.shahid.cam.ui.utils.NewFeatureManager;
@@ -667,7 +667,7 @@ public class MainActivity extends AppCompatActivity {
                 targetPosition = 1;
             } else if (itemId == R.id.navigation_remote) {
                 targetPosition = 2;
-            } else if (itemId == R.id.navigation_faditor_mini) {
+            } else if (itemId == R.id.navigation_shahideditor_mini) {
                 targetPosition = 3;
             } else if (itemId == R.id.navigation_settings) {
                 targetPosition = 4;
@@ -1202,7 +1202,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         // ── Volume shutter ──────────────────────────────────────────
-        // Long press = start/stop recording, single click = FadShot photo,
+        // Long press = start/stop recording, single click = ShahidShot photo,
         // double click = switch camera. Active only on the home tab while the
         // preference is enabled.
         if (keyCode == KeyEvent.KEYCODE_VOLUME_UP || keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) {
@@ -1308,7 +1308,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Volume shutter key-up: a short press captures a FadShot photo, unless a
+     * Volume shutter key-up: a short press captures a ShahidShot photo, unless a
      * second press arrives within the double-click window (then it switches
      * camera instead). A long press already toggled recording, so key-up only
      * resets the shutter state.
@@ -1374,7 +1374,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /** Route a volume-shutter click to the home fragment (capture FadShot photo). */
+    /** Route a volume-shutter click to the home fragment (capture ShahidShot photo). */
     private void triggerVolumeShutterClick() {
         Fragment current = getCurrentFragment();
         if (current instanceof HomeFragment) {
@@ -1622,16 +1622,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Apply the appropriate theme based on name
-        if ("Faded Night".equals(themeName) ||
+        if ("Shahid Dark".equals(themeName) ||
                 "AMOLED".equals(themeName) ||
                 "Amoled".equals(themeName) ||
                 "amoled".equals(themeName)) {
             setTheme(R.style.Theme_ShahidCam_Amoled);
 
-            // Standardize theme name to "Faded Night"
-            if (!"Faded Night".equals(themeName)) {
+            // Standardize theme name to "Shahid Dark"
+            if (!"Shahid Dark".equals(themeName)) {
                 sharedPreferencesManager.sharedPreferences.edit()
-                        .putString(Constants.PREF_APP_THEME, "Faded Night")
+                        .putString(Constants.PREF_APP_THEME, "Shahid Dark")
                         .apply();
             }
 
@@ -1715,7 +1715,7 @@ public class MainActivity extends AppCompatActivity {
         // Apply appropriate theme based on name
         if ("Crimson Bloom".equals(themeName)) {
             setTheme(R.style.Theme_ShahidCam_Red);
-        } else if ("Faded Night".equals(themeName)) {
+        } else if ("Shahid Dark".equals(themeName)) {
             setTheme(R.style.Theme_ShahidCam_Amoled);
         } else if ("Midnight Dusk".equals(themeName)) {
             setTheme(R.style.Theme_ShahidCam_MidnightDusk); // Always use the custom always-dark theme
@@ -1957,14 +1957,14 @@ public class MainActivity extends AppCompatActivity {
     
     private int currentFragmentPosition = -1; // -1 means no fragment loaded yet
     private static final String FRAGMENT_TAG_PREFIX = "tab_fragment_";
-    private static final String HOME_FRAGMENT_TAG_FADCAM = FRAGMENT_TAG_PREFIX + "0_fadcam";
-    private static final String HOME_FRAGMENT_TAG_FADREC = FRAGMENT_TAG_PREFIX + "0_fadrec";
+    private static final String HOME_FRAGMENT_TAG_SHAHIDCAM = FRAGMENT_TAG_PREFIX + "0_shahidcam";
+    private static final String HOME_FRAGMENT_TAG_SHAHIDREC = FRAGMENT_TAG_PREFIX + "0_shahidrec";
 
     private String getHomeFragmentTagForCurrentMode() {
         String currentMode = sharedPreferencesManager.getCurrentRecordingMode();
-        return Constants.MODE_FADREC.equals(currentMode)
-                ? HOME_FRAGMENT_TAG_FADREC
-                : HOME_FRAGMENT_TAG_FADCAM;
+        return Constants.MODE_SHAHIDREC.equals(currentMode)
+                ? HOME_FRAGMENT_TAG_SHAHIDREC
+                : HOME_FRAGMENT_TAG_SHAHIDCAM;
     }
 
     private String getFragmentTagForPosition(int position) {
@@ -1976,7 +1976,7 @@ public class MainActivity extends AppCompatActivity {
 
     private java.util.List<String> getFragmentTagsForPosition(int position) {
         if (position == 0) {
-            return Arrays.asList(HOME_FRAGMENT_TAG_FADCAM, HOME_FRAGMENT_TAG_FADREC);
+            return Arrays.asList(HOME_FRAGMENT_TAG_SHAHIDCAM, HOME_FRAGMENT_TAG_SHAHIDREC);
         }
         return Collections.singletonList(FRAGMENT_TAG_PREFIX + position);
     }
@@ -2185,8 +2185,8 @@ public class MainActivity extends AppCompatActivity {
             case 0:
                 // Home tab - check current mode
                 String currentMode = sharedPreferencesManager.getCurrentRecordingMode();
-                if (com.shahid.cam.Constants.MODE_FADREC.equals(currentMode)) {
-                    newFragment = com.shahid.cam.fadrec.ui.FadRecHomeFragment.newInstance();
+                if (com.shahid.cam.Constants.MODE_SHAHIDREC.equals(currentMode)) {
+                    newFragment = com.shahid.cam.shahidrec.ui.ShahidRecHomeFragment.newInstance();
                 } else {
                     newFragment = new com.shahid.cam.ui.HomeFragment();
                 }
@@ -2198,7 +2198,7 @@ public class MainActivity extends AppCompatActivity {
                 newFragment = new RemoteFragment();
                 break;
             case 3:
-                newFragment = new FaditorMiniFragment();
+                newFragment = new ShahidEditorMiniFragment();
                 break;
             case 4:
                 newFragment = new com.shahid.cam.ui.SettingsHomeFragment();
@@ -2257,7 +2257,7 @@ public class MainActivity extends AppCompatActivity {
             case 0: return R.id.navigation_home;
             case 1: return R.id.navigation_records;
             case 2: return R.id.navigation_remote;
-            case 3: return R.id.navigation_faditor_mini;
+            case 3: return R.id.navigation_shahideditor_mini;
             case 4: return R.id.navigation_settings;
             case 5: return R.id.navigation_lab;
             default: return -1;
@@ -2273,7 +2273,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Force recreate the fragment at the specified position.
-     * Used for mode switching (FadCam <-> FadRec) where the fragment class changes
+     * Used for mode switching (ShahidCam <-> ShahidRec) where the fragment class changes
      * but the position stays the same.
      * @param position Tab position to recreate
      */

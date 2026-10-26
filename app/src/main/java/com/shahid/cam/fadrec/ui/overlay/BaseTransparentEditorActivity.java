@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.ui.overlay;
+package com.shahid.cam.shahidrec.ui.overlay;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -36,9 +36,9 @@ import androidx.core.view.WindowInsetsCompat;
 public abstract class BaseTransparentEditorActivity extends AppCompatActivity {
     
     // Broadcast actions
-    public static final String ACTION_EDITOR_RESULT = "com.shahid.cam.fadrec.ACTION_EDITOR_RESULT";
-    public static final String ACTION_EDITOR_STARTED = "com.shahid.cam.fadrec.ACTION_EDITOR_STARTED";
-    public static final String ACTION_EDITOR_FINISHED = "com.shahid.cam.fadrec.ACTION_EDITOR_FINISHED";
+    public static final String ACTION_EDITOR_RESULT = "com.shahid.cam.shahidrec.ACTION_EDITOR_RESULT";
+    public static final String ACTION_EDITOR_STARTED = "com.shahid.cam.shahidrec.ACTION_EDITOR_STARTED";
+    public static final String ACTION_EDITOR_FINISHED = "com.shahid.cam.shahidrec.ACTION_EDITOR_FINISHED";
     
     // Result extras
     public static final String EXTRA_RESULT_CODE = "result_code";

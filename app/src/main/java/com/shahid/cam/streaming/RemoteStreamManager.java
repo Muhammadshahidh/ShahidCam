@@ -191,7 +191,7 @@ public class RemoteStreamManager {
                 NetworkMonitor.getInstance().stopMonitoring();
                 // Clear stream preset keys so normal recording settings take effect again
                 if (context != null) {
-                    android.content.SharedPreferences prefs = context.getSharedPreferences("FadCamPrefs", android.content.Context.MODE_PRIVATE);
+                    android.content.SharedPreferences prefs = context.getSharedPreferences("ShahidCamPrefs", android.content.Context.MODE_PRIVATE);
                     prefs.edit()
                         .remove("stream_bitrate")
                         .remove("stream_fps_cap")
@@ -1686,7 +1686,7 @@ public class RemoteStreamManager {
         streamQuality.setPreset(preset);
         
         // Store bitrate and FPS cap in SharedPreferences (resolution comes from Recording Settings)
-        android.content.SharedPreferences prefs = context.getSharedPreferences("FadCamPrefs", android.content.Context.MODE_PRIVATE);
+        android.content.SharedPreferences prefs = context.getSharedPreferences("ShahidCamPrefs", android.content.Context.MODE_PRIVATE);
         android.content.SharedPreferences.Editor editor = prefs.edit();
         editor.putInt("stream_bitrate", preset.getBitrate());
         editor.putInt("stream_fps_cap", preset.getFps());
@@ -1721,7 +1721,7 @@ public class RemoteStreamManager {
         streamQuality.setStreamOrientation(orientation);
         
         // Store in SharedPreferences for persistence
-        android.content.SharedPreferences prefs = context.getSharedPreferences("FadCamPrefs", android.content.Context.MODE_PRIVATE);
+        android.content.SharedPreferences prefs = context.getSharedPreferences("ShahidCamPrefs", android.content.Context.MODE_PRIVATE);
         android.content.SharedPreferences.Editor editor = prefs.edit();
         editor.putInt("stream_orientation", orientation.getValue());
         editor.apply();
@@ -1735,7 +1735,7 @@ public class RemoteStreamManager {
     public void loadStreamQuality(android.content.Context context) {
         if (context == null) return;
         
-        android.content.SharedPreferences prefs = context.getSharedPreferences("FadCamPrefs", android.content.Context.MODE_PRIVATE);
+        android.content.SharedPreferences prefs = context.getSharedPreferences("ShahidCamPrefs", android.content.Context.MODE_PRIVATE);
         String presetName = prefs.getString("quality_preset", "HIGH");
         try {
             StreamQuality.Preset preset = StreamQuality.Preset.valueOf(presetName);
@@ -1753,7 +1753,7 @@ public class RemoteStreamManager {
     public void loadStreamOrientation(android.content.Context context) {
         if (context == null) return;
         
-        android.content.SharedPreferences prefs = context.getSharedPreferences("FadCamPrefs", android.content.Context.MODE_PRIVATE);
+        android.content.SharedPreferences prefs = context.getSharedPreferences("ShahidCamPrefs", android.content.Context.MODE_PRIVATE);
         int orientationValue = prefs.getInt("stream_orientation", -1);
         streamQuality.setStreamOrientation(StreamQuality.StreamOrientation.fromValue(orientationValue));
     }

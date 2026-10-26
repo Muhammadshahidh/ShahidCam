@@ -319,10 +319,10 @@ class FadexNotificationManager {
      */
     async fetchNotificationFromGitHub() {
         try {
-            // Detect web/cloud access (fadseclab.com, localhost) vs local phone access (IP)
+            // Detect web/cloud access (shahidlabs.com, localhost) vs local phone access (IP)
             // Uses isWebAccess() not isCloudMode() because notifications start polling before
             // stream auth completes (streamContext is still null during early polls)
-            const isCloud = window.FadCamRemote && window.FadCamRemote.isWebAccess && window.FadCamRemote.isWebAccess();
+            const isCloud = window.ShahidCamRemote && window.ShahidCamRemote.isWebAccess && window.ShahidCamRemote.isWebAccess();
 
             let json;
 

@@ -1,11 +1,11 @@
 /**
- * ApiService - Unified HTTP API wrapper for FadCam Dashboard
+ * ApiService - Unified HTTP API wrapper for ShahidCam Dashboard
  * 
  * Supports two modes (single source of truth):
  * - Local Mode: Calls phone's HTTP server directly (192.168.x.x)
  * - Cloud Mode: Calls relay server for status, commands go through relay queue
  * 
- * The mode is automatically detected based on FadCamRemote.isCloudMode()
+ * The mode is automatically detected based on ShahidCamRemote.isCloudMode()
  * 
  * Architecture:
  * ┌─────────────────────────────────────────────────────────────────┐
@@ -17,16 +17,16 @@
  * │                    ↙            ↘                              │
  * │   [Local Mode]                  [Cloud Mode]                   │
  * │   Phone HTTP                    Relay Server                   │
- * │   192.168.x.x                   live.fadseclab.com:8443        │
+ * │   192.168.x.x                   live.shahidlabs.com:8443        │
  * └─────────────────────────────────────────────────────────────────┘
  */
 class ApiService {
     constructor(baseUrl) {
         this.localBaseUrl = baseUrl || CONFIG.BASE_URL;
-        this.relayBaseUrl = 'https://live.fadseclab.com:8443';
+        this.relayBaseUrl = 'https://live.shahidlabs.com:8443';
         this.statusCache = null;
         this.lastFetchTime = 0;
-        this.streamContext = null; // Set from FadCamRemote
+        this.streamContext = null; // Set from ShahidCamRemote
     }
     
     // =========================================================================
@@ -35,12 +35,12 @@ class ApiService {
     
     /**
      * Check if we're in cloud mode
-     * Cloud mode = accessed via web (fadseclab.com) with valid stream context
+     * Cloud mode = accessed via web (shahidlabs.com) with valid stream context
      */
     isCloudMode() {
-        return typeof FadCamRemote !== 'undefined' && 
-               typeof FadCamRemote.isCloudMode === 'function' && 
-               FadCamRemote.isCloudMode();
+        return typeof ShahidCamRemote !== 'undefined' && 
+               typeof ShahidCamRemote.isCloudMode === 'function' && 
+               ShahidCamRemote.isCloudMode();
     }
     
     /**
@@ -51,7 +51,7 @@ class ApiService {
     }
     
     /**
-     * Set stream context (called from FadCamRemote after auth)
+     * Set stream context (called from ShahidCamRemote after auth)
      * Commands in cloud mode are sent via HTTP relay (phone polls every 1.5s).
      */
     setStreamContext(ctx) {
@@ -102,11 +102,11 @@ class ApiService {
     }
     
     /**
-     * Get stream access token from FadCamRemote
+     * Get stream access token from ShahidCamRemote
      */
     _getStreamToken() {
-        if (typeof FadCamRemote !== 'undefined' && typeof FadCamRemote.getStreamToken === 'function') {
-            return FadCamRemote.getStreamToken();
+        if (typeof ShahidCamRemote !== 'undefined' && typeof ShahidCamRemote.getStreamToken === 'function') {
+            return ShahidCamRemote.getStreamToken();
         }
         return null;
     }
@@ -244,8 +244,8 @@ class ApiService {
                     // ServerStatus model handles snake_case → camelCase transformation
                     this.statusCache = await response.json();
                     this.statusCache.cloudMode = true;
-                    const viewerStats = typeof FadCamRemote !== 'undefined' && FadCamRemote.getViewerStats
-                        ? FadCamRemote.getViewerStats()
+                    const viewerStats = typeof ShahidCamRemote !== 'undefined' && ShahidCamRemote.getViewerStats
+                        ? ShahidCamRemote.getViewerStats()
                         : null;
                     if (viewerStats) {
                         this.statusCache.activeConnections = viewerStats.device_viewers;
@@ -647,7 +647,7 @@ const apiService = new ApiService();
 
 /**
  * Initialize ApiService stream context
- * Called from FadCamRemote after successful auth
+ * Called from ShahidCamRemote after successful auth
  */
 function initCloudApiService(streamContext) {
     apiService.setStreamContext(streamContext);

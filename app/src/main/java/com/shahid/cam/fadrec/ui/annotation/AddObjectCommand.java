@@ -1,6 +1,6 @@
-package com.shahid.cam.fadrec.ui.annotation;
+package com.shahid.cam.shahidrec.ui.annotation;
 
-import com.shahid.cam.fadrec.ui.annotation.objects.AnnotationObject;
+import com.shahid.cam.shahidrec.ui.annotation.objects.AnnotationObject;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -69,19 +69,19 @@ public class AddObjectCommand implements DrawingCommand {
         
         // Deserialize the object using the same pattern as AnnotationLayer
         String typeStr = objectJson.getString("type");
-        com.shahid.cam.fadrec.ui.annotation.objects.AnnotationObject.ObjectType type = 
-            com.shahid.cam.fadrec.ui.annotation.objects.AnnotationObject.ObjectType.valueOf(typeStr);
+        com.shahid.cam.shahidrec.ui.annotation.objects.AnnotationObject.ObjectType type = 
+            com.shahid.cam.shahidrec.ui.annotation.objects.AnnotationObject.ObjectType.valueOf(typeStr);
         
         AnnotationObject object;
         switch (type) {
             case PATH:
-                object = new com.shahid.cam.fadrec.ui.annotation.objects.PathObject();
+                object = new com.shahid.cam.shahidrec.ui.annotation.objects.PathObject();
                 break;
             case TEXT:
-                object = new com.shahid.cam.fadrec.ui.annotation.objects.TextObject();
+                object = new com.shahid.cam.shahidrec.ui.annotation.objects.TextObject();
                 break;
             case SHAPE:
-                object = new com.shahid.cam.fadrec.ui.annotation.objects.ShapeObject();
+                object = new com.shahid.cam.shahidrec.ui.annotation.objects.ShapeObject();
                 break;
             default:
                 throw new JSONException("Unknown object type: " + type);

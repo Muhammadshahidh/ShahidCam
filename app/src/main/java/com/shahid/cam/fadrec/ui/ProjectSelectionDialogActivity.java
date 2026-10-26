@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.ui;
+package com.shahid.cam.shahidrec.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -17,7 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 
 import com.shahid.cam.R;
-import com.shahid.cam.fadrec.ui.annotation.ProjectFileManager;
+import com.shahid.cam.shahidrec.ui.annotation.ProjectFileManager;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import org.json.JSONObject;
@@ -30,12 +30,12 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * Dialog activity for browsing and managing all FadRec projects.
+ * Dialog activity for browsing and managing all ShahidRec projects.
  * Shows list of projects with names, descriptions, and metadata.
  */
 public class ProjectSelectionDialogActivity extends Activity {
     
-    public static final String ACTION_PROJECT_SELECTED = "com.shahid.cam.fadrec.PROJECT_SELECTED";
+    public static final String ACTION_PROJECT_SELECTED = "com.shahid.cam.shahidrec.PROJECT_SELECTED";
     public static final String EXTRA_PROJECT_NAME = "project_name";
     
     private ProjectFileManager projectFileManager;
@@ -74,7 +74,7 @@ public class ProjectSelectionDialogActivity extends Activity {
         
         // Add project items
         for (File projectFile : projectFiles) {
-            String fileName = projectFile.getName().replace(".fadrec", "");
+            String fileName = projectFile.getName().replace(".shahidrec", "");
             View projectItem = createProjectItem(fileName, projectFile);
             container.addView(projectItem);
         }

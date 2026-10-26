@@ -91,29 +91,29 @@ public class HomeFragmentHelper {
         sharedPreferencesManager.setCurrentRecordingMode(mode);
 
         switch (mode) {
-            case Constants.MODE_FADCAM:
-                // FadCam mode - regular camera recording
-                FLog.d(TAG, "FadCam mode selected");
+            case Constants.MODE_SHAHIDCAM:
+                // ShahidCam mode - regular camera recording
+                FLog.d(TAG, "ShahidCam mode selected");
                 // Recreate fragment to show HomeFragment
                 recreateHomeFragment();
                 break;
 
-            case Constants.MODE_FADREC:
-                // FadRec mode - screen recording
-                FLog.d(TAG, "FadRec mode selected");
-                // Recreate fragment to show FadRecHomeFragment
+            case Constants.MODE_SHAHIDREC:
+                // ShahidRec mode - screen recording
+                FLog.d(TAG, "ShahidRec mode selected");
+                // Recreate fragment to show ShahidRecHomeFragment
                 recreateHomeFragment();
                 break;
 
             case Constants.MODE_FADMIC:
                 // Future: Handle mic recording mode
-                FLog.d(TAG, "FadMic mode will be implemented in future");
+                FLog.d(TAG, "ShahidMic mode will be implemented in future");
                 break;
         }
     }
 
     /**
-     * Recreate the home fragment to switch between FadCam and FadRec modes.
+     * Recreate the home fragment to switch between ShahidCam and ShahidRec modes.
      * With hide/show navigation, we must force remove and re-add the fragment
      * since switchFragment() would return early (same position).
      */
@@ -167,7 +167,7 @@ public class HomeFragmentHelper {
         }
         String mode = sharedPreferencesManager.getCurrentRecordingMode();
         if (Constants.MODE_FADMIC.equals(mode)) {
-            mode = Constants.MODE_FADCAM;
+            mode = Constants.MODE_SHAHIDCAM;
         }
         modeSwitcherComponent.setActiveMode(mode);
     }

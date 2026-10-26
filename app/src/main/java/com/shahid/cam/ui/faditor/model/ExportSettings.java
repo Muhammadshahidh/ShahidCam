@@ -1,4 +1,4 @@
-package com.shahid.cam.ui.faditor.model;
+package com.shahid.cam.ui.shahideditor.model;
 
 /**
  * Configuration for video export.

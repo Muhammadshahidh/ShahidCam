@@ -182,8 +182,8 @@ public class ScanInfoBottomSheet extends BottomSheetDialogFragment {
 
     private String getReadablePath() {
         String p = fileUri.getPath();
-        if (p != null && p.contains("FadCam")) {
-            int idx = p.indexOf("FadCam");
+        if (p != null && p.contains("ShahidCam")) {
+            int idx = p.indexOf("ShahidCam");
             return "..." + p.substring(idx);
         }
         return p != null ? p : "";

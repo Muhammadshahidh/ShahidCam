@@ -100,7 +100,7 @@ public class AboutFragment extends BaseFragment {
         ScrollView scrollView = view.findViewById(R.id.scroll_view);
 
         // Initialize footer elements
-        ImageView ivFadSecLabLogo = view.findViewById(R.id.ivFadSecLabLogo);
+        ImageView ivShahidLabsLogo = view.findViewById(R.id.ivShahidLabsLogo);
         TextView tvAboutFooter = view.findViewById(R.id.tvAboutFooter);
 
         int colorHeading = resolveThemeColor(R.attr.colorHeading);
@@ -128,8 +128,8 @@ public class AboutFragment extends BaseFragment {
             themeTextColor = ContextCompat.getColor(requireContext(), R.color.pookiepink_theme_primary); // Pink
         } else if ("Snow Veil".equals(currentTheme)) {
             themeTextColor = ContextCompat.getColor(requireContext(), R.color.snowveil_theme_text_primary); // Black
-        } else if ("Faded Night".equals(currentTheme)) {
-            themeTextColor = Color.WHITE; // Default for Faded Night
+        } else if ("Shahid Dark".equals(currentTheme)) {
+            themeTextColor = Color.WHITE; // Default for Shahid Dark
         } else {
             // Default to Crimson Bloom if no matches
             themeTextColor = ContextCompat.getColor(requireContext(), R.color.red_theme_primary);
@@ -183,8 +183,8 @@ public class AboutFragment extends BaseFragment {
         } else if ("Snow Veil".equals(currentTheme)) {
             highlightColorHex = String.format("#%06X", (0xFFFFFF & ContextCompat.getColor(requireContext(), R.color.snowveil_theme_text_primary)));
         } else {
-            // Faded Night or default
-            highlightColorHex = "#FFFFFF"; // White for Faded Night
+            // Shahid Dark or default
+            highlightColorHex = "#FFFFFF"; // White for Shahid Dark
         }
         
         // Replace any hardcoded color with the theme-specific one
@@ -226,7 +226,7 @@ public class AboutFragment extends BaseFragment {
         
         // Setup footer text with Palestine and Pakistan flags
         if (tvAboutFooter != null) {
-            String footer = "Made with Palestine at FadSec Lab in Pakistan";
+            String footer = "Made with Palestine at Shahid Labs in Pakistan";
             android.text.SpannableString spannable = new android.text.SpannableString(footer);
             
             // Palestine flag image
@@ -253,15 +253,15 @@ public class AboutFragment extends BaseFragment {
                 }
             }
             
-            // FadSec Lab clickable, bold, and red
-            int fadSecLabStart = footer.indexOf("FadSec Lab");
-            int fadSecLabEnd = fadSecLabStart + "FadSec Lab".length();
+            // Shahid Labs clickable, bold, and red
+            int fadSecLabStart = footer.indexOf("Shahid Labs");
+            int fadSecLabEnd = fadSecLabStart + "Shahid Labs".length();
             if (fadSecLabStart >= 0) {
                 spannable.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), fadSecLabStart, fadSecLabEnd, android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
                 spannable.setSpan(new android.text.style.ClickableSpan() {
                     @Override
                     public void onClick(@NonNull View widget) {
-                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/fadsec-lab"));
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/shahidlabs-lab"));
                         widget.getContext().startActivity(browserIntent);
                     }
                     @Override
@@ -298,7 +298,7 @@ public class AboutFragment extends BaseFragment {
         } else if ("Snow Veil".equals(currentThemeAnswers)) {
             answerColorHex = String.format("#%06X", (0xFFFFFF & ContextCompat.getColor(requireContext(), R.color.snowveil_theme_text_primary)));
         } else {
-            answerColorHex = "#FFFFFF"; // White for Faded Night
+            answerColorHex = "#FFFFFF"; // White for Shahid Dark
         }
         
         StringBuilder qnaContent = new StringBuilder();
@@ -307,7 +307,7 @@ public class AboutFragment extends BaseFragment {
                     .append("<font color='" + answerColorHex + "'>").append(answers[i]).append("</font><br><br>");
         }
         privacyInfoContent.setText(Html.fromHtml(qnaContent.toString(), Html.FROM_HTML_MODE_LEGACY));
-        sourceCodeButton.setOnClickListener(v -> openUrl("https://github.com/fadsec-lab/"));
+        sourceCodeButton.setOnClickListener(v -> openUrl("https://github.com/shahidlabs-lab/"));
         donateButton.setOnClickListener(v -> {
             KoFiSupportBottomSheet bottomSheet = new KoFiSupportBottomSheet();
             bottomSheet.show(getParentFragmentManager(), "KoFiSupportBottomSheet");
@@ -368,7 +368,7 @@ public class AboutFragment extends BaseFragment {
         } else if ("Snow Veil".equals(currentTheme)) {
             answerColorHex = String.format("#%06X", (0xFFFFFF & ContextCompat.getColor(requireContext(), R.color.snowveil_theme_text_primary)));
         } else {
-            answerColorHex = "#FFFFFF"; // White for Faded Night
+            answerColorHex = "#FFFFFF"; // White for Shahid Dark
         }
         
         // Determine question text color based on theme
@@ -466,7 +466,7 @@ public class AboutFragment extends BaseFragment {
     private void sendEmail() {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:fadedhood@proton.me"));
-        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.about_fadcam_feedback));
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.about_shahidcam_feedback));
         startActivity(intent);
     }
 
@@ -633,13 +633,13 @@ public class AboutFragment extends BaseFragment {
         // Select the appropriate dialog theme based on current app theme
         int dialogTheme;
         if ("Crimson Bloom".equals(currentTheme)) {
-            dialogTheme = R.style.ThemeOverlay_FadCam_Red_Dialog;
-        } else if ("Faded Night".equals(currentTheme)) {
-            dialogTheme = R.style.ThemeOverlay_FadCam_Amoled_MaterialAlertDialog;
+            dialogTheme = R.style.ThemeOverlay_ShahidCam_Red_Dialog;
+        } else if ("Shahid Dark".equals(currentTheme)) {
+            dialogTheme = R.style.ThemeOverlay_ShahidCam_Amoled_MaterialAlertDialog;
         } else if ("Snow Veil".equals(currentTheme)) {
-            dialogTheme = R.style.ThemeOverlay_FadCam_SnowVeil_Dialog;
+            dialogTheme = R.style.ThemeOverlay_ShahidCam_SnowVeil_Dialog;
         } else {
-            dialogTheme = R.style.ThemeOverlay_FadCam_Dialog;
+            dialogTheme = R.style.ThemeOverlay_ShahidCam_Dialog;
         }
         
         return new MaterialAlertDialogBuilder(context, dialogTheme);
@@ -676,18 +676,18 @@ public class AboutFragment extends BaseFragment {
     private void applySnowVeilToCards(View rootView) {
         try {
             // Find MaterialCardViews in the fragment
-            MaterialCardView fadsecInfoCard = rootView.findViewById(R.id.shahid_sec_info_card);
+            MaterialCardView shahidlabsInfoCard = rootView.findViewById(R.id.shahid_sec_info_card);
             MaterialCardView privacyInfoCard = rootView.findViewById(R.id.privacy_info_card);
             
             // Apply Snow Veil theme styles to cards
-            if (fadsecInfoCard != null) {
-                fadsecInfoCard.setCardBackgroundColor(Color.WHITE);
-                fadsecInfoCard.setStrokeColor(Color.LTGRAY);
+            if (shahidlabsInfoCard != null) {
+                shahidlabsInfoCard.setCardBackgroundColor(Color.WHITE);
+                shahidlabsInfoCard.setStrokeColor(Color.LTGRAY);
                 
                 // Find text views inside the card and set color
-                TextView fadsecInfoText = fadsecInfoCard.findViewById(R.id.shahid_sec_info_text);
-                if (fadsecInfoText != null) {
-                    fadsecInfoText.setTextColor(Color.BLACK);
+                TextView shahidlabsInfoText = shahidlabsInfoCard.findViewById(R.id.shahid_sec_info_text);
+                if (shahidlabsInfoText != null) {
+                    shahidlabsInfoText.setTextColor(Color.BLACK);
                 }
             }
             

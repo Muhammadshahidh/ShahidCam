@@ -13,7 +13,7 @@
     <string name="send_email">إرسال بريد إلكتروني</string>
     <string name="join_community">انضم إلى المجتمع للحصول على المساعدة، ومشاركة الأفكار، والحصول على تحديثات البرنامج</string>
     <string name="privacy_information">معلومات الخصوصية</string>
-    <string name="copyright_info">© 2024 https://fadcam.faded.dev\nمرخص بموجب GPL-3.0</string>
+    <string name="copyright_info">© 2024 https://shahidcam.shahidcam.app\nمرخص بموجب GPL-3.0</string>
     <string name="mainpage_storage_indicator" formatted="false">\n    <![CDATA[
     <font color=\'#FFFFFF\' style=\'font-size:16sp;\'><b>المساحة المتاحة:</b></font><br>
     <font color=\'#CCCCCC\' style=\'font-size:14sp;\'>%.2f GB / %.2f GB</font><br><br>
@@ -140,7 +140,7 @@
     <string name="discord_title">خادم Discord</string>
     <string name="thankyou_msg">شكرًا لك على استخدام ShahidCam!</string>
     <string name="settings_title">الإعدادات</string>
-    <string name="array_watermark_time_fadcam">الوقت و"Fadcam"</string>
+    <string name="array_watermark_time_shahidcam">الوقت و"Fadcam"</string>
     <string name="array_watermark_timeonly">الوقت فقط</string>
     <string name="array_watermark_nomark">بدون علامة مائية</string>
     <string name="toast_video_not_found">خطأ: لم يتم العثور على الفيديو</string>
@@ -538,27 +538,27 @@
 
     <string name="button_resume">استئناف</string>
 
-    <string name="fadrec_start_screen_recording">بدء تسجيل الشاشة</string>
+    <string name="shahidrec_start_screen_recording">بدء تسجيل الشاشة</string>
 
-    <string name="fadrec_stop_screen_recording">إيقاف تسجيل الشاشة</string>
+    <string name="shahidrec_stop_screen_recording">إيقاف تسجيل الشاشة</string>
 
-    <string name="fadrec_pause_screen_recording">إيقاف تسجيل الشاشة مؤقتًا</string>
+    <string name="shahidrec_pause_screen_recording">إيقاف تسجيل الشاشة مؤقتًا</string>
 
-    <string name="fadrec_resume_screen_recording">استئناف تسجيل الشاشة</string>
+    <string name="shahidrec_resume_screen_recording">استئناف تسجيل الشاشة</string>
 
-    <string name="fadrec_screen_recording_started">بدأ تسجيل الشاشة</string>
+    <string name="shahidrec_screen_recording_started">بدأ تسجيل الشاشة</string>
 
-    <string name="fadrec_screen_recording_stopped">تم إيقاف تسجيل الشاشة</string>
+    <string name="shahidrec_screen_recording_stopped">تم إيقاف تسجيل الشاشة</string>
 
-    <string name="fadrec_screen_recording_paused">تم إيقاف تسجيل الشاشة مؤقتًا</string>
+    <string name="shahidrec_screen_recording_paused">تم إيقاف تسجيل الشاشة مؤقتًا</string>
 
-    <string name="fadrec_screen_recording_resumed">تم استئناف تسجيل الشاشة</string>
+    <string name="shahidrec_screen_recording_resumed">تم استئناف تسجيل الشاشة</string>
 
-    <string name="fadrec_notification_title">تسجيل الشاشة</string>
+    <string name="shahidrec_notification_title">تسجيل الشاشة</string>
 
-    <string name="fadrec_notification_recording">جارٍ تسجيل الشاشة…</string>
+    <string name="shahidrec_notification_recording">جارٍ تسجيل الشاشة…</string>
 
-    <string name="fadrec_notification_paused">تم إيقاف التسجيل مؤقتًا</string>
+    <string name="shahidrec_notification_paused">تم إيقاف التسجيل مؤقتًا</string>
 
     <string name="floating_controls_title">القائمة</string>
 
@@ -604,36 +604,36 @@
 
     <string name="add_shape">إضافة شكل</string>
 
-    <string name="fadrec_ready_to_record">جاهز لالتقاط الشاشة</string>
+    <string name="shahidrec_ready_to_record">جاهز لالتقاط الشاشة</string>
 
-    <string name="fadrec_ready_to_record_subtitle">اضغط للبدء</string>
+    <string name="shahidrec_ready_to_record_subtitle">اضغط للبدء</string>
 
-    <string name="fadrec_permission_denied">تم رفض إذن تسجيل الشاشة</string>
+    <string name="shahidrec_permission_denied">تم رفض إذن تسجيل الشاشة</string>
 
-    <string name="fadrec_mode_title">ScreenRec • تسجيل الشاشة</string>
+    <string name="shahidrec_mode_title">ScreenRec • تسجيل الشاشة</string>
 
-    <string name="fadrec_mute_audio">كتم صوت التسجيل</string>
+    <string name="shahidrec_mute_audio">كتم صوت التسجيل</string>
 
-    <string name="fadrec_unmute_audio">إلغاء كتم صوت التسجيل</string>
+    <string name="shahidrec_unmute_audio">إلغاء كتم صوت التسجيل</string>
 
-    <string name="fadrec_mic_permission_needed_title">مطلوب إذن الميكروفون</string>
+    <string name="shahidrec_mic_permission_needed_title">مطلوب إذن الميكروفون</string>
 
-    <string name="fadrec_mic_permission_needed_message">لا يمكن لـ ScreenRec الوصول إلى الميكروفون. يمكنك التسجيل بدون صوت - لن يتم حفظ الصوت.</string>
+    <string name="shahidrec_mic_permission_needed_message">لا يمكن لـ ScreenRec الوصول إلى الميكروفون. يمكنك التسجيل بدون صوت - لن يتم حفظ الصوت.</string>
 
-    <string name="fadrec_record_muted">تسجيل بدون صوت</string>
+    <string name="shahidrec_record_muted">تسجيل بدون صوت</string>
 
-    <string name="fadrec_audio_source_title">مصدر الصوت</string>
+    <string name="shahidrec_audio_source_title">مصدر الصوت</string>
 
-    <string name="fadrec_audio_source_choose">اختر مصدر الصوت</string>
+    <string name="shahidrec_audio_source_choose">اختر مصدر الصوت</string>
 
-	<string name="fadrec_audio_source_helper">اختر ما تلتقطه تسجيلات الشاشة من الصوت. يُنصح بخيار \"افتراضي (توجيه النظام)\" مع ميكروفونات USB والسلكية — أو اختر جهازًا محددًا للتوجيه الصريح.</string>
-	<string name="fadrec_audio_source_mic_default">ميكروفون (توجيه افتراضي)</string>
+	<string name="shahidrec_audio_source_helper">اختر ما تلتقطه تسجيلات الشاشة من الصوت. يُنصح بخيار \"افتراضي (توجيه النظام)\" مع ميكروفونات USB والسلكية — أو اختر جهازًا محددًا للتوجيه الصريح.</string>
+	<string name="shahidrec_audio_source_mic_default">ميكروفون (توجيه افتراضي)</string>
 
-    <string name="fadrec_audio_source_none">بدون صوت</string>
+    <string name="shahidrec_audio_source_none">بدون صوت</string>
 
-    <string name="fadrec_audio_source_mic">الميكروفون</string>
+    <string name="shahidrec_audio_source_mic">الميكروفون</string>
 
-    <string name="fadrec_audio_source_internal">صوت الجهاز (داخلي)</string>
+    <string name="shahidrec_audio_source_internal">صوت الجهاز (داخلي)</string>
 
 	<string name="screen_rec_audio_device_title">جهاز إدخال الصوت</string>
 	<string name="screen_rec_audio_device_default">افتراضي (توجيه النظام)</string>
@@ -882,7 +882,7 @@
 
     <string name="front">أمامي</string>
 
-    <string name="video_menu_save_helper_downloads_fadcam">سيتم حفظ الفيديو في Downloads/ShahidCam</string>
+    <string name="video_menu_save_helper_downloads_shahidcam">سيتم حفظ الفيديو في Downloads/ShahidCam</string>
 
     <string name="video_menu_save_copy_or_move_title">حفظ في المعرض</string>
 
@@ -1142,7 +1142,7 @@
 
     <string name="media_type_photo_selfie">سيلفي</string>
 
-    <string name="media_type_photo_fadrec">ScreenRec</string>
+    <string name="media_type_photo_shahidrec">ScreenRec</string>
 
     <string name="photo_capture_saved">تم حفظ الصورة</string>
 
@@ -1150,7 +1150,7 @@
 
     <string name="photo_capture_preview_unavailable">المعاينة غير متاحة</string>
 
-    <string name="video_menu_upload_faddrive">تحميل إلى Drive</string>
+    <string name="video_menu_upload_shahiddrive">تحميل إلى Drive</string>
 
     <string name="records_filter_all">الكل</string>
     <string name="mode_all">الكل</string>
@@ -1161,7 +1161,7 @@
 
     <string name="records_filter_screen">ScreenRec</string>
 
-    <string name="records_filter_faditor">ShahidEditor</string>
+    <string name="records_filter_shahideditor">ShahidEditor</string>
 
     <string name="records_filter_stream">بث</string>
 
@@ -1175,11 +1175,11 @@
 
     <string name="records_filter_camera_dual">مزدوج</string>
 
-    <string name="records_filter_faditor_all">الكل</string>
+    <string name="records_filter_shahideditor_all">الكل</string>
 
-    <string name="records_filter_faditor_converted">محول</string>
+    <string name="records_filter_shahideditor_converted">محول</string>
 
-    <string name="records_filter_faditor_merge">دمج</string>
+    <string name="records_filter_shahideditor_merge">دمج</string>
 
     <string name="records_filter_shot_all">الكل</string>
 
@@ -1189,7 +1189,7 @@
 
     <string name="records_filter_shot_selfie">سيلفي</string>
 
-    <string name="records_filter_shot_fadrec">ScreenRec</string>
+    <string name="records_filter_shot_shahidrec">ScreenRec</string>
 
     <string name="records_filter_checklist_desc">تبديل وضع التحديد</string>
 
@@ -1205,13 +1205,13 @@
 
     <string name="records_filter_helper_screen">تسجيلات الشاشة (ScreenRec)</string>
 
-    <string name="records_filter_helper_faditor">فيديوهات محررة/مصدرة (ShahidEditor)</string>
+    <string name="records_filter_helper_shahideditor">فيديوهات محررة/مصدرة (ShahidEditor)</string>
 
-    <string name="records_filter_helper_faditor_all">جميع مخرجات ShahidEditor والملفات ذات الصلة.</string>
+    <string name="records_filter_helper_shahideditor_all">جميع مخرجات ShahidEditor والملفات ذات الصلة.</string>
 
-    <string name="records_filter_helper_faditor_converted">تحويل MP4 المجزأ إلى MP4 قياسي قابل للبحث لمشغلات خارجية.</string>
+    <string name="records_filter_helper_shahideditor_converted">تحويل MP4 المجزأ إلى MP4 قياسي قابل للبحث لمشغلات خارجية.</string>
 
-    <string name="records_filter_helper_faditor_merge">دمج مقاطع متعددة في فيديو واحد.</string>
+    <string name="records_filter_helper_shahideditor_merge">دمج مقاطع متعددة في فيديو واحد.</string>
 
     <string name="records_filter_helper_stream">تسجيلات البث المحفوظة</string>
 
@@ -1221,7 +1221,7 @@
 
     <string name="records_filter_helper_shot_selfie">صور ملتقطة بالكاميرا الأمامية (سيلفي)</string>
 
-    <string name="records_filter_helper_shot_fadrec">لقطات شاشة ملتقطة (ScreenRec)</string>
+    <string name="records_filter_helper_shot_shahidrec">لقطات شاشة ملتقطة (ScreenRec)</string>
 
     <string name="records_location_format">الموقع: %1$s/%2$s</string>
 
@@ -1231,7 +1231,7 @@
 
     <string name="records_batch_save">حفظ في المعرض</string>
 
-    <string name="records_batch_faditor">أتمتة ShahidEditor</string>
+    <string name="records_batch_shahideditor">أتمتة ShahidEditor</string>
 
     <string name="records_batch_delete">حذف</string>
 
@@ -1247,13 +1247,13 @@
 
     <string name="records_batch_save_desc">نسخ أو نقل أو تصدير الفيديوهات المحددة إلى مجلد آخر.</string>
 
-    <string name="records_batch_faditor_desc">تشغيل أتمتة الخلفية بدون فتح تبويب ShahidEditor.</string>
+    <string name="records_batch_shahideditor_desc">تشغيل أتمتة الخلفية بدون فتح تبويب ShahidEditor.</string>
 
     <string name="records_batch_delete_desc">نقل الفيديوهات المحددة إلى سلة المهملات.</string>
 
     <string name="records_batch_save_queued">تمت إضافة %1$d مهمة حفظ إلى القائمة.</string>
 
-    <string name="records_batch_faditor_first_only">تم فتح الفيديو الأول. %1$d محدد؛ قائمة التحرير المتعدد قادمة لاحقًا.</string>
+    <string name="records_batch_shahideditor_first_only">تم فتح الفيديو الأول. %1$d محدد؛ قائمة التحرير المتعدد قادمة لاحقًا.</string>
 
     <string name="records_batch_save_copy_helper">يحتفظ بالأصول؛ يحفظ نسخًا في %1$s.</string>
 
@@ -1269,17 +1269,17 @@
 
     <string name="records_batch_custom_export_done">انتهى التصدير. نجح: %1$d • فشل: %2$d</string>
 
-    <string name="records_batch_faditor_sheet_title">إجراءات ShahidEditor للدفعة</string>
+    <string name="records_batch_shahideditor_sheet_title">إجراءات ShahidEditor للدفعة</string>
 
-    <string name="records_batch_faditor_export_standard">تصدير إلى MP4 قياسي</string>
+    <string name="records_batch_shahideditor_export_standard">تصدير إلى MP4 قياسي</string>
 
-    <string name="records_batch_faditor_export_standard_desc">تحويل MP4 المجزأ إلى MP4 قياسي قابل للبحث لمشغلات خارجية.</string>
+    <string name="records_batch_shahideditor_export_standard_desc">تحويل MP4 المجزأ إلى MP4 قياسي قابل للبحث لمشغلات خارجية.</string>
 
-    <string name="records_batch_faditor_merge">دمج الفيديوهات المحددة</string>
+    <string name="records_batch_shahideditor_merge">دمج الفيديوهات المحددة</string>
 
-    <string name="records_batch_faditor_merge_desc">دمج المقاطع المحددة في فيديو واحد في الخلفية.</string>
+    <string name="records_batch_shahideditor_merge_desc">دمج المقاطع المحددة في فيديو واحد في الخلفية.</string>
 
-    <string name="records_batch_faditor_queued">تم وضع %1$d عنصر دفعة في القائمة في الخلفية.</string>
+    <string name="records_batch_shahideditor_queued">تم وضع %1$d عنصر دفعة في القائمة في الخلفية.</string>
 
     <string name="records_batch_completed">اكتملت عملية الدفعة.</string>
 
@@ -1303,7 +1303,7 @@
 
     <string name="nav_remote">عن بعد</string>
 
-    <string name="nav_faditor_mini">ShahidEditor</string>
+    <string name="nav_shahideditor_mini">ShahidEditor</string>
 
     <string name="nav_lab">المختبر</string>
 
@@ -1666,7 +1666,7 @@
 
     <string name="torch_both">كلا الفلاشين</string>
 
-    <string name="note_debug_detailed">عند التمكين، يكتب ShahidCam ملف سجل تصحيح HTML (FADCAM_debug.html) في مجلد التنزيلات العام/ShahidCam/. شارك هذا الملف عند الإبلاغ عن مشاكل. أوقف لإيقاف الكتابات المستقبلية.\nملاحظة: قد يضيف تسجيل التصحيح عبئًا على الأداء أثناء التسجيل — أبقه معطلًا إلا إذا كنت تستكشف مشكلة.</string>
+    <string name="note_debug_detailed">عند التمكين، يكتب ShahidCam ملف سجل تصحيح HTML (SHAHIDCAM_debug.html) في مجلد التنزيلات العام/ShahidCam/. شارك هذا الملف عند الإبلاغ عن مشاكل. أوقف لإيقاف الكتابات المستقبلية.\nملاحظة: قد يضيف تسجيل التصحيح عبئًا على الأداء أثناء التسجيل — أبقه معطلًا إلا إذا كنت تستكشف مشكلة.</string>
 
     <string name="watermark_preview_heading">معاينة</string>
 
@@ -1674,11 +1674,11 @@
 
     <string name="watermark_style_row_title">نمط العلامة المائية</string>
 
-    <string name="watermark_preview_sample_fadcam">التقط بواسطة ShahidCam - %1$s</string>
+    <string name="watermark_preview_sample_shahidcam">التقط بواسطة ShahidCam - %1$s</string>
 
     <string name="watermark_preview_sample_timeonly">%1$s</string>
 
-    <string name="watermark_style_time_fadcam_label">الوقت مع ShahidCam</string>
+    <string name="watermark_style_time_shahidcam_label">الوقت مع ShahidCam</string>
 
     <string name="watermark_style_timeonly_label">الطابع الزمني</string>
 
@@ -2081,7 +2081,7 @@
 
     <string-array name="theme_options" translatable="false">
         <item>Midnight Dusk</item>
-        <item>Faded Night</item>
+        <item>Shahid Dark</item>
         <item>Crimson Bloom</item>
         <item>Silent Forest</item>
         <item>Shadow Alloy</item>
@@ -2129,183 +2129,183 @@
 
     <string name="coming_soon_toast">قريباً! إن شاء الله</string>
 
-    <string name="faditor_mini_title">ShahidEditor Mini</string>
+    <string name="shahideditor_mini_title">ShahidEditor Mini</string>
 
-    <string name="faditor_mini_coming_soon">قريباً — محرر خفيف</string>
+    <string name="shahideditor_mini_coming_soon">قريباً — محرر خفيف</string>
 
-    <string name="faditor_mini_subtitle">قص وتصدير فيديوهاتك بدقة</string>
+    <string name="shahideditor_mini_subtitle">قص وتصدير فيديوهاتك بدقة</string>
 
-    <string name="faditor_mini_toast">ShahidEditor Mini — قريباً</string>
+    <string name="shahideditor_mini_toast">ShahidEditor Mini — قريباً</string>
 
-    <string name="faditor_select_video">اختر فيديو</string>
+    <string name="shahideditor_select_video">اختر فيديو</string>
 
-    <string name="faditor_editor_title">ShahidEditor Mini</string>
+    <string name="shahideditor_editor_title">ShahidEditor Mini</string>
 
-    <string name="faditor_close">إغلاق المحرر</string>
+    <string name="shahideditor_close">إغلاق المحرر</string>
 
-    <string name="faditor_undo">تراجع</string>
+    <string name="shahideditor_undo">تراجع</string>
 
-    <string name="faditor_redo">إعادة</string>
+    <string name="shahideditor_redo">إعادة</string>
 
-    <string name="faditor_play_pause">تشغيل أو إيقاف مؤقت</string>
+    <string name="shahideditor_play_pause">تشغيل أو إيقاف مؤقت</string>
 
-    <string name="faditor_export">تصدير</string>
+    <string name="shahideditor_export">تصدير</string>
 
-    <string name="faditor_cancel">إلغاء</string>
+    <string name="shahideditor_cancel">إلغاء</string>
 
-    <string name="faditor_exporting">جارٍ التصدير…</string>
+    <string name="shahideditor_exporting">جارٍ التصدير…</string>
 
-    <string name="faditor_exporting_percent">جارٍ التصدير… %1$d%%</string>
+    <string name="shahideditor_exporting_percent">جارٍ التصدير… %1$d%%</string>
 
-    <string name="faditor_export_success">تم تصدير الفيديو بنجاح</string>
+    <string name="shahideditor_export_success">تم تصدير الفيديو بنجاح</string>
 
-    <string name="faditor_export_error">فشل التصدير: %1$s</string>
+    <string name="shahideditor_export_error">فشل التصدير: %1$s</string>
 
-    <string name="faditor_export_in_progress">التصدير قيد التقدم بالفعل</string>
+    <string name="shahideditor_export_in_progress">التصدير قيد التقدم بالفعل</string>
 
-    <string name="faditor_remuxing">جارٍ التحسين للمعاينة…</string>
+    <string name="shahideditor_remuxing">جارٍ التحسين للمعاينة…</string>
 
-    <string name="faditor_remuxing_percent">جارٍ التحسين… %1$dث معالج</string>
+    <string name="shahideditor_remuxing_percent">جارٍ التحسين… %1$dث معالج</string>
 
-    <string name="faditor_error_no_video">لم يتم اختيار فيديو</string>
+    <string name="shahideditor_error_no_video">لم يتم اختيار فيديو</string>
 
-    <string name="faditor_error_picker">تعذر فتح منتقي الملفات</string>
+    <string name="shahideditor_error_picker">تعذر فتح منتقي الملفات</string>
 
-    <string name="faditor_tool_trim">قص</string>
+    <string name="shahideditor_tool_trim">قص</string>
 
-    <string name="faditor_tool_speed">1x</string>
+    <string name="shahideditor_tool_speed">1x</string>
 
-    <string name="faditor_tool_muted">مكتوم</string>
+    <string name="shahideditor_tool_muted">مكتوم</string>
 
-    <string name="faditor_tool_sound">الصوت</string>
+    <string name="shahideditor_tool_sound">الصوت</string>
 
-    <string name="faditor_speed_title">سرعة التشغيل</string>
+    <string name="shahideditor_speed_title">سرعة التشغيل</string>
 
-    <string name="faditor_speed_reset">إعادة تعيين إلى 1x</string>
+    <string name="shahideditor_speed_reset">إعادة تعيين إلى 1x</string>
 
-    <string name="faditor_volume_title">مستوى الصوت</string>
+    <string name="shahideditor_volume_title">مستوى الصوت</string>
 
-    <string name="faditor_volume_warning">فوق 100%% قد يقلل جودة الصوت</string>
+    <string name="shahideditor_volume_warning">فوق 100%% قد يقلل جودة الصوت</string>
 
-    <string name="faditor_volume_mute">كتم الصوت</string>
+    <string name="shahideditor_volume_mute">كتم الصوت</string>
 
-    <string name="faditor_volume_unmute">إلغاء كتم الصوت</string>
+    <string name="shahideditor_volume_unmute">إلغاء كتم الصوت</string>
 
-    <string name="faditor_tool_volume">الصوت</string>
+    <string name="shahideditor_tool_volume">الصوت</string>
 
-    <string name="faditor_tool_rotate">تدوير</string>
+    <string name="shahideditor_tool_rotate">تدوير</string>
 
-    <string name="faditor_tool_flip">قلب</string>
+    <string name="shahideditor_tool_flip">قلب</string>
 
-    <string name="faditor_tool_crop">قص الإطار</string>
+    <string name="shahideditor_tool_crop">قص الإطار</string>
 
-    <string name="faditor_tool_crop_free">حر</string>
+    <string name="shahideditor_tool_crop_free">حر</string>
 
-    <string name="faditor_tool_canvas">لوحة الرسم</string>
+    <string name="shahideditor_tool_canvas">لوحة الرسم</string>
 
-    <string name="faditor_canvas_title">لوحة الرسم</string>
+    <string name="shahideditor_canvas_title">لوحة الرسم</string>
 
-    <string name="faditor_canvas_applied">تم تعيين لوحة الرسم إلى %s</string>
+    <string name="shahideditor_canvas_applied">تم تعيين لوحة الرسم إلى %s</string>
 
-    <string name="faditor_tool_audio">استخراج الصوت</string>
+    <string name="shahideditor_tool_audio">استخراج الصوت</string>
 
-    <string name="faditor_audio_extract_current">استخراج من الفيديو</string>
+    <string name="shahideditor_audio_extract_current">استخراج من الفيديو</string>
 
-    <string name="faditor_audio_extract_current_desc">استخراج مسار الصوت من الفيديو الحالي</string>
+    <string name="shahideditor_audio_extract_current_desc">استخراج مسار الصوت من الفيديو الحالي</string>
 
-    <string name="faditor_audio_extracting">جارٍ استخراج الصوت…</string>
+    <string name="shahideditor_audio_extracting">جارٍ استخراج الصوت…</string>
 
-    <string name="faditor_audio_extracted">تم استخراج الصوت وإضافته إلى الجدول الزمني</string>
+    <string name="shahideditor_audio_extracted">تم استخراج الصوت وإضافته إلى الجدول الزمني</string>
 
-    <string name="faditor_audio_extract_failed">تعذر استخراج الصوت</string>
+    <string name="shahideditor_audio_extract_failed">تعذر استخراج الصوت</string>
 
-    <string name="faditor_audio_added">تمت إضافة الصوت إلى الجدول الزمني</string>
+    <string name="shahideditor_audio_added">تمت إضافة الصوت إلى الجدول الزمني</string>
 
-    <string name="faditor_audio_no_track">لم يتم العثور على مسار صوتي في هذا الفيديو</string>
+    <string name="shahideditor_audio_no_track">لم يتم العثور على مسار صوتي في هذا الفيديو</string>
 
-    <string name="faditor_tool_split">تقسيم</string>
+    <string name="shahideditor_tool_split">تقسيم</string>
 
-    <string name="faditor_tool_delete">حذف</string>
+    <string name="shahideditor_tool_delete">حذف</string>
 
-    <string name="faditor_tool_duplicate">تكرار</string>
+    <string name="shahideditor_tool_duplicate">تكرار</string>
 
-    <string name="faditor_tool_add">إضافة</string>
+    <string name="shahideditor_tool_add">إضافة</string>
 
-    <string name="faditor_add_asset_title">إضافة عنصر</string>
+    <string name="shahideditor_add_asset_title">إضافة عنصر</string>
 
-    <string name="faditor_add_asset_image">صورة (5 ثوانٍ ثابتة)</string>
+    <string name="shahideditor_add_asset_image">صورة (5 ثوانٍ ثابتة)</string>
 
-    <string name="faditor_add_asset_video">مقطع فيديو</string>
+    <string name="shahideditor_add_asset_video">مقطع فيديو</string>
 
-    <string name="faditor_asset_added">تمت إضافة العنصر إلى الجدول الزمني</string>
+    <string name="shahideditor_asset_added">تمت إضافة العنصر إلى الجدول الزمني</string>
 
-    <string name="faditor_asset_error">تعذر إضافة العنصر</string>
+    <string name="shahideditor_asset_error">تعذر إضافة العنصر</string>
 
-    <string name="faditor_split_success">تم تقسيم المقطع إلى اثنين</string>
+    <string name="shahideditor_split_success">تم تقسيم المقطع إلى اثنين</string>
 
-    <string name="faditor_split_error">لا يمكن التقسيم هنا — قريب جدًا من الحافة</string>
+    <string name="shahideditor_split_error">لا يمكن التقسيم هنا — قريب جدًا من الحافة</string>
 
-    <string name="faditor_delete_last_segment">لا يمكن حذف المقطع الوحيد</string>
+    <string name="shahideditor_delete_last_segment">لا يمكن حذف المقطع الوحيد</string>
 
-    <string name="faditor_segment_deleted">تم حذف المقطع</string>
+    <string name="shahideditor_segment_deleted">تم حذف المقطع</string>
 
-    <string name="faditor_segment_duplicated">تم تكرار المقطع</string>
+    <string name="shahideditor_segment_duplicated">تم تكرار المقطع</string>
 
-    <string name="faditor_crop_title">نسبة_aspect القص</string>
+    <string name="shahideditor_crop_title">نسبة_aspect القص</string>
 
-    <string name="faditor_crop_free">حر</string>
+    <string name="shahideditor_crop_free">حر</string>
 
-    <string name="faditor_crop_applied">تم تطبيق القص</string>
+    <string name="shahideditor_crop_applied">تم تطبيق القص</string>
 
-    <string name="faditor_crop_cancelled">تم إلغاء القص</string>
+    <string name="shahideditor_crop_cancelled">تم إلغاء القص</string>
 
-    <string name="faditor_crop_reset">تم إعادة تعيين القص</string>
+    <string name="shahideditor_crop_reset">تم إعادة تعيين القص</string>
 
-    <string name="faditor_close_confirm_title">إغلاق المحرر؟</string>
+    <string name="shahideditor_close_confirm_title">إغلاق المحرر؟</string>
 
-    <string name="faditor_close_confirm_action">إغلاق &amp; حفظ</string>
+    <string name="shahideditor_close_confirm_action">إغلاق &amp; حفظ</string>
 
-    <string name="faditor_close_confirm_subtitle">حفظ المشروع والعودة</string>
+    <string name="shahideditor_close_confirm_subtitle">حفظ المشروع والعودة</string>
 
-    <string name="faditor_close_confirm_helper">سيتم حفظ مشروعك تلقائيًا. يمكنك إعادة فتحه من المشاريع الحديثة في أي وقت.</string>
+    <string name="shahideditor_close_confirm_helper">سيتم حفظ مشروعك تلقائيًا. يمكنك إعادة فتحه من المشاريع الحديثة في أي وقت.</string>
 
-    <string name="faditor_back_press_exit">اضغط مرة أخرى للخروج من المحرر</string>
+    <string name="shahideditor_back_press_exit">اضغط مرة أخرى للخروج من المحرر</string>
 
-    <string name="faditor_export_back_confirm">التصدير قيد التقدم. العودة إلى المحرر؟</string>
+    <string name="shahideditor_export_back_confirm">التصدير قيد التقدم. العودة إلى المحرر؟</string>
 
-    <string name="faditor_export_done">تم</string>
+    <string name="shahideditor_export_done">تم</string>
 
-    <string name="faditor_export_back">رجوع</string>
+    <string name="shahideditor_export_back">رجوع</string>
 
-    <string name="faditor_export_eta">الوقت المقدر: %s</string>
+    <string name="shahideditor_export_eta">الوقت المقدر: %s</string>
 
-    <string name="faditor_export_complete_title">اكتمل التصدير</string>
+    <string name="shahideditor_export_complete_title">اكتمل التصدير</string>
 
-    <string name="faditor_export_complete_summary">تم حفظ الفيديو في تبويب التسجيلات.</string>
+    <string name="shahideditor_export_complete_summary">تم حفظ الفيديو في تبويب التسجيلات.</string>
 
-    <string name="faditor_export_confirm_title">تصدير الفيديو</string>
+    <string name="shahideditor_export_confirm_title">تصدير الفيديو</string>
 
-    <string name="faditor_export_confirm_action">تصدير الآن</string>
+    <string name="shahideditor_export_confirm_action">تصدير الآن</string>
 
-    <string name="faditor_export_confirm_subtitle">سيستمر التصدير في الخلفية</string>
+    <string name="shahideditor_export_confirm_subtitle">سيستمر التصدير في الخلفية</string>
 
-    <string name="faditor_export_confirm_helper">%1$s • %2$d مقطع%3$s\nيعمل التصدير كخدمة خلفية — يمكنك إغلاق التطبيق وسيستمر التصدير.</string>
+    <string name="shahideditor_export_confirm_helper">%1$s • %2$d مقطع%3$s\nيعمل التصدير كخدمة خلفية — يمكنك إغلاق التطبيق وسيستمر التصدير.</string>
 
-    <string name="faditor_export_notif_channel">تصدير ShahidEditor</string>
+    <string name="shahideditor_export_notif_channel">تصدير ShahidEditor</string>
 
-    <string name="faditor_export_notif_channel_desc">إشعارات لتصديرات الفيديو الجارية</string>
+    <string name="shahideditor_export_notif_channel_desc">إشعارات لتصديرات الفيديو الجارية</string>
 
-    <string name="faditor_export_notif_title">جارٍ تصدير الفيديو…</string>
+    <string name="shahideditor_export_notif_title">جارٍ تصدير الفيديو…</string>
 
-    <string name="faditor_export_notif_error_title">فشل التصدير</string>
+    <string name="shahideditor_export_notif_error_title">فشل التصدير</string>
 
-    <string name="faditor_export_progress">جارٍ التصدير…</string>
+    <string name="shahideditor_export_progress">جارٍ التصدير…</string>
 
-    <string name="faditor_export_completed">اكتمل التصدير</string>
+    <string name="shahideditor_export_completed">اكتمل التصدير</string>
 
-    <string name="faditor_export_cancelled">تم إلغاء التصدير</string>
+    <string name="shahideditor_export_cancelled">تم إلغاء التصدير</string>
 
-    <string name="faditor_export_failed">فشل التصدير</string>
+    <string name="shahideditor_export_failed">فشل التصدير</string>
 
     <string name="export_eta_seconds">الوقت المتبقي %d ث</string>
 
@@ -2321,99 +2321,99 @@
 
     <string name="export_status">حالة التصدير</string>
 
-    <string name="faditor_export_info">%1$s • %2$d مقطع%3$s • H.264 + AAC</string>
+    <string name="shahideditor_export_info">%1$s • %2$d مقطع%3$s • H.264 + AAC</string>
 
-    <string name="faditor_flip_title">قلب</string>
+    <string name="shahideditor_flip_title">قلب</string>
 
-    <string name="faditor_home_tagline">محرر فيديو خفيف</string>
+    <string name="shahideditor_home_tagline">محرر فيديو خفيف</string>
 
-    <string name="faditor_new_project">مشروع جديد</string>
+    <string name="shahideditor_new_project">مشروع جديد</string>
 
-    <string name="faditor_start_project">بدء مشروع جديد</string>
+    <string name="shahideditor_start_project">بدء مشروع جديد</string>
 
-    <string name="faditor_recent_projects">المشاريع الحديثة</string>
+    <string name="shahideditor_recent_projects">المشاريع الحديثة</string>
 
-    <string name="faditor_capabilities_title">ما يمكنك فعله</string>
+    <string name="shahideditor_capabilities_title">ما يمكنك فعله</string>
 
-    <string name="faditor_feature_trim">قص دقيق</string>
+    <string name="shahideditor_feature_trim">قص دقيق</string>
 
-    <string name="faditor_feature_trim_desc">قص فيديوهاتك للإطار الدقيق الذي تريده</string>
+    <string name="shahideditor_feature_trim_desc">قص فيديوهاتك للإطار الدقيق الذي تريده</string>
 
-    <string name="faditor_feature_export">تصدير سريع</string>
+    <string name="shahideditor_feature_export">تصدير سريع</string>
 
-    <string name="faditor_feature_export_desc">تصدير بصيغة MP4 مع ترميز مسرع بالأجهزة</string>
+    <string name="shahideditor_feature_export_desc">تصدير بصيغة MP4 مع ترميز مسرع بالأجهزة</string>
 
-    <string name="faditor_feature_preview">معاينة مباشرة</string>
+    <string name="shahideditor_feature_preview">معاينة مباشرة</string>
 
-    <string name="faditor_feature_preview_desc">تشغيل فوري لمقاطعك المقصوصة</string>
+    <string name="shahideditor_feature_preview_desc">تشغيل فوري لمقاطعك المقصوصة</string>
 
-    <string name="faditor_feature_privacy">100% بدون اتصال</string>
+    <string name="shahideditor_feature_privacy">100% بدون اتصال</string>
 
-    <string name="faditor_feature_privacy_desc">يحدث كل التحرير محليًا — بدون رفع، بدون سحابة</string>
+    <string name="shahideditor_feature_privacy_desc">يحدث كل التحرير محليًا — بدون رفع، بدون سحابة</string>
 
-    <string name="faditor_feature_convert">تحويل ذكي</string>
+    <string name="shahideditor_feature_convert">تحويل ذكي</string>
 
-    <string name="faditor_feature_convert_desc">يحول تلقائيًا التسجيلات الآمنة من الأعطال إلى MP4 قابل للبحث لتشغيل سلس في كل مكان</string>
+    <string name="shahideditor_feature_convert_desc">يحول تلقائيًا التسجيلات الآمنة من الأعطال إلى MP4 قابل للبحث لتشغيل سلس في كل مكان</string>
 
-    <string name="faditor_select_items">تحديد العناصر</string>
+    <string name="shahideditor_select_items">تحديد العناصر</string>
 
-    <string name="faditor_selected_count">تم تحديد %1$d</string>
+    <string name="shahideditor_selected_count">تم تحديد %1$d</string>
 
-    <string name="faditor_delete_projects_title">حذف المشاريع؟</string>
+    <string name="shahideditor_delete_projects_title">حذف المشاريع؟</string>
 
-    <string name="faditor_delete_projects_message">حذف %1$d مشروع؟ لا يمكن التراجع عن هذا.</string>
+    <string name="shahideditor_delete_projects_message">حذف %1$d مشروع؟ لا يمكن التراجع عن هذا.</string>
 
-    <string name="faditor_delete_confirm">حذف</string>
+    <string name="shahideditor_delete_confirm">حذف</string>
 
-    <string name="faditor_version_info">ShahidEditor Mini · المرحلة 1 · قص + تصدير</string>
+    <string name="shahideditor_version_info">ShahidEditor Mini · المرحلة 1 · قص + تصدير</string>
 
-    <string name="faditor_empty_title">لا توجد مشاريع بعد</string>
+    <string name="shahideditor_empty_title">لا توجد مشاريع بعد</string>
 
-    <string name="faditor_empty_desc">اضغط \"بدء مشروع جديد\" لاختيار فيديو وبدء التحرير</string>
+    <string name="shahideditor_empty_desc">اضغط \"بدء مشروع جديد\" لاختيار فيديو وبدء التحرير</string>
 
-    <string name="faditor_info_title">حول ShahidEditor Mini</string>
+    <string name="shahideditor_info_title">حول ShahidEditor Mini</string>
 
-    <string name="faditor_info_subtitle">كل ما تحتاج معرفته حول المحرر المدمج</string>
+    <string name="shahideditor_info_subtitle">كل ما تحتاج معرفته حول المحرر المدمج</string>
 
-    <string name="faditor_info_how_title">كيف يعمل</string>
+    <string name="shahideditor_info_how_title">كيف يعمل</string>
 
-    <string name="faditor_info_how_desc">اختر أي فيديو من جهازك أو تسجيلات ShahidCam. قصه إطارًا بإطار باستخدام الجدول الزمني، ثم صدر. تحدث كل المعالجة محليًا على جهازك — لا يتم رفع أي شيء.\n\nيتم حفظ تقدم التحرير تلقائيًا كل بضع ثوانٍ وعند مغادرة المحرر، لذا لا يضيع أي عمل إذا أغلق التطبيق بشكل غير متوقع.</string>
+    <string name="shahideditor_info_how_desc">اختر أي فيديو من جهازك أو تسجيلات ShahidCam. قصه إطارًا بإطار باستخدام الجدول الزمني، ثم صدر. تحدث كل المعالجة محليًا على جهازك — لا يتم رفع أي شيء.\n\nيتم حفظ تقدم التحرير تلقائيًا كل بضع ثوانٍ وعند مغادرة المحرر، لذا لا يضيع أي عمل إذا أغلق التطبيق بشكل غير متوقع.</string>
 
-    <string name="faditor_info_convert_title">التحويل الذكي</string>
+    <string name="shahideditor_info_convert_title">التحويل الذكي</string>
 
-    <string name="faditor_info_convert_desc">يسجل ShahidCam بتنسيق آمن من الأعطال يسمى MP4 المجزأ (fMP4). على عكس MP4 القياسي الذي يحتوي على حاوية واحدة نهائية، يكتب fMP4 الفيديو في قطع صغيرة مستقلة. هذا يعني أن لقطاتك تبقى سليمة حتى لو تعطل التطبيق أو توقف التسجيل فجأة.\n\nومع ذلك، لن تتمكن مشغلات الفيديو الخارجية وتطبيقات المعرض ومديري الملفات من البحث أو التقديم أو عرض المدة الصحيحة لهذه الملفات. هذا ليس خطأ — إنه مقايضة تصميم متعمدة للموثوقية.\n\nإذا كنت تخطط لتخزين فيديوهاتك خارج ShahidCam — على Google Drive أو جهاز كمبيوتر أو أي موقع آخر — يجب تحويلها أولاً. وإلا ستكون الملفات غير قابلة للاستخدام للتشغيل العادي.\n\nللتحويل: افتح الفيديو هنا في ShahidEditor Mini واضغط تصدير ببساطة. سيظهر MP4 القياسي المحول في تبويب التسجيلات، جاهزًا للحفظ في المعرض أو المشاركة في أي مكان. العملية فورية وبدون فقدان — بدون إعادة ترميز أو فقدان جودة.</string>
+    <string name="shahideditor_info_convert_desc">يسجل ShahidCam بتنسيق آمن من الأعطال يسمى MP4 المجزأ (fMP4). على عكس MP4 القياسي الذي يحتوي على حاوية واحدة نهائية، يكتب fMP4 الفيديو في قطع صغيرة مستقلة. هذا يعني أن لقطاتك تبقى سليمة حتى لو تعطل التطبيق أو توقف التسجيل فجأة.\n\nومع ذلك، لن تتمكن مشغلات الفيديو الخارجية وتطبيقات المعرض ومديري الملفات من البحث أو التقديم أو عرض المدة الصحيحة لهذه الملفات. هذا ليس خطأ — إنه مقايضة تصميم متعمدة للموثوقية.\n\nإذا كنت تخطط لتخزين فيديوهاتك خارج ShahidCam — على Google Drive أو جهاز كمبيوتر أو أي موقع آخر — يجب تحويلها أولاً. وإلا ستكون الملفات غير قابلة للاستخدام للتشغيل العادي.\n\nللتحويل: افتح الفيديو هنا في ShahidEditor Mini واضغط تصدير ببساطة. سيظهر MP4 القياسي المحول في تبويب التسجيلات، جاهزًا للحفظ في المعرض أو المشاركة في أي مكان. العملية فورية وبدون فقدان — بدون إعادة ترميز أو فقدان جودة.</string>
 
-    <string name="faditor_info_export_title">الملفات المصدرة</string>
+    <string name="shahideditor_info_export_title">الملفات المصدرة</string>
 
-    <string name="faditor_info_export_desc">يتم حفظ الفيديوهات المصدرة في موقع التخزين النشط (نفس الموقع المُعد في الإعدادات) بالبادئة \"ShahidEditor_\" متبوعة بطابع زمني. تظهر في تبويب التسجيلات بجانب تسجيلاتك الأصلية.</string>
+    <string name="shahideditor_info_export_desc">يتم حفظ الفيديوهات المصدرة في موقع التخزين النشط (نفس الموقع المُعد في الإعدادات) بالبادئة \"ShahidEditor_\" متبوعة بطابع زمني. تظهر في تبويب التسجيلات بجانب تسجيلاتك الأصلية.</string>
 
-    <string name="faditor_info_temp_title">الملفات المؤقتة وذاكرة التخزين المؤقت</string>
+    <string name="shahideditor_info_temp_title">الملفات المؤقتة وذاكرة التخزين المؤقت</string>
 
-    <string name="faditor_info_temp_desc">عند تحميل فيديو fMP4 للتحرير، يكتشف ShahidEditor إذا كان الملف يحتاج \"إعادة تحويل\" — تحويل سريع يضيف علامات بحث بدون إعادة ترميز. يتم تخزين الملفات المحولة مؤقتًا على جهازك لإعادة استخدامها إذا حررت نفس الفيديو مرة أخرى، مما يوفر الوقت والمعالجة.\n\nيمكنك رؤية حجم ذاكرة التخزين المؤقت لكل مشروع مدرج بجانب تاريخ التعديل. إذا كانت مساحة تخزين جهازك منخفضة، يمكنك حذف المشاريع غير المستخدمة لمسح ملفات إعادة التحويل المخزنة مؤقتًا.\n\nيتم تنظيف هذه الملفات المؤقتة تلقائيًا عند حذف مشروع من هذا التبويب.</string>
+    <string name="shahideditor_info_temp_desc">عند تحميل فيديو fMP4 للتحرير، يكتشف ShahidEditor إذا كان الملف يحتاج \"إعادة تحويل\" — تحويل سريع يضيف علامات بحث بدون إعادة ترميز. يتم تخزين الملفات المحولة مؤقتًا على جهازك لإعادة استخدامها إذا حررت نفس الفيديو مرة أخرى، مما يوفر الوقت والمعالجة.\n\nيمكنك رؤية حجم ذاكرة التخزين المؤقت لكل مشروع مدرج بجانب تاريخ التعديل. إذا كانت مساحة تخزين جهازك منخفضة، يمكنك حذف المشاريع غير المستخدمة لمسح ملفات إعادة التحويل المخزنة مؤقتًا.\n\nيتم تنظيف هذه الملفات المؤقتة تلقائيًا عند حذف مشروع من هذا التبويب.</string>
 
-    <string name="faditor_info_projects_title">المشاريع الحديثة</string>
+    <string name="shahideditor_info_projects_title">المشاريع الحديثة</string>
 
-    <string name="faditor_info_projects_desc">يتم عرض جميع جلسات التحرير للوصول السريع. كل مشروع مخزن كملف JSON صغير على جهازك يحتوي على URI الفيديو ونقاط القص والطوابع الزمنية — لا يتم نسخ فيديوهاتك. يتم حفظ المشاريع تلقائيًا كل بضع ثوانٍ، لذا لا يضيع تقدمك أبدًا.\n\nيمكنك حذف المشاريع التي لم تعد تحتاجها باستخدام أيقونة قائمة المراجعة المتعددة. حذف المشروع يزيل فقط بيانات جلسة التحرير؛ ملفات الفيديو الأصلية تبقى سليمة.</string>
+    <string name="shahideditor_info_projects_desc">يتم عرض جميع جلسات التحرير للوصول السريع. كل مشروع مخزن كملف JSON صغير على جهازك يحتوي على URI الفيديو ونقاط القص والطوابع الزمنية — لا يتم نسخ فيديوهاتك. يتم حفظ المشاريع تلقائيًا كل بضع ثوانٍ، لذا لا يضيع تقدمك أبدًا.\n\nيمكنك حذف المشاريع التي لم تعد تحتاجها باستخدام أيقونة قائمة المراجعة المتعددة. حذف المشروع يزيل فقط بيانات جلسة التحرير؛ ملفات الفيديو الأصلية تبقى سليمة.</string>
 
-    <string name="faditor_your_recordings">تسجيلاتك</string>
+    <string name="shahideditor_your_recordings">تسجيلاتك</string>
 
-    <string name="faditor_browse_device">تصفح الجهاز</string>
+    <string name="shahideditor_browse_device">تصفح الجهاز</string>
 
-    <string name="faditor_no_recordings">لم يتم العثور على تسجيلات بعد. ابدأ التسجيل مع ShahidCam لرؤية فيديوهاتك هنا.</string>
+    <string name="shahideditor_no_recordings">لم يتم العثور على تسجيلات بعد. ابدأ التسجيل مع ShahidCam لرؤية فيديوهاتك هنا.</string>
 
-    <string name="faditor_video_count">%1$d فيديو</string>
+    <string name="shahideditor_video_count">%1$d فيديو</string>
 
-    <string name="faditor_fadcam_source">ShahidCam</string>
+    <string name="shahideditor_shahidcam_source">ShahidCam</string>
 
-    <string name="faditor_fadrec_source">ScreenRec</string>
+    <string name="shahideditor_shahidrec_source">ScreenRec</string>
 
-    <string name="faditor_browse_device_desc">اختر أي فيديو من جهازك</string>
+    <string name="shahideditor_browse_device_desc">اختر أي فيديو من جهازك</string>
 
-    <string name="faditor_scanning">جارٍ مسح التسجيلات…</string>
+    <string name="shahideditor_scanning">جارٍ مسح التسجيلات…</string>
 
-    <string name="faditor_source_chooser_desc">اختر فيديو من معرضك أو اختر واحدًا من تسجيلات ShahidCam</string>
+    <string name="shahideditor_source_chooser_desc">اختر فيديو من معرضك أو اختر واحدًا من تسجيلات ShahidCam</string>
 
-    <string name="faditor_recordings_helper">فيديوهات مسجلة بـ ShahidCam من موقع التخزين النشط</string>
+    <string name="shahideditor_recordings_helper">فيديوهات مسجلة بـ ShahidCam من موقع التخزين النشط</string>
 
     <string name="helper_record_audio">تبديل التقاط صوت الميكروفون في الفيديوهات.</string>
 
@@ -2538,7 +2538,7 @@
 
     <string name="version_format">v%s</string>
 
-    <string name="edit_with_faditorx">تحرير بـ ShahidEditor Mini</string>
+    <string name="edit_with_shahideditorx">تحرير بـ ShahidEditor Mini</string>
 
     <string name="remote_coming_soon_badge">قريباً</string>
 
@@ -2580,7 +2580,7 @@
 
     <string name="app_icon_pakistan" translatable="false">ShahidCam</string>
 
-    <string name="app_icon_fadseclab" translatable="false">CyberShadowPK Lab</string>
+    <string name="app_icon_shahidlabs" translatable="false">CyberShadowPK Lab</string>
 
     <string name="app_icon_nooristic" translatable="false">ShahidCam ++</string>
 
@@ -2619,8 +2619,8 @@
     <string name="settings_security_title">الأمان</string>
 
     <string name="settings_advanced_subtitle">Motion Lab وعناصر التحكم للمستخدم المتقدم</string>
-    <string name="fadcrypt_title">Crypt</string>
-    <string name="fadcrypt_row_subtitle">تشفير وحماية تسجيلاتك</string>
+    <string name="shahidvault_title">Crypt</string>
+    <string name="shahidvault_row_subtitle">تشفير وحماية تسجيلاتك</string>
 
     <string name="digital_forensics_title">التحليل الجنائي الرقمي</string>
 
@@ -3093,9 +3093,9 @@
 
     <string name="debug_log_tools_title">سجل التصحيح</string>
 
-    <string name="debug_log_tools_subtitle">معاينة، بحث، مشاركة أو حذف FADCAM_debug.html</string>
+    <string name="debug_log_tools_subtitle">معاينة، بحث، مشاركة أو حذف SHAHIDCAM_debug.html</string>
 
-    <string name="debug_log_tools_helper">يعرض ملف سجل التصحيح (FADCAM_debug.html). تمكين تسجيل التصحيح قد يضيف عبئًا على الأداء — لا تمكّنه إلا إذا كنت تواجه خطأ وتحتاج لمشاركة السجل. استخدم مربع البحث للتصفية.</string>
+    <string name="debug_log_tools_helper">يعرض ملف سجل التصحيح (SHAHIDCAM_debug.html). تمكين تسجيل التصحيح قد يضيف عبئًا على الأداء — لا تمكّنه إلا إذا كنت تواجه خطأ وتحتاج لمشاركة السجل. استخدم مربع البحث للتصفية.</string>
 
     <string name="debug_log_share_title">مشاركة سجل التصحيح</string>
 
@@ -3179,7 +3179,7 @@
 
     <string name="project_naming_message">أعطِ مشروعك اسمًا ووصفًا لا يُنسى لتنظيم تسجيلاتك</string>
 
-    <string name="fadrec_projects">مشاريع ScreenRec</string>
+    <string name="shahidrec_projects">مشاريع ScreenRec</string>
 
     <string name="delete_project">حذف المشروع</string>
 
@@ -3189,53 +3189,53 @@
 
     <string name="delete">حذف</string>
 
-    <string name="fadcam_pro_title">ShahidCam Pro</string>
+    <string name="shahidcam_pro_title">ShahidCam Pro</string>
 
-    <string name="fadcam_pro_subtitle">ميزات مميزة للتقدير الكامل</string>
+    <string name="shahidcam_pro_subtitle">ميزات مميزة للتقدير الكامل</string>
 
-    <string name="fadcam_pro_get_button">احصل على ShahidCam Pro</string>
+    <string name="shahidcam_pro_get_button">احصل على ShahidCam Pro</string>
 
-    <string name="fadcam_pro_free">مجاني</string>
+    <string name="shahidcam_pro_free">مجاني</string>
 
-    <string name="fadcam_pro_column_label">Pro</string>
+    <string name="shahidcam_pro_column_label">Pro</string>
 
-    <string name="fadcam_pro_proplus_label">Pro+</string>
+    <string name="shahidcam_pro_proplus_label">Pro+</string>
 
-    <string name="fadcam_pro_lab_label">Lab</string>
+    <string name="shahidcam_pro_lab_label">Lab</string>
 
-    <string name="fadcam_pro_plus_label">Pro</string>
+    <string name="shahidcam_pro_plus_label">Pro</string>
 
-    <string name="fadcam_pro_early_bird">🎉 مجاني حتى 23 ديسمبر 2025! بعد ذلك، احصل على وصول مدى الحياة مقابل 15$ فقط.</string>
+    <string name="shahidcam_pro_early_bird">🎉 مجاني حتى 23 ديسمبر 2025! بعد ذلك، احصل على وصول مدى الحياة مقابل 15$ فقط.</string>
 
-    <string name="fadcam_pro_paid_offer">بعد 23 ديسمبر 2025، احصل على وصول مدى الحياة مقابل 15$ — دفعة واحدة، تحديثات للأبد.</string>
+    <string name="shahidcam_pro_paid_offer">بعد 23 ديسمبر 2025، احصل على وصول مدى الحياة مقابل 15$ — دفعة واحدة، تحديثات للأبد.</string>
 
-    <string name="fadcam_pro_benefit_early_access">الوصول المبكر: احصل على أحدث إصدار قبل الإصدار العام</string>
+    <string name="shahidcam_pro_benefit_early_access">الوصول المبكر: احصل على أحدث إصدار قبل الإصدار العام</string>
 
-    <string name="fadcam_pro_benefit_lifetime_updates">تحديثات مدى الحياة: استلم دائمًا الميزات الجديدة والتحسينات وإصلاحات الأخطاء</string>
+    <string name="shahidcam_pro_benefit_lifetime_updates">تحديثات مدى الحياة: استلم دائمًا الميزات الجديدة والتحسينات وإصلاحات الأخطاء</string>
 
-    <string name="fadcam_pro_benefit_support">دعم فوري: مساعدة مباشرة عبر التذاكر عبر Discord</string>
+    <string name="shahidcam_pro_benefit_support">دعم فوري: مساعدة مباشرة عبر التذاكر عبر Discord</string>
 
-    <string name="fadcam_pro_coming_soon">ميزات Pro+ و Lab قادمة قريبًا مع تحميلات أيقونات مخصصة وأسماء تطبيقات مخصصة ومزامنة سحابة Drive.</string>
+    <string name="shahidcam_pro_coming_soon">ميزات Pro+ و Lab قادمة قريبًا مع تحميلات أيقونات مخصصة وأسماء تطبيقات مخصصة ومزامنة سحابة Drive.</string>
 
-    <string name="fadcam_pro_support_message">سيظل ShahidCam مجانيًا دائمًا، بدون إعلانات وبدون تتبع. أدير المشروع بنفسي بالكامل، ويستغرق وقتًا وجهدًا مستمرًا. الترقية إلى Pro (مجاني حاليًا) تساعد في دعم التطوير، وفي المقابل أقدم قيمة إضافية من خلال ميزات Pro بالإضافة إلى النسخة المجانية الكاملة. شكرًا لدعمك للمشروع :)</string>
+    <string name="shahidcam_pro_support_message">سيظل ShahidCam مجانيًا دائمًا، بدون إعلانات وبدون تتبع. أدير المشروع بنفسي بالكامل، ويستغرق وقتًا وجهدًا مستمرًا. الترقية إلى Pro (مجاني حاليًا) تساعد في دعم التطوير، وفي المقابل أقدم قيمة إضافية من خلال ميزات Pro بالإضافة إلى النسخة المجانية الكاملة. شكرًا لدعمك للمشروع :)</string>
 
-    <string name="fadcam_pro_separate_apk">تطبيق مستقل • يعمل جنبًا إلى جنب مع ShahidCam</string>
+    <string name="shahidcam_pro_separate_apk">تطبيق مستقل • يعمل جنبًا إلى جنب مع ShahidCam</string>
 
-    <string name="fadcam_pro_feature_everything_icon">كل شيء</string>
+    <string name="shahidcam_pro_feature_everything_icon">كل شيء</string>
 
-    <string name="fadcam_pro_feature_everything">كل شيء</string>
+    <string name="shahidcam_pro_feature_everything">كل شيء</string>
 
-    <string name="fadcam_pro_feature_custom_icon">أيقونة تطبيق مخصصة</string>
+    <string name="shahidcam_pro_feature_custom_icon">أيقونة تطبيق مخصصة</string>
 
-    <string name="fadcam_pro_feature_notification_icon">أيقونة إشعار متحفظة</string>
+    <string name="shahidcam_pro_feature_notification_icon">أيقونة إشعار متحفظة</string>
 
-    <string name="fadcam_pro_feature_user_icon">أيقونة حمّلها المستخدم</string>
+    <string name="shahidcam_pro_feature_user_icon">أيقونة حمّلها المستخدم</string>
 
-    <string name="fadcam_pro_feature_app_name">اسم تطبيق مخصص</string>
+    <string name="shahidcam_pro_feature_app_name">اسم تطبيق مخصص</string>
 
-    <string name="fadcam_pro_feature_faddrive">مزامنة سحابة Drive</string>
+    <string name="shahidcam_pro_feature_shahiddrive">مزامنة سحابة Drive</string>
 
-    <string name="fadcam_pro_header_button">احصل على برو</string>
+    <string name="shahidcam_pro_header_button">احصل على برو</string>
 
     <string name="player_info_title">حول مشغل الفيديو</string>
 
@@ -3522,9 +3522,9 @@
 
     <string name="preview_starting">جارٍ بدء المعاينة المباشرة...</string>
 
-    <string name="fadrec_preview_enable_hint">اضغط مطولاً لإظهار المعاينة</string>
+    <string name="shahidrec_preview_enable_hint">اضغط مطولاً لإظهار المعاينة</string>
 
-    <string name="fadrec_preview_not_available">معاينة الشاشة المباشرة غير مربوطة بـ ScreenRec بعد</string>
+    <string name="shahidrec_preview_not_available">معاينة الشاشة المباشرة غير مربوطة بـ ScreenRec بعد</string>
 
     <string name="torch_unavailable">الفلاش غير متاح لهذه الكاميرا</string>
 
@@ -3745,9 +3745,9 @@
 
     <string name="watch_fullscreen_desc">شاشة كاملة</string>
 
-    <string name="watch_fadshot_label">لقطة</string>
+    <string name="watch_shahidshot_label">لقطة</string>
 
-    <string name="watch_fadshot_desc">التقاط صورة</string>
+    <string name="watch_shahidshot_desc">التقاط صورة</string>
 
     <string name="watch_trash_title">المحذوفة مؤخرًا</string>
 
@@ -4249,7 +4249,7 @@
 
     <string name="sidebar_beta_release">إصدار تجريبي</string>
 
-    <string name="sidebar_fadcam_pro">ShahidCam Pro</string>
+    <string name="sidebar_shahidcam_pro">ShahidCam Pro</string>
 
     <string name="badge_new">جديد</string>
 
@@ -4283,7 +4283,7 @@
 
     <string name="notification_action_stop">إيقاف</string>
 
-    <string name="fadmic_coming_soon">Mic (تسجيل الميكروفون) قريبًا!</string>
+    <string name="shahidmic_coming_soon">Mic (تسجيل الميكروفون) قريبًا!</string>
 
     <string name="toast_stream_server_starting">جارٍ تشغيل خادم البث...</string>
 
@@ -4380,7 +4380,7 @@
     <string name="about_dialog_error">خطأ</string>
     <string name="about_dialog_ok">موافق</string>
     <string name="about_get_beta">الحصول على الإصدار التجريبي</string>
-    <string name="about_fadcam_feedback">ملاحظات ShahidCam</string>
+    <string name="about_shahidcam_feedback">ملاحظات ShahidCam</string>
 
     <!-- Video split sizes -->
     <string name="video_split_enabled_format">مفعل (%s)</string>
@@ -4402,7 +4402,7 @@
     <string name="settings_location_update_interval_5s">5.0 ثوانٍ</string>
 
     <!-- Annotation toolbar -->
-    <string name="annotation_by_fadsec_lab">بواسطة CyberShadowPK Lab</string>
+    <string name="annotation_by_shahidlabs_lab">بواسطة CyberShadowPK Lab</string>
     <string name="annotation_quick_access">الوصول السريع</string>
     <string name="annotation_annotate">تعليق توضيحي</string>
     <string name="annotation_enable_tools">تمكين الأدوات</string>
@@ -4480,7 +4480,7 @@
     <string name="desc_delete_text">حذف النص</string>
     <string name="desc_done">تم</string>
     <string name="desc_exposure_compensation">تعويض التعريض</string>
-    <string name="desc_fadrec_logo">شعار ScreenRec</string>
+    <string name="desc_shahidrec_logo">شعار ScreenRec</string>
     <string name="desc_fast_forward">تقديم 5 ثوانٍ</string>
     <string name="desc_increase">زيادة</string>
     <string name="desc_italic">مائل</string>
@@ -4503,7 +4503,7 @@
     <string name="channel_security_alarm">إنذار الأمان</string>
     <string name="channel_remote_streaming">البث عن بعد</string>
     <string name="channel_annotation_service">خدمة التعليقات التوضيحية</string>
-    <string name="channel_fadcam_file_ops">عمليات ملفات ShahidCam</string>
+    <string name="channel_shahidcam_file_ops">عمليات ملفات ShahidCam</string>
 
     <!-- ScreenRecordingService -->
     <string name="screen_rec_failed">فشل التسجيل: %s</string>
@@ -4629,7 +4629,7 @@
     <string name="tutorial_dashcam_setup">إعداد داش كام</string>
 
     <!-- iOS Promo -->
-    <string name="fadcam_for_ios_title">ShahidCam لنظام iOS</string>
+    <string name="shahidcam_for_ios_title">ShahidCam لنظام iOS</string>
     <string name="ios_promo_title">ShahidCam متوفر الآن على iOS!</string>
     <string name="ios_promo_subtitle">نفس تطبيق الكاميرا الذي يحترم خصوصيتك والذي تحبه، متوفر الآن لـ iPhone</string>
 

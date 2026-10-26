@@ -625,7 +625,7 @@ public class RemoteFragment extends BaseFragment {
         // the async window between bindService() and onServiceConnected() firing, which would
         // incorrectly show the avatar as disabled even when the service is fully running.
         android.content.SharedPreferences cloudPrefs =
-                requireContext().getSharedPreferences("FadCamCloudPrefs", Context.MODE_PRIVATE);
+                requireContext().getSharedPreferences("ShahidCamCloudPrefs", Context.MODE_PRIVATE);
         boolean isCloudMode = cloudPrefs.getInt(KEY_STREAMING_MODE, MODE_LOCAL) == MODE_CLOUD;
 
         boolean isStreaming;
@@ -643,17 +643,17 @@ public class RemoteFragment extends BaseFragment {
             animateStatusIndicator(true);
             
             // Show URL based on streaming mode
-            android.content.SharedPreferences prefs = requireContext().getSharedPreferences("FadCamCloudPrefs", Context.MODE_PRIVATE);
+            android.content.SharedPreferences prefs = requireContext().getSharedPreferences("ShahidCamCloudPrefs", Context.MODE_PRIVATE);
             int streamingMode = prefs.getInt(KEY_STREAMING_MODE, MODE_LOCAL);
             
             if (streamingMode == MODE_CLOUD && cloudAuthManager.isLinked()) {
                 // Cloud mode - show dashboard URL
                 String deviceId = cloudAuthManager.getDeviceId();
                 if (deviceId != null) {
-                    String cloudUrl = "https://fadcam.fadseclab.com/stream/" + deviceId + "/";
+                    String cloudUrl = "https://shahidcam.shahidlabs.com/stream/" + deviceId + "/";
                     rootUrlText.setText(cloudUrl);
                 } else {
-                    rootUrlText.setText("https://fadcam.fadseclab.com/...");
+                    rootUrlText.setText("https://shahidcam.shahidlabs.com/...");
                 }
             } else {
                 // Local mode - show local IP
@@ -670,11 +670,11 @@ public class RemoteFragment extends BaseFragment {
             animateStatusIndicator(false);
             
             // Show placeholder URL based on streaming mode
-            android.content.SharedPreferences prefs = requireContext().getSharedPreferences("FadCamCloudPrefs", Context.MODE_PRIVATE);
+            android.content.SharedPreferences prefs = requireContext().getSharedPreferences("ShahidCamCloudPrefs", Context.MODE_PRIVATE);
             int streamingMode = prefs.getInt(KEY_STREAMING_MODE, MODE_LOCAL);
             
             if (streamingMode == MODE_CLOUD) {
-                rootUrlText.setText("https://fadcam.fadseclab.com/...");
+                rootUrlText.setText("https://shahidcam.shahidlabs.com/...");
             } else {
                 rootUrlText.setText("http://---.---.---.---:----/");
             }
@@ -849,7 +849,7 @@ public class RemoteFragment extends BaseFragment {
         // NOTE: Resolution and orientation now use normal recording settings
         
         // Read quality preset from SharedPreferences to get real-time updates from web changes
-        android.content.SharedPreferences prefs = requireContext().getSharedPreferences("FadCamPrefs", android.content.Context.MODE_PRIVATE);
+        android.content.SharedPreferences prefs = requireContext().getSharedPreferences("ShahidCamPrefs", android.content.Context.MODE_PRIVATE);
         String presetName = prefs.getString("quality_preset", "HIGH");
         StreamQuality.Preset preset = StreamQuality.Preset.valueOf(presetName);
         
@@ -1172,7 +1172,7 @@ public class RemoteFragment extends BaseFragment {
                 String userUuid = cloudAuthManager.getUserId();
                 if (userUuid == null || userUuid.isEmpty()) {
                     Toast.makeText(requireContext(),
-                            "Link your FadSec ID account first", Toast.LENGTH_SHORT).show();
+                            "Link your Shahid Labs ID account first", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -1187,7 +1187,7 @@ public class RemoteFragment extends BaseFragment {
                             if (getActivity() != null) {
                                 getActivity().runOnUiThread(() ->
                                         Toast.makeText(requireContext(),
-                                                "Set up E2E encryption in the FadCam dashboard first, then re-link this device",
+                                                "Set up E2E encryption in the ShahidCam dashboard first, then re-link this device",
                                                 Toast.LENGTH_LONG).show());
                             }
                             return;
@@ -1564,7 +1564,7 @@ public class RemoteFragment extends BaseFragment {
                 }
             }
         } else {
-            // Not linked - show red tint (FadCam brand color), show unlinked dot
+            // Not linked - show red tint (ShahidCam brand color), show unlinked dot
             cloudIcon.setColorFilter(0xFFFF4444); // Red
             if (cloudUnlinkedDot != null) {
                 cloudUnlinkedDot.setVisibility(View.VISIBLE);
@@ -1579,7 +1579,7 @@ public class RemoteFragment extends BaseFragment {
                 uploader.setEnabled(false);
             }
             // Reset to local mode
-            android.content.SharedPreferences prefs = requireContext().getSharedPreferences("FadCamCloudPrefs", Context.MODE_PRIVATE);
+            android.content.SharedPreferences prefs = requireContext().getSharedPreferences("ShahidCamCloudPrefs", Context.MODE_PRIVATE);
             prefs.edit().putInt(KEY_STREAMING_MODE, MODE_LOCAL).putBoolean("cloud_streaming_enabled", false).apply();
         }
         
@@ -1598,7 +1598,7 @@ public class RemoteFragment extends BaseFragment {
     private static final int MODE_CLOUD = 1;
     
     /**
-     * Setup the streaming mode selector (Local Network vs FadSec Cloud)
+     * Setup the streaming mode selector (Local Network vs Shahid Labs Cloud)
      */
     private void setupStreamingModeSelector() {
         if (streamingModeRow == null) return;
@@ -1614,7 +1614,7 @@ public class RemoteFragment extends BaseFragment {
      * Show bottom sheet picker for streaming mode selection
      */
     private void showStreamingModePicker() {
-        android.content.SharedPreferences prefs = requireContext().getSharedPreferences("FadCamCloudPrefs", Context.MODE_PRIVATE);
+        android.content.SharedPreferences prefs = requireContext().getSharedPreferences("ShahidCamCloudPrefs", Context.MODE_PRIVATE);
         int currentMode = prefs.getInt(KEY_STREAMING_MODE, MODE_LOCAL);
         
         // Check if cloud is available
@@ -1634,7 +1634,7 @@ public class RemoteFragment extends BaseFragment {
             null, null, null
         ));
         
-        // FadSec Cloud option
+        // Shahid Labs Cloud option
         if (canUseCloud) {
             // Cloud is available
             items.add(OptionItem.withLigatureBadge(
@@ -1697,7 +1697,7 @@ public class RemoteFragment extends BaseFragment {
      * Set the streaming mode and update UI/preferences
      */
     private void setStreamingMode(int mode) {
-        android.content.SharedPreferences prefs = requireContext().getSharedPreferences("FadCamCloudPrefs", Context.MODE_PRIVATE);
+        android.content.SharedPreferences prefs = requireContext().getSharedPreferences("ShahidCamCloudPrefs", Context.MODE_PRIVATE);
         prefs.edit().putInt(KEY_STREAMING_MODE, mode).apply();
         
         // Also sync the legacy cloud_streaming_enabled flag
@@ -1745,14 +1745,14 @@ public class RemoteFragment extends BaseFragment {
     private void updateStreamingModeDisplay() {
         if (streamingModeValue == null) return;
         
-        android.content.SharedPreferences prefs = requireContext().getSharedPreferences("FadCamCloudPrefs", Context.MODE_PRIVATE);
+        android.content.SharedPreferences prefs = requireContext().getSharedPreferences("ShahidCamCloudPrefs", Context.MODE_PRIVATE);
         int currentMode = prefs.getInt(KEY_STREAMING_MODE, MODE_LOCAL);
         
         if (currentMode == MODE_CLOUD) {
             streamingModeValue.setText(R.string.streaming_mode_cloud);
             streamingModeValue.setTextColor(0xFF4CAF50); // Green for cloud
             
-            // Hide Remote Security section when using FadSec Cloud (no local auth needed)
+            // Hide Remote Security section when using Shahid Labs Cloud (no local auth needed)
             if (remoteSecurityHeading != null) {
                 remoteSecurityHeading.setVisibility(View.GONE);
             }

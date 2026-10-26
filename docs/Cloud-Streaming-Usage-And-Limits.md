@@ -2,11 +2,11 @@
 
 ## Canonical Rules
 
-- Free and Patreon-unlinked users may link 1 FadCam device to complete setup.
+- Free and Patreon-unlinked users may link 1 ShahidCam device to complete setup.
 - Cloud upload, handoff, playback, and viewer access require a linked, recently verified Patreon identity with Pro Plus, Lab, or linked beta access.
 - Beta access uses Pro Plus limits but never bypasses Patreon linking.
-- Pro Plus: up to 1 linked FadCam device.
-- Lab: up to 3 linked FadCam devices.
+- Pro Plus: up to 1 linked ShahidCam device.
+- Lab: up to 3 linked ShahidCam devices.
 - Monthly usage counts relay egress: bytes served from `/stream/...` to viewers.
 - Phone-to-relay uploads through `/upload/...` do not consume monthly usage.
 - A device may keep uploading while nobody watches. This uses relay ingress/storage resources, but monthly viewer usage remains unchanged.
@@ -21,7 +21,7 @@ This is the canonical billing/limit metric. Nginx records successful `200` and `
 
 The ID dashboard fetches current usage immediately on page load and polls every 30 seconds while `/lab` is open.
 
-### FadCam Stream Dashboard: Relay Total Served
+### ShahidCam Stream Dashboard: Relay Total Served
 
 In cloud mode, this shows aggregate bytes the relay served to viewers since the relay counter began. Redis increments this counter from the same structured egress events used by the usage pipeline. It must not use bytes uploaded by the phone. In local mode, `Total Served` shows bytes served directly by the phone's local stream server.
 
@@ -56,7 +56,7 @@ Stream tokens expire after 2 hours and device API authorization is cached for 11
 
 Primary path:
 
-`nginx /stream response -> fadcam-usage-events.log -> Vector -> usage-worker -> Redis -> Supabase usage_meter_events/usage_rollup_monthly -> ID dashboard`
+`nginx /stream response -> shahidcam-usage-events.log -> Vector -> usage-worker -> Redis -> Supabase usage_meter_events/usage_rollup_monthly -> ID dashboard`
 
 Viewer count comes from anonymous relay-local Redis leases. Stored lease data contains only random session ID, user/device scope, and expiry.
 

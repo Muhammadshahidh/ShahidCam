@@ -2,19 +2,19 @@
 
 # Business Domain
 
-> Business context, problems solved, and value created by FadCam.
+> Business context, problems solved, and value created by ShahidCam.
 
 ## Quick Reference
-- **Purpose**: Understand why FadCam exists and who it serves
+- **Purpose**: Understand why ShahidCam exists and who it serves
 - **Update When**: Business direction changes, new features shipped, pivot
 - **Audience**: Developers needing context, stakeholders, product team
 
 ## Project Identity
 ```
-Project Name: FadCam
+Project Name: ShahidCam
 Tagline: Privacy-focused Android multimedia suite
 Problem Statement: Android users lack a trustworthy, ad-free camera app that can record discreetly, serve as a dashcam, record screens professionally, and stream remotely — without data collection or tracking
-Solution: Open-source, 100% ad-free Android app with background recording, dashcam, screen recorder (FadRec), live streaming, and remote control
+Solution: Open-source, 100% ad-free Android app with background recording, dashcam, screen recorder (ShahidRec), live streaming, and remote control
 ```
 
 ## Target Users
@@ -52,21 +52,21 @@ Solution: Open-source, 100% ad-free Android app with background recording, dashc
 Revenue Model: Freemium — free open-source core + Pro features via Patreon (lifetime access)
 Pricing Strategy: One-time lifetime access (no subscription)
 Market Position: Privacy-first, open-source alternative to commercial camera/dashcam apps
-Part of: FadSec Lab suite (fadsec-lab) — ad-free, privacy-first applications
+Part of: Shahid Labs suite (shahidlabs-lab) — ad-free, privacy-first applications
 ```
 
 ## Key Stakeholders
 | Role | Name | Responsibility |
 |------|------|----------------|
-| Creator/Lead Dev | anonfaded (Faded) | Architecture, development, community |
+| Creator/Lead Dev | Muhammadshahidh (Faded) | Architecture, development, community |
 | Designer | T010 (ko-fi.com/t010nl) | App screenshots, banner design |
 | Community | Discord server | Feedback, bug reports, feature requests |
 
 ## Roadmap Context
 **Current Focus**: v3.0.0 — stable release with all core features
 **Next Milestone**: Scheduled recording (auto start/stop at set times)
-**Planned**: In-app video editor (Faditor Mini), enhanced remote features
-**Long-term**: FadCam for iOS and Desktop (planned)
+**Planned**: In-app video editor (ShahidEditor Mini), enhanced remote features
+**Long-term**: ShahidCam for iOS and Desktop (planned)
 
 ## Business Constraints
 - **Open-source license** — all code must remain open, limiting proprietary features
@@ -79,7 +79,7 @@ Part of: FadSec Lab suite (fadsec-lab) — ad-free, privacy-first applications
 - [ ] Know the target users: privacy-conscious, drivers, creators, security-minded
 - [ ] Understand the freemium model: open-source core + Patreon Pro
 - [ ] Know the distribution channels: F-Droid, IzzyOnDroid, Amazon, GitHub
-- [ ] Understand the FadSec Lab suite context
+- [ ] Understand the Shahid Labs suite context
 
 ## Related Files
 - `technical-domain.md` — How this business need is solved technically

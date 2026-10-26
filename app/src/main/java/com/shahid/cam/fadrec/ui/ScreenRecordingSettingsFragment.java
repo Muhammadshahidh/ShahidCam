@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.ui;
+package com.shahid.cam.shahidrec.ui;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -44,7 +44,7 @@ import java.util.Set;
  * fixed bitrate. VBR lets MediaCodec adapt to content complexity for optimal
  * quality-to-file-size ratio — the industry standard for screen recording.
  *
- * Orientation: isolated from FadCam camera recording. Each mode remembers its own.
+ * Orientation: isolated from ShahidCam camera recording. Each mode remembers its own.
  */
 public class ScreenRecordingSettingsFragment extends Fragment {
 
@@ -140,11 +140,11 @@ public class ScreenRecordingSettingsFragment extends Fragment {
         if (valueAudioSource != null) {
             String audio = prefs.getScreenRecordingAudioSource();
             if (Constants.AUDIO_SOURCE_NONE.equals(audio)) {
-                valueAudioSource.setText(getString(R.string.fadrec_audio_source_none));
+                valueAudioSource.setText(getString(R.string.shahidrec_audio_source_none));
             } else if (Constants.AUDIO_SOURCE_INTERNAL.equals(audio)) {
-                valueAudioSource.setText(getString(R.string.fadrec_audio_source_internal));
+                valueAudioSource.setText(getString(R.string.shahidrec_audio_source_internal));
             } else {
-                valueAudioSource.setText(getString(R.string.fadrec_audio_source_mic));
+                valueAudioSource.setText(getString(R.string.shahidrec_audio_source_mic));
             }
         }
 
@@ -152,7 +152,7 @@ public class ScreenRecordingSettingsFragment extends Fragment {
             valueAudioDevice.setText(buildAudioDeviceStatus());
         }
 
-        // Video splitting — uses shared prefs (same as FadCam)
+        // Video splitting — uses shared prefs (same as ShahidCam)
         if (valueSplitting != null) {
             boolean enabled = prefs.isVideoSplittingEnabled();
             int mb = prefs.getVideoSplitSizeMb();
@@ -336,13 +336,13 @@ public class ScreenRecordingSettingsFragment extends Fragment {
 
         ArrayList<OptionItem> items = new ArrayList<>();
         items.add(new OptionItem(Constants.AUDIO_SOURCE_MIC,
-                getString(R.string.fadrec_audio_source_mic),
+                getString(R.string.shahidrec_audio_source_mic),
                 "Record audio from the device microphone"));
         items.add(new OptionItem(Constants.AUDIO_SOURCE_INTERNAL,
-                getString(R.string.fadrec_audio_source_internal),
+                getString(R.string.shahidrec_audio_source_internal),
                 "Record internal device audio (Android 10+)"));
         items.add(new OptionItem(Constants.AUDIO_SOURCE_NONE,
-                getString(R.string.fadrec_audio_source_none),
+                getString(R.string.shahidrec_audio_source_none),
                 "No audio will be recorded"));
 
         final String resultKey = "picker_result_screen_audio_source";
@@ -355,8 +355,8 @@ public class ScreenRecordingSettingsFragment extends Fragment {
         });
 
         PickerBottomSheetFragment sheet = PickerBottomSheetFragment.newInstance(
-                getString(R.string.fadrec_audio_source_title), items, current, resultKey,
-                getString(R.string.fadrec_audio_source_helper));
+                getString(R.string.shahidrec_audio_source_title), items, current, resultKey,
+                getString(R.string.shahidrec_audio_source_helper));
         sheet.show(getParentFragmentManager(), "screen_audio_source_picker");
     }
 
@@ -497,7 +497,7 @@ public class ScreenRecordingSettingsFragment extends Fragment {
         }
     }
 
-    // ── Video Splitting (reuses exact same logic & prefs as FadCam) ──
+    // ── Video Splitting (reuses exact same logic & prefs as ShahidCam) ──
 
     private void showVideoSplittingPicker() {
         if (!isAdded() || getActivity() == null) return;

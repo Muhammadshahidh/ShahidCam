@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.ui.annotation;
+package com.shahid.cam.shahidrec.ui.annotation;
 
 import android.app.Dialog;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package com.shahid.cam.ui.faditor;
+package com.shahid.cam.ui.shahideditor;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -44,18 +44,18 @@ import com.shahid.cam.Constants;
 import com.shahid.cam.SharedPreferencesManager;
 import com.shahid.cam.playback.FragmentedMp4Remuxer;
 import com.shahid.cam.ui.InputActionBottomSheetFragment;
-import com.shahid.cam.ui.faditor.export.ExportManager;
-import com.shahid.cam.ui.faditor.export.ExportService;
-import com.shahid.cam.ui.faditor.model.AudioClip;
-import com.shahid.cam.ui.faditor.model.Clip;
-import com.shahid.cam.ui.faditor.model.FaditorProject;
-import com.shahid.cam.ui.faditor.player.FaditorPlayerManager;
-import com.shahid.cam.ui.faditor.project.ProjectStorage;
-import com.shahid.cam.ui.faditor.timeline.EditorTimelineView;
-import com.shahid.cam.ui.faditor.model.Timeline;
-import com.shahid.cam.ui.faditor.undo.EditActions;
-import com.shahid.cam.ui.faditor.undo.UndoManager;
-import com.shahid.cam.ui.faditor.util.TimeFormatter;
+import com.shahid.cam.ui.shahideditor.export.ExportManager;
+import com.shahid.cam.ui.shahideditor.export.ExportService;
+import com.shahid.cam.ui.shahideditor.model.AudioClip;
+import com.shahid.cam.ui.shahideditor.model.Clip;
+import com.shahid.cam.ui.shahideditor.model.ShahidEditorProject;
+import com.shahid.cam.ui.shahideditor.player.ShahidEditorPlayerManager;
+import com.shahid.cam.ui.shahideditor.project.ProjectStorage;
+import com.shahid.cam.ui.shahideditor.timeline.EditorTimelineView;
+import com.shahid.cam.ui.shahideditor.model.Timeline;
+import com.shahid.cam.ui.shahideditor.undo.EditActions;
+import com.shahid.cam.ui.shahideditor.undo.UndoManager;
+import com.shahid.cam.ui.shahideditor.util.TimeFormatter;
 
 import android.media.MediaCodec;
 import android.media.MediaExtractor;
@@ -72,27 +72,27 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Full-screen video editor Activity for Faditor Mini.
+ * Full-screen video editor Activity for ShahidEditor Mini.
  *
  * <p>Receives a video URI via intent data, creates an in-memory project,
  * and provides trim + export functionality using Media3.</p>
  */
-public class FaditorEditorActivity extends AppCompatActivity {
+public class ShahidEditorActivity extends AppCompatActivity {
 
-    private static final String TAG = "FaditorEditor";
+    private static final String TAG = "ShahidEditorEditor";
 
     /** Intent extra key for the video URI string. */
-    public static final String EXTRA_VIDEO_URI = "faditor_video_uri";
+    public static final String EXTRA_VIDEO_URI = "shahideditor_video_uri";
 
     /** Intent extra key for opening a saved project by ID. */
-    public static final String EXTRA_PROJECT_ID = "faditor_project_id";
+    public static final String EXTRA_PROJECT_ID = "shahideditor_project_id";
 
     /** Default duration for still image clips (milliseconds). */
     private static final long IMAGE_CLIP_DURATION_MS = 5000;
 
     // ── Core components ──────────────────────────────────────────────
-    private FaditorProject project;
-    private FaditorPlayerManager playerManager;
+    private ShahidEditorProject project;
+    private ShahidEditorPlayerManager playerManager;
     private ExportManager exportManager;
     private SharedPreferencesManager prefsManager;
     private FragmentedMp4Remuxer remuxer;
@@ -143,7 +143,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
     private long exportStartTimeMs;
     private View remuxProgressOverlay;
     private TextView remuxProgressText;
-    private com.shahid.cam.ui.faditor.crop.CropOverlayView cropOverlay;
+    private com.shahid.cam.ui.shahideditor.crop.CropOverlayView cropOverlay;
     private android.widget.ImageView imagePreview;
 
     // ── Crop mode state ──────────────────────────────────────────────
@@ -404,7 +404,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
         // ── True fullscreen: hide status bar and nav bar ────────────
         com.shahid.cam.util.SystemBarUtil.hideSystemBars(getWindow().getDecorView());
 
-        setContentView(R.layout.activity_faditor_editor);
+        setContentView(R.layout.activity_shahideditor_editor);
 
         // fitsSystemWindows handles safe area automatically on topBar
 
@@ -430,7 +430,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
         // Check if opening a saved project by ID
         String projectId = getIntent().getStringExtra(EXTRA_PROJECT_ID);
         if (projectId != null) {
-            FaditorProject loaded = projectStorage.load(projectId);
+            ShahidEditorProject loaded = projectStorage.load(projectId);
             if (loaded != null && !loaded.getTimeline().isEmpty()) {
                 initViews();
                 project = loaded;
@@ -456,7 +456,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
         Uri videoUri = parseVideoUri();
         if (videoUri == null) {
             FLog.e(TAG, "No video URI provided");
-            Toast.makeText(this, R.string.faditor_error_no_video, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.shahideditor_error_no_video, Toast.LENGTH_SHORT).show();
             finish();
             return;
         }
@@ -892,7 +892,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
                     runOnUiThread(() -> {
                         if (remuxProgressText != null) {
                             remuxProgressText.setText(
-                                    getString(R.string.faditor_remuxing_percent, percent));
+                                    getString(R.string.shahideditor_remuxing_percent, percent));
                         }
                     });
                 }
@@ -1044,7 +1044,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
         }
 
         // Create project with single clip
-        project = new FaditorProject("Untitled");
+        project = new ShahidEditorProject("Untitled");
         Clip clip = new Clip(videoUri, durationMs);
         project.getTimeline().addClip(clip);
 
@@ -1055,7 +1055,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
     }
 
     private void initPlayer() {
-        playerManager = new FaditorPlayerManager(this);
+        playerManager = new ShahidEditorPlayerManager(this);
         getLifecycle().addObserver(playerManager);
         playerManager.setPlayerView(playerView);
 
@@ -1303,11 +1303,11 @@ public class FaditorEditorActivity extends AppCompatActivity {
 
             if (toolMuteLabel != null) {
                 if (muted) {
-                    toolMuteLabel.setText(R.string.faditor_tool_muted);
+                    toolMuteLabel.setText(R.string.shahideditor_tool_muted);
                 } else {
                     int pct = Math.round(volume * 100f);
                     toolMuteLabel.setText(pct == 100
-                            ? getString(R.string.faditor_tool_volume)
+                            ? getString(R.string.shahideditor_tool_volume)
                             : pct + "%");
                 }
                 toolMuteLabel.setTextColor(color);
@@ -1371,7 +1371,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
             toolRotateIcon.setRotation(degrees);
         }
         if (toolRotateLabel != null) {
-            toolRotateLabel.setText(active ? (degrees + "\u00B0") : getString(R.string.faditor_tool_rotate));
+            toolRotateLabel.setText(active ? (degrees + "\u00B0") : getString(R.string.shahideditor_tool_rotate));
             toolRotateLabel.setTextColor(color);
         }
     }
@@ -1416,7 +1416,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
             if (flipH && flipV) label = "H+V";
             else if (flipH) label = "H";
             else if (flipV) label = "V";
-            else label = getString(R.string.faditor_tool_flip);
+            else label = getString(R.string.shahideditor_tool_flip);
             toolFlipLabel.setText(label);
             toolFlipLabel.setTextColor(color);
         }
@@ -1479,7 +1479,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
                 c.setCustomCropBounds(0f, 0f, 1f, 1f);
                 highlightActivePresetChip("free");
             }
-            Toast.makeText(this, R.string.faditor_crop_reset, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.shahideditor_crop_reset, Toast.LENGTH_SHORT).show();
         });
 
         // Set clip to "custom" and defer crop overlay activation until layout is complete.
@@ -1536,7 +1536,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
                         newPreset, newL, newT, newR, newB));
             }
             // else keep "custom" preset with current bounds
-            Toast.makeText(this, R.string.faditor_crop_applied, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.shahideditor_crop_applied, Toast.LENGTH_SHORT).show();
             FLog.d(TAG, "Crop applied: preset=" + clip.getCropPreset()
                     + ", bounds=[" + clip.getCropLeft() + "," + clip.getCropTop()
                     + "," + clip.getCropRight() + "," + clip.getCropBottom() + "]");
@@ -1544,7 +1544,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
             // Revert to saved state
             clip.setCropPreset(preCropPreset);
             clip.setCustomCropBounds(preCropLeft, preCropTop, preCropRight, preCropBottom);
-            Toast.makeText(this, R.string.faditor_crop_cancelled, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.shahideditor_crop_cancelled, Toast.LENGTH_SHORT).show();
             FLog.d(TAG, "Crop cancelled, reverted to: " + preCropPreset);
         }
 
@@ -1752,11 +1752,11 @@ public class FaditorEditorActivity extends AppCompatActivity {
         if (toolCropLabel != null) {
             String label;
             if ("custom".equals(preset)) {
-                label = getString(R.string.faditor_tool_crop_free);
+                label = getString(R.string.shahideditor_tool_crop_free);
             } else if (active) {
                 label = preset;
             } else {
-                label = getString(R.string.faditor_tool_crop);
+                label = getString(R.string.shahideditor_tool_crop);
             }
             toolCropLabel.setText(label);
             toolCropLabel.setTextColor(color);
@@ -1785,7 +1785,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
             // Format label for toast
             String displayLabel = preset.replace("_", ":");
             if ("original".equals(preset)) displayLabel = "Original";
-            Toast.makeText(this, getString(R.string.faditor_canvas_applied, displayLabel), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.shahideditor_canvas_applied, displayLabel), Toast.LENGTH_SHORT).show();
         });
         sheet.show(getSupportFragmentManager(), "canvas_picker");
     }
@@ -1801,7 +1801,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
         }
         if (toolCanvasLabel != null) {
             String label = active ? preset.replace("_", ":") :
-                    getString(R.string.faditor_tool_canvas);
+                    getString(R.string.shahideditor_tool_canvas);
             toolCanvasLabel.setText(label);
             toolCanvasLabel.setTextColor(color);
         }
@@ -1921,12 +1921,12 @@ public class FaditorEditorActivity extends AppCompatActivity {
     private void extractAudioFromCurrentClip() {
         Clip clip = getSelectedClip();
         if (clip == null || clip.isImageClip()) {
-            Toast.makeText(this, R.string.faditor_audio_no_track, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.shahideditor_audio_no_track, Toast.LENGTH_SHORT).show();
             return;
         }
 
         Uri videoUri = clip.getSourceUri();
-        Toast.makeText(this, R.string.faditor_audio_extracting, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.shahideditor_audio_extracting, Toast.LENGTH_SHORT).show();
 
         audioExecutor.execute(() -> {
             try {
@@ -1948,7 +1948,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
 
                 if (audioTrackIndex < 0 || audioFormat == null) {
                     runOnUiThread(() -> Toast.makeText(this,
-                            R.string.faditor_audio_no_track, Toast.LENGTH_SHORT).show());
+                            R.string.shahideditor_audio_no_track, Toast.LENGTH_SHORT).show());
                     extractor.release();
                     return;
                 }
@@ -1963,7 +1963,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
 
                 // Mux audio track into a proper M4A container (MediaPlayer needs headers)
                 extractor.selectTrack(audioTrackIndex);
-                File cacheDir = new File(getCacheDir(), "faditor_audio");
+                File cacheDir = new File(getCacheDir(), "shahideditor_audio");
                 if (!cacheDir.exists()) cacheDir.mkdirs();
                 File audioFile = new File(cacheDir,
                         "audio_" + System.currentTimeMillis() + ".m4a");
@@ -1999,7 +1999,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
 
                 // ── Step 3: Create AudioClip and add to timeline ─────────
                 AudioClip audioClip = new AudioClip(audioUri, finalDurationMs);
-                audioClip.setLabel(getString(R.string.faditor_audio_extract_current));
+                audioClip.setLabel(getString(R.string.shahideditor_audio_extract_current));
                 audioClip.setWaveform(waveform);
 
                 runOnUiThread(() -> {
@@ -2032,14 +2032,14 @@ public class FaditorEditorActivity extends AppCompatActivity {
                     updateAudioToolUI();
                     prepareAudioPlayer();
                     scheduleAutoSave();
-                    Toast.makeText(this, R.string.faditor_audio_extracted,
+                    Toast.makeText(this, R.string.shahideditor_audio_extracted,
                             Toast.LENGTH_SHORT).show();
                 });
 
             } catch (Exception e) {
                 FLog.e(TAG, "Audio extraction failed", e);
                 runOnUiThread(() -> Toast.makeText(this,
-                        R.string.faditor_audio_extract_failed, Toast.LENGTH_SHORT).show());
+                        R.string.shahideditor_audio_extract_failed, Toast.LENGTH_SHORT).show());
             }
         });
     }
@@ -2466,7 +2466,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
                 exportService.cancelExport();
             }
             hideExportProgress();
-            Toast.makeText(this, R.string.faditor_export_cancelled, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.shahideditor_export_cancelled, Toast.LENGTH_SHORT).show();
         });
 
         // Back button on export screen → cancel and return to editor
@@ -2477,7 +2477,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
             hideExportProgress();
         });
 
-        // Done button → navigate to Faditor Mini tab
+        // Done button → navigate to ShahidEditor Mini tab
         if (exportBtnDone != null) {
             exportBtnDone.setOnClickListener(v -> {
                 hideExportProgress();
@@ -2514,7 +2514,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
                         }
                         if (exportProgressText != null) {
                             exportProgressText.setText(
-                                    getString(R.string.faditor_exporting_percent, percent));
+                                    getString(R.string.shahideditor_exporting_percent, percent));
                         }
 
                         // Compute ETA
@@ -2522,7 +2522,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
                             long elapsed = System.currentTimeMillis() - exportStartTimeMs;
                             long totalEstimated = (long) (elapsed / progress);
                             long remainingMs = totalEstimated - elapsed;
-                            exportEtaText.setText(getString(R.string.faditor_export_eta,
+                            exportEtaText.setText(getString(R.string.shahideditor_export_eta,
                                     formatEta(remainingMs)));
                             exportEtaText.setVisibility(View.VISIBLE);
                         }
@@ -2538,14 +2538,14 @@ public class FaditorEditorActivity extends AppCompatActivity {
                         if (exportProgressPercent != null) exportProgressPercent.setText("100%");
                         if (exportProgressBar != null) exportProgressBar.setProgress(100);
                         if (exportProgressText != null) {
-                            exportProgressText.setText(R.string.faditor_export_complete_summary);
+                            exportProgressText.setText(R.string.shahideditor_export_complete_summary);
                             exportProgressText.setTextColor(0xFFFFFFFF);
                         }
                         if (exportStatusIcon != null) exportStatusIcon.setText("check_circle");
                         if (exportEtaText != null) exportEtaText.setVisibility(View.GONE);
                         if (exportInfoText != null) exportInfoText.setVisibility(View.GONE);
                         if (exportTitle != null) {
-                            exportTitle.setText(R.string.faditor_export_complete_title);
+                            exportTitle.setText(R.string.shahideditor_export_complete_title);
                         }
                         if (exportProgressBar != null) {
                             exportProgressBar.setIndeterminate(false);
@@ -2567,8 +2567,8 @@ public class FaditorEditorActivity extends AppCompatActivity {
                 public void onExportError(@NonNull Exception error) {
                     runOnUiThread(() -> {
                         hideExportProgress();
-                        Toast.makeText(FaditorEditorActivity.this,
-                                getString(R.string.faditor_export_error, error.getMessage()),
+                        Toast.makeText(ShahidEditorActivity.this,
+                                getString(R.string.shahideditor_export_error, error.getMessage()),
                                 Toast.LENGTH_LONG).show();
                         FLog.e(TAG, "Export failed", error);
                     });
@@ -2606,8 +2606,8 @@ public class FaditorEditorActivity extends AppCompatActivity {
                     handleClose();
                 } else {
                     lastBackPressTime = now;
-                    Toast.makeText(FaditorEditorActivity.this,
-                            R.string.faditor_back_press_exit, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ShahidEditorActivity.this,
+                            R.string.shahideditor_back_press_exit, Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -2946,7 +2946,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
      */
     private void showExportConfirmation() {
         if (isExportRunning()) {
-            Toast.makeText(this, R.string.faditor_export_in_progress, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.shahideditor_export_in_progress, Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -2959,14 +2959,14 @@ public class FaditorEditorActivity extends AppCompatActivity {
                 ? " • " + tl.getAudioClips().size() + " audio"
                 : "";
 
-        String helperText = getString(R.string.faditor_export_confirm_helper,
+        String helperText = getString(R.string.shahideditor_export_confirm_helper,
                 durationStr, clipCount, audioInfo);
 
         try {
             InputActionBottomSheetFragment sheet = InputActionBottomSheetFragment.newConfirm(
-                    getString(R.string.faditor_export_confirm_title),
-                    getString(R.string.faditor_export_confirm_action),
-                    getString(R.string.faditor_export_confirm_subtitle),
+                    getString(R.string.shahideditor_export_confirm_title),
+                    getString(R.string.shahideditor_export_confirm_action),
+                    getString(R.string.shahideditor_export_confirm_subtitle),
                     R.drawable.ic_save,
                     helperText);
 
@@ -2992,7 +2992,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
      */
     private void startExportViaService() {
         if (isExportRunning()) {
-            Toast.makeText(this, R.string.faditor_export_in_progress, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.shahideditor_export_in_progress, Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -3049,7 +3049,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
                 ? " • " + tl.getAudioClips().size() + " audio"
                 : "";
 
-        exportInfoText.setText(getString(R.string.faditor_export_info,
+        exportInfoText.setText(getString(R.string.shahideditor_export_info,
                 durationStr, clipCount, audioInfo));
         exportInfoText.setVisibility(View.VISIBLE);
     }
@@ -3063,12 +3063,12 @@ public class FaditorEditorActivity extends AppCompatActivity {
             exportProgressBar.setIndeterminate(true);
         }
         if (exportProgressText != null) {
-            exportProgressText.setText(R.string.faditor_exporting);
+            exportProgressText.setText(R.string.shahideditor_exporting);
             exportProgressText.setTextColor(0xFFAAAAAA);
         }
         if (exportEtaText != null) exportEtaText.setVisibility(View.GONE);
         if (exportStatusIcon != null) exportStatusIcon.setText("movie");
-        if (exportTitle != null) exportTitle.setText(R.string.faditor_exporting);
+        if (exportTitle != null) exportTitle.setText(R.string.shahideditor_exporting);
         if (exportBtnDone != null) exportBtnDone.setVisibility(View.INVISIBLE);
 
         // Reset Back button visibility
@@ -3099,11 +3099,11 @@ public class FaditorEditorActivity extends AppCompatActivity {
     private void showCloseConfirmation() {
         try {
             InputActionBottomSheetFragment sheet = InputActionBottomSheetFragment.newConfirm(
-                    getString(R.string.faditor_close_confirm_title),
-                    getString(R.string.faditor_close_confirm_action),
-                    getString(R.string.faditor_close_confirm_subtitle),
+                    getString(R.string.shahideditor_close_confirm_title),
+                    getString(R.string.shahideditor_close_confirm_action),
+                    getString(R.string.shahideditor_close_confirm_subtitle),
                     R.drawable.ic_save,
-                    getString(R.string.faditor_close_confirm_helper));
+                    getString(R.string.shahideditor_close_confirm_helper));
 
             sheet.setCallbacks(new InputActionBottomSheetFragment.Callbacks() {
                 @Override
@@ -3126,9 +3126,9 @@ public class FaditorEditorActivity extends AppCompatActivity {
      */
     private void showCloseConfirmationDialog() {
         new android.app.AlertDialog.Builder(this, R.style.CustomBottomSheetDialogTheme)
-                .setTitle(R.string.faditor_close_confirm_title)
-                .setMessage(R.string.faditor_close_confirm_helper)
-                .setPositiveButton(R.string.faditor_close_confirm_action, (d, w) -> handleClose())
+                .setTitle(R.string.shahideditor_close_confirm_title)
+                .setMessage(R.string.shahideditor_close_confirm_helper)
+                .setPositiveButton(R.string.shahideditor_close_confirm_action, (d, w) -> handleClose())
                 .setNegativeButton(android.R.string.cancel, null)
                 .show();
     }
@@ -3173,7 +3173,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
      * @param projectJson the serialized project JSON to restore from
      */
     private void restoreProjectFromSnapshot(@NonNull String projectJson) {
-        FaditorProject restored = projectStorage.fromJson(projectJson);
+        ShahidEditorProject restored = projectStorage.fromJson(projectJson);
         if (restored == null) {
             FLog.e(TAG, "Failed to restore project from snapshot");
             return;
@@ -3436,12 +3436,12 @@ public class FaditorEditorActivity extends AppCompatActivity {
             refreshTotalTimeDisplay();
             saveProjectNow();
 
-            Toast.makeText(this, R.string.faditor_asset_added, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.shahideditor_asset_added, Toast.LENGTH_SHORT).show();
             FLog.d(TAG, "Image asset added at index " + insertIndex
                     + " duration=" + IMAGE_CLIP_DURATION_MS + "ms uri=" + imageUri);
         } catch (Exception e) {
             FLog.e(TAG, "Failed to add image asset", e);
-            Toast.makeText(this, R.string.faditor_asset_error, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.shahideditor_asset_error, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -3462,7 +3462,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
             long durationMs = getVideoDuration(videoUri);
             if (durationMs <= 0) {
                 FLog.w(TAG, "Could not determine video duration for added asset");
-                Toast.makeText(this, R.string.faditor_asset_error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.shahideditor_asset_error, Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -3482,12 +3482,12 @@ public class FaditorEditorActivity extends AppCompatActivity {
             refreshTotalTimeDisplay();
             saveProjectNow();
 
-            Toast.makeText(this, R.string.faditor_asset_added, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.shahideditor_asset_added, Toast.LENGTH_SHORT).show();
             FLog.d(TAG, "Video asset added at index " + insertIndex
                     + " duration=" + durationMs + "ms uri=" + videoUri);
         } catch (Exception e) {
             FLog.e(TAG, "Failed to add video asset", e);
-            Toast.makeText(this, R.string.faditor_asset_error, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.shahideditor_asset_error, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -3532,7 +3532,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
             Timeline timeline = project.getTimeline();
             int newIndex = timeline.splitAt(selectedClipIndex, absoluteSplitMs);
             if (newIndex < 0) {
-                Toast.makeText(this, R.string.faditor_split_error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.shahideditor_split_error, Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -3554,10 +3554,10 @@ public class FaditorEditorActivity extends AppCompatActivity {
 
             selectSegment(selectedClipIndex);
             saveProjectNow();
-            Toast.makeText(this, R.string.faditor_split_success, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.shahideditor_split_success, Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             FLog.e(TAG, "splitAtPlayhead failed", e);
-            Toast.makeText(this, R.string.faditor_split_error, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.shahideditor_split_error, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -3576,14 +3576,14 @@ public class FaditorEditorActivity extends AppCompatActivity {
 
         // Check if playhead is within the audio clip
         if (playheadMs <= audioStartOnTimeline || playheadMs >= audioEndOnTimeline) {
-            Toast.makeText(this, R.string.faditor_split_error, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.shahideditor_split_error, Toast.LENGTH_SHORT).show();
             return;
         }
 
         // Minimum 500ms on each side
         long splitInSource = ac.getInPointMs() + (playheadMs - audioStartOnTimeline);
         if (splitInSource - ac.getInPointMs() < 500 || ac.getOutPointMs() - splitInSource < 500) {
-            Toast.makeText(this, R.string.faditor_split_error, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.shahideditor_split_error, Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -3607,7 +3607,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
         editorTimeline.setAudioClips(timeline.getAudioClips());
         prepareAudioPlayer();
         scheduleAutoSave();
-        Toast.makeText(this, R.string.faditor_split_success, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.shahideditor_split_success, Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -3624,7 +3624,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
 
             Timeline timeline = project.getTimeline();
             if (timeline.getClipCount() <= 1) {
-                Toast.makeText(this, R.string.faditor_delete_last_segment, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.shahideditor_delete_last_segment, Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -3639,7 +3639,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
             int newIndex = Math.min(selectedClipIndex, timeline.getClipCount() - 1);
             selectSegment(newIndex);
             saveProjectNow();
-            Toast.makeText(this, R.string.faditor_segment_deleted, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.shahideditor_segment_deleted, Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             FLog.e(TAG, "deleteSelectedSegment failed", e);
         }
@@ -3665,7 +3665,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
         }
         updateAudioToolUI();
         saveProjectNow();
-        Toast.makeText(this, R.string.faditor_segment_deleted, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.shahideditor_segment_deleted, Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -3684,7 +3684,7 @@ public class FaditorEditorActivity extends AppCompatActivity {
 
             selectSegment(newIndex);
             saveProjectNow();
-            Toast.makeText(this, R.string.faditor_segment_duplicated, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.shahideditor_segment_duplicated, Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             FLog.e(TAG, "duplicateSelectedSegment failed", e);
         }

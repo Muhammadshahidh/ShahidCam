@@ -1,4 +1,4 @@
-package com.shahid.cam.ui.faditor.export;
+package com.shahid.cam.ui.shahideditor.export;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -18,8 +18,8 @@ import androidx.core.app.NotificationCompat;
 
 import com.shahid.cam.R;
 import com.shahid.cam.SharedPreferencesManager;
-import com.shahid.cam.ui.faditor.FaditorEditorActivity;
-import com.shahid.cam.ui.faditor.model.FaditorProject;
+import com.shahid.cam.ui.shahideditor.ShahidEditorActivity;
+import com.shahid.cam.ui.shahideditor.model.ShahidEditorProject;
 
 /**
  * Foreground service that runs video export in the background so it survives
@@ -32,7 +32,7 @@ import com.shahid.cam.ui.faditor.model.FaditorProject;
 public class ExportService extends Service {
 
     private static final String TAG = "ExportService";
-    private static final String CHANNEL_ID = "faditor_export_channel";
+    private static final String CHANNEL_ID = "shahideditor_export_channel";
     private static final int NOTIFICATION_ID = 3001;
 
     /** Action to start an export. */
@@ -53,12 +53,12 @@ public class ExportService extends Service {
 
     // ── Static bridge for passing project data ───────────────────────
     @Nullable
-    private static FaditorProject pendingProject;
+    private static ShahidEditorProject pendingProject;
 
     /**
      * Set the project to export. Must be called before starting the service.
      */
-    public static void setPendingProject(@Nullable FaditorProject project) {
+    public static void setPendingProject(@Nullable ShahidEditorProject project) {
         pendingProject = project;
     }
 
@@ -152,7 +152,7 @@ public class ExportService extends Service {
     // ── Export execution ─────────────────────────────────────────────
 
     private void startExportInternal() {
-        FaditorProject project = pendingProject;
+        ShahidEditorProject project = pendingProject;
         pendingProject = null; // consume
 
         if (project == null) {
@@ -182,7 +182,7 @@ public class ExportService extends Service {
                 if (serviceListener != null) {
                     serviceListener.onExportStarted(outputPath);
                 }
-                // Broadcast to UI (FaditorMiniFragment listens via LocalBroadcastManager)
+                // Broadcast to UI (ShahidEditorMiniFragment listens via LocalBroadcastManager)
                 Intent broadcast = new Intent(ACTION_EXPORT_STARTED);
                 broadcast.putExtra(EXTRA_OUTPUT_PATH, outputPath);
                 FLog.d(TAG, "Broadcasting ACTION_EXPORT_STARTED");
@@ -272,9 +272,9 @@ public class ExportService extends Service {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(
                     CHANNEL_ID,
-                    getString(R.string.faditor_export_notif_channel),
+                    getString(R.string.shahideditor_export_notif_channel),
                     NotificationManager.IMPORTANCE_LOW);
-            channel.setDescription(getString(R.string.faditor_export_notif_channel_desc));
+            channel.setDescription(getString(R.string.shahideditor_export_notif_channel_desc));
             channel.setShowBadge(false);
             if (notificationManager != null) {
                 notificationManager.createNotificationChannel(channel);
@@ -291,15 +291,15 @@ public class ExportService extends Service {
                 PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         // Tap to open editor
-        Intent openIntent = new Intent(this, FaditorEditorActivity.class);
+        Intent openIntent = new Intent(this, ShahidEditorActivity.class);
         openIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent openPi = PendingIntent.getActivity(this, 0, openIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
-        String title = getString(R.string.faditor_export_notif_title);
+        String title = getString(R.string.shahideditor_export_notif_title);
         String text = indeterminate
-                ? getString(R.string.faditor_exporting)
-                : getString(R.string.faditor_exporting_percent, percent);
+                ? getString(R.string.shahideditor_exporting)
+                : getString(R.string.shahideditor_exporting_percent, percent);
 
         // ETA calculation
         if (!indeterminate && percent > 5) {
@@ -318,7 +318,7 @@ public class ExportService extends Service {
                 .setOngoing(true)
                 .setSilent(true)
                 .setContentIntent(openPi)
-                .addAction(0, getString(R.string.faditor_cancel), cancelPi)
+                .addAction(0, getString(R.string.shahideditor_cancel), cancelPi)
                 .setForegroundServiceBehavior(NotificationCompat.FOREGROUND_SERVICE_IMMEDIATE)
                 .build();
     }
@@ -332,15 +332,15 @@ public class ExportService extends Service {
 
     private void showCompletionNotification() {
         // Tap to open editor
-        Intent openIntent = new Intent(this, FaditorEditorActivity.class);
+        Intent openIntent = new Intent(this, ShahidEditorActivity.class);
         openIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent openPi = PendingIntent.getActivity(this, 0, openIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_export_video)
-                .setContentTitle(getString(R.string.faditor_export_complete_title))
-                .setContentText(getString(R.string.faditor_export_complete_summary))
+                .setContentTitle(getString(R.string.shahideditor_export_complete_title))
+                .setContentText(getString(R.string.shahideditor_export_complete_summary))
                 .setOngoing(false)
                 .setAutoCancel(true)
                 .setContentIntent(openPi)
@@ -354,9 +354,9 @@ public class ExportService extends Service {
     private void showErrorNotification(@Nullable String errorMsg) {
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_export_video)
-                .setContentTitle(getString(R.string.faditor_export_notif_error_title))
+                .setContentTitle(getString(R.string.shahideditor_export_notif_error_title))
                 .setContentText(errorMsg != null ? errorMsg
-                        : getString(R.string.faditor_export_error, "Unknown error"))
+                        : getString(R.string.shahideditor_export_error, "Unknown error"))
                 .setOngoing(false)
                 .setAutoCancel(true)
                 .build();

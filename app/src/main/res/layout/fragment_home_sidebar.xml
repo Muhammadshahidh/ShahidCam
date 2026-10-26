@@ -276,7 +276,7 @@
                             android:orientation="horizontal" android:gravity="center_vertical">
                             <TextView android:layout_width="0dp" android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="@string/sidebar_fadcam_pro" android:textColor="#FFFFFF"
+                                android:text="@string/sidebar_shahidcam_pro" android:textColor="#FFFFFF"
                                 android:textStyle="bold" android:textSize="12sp"/>
                              <TextView android:layout_width="wrap_content" android:layout_height="16dp"
                                 android:layout_marginStart="6dp" android:paddingHorizontal="6dp"

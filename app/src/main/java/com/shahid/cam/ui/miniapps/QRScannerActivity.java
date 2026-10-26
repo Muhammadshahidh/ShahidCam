@@ -426,7 +426,7 @@ public class QRScannerActivity extends AppCompatActivity {
                 escapeJson(text), format, ts).getBytes());
         } catch (Exception ignored) {}
         if (frameBitmap != null) {
-            String fileName = "FadCam_MiniApps_QRScanner_" + ts + ".jpg";
+            String fileName = "ShahidCam_MiniApps_QRScanner_" + ts + ".jpg";
             File jpg = new File(scanDir, fileName);
             try (FileOutputStream fos = new FileOutputStream(jpg)) {
                 frameBitmap.compress(Bitmap.CompressFormat.JPEG, 88, fos);

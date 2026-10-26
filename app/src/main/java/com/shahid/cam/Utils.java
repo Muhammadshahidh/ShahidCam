@@ -189,19 +189,19 @@ public class Utils {
     }
 
     /**
-     * Tries to parse the timestamp from a FadCam filename.
-     * Expects format like "FadCam_yyyyMMdd_HHmmss.mp4".
+     * Tries to parse the timestamp from a ShahidCam filename.
+     * Expects format like "ShahidCam_yyyyMMdd_HHmmss.mp4".
      * @param filename The filename string.
      * @return Timestamp in milliseconds since epoch, or -1 if parsing fails.
      */
     public static long parseTimestampFromFilename(String filename) {
         if (filename == null || !filename.startsWith(Constants.RECORDING_DIRECTORY + "_") || !filename.endsWith("." + Constants.RECORDING_FILE_EXTENSION)) {
-            return -1; // Not a valid FadCam filename format
+            return -1; // Not a valid ShahidCam filename format
         }
         try {
             // Extract the timestamp part: yyyyMMdd_HHmmss
             String timestampString = filename.substring(
-                    Constants.RECORDING_DIRECTORY.length() + 1, // Start after "FadCam_"
+                    Constants.RECORDING_DIRECTORY.length() + 1, // Start after "ShahidCam_"
                     filename.length() - (Constants.RECORDING_FILE_EXTENSION.length() + 1) // End before ".mp4"
             );
             SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US);

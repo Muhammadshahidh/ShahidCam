@@ -117,7 +117,7 @@ public class RealtimeMediaInvalidationCoordinator {
     private void startFileObservers() {
         File externalRoot = appContext.getExternalFilesDir(null);
         if (externalRoot == null) return;
-        File fadCamRoot = new File(externalRoot, "FadCam");
+        File fadCamRoot = new File(externalRoot, "ShahidCam");
         if (!fadCamRoot.exists()) return;
 
         List<File> watchRoots = new ArrayList<>();
@@ -156,7 +156,7 @@ public class RealtimeMediaInvalidationCoordinator {
     /**
      * Recursively collects all directories starting from the given root.
      * This ensures FileObservers cover nested subdirectories
-     * (e.g. FadCam/FadShot/Back/, FadCam/FadShot/Selfie/).
+     * (e.g. ShahidCam/ShahidShot/Back/, ShahidCam/ShahidShot/Selfie/).
      */
     private void collectAllDirectories(@NonNull File dir, @NonNull List<File> result) {
         result.add(dir);

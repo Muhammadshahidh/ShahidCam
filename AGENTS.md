@@ -48,7 +48,7 @@
 
 ## Core Principles
 
-### 7. Device Test Playbook — record, pull, verify (FadCam)
+### 7. Device Test Playbook — record, pull, verify (ShahidCam)
 
 Use this exact flow when testing recordings on a connected phone. Do NOT improvise or
 re-invent these steps.
@@ -72,10 +72,10 @@ adb -s <SERIAL> shell am start -n com.shahid.cam.beta/com.shahid.cam.RecordingSt
 ```
 
 **Find the file** (app saves to a custom SAF download folder; the path may be
-double-prefixed e.g. `Download/FadCam/Camera/Back/Camera/Back/` — do not hardcode it):
+double-prefixed e.g. `Download/ShahidCam/Camera/Back/Camera/Back/` — do not hardcode it):
 ```bash
 adb -s <SERIAL> shell "find /storage/emulated/0/Download /storage/emulated/0/Android/data/com.shahid.cam.beta -name '*.mp4' -mmin -5 2>/dev/null"
-adb -s <SERIAL> pull "<PATH>" /tmp/fadcam_session/out/
+adb -s <SERIAL> pull "<PATH>" /tmp/shahidcam_session/out/
 ```
 
 **Verify the recording** (always — this catches the stsz/trun mismatch class of bugs):
@@ -89,7 +89,7 @@ adb -s <SERIAL> pull "<PATH>" /tmp/fadcam_session/out/
 **Cleanup** (after every test — never leave artifacts):
 ```bash
 adb -s <SERIAL> shell rm -f "<PULLED_PATH>"
-rm -rf /tmp/fadcam_session
+rm -rf /tmp/shahidcam_session
 ```
 
 ## Core Principles (legacy)

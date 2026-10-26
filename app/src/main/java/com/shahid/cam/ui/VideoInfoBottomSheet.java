@@ -642,7 +642,7 @@ public class VideoInfoBottomSheet extends BottomSheetDialogFragment {
         // For content:// URIs, try to extract the path from the URI
         String path = videoUri.getPath();
         if (path != null && path.contains(":")) {
-            // SAF URIs often have format /tree/primary:FadCam/document/primary:FadCam/file.mp4
+            // SAF URIs often have format /tree/primary:ShahidCam/document/primary:ShahidCam/file.mp4
             // or /document/primary:Android/data/.../file.mp4
             int lastColonIndex = path.lastIndexOf(':');
             if (lastColonIndex >= 0 && lastColonIndex < path.length() - 1) {
@@ -694,8 +694,8 @@ public class VideoInfoBottomSheet extends BottomSheetDialogFragment {
             return null;
         }
         
-        // SAF URIs often have format /tree/primary:FadCam/document/primary:FadCam/file.mp4
-        // or /document/primary:Download/FadCam/file.mp4
+        // SAF URIs often have format /tree/primary:ShahidCam/document/primary:ShahidCam/file.mp4
+        // or /document/primary:Download/ShahidCam/file.mp4
         int lastColonIndex = path.lastIndexOf(':');
         if (lastColonIndex >= 0 && lastColonIndex < path.length() - 1) {
             String relativePath = path.substring(lastColonIndex + 1);

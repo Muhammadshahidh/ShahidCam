@@ -2,7 +2,7 @@
 
 # Technical Domain
 
-**Purpose**: Tech stack, architecture, and development patterns for FadCam — a privacy-focused Android multimedia suite (background recording, dashcam, screen recorder, live streaming, remote control).
+**Purpose**: Tech stack, architecture, and development patterns for ShahidCam — a privacy-focused Android multimedia suite (background recording, dashcam, screen recorder, live streaming, remote control).
 **Last Updated**: 2026-05-17
 
 ## Quick Reference
@@ -35,7 +35,7 @@ Structure: Feature-based packages under com.shahid.cam.*
 
 ### Project Structure
 ```
-app/src/main/java/com/fadcam/
+app/src/main/java/com/shahidcam/
 ├── MainActivity.java              # Shell activity w/ BottomNavigationView (2149 lines)
 ├── ShahidCamApplication.java         # Application-level init
 ├── Constants.java                 # All SharedPreferences keys + constants (704 lines)
@@ -52,7 +52,7 @@ app/src/main/java/com/fadcam/
 ├── playback/                      # Fragmented MP4 playback (SeekableMediaSource, PlayerHolder, Remuxer)
 ├── streaming/                     # Remote streaming (RemoteStreamService, CloudStatusManager, RemoteAuthManager)
 ├── dualcam/                       # Dual PiP camera (DualCameraConfig, DualCameraState, DualCameraCapability)
-├── fadrec/                        # FadRec screen recorder (MediaProjection, annotation tools)
+├── shahidrec/                        # ShahidRec screen recorder (MediaProjection, annotation tools)
 ├── opengl/                        # OpenGL ES (GLWatermarkRenderer, GLRecordingPipeline, grafika utils)
 ├── watermark/                     # WatermarkManager + dynamic overlays
 ├── security/                      # StreamKeyManager, SegmentEncryptor
@@ -168,19 +168,19 @@ public abstract class VideoIndexDatabase extends RoomDatabase {
 ## 📂 Codebase References
 **Build Config**: `app/build.gradle.kts` — flavors, splits, signing, 16KB alignment
 **Version Catalog**: `gradle/libs.versions.toml` — all dependency versions
-**Constants**: `app/src/main/java/com/fadcam/Constants.java` — 704 lines of SharedPreferences keys
-**Main Activity**: `app/src/main/java/com/fadcam/MainActivity.java` — BottomNavigationView shell (2149 lines)
-**Recording Service**: `app/src/main/java/com/fadcam/services/RecordingService.java` — Camera2 + MediaRecorder (6995 lines)
-**FLog**: `app/src/main/java/com/fadcam/FLog.java` — privacy-aware logging w/ redaction
-**SharedPreferencesManager**: `app/src/main/java/com/fadcam/SharedPreferencesManager.java` — centralized prefs singleton
-**VideoIndexDatabase**: `app/src/main/java/com/fadcam/data/VideoIndexDatabase.java` — Room DB for media index
-**ForensicsDatabase**: `app/src/main/java/com/fadcam/forensics/data/local/ForensicsDatabase.java` — Room DB for forensics
-**Playback**: `app/src/main/java/com/fadcam/playback/` — FragmentedMp4SeekableMediaSource, PlayerHolder, Remuxer
-**Streaming**: `app/src/main/java/com/fadcam/streaming/` — RemoteStreamService, RemoteAuthManager, CloudStatusManager
-**Dual Camera**: `app/src/main/java/com/fadcam/dualcam/` — DualCameraConfig, DualCameraState, DualCameraCapability
-**Screen Recorder**: `app/src/main/java/com/fadcam/fadrec/` — MediaProjection-based screen recording
-**OpenGL**: `app/src/main/java/com/fadcam/opengl/` — GLWatermarkRenderer, GLRecordingPipeline, grafika
-**Security**: `app/src/main/java/com/fadcam/security/` — StreamKeyManager, SegmentEncryptor
+**Constants**: `app/src/main/java/com/shahidcam/Constants.java` — 704 lines of SharedPreferences keys
+**Main Activity**: `app/src/main/java/com/shahidcam/MainActivity.java` — BottomNavigationView shell (2149 lines)
+**Recording Service**: `app/src/main/java/com/shahidcam/services/RecordingService.java` — Camera2 + MediaRecorder (6995 lines)
+**FLog**: `app/src/main/java/com/shahidcam/FLog.java` — privacy-aware logging w/ redaction
+**SharedPreferencesManager**: `app/src/main/java/com/shahidcam/SharedPreferencesManager.java` — centralized prefs singleton
+**VideoIndexDatabase**: `app/src/main/java/com/shahidcam/data/VideoIndexDatabase.java` — Room DB for media index
+**ForensicsDatabase**: `app/src/main/java/com/shahidcam/forensics/data/local/ForensicsDatabase.java` — Room DB for forensics
+**Playback**: `app/src/main/java/com/shahidcam/playback/` — FragmentedMp4SeekableMediaSource, PlayerHolder, Remuxer
+**Streaming**: `app/src/main/java/com/shahidcam/streaming/` — RemoteStreamService, RemoteAuthManager, CloudStatusManager
+**Dual Camera**: `app/src/main/java/com/shahidcam/dualcam/` — DualCameraConfig, DualCameraState, DualCameraCapability
+**Screen Recorder**: `app/src/main/java/com/shahidcam/shahidrec/` — MediaProjection-based screen recording
+**OpenGL**: `app/src/main/java/com/shahidcam/opengl/` — GLWatermarkRenderer, GLRecordingPipeline, grafika
+**Security**: `app/src/main/java/com/shahidcam/security/` — StreamKeyManager, SegmentEncryptor
 
 ## Related Files
 - `business-domain.md` — Why this technical foundation exists

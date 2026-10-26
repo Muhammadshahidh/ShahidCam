@@ -19,10 +19,10 @@ import androidx.core.view.WindowInsetsCompat;
 import com.shahid.cam.R;
 
 /**
- * FadCam Pro promotional activity displaying features and purchase options.
+ * ShahidCam Pro promotional activity displaying features and purchase options.
  * Features a premium gradient design with animated elements.
  */
-public class FadCamProActivity extends AppCompatActivity {
+public class ShahidCamProActivity extends AppCompatActivity {
 
     private static final String PATREON_SHOP_URL = "https://www.patreon.com/cw/Fadedx/shop";
     
@@ -33,7 +33,7 @@ public class FadCamProActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fadcam_pro);
+        setContentView(R.layout.activity_shahidcam_pro);
         
         // Handle edge-to-edge display
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.rootContainer), (v, insets) -> {
@@ -65,11 +65,11 @@ public class FadCamProActivity extends AppCompatActivity {
     private void setupFeatureRows() {
         // Feature data: name, free, pro, pro+, lab
         String[][] features = {
-            {getString(R.string.fadcam_pro_feature_everything_icon), "check", "check", "check", "remove"},
-            {getString(R.string.fadcam_pro_feature_notification_icon), "remove", "check", "check", "remove"},
-            {getString(R.string.fadcam_pro_feature_user_icon), "remove", "remove", "schedule", "remove"},
-            {getString(R.string.fadcam_pro_feature_app_name), "remove", "remove", "schedule", "remove"},
-            {getString(R.string.fadcam_pro_feature_faddrive), "remove", "remove", "remove", "schedule"}
+            {getString(R.string.shahidcam_pro_feature_everything_icon), "check", "check", "check", "remove"},
+            {getString(R.string.shahidcam_pro_feature_notification_icon), "remove", "check", "check", "remove"},
+            {getString(R.string.shahidcam_pro_feature_user_icon), "remove", "remove", "schedule", "remove"},
+            {getString(R.string.shahidcam_pro_feature_app_name), "remove", "remove", "schedule", "remove"},
+            {getString(R.string.shahidcam_pro_feature_shahiddrive), "remove", "remove", "remove", "schedule"}
         };
 
         View[] featureViews = {
@@ -177,7 +177,7 @@ public class FadCamProActivity extends AppCompatActivity {
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-                com.shahid.cam.Utils.overridePendingTransitionCompat(FadCamProActivity.this, R.anim.fade_in, R.anim.fade_out);
+                com.shahid.cam.Utils.overridePendingTransitionCompat(ShahidCamProActivity.this, R.anim.fade_in, R.anim.fade_out);
                 setEnabled(false);
                 getOnBackPressedDispatcher().onBackPressed();
             }

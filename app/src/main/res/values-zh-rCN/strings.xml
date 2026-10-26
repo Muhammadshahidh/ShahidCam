@@ -16,7 +16,7 @@
     <string name="send_email">发送邮件</string>
     <string name="join_community">加入社区获得帮助，分享点子以及获得软件更新</string>
     <string name="privacy_information">隐私须知</string>
-    <string name="copyright_info">© 2024 https://fadcam.faded.dev\n特许 根据 GPL-3.0</string>
+    <string name="copyright_info">© 2024 https://shahidcam.shahidcam.app\n特许 根据 GPL-3.0</string>
     <string name="mainpage_storage_indicator" formatted="false">\n    <![CDATA[
     <font color=\'#FFFFFF\' style=\'font-size:16sp;\'><b>可用空间:</b></font><br>
     <font color=\'#CCCCCC\' style=\'font-size:14sp;\'>%.2f GB / %.2f GB</font><br><br>
@@ -143,7 +143,7 @@
     <string name="discord_title">Discord服务器</string>
     <string name="thankyou_msg">感谢你使用ShahidCam!</string>
     <string name="settings_title">设置</string>
-    <string name="array_watermark_time_fadcam">时间与\"Fadcam\"字样</string>
+    <string name="array_watermark_time_shahidcam">时间与\"Fadcam\"字样</string>
     <string name="array_watermark_timeonly">仅时间</string>
     <string name="array_watermark_nomark">无水印</string>
     <string name="toast_video_not_found">出错：视频未找到</string>
@@ -490,7 +490,7 @@
     <string name="shortcut_purpose_start">此快捷方式使用后置摄像头开始录制。</string>
     <string name="video_menu_save_copy_or_move_title">保存至图库</string>
     <string name="video_menu_save_copy">复制至图库</string>
-    <string name="video_menu_save_helper_downloads_fadcam">将视频保存至 Downloads/ShahidCam</string>
+    <string name="video_menu_save_helper_downloads_shahidcam">将视频保存至 Downloads/ShahidCam</string>
     <string name="video_menu_save_move">移动到图库</string>
     <string name="video_menu_save_move_desc">将文件移动到 Downloads/ShahidCam（节省存储空间）</string>
     <string name="video_menu_save_longpress_helper">长按保存到图库以选择复制或移动</string>
@@ -509,7 +509,7 @@
     <string name="video_info_no_location">无位置数据</string>
     <string name="video_menu_mark_viewed">标记为已查看</string>
     <string name="video_menu_mark_unviewed">标记为未查看</string>
-    <string name="video_menu_upload_faddrive">上传到 Drive</string>
+    <string name="video_menu_upload_shahiddrive">上传到 Drive</string>
     <string name="records_hide_thumbnails_row_title">隐藏</string>
     <string name="setting_zoom_ratio_title">变焦倍数</string>
     <string name="zoom_not_available_toast">变焦不可用</string>
@@ -645,11 +645,11 @@
     <string name="torch_cancel">取消</string>
     <string name="torch_recording_note">录制过程中无法切换手电筒</string>
     <string name="torch_both">前后手电筒同时开启</string>
-    <string name="note_debug_detailed">启用后，我们会在您的“Downloads/ShahidCam/”目录中生成调试日志文件 (FADCAM_debug.html)。当您需要报告问题时，请分享此文件以协助我们排查。关闭本选项将不再记录。\n请注意：开启调试日志可能会在录制时拖慢应用。如非必要，请保持关闭。</string>
+    <string name="note_debug_detailed">启用后，我们会在您的“Downloads/ShahidCam/”目录中生成调试日志文件 (SHAHIDCAM_debug.html)。当您需要报告问题时，请分享此文件以协助我们排查。关闭本选项将不再记录。\n请注意：开启调试日志可能会在录制时拖慢应用。如非必要，请保持关闭。</string>
     <string name="watermark_preview_heading">预览</string>
     <string name="watermark_options_heading">选项</string>
     <string name="watermark_style_row_title">水印样式</string>
-    <string name="watermark_style_time_fadcam_label">ShahidCam 时间</string>
+    <string name="watermark_style_time_shahidcam_label">ShahidCam 时间</string>
     <string name="watermark_style_timeonly_label">时间戳</string>
     <string name="watermark_style_badge_label">仅品牌标签</string>
     <string name="watermark_style_none_label">无水印</string>
@@ -795,8 +795,8 @@
         若继续录制而未保存，当应用缓存意外清除时可能导致此文件丢失。
         ]]></string>
     <string name="recording_already_active">录制已在进行中或已暂停。</string>
-    <string name="faditor_mini_coming_soon">即将推出——轻量级编辑器</string>
-    <string name="faditor_mini_toast">ShahidEditor Mini—— 即将到来</string>
+    <string name="shahideditor_mini_coming_soon">即将推出——轻量级编辑器</string>
+    <string name="shahideditor_mini_toast">ShahidEditor Mini—— 即将到来</string>
     <string name="helper_record_audio">切换视频中是否录制麦克风音频。</string>
     <string name="helper_audio_input_source">选择要使用的已连接麦克风/输入源。</string>
     <string name="helper_raw_audio">录制麦克风的原始声音，不使用手机的自动降噪和音量平衡。如果您计划之后自己编辑音频，这非常合适。适用于新录音。</string>
@@ -851,7 +851,7 @@
     <string name="applock_helper_create">使用4位数字PIN码、密码或指纹为“录制”标签页创建保护。当应用进入后台时，该标签页将自动锁定。</string>
     <string name="applock_helper_manage_disabled">标签页锁定PIN码已设置。开启切换开关，即可在返回应用时要求输入PIN码。</string>
     <string name="applock_helper_enabled">标签页锁定已激活。离开应用后，当再次打开“录制”标签页时将需要输入PIN码。</string>
-    <string name="edit_with_faditorx">使用 ShahidEditor X 编辑</string>
+    <string name="edit_with_shahideditorx">使用 ShahidEditor X 编辑</string>
     <string name="remote_coming_soon_badge">即将推出</string>
     <string name="changelog_label">更新日志</string>
     <string name="general">通用设置</string>
@@ -921,8 +921,8 @@
     <string name="camera_error_service">相机服务错误</string>
     <string name="camera_error_unknown">未知相机错误</string>
     <string name="debug_log_tools_title">调试日志</string>
-    <string name="debug_log_tools_subtitle">预览、搜索、共享或删除 FADCAM_debug.html</string>
-    <string name="debug_log_tools_helper">显示调试日志文件 (FADCAM_debug.html)。启用调试日志记录可能会增加性能开销——除非您正面临程序错误且需要共享日志，否则请勿启用。请使用搜索框进行过滤。</string>
+    <string name="debug_log_tools_subtitle">预览、搜索、共享或删除 SHAHIDCAM_debug.html</string>
+    <string name="debug_log_tools_helper">显示调试日志文件 (SHAHIDCAM_debug.html)。启用调试日志记录可能会增加性能开销——除非您正面临程序错误且需要共享日志，否则请勿启用。请使用搜索框进行过滤。</string>
     <string name="debug_log_share_title">共享调试日志</string>
     <string name="debug_log_share_subtitle">打开系统分享界面</string>
     <string name="debug_log_delete_title">删除调试日志</string>
@@ -995,7 +995,7 @@
     <string name="quick_speed_option_1_75">1.75x</string>
     <string name="quick_speed_option_2">2x</string>
     <string name="quick_speed_option_2_5">2.5x</string>
-    <string name="watermark_preview_sample_fadcam">由 ShahidCam 拍摄 - %1$s</string>
+    <string name="watermark_preview_sample_shahidcam">由 ShahidCam 拍摄 - %1$s</string>
     <string name="watermark_preview_sample_timeonly">%1$s</string>
     <string name="controls_hide_delay_subtitle">%1$ds</string>
     <string name="seek_amount_subtitle">%1$ds</string>
@@ -1005,7 +1005,7 @@
     <string name="settings_section_app">App</string>
     <string name="storage_helper_current_custom_uri_prefix">URI:</string>
     <string name="icon_zoom_in_ligature">zoom_in</string>
-    <string name="nav_faditor_mini">ShahidEditor</string>
+    <string name="nav_shahideditor_mini">ShahidEditor</string>
     <string name="arabic_date_sample_full_arabic">٧ صفر ١٤٤٧</string>
     <string name="arabic_date_sample_mixed">7 صفر 1447</string>
     <string name="arabic_date_sample_english">7 Safar 1447</string>
@@ -1016,19 +1016,19 @@
     <string name="theme_pookiepink">软糯粉甜</string>
     <string name="theme_snowveil">雪色薄纱</string>
     <string name="coming_soon_toast">即将到来！因沙安拉。</string>
-    <string name="faditor_mini_title">ShahidEditor Mini</string>
+    <string name="shahideditor_mini_title">ShahidEditor Mini</string>
     <string name="full_changelog_info">完整的更新日志请前往首页：打开汉堡菜单，然后选择「更新内容」。</string>
-    <string name="fadrec_start_screen_recording">开始屏幕录制</string>
-    <string name="fadrec_stop_screen_recording">停止屏幕录制</string>
-    <string name="fadrec_pause_screen_recording">暂停屏幕录制</string>
-    <string name="fadrec_resume_screen_recording">继续屏幕录制</string>
-    <string name="fadrec_screen_recording_started">屏幕录制已开始</string>
-    <string name="fadrec_screen_recording_stopped">屏幕录制已停止</string>
-    <string name="fadrec_screen_recording_paused">屏幕录制已暂停</string>
-    <string name="fadrec_screen_recording_resumed">屏幕录制已继续</string>
-    <string name="fadrec_notification_title">屏幕录制</string>
-    <string name="fadrec_notification_recording">正在录制屏幕…</string>
-    <string name="fadrec_notification_paused">录制已暂停</string>
+    <string name="shahidrec_start_screen_recording">开始屏幕录制</string>
+    <string name="shahidrec_stop_screen_recording">停止屏幕录制</string>
+    <string name="shahidrec_pause_screen_recording">暂停屏幕录制</string>
+    <string name="shahidrec_resume_screen_recording">继续屏幕录制</string>
+    <string name="shahidrec_screen_recording_started">屏幕录制已开始</string>
+    <string name="shahidrec_screen_recording_stopped">屏幕录制已停止</string>
+    <string name="shahidrec_screen_recording_paused">屏幕录制已暂停</string>
+    <string name="shahidrec_screen_recording_resumed">屏幕录制已继续</string>
+    <string name="shahidrec_notification_title">屏幕录制</string>
+    <string name="shahidrec_notification_recording">正在录制屏幕…</string>
+    <string name="shahidrec_notification_paused">录制已暂停</string>
     <string name="floating_controls_title">菜单</string>
     <string name="floating_controls_permission_needed">需要覆盖权限</string>
     <string name="floating_controls_permission_title">需要覆盖权限</string>
@@ -1051,10 +1051,10 @@
     <string name="snap_guides">对齐参考线</string>
     <string name="add_text">添加文本</string>
     <string name="add_shape">添加形状</string>
-    <string name="fadrec_ready_to_record">准备就绪，可以录制屏幕</string>
-    <string name="fadrec_ready_to_record_subtitle">点击开始</string>
-    <string name="fadrec_permission_denied">屏幕录制权限被拒绝</string>
-    <string name="fadrec_mode_title">ScreenRec • 屏幕录制</string>
+    <string name="shahidrec_ready_to_record">准备就绪，可以录制屏幕</string>
+    <string name="shahidrec_ready_to_record_subtitle">点击开始</string>
+    <string name="shahidrec_permission_denied">屏幕录制权限被拒绝</string>
+    <string name="shahidrec_mode_title">ScreenRec • 屏幕录制</string>
     <string name="whats_new_title">新功能</string>
     <string name="whats_new_no_browser">未找到可以打开此链接的应用</string>
     <string name="whats_new_subtitle">查看最新功能和更新</string>
@@ -1087,31 +1087,31 @@
     <string name="manage_projects">管理项目</string>
     <string name="name_your_project">为您的项目命名</string>
     <string name="project_naming_message">为您的项目起一个容易记住的名字和描述，以便整理您的录制内容</string>
-    <string name="fadrec_projects">ScreenRec 项目</string>
+    <string name="shahidrec_projects">ScreenRec 项目</string>
     <string name="delete_project">删除项目</string>
     <string name="delete_all">删除全部</string>
     <string name="new_project">新建项目</string>
     <string name="delete">删除</string>
-    <string name="fadcam_pro_title">ShahidCam Pro</string>
-    <string name="fadcam_pro_subtitle">完全私密的高级功能</string>
-    <string name="fadcam_pro_get_button">获取 ShahidCam Pro</string>
-    <string name="fadcam_pro_free">免费</string>
-    <string name="fadcam_pro_lab_label">实验室 (Lab)</string>
-    <string name="fadcam_pro_early_bird">🎉 在 2025 年 12 月 23 日之前免费！之后，只需 $15 即可获取终身访问权限。</string>
-    <string name="fadcam_pro_paid_offer">在 2025 年 12 月 23 日之后，以 $15 获取终身访问权限 — 一次性付款，永久更新。</string>
-    <string name="fadcam_pro_benefit_early_access">抢先体验：在公开发布前获取最新版本</string>
-    <string name="fadcam_pro_benefit_lifetime_updates">终身更新：持续获取新功能、性能改进和错误修复</string>
-    <string name="fadcam_pro_benefit_support">即时支持：通过 Discord 提供直接的工单帮助</string>
-    <string name="fadcam_pro_coming_soon">Pro+ 和 Lab 功能即将到来，包括自定义图标上传、自定义应用名称和 Drive 云同步。</string>
-    <string name="fadcam_pro_support_message">ShahidCam 将永远保持免费，无广告、无追踪。这个项目完全由我一个人独立维护，需要持续的时间和精力。升级到 Pro（目前免费）有助于支持开发，作为回报，我能够在完整的免费版本之外，通过 Pro 功能提供额外价值。感谢您支持这个项目 :)</string>
-    <string name="fadcam_pro_separate_apk">独立应用 • 与 ShahidCam 配合使用</string>
-    <string name="fadcam_pro_feature_everything_icon">全部</string>
-    <string name="fadcam_pro_feature_everything">全部</string>
-    <string name="fadcam_pro_feature_custom_icon">自定义应用图标</string>
-    <string name="fadcam_pro_feature_notification_icon">通知私密图标</string>
-    <string name="fadcam_pro_feature_user_icon">用户上传图标</string>
-    <string name="fadcam_pro_feature_app_name">自定义应用名称</string>
-    <string name="fadcam_pro_feature_faddrive">Drive 云同步</string>
+    <string name="shahidcam_pro_title">ShahidCam Pro</string>
+    <string name="shahidcam_pro_subtitle">完全私密的高级功能</string>
+    <string name="shahidcam_pro_get_button">获取 ShahidCam Pro</string>
+    <string name="shahidcam_pro_free">免费</string>
+    <string name="shahidcam_pro_lab_label">实验室 (Lab)</string>
+    <string name="shahidcam_pro_early_bird">🎉 在 2025 年 12 月 23 日之前免费！之后，只需 $15 即可获取终身访问权限。</string>
+    <string name="shahidcam_pro_paid_offer">在 2025 年 12 月 23 日之后，以 $15 获取终身访问权限 — 一次性付款，永久更新。</string>
+    <string name="shahidcam_pro_benefit_early_access">抢先体验：在公开发布前获取最新版本</string>
+    <string name="shahidcam_pro_benefit_lifetime_updates">终身更新：持续获取新功能、性能改进和错误修复</string>
+    <string name="shahidcam_pro_benefit_support">即时支持：通过 Discord 提供直接的工单帮助</string>
+    <string name="shahidcam_pro_coming_soon">Pro+ 和 Lab 功能即将到来，包括自定义图标上传、自定义应用名称和 Drive 云同步。</string>
+    <string name="shahidcam_pro_support_message">ShahidCam 将永远保持免费，无广告、无追踪。这个项目完全由我一个人独立维护，需要持续的时间和精力。升级到 Pro（目前免费）有助于支持开发，作为回报，我能够在完整的免费版本之外，通过 Pro 功能提供额外价值。感谢您支持这个项目 :)</string>
+    <string name="shahidcam_pro_separate_apk">独立应用 • 与 ShahidCam 配合使用</string>
+    <string name="shahidcam_pro_feature_everything_icon">全部</string>
+    <string name="shahidcam_pro_feature_everything">全部</string>
+    <string name="shahidcam_pro_feature_custom_icon">自定义应用图标</string>
+    <string name="shahidcam_pro_feature_notification_icon">通知私密图标</string>
+    <string name="shahidcam_pro_feature_user_icon">用户上传图标</string>
+    <string name="shahidcam_pro_feature_app_name">自定义应用名称</string>
+    <string name="shahidcam_pro_feature_shahiddrive">Drive 云同步</string>
     <string name="player_info_title">关于视频播放器</string>
     <string name="player_info_content"><![CDATA[
 <b>分段式 MP4 格式</b><br/><br/>
@@ -1637,252 +1637,252 @@ ShahidCam 为录制使用分段式 MP4 格式。这意味着视频被保存为�
 <!-- export_status -->
 <string name="export_status">导出状态</string>
 
-<!-- fadcam_pro_column_label -->
-<string name="fadcam_pro_column_label">专业版</string>
+<!-- shahidcam_pro_column_label -->
+<string name="shahidcam_pro_column_label">专业版</string>
 
-<!-- fadcam_pro_header_button -->
-<string name="fadcam_pro_header_button">获取 Pro</string>
+<!-- shahidcam_pro_header_button -->
+<string name="shahidcam_pro_header_button">获取 Pro</string>
 
-<!-- fadcam_pro_plus_label -->
-<string name="fadcam_pro_plus_label">专业版</string>
+<!-- shahidcam_pro_plus_label -->
+<string name="shahidcam_pro_plus_label">专业版</string>
 
-<!-- fadcam_pro_proplus_label -->
-<string name="fadcam_pro_proplus_label">Pro+</string>
+<!-- shahidcam_pro_proplus_label -->
+<string name="shahidcam_pro_proplus_label">Pro+</string>
 
-<!-- faditor_add_asset_image -->
-<string name="faditor_add_asset_image">图片（5秒静态）</string>
+<!-- shahideditor_add_asset_image -->
+<string name="shahideditor_add_asset_image">图片（5秒静态）</string>
 
-<!-- faditor_add_asset_title -->
-<string name="faditor_add_asset_title">添加素材</string>
+<!-- shahideditor_add_asset_title -->
+<string name="shahideditor_add_asset_title">添加素材</string>
 
-<!-- faditor_add_asset_video -->
-<string name="faditor_add_asset_video">视频片段</string>
+<!-- shahideditor_add_asset_video -->
+<string name="shahideditor_add_asset_video">视频片段</string>
 
-<!-- faditor_asset_added -->
-<string name="faditor_asset_added">素材已添加到时间线</string>
+<!-- shahideditor_asset_added -->
+<string name="shahideditor_asset_added">素材已添加到时间线</string>
 
-<!-- faditor_asset_error -->
-<string name="faditor_asset_error">无法添加素材</string>
+<!-- shahideditor_asset_error -->
+<string name="shahideditor_asset_error">无法添加素材</string>
 
-<!-- faditor_audio_added -->
-<string name="faditor_audio_added">音频已添加到时间线</string>
+<!-- shahideditor_audio_added -->
+<string name="shahideditor_audio_added">音频已添加到时间线</string>
 
-<!-- faditor_audio_extract_current -->
-<string name="faditor_audio_extract_current">从视频提取</string>
+<!-- shahideditor_audio_extract_current -->
+<string name="shahideditor_audio_extract_current">从视频提取</string>
 
-<!-- faditor_audio_extract_current_desc -->
-<string name="faditor_audio_extract_current_desc">从当前视频中提取音轨</string>
+<!-- shahideditor_audio_extract_current_desc -->
+<string name="shahideditor_audio_extract_current_desc">从当前视频中提取音轨</string>
 
-<!-- faditor_audio_extract_failed -->
-<string name="faditor_audio_extract_failed">无法提取音频</string>
+<!-- shahideditor_audio_extract_failed -->
+<string name="shahideditor_audio_extract_failed">无法提取音频</string>
 
-<!-- faditor_audio_extracted -->
-<string name="faditor_audio_extracted">音频已提取并添加到时间线</string>
+<!-- shahideditor_audio_extracted -->
+<string name="shahideditor_audio_extracted">音频已提取并添加到时间线</string>
 
-<!-- faditor_audio_extracting -->
-<string name="faditor_audio_extracting">正在提取音频…</string>
+<!-- shahideditor_audio_extracting -->
+<string name="shahideditor_audio_extracting">正在提取音频…</string>
 
-<!-- faditor_audio_no_track -->
-<string name="faditor_audio_no_track">此视频中未找到音轨</string>
+<!-- shahideditor_audio_no_track -->
+<string name="shahideditor_audio_no_track">此视频中未找到音轨</string>
 
-<!-- faditor_back_press_exit -->
-<string name="faditor_back_press_exit">再次按下以退出编辑器</string>
+<!-- shahideditor_back_press_exit -->
+<string name="shahideditor_back_press_exit">再次按下以退出编辑器</string>
 
-<!-- faditor_browse_device -->
-<string name="faditor_browse_device">浏览设备</string>
+<!-- shahideditor_browse_device -->
+<string name="shahideditor_browse_device">浏览设备</string>
 
-<!-- faditor_browse_device_desc -->
-<string name="faditor_browse_device_desc">从设备中选择任意视频</string>
+<!-- shahideditor_browse_device_desc -->
+<string name="shahideditor_browse_device_desc">从设备中选择任意视频</string>
 
-<!-- faditor_cancel -->
-<string name="faditor_cancel">取消</string>
+<!-- shahideditor_cancel -->
+<string name="shahideditor_cancel">取消</string>
 
-<!-- faditor_canvas_applied -->
-<string name="faditor_canvas_applied">画布已设置为 %s</string>
+<!-- shahideditor_canvas_applied -->
+<string name="shahideditor_canvas_applied">画布已设置为 %s</string>
 
-<!-- faditor_canvas_title -->
-<string name="faditor_canvas_title">画布</string>
+<!-- shahideditor_canvas_title -->
+<string name="shahideditor_canvas_title">画布</string>
 
-<!-- faditor_capabilities_title -->
-<string name="faditor_capabilities_title">可执行的操作</string>
+<!-- shahideditor_capabilities_title -->
+<string name="shahideditor_capabilities_title">可执行的操作</string>
 
-<!-- faditor_close -->
-<string name="faditor_close">关闭编辑器</string>
+<!-- shahideditor_close -->
+<string name="shahideditor_close">关闭编辑器</string>
 
-<!-- faditor_close_confirm_action -->
-<string name="faditor_close_confirm_action">关闭并保存</string>
+<!-- shahideditor_close_confirm_action -->
+<string name="shahideditor_close_confirm_action">关闭并保存</string>
 
-<!-- faditor_close_confirm_helper -->
-<string name="faditor_close_confirm_helper">您的项目将自动保存。您可以随时从最近项目中重新打开。</string>
+<!-- shahideditor_close_confirm_helper -->
+<string name="shahideditor_close_confirm_helper">您的项目将自动保存。您可以随时从最近项目中重新打开。</string>
 
-<!-- faditor_close_confirm_subtitle -->
-<string name="faditor_close_confirm_subtitle">保存项目并返回</string>
+<!-- shahideditor_close_confirm_subtitle -->
+<string name="shahideditor_close_confirm_subtitle">保存项目并返回</string>
 
-<!-- faditor_close_confirm_title -->
-<string name="faditor_close_confirm_title">关闭编辑器？</string>
+<!-- shahideditor_close_confirm_title -->
+<string name="shahideditor_close_confirm_title">关闭编辑器？</string>
 
-<!-- faditor_crop_applied -->
-<string name="faditor_crop_applied">裁剪已应用</string>
+<!-- shahideditor_crop_applied -->
+<string name="shahideditor_crop_applied">裁剪已应用</string>
 
-<!-- faditor_crop_cancelled -->
-<string name="faditor_crop_cancelled">裁剪已取消</string>
+<!-- shahideditor_crop_cancelled -->
+<string name="shahideditor_crop_cancelled">裁剪已取消</string>
 
-<!-- faditor_crop_free -->
-<string name="faditor_crop_free">自由</string>
+<!-- shahideditor_crop_free -->
+<string name="shahideditor_crop_free">自由</string>
 
-<!-- faditor_crop_reset -->
-<string name="faditor_crop_reset">裁剪已重置</string>
+<!-- shahideditor_crop_reset -->
+<string name="shahideditor_crop_reset">裁剪已重置</string>
 
-<!-- faditor_crop_title -->
-<string name="faditor_crop_title">裁剪宽高比</string>
+<!-- shahideditor_crop_title -->
+<string name="shahideditor_crop_title">裁剪宽高比</string>
 
-<!-- faditor_delete_confirm -->
-<string name="faditor_delete_confirm">删除</string>
+<!-- shahideditor_delete_confirm -->
+<string name="shahideditor_delete_confirm">删除</string>
 
-<!-- faditor_delete_last_segment -->
-<string name="faditor_delete_last_segment">无法删除唯一的片段</string>
+<!-- shahideditor_delete_last_segment -->
+<string name="shahideditor_delete_last_segment">无法删除唯一的片段</string>
 
-<!-- faditor_delete_projects_message -->
-<string name="faditor_delete_projects_message">删除 %1$d 个项目？此操作无法撤消。</string>
+<!-- shahideditor_delete_projects_message -->
+<string name="shahideditor_delete_projects_message">删除 %1$d 个项目？此操作无法撤消。</string>
 
-<!-- faditor_delete_projects_title -->
-<string name="faditor_delete_projects_title">删除项目？</string>
+<!-- shahideditor_delete_projects_title -->
+<string name="shahideditor_delete_projects_title">删除项目？</string>
 
-<!-- faditor_editor_title -->
-<string name="faditor_editor_title">ShahidEditor Mini</string>
+<!-- shahideditor_editor_title -->
+<string name="shahideditor_editor_title">ShahidEditor Mini</string>
 
-<!-- faditor_empty_desc -->
-<string name="faditor_empty_desc">点击"开始新项目"选择视频并开始编辑</string>
+<!-- shahideditor_empty_desc -->
+<string name="shahideditor_empty_desc">点击"开始新项目"选择视频并开始编辑</string>
 
-<!-- faditor_empty_title -->
-<string name="faditor_empty_title">暂无项目</string>
+<!-- shahideditor_empty_title -->
+<string name="shahideditor_empty_title">暂无项目</string>
 
-<!-- faditor_error_no_video -->
-<string name="faditor_error_no_video">未选择视频</string>
+<!-- shahideditor_error_no_video -->
+<string name="shahideditor_error_no_video">未选择视频</string>
 
-<!-- faditor_error_picker -->
-<string name="faditor_error_picker">无法打开文件选择器</string>
+<!-- shahideditor_error_picker -->
+<string name="shahideditor_error_picker">无法打开文件选择器</string>
 
-<!-- faditor_export -->
-<string name="faditor_export">导出</string>
+<!-- shahideditor_export -->
+<string name="shahideditor_export">导出</string>
 
-<!-- faditor_export_back -->
-<string name="faditor_export_back">返回</string>
+<!-- shahideditor_export_back -->
+<string name="shahideditor_export_back">返回</string>
 
-<!-- faditor_export_back_confirm -->
-<string name="faditor_export_back_confirm">导出进行中。返回编辑器？</string>
+<!-- shahideditor_export_back_confirm -->
+<string name="shahideditor_export_back_confirm">导出进行中。返回编辑器？</string>
 
-<!-- faditor_export_cancelled -->
-<string name="faditor_export_cancelled">导出已取消</string>
+<!-- shahideditor_export_cancelled -->
+<string name="shahideditor_export_cancelled">导出已取消</string>
 
-<!-- faditor_export_complete_summary -->
-<string name="faditor_export_complete_summary">您的视频已保存到记录选项卡。</string>
+<!-- shahideditor_export_complete_summary -->
+<string name="shahideditor_export_complete_summary">您的视频已保存到记录选项卡。</string>
 
-<!-- faditor_export_complete_title -->
-<string name="faditor_export_complete_title">导出完成</string>
+<!-- shahideditor_export_complete_title -->
+<string name="shahideditor_export_complete_title">导出完成</string>
 
-<!-- faditor_export_completed -->
-<string name="faditor_export_completed">导出完成</string>
+<!-- shahideditor_export_completed -->
+<string name="shahideditor_export_completed">导出完成</string>
 
-<!-- faditor_export_confirm_action -->
-<string name="faditor_export_confirm_action">立即导出</string>
+<!-- shahideditor_export_confirm_action -->
+<string name="shahideditor_export_confirm_action">立即导出</string>
 
-<!-- faditor_export_confirm_helper -->
-<string name="faditor_export_confirm_helper">%1$s • %2$d 个片段%3$s
+<!-- shahideditor_export_confirm_helper -->
+<string name="shahideditor_export_confirm_helper">%1$s • %2$d 个片段%3$s
 导出以后台服务运行 — 您可以关闭应用，导出将继续。</string>
 
-<!-- faditor_export_confirm_subtitle -->
-<string name="faditor_export_confirm_subtitle">导出将在后台继续</string>
+<!-- shahideditor_export_confirm_subtitle -->
+<string name="shahideditor_export_confirm_subtitle">导出将在后台继续</string>
 
-<!-- faditor_export_confirm_title -->
-<string name="faditor_export_confirm_title">导出视频</string>
+<!-- shahideditor_export_confirm_title -->
+<string name="shahideditor_export_confirm_title">导出视频</string>
 
-<!-- faditor_export_done -->
-<string name="faditor_export_done">完成</string>
+<!-- shahideditor_export_done -->
+<string name="shahideditor_export_done">完成</string>
 
-<!-- faditor_export_error -->
-<string name="faditor_export_error">导出失败：%1$s</string>
+<!-- shahideditor_export_error -->
+<string name="shahideditor_export_error">导出失败：%1$s</string>
 
-<!-- faditor_export_eta -->
-<string name="faditor_export_eta">预计时间：%s</string>
+<!-- shahideditor_export_eta -->
+<string name="shahideditor_export_eta">预计时间：%s</string>
 
-<!-- faditor_export_failed -->
-<string name="faditor_export_failed">导出失败</string>
+<!-- shahideditor_export_failed -->
+<string name="shahideditor_export_failed">导出失败</string>
 
-<!-- faditor_export_in_progress -->
-<string name="faditor_export_in_progress">导出已在进行中</string>
+<!-- shahideditor_export_in_progress -->
+<string name="shahideditor_export_in_progress">导出已在进行中</string>
 
-<!-- faditor_export_info -->
-<string name="faditor_export_info">%1$s • %2$d 个片段%3$s • H.264 + AAC</string>
+<!-- shahideditor_export_info -->
+<string name="shahideditor_export_info">%1$s • %2$d 个片段%3$s • H.264 + AAC</string>
 
-<!-- faditor_export_notif_channel -->
-<string name="faditor_export_notif_channel">ShahidEditor导出</string>
+<!-- shahideditor_export_notif_channel -->
+<string name="shahideditor_export_notif_channel">ShahidEditor导出</string>
 
-<!-- faditor_export_notif_channel_desc -->
-<string name="faditor_export_notif_channel_desc">正在进行的视频导出的通知</string>
+<!-- shahideditor_export_notif_channel_desc -->
+<string name="shahideditor_export_notif_channel_desc">正在进行的视频导出的通知</string>
 
-<!-- faditor_export_notif_error_title -->
-<string name="faditor_export_notif_error_title">导出失败</string>
+<!-- shahideditor_export_notif_error_title -->
+<string name="shahideditor_export_notif_error_title">导出失败</string>
 
-<!-- faditor_export_notif_title -->
-<string name="faditor_export_notif_title">正在导出视频…</string>
+<!-- shahideditor_export_notif_title -->
+<string name="shahideditor_export_notif_title">正在导出视频…</string>
 
-<!-- faditor_export_progress -->
-<string name="faditor_export_progress">正在导出…</string>
+<!-- shahideditor_export_progress -->
+<string name="shahideditor_export_progress">正在导出…</string>
 
-<!-- faditor_export_success -->
-<string name="faditor_export_success">视频导出成功</string>
+<!-- shahideditor_export_success -->
+<string name="shahideditor_export_success">视频导出成功</string>
 
-<!-- faditor_exporting -->
-<string name="faditor_exporting">正在导出…</string>
+<!-- shahideditor_exporting -->
+<string name="shahideditor_exporting">正在导出…</string>
 
-<!-- faditor_exporting_percent -->
-<string name="faditor_exporting_percent">正在导出… %1$d%%</string>
+<!-- shahideditor_exporting_percent -->
+<string name="shahideditor_exporting_percent">正在导出… %1$d%%</string>
 
-<!-- faditor_fadcam_source -->
-<string name="faditor_fadcam_source">ShahidCam</string>
+<!-- shahideditor_shahidcam_source -->
+<string name="shahideditor_shahidcam_source">ShahidCam</string>
 
-<!-- faditor_fadrec_source -->
-<string name="faditor_fadrec_source">ScreenRec</string>
+<!-- shahideditor_shahidrec_source -->
+<string name="shahideditor_shahidrec_source">ScreenRec</string>
 
-<!-- faditor_feature_convert -->
-<string name="faditor_feature_convert">智能转换</string>
+<!-- shahideditor_feature_convert -->
+<string name="shahideditor_feature_convert">智能转换</string>
 
-<!-- faditor_feature_convert_desc -->
-<string name="faditor_feature_convert_desc">自动将防崩溃录制转换为可拖动的MP4，确保在各处流畅播放</string>
+<!-- shahideditor_feature_convert_desc -->
+<string name="shahideditor_feature_convert_desc">自动将防崩溃录制转换为可拖动的MP4，确保在各处流畅播放</string>
 
-<!-- faditor_feature_export -->
-<string name="faditor_feature_export">快速导出</string>
+<!-- shahideditor_feature_export -->
+<string name="shahideditor_feature_export">快速导出</string>
 
-<!-- faditor_feature_export_desc -->
-<string name="faditor_feature_export_desc">使用硬件加速编码导出为MP4</string>
+<!-- shahideditor_feature_export_desc -->
+<string name="shahideditor_feature_export_desc">使用硬件加速编码导出为MP4</string>
 
-<!-- faditor_feature_preview -->
-<string name="faditor_feature_preview">实时预览</string>
+<!-- shahideditor_feature_preview -->
+<string name="shahideditor_feature_preview">实时预览</string>
 
-<!-- faditor_feature_preview_desc -->
-<string name="faditor_feature_preview_desc">即时播放您裁剪的片段</string>
+<!-- shahideditor_feature_preview_desc -->
+<string name="shahideditor_feature_preview_desc">即时播放您裁剪的片段</string>
 
-<!-- faditor_feature_privacy -->
-<string name="faditor_feature_privacy">完全离线</string>
+<!-- shahideditor_feature_privacy -->
+<string name="shahideditor_feature_privacy">完全离线</string>
 
-<!-- faditor_feature_privacy_desc -->
-<string name="faditor_feature_privacy_desc">所有编辑均在本地进行 — 无需上传，无需云</string>
+<!-- shahideditor_feature_privacy_desc -->
+<string name="shahideditor_feature_privacy_desc">所有编辑均在本地进行 — 无需上传，无需云</string>
 
-<!-- faditor_feature_trim -->
-<string name="faditor_feature_trim">精确裁剪</string>
+<!-- shahideditor_feature_trim -->
+<string name="shahideditor_feature_trim">精确裁剪</string>
 
-<!-- faditor_feature_trim_desc -->
-<string name="faditor_feature_trim_desc">将视频裁剪到您想要的精确帧</string>
+<!-- shahideditor_feature_trim_desc -->
+<string name="shahideditor_feature_trim_desc">将视频裁剪到您想要的精确帧</string>
 
-<!-- faditor_flip_title -->
-<string name="faditor_flip_title">翻转</string>
+<!-- shahideditor_flip_title -->
+<string name="shahideditor_flip_title">翻转</string>
 
-<!-- faditor_home_tagline -->
-<string name="faditor_home_tagline">轻量级视频编辑器</string>
+<!-- shahideditor_home_tagline -->
+<string name="shahideditor_home_tagline">轻量级视频编辑器</string>
 
-<!-- faditor_info_convert_desc -->
-<string name="faditor_info_convert_desc">ShahidCam以防崩溃格式（称为分段MP4即fMP4）录制。与具有一个最终容器的标准MP4不同，fMP4将视频写入小的独立块。这意味着即使应用崩溃或录制突然停止，您的录像也能保持完整。
+<!-- shahideditor_info_convert_desc -->
+<string name="shahideditor_info_convert_desc">ShahidCam以防崩溃格式（称为分段MP4即fMP4）录制。与具有一个最终容器的标准MP4不同，fMP4将视频写入小的独立块。这意味着即使应用崩溃或录制突然停止，您的录像也能保持完整。
 
 然而，外部视频播放器、相册应用和文件管理器将无法拖动、预览或显示这些文件的正确时长。这不是一个缺陷 — 这是为提高可靠性而做出的有意的设计权衡。
 
@@ -1890,186 +1890,186 @@ ShahidCam 为录制使用分段式 MP4 格式。这意味着视频被保存为�
 
 转换方法：只需在此处（ShahidEditor Mini）打开视频并点击导出。转换后的标准MP4将出现在您的记录选项卡中，即可保存到相册或分享到任何地方。该过程即时且无损 — 无需重新编码或降低质量。</string>
 
-<!-- faditor_info_convert_title -->
-<string name="faditor_info_convert_title">智能转换</string>
+<!-- shahideditor_info_convert_title -->
+<string name="shahideditor_info_convert_title">智能转换</string>
 
-<!-- faditor_info_export_desc -->
-<string name="faditor_info_export_desc">导出的视频将保存到您的活跃存储位置（与设置中配置的相同），前缀为"ShahidEditor_"后跟时间戳。它们会出现在记录选项卡中，与原始录制文件并列。</string>
+<!-- shahideditor_info_export_desc -->
+<string name="shahideditor_info_export_desc">导出的视频将保存到您的活跃存储位置（与设置中配置的相同），前缀为"ShahidEditor_"后跟时间戳。它们会出现在记录选项卡中，与原始录制文件并列。</string>
 
-<!-- faditor_info_export_title -->
-<string name="faditor_info_export_title">导出的文件</string>
+<!-- shahideditor_info_export_title -->
+<string name="shahideditor_info_export_title">导出的文件</string>
 
-<!-- faditor_info_how_desc -->
-<string name="faditor_info_how_desc">从您的设备或ShahidCam录制中选择任意视频。使用时间线逐帧裁剪，然后导出。所有处理均在您的设备本地完成 — 没有任何内容上传。
+<!-- shahideditor_info_how_desc -->
+<string name="shahideditor_info_how_desc">从您的设备或ShahidCam录制中选择任意视频。使用时间线逐帧裁剪，然后导出。所有处理均在您的设备本地完成 — 没有任何内容上传。
 
 您的编辑进度每几秒自动保存一次，在离开编辑器时也会保存，因此即使应用意外关闭也不会丢失工作。</string>
 
-<!-- faditor_info_how_title -->
-<string name="faditor_info_how_title">工作原理</string>
+<!-- shahideditor_info_how_title -->
+<string name="shahideditor_info_how_title">工作原理</string>
 
-<!-- faditor_info_projects_desc -->
-<string name="faditor_info_projects_desc">您的所有编辑会话都会显示以便快速访问。每个项目以小型JSON文件的形式存储在您的设备上，包含视频URI、裁剪点和时间戳 — 不会复制您的视频。项目每几秒自动保存一次，因此进度永不丢失。
+<!-- shahideditor_info_projects_desc -->
+<string name="shahideditor_info_projects_desc">您的所有编辑会话都会显示以便快速访问。每个项目以小型JSON文件的形式存储在您的设备上，包含视频URI、裁剪点和时间戳 — 不会复制您的视频。项目每几秒自动保存一次，因此进度永不丢失。
 
 您可以使用多选清单图标删除不再需要的项目。删除项目仅删除编辑会话数据；您的原始视频文件保持不变。</string>
 
-<!-- faditor_info_projects_title -->
-<string name="faditor_info_projects_title">最近项目</string>
+<!-- shahideditor_info_projects_title -->
+<string name="shahideditor_info_projects_title">最近项目</string>
 
-<!-- faditor_info_subtitle -->
-<string name="faditor_info_subtitle">关于内置编辑器您需要了解的一切</string>
+<!-- shahideditor_info_subtitle -->
+<string name="shahideditor_info_subtitle">关于内置编辑器您需要了解的一切</string>
 
-<!-- faditor_info_temp_desc -->
-<string name="faditor_info_temp_desc">当您加载fMP4视频进行编辑时，ShahidEditor会检测文件是否需要"重新封装" — 一种无需重新编码即可添加拖放标记的快速转换。重新封装的文件会缓存在您的设备上，以便在您再次编辑同一视频时复用，节省时间和处理资源。
+<!-- shahideditor_info_temp_desc -->
+<string name="shahideditor_info_temp_desc">当您加载fMP4视频进行编辑时，ShahidEditor会检测文件是否需要"重新封装" — 一种无需重新编码即可添加拖放标记的快速转换。重新封装的文件会缓存在您的设备上，以便在您再次编辑同一视频时复用，节省时间和处理资源。
 
 您可以在每个项目旁看到其缓存大小（列在修改日期旁）。如果设备存储空间不足，您可以删除未使用的项目以清除其缓存的重新封装文件。
 
 这些临时缓存文件在您从此选项卡删除项目时会自动清理。</string>
 
-<!-- faditor_info_temp_title -->
-<string name="faditor_info_temp_title">临时文件和缓存</string>
+<!-- shahideditor_info_temp_title -->
+<string name="shahideditor_info_temp_title">临时文件和缓存</string>
 
-<!-- faditor_info_title -->
-<string name="faditor_info_title">关于ShahidEditor Mini</string>
+<!-- shahideditor_info_title -->
+<string name="shahideditor_info_title">关于ShahidEditor Mini</string>
 
-<!-- faditor_mini_subtitle -->
-<string name="faditor_mini_subtitle">精确裁剪和导出您的视频</string>
+<!-- shahideditor_mini_subtitle -->
+<string name="shahideditor_mini_subtitle">精确裁剪和导出您的视频</string>
 
-<!-- faditor_new_project -->
-<string name="faditor_new_project">新建项目</string>
+<!-- shahideditor_new_project -->
+<string name="shahideditor_new_project">新建项目</string>
 
-<!-- faditor_no_recordings -->
-<string name="faditor_no_recordings">尚未找到录制文件。开始使用ShahidCam录制即可在这里看到您的视频。</string>
+<!-- shahideditor_no_recordings -->
+<string name="shahideditor_no_recordings">尚未找到录制文件。开始使用ShahidCam录制即可在这里看到您的视频。</string>
 
-<!-- faditor_play_pause -->
-<string name="faditor_play_pause">播放或暂停</string>
+<!-- shahideditor_play_pause -->
+<string name="shahideditor_play_pause">播放或暂停</string>
 
-<!-- faditor_recent_projects -->
-<string name="faditor_recent_projects">最近项目</string>
+<!-- shahideditor_recent_projects -->
+<string name="shahideditor_recent_projects">最近项目</string>
 
-<!-- faditor_recordings_helper -->
-<string name="faditor_recordings_helper">从您的活跃存储位置使用ShahidCam录制的视频</string>
+<!-- shahideditor_recordings_helper -->
+<string name="shahideditor_recordings_helper">从您的活跃存储位置使用ShahidCam录制的视频</string>
 
-<!-- faditor_redo -->
-<string name="faditor_redo">重做</string>
+<!-- shahideditor_redo -->
+<string name="shahideditor_redo">重做</string>
 
-<!-- faditor_remuxing -->
-<string name="faditor_remuxing">正在优化预览…</string>
+<!-- shahideditor_remuxing -->
+<string name="shahideditor_remuxing">正在优化预览…</string>
 
-<!-- faditor_remuxing_percent -->
-<string name="faditor_remuxing_percent">正在优化… 已处理 %1$d秒</string>
+<!-- shahideditor_remuxing_percent -->
+<string name="shahideditor_remuxing_percent">正在优化… 已处理 %1$d秒</string>
 
-<!-- faditor_scanning -->
-<string name="faditor_scanning">正在扫描录制文件…</string>
+<!-- shahideditor_scanning -->
+<string name="shahideditor_scanning">正在扫描录制文件…</string>
 
-<!-- faditor_segment_deleted -->
-<string name="faditor_segment_deleted">片段已删除</string>
+<!-- shahideditor_segment_deleted -->
+<string name="shahideditor_segment_deleted">片段已删除</string>
 
-<!-- faditor_segment_duplicated -->
-<string name="faditor_segment_duplicated">片段已复制</string>
+<!-- shahideditor_segment_duplicated -->
+<string name="shahideditor_segment_duplicated">片段已复制</string>
 
-<!-- faditor_select_items -->
-<string name="faditor_select_items">选择项目</string>
+<!-- shahideditor_select_items -->
+<string name="shahideditor_select_items">选择项目</string>
 
-<!-- faditor_select_video -->
-<string name="faditor_select_video">选择视频</string>
+<!-- shahideditor_select_video -->
+<string name="shahideditor_select_video">选择视频</string>
 
-<!-- faditor_selected_count -->
-<string name="faditor_selected_count">已选 %1$d 项</string>
+<!-- shahideditor_selected_count -->
+<string name="shahideditor_selected_count">已选 %1$d 项</string>
 
-<!-- faditor_source_chooser_desc -->
-<string name="faditor_source_chooser_desc">从相册选择视频或从ShahidCam录制中选择</string>
+<!-- shahideditor_source_chooser_desc -->
+<string name="shahideditor_source_chooser_desc">从相册选择视频或从ShahidCam录制中选择</string>
 
-<!-- faditor_speed_reset -->
-<string name="faditor_speed_reset">重置为1倍</string>
+<!-- shahideditor_speed_reset -->
+<string name="shahideditor_speed_reset">重置为1倍</string>
 
-<!-- faditor_speed_title -->
-<string name="faditor_speed_title">播放速度</string>
+<!-- shahideditor_speed_title -->
+<string name="shahideditor_speed_title">播放速度</string>
 
-<!-- faditor_split_error -->
-<string name="faditor_split_error">无法在此分割 — 太靠近边缘</string>
+<!-- shahideditor_split_error -->
+<string name="shahideditor_split_error">无法在此分割 — 太靠近边缘</string>
 
-<!-- faditor_split_success -->
-<string name="faditor_split_success">片段已一分为二</string>
+<!-- shahideditor_split_success -->
+<string name="shahideditor_split_success">片段已一分为二</string>
 
-<!-- faditor_start_project -->
-<string name="faditor_start_project">开始新项目</string>
+<!-- shahideditor_start_project -->
+<string name="shahideditor_start_project">开始新项目</string>
 
-<!-- faditor_tool_add -->
-<string name="faditor_tool_add">添加</string>
+<!-- shahideditor_tool_add -->
+<string name="shahideditor_tool_add">添加</string>
 
-<!-- faditor_tool_audio -->
-<string name="faditor_tool_audio">提取音频</string>
+<!-- shahideditor_tool_audio -->
+<string name="shahideditor_tool_audio">提取音频</string>
 
-<!-- faditor_tool_canvas -->
-<string name="faditor_tool_canvas">画布</string>
+<!-- shahideditor_tool_canvas -->
+<string name="shahideditor_tool_canvas">画布</string>
 
-<!-- faditor_tool_crop -->
-<string name="faditor_tool_crop">裁剪</string>
+<!-- shahideditor_tool_crop -->
+<string name="shahideditor_tool_crop">裁剪</string>
 
-<!-- faditor_tool_crop_free -->
-<string name="faditor_tool_crop_free">自由</string>
+<!-- shahideditor_tool_crop_free -->
+<string name="shahideditor_tool_crop_free">自由</string>
 
-<!-- faditor_tool_delete -->
-<string name="faditor_tool_delete">删除</string>
+<!-- shahideditor_tool_delete -->
+<string name="shahideditor_tool_delete">删除</string>
 
-<!-- faditor_tool_duplicate -->
-<string name="faditor_tool_duplicate">复制</string>
+<!-- shahideditor_tool_duplicate -->
+<string name="shahideditor_tool_duplicate">复制</string>
 
-<!-- faditor_tool_flip -->
-<string name="faditor_tool_flip">翻转</string>
+<!-- shahideditor_tool_flip -->
+<string name="shahideditor_tool_flip">翻转</string>
 
-<!-- faditor_tool_muted -->
-<string name="faditor_tool_muted">已静音</string>
+<!-- shahideditor_tool_muted -->
+<string name="shahideditor_tool_muted">已静音</string>
 
-<!-- faditor_tool_rotate -->
-<string name="faditor_tool_rotate">旋转</string>
+<!-- shahideditor_tool_rotate -->
+<string name="shahideditor_tool_rotate">旋转</string>
 
-<!-- faditor_tool_sound -->
-<string name="faditor_tool_sound">声音</string>
+<!-- shahideditor_tool_sound -->
+<string name="shahideditor_tool_sound">声音</string>
 
-<!-- faditor_tool_speed -->
-<string name="faditor_tool_speed">1x</string>
+<!-- shahideditor_tool_speed -->
+<string name="shahideditor_tool_speed">1x</string>
 
-<!-- faditor_tool_split -->
-<string name="faditor_tool_split">分割</string>
+<!-- shahideditor_tool_split -->
+<string name="shahideditor_tool_split">分割</string>
 
-<!-- faditor_tool_trim -->
-<string name="faditor_tool_trim">裁剪</string>
+<!-- shahideditor_tool_trim -->
+<string name="shahideditor_tool_trim">裁剪</string>
 
-<!-- faditor_tool_volume -->
-<string name="faditor_tool_volume">音量</string>
+<!-- shahideditor_tool_volume -->
+<string name="shahideditor_tool_volume">音量</string>
 
-<!-- faditor_undo -->
-<string name="faditor_undo">撤销</string>
+<!-- shahideditor_undo -->
+<string name="shahideditor_undo">撤销</string>
 
-<!-- faditor_version_info -->
-<string name="faditor_version_info">ShahidEditor Mini · 第一阶段 · 裁剪 + 导出</string>
+<!-- shahideditor_version_info -->
+<string name="shahideditor_version_info">ShahidEditor Mini · 第一阶段 · 裁剪 + 导出</string>
 
-<!-- faditor_video_count -->
-<string name="faditor_video_count">%1$d 个视频</string>
+<!-- shahideditor_video_count -->
+<string name="shahideditor_video_count">%1$d 个视频</string>
 
-<!-- faditor_volume_mute -->
-<string name="faditor_volume_mute">静音音频</string>
+<!-- shahideditor_volume_mute -->
+<string name="shahideditor_volume_mute">静音音频</string>
 
-<!-- faditor_volume_title -->
-<string name="faditor_volume_title">音量</string>
+<!-- shahideditor_volume_title -->
+<string name="shahideditor_volume_title">音量</string>
 
-<!-- faditor_volume_unmute -->
-<string name="faditor_volume_unmute">取消静音音频</string>
+<!-- shahideditor_volume_unmute -->
+<string name="shahideditor_volume_unmute">取消静音音频</string>
 
-<!-- faditor_volume_warning -->
-<string name="faditor_volume_warning">超过100%%可能会降低音频质量</string>
+<!-- shahideditor_volume_warning -->
+<string name="shahideditor_volume_warning">超过100%%可能会降低音频质量</string>
 
-<!-- faditor_your_recordings -->
-<string name="faditor_your_recordings">您的录制文件</string>
+<!-- shahideditor_your_recordings -->
+<string name="shahideditor_your_recordings">您的录制文件</string>
 
-<!-- fadrec_audio_source_choose -->
+<!-- shahidrec_audio_source_choose -->
 
-	<string name="fadrec_audio_source_helper">选择屏幕录制捕获的音频。“默认（系统路由）”推荐用于 USB 和有线麦克风——或选择特定设备进行显式路由。</string>
-	<string name="fadrec_audio_source_mic_default">麦克风（默认路由）</string>
-<string name="fadrec_audio_source_choose">选择音频源</string>
+	<string name="shahidrec_audio_source_helper">选择屏幕录制捕获的音频。“默认（系统路由）”推荐用于 USB 和有线麦克风——或选择特定设备进行显式路由。</string>
+	<string name="shahidrec_audio_source_mic_default">麦克风（默认路由）</string>
+<string name="shahidrec_audio_source_choose">选择音频源</string>
 
-<!-- fadrec_audio_source_internal -->
+<!-- shahidrec_audio_source_internal -->
 
 	<string name="screen_rec_audio_device_title">音频输入设备</string>
 	<string name="screen_rec_audio_device_default">默认（系统路由）</string>
@@ -2082,37 +2082,37 @@ ShahidCam 为录制使用分段式 MP4 格式。这意味着视频被保存为�
     <string name="records_repair_banner_message_interrupted">%1$s 因应用在后台时录制被中断而无法播放，现已自动转换为可播放格式。</string>
 
     <string name="records_repair_banner_title">录制已修复</string>
-<string name="fadrec_audio_source_internal">设备音频（内部）</string>
+<string name="shahidrec_audio_source_internal">设备音频（内部）</string>
 
-<!-- fadrec_audio_source_mic -->
-<string name="fadrec_audio_source_mic">麦克风</string>
+<!-- shahidrec_audio_source_mic -->
+<string name="shahidrec_audio_source_mic">麦克风</string>
 
-<!-- fadrec_audio_source_none -->
-<string name="fadrec_audio_source_none">无音频</string>
+<!-- shahidrec_audio_source_none -->
+<string name="shahidrec_audio_source_none">无音频</string>
 
-<!-- fadrec_audio_source_title -->
-<string name="fadrec_audio_source_title">音频源</string>
+<!-- shahidrec_audio_source_title -->
+<string name="shahidrec_audio_source_title">音频源</string>
 
-<!-- fadrec_mic_permission_needed_message -->
-<string name="fadrec_mic_permission_needed_message">ScreenRec无法访问您的麦克风。您可以静音录制 — 不会保存音频。</string>
+<!-- shahidrec_mic_permission_needed_message -->
+<string name="shahidrec_mic_permission_needed_message">ScreenRec无法访问您的麦克风。您可以静音录制 — 不会保存音频。</string>
 
-<!-- fadrec_mic_permission_needed_title -->
-<string name="fadrec_mic_permission_needed_title">需要麦克风权限</string>
+<!-- shahidrec_mic_permission_needed_title -->
+<string name="shahidrec_mic_permission_needed_title">需要麦克风权限</string>
 
-<!-- fadrec_mute_audio -->
-<string name="fadrec_mute_audio">静音录制音频</string>
+<!-- shahidrec_mute_audio -->
+<string name="shahidrec_mute_audio">静音录制音频</string>
 
-<!-- fadrec_preview_enable_hint -->
-<string name="fadrec_preview_enable_hint">长按显示预览</string>
+<!-- shahidrec_preview_enable_hint -->
+<string name="shahidrec_preview_enable_hint">长按显示预览</string>
 
-<!-- fadrec_preview_not_available -->
-<string name="fadrec_preview_not_available">实时屏幕预览尚未接入ScreenRec</string>
+<!-- shahidrec_preview_not_available -->
+<string name="shahidrec_preview_not_available">实时屏幕预览尚未接入ScreenRec</string>
 
-<!-- fadrec_record_muted -->
-<string name="fadrec_record_muted">静音录制</string>
+<!-- shahidrec_record_muted -->
+<string name="shahidrec_record_muted">静音录制</string>
 
-<!-- fadrec_unmute_audio -->
-<string name="fadrec_unmute_audio">取消静音录制音频</string>
+<!-- shahidrec_unmute_audio -->
+<string name="shahidrec_unmute_audio">取消静音录制音频</string>
 
 <!-- forensic_intelligence_title -->
 <string name="forensic_intelligence_title">取证情报</string>
@@ -2821,8 +2821,8 @@ ShahidCam 为录制使用分段式 MP4 格式。这意味着视频被保存为�
 <!-- media_type_photo_back -->
 <string name="media_type_photo_back">返回</string>
 
-<!-- media_type_photo_fadrec -->
-<string name="media_type_photo_fadrec">ScreenRec</string>
+<!-- media_type_photo_shahidrec -->
+<string name="media_type_photo_shahidrec">ScreenRec</string>
 
 <!-- media_type_photo_selfie -->
 <string name="media_type_photo_selfie">自拍</string>
@@ -3343,32 +3343,32 @@ ShahidCam 为录制使用分段式 MP4 格式。这意味着视频被保存为�
 <!-- records_batch_fab_label -->
 <string name="records_batch_fab_label">批处理</string>
 
-<!-- records_batch_faditor -->
-<string name="records_batch_faditor">ShahidEditor自动化</string>
+<!-- records_batch_shahideditor -->
+<string name="records_batch_shahideditor">ShahidEditor自动化</string>
 
-<!-- records_batch_faditor_desc -->
-<string name="records_batch_faditor_desc">在不打开ShahidEditor标签的情况下运行后台自动化。</string>
+<!-- records_batch_shahideditor_desc -->
+<string name="records_batch_shahideditor_desc">在不打开ShahidEditor标签的情况下运行后台自动化。</string>
 
-<!-- records_batch_faditor_export_standard -->
-<string name="records_batch_faditor_export_standard">导出为标准MP4</string>
+<!-- records_batch_shahideditor_export_standard -->
+<string name="records_batch_shahideditor_export_standard">导出为标准MP4</string>
 
-<!-- records_batch_faditor_export_standard_desc -->
-<string name="records_batch_faditor_export_standard_desc">将分片MP4转换为标准可拖动MP4，适用于外部播放器。</string>
+<!-- records_batch_shahideditor_export_standard_desc -->
+<string name="records_batch_shahideditor_export_standard_desc">将分片MP4转换为标准可拖动MP4，适用于外部播放器。</string>
 
-<!-- records_batch_faditor_first_only -->
-<string name="records_batch_faditor_first_only">已打开第一个视频。已选%1$d个；多编辑队列即将推出。</string>
+<!-- records_batch_shahideditor_first_only -->
+<string name="records_batch_shahideditor_first_only">已打开第一个视频。已选%1$d个；多编辑队列即将推出。</string>
 
-<!-- records_batch_faditor_merge -->
-<string name="records_batch_faditor_merge">合并所选视频</string>
+<!-- records_batch_shahideditor_merge -->
+<string name="records_batch_shahideditor_merge">合并所选视频</string>
 
-<!-- records_batch_faditor_merge_desc -->
-<string name="records_batch_faditor_merge_desc">在后台将所选片段合并为一个视频。</string>
+<!-- records_batch_shahideditor_merge_desc -->
+<string name="records_batch_shahideditor_merge_desc">在后台将所选片段合并为一个视频。</string>
 
-<!-- records_batch_faditor_queued -->
-<string name="records_batch_faditor_queued">%1$d 个批量项目已在后台排队。</string>
+<!-- records_batch_shahideditor_queued -->
+<string name="records_batch_shahideditor_queued">%1$d 个批量项目已在后台排队。</string>
 
-<!-- records_batch_faditor_sheet_title -->
-<string name="records_batch_faditor_sheet_title">批处理ShahidEditor操作</string>
+<!-- records_batch_shahideditor_sheet_title -->
+<string name="records_batch_shahideditor_sheet_title">批处理ShahidEditor操作</string>
 
 <!-- records_batch_merge_done_title -->
 <string name="records_batch_merge_done_title">批量合并已完成</string>
@@ -3554,17 +3554,17 @@ ShahidCam 为录制使用分段式 MP4 格式。这意味着视频被保存为�
 <!-- records_filter_dual -->
 <string name="records_filter_dual">双摄</string>
 
-<!-- records_filter_faditor -->
-<string name="records_filter_faditor">ShahidEditor</string>
+<!-- records_filter_shahideditor -->
+<string name="records_filter_shahideditor">ShahidEditor</string>
 
-<!-- records_filter_faditor_all -->
-<string name="records_filter_faditor_all">全部</string>
+<!-- records_filter_shahideditor_all -->
+<string name="records_filter_shahideditor_all">全部</string>
 
-<!-- records_filter_faditor_converted -->
-<string name="records_filter_faditor_converted">已转换</string>
+<!-- records_filter_shahideditor_converted -->
+<string name="records_filter_shahideditor_converted">已转换</string>
 
-<!-- records_filter_faditor_merge -->
-<string name="records_filter_faditor_merge">合并</string>
+<!-- records_filter_shahideditor_merge -->
+<string name="records_filter_shahideditor_merge">合并</string>
 
 <!-- records_filter_helper_camera_all -->
 <string name="records_filter_helper_camera_all">摄像头录制（后置、前置、双摄）</string>
@@ -3581,17 +3581,17 @@ ShahidCam 为录制使用分段式 MP4 格式。这意味着视频被保存为�
 <!-- records_filter_helper_dual -->
 <string name="records_filter_helper_dual">双摄像头录制</string>
 
-<!-- records_filter_helper_faditor -->
-<string name="records_filter_helper_faditor">已编辑/导出的视频（ShahidEditor）</string>
+<!-- records_filter_helper_shahideditor -->
+<string name="records_filter_helper_shahideditor">已编辑/导出的视频（ShahidEditor）</string>
 
-<!-- records_filter_helper_faditor_all -->
-<string name="records_filter_helper_faditor_all">所有ShahidEditor输出及相关文件。</string>
+<!-- records_filter_helper_shahideditor_all -->
+<string name="records_filter_helper_shahideditor_all">所有ShahidEditor输出及相关文件。</string>
 
-<!-- records_filter_helper_faditor_converted -->
-<string name="records_filter_helper_faditor_converted">将分片MP4转换为标准可拖动MP4，适用于外部播放器。</string>
+<!-- records_filter_helper_shahideditor_converted -->
+<string name="records_filter_helper_shahideditor_converted">将分片MP4转换为标准可拖动MP4，适用于外部播放器。</string>
 
-<!-- records_filter_helper_faditor_merge -->
-<string name="records_filter_helper_faditor_merge">将多个片段合并为一个输出视频。</string>
+<!-- records_filter_helper_shahideditor_merge -->
+<string name="records_filter_helper_shahideditor_merge">将多个片段合并为一个输出视频。</string>
 
 <!-- records_filter_helper_screen -->
 <string name="records_filter_helper_screen">屏幕录制（ScreenRec）</string>
@@ -3602,8 +3602,8 @@ ShahidCam 为录制使用分段式 MP4 格式。这意味着视频被保存为�
 <!-- records_filter_helper_shot_back -->
 <string name="records_filter_helper_shot_back">使用后置摄像头拍摄的照片</string>
 
-<!-- records_filter_helper_shot_fadrec -->
-<string name="records_filter_helper_shot_fadrec">拍摄的截图（ScreenRec）</string>
+<!-- records_filter_helper_shot_shahidrec -->
+<string name="records_filter_helper_shot_shahidrec">拍摄的截图（ScreenRec）</string>
 
 <!-- records_filter_helper_shot_selfie -->
 <string name="records_filter_helper_shot_selfie">使用前置摄像头拍摄的照片（自拍）</string>
@@ -3626,8 +3626,8 @@ ShahidCam 为录制使用分段式 MP4 格式。这意味着视频被保存为�
 <!-- records_filter_shot_back -->
 <string name="records_filter_shot_back">返回</string>
 
-<!-- records_filter_shot_fadrec -->
-<string name="records_filter_shot_fadrec">ScreenRec</string>
+<!-- records_filter_shot_shahidrec -->
+<string name="records_filter_shot_shahidrec">ScreenRec</string>
 
 <!-- records_filter_shot_selfie -->
 <string name="records_filter_shot_selfie">自拍</string>
@@ -3838,8 +3838,8 @@ ShahidCam 为录制使用分段式 MP4 格式。这意味着视频被保存为�
 
 <!-- settings_advanced_subtitle -->
 <string name="settings_advanced_subtitle">Motion Lab和高级用户控制</string>
-<string name="fadcrypt_title">Crypt</string>
-<string name="fadcrypt_row_subtitle">加密并保护您的录制内容</string>
+<string name="shahidvault_title">Crypt</string>
+<string name="shahidvault_row_subtitle">加密并保护您的录制内容</string>
 
 <!-- shortcut_purpose_photo -->
 <string name="shortcut_purpose_photo">此快捷方式捕获后置摄像头照片并保存到ShahidCam/ShahidShot位置。</string>
@@ -4173,11 +4173,11 @@ ShahidCam 为录制使用分段式 MP4 格式。这意味着视频被保存为�
 <!-- watch_delete_confirm_title -->
 <string name="watch_delete_confirm_title">移到回收站？</string>
 
-<!-- watch_fadshot_desc -->
-<string name="watch_fadshot_desc">拍照</string>
+<!-- watch_shahidshot_desc -->
+<string name="watch_shahidshot_desc">拍照</string>
 
-<!-- watch_fadshot_label -->
-<string name="watch_fadshot_label">拍摄</string>
+<!-- watch_shahidshot_label -->
+<string name="watch_shahidshot_label">拍摄</string>
 
 <!-- watch_fullscreen_desc -->
 <string name="watch_fullscreen_desc">全屏</string>
@@ -4462,7 +4462,7 @@ ShahidCam 为录制使用分段式 MP4 格式。这意味着视频被保存为�
     <string name="sidebar_update_available">有可用更新</string>
     <string name="sidebar_stable_release">稳定版</string>
     <string name="sidebar_beta_release">测试版</string>
-    <string name="sidebar_fadcam_pro">ShahidCam Pro</string>
+    <string name="sidebar_shahidcam_pro">ShahidCam Pro</string>
     <string name="badge_new">新</string>
     <string name="update_pro_title">ShahidCam Pro 更新</string>
     <string name="update_pro_desc">新版本的 ShahidCam Pro 已可用。\n\n对于免费用户，稳定版将在约 60 天后发布。Pro 用户可立即收到更新。</string>
@@ -4479,7 +4479,7 @@ ShahidCam 为录制使用分段式 MP4 格式。这意味着视频被保存为�
     <string name="screen_recording_saved">屏幕录制已保存</string>
     <string name="screen_recording_tap_to_view">点击查看您的录制内容</string>
     <string name="notification_action_stop">停止</string>
-    <string name="fadmic_coming_soon">Mic（麦克风录制）即将推出！</string>
+    <string name="shahidmic_coming_soon">Mic（麦克风录制）即将推出！</string>
     <string name="toast_stream_server_starting">流媒体服务器正在启动...</string>
     <string name="toast_stream_server_stopped">流媒体服务器已停止</string>
     <string name="toast_no_cloud_viewers">没有连接的云观众</string>
@@ -4565,7 +4565,7 @@ ShahidCam 为录制使用分段式 MP4 格式。这意味着视频被保存为�
     <string name="about_dialog_error">错误</string>
     <string name="about_dialog_ok">确定</string>
     <string name="about_get_beta">获取测试版</string>
-    <string name="about_fadcam_feedback">ShahidCam 反馈</string>
+    <string name="about_shahidcam_feedback">ShahidCam 反馈</string>
 
     <!-- Video split sizes -->
     <string name="video_split_enabled_format">已启用 (%s)</string>
@@ -4585,16 +4585,16 @@ ShahidCam 为录制使用分段式 MP4 格式。这意味着视频被保存为�
 
     <!-- Settings home tabs -->
     <string name="settings_tab_all">全部</string>
-    <string name="settings_tab_fadcam" translatable="false">ShahidCam</string>
-    <string name="settings_tab_fadrec" translatable="false">ScreenRec</string>
+    <string name="settings_tab_shahidcam" translatable="false">ShahidCam</string>
+    <string name="settings_tab_shahidrec" translatable="false">ScreenRec</string>
 
     <!-- Watermark preview labels -->
-    <string name="watermark_preview_fadcam" translatable="false">ShahidCam</string>
-    <string name="watermark_preview_fadrec" translatable="false">ScreenRec</string>
+    <string name="watermark_preview_shahidcam" translatable="false">ShahidCam</string>
+    <string name="watermark_preview_shahidrec" translatable="false">ScreenRec</string>
     <string name="settings_location_update_interval_5s">5.0 秒</string>
 
     <!-- Annotation toolbar -->
-    <string name="annotation_by_fadsec_lab">来自 CyberShadowPK Lab</string>
+    <string name="annotation_by_shahidlabs_lab">来自 CyberShadowPK Lab</string>
     <string name="annotation_quick_access">快速访问</string>
     <string name="annotation_annotate">标注</string>
     <string name="annotation_enable_tools">启用工具</string>
@@ -4672,7 +4672,7 @@ ShahidCam 为录制使用分段式 MP4 格式。这意味着视频被保存为�
     <string name="desc_delete_text">删除文本</string>
     <string name="desc_done">完成</string>
     <string name="desc_exposure_compensation">曝光补偿</string>
-    <string name="desc_fadrec_logo">ScreenRec 标志</string>
+    <string name="desc_shahidrec_logo">ScreenRec 标志</string>
     <string name="desc_fast_forward">快进 5 秒</string>
     <string name="desc_increase">增加</string>
     <string name="desc_italic">斜体</string>
@@ -4695,7 +4695,7 @@ ShahidCam 为录制使用分段式 MP4 格式。这意味着视频被保存为�
     <string name="channel_security_alarm">安全警报</string>
     <string name="channel_remote_streaming">远程直播</string>
     <string name="channel_annotation_service">标注服务</string>
-    <string name="channel_fadcam_file_ops">ShahidCam 文件操作</string>
+    <string name="channel_shahidcam_file_ops">ShahidCam 文件操作</string>
 
     <!-- ScreenRecordingService -->
     <string name="screen_rec_failed">录制失败: %s</string>
@@ -4821,7 +4821,7 @@ ShahidCam 为录制使用分段式 MP4 格式。这意味着视频被保存为�
     <string name="tutorial_dashcam_setup">行车记录仪设置</string>
 
     <!-- iOS Promo -->
-    <string name="fadcam_for_ios_title">ShahidCam iOS版</string>
+    <string name="shahidcam_for_ios_title">ShahidCam iOS版</string>
     <string name="ios_promo_title">ShahidCam 现已登陆 iOS！</string>
     <string name="ios_promo_subtitle">你喜爱的同样注重隐私的相机应用，现已支持 iPhone</string>
 

@@ -52,11 +52,11 @@ public class WatermarkSettingsFragment extends Fragment {
     private TextView valueCustomText;
     private TextView valueLocationFormat;
     private TextView valueLocationInterval;
-    /** 0 = FadCam page, 1 = FadRec page */
+    /** 0 = ShahidCam page, 1 = ShahidRec page */
     private int currentPreviewPage = 0;
     private ViewPager2 previewPager;
     private PreviewPagerAdapter previewAdapter;
-    private View dotFadCam, dotFadRec;
+    private View dotShahidCam, dotShahidRec;
     private LocationHelper locationHelper;
     private ActivityResultLauncher<String> permissionLauncher;
     private Runnable pendingGrantAction;
@@ -291,8 +291,8 @@ public class WatermarkSettingsFragment extends Fragment {
         
         // Setup preview pager (ViewPager2 — snappy paging)
         previewPager = view.findViewById(R.id.preview_pager);
-        dotFadCam = view.findViewById(R.id.dot_fadcam);
-        dotFadRec = view.findViewById(R.id.dot_fadrec);
+        dotShahidCam = view.findViewById(R.id.dot_shahidcam);
+        dotShahidRec = view.findViewById(R.id.dot_shahidrec);
         previewAdapter = new PreviewPagerAdapter();
         if (previewPager != null) {
             previewPager.setAdapter(previewAdapter);
@@ -466,8 +466,8 @@ public class WatermarkSettingsFragment extends Fragment {
             }
         });
         java.util.ArrayList<com.shahid.cam.ui.picker.OptionItem> items = new java.util.ArrayList<>();
-    items.add(new com.shahid.cam.ui.picker.OptionItem("timestamp_fadcam", getString(R.string.watermark_style_time_fadcam_label), (String) null));
-    items.add(new com.shahid.cam.ui.picker.OptionItem("badge_fadcam", getString(R.string.watermark_style_badge_label), (String) null));
+    items.add(new com.shahid.cam.ui.picker.OptionItem("timestamp_shahidcam", getString(R.string.watermark_style_time_shahidcam_label), (String) null));
+    items.add(new com.shahid.cam.ui.picker.OptionItem("badge_shahidcam", getString(R.string.watermark_style_badge_label), (String) null));
     items.add(new com.shahid.cam.ui.picker.OptionItem("timestamp", getString(R.string.watermark_style_timeonly_label), (String) null));
     items.add(new com.shahid.cam.ui.picker.OptionItem("no_watermark", getString(R.string.watermark_style_none_label), (String) null));
         String current = prefs.getWatermarkOption();
@@ -479,8 +479,8 @@ public class WatermarkSettingsFragment extends Fragment {
     private void refreshWatermarkStyleValue(){
         if(valueWatermarkStyle==null) return;
         String v = prefs.getWatermarkOption();
-        if("timestamp_fadcam".equals(v)) valueWatermarkStyle.setText(getString(R.string.watermark_style_time_fadcam_label));
-        else if("badge_fadcam".equals(v)) valueWatermarkStyle.setText(getString(R.string.watermark_style_badge_label));
+        if("timestamp_shahidcam".equals(v)) valueWatermarkStyle.setText(getString(R.string.watermark_style_time_shahidcam_label));
+        else if("badge_shahidcam".equals(v)) valueWatermarkStyle.setText(getString(R.string.watermark_style_badge_label));
         else if("timestamp".equals(v)) valueWatermarkStyle.setText(getString(R.string.watermark_style_timeonly_label));
         else valueWatermarkStyle.setText(getString(R.string.watermark_style_none_label));
     }
@@ -502,10 +502,10 @@ public class WatermarkSettingsFragment extends Fragment {
     }
 
     private void updateDots(int page) {
-        if (dotFadCam != null && dotFadRec != null) {
-            dotFadCam.setBackgroundResource(page == 0
+        if (dotShahidCam != null && dotShahidRec != null) {
+            dotShahidCam.setBackgroundResource(page == 0
                     ? R.drawable.indicator_dot_active : R.drawable.indicator_dot_inactive);
-            dotFadRec.setBackgroundResource(page == 1
+            dotShahidRec.setBackgroundResource(page == 1
                     ? R.drawable.indicator_dot_active : R.drawable.indicator_dot_inactive);
         }
     }
@@ -516,37 +516,37 @@ public class WatermarkSettingsFragment extends Fragment {
         String formatted = (prefs.isWatermarkDayEnabled() ? "Wed, " : "")
                 + "10/Jul/2024 04:47:00 PM";
 
-        // Build FadCam preview text — [FADCAM_ICON] triggers ImageSpan in adapter
-        String fadcamBase = null;
-        if ("timestamp_fadcam".equals(v)) {
-            fadcamBase = "Captured by [FADCAM_ICON] - " + formatted;
-        } else if ("badge_fadcam".equals(v)) {
-            fadcamBase = "Captured by [FADCAM_ICON]";
+        // Build ShahidCam preview text — [SHAHIDCAM_ICON] triggers ImageSpan in adapter
+        String shahidcamBase = null;
+        if ("timestamp_shahidcam".equals(v)) {
+            shahidcamBase = "Captured by [SHAHIDCAM_ICON] - " + formatted;
+        } else if ("badge_shahidcam".equals(v)) {
+            shahidcamBase = "Captured by [SHAHIDCAM_ICON]";
         } else if ("timestamp".equals(v)) {
-            fadcamBase = formatted;
+            shahidcamBase = formatted;
         }
 
-        // Build FadRec preview text — [ICON] triggers ImageSpan in adapter
-        String fadrecBase = null;
-        if ("timestamp_fadcam".equals(v)) {
-            fadrecBase = "Recorded by [ICON] - " + formatted;
-        } else if ("badge_fadcam".equals(v)) {
-            fadrecBase = "Recorded by [ICON]";
+        // Build ShahidRec preview text — [ICON] triggers ImageSpan in adapter
+        String shahidrecBase = null;
+        if ("timestamp_shahidcam".equals(v)) {
+            shahidrecBase = "Recorded by [ICON] - " + formatted;
+        } else if ("badge_shahidcam".equals(v)) {
+            shahidrecBase = "Recorded by [ICON]";
         } else if ("timestamp".equals(v)) {
-            fadrecBase = formatted;
+            shahidrecBase = formatted;
         }
 
         // Append timezone after timestamp
         if (prefs.isTimezoneEnabled()) {
             java.util.TimeZone tz = java.util.TimeZone.getDefault();
             String tzLabel = buildTimezoneLabel(tz, prefs.getTimezoneFormat());
-            if (fadcamBase != null) fadcamBase += " " + tzLabel;
-            if (fadrecBase != null) fadrecBase += " " + tzLabel;
+            if (shahidcamBase != null) shahidcamBase += " " + tzLabel;
+            if (shahidrecBase != null) shahidrecBase += " " + tzLabel;
         }
 
         TextView helper = getView() != null ? getView().findViewById(R.id.text_preview_helper) : null;
 
-        if (fadcamBase == null) {
+        if (shahidcamBase == null) {
             if (previewAdapter != null) {
                 previewAdapter.setContent(
                         getString(R.string.watermark_preview_funny),
@@ -564,21 +564,21 @@ public class WatermarkSettingsFragment extends Fragment {
             String locationLines = "address".equals(format)
                     ? "\nLat: 48.XXX, Long: 2.XXX\nMain Street, Sample City, Region, Country"
                     : "\nLat: 48.XXX, Long: 2.XXX";
-            fadcamBase += locationLines;
-            fadrecBase += locationLines;
+            shahidcamBase += locationLines;
+            shahidrecBase += locationLines;
         }
 
         // Append custom text
         String customText = prefs.getWatermarkCustomText();
         if (customText != null && !customText.isEmpty()) {
-            fadcamBase += "\n" + customText;
-            fadrecBase += "\n" + customText;
+            shahidcamBase += "\n" + customText;
+            shahidrecBase += "\n" + customText;
         }
 
         // Append UTM preview
         if (prefs.isUtmEnabled()) {
-            fadcamBase += "\nUTM Zone 42N - 372,684m E, 3,512,334m N";
-            fadrecBase += "\nUTM Zone 42N - 372,684m E, 3,512,334m N";
+            shahidcamBase += "\nUTM Zone 42N - 372,684m E, 3,512,334m N";
+            shahidrecBase += "\nUTM Zone 42N - 372,684m E, 3,512,334m N";
         }
 
         // Append extended sensor data preview
@@ -589,13 +589,13 @@ public class WatermarkSettingsFragment extends Fragment {
         if (prefs.isCompassEnabled()) extendedPreview += "\nCompass: 220° SW";
         if (prefs.isNoiseEnabled()) extendedPreview += "\nNoise: 45dB";
         if (prefs.isWeatherEnabled()) extendedPreview += "\n25°C Clear\nWind: 15 km/h";
-        fadcamBase += extendedPreview;
-        fadrecBase += extendedPreview;
+        shahidcamBase += extendedPreview;
+        shahidrecBase += extendedPreview;
 
         if (previewAdapter != null) {
-            previewAdapter.setContent(fadcamBase, fadrecBase,
+            previewAdapter.setContent(shahidcamBase, shahidrecBase,
                     buildIconDrawable(R.drawable.menu_icon_unknown),
-                    buildIconDrawable(R.drawable.fadrec));
+                    buildIconDrawable(R.drawable.shahidrec));
         }
     }
 
@@ -1023,20 +1023,20 @@ public class WatermarkSettingsFragment extends Fragment {
     // ---- Inner adapter for the preview ViewPager2 ----
 
     /**
-     * Two-page adapter: page 0 = FadCam preview, page 1 = FadRec preview.
+     * Two-page adapter: page 0 = ShahidCam preview, page 1 = ShahidRec preview.
      * Content is set via {@link #setContent} and pages update themselves via
      * {@link RecyclerView.Adapter#notifyItemChanged}.
      */
     private class PreviewPagerAdapter extends RecyclerView.Adapter<PreviewPagerAdapter.VH> {
 
-        private CharSequence fadcamContent = "";
-        private CharSequence fadrecContent = "";
+        private CharSequence shahidcamContent = "";
+        private CharSequence shahidrecContent = "";
 
-        void setContent(String fadcamText, String fadrecRaw,
-                        @Nullable Drawable fadcamIconDrawable,
-                        @Nullable Drawable fadrecIconDrawable) {
-            fadcamContent = buildSpannable(fadcamText, "[FADCAM_ICON]", fadcamIconDrawable, "FadCam");
-            fadrecContent = buildSpannable(fadrecRaw, "[ICON]", fadrecIconDrawable, "FadRec");
+        void setContent(String shahidcamText, String shahidrecRaw,
+                        @Nullable Drawable shahidcamIconDrawable,
+                        @Nullable Drawable shahidrecIconDrawable) {
+            shahidcamContent = buildSpannable(shahidcamText, "[SHAHIDCAM_ICON]", shahidcamIconDrawable, "ShahidCam");
+            shahidrecContent = buildSpannable(shahidrecRaw, "[ICON]", shahidrecIconDrawable, "ShahidRec");
             notifyItemChanged(0);
             notifyItemChanged(1);
         }
@@ -1067,7 +1067,7 @@ public class WatermarkSettingsFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(@NonNull VH holder, int position) {
-            holder.text.setText(position == 0 ? fadcamContent : fadrecContent);
+            holder.text.setText(position == 0 ? shahidcamContent : shahidrecContent);
         }
 
         @Override

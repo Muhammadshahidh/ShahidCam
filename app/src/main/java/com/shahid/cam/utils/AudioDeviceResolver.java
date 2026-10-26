@@ -8,7 +8,7 @@ import com.shahid.cam.FLog;
 import com.shahid.cam.SharedPreferencesManager;
 
 /**
- * Shared audio-input device resolution for FadCam recording paths.
+ * Shared audio-input device resolution for ShahidCam recording paths.
  *
  * <p>Single source of truth for "which external input device should we record from",
  * used by both video mode and screen recording (cast). Resolution order:

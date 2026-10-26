@@ -37,7 +37,7 @@ import java.util.Map;
 import java.util.Random;
 
 /**
- * A custom toggle view that displays the FadCam avatar eye in place of a standard switch.
+ * A custom toggle view that displays the ShahidCam avatar eye in place of a standard switch.
  *
  * <p>States:
  * <ul>

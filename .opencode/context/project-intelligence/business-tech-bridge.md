@@ -2,7 +2,7 @@
 
 # Business ↔ Tech Bridge
 
-> How FadCam's business needs translate to technical solutions.
+> How ShahidCam's business needs translate to technical solutions.
 
 ## Quick Reference
 - **Purpose**: Connect business goals to technical implementations
@@ -14,7 +14,7 @@
 | Record discreetly without screen on | Background service + Camera2 API + screen-off capability | Camera2 gives raw access needed for background recording | Core differentiator vs commercial apps |
 | Prevent file corruption on crash | Fragmented MP4 muxing (Media3 Muxer) | Each segment is independently playable | Users never lose critical footage |
 | No data collection / privacy-first | FLog w/ auto-redaction, no analytics SDKs, no cloud dependencies | Privacy is the product's core value proposition | Trust and differentiation in market |
-| Professional screen recording | FadRec module w/ MediaProjection API + OpenGL overlay | MediaProjection is the only Android API for screen capture | Expands user base to content creators |
+| Professional screen recording | ShahidRec module w/ MediaProjection API + OpenGL overlay | MediaProjection is the only Android API for screen capture | Expands user base to content creators |
 | Remote monitoring from anywhere | NanoHTTPD local server + web interface | Lightweight, no cloud dependency needed | Security use case without subscription costs |
 | Dual camera recording | Concurrent camera sessions via Camera2 + PiP compositing | Camera2 supports concurrent camera IDs | Unique feature for comprehensive recording |
 | Wide device compatibility | Min SDK 24 (Android 7.0), CameraX lifecycle | CameraX handles device-specific camera quirks | Largest possible user base |
@@ -32,7 +32,7 @@
 **Technical Implementation**: Media3 Muxer writes fragmented MP4 segments; each segment is independently playable. MP4Parser (isoparser) handles box structure parsing for playback
 **Connection**: Standard MP4 requires finalization (moov atom at end). Fragmented MP4 writes playable data continuously.
 
-## Feature: FadRec Screen Recorder
+## Feature: ShahidRec Screen Recorder
 **Business Context**: Content creators need professional screen recording with annotation tools
 **Technical Implementation**: MediaProjection API for screen capture, OpenGL pipeline for annotation overlays (pen, eraser, text, shapes), Media3 Transformer for post-processing
 **Connection**: MediaProjection is Android's only screen capture API. OpenGL enables real-time annotation overlays.

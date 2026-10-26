@@ -11,10 +11,10 @@
 </div>
 
 > [!Tip]
-> This project is part of the [FadSec Lab suite](https://github.com/fadsec-lab). <br> Discover our focus on ad-free, privacy-first applications and stay updated on future releases!
+> This project is part of the [Shahid Labs suite](https://github.com/shahidlabs-lab). <br> Discover our focus on ad-free, privacy-first applications and stay updated on future releases!
 
 > [!Note]
-> Unlock FadCam Pro with lifetime access: Visit the [Shop](https://www.patreon.com/cw/Fadedx/shop) <br> FadCam for Desktop is planned! 
+> Unlock ShahidCam Pro with lifetime access: Visit the [Shop](https://www.patreon.com/cw/Fadedx/shop) <br> ShahidCam for Desktop is planned! 
 
 
 ---
@@ -23,15 +23,15 @@
     
 <img src="https://github.com/Muhammadshahidh/ShahidCam/assets/124708903/d6f99201-65c7-4c93-bf13-d4a0d65172ac" style="width: 100px; height: auto;" >
 
-# `>_` FadCam
+# `>_` ShahidCam
 
 **Privacy-focused Android multimedia suite: background video recording, dashcam, screen recorder, live streaming & remote control - ad-free & open-source.**
 
-<a href="https://trendshift.io/repositories/12830" target="_blank"><img src="https://trendshift.io/api/badge/repositories/12830" alt="anonfaded%2FFadCam | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/12830" target="_blank"><img src="https://trendshift.io/api/badge/repositories/12830" alt="Muhammadshahidh%2FShahidCam | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
-[![GitHub all releases](https://img.shields.io/github/downloads/anonfaded/FadCam/total?label=Downloads&logo=github)](https://github.com/Muhammadshahidh/ShahidCam/releases/)
+[![GitHub all releases](https://img.shields.io/github/downloads/Muhammadshahidh/ShahidCam/total?label=Downloads&logo=github)](https://github.com/Muhammadshahidh/ShahidCam/releases/)
 ![Downloads (F-Droid)](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2Fkitswas%2Ffdroid-metrics-dashboard%2Fraw%2Frefs%2Fheads%2Fmain%2Fprocessed%2Ftotal%2Fcom.shahid.cam.json&query=%24.total_downloads&logo=fdroid&label=Downloads%20(F-Droid))
-[![SourceForge Downloads](https://img.shields.io/sourceforge/dt/fadcam.svg?label=SourceForge%20Downloads&color=red)](https://sourceforge.net/projects/fadcam/files/latest/download)
+[![SourceForge Downloads](https://img.shields.io/sourceforge/dt/shahidcam.svg?label=SourceForge%20Downloads&color=red)](https://sourceforge.net/projects/shahidcam/files/latest/download)
 
 [<img src="https://shields.rbtlog.dev/simple/com.shahid.cam" alt="badge">](https://shields.rbtlog.dev/com.shahid.cam)
 
@@ -66,7 +66,7 @@
     alt="Get it on IoD"
     height="70"></a>
 
-<a href="https://apps.apple.com/us/app/fadcam-dashcam-bodycam/id6778121848?itscg=30200&itsct=apps_box_badge&mttnsubad=6778121848" style="display: inline-block;">
+<a href="https://apps.apple.com/us/app/shahidcam-dashcam-bodycam/id6778121848?itscg=30200&itsct=apps_box_badge&mttnsubad=6778121848" style="display: inline-block;">
     <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1782345600" alt="Download on the App Store" style="width: auto; height: 60px; vertical-align: middle; object-fit: contain;" /></a>
 
 <a href="https://f-droid.org/packages/com.shahid.cam">
@@ -82,7 +82,7 @@
 [![Get it on Google Play](https://github.com/Muhammadshahidh/ShahidCam/blob/a75be2fe8e6fca539c18af8e0a208508ff1ad4ed/app/src/main/assets/GetItOnGooglePlay_Badge.png)](https://play.google.com/store/apps/details?id=com.shahid.cam)
 -->
 
-| ⭐ |<img src="https://github.com/user-attachments/assets/c730eda3-5887-458d-8df1-971a74807b73" style="width: 100px; height: auto;" > | *New app from FadSec-Lab suite:🎉* <br> Also, check out our new Windows app! Visit here: [FadCrypt](https://github.com/anonfaded/FadCrypt)  |
+| ⭐ |<img src="https://github.com/user-attachments/assets/c730eda3-5887-458d-8df1-971a74807b73" style="width: 100px; height: auto;" > | *New app from Shahid Labs-Lab suite:🎉* <br> Also, check out our new Windows app! Visit here: [ShahidVault](https://github.com/Muhammadshahidh/ShahidVault)  |
 |--|-------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 
@@ -117,7 +117,7 @@
 
 ## `>_` Purpose
 
-FadCam is developed with the goal of providing a powerful, privacy-focused multimedia suite for Android devices. This comprehensive app includes dashcam functionality, screen recording with annotations, live streaming over local networks, and remote camera control — all designed for **ethical use** only.
+ShahidCam is developed with the goal of providing a powerful, privacy-focused multimedia suite for Android devices. This comprehensive app includes dashcam functionality, screen recording with annotations, live streaming over local networks, and remote camera control — all designed for **ethical use** only.
 
 **Ethical Use Cases Include:**
 - **Personal Security:** Use as a dashcam while driving, CCTV at home with remote monitoring, or recording proof in situations where needed for yourself
@@ -127,7 +127,7 @@ FadCam is developed with the goal of providing a powerful, privacy-focused multi
 
 > [!Caution]
 > **Misuse Disclaimer:** <br>
-> The developers of FadCam do not condone or support any unethical or illegal use of this software. Misuse, such as unauthorized surveillance or invasion of privacy, is strictly against our guidelines. The authors are not responsible for any misuse of the application.
+> The developers of ShahidCam do not condone or support any unethical or illegal use of this software. Misuse, such as unauthorized surveillance or invasion of privacy, is strictly against our guidelines. The authors are not responsible for any misuse of the application.
 
 ## `>_` 📱 Screenshots
 
@@ -203,42 +203,42 @@ FadCam is developed with the goal of providing a powerful, privacy-focused multi
 - [msn.com](https://www.msn.com/es-es/noticias/tecnologia/esta-app-convierte-tu-m%C3%B3vil-en-una-c%C3%A1mara-discreta-graba-v%C3%ADdeo-sin-encender-la-pantalla/ar-AA1Hf4dR)
 - [RivollPlay Tech on YouTube](https://youtu.be/v0grlqT_qOw?si=PRdB2oLhJLXiXBU_)
 - [softonic on X](https://x.com/softonic/status/1939598582643830840)
-<!-- - [Someone in comments mentioned about fadcam, on TikTok](https://www.tiktok.com/@unijpeg/video/7438464230807948600) -->
+<!-- - [Someone in comments mentioned about shahidcam, on TikTok](https://www.tiktok.com/@unijpeg/video/7438464230807948600) -->
 <!-- - [Tech Knowing](https://youtu.be/5ZqjensX_XQ?si=iXIY4tMf1iBW9zoR) -->
 <!-- - [EI Tech - Emanuele Iafulla on YouTube](https://youtu.be/n8k9J4GnoCY?si=D6RVGSD832jOFhiQ) -->
-<!-- [Police recording with FadCam](https://www.facebook.com/joseph.anthony.emaikwu/videos/fadcam/3206531569486276/) -->
+<!-- [Police recording with ShahidCam](https://www.facebook.com/joseph.anthony.emaikwu/videos/shahidcam/3206531569486276/) -->
 
 ### `>_` Articles and Listings
 - [fmhy.net](https://fmhy.net/android-iosguide#camera-tools)
-- [discuss.privacyguides.net](https://discuss.privacyguides.net/t/fadcam-open-source-cam-background-video-recording-even-when-the-screen-is-off/19823)
+- [discuss.privacyguides.net](https://discuss.privacyguides.net/t/shahidcam-open-source-cam-background-video-recording-even-when-the-screen-is-off/19823)
 - [appteka.com](https://appteka.store/app/bcdr185175)
 - [discuss.grapheneos.org](https://discuss.grapheneos.org/d/11667-what-featureapp-do-you-use-that-the-majority-never-talk-about/69)
 - [fmhy.net](https://fmhy.net/android-iosguide#camera-tools)
 - [offa repo](https://github.com/offa/android-foss#-camera)
 - [geeky-gadgets.com](https://www.geeky-gadgets.com/awesome-android-apps-to-try-out-in-august/)
 - [GrowingGit repo](https://github.com/GrowingGit/GitHub-English-Top-Charts/blob/main/content/charts/new_repo/software/Java.md)
-- [openapk.net](https://www.openapk.net/fadcam/com.shahid.cam/)
+- [openapk.net](https://www.openapk.net/shahidcam/com.shahid.cam/)
 - [popMODS on Telegram](https://t.me/popmodschat/447936)
 - [VPN Club on Telegram](https://t.me/wbnet/99735)
 - [Mobile Applications on Telegram](https://t.me/appCentre/18006)
 - [phonenovo.com](https://phonenovo.com/new-android-apps-for-august-enhance-your-mobile-experience/)
-- [dailymobile.ir](https://www.dailymobile.ir/89140/fadcam-android/)
+- [dailymobile.ir](https://www.dailymobile.ir/89140/shahidcam-android/)
 - [roonby.com](https://roonby.com/2024/08/01/10-best-android-apps-to-use-these-months-august-2024/)
-- [en.xiaomitoday.it](https://en.xiaomitoday.it/fadcam-con-questa-app-diventi-un-agente-segreto.html)
-- [alternativeto.net](https://alternativeto.net/software/fadcam/about/)
+- [en.xiaomitoday.it](https://en.xiaomitoday.it/shahidcam-con-questa-app-diventi-un-agente-segreto.html)
+- [alternativeto.net](https://alternativeto.net/software/shahidcam/about/)
 - [misa7atech.com](https://www.misa7atech.com/2024/08/BestPhoneApps13Aug24.html)
 - [mounirtech.com](https://www.mounirtech.com/2024/08/Best-new-apps-august-2024.html)
 - [androidtr.es](https://androidtr.es/las-8-mejores-aplicaciones-ocultas-de-codigo-abierto-para-android-y-hacks-secretos-que-te-dejaran-boquiabierto-2/)
 - [gadgetstouse.com](https://gadgetstouse.com/blog/2024/08/22/record-video-with-screen-off-on-android/)
 - [summarize.tech](https://www.summarize.tech/www.youtube.com/watch?v=gU9ddvtqL3E)
-- [phcorner.net](https://phcorner.net/threads/fadcam-open-source-seamless-background-video-recorder-for-android.2069335/)
+- [phcorner.net](https://phcorner.net/threads/shahidcam-open-source-seamless-background-video-recorder-for-android.2069335/)
 - [danielbuenotecnologia.com](https://danielbuenotecnologia.com/2024/09/13/protege-tu-vida-con-la-app-fad-cam/)
-- [nothingforum.com](https://nothingforum.com/konu/fadcam-video-kaydi-icin-guvenli-bir-cozum.1982/)
-- [manualdousuario.net](https://manualdousuario.net/fadcam-videos-android-tela-desligada/)
+- [nothingforum.com](https://nothingforum.com/konu/shahidcam-video-kaydi-icin-guvenli-bir-cozum.1982/)
+- [manualdousuario.net](https://manualdousuario.net/shahidcam-videos-android-tela-desligada/)
 - [techwiser.com](https://techwiser.com/how-to-secretly-record-a-video-with-screen-off-on-android/)
 - [geeky-gadgets.com (2nd feature)](https://www.geeky-gadgets.com/15-foss-android-apps-that-are-not-on-the-google-play-store/)
-- [iiktshf.com](https://iiktshf.com/fadcam/)
-- [androidfreeware.net](https://www.androidfreeware.net/download-fadcam-apk.html)
+- [iiktshf.com](https://iiktshf.com/shahidcam/)
+- [androidfreeware.net](https://www.androidfreeware.net/download-shahidcam-apk.html)
 - [computer-wd.com](https://www.computer-wd.com/2024/08/new-mobile-apps.html)
 - [computer-wd.com (2nd feature)](https://www.computer-wd.com/2024/11/secretly-record-video-on-android.html)
 - [computer-wd.com (3rd feature)](https://www.computer-wd.com/2024/12/best-android-apps-2024.html)
@@ -249,29 +249,29 @@ FadCam is developed with the goal of providing a powerful, privacy-focused multi
 - [purepc.pl](https://www.purepc.pl/darmowe-aplikacje-na-telefon-z-androidem-stycze%C5%84-2025)
 - [aqweeb.com](https://www.aqweeb.com/2025/02/10-new-apps-android-and-ios-pt9.html)
 - [nomiapk.website](https://nomiapk.website/xscamera-smart-secure-video-recorder/)
-- [apkhubs.com](https://apkhubs.com/en/fadcam-apk)
-- [malavida.com](https://www.malavida.com/br/soft/fadcam/android/)
-- [apkclone.com](https://apkclone.com/ja/fadcam-apk)
+- [apkhubs.com](https://apkhubs.com/en/shahidcam-apk)
+- [malavida.com](https://www.malavida.com/br/soft/shahidcam/android/)
+- [apkclone.com](https://apkclone.com/ja/shahidcam-apk)
 - [diyiyou.com](https://www.diyiyou.com/soft/1768.html)
 - [zxki.cn](https://zxki.cn/syrj/18967.html)
 - [xmk8.com](https://www.xmk8.com/119603/.html)
 - [aukbbs.com](https://aukbbs.com/t-30218-1-1.html)
 - [blog.csdn.net](https://blog.csdn.net/gitblog_00782/article/details/146972336)
-- [lealternative.net](https://www.lealternative.net/2025/04/15/fadcam-fotocamera-sempre-attiva-per-la-tua-sicurezza/)
-- [uptodown.com](https://fadcam.en.uptodown.com/android)
+- [lealternative.net](https://www.lealternative.net/2025/04/15/shahidcam-fotocamera-sempre-attiva-per-la-tua-sicurezza/)
+- [uptodown.com](https://shahidcam.en.uptodown.com/android)
 - [buzzspot.net](https://www.buzzspot.net/2025/05/open-source-android-apps.html?m=1)
 - [ababtools.com](https://ababtools.com/?post=5528)
 - [0714.com](http://www.0714.com/soft/59753.htm)
 - [yeeach.com](https://yeeach.com/1685/%E5%BC%80%E6%BA%90android%E5%90%8E%E5%8F%B0%E5%BD%95%E9%9F%B3-%E5%BD%95%E5%83%8F%E5%B7%A5%E5%85%B7%E6%B1%87%E6%80%BB/)
-- [codegith.com](https://codegith.com/fadcam-open-source-background-video-recorder-for-android/)
+- [codegith.com](https://codegith.com/shahidcam-open-source-background-video-recorder-for-android/)
 - [52pojie.cn](https://www.52pojie.cn/thread-2038164-1-1.html)
 - [anfensi.com](https://www.anfensi.com/down/429430.html)
-- [fy6b.com](https://www.fy6b.com/fadcam.html)
+- [fy6b.com](https://www.fy6b.com/shahidcam.html)
 - [xatakandroid.com](https://www.xatakandroid.com/aplicaciones-android/esta-app-convierte-tu-movil-camara-discreta-graba-video-encender-pantalla)
 - [blog.csdn.net](https://blog.csdn.net/2501_91832086/article/details/148797756)
 - [lewz.cn](https://www.lewz.cn/jprj/10448.html)
-- [ruanyazyk.com](https://ruanyazyk.com/tools/media/imageProduction.html#fadcam)
-- [centrum.cz](https://www.centrum.cz/chytre-nahravani-aplikace-fadcam-toci-video-i-s-vypnutou-obrazovkou-89fff656-54ab-5ff0-9d30-5c26e9bd9a3a)
+- [ruanyazyk.com](https://ruanyazyk.com/tools/media/imageProduction.html#shahidcam)
+- [centrum.cz](https://www.centrum.cz/chytre-nahravani-aplikace-shahidcam-toci-video-i-s-vypnutou-obrazovkou-89fff656-54ab-5ff0-9d30-5c26e9bd9a3a)
 - [meta.appinn.net](https://meta.appinn.net/t/topic/72853/2)
 <!-- - https://www.cityrumors.it/tecnologia/il-trucco-per-fare-video-di-nascosto-con-il-tuo-smartphone-tutti-lo-stanno-provando.html -->
 
@@ -305,7 +305,7 @@ Or:
     alt="Get it on F-Droid"
     height="70"></a>
 
-<a href="http://www.amazon.com/gp/product/B0CZKWZ8PG/ref=mas_pm_FadCam">
+<a href="http://www.amazon.com/gp/product/B0CZKWZ8PG/ref=mas_pm_ShahidCam">
     <img src="https://github.com/Muhammadshahidh/ShahidCam/assets/124708903/43550ba6-dcf2-46cb-8aa5-2a882968c529"
     alt="Get it on Amazon appstore"
     height="47"></a>
@@ -320,7 +320,7 @@ Or:
 ## `>_` Features:
 
 <details>
-<summary><strong>🎬 FadRec Screen Recorder</strong></summary>
+<summary><strong>🎬 ShahidRec Screen Recorder</strong></summary>
 
 - Full-featured screen recording with annotation tools (pen, eraser, text, shapes)
 - Multi-layer editing with version control and unlimited undo/redo
@@ -329,7 +329,7 @@ Or:
 </details>
 
 <details>
-<summary><strong>🏠 FadCam Remote</strong></summary>
+<summary><strong>🏠 ShahidCam Remote</strong></summary>
 
 - Live stream camera feed over local network with beautiful web interface
 - Remote control features: start/stop recording, adjust settings, toggle torch
@@ -341,7 +341,7 @@ Or:
 <summary><strong>📸 Dashcam & Background Recording</strong></summary>
 
 - Background video recording with screen off capability
-- **Custom hybrid MP4 output** — FadCam's recording engine is built on a custom-patched version of the Media3 library that streams recordings as a fragmented MP4 while recording (zero corruption risk, instant recovery), then finalizes them into a universally playable MP4 on stop. This hybrid format is specific to FadCam and not part of the stock Media3 library
+- **Custom hybrid MP4 output** — ShahidCam's recording engine is built on a custom-patched version of the Media3 library that streams recordings as a fragmented MP4 while recording (zero corruption risk, instant recovery), then finalizes them into a universally playable MP4 on stop. This hybrid format is specific to ShahidCam and not part of the stock Media3 library
 - **Auto-repair of interrupted recordings** — if the process is killed mid-recording (aggressive OEM background management, crashes, battery optimization), the file is automatically detected and repaired on the next app launch
 - **Repair notifications** — a banner in the Records tab tells you when an interrupted recording was successfully recovered
 - Auto-splitting large files with customizable size limits
@@ -403,7 +403,7 @@ Or:
 
 ## `>_` Upcoming Features:
 - **Scheduled Recording:** Automatically start/stop recordings at set times.
-- **In-App Video Editor:** Quick trim/edit with Faditor Mini (coming soon).
+- **In-App Video Editor:** Quick trim/edit with ShahidEditor Mini (coming soon).
 - **Enhanced Remote Features:** Additional remote control capabilities.
 
 
@@ -411,11 +411,11 @@ Or:
 <details>
 <summary><strong>🛡️ How Recording Reliability Works</strong></summary>
 
-FadCam writes recordings in a **hybrid MP4 format** that balances crash safety with universal compatibility. This format is implemented through a custom patch of the Media3 library — the hybrid finalization and self-healing repair described below are FadCam-specific features, not part of the stock library:
+ShahidCam writes recordings in a **hybrid MP4 format** that balances crash safety with universal compatibility. This format is implemented through a custom patch of the Media3 library — the hybrid finalization and self-healing repair described below are ShahidCam-specific features, not part of the stock library:
 
 1. **While recording**, the file is streamed as a *fragmented MP4* — data is appended in small fragments with the metadata kept at the front. If the app or process dies at any moment, nothing already written is ever lost or corrupted.
 2. **On a clean stop**, the file is finalized into a *standard MP4* (a single `moov` metadata block + one `mdat` container) that plays everywhere — gallery, WhatsApp, Instagram, VLC, PC players.
-3. **If the process is killed mid-recording** (background kill by the OS, crash, battery optimization), the file is left as a valid fragmented MP4. On the next app launch, FadCam's **self-healing scan**:
+3. **If the process is killed mid-recording** (background kill by the OS, crash, battery optimization), the file is left as a valid fragmented MP4. On the next app launch, ShahidCam's **self-healing scan**:
    - Detects the interrupted file automatically
    - Rebuilds the metadata directly from the file's fragments
    - Converts it into a playable standard MP4 — often byte-identical to a clean stop
@@ -436,7 +436,7 @@ Join our [Discord server](https://discord.gg/kvAZvdkuuN) to share ideas, seek he
 
 ## `>_` Support & Shop
 
-Buy FadCam Pro (lifetime access) from my Patreon shop. Your purchases help fund development and maintenance.
+Buy ShahidCam Pro (lifetime access) from my Patreon shop. Your purchases help fund development and maintenance.
 
 [![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3DFadedx%26type%3Dpatrons%26suffix%3Dpatrons%2520%257C%2520Shop&style=for-the-badge)](https://www.patreon.com/cw/Fadedx/shop)
 

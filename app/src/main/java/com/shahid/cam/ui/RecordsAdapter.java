@@ -804,8 +804,8 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         switch (subtype) {
             case SELFIE:
                 return R.string.media_type_photo_selfie;
-            case FADREC:
-                return R.string.media_type_photo_fadrec;
+            case SHAHIDREC:
+                return R.string.media_type_photo_shahidrec;
             case BACK:
             case UNKNOWN:
             case ALL:
@@ -1316,15 +1316,15 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             items.add(OptionItem.withLigature("action_open_with", ctx.getString(R.string.video_menu_open_with),
                     "open_in_new"));
         }
-        // New: Upload to FadDrive (coming soon) — badge only, no helper line
+        // New: Upload to ShahidDrive (coming soon) — badge only, no helper line
         if (!isImage) {
-            items.add(OptionItem.withLigatureBadge("action_upload_faddrive",
-                    ctx.getString(R.string.video_menu_upload_faddrive, "Upload to FadDrive"), "cloud",
+            items.add(OptionItem.withLigatureBadge("action_upload_shahiddrive",
+                    ctx.getString(R.string.video_menu_upload_shahiddrive, "Upload to ShahidDrive"), "cloud",
                     ctx.getString(R.string.remote_coming_soon_badge), R.drawable.badge_background_green, true, null));
         }
-        // Edit with Faditor Mini
+        // Edit with ShahidEditor Mini
         if (!isImage) {
-            items.add(OptionItem.withLigature("action_edit_faditorx", ctx.getString(R.string.edit_with_faditorx),
+            items.add(OptionItem.withLigature("action_edit_shahideditorx", ctx.getString(R.string.edit_with_shahideditorx),
                     "content_cut"));
         }
         items.add(OptionItem.withLigature("action_delete", ctx.getString(R.string.video_menu_del), "delete"));
@@ -1339,10 +1339,10 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             if (id == null)
                 return;
             switch (id) {
-                case "action_edit_faditorx":
-                    launchFaditorMini(ctx, videoItem);
+                case "action_edit_shahideditorx":
+                    launchShahidEditorMini(ctx, videoItem);
                     break;
-                case "action_upload_faddrive":
+                case "action_upload_shahiddrive":
                     Toast.makeText(ctx, R.string.remote_toast_coming_soon, Toast.LENGTH_SHORT).show();
                     break;
                 case "action_save":
@@ -1501,7 +1501,7 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         String currentTheme = spm.sharedPreferences.getString(Constants.PREF_APP_THEME, Constants.DEFAULT_APP_THEME);
         if ("Crimson Bloom".equals(currentTheme)) {
             popupMenuStyle = R.style.Widget_ShahidCam_Red_PopupMenu; // Use underscore, not dot
-        } else if ("Faded Night".equals(currentTheme)) {
+        } else if ("Shahid Dark".equals(currentTheme)) {
             // If you have a custom style for AMOLED, set it here
             // popupMenuStyle = R.style.Widget_ShahidCam_Amoled_PopupMenu;
             popupMenuStyle = 0; // fallback to default
@@ -1511,7 +1511,7 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 : new PopupMenu(context, holder.menuButtonContainer);
         popup.getMenuInflater().inflate(R.menu.video_item_menu, popup.getMenu());
         if (isImage) {
-            popup.getMenu().removeItem(R.id.action_edit_faditorx);
+            popup.getMenu().removeItem(R.id.action_edit_shahideditorx);
             popup.getMenu().removeItem(R.id.action_upload_youtube);
             popup.getMenu().removeItem(R.id.action_upload_drive);
         }
@@ -1520,7 +1520,7 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         int colorMenuText;
         if ("Crimson Bloom".equals(currentTheme)) {
             colorMenuText = ContextCompat.getColor(context, R.color.white);
-        } else if ("Faded Night".equals(currentTheme)) {
+        } else if ("Shahid Dark".equals(currentTheme)) {
             colorMenuText = ContextCompat.getColor(context, R.color.amoled_text_primary);
         } else {
             colorMenuText = resolveThemeColor(context, R.attr.colorHeading);
@@ -1545,8 +1545,8 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         // Handle all menu actions
         popup.setOnMenuItemClickListener(item -> {
             int id = item.getItemId();
-            if (id == R.id.action_edit_faditorx) {
-                launchFaditorMini(context, videoItem);
+            if (id == R.id.action_edit_shahideditorx) {
+                launchShahidEditorMini(context, videoItem);
                 return true;
             } else if (id == R.id.action_save) {
                 saveVideoToGalleryInternal(videoItem);
@@ -1578,7 +1578,7 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             return false;
         });
 
-        // Edit with Faditor Mini – no special badge needed
+        // Edit with ShahidEditor Mini – no special badge needed
         // (Item is fully functional — launches editor)
 
         return popup;
@@ -1764,7 +1764,7 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                         videoItem.mediaType,
                         videoItem.shotSubtype,
                         videoItem.cameraSubtype,
-                        videoItem.faditorSubtype);
+                        videoItem.shahideditorSubtype);
 
                 // Update the persistent DB index: remove old URI, invalidate so
                 // the next loadRecordsList() picks up the renamed file.
@@ -2019,20 +2019,20 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     /**
-     * Launches Faditor Mini editor with the selected video.
+     * Launches ShahidEditor Mini editor with the selected video.
      *
      * @param ctx       the current context (must be an Activity)
      * @param videoItem the video to edit
      */
-    private void launchFaditorMini(@NonNull Context ctx, @NonNull VideoItem videoItem) {
+    private void launchShahidEditorMini(@NonNull Context ctx, @NonNull VideoItem videoItem) {
         if (videoItem.uri == null) return;
         try {
-            Intent intent = new Intent(ctx, com.shahid.cam.ui.faditor.FaditorEditorActivity.class);
+            Intent intent = new Intent(ctx, com.shahid.cam.ui.shahideditor.ShahidEditorActivity.class);
             intent.setData(videoItem.uri);
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             ctx.startActivity(intent);
         } catch (Exception e) {
-            FLog.e(TAG, "Failed to launch Faditor Mini", e);
+            FLog.e(TAG, "Failed to launch ShahidEditor Mini", e);
             Toast.makeText(ctx, ctx.getString(R.string.records_cannot_open_editor), Toast.LENGTH_SHORT).show();
         }
     }
@@ -3196,15 +3196,15 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     // For dialogs, use themed MaterialAlertDialogBuilder as in SettingsFragment
     private MaterialAlertDialogBuilder themedDialogBuilder(Context context) {
-        int dialogTheme = R.style.ThemeOverlay_FadCam_Dialog;
+        int dialogTheme = R.style.ThemeOverlay_ShahidCam_Dialog;
         SharedPreferencesManager spm = SharedPreferencesManager.getInstance(context);
         String currentTheme = spm.sharedPreferences.getString(Constants.PREF_APP_THEME, Constants.DEFAULT_APP_THEME);
         if ("Crimson Bloom".equals(currentTheme))
-            dialogTheme = R.style.ThemeOverlay_FadCam_Red_Dialog;
-        else if ("Faded Night".equals(currentTheme))
-            dialogTheme = R.style.ThemeOverlay_FadCam_Amoled_MaterialAlertDialog;
+            dialogTheme = R.style.ThemeOverlay_ShahidCam_Red_Dialog;
+        else if ("Shahid Dark".equals(currentTheme))
+            dialogTheme = R.style.ThemeOverlay_ShahidCam_Amoled_MaterialAlertDialog;
         else if ("Snow Veil".equals(currentTheme))
-            dialogTheme = R.style.ThemeOverlay_FadCam_SnowVeil_Dialog;
+            dialogTheme = R.style.ThemeOverlay_ShahidCam_SnowVeil_Dialog;
         return new MaterialAlertDialogBuilder(context, dialogTheme);
     }
 
@@ -3221,7 +3221,7 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         String currentTheme = sharedPreferencesManager.sharedPreferences.getString(Constants.PREF_APP_THEME,
                 Constants.DEFAULT_APP_THEME);
         boolean isSnowVeilTheme = "Snow Veil".equals(currentTheme);
-        boolean isFadedNightTheme = "Faded Night".equals(currentTheme);
+        boolean isFadedNightTheme = "Shahid Dark".equals(currentTheme);
 
         if (isSnowVeilTheme) {
             // Set black text color for both positive and negative buttons
@@ -3235,7 +3235,7 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_NEUTRAL).setTextColor(Color.BLACK);
             }
         } else if (isFadedNightTheme) {
-            // Set white text color for Faded Night theme buttons
+            // Set white text color for Shahid Dark theme buttons
             if (dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_POSITIVE) != null) {
                 dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_POSITIVE).setTextColor(Color.WHITE);
             }

@@ -10,7 +10,7 @@
     <TextView 
         android:layout_width="match_parent" 
         android:layout_height="wrap_content" 
-        android:text="@string/fadrec_projects" 
+        android:text="@string/shahidrec_projects" 
         android:textSize="20sp" 
         android:textStyle="bold" 
         android:textColor="#FFFFFF" 
@@ -23,7 +23,7 @@
         android:id="@+id/txtProjectsPath"
         android:layout_width="match_parent" 
         android:layout_height="wrap_content" 
-        android:text="Projects saved at: ~/Documents/FadRec/Projects" 
+        android:text="Projects saved at: ~/Documents/ShahidRec/Projects" 
         android:textSize="11sp" 
         android:textColor="#80FFFFFF" 
         android:fontFamily="@font/ubuntu_regular"

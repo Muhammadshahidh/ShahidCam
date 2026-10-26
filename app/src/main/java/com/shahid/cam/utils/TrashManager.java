@@ -602,14 +602,14 @@ public class TrashManager {
      * Restore destination options
      */
     public enum RestoreDestination {
-        DOWNLOADS_FOLDER, // Public Downloads/FadCam/ folder
+        DOWNLOADS_FOLDER, // Public Downloads/ShahidCam/ folder
         INTERNAL_STORAGE, // App's private external files directory
         SAF_STORAGE // Original SAF location (if applicable)
     }
 
     /**
      * Restores a list of trash items from the trash directory back to a public
-     * visible location (Downloads/FadCam/) and removes them from metadata.
+     * visible location (Downloads/ShahidCam/) and removes them from metadata.
      *
      * @param context        The application context.
      * @param itemsToRestore The list of TrashItem objects to restore.
@@ -944,7 +944,7 @@ public class TrashManager {
         if (lower.endsWith(".3gp")) return "video/3gpp";
         if (lower.endsWith(".avi")) return "video/x-msvideo";
         if (lower.endsWith(".mov")) return "video/quicktime";
-        return "video/mp4"; // Default for FadCam recordings
+        return "video/mp4"; // Default for ShahidCam recordings
     }
 
     /**
@@ -990,7 +990,7 @@ public class TrashManager {
     private static File getRestoreTargetDirectory(Context context, RestoreDestination destination) {
         switch (destination) {
             case DOWNLOADS_FOLDER:
-                // Public Downloads/FadCam/ folder
+                // Public Downloads/ShahidCam/ folder
                 File publicDownloadsDir = Environment
                         .getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
                 return new File(publicDownloadsDir, Constants.RECORDING_DIRECTORY);

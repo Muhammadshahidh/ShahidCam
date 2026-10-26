@@ -54,13 +54,13 @@ public abstract class Constants {
     public static final String PREF_HOME_TIME_LEFT_COLOR = "pref_home_time_left_color";
     public static final String PREF_HOME_CLOCK_HOUR_FORMAT = "pref_home_clock_hour_format";
     public static final String PREF_HOME_CARD_RAIL_FOLDED = "pref_home_card_rail_folded";
-    public static final String PREF_FLOATING_CONTROLS_ENABLED = "floating_controls_enabled"; // Enable floating quick menu for FadRec
+    public static final String PREF_FLOATING_CONTROLS_ENABLED = "floating_controls_enabled"; // Enable floating quick menu for ShahidRec
     public static final String PREF_BOTH_TORCHES_ENABLED =
         "pref_both_torches_enabled";
     public static final String PREF_SELECTED_TORCH_SOURCE =
         "pref_selected_torch_source";
     public static final String PREF_TORCH_STATE = "pref_torch_state";
-    public static final String PREF_VOLUME_SHUTTER_ENABLED = "pref_volume_shutter_enabled"; // Volume keys as camera shutter (long press = record, click = FadShot)
+    public static final String PREF_VOLUME_SHUTTER_ENABLED = "pref_volume_shutter_enabled"; // Volume keys as camera shutter (long press = record, click = ShahidShot)
     public static final String PREF_LOCATION_DATA = "location_data";
     public static final String PREF_EMBED_LOCATION_DATA = "embed_location_data";
     public static final String PREF_DEBUG_DATA = "debug_data";
@@ -117,8 +117,8 @@ public abstract class Constants {
     public static final String PREF_AF_MODE = "pref_af_mode"; // int
 
     // Mode switcher constants
-    public static final String MODE_FADCAM = "FADCAM";
-    public static final String MODE_FADREC = "FADREC";
+    public static final String MODE_SHAHIDCAM = "SHAHIDCAM";
+    public static final String MODE_SHAHIDREC = "SHAHIDREC";
     public static final String MODE_FADMIC = "FADMIC";
 
     // Fragment result keys used by PickerBottomSheetFragment listeners
@@ -272,10 +272,10 @@ public abstract class Constants {
     public static final String BROADCAST_EXTRA_CAMERA_TYPE_ATTEMPTED =
         "com.shahid.cam.EXTRA_CAMERA_TYPE_ATTEMPTED";
 
-    // -------------- FadRec (Screen Recording) Constants Start --------------
+    // -------------- ShahidRec (Screen Recording) Constants Start --------------
     // Directory and file naming
-    public static final String RECORDING_DIRECTORY_FADREC = "FadRec";
-    public static final String RECORDING_FILE_PREFIX_FADREC = "FadRec_";
+    public static final String RECORDING_DIRECTORY_SHAHIDREC = "ShahidRec";
+    public static final String RECORDING_FILE_PREFIX_SHAHIDREC = "ShahidRec_";
 
     // Screen recording intent actions
     public static final String INTENT_ACTION_START_SCREEN_RECORDING =
@@ -326,8 +326,8 @@ public abstract class Constants {
         "com.shahid.cam.EXTRA_BATCH_CUSTOM_TREE_URI";
     public static final String EXTRA_BATCH_OUTPUT_MODE =
         "com.shahid.cam.EXTRA_BATCH_OUTPUT_MODE";
-    public static final String BATCH_OUTPUT_MODE_DEFAULT_FADITOR =
-        "DEFAULT_FADITOR";
+    public static final String BATCH_OUTPUT_MODE_DEFAULT_SHAHIDEDITOR =
+        "DEFAULT_SHAHIDEDITOR";
     public static final String BATCH_OUTPUT_MODE_CUSTOM_TREE_URI =
         "CUSTOM_TREE_URI";
     public static final String ACTION_BATCH_MEDIA_COMPLETED =
@@ -399,7 +399,7 @@ public abstract class Constants {
         "com.shahid.cam.EXTRA_SCREEN_RECORDING_FORCE_NO_AUDIO";
     public static final String PREF_SCREEN_RECORDING_ELAPSED_TIME_LABELS =
         "pref_screen_recording_elapsed_time_labels"; // true to show labels (d/h/m/s), false to hide
-    // -------------- FadRec (Screen Recording) Constants End --------------
+    // -------------- ShahidRec (Screen Recording) Constants End --------------
     public static final String EXTRA_FOCUS_X = "com.shahid.cam.EXTRA_FOCUS_X"; // float (normalized 0..1)
     public static final String EXTRA_FOCUS_Y = "com.shahid.cam.EXTRA_FOCUS_Y"; // float (normalized 0..1)
     public static final String EXTRA_ZOOM_RATIO = "com.shahid.cam.EXTRA_ZOOM_RATIO"; // float
@@ -424,7 +424,7 @@ public abstract class Constants {
     // Quick-action button slots (comma-separated "token:slot" pairs). Key bumped to
     // v2 so polluted positions saved by earlier broken drag builds are discarded.
     public static final String PREF_QUICK_ACTIONS_ORDER = "pref_quick_actions_slots_v2";
-    public static final String DEFAULT_QUICK_ACTIONS_ORDER = "timer,mute,full,fadshot";
+    public static final String DEFAULT_QUICK_ACTIONS_ORDER = "timer,mute,full,shahidshot";
     // Sidebar mini apps: pipe-separated order of ALL mini app ids (user-reorderable)
     // + how many of the top of that order are shown in the home sidebar (default 3).
     // Count key bumped to v2 so early test builds' stored values are discarded.
@@ -467,32 +467,32 @@ public abstract class Constants {
     public static final String INTENT_EXTRA_CAMERA_TYPE_SWITCH =
         "com.shahid.cam.EXTRA_CAMERA_TYPE_SWITCH";
 
-    public static final String RECORDING_DIRECTORY = "FadCam";
+    public static final String RECORDING_DIRECTORY = "ShahidCam";
     public static final String RECORDING_SUBDIR_CAMERA = "Camera";
     public static final String RECORDING_SUBDIR_CAMERA_BACK = "Back";
     public static final String RECORDING_SUBDIR_CAMERA_FRONT = "Front";
     public static final String RECORDING_SUBDIR_CAMERA_DUAL = "Dual";
     public static final String RECORDING_SUBDIR_DUAL = "Dual";
     public static final String RECORDING_SUBDIR_SCREEN = "Screen";
-    public static final String RECORDING_SUBDIR_FADITOR = "Faditor";
-    public static final String RECORDING_SUBDIR_FADITOR_CONVERTED = "Converted";
-    public static final String RECORDING_SUBDIR_FADITOR_MERGE = "Merge";
+    public static final String RECORDING_SUBDIR_SHAHIDEDITOR = "ShahidEditor";
+    public static final String RECORDING_SUBDIR_SHAHIDEDITOR_CONVERTED = "Converted";
+    public static final String RECORDING_SUBDIR_SHAHIDEDITOR_MERGE = "Merge";
     public static final String RECORDING_SUBDIR_STREAM = "Stream";
-    public static final String RECORDING_SUBDIR_SHOT = "FadShot";
+    public static final String RECORDING_SUBDIR_SHOT = "ShahidShot";
     public static final String RECORDING_SUBDIR_SHOT_BACK = "Back";
     public static final String RECORDING_SUBDIR_SHOT_SELFIE = "Selfie";
-    public static final String RECORDING_SUBDIR_SHOT_FADREC = "FadRec";
+    public static final String RECORDING_SUBDIR_SHOT_SHAHIDREC = "ShahidRec";
 
     public static final String RECORDING_SUBDIR_MINIAPPS = "MiniApps";
     public static final String RECORDING_SUBDIR_MINIAPPS_QR = "QRScanner";
     public static final String RECORDING_SUBDIR_MINIAPPS_QRGEN = "QRGenerator";
     public static final String RECORDING_FILE_EXTENSION = "mp4";
     public static final String RECORDING_IMAGE_EXTENSION = "jpg";
-    public static final String RECORDING_FILE_PREFIX_FADSHOT = "FadShot_";
-    public static final String RECORDING_FILE_PREFIX_FADITOR_STANDARD =
-        "Faditor_Std_";
-    public static final String RECORDING_FILE_PREFIX_FADITOR_MERGE =
-        "Faditor_Merge_";
+    public static final String RECORDING_FILE_PREFIX_SHAHIDSHOT = "ShahidShot_";
+    public static final String RECORDING_FILE_PREFIX_SHAHIDEDITOR_STANDARD =
+        "ShahidEditor_Std_";
+    public static final String RECORDING_FILE_PREFIX_SHAHIDEDITOR_MERGE =
+        "ShahidEditor_Merge_";
     public static final double RECORDING_COMPRESSION_FACTOR = 0.33;
 
     public static final CameraType DEFAULT_CAMERA_TYPE = CameraType.BACK;
@@ -501,7 +501,7 @@ public abstract class Constants {
     public static final float DEFAULT_ZOOM_RATIO = 1.0f; // Default zoom ratio (no zoom)
     public static final VideoCodec DEFAULT_VIDEO_CODEC = VideoCodec.HEVC;
 
-    public static final String DEFAULT_WATERMARK_OPTION = "timestamp_fadcam";
+    public static final String DEFAULT_WATERMARK_OPTION = "timestamp_shahidcam";
     public static final boolean DEFAULT_PREVIEW_ENABLED = true;
     public static final boolean DEFAULT_RECORD_AUDIO = true;
     public static final int DEFAULT_AUDIO_BITRATE = 192000; // 192 kbps stereo AAC
@@ -635,7 +635,7 @@ public abstract class Constants {
     public static final String APP_ICON_FADED = "faded"; // Faded icon
     public static final String APP_ICON_PALESTINE = "palestine"; // Sumud icon
     public static final String APP_ICON_PAKISTAN = "pakistan"; // MadeInPK icon
-    public static final String APP_ICON_FADSECLAB = "fadseclab"; // r00t icon
+    public static final String APP_ICON_FADSECLAB = "shahidlabs"; // r00t icon
     public static final String APP_ICON_NOORISTIC = "nooristic"; // Nooristic icon
     public static final String APP_ICON_BAT = "bat"; // FadBat icon
     public static final String APP_ICON_REDBINARY = "redbinary"; // RedBinary icon
@@ -669,7 +669,7 @@ public abstract class Constants {
     // Fullscreen preview tap-to-focus toggle (when disabled, taps only toggle controls)
     public static final String PREF_FULLSCREEN_TAP_TO_FOCUS_ENABLED =
         "pref_fullscreen_tap_to_focus_enabled";
-    // Show preview quick actions (FadShot + Fullscreen) even when recording is not active.
+    // Show preview quick actions (ShahidShot + Fullscreen) even when recording is not active.
     public static final String PREF_PREVIEW_QUICK_ACTIONS_ALWAYS_VISIBLE =
         "pref_preview_quick_actions_always_visible";
     // Rule-of-thirds grid overlay on the camera preview (default off).
@@ -738,8 +738,8 @@ public abstract class Constants {
         "com.shahid.cam.ON_DUAL_CAMERA_ERROR";
     public static final String BROADCAST_ON_DUAL_CAMERAS_SWAPPED =
         "com.shahid.cam.ON_DUAL_CAMERAS_SWAPPED";
-    // Accessibility screenshot trigger action (FadRec shortcut).
-    public static final String ACTION_TRIGGER_FADREC_SCREENSHOT =
-        "com.shahid.cam.ACTION_TRIGGER_FADREC_SCREENSHOT";
+    // Accessibility screenshot trigger action (ShahidRec shortcut).
+    public static final String ACTION_TRIGGER_SHAHIDREC_SCREENSHOT =
+        "com.shahid.cam.ACTION_TRIGGER_SHAHIDREC_SCREENSHOT";
     // ── End Dual Camera Constants ──────────────────────────────────────────
 }

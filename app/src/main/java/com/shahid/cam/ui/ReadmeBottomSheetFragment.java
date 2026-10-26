@@ -63,7 +63,7 @@ public class ReadmeBottomSheetFragment extends BottomSheetDialogFragment {
 
                 // Website row (requested to be first)
                 LinearLayout websiteRow = buildActionRow(R.drawable.ic_website, getString(R.string.website_title), getString(R.string.readme_website_subtitle));
-                websiteRow.setOnClickListener(v -> openUrl("https://fadcam.faded.dev"));
+                websiteRow.setOnClickListener(v -> openUrl("https://shahidcam.shahidcam.app"));
                 linksCard.addView(websiteRow);
 
                 // Divider 1

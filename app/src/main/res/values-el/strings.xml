@@ -16,7 +16,7 @@
     <string name="website_title">Ιστοσελίδα</string>
     <string name="readme_website_subtitle">Επίσημη ιστοσελίδα</string>
     <string name="privacy_information">Πληροφορίες Ιδιωτικότητας</string>
-    <string name="copyright_info"> 2024-2025 https://fadcam.faded.dev\nLicensed under GPL-3.0</string>
+    <string name="copyright_info"> 2024-2025 https://shahidcam.shahidcam.app\nLicensed under GPL-3.0</string>
     <string-array name="video_resolutions_keys">
         <item>7680x4320</item>        <!-- 8K -->        <item>3840x2160</item>        <!-- 4K -->        <item>2560x1440</item>        <!-- 2K -->        <item>1920x1080</item>        <!-- FHD -->        <item>1280x720</item>        <!-- HD -->        <item>640x480</item>        <!-- SD -->        <item>720x480</item>        <!-- SD -->        <item>480x360</item>        <!-- SD -->    </string-array>
     <string-array name="video_resolutions_values">
@@ -47,17 +47,17 @@
     <string name="button_stop">Διακοπή</string>
     <string name="button_resume">Συνέχιση</string>
     <!-- ScreenRec Screen Recording Strings -->
-    <string name="fadrec_start_screen_recording">Έναρξη Εγγραφής Οθόνης</string>
-    <string name="fadrec_stop_screen_recording">Διακοπή Εγγραφής Οθόνης</string>
-    <string name="fadrec_pause_screen_recording">Παύση Εγγραφής Οθόνης</string>
-    <string name="fadrec_resume_screen_recording">Συνέχιση Εγγραφής Οθόνης</string>
-    <string name="fadrec_screen_recording_started">Η εγγραφή οθόνης ξεκίνησε</string>
-    <string name="fadrec_screen_recording_stopped">Η εγγραφή οθόνης σταμάτησε</string>
-    <string name="fadrec_screen_recording_paused">Η εγγραφή οθόνης τέθηκε σε παύση</string>
-    <string name="fadrec_screen_recording_resumed">Η εγγραφή οθόνης συνεχίστηκε</string>
-    <string name="fadrec_notification_title">Εγγραφή Οθόνης</string>
-    <string name="fadrec_notification_recording">Εγγραφή οθόνης…</string>
-    <string name="fadrec_notification_paused">Η εγγραφή τέθηκε σε παύση</string>
+    <string name="shahidrec_start_screen_recording">Έναρξη Εγγραφής Οθόνης</string>
+    <string name="shahidrec_stop_screen_recording">Διακοπή Εγγραφής Οθόνης</string>
+    <string name="shahidrec_pause_screen_recording">Παύση Εγγραφής Οθόνης</string>
+    <string name="shahidrec_resume_screen_recording">Συνέχιση Εγγραφής Οθόνης</string>
+    <string name="shahidrec_screen_recording_started">Η εγγραφή οθόνης ξεκίνησε</string>
+    <string name="shahidrec_screen_recording_stopped">Η εγγραφή οθόνης σταμάτησε</string>
+    <string name="shahidrec_screen_recording_paused">Η εγγραφή οθόνης τέθηκε σε παύση</string>
+    <string name="shahidrec_screen_recording_resumed">Η εγγραφή οθόνης συνεχίστηκε</string>
+    <string name="shahidrec_notification_title">Εγγραφή Οθόνης</string>
+    <string name="shahidrec_notification_recording">Εγγραφή οθόνης…</string>
+    <string name="shahidrec_notification_paused">Η εγγραφή τέθηκε σε παύση</string>
     <string name="floating_controls_title">Μενού</string>
     <string name="floating_controls_permission_needed">Απαιτείται άδεια επικάλυψης</string>
     <string name="floating_controls_permission_title">Απαιτείται Άδεια Επικάλυψης</string>
@@ -80,24 +80,24 @@
     <string name="snap_guides">Οδηγοί Στιγμής</string>
     <string name="add_text">Προσθήκη Κειμένου</string>
     <string name="add_shape">Προσθήκη Σχήματος</string>
-    <string name="fadrec_ready_to_record">Έτοιμο για καταγραφή οθόνης</string>
-    <string name="fadrec_ready_to_record_subtitle">Πατήστε για έναρξη</string>
-    <string name="fadrec_permission_denied">Άρνηση άδειας εγγραφής οθόνης</string>
-    <string name="fadrec_mode_title">ScreenRec • Εγγραφή Οθόνης</string>
-    <string name="fadrec_mute_audio">Σίγαση ήχου εγγραφής</string>
-    <string name="fadrec_unmute_audio">Άρση σίγασης ήχου εγγραφής</string>
-    <string name="fadrec_mic_permission_needed_title">Απαιτείται Άδεια Μικροφώνου</string>
-    <string name="fadrec_mic_permission_needed_message">Το ScreenRec δεν μπορεί να έχει πρόσβαση στο μικρόφωνό σας. Μπορείτε να κάνετε εγγραφή χωρίς ήχο - δεν θα αποθηκευτεί ήχος.</string>
-    <string name="fadrec_record_muted">Εγγραφή χωρίς ήχο</string>
+    <string name="shahidrec_ready_to_record">Έτοιμο για καταγραφή οθόνης</string>
+    <string name="shahidrec_ready_to_record_subtitle">Πατήστε για έναρξη</string>
+    <string name="shahidrec_permission_denied">Άρνηση άδειας εγγραφής οθόνης</string>
+    <string name="shahidrec_mode_title">ScreenRec • Εγγραφή Οθόνης</string>
+    <string name="shahidrec_mute_audio">Σίγαση ήχου εγγραφής</string>
+    <string name="shahidrec_unmute_audio">Άρση σίγασης ήχου εγγραφής</string>
+    <string name="shahidrec_mic_permission_needed_title">Απαιτείται Άδεια Μικροφώνου</string>
+    <string name="shahidrec_mic_permission_needed_message">Το ScreenRec δεν μπορεί να έχει πρόσβαση στο μικρόφωνό σας. Μπορείτε να κάνετε εγγραφή χωρίς ήχο - δεν θα αποθηκευτεί ήχος.</string>
+    <string name="shahidrec_record_muted">Εγγραφή χωρίς ήχο</string>
     <!-- ScreenRec audio source picker -->
-    <string name="fadrec_audio_source_title">Πηγή Ήχου</string>
-    <string name="fadrec_audio_source_choose">Επιλογή πηγής ήχου</string>
+    <string name="shahidrec_audio_source_title">Πηγή Ήχου</string>
+    <string name="shahidrec_audio_source_choose">Επιλογή πηγής ήχου</string>
 
-	<string name="fadrec_audio_source_helper">Επιλέξτε τι ήχο καταγράφουν οι εγγραφές οθόνης. Η \"Προεπιλογή (δρομολόγηση συστήματος)\" συνιστάται για μικρόφωνα USB και ενσύρματα — ή επιλέξτε μια συγκεκριμένη συσκευή για ρητή δρομολόγηση.</string>
-	<string name="fadrec_audio_source_mic_default">Μικρόφωνο (προεπιλεγμένη δρομολόγηση)</string>
-    <string name="fadrec_audio_source_none">Χωρίς Ήχο</string>
-    <string name="fadrec_audio_source_mic">Μικρόφωνο</string>
-    <string name="fadrec_audio_source_internal">Ήχος Συσκευής (Εσωτερικός)</string>
+	<string name="shahidrec_audio_source_helper">Επιλέξτε τι ήχο καταγράφουν οι εγγραφές οθόνης. Η \"Προεπιλογή (δρομολόγηση συστήματος)\" συνιστάται για μικρόφωνα USB και ενσύρματα — ή επιλέξτε μια συγκεκριμένη συσκευή για ρητή δρομολόγηση.</string>
+	<string name="shahidrec_audio_source_mic_default">Μικρόφωνο (προεπιλεγμένη δρομολόγηση)</string>
+    <string name="shahidrec_audio_source_none">Χωρίς Ήχο</string>
+    <string name="shahidrec_audio_source_mic">Μικρόφωνο</string>
+    <string name="shahidrec_audio_source_internal">Ήχος Συσκευής (Εσωτερικός)</string>
 
 	<string name="screen_rec_audio_device_title">Συσκευή εισόδου ήχου</string>
 	<string name="screen_rec_audio_device_default">Προεπιλογή (δρομολόγηση συστήματος)</string>
@@ -230,7 +230,7 @@
     <string name="front">Μπροστά</string>
     <string name="video_menu_del">Διαγραφή</string>
     <string name="video_menu_save">Αποθήκευση στη Συλλογή</string>
-    <string name="video_menu_save_helper_downloads_fadcam">Το βίντεο θα αποθηκευτεί στο Downloads/ShahidCam</string>
+    <string name="video_menu_save_helper_downloads_shahidcam">Το βίντεο θα αποθηκευτεί στο Downloads/ShahidCam</string>
     <string name="video_menu_save_copy_or_move_title">Αποθήκευση στη Συλλογή</string>
     <string name="video_menu_save_copy">Αντιγραφή στη Συλλογή</string>
     <string name="video_menu_save_copy_desc">Δημιουργία αντιγράφου στο Downloads/ShahidCam (το αρχικό αρχείο διατηρείται)</string>
@@ -366,11 +366,11 @@
     <string name="media_type_photo">Φωτογραφία</string>
     <string name="media_type_photo_back">Πίσω</string>
     <string name="media_type_photo_selfie">Selfie</string>
-    <string name="media_type_photo_fadrec">ScreenRec</string>
+    <string name="media_type_photo_shahidrec">ScreenRec</string>
     <string name="photo_capture_saved">Η φωτογραφία αποθηκεύτηκε</string>
     <string name="photo_capture_failed">Δεν ήταν δυνατή η λήψη φωτογραφίας</string>
     <string name="photo_capture_preview_unavailable">Η προεπισκόπηση δεν είναι διαθέσιμη</string>
-    <string name="video_menu_upload_faddrive">Μεταφόρτωση στο Drive</string>
+    <string name="video_menu_upload_shahiddrive">Μεταφόρτωση στο Drive</string>
     <string name="toast_no_youtube_app">Η εφαρμογή YouTube δεν βρέθηκε</string>
     <string name="toast_no_drive_app">Η εφαρμογή Google Drive δεν βρέθηκε</string>
     <string name="records_title">Εγγραφές</string>
@@ -379,21 +379,21 @@
     <string name="records_filter_camera">ShahidCam</string>
     <string name="records_filter_dual">Dual</string>
     <string name="records_filter_screen">ScreenRec</string>
-    <string name="records_filter_faditor">ShahidEditor</string>
+    <string name="records_filter_shahideditor">ShahidEditor</string>
     <string name="records_filter_stream">Stream</string>
     <string name="records_filter_shot">ShahidShot</string>
     <string name="records_filter_camera_all">Όλα</string>
     <string name="records_filter_camera_back">Πίσω</string>
     <string name="records_filter_camera_front">Μπροστά</string>
     <string name="records_filter_camera_dual">Dual</string>
-    <string name="records_filter_faditor_all">Όλα</string>
-    <string name="records_filter_faditor_converted">Μετατρεπμένα</string>
-    <string name="records_filter_faditor_merge">Συγχώνευση</string>
+    <string name="records_filter_shahideditor_all">Όλα</string>
+    <string name="records_filter_shahideditor_converted">Μετατρεπμένα</string>
+    <string name="records_filter_shahideditor_merge">Συγχώνευση</string>
     <string name="records_filter_shot_all">Όλα</string>
     <string name="records_filter_miniapps_all">Όλα</string>
     <string name="records_filter_shot_back">Πίσω</string>
     <string name="records_filter_shot_selfie">Selfie</string>
-    <string name="records_filter_shot_fadrec">ScreenRec</string>
+    <string name="records_filter_shot_shahidrec">ScreenRec</string>
     <string name="records_filter_checklist_desc">Εναλλαγή λειτουργίας επιλογής</string>
     <string name="records_filter_helper_camera_all">Εγγραφές κάμερας (Πίσω, Μπροστά, Dual)</string>
     <string name="records_filter_helper_camera_back">Καταγράφηκε με πίσω κάμερα</string>
@@ -401,20 +401,20 @@
     <string name="records_filter_helper_camera_dual">Καταγράφηκε με λειτουργία dual κάμερας</string>
     <string name="records_filter_helper_dual">Εγγραφές dual κάμερας</string>
     <string name="records_filter_helper_screen">Εγγραφές οθόνης (ScreenRec)</string>
-    <string name="records_filter_helper_faditor">Επεξεργασμένα/Εξαγόμενα βίντεο (ShahidEditor)</string>
-    <string name="records_filter_helper_faditor_all">Όλα τα αρχεία εξόδου ShahidEditor και σχετικά αρχεία.</string>
-    <string name="records_filter_helper_faditor_converted">Μετατροπή κατακερματισμένου MP4 σε τυπικό MP4 με δυνατότητα αναζήτησης για εξωτερικούς players.</string>
-    <string name="records_filter_helper_faditor_merge">Συγχώνευση πολλαπλών κλιπ σε ένα βίντεο εξόδου.</string>
+    <string name="records_filter_helper_shahideditor">Επεξεργασμένα/Εξαγόμενα βίντεο (ShahidEditor)</string>
+    <string name="records_filter_helper_shahideditor_all">Όλα τα αρχεία εξόδου ShahidEditor και σχετικά αρχεία.</string>
+    <string name="records_filter_helper_shahideditor_converted">Μετατροπή κατακερματισμένου MP4 σε τυπικό MP4 με δυνατότητα αναζήτησης για εξωτερικούς players.</string>
+    <string name="records_filter_helper_shahideditor_merge">Συγχώνευση πολλαπλών κλιπ σε ένα βίντεο εξόδου.</string>
     <string name="records_filter_helper_stream">Αποθηκευμένες εγγραφές stream</string>
     <string name="records_filter_helper_shot_all">Καταγεγραμμένες φωτογραφίες και στιγμιότυπα οθόνης</string>
     <string name="records_filter_helper_shot_back">Καταγεγραμμένες φωτογραφίες με πίσω κάμερα</string>
     <string name="records_filter_helper_shot_selfie">Καταγεγραμμένες φωτογραφίες με μπροστινή κάμερα (selfie)</string>
-    <string name="records_filter_helper_shot_fadrec">Καταγεγραμμένα στιγμιότυπα οθόνης (ScreenRec)</string>
+    <string name="records_filter_helper_shot_shahidrec">Καταγεγραμμένα στιγμιότυπα οθόνης (ScreenRec)</string>
     <string name="records_location_format">Τοποθεσία: %1$s/%2$s</string>
     <string name="records_batch_select_all">Επιλογή όλων</string>
     <string name="records_batch_deselect_all">Αποεπιλογή όλων</string>
     <string name="records_batch_save">Αποθήκευση στη Συλλογή</string>
-    <string name="records_batch_faditor">Αυτοματισμοί ShahidEditor</string>
+    <string name="records_batch_shahideditor">Αυτοματισμοί ShahidEditor</string>
     <string name="records_batch_delete">Διαγραφή</string>
     <string name="records_batch_coming_soon">Αυτή η ενέργεια δέσμης θα προστεθεί στη συνέχεια.</string>
     <string name="records_batch_select_items_first">Επιλέξτε πρώτα ένα ή περισσότερα βίντεο.</string>
@@ -422,10 +422,10 @@
     <string name="records_batch_fab_label">Δέσμη</string>
     <string name="records_batch_select_all_desc">Επιλογή ή εκκαθάριση όλων των βίντεο στο τρέχον φίλτρο.</string>
     <string name="records_batch_save_desc">Αντιγραφή, μετακίνηση ή εξαγωγή επιλεγμένων βίντεο σε άλλο φάκελο.</string>
-    <string name="records_batch_faditor_desc">Εκτέλεση αυτοματισμών στο παρασκήνιο χωρίς άνοιγμα της καρτέλας ShahidEditor.</string>
+    <string name="records_batch_shahideditor_desc">Εκτέλεση αυτοματισμών στο παρασκήνιο χωρίς άνοιγμα της καρτέλας ShahidEditor.</string>
     <string name="records_batch_delete_desc">Μετακίνηση επιλεγμένων βίντεο στον Κάδο.</string>
     <string name="records_batch_save_queued">%1$d εργασία(ες) αποθήκευσης προστέθηκαν στην ουρά.</string>
-    <string name="records_batch_faditor_first_only">Άνοιγμα πρώτου βίντεο. %1$d επιλέχθηκαν· η ουρά πολλαπλής επεξεργασίας έρχεται στη συνέχεια.</string>
+    <string name="records_batch_shahideditor_first_only">Άνοιγμα πρώτου βίντεο. %1$d επιλέχθηκαν· η ουρά πολλαπλής επεξεργασίας έρχεται στη συνέχεια.</string>
     <string name="records_batch_save_copy_helper">Διατηρεί τα πρωτότυπα· αποθηκεύει αντίγραφα στο %1$s.</string>
     <string name="records_batch_save_move_helper">Μετακινεί τα επιλεγμένα βίντεο στο %1$s και αφαιρεί τα πρωτότυπα μετά την επιτυχή αποθήκευση.</string>
     <string name="records_batch_save_custom_location">Εξαγωγή σε Νέα Τοποθεσία</string>
@@ -433,12 +433,12 @@
     <string name="records_batch_custom_export_started">Εξαγωγή %1$d βίντεο στον επιλεγμένο φάκελο…</string>
     <string name="records_batch_custom_export_invalid_folder">Ο επιλεγμένος φάκελος δεν είναι εγγράψιμος.</string>
     <string name="records_batch_custom_export_done">Η εξαγωγή ολοκληρώθηκε. Επιτυχία: %1$d • Αποτυχία: %2$d</string>
-    <string name="records_batch_faditor_sheet_title">Ενέργειες ShahidEditor Δέσμης</string>
-    <string name="records_batch_faditor_export_standard">Εξαγωγή σε Τυπικό MP4</string>
-    <string name="records_batch_faditor_export_standard_desc">Μετατροπή κατακερματισμένου MP4 σε τυπικό MP4 με δυνατότητα αναζήτησης για εξωτερικούς players.</string>
-    <string name="records_batch_faditor_merge">Συγχώνευση Επιλεγμένων Βίντεο</string>
-    <string name="records_batch_faditor_merge_desc">Συνδυασμός επιλεγμένων κλιπ σε ένα βίντεο στο παρασκήνιο.</string>
-    <string name="records_batch_faditor_queued">%1$d στοιχεί(α) δέσμης σε ουρά στο παρασκήνιο.</string>
+    <string name="records_batch_shahideditor_sheet_title">Ενέργειες ShahidEditor Δέσμης</string>
+    <string name="records_batch_shahideditor_export_standard">Εξαγωγή σε Τυπικό MP4</string>
+    <string name="records_batch_shahideditor_export_standard_desc">Μετατροπή κατακερματισμένου MP4 σε τυπικό MP4 με δυνατότητα αναζήτησης για εξωτερικούς players.</string>
+    <string name="records_batch_shahideditor_merge">Συγχώνευση Επιλεγμένων Βίντεο</string>
+    <string name="records_batch_shahideditor_merge_desc">Συνδυασμός επιλεγμένων κλιπ σε ένα βίντεο στο παρασκήνιο.</string>
+    <string name="records_batch_shahideditor_queued">%1$d στοιχεί(α) δέσμης σε ουρά στο παρασκήνιο.</string>
     <string name="records_batch_completed">Η λειτουργία δέσμης ολοκληρώθηκε.</string>
     <string name="records_batch_notif_channel_name">Ενέργειες Δέσμης Πολυμέσων</string>
     <string name="records_batch_notif_channel_desc">Πρόοδος και αποτελέσματα για εργασίες αποθήκευσης δέσμης Εγγραφών και αυτοματισμού ShahidEditor.</string>
@@ -454,7 +454,7 @@
     <string name="nav_settings">Ρυθμίσεις</string>
     <string name="nav_about">Σχετικά</string>
     <string name="nav_remote">Απομακρυσμένη</string>
-    <string name="nav_faditor_mini">ShahidEditor</string>
+    <string name="nav_shahideditor_mini">ShahidEditor</string>
     <string name="nav_lab">Εργαστήριο</string>
     <string name="button_settings_readme">Διαβάστε με</string>
     <string name="setting_cam_title">Επιλογή Κάμερας</string>
@@ -630,7 +630,7 @@
     <string name="discord_title">Διακομιστής Discord</string>
     <string name="thankyou_msg">Σας ευχαριστούμε που χρησιμοποιείτε το ShahidCam!</string>
     <string name="settings_title">Ρυθμίσεις</string>
-    <string name="array_watermark_time_fadcam">Ώρα με ShahidCam</string>
+    <string name="array_watermark_time_shahidcam">Ώρα με ShahidCam</string>
     <string name="array_watermark_timeonly">Χρονική Σήμανση</string>
     <string name="array_watermark_nomark">Χωρίς Υδατογράφημα</string>
     <string name="watermark_preview_funny">Αλήθεια; :( 
@@ -819,16 +819,16 @@
     <string name="setting_debug_title">Αποσφαλμάτωση</string>
     <string name="note_debug">Ενεργοποίηση δημιουργίας αρχείου καταγραφής αποσφαλμάτωσης 
 (Προεπιλογή: Απενεργοποιημένο)</string>
-    <string name="note_debug_detailed">Όταν είναι ενεργοποιημένο, το ShahidCam γράφει ένα αρχείο καταγραφής αποσφαλμάτωσης HTML (FADCAM_debug.html) στον φάκελο Downloads/ShahidCam/. Μοιραστείτε αυτό το αρχείο όταν αναφέρετε προβλήματα. Απενεργοποιήστε το για να σταματήσετε μελλοντικές εγγραφές.
+    <string name="note_debug_detailed">Όταν είναι ενεργοποιημένο, το ShahidCam γράφει ένα αρχείο καταγραφής αποσφαλμάτωσης HTML (SHAHIDCAM_debug.html) στον φάκελο Downloads/ShahidCam/. Μοιραστείτε αυτό το αρχείο όταν αναφέρετε προβλήματα. Απενεργοποιήστε το για να σταματήσετε μελλοντικές εγγραφές.
 Σημείωση: Η καταγραφή αποσφαλμάτωσης μπορεί να επιβαρύνει την απόδοση κατά την εγγραφή — κρατήστε την απενεργοποιημένη εκτός αν αντιμετωπίζετε πρόβλημα.</string>
     <string name="note_debug_extra">Όταν είναι ενεργοποιημένο, θα δημιουργηθεί ένα αρχείο καταγραφής αποσφαλμάτωσης στον φάκελο Downloads/ShahidCam. Αυτό μπορεί να βοηθήσει στη διάγνωση προβλημάτων εφαρμογής.</string>
     <!-- Watermark unified strings -->
     <string name="watermark_preview_heading">Προεπισκόπηση</string>
     <string name="watermark_options_heading">Επιλογές</string>
     <string name="watermark_style_row_title">Στυλ Υδατογραφήματος</string>
-    <string name="watermark_preview_sample_fadcam">Λήψη από ShahidCam - %1$s</string>
+    <string name="watermark_preview_sample_shahidcam">Λήψη από ShahidCam - %1$s</string>
     <string name="watermark_preview_sample_timeonly">%1$s</string>
-    <string name="watermark_style_time_fadcam_label">Ώρα με ShahidCam</string>
+    <string name="watermark_style_time_shahidcam_label">Ώρα με ShahidCam</string>
     <string name="watermark_style_timeonly_label">Χρονική Σήμανση</string>
     <string name="watermark_style_badge_label">Μόνο Επωνυμία</string>
     <string name="watermark_style_none_label">Χωρίς Υδατογράφημα</string>
@@ -1067,7 +1067,7 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="setting_back_lens_info_single_v2">Εντοπίστηκε μόνο μία πίσω κάμερα. Χρησιμοποιήστε ζουμ (0.5x/2x/5x) για άλλους φακούς.</string>
     <string-array name="theme_options" translatable="false">
         <item>Midnight Dusk</item>
-        <item>Faded Night</item>
+        <item>Shahid Dark</item>
         <item>Crimson Bloom</item>
         <item>Silent Forest</item>
         <item>Shadow Alloy</item>
@@ -1098,99 +1098,99 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="coming_soon_toast">Σύντομα! In Sha Allah</string>
     <string name="remote_coming_soon">Ο απομακρυσμένος έλεγχος για το ShahidCam έρχεται σύντομα.</string>
     <string name="remote_feature_description">Συνδέστε πελάτες ShahidCam χρησιμοποιώντας κωδικό QR για ασφαλή απομακρυσμένο έλεγχο τοπικού δικτύου.</string>
-    <string name="faditor_mini_title">ShahidEditor Mini</string>
-    <string name="faditor_mini_coming_soon">Σύντομα — ελαφρύς επεξεργαστής</string>
-    <string name="faditor_mini_subtitle">Κόψτε και εξάγετε τα βίντεό σας με ακρίβεια</string>
-    <string name="faditor_mini_toast">ShahidEditor Mini — σύντομα</string>
-    <string name="faditor_select_video">Επιλογή Βίντεο</string>
-    <string name="faditor_editor_title">ShahidEditor Mini</string>
-    <string name="faditor_close">Κλείσιμο επεξεργαστή</string>
-    <string name="faditor_undo">Αναίρεση</string>
-    <string name="faditor_redo">Επανάληψη</string>
-    <string name="faditor_play_pause">Αναπαραγωγή ή παύση</string>
-    <string name="faditor_export">Εξαγωγή</string>
-    <string name="faditor_cancel">Ακύρωση</string>
-    <string name="faditor_exporting">Εξαγωγή…</string>
-    <string name="faditor_exporting_percent">Εξαγωγή… %1$d%%</string>
-    <string name="faditor_export_success">Το βίντεο εξήχθη επιτυχώς</string>
-    <string name="faditor_export_error">Η εξαγωγή απέτυχε: %1$s</string>
-    <string name="faditor_export_in_progress">Υπάρχει ήδη εξαγωγή σε εξέλιξη</string>
-    <string name="faditor_remuxing">Βελτιστοποίηση για προεπισκόπηση…</string>
-    <string name="faditor_remuxing_percent">Βελτιστοποίηση… %1$s δευτ. επεξεργασίας</string>
-    <string name="faditor_error_no_video">Δεν επιλέχθηκε βίντεο</string>
-    <string name="faditor_error_picker">Δεν ήταν δυνατό το άνοιγμα του επιλογέα αρχείων</string>
-    <string name="faditor_tool_trim">Περικοπή</string>
-    <string name="faditor_tool_speed">1x</string>
-    <string name="faditor_tool_muted">Σίγαση</string>
-    <string name="faditor_tool_sound">Ήχος</string>
-    <string name="faditor_speed_title">Ταχύτητα Αναπαραγωγής</string>
-    <string name="faditor_speed_reset">Επαναφορά στο 1x</string>
-    <string name="faditor_volume_title">Ένταση</string>
-    <string name="faditor_volume_warning">Πάνω από 100%% μπορεί να υποβαθμίσει την ποιότητα ήχου</string>
-    <string name="faditor_volume_mute">Σίγαση Ήχου</string>
-    <string name="faditor_volume_unmute">Αναίρεση Σίγασης Ήχου</string>
-    <string name="faditor_tool_volume">Ένταση</string>
-    <string name="faditor_tool_rotate">Περιστροφή</string>
-    <string name="faditor_tool_flip">Αναστροφή</string>
-    <string name="faditor_tool_crop">Περικοπή</string>
-    <string name="faditor_tool_crop_free">Ελεύθερο</string>
-    <string name="faditor_tool_canvas">Καμβάς</string>
-    <string name="faditor_canvas_title">Καμβάς</string>
-    <string name="faditor_canvas_applied">Ο καμβάς ορίστηκε σε %s</string>
-    <string name="faditor_tool_audio">Εξαγωγή Ήχου</string>
-    <string name="faditor_audio_extract_current">Εξαγωγή από βίντεο</string>
-    <string name="faditor_audio_extract_current_desc">Εξαγωγή του ηχητικού κομματιού από το τρέχον βίντεο</string>
-    <string name="faditor_audio_extracting">Εξαγωγή ήχου…</string>
-    <string name="faditor_audio_extracted">Ο ήχος εξήχθη και προστέθηκε στη γραμμή χρόνου</string>
-    <string name="faditor_audio_extract_failed">Δεν ήταν δυνατή η εξαγωγή ήχου</string>
-    <string name="faditor_audio_added">Ο ήχος προστέθηκε στη γραμμή χρόνου</string>
-    <string name="faditor_audio_no_track">Δεν βρέθηκε ηχητικό κομμάτι σε αυτό το βίντεο</string>
-    <string name="faditor_tool_split">Διαχωρισμός</string>
-    <string name="faditor_tool_delete">Διαγραφή</string>
-    <string name="faditor_tool_duplicate">Διπλότυπο</string>
-    <string name="faditor_tool_add">Προσθήκη</string>
-    <string name="faditor_add_asset_title">Προσθήκη Υλικού</string>
-    <string name="faditor_add_asset_image">Εικόνα (5 δευτ. στατική)</string>
-    <string name="faditor_add_asset_video">Κλιπ βίντεο</string>
-    <string name="faditor_asset_added">Το υλικό προστέθηκε στη γραμμή χρόνου</string>
-    <string name="faditor_asset_error">Δεν ήταν δυνατή η προσθήκη υλικού</string>
-    <string name="faditor_split_success">Το τμήμα χωρίστηκε στα δύο</string>
-    <string name="faditor_split_error">Δεν είναι δυνατός ο διαχωρισμός εδώ</string>
-    <string name="faditor_delete_last_segment">Δεν είναι δυνατή η διαγραφή του μοναδικού τμήματος</string>
-    <string name="faditor_segment_deleted">Το τμήμα διαγράφηκε</string>
-    <string name="faditor_segment_duplicated">Το τμήμα αντιγράφηκε</string>
-    <string name="faditor_crop_title">Λόγος Πλευρών Περικοπής</string>
-    <string name="faditor_crop_free">Ελεύθερο</string>
-    <string name="faditor_crop_applied">Η περικοπή εφαρμόστηκε</string>
-    <string name="faditor_crop_cancelled">Η περικοπή ακυρώθηκε</string>
-    <string name="faditor_crop_reset">Η περικοπή επαναφέρθηκε</string>
-    <string name="faditor_close_confirm_title">Κλείσιμο Επεξεργαστή;</string>
-    <string name="faditor_close_confirm_action">Κλείσιμο &amp; Αποθήκευση</string>
-    <string name="faditor_close_confirm_subtitle">Αποθήκευση έργου και επιστροφή</string>
-    <string name="faditor_close_confirm_helper">Το έργο σας θα αποθηκευτεί αυτόματα.</string>
-    <string name="faditor_back_press_exit">Πατήστε ξανά για έξοδο από τον επεξεργαστή</string>
-    <string name="faditor_export_back_confirm">Η εξαγωγή είναι σε εξέλιξη. Επιστροφή στον επεξεργαστή;</string>
-    <string name="faditor_export_done">Ολοκληρώθηκε</string>
-    <string name="faditor_export_back">Πίσω</string>
-    <string name="faditor_export_eta">Εκτιμώμενος χρόνος: %s</string>
-    <string name="faditor_export_complete_title">Η Εξαγωγή Ολοκληρώθηκε</string>
-    <string name="faditor_export_complete_summary">Το βίντεό σας έχει αποθηκευτεί στην καρτέλα Εγγραφές.</string>
+    <string name="shahideditor_mini_title">ShahidEditor Mini</string>
+    <string name="shahideditor_mini_coming_soon">Σύντομα — ελαφρύς επεξεργαστής</string>
+    <string name="shahideditor_mini_subtitle">Κόψτε και εξάγετε τα βίντεό σας με ακρίβεια</string>
+    <string name="shahideditor_mini_toast">ShahidEditor Mini — σύντομα</string>
+    <string name="shahideditor_select_video">Επιλογή Βίντεο</string>
+    <string name="shahideditor_editor_title">ShahidEditor Mini</string>
+    <string name="shahideditor_close">Κλείσιμο επεξεργαστή</string>
+    <string name="shahideditor_undo">Αναίρεση</string>
+    <string name="shahideditor_redo">Επανάληψη</string>
+    <string name="shahideditor_play_pause">Αναπαραγωγή ή παύση</string>
+    <string name="shahideditor_export">Εξαγωγή</string>
+    <string name="shahideditor_cancel">Ακύρωση</string>
+    <string name="shahideditor_exporting">Εξαγωγή…</string>
+    <string name="shahideditor_exporting_percent">Εξαγωγή… %1$d%%</string>
+    <string name="shahideditor_export_success">Το βίντεο εξήχθη επιτυχώς</string>
+    <string name="shahideditor_export_error">Η εξαγωγή απέτυχε: %1$s</string>
+    <string name="shahideditor_export_in_progress">Υπάρχει ήδη εξαγωγή σε εξέλιξη</string>
+    <string name="shahideditor_remuxing">Βελτιστοποίηση για προεπισκόπηση…</string>
+    <string name="shahideditor_remuxing_percent">Βελτιστοποίηση… %1$s δευτ. επεξεργασίας</string>
+    <string name="shahideditor_error_no_video">Δεν επιλέχθηκε βίντεο</string>
+    <string name="shahideditor_error_picker">Δεν ήταν δυνατό το άνοιγμα του επιλογέα αρχείων</string>
+    <string name="shahideditor_tool_trim">Περικοπή</string>
+    <string name="shahideditor_tool_speed">1x</string>
+    <string name="shahideditor_tool_muted">Σίγαση</string>
+    <string name="shahideditor_tool_sound">Ήχος</string>
+    <string name="shahideditor_speed_title">Ταχύτητα Αναπαραγωγής</string>
+    <string name="shahideditor_speed_reset">Επαναφορά στο 1x</string>
+    <string name="shahideditor_volume_title">Ένταση</string>
+    <string name="shahideditor_volume_warning">Πάνω από 100%% μπορεί να υποβαθμίσει την ποιότητα ήχου</string>
+    <string name="shahideditor_volume_mute">Σίγαση Ήχου</string>
+    <string name="shahideditor_volume_unmute">Αναίρεση Σίγασης Ήχου</string>
+    <string name="shahideditor_tool_volume">Ένταση</string>
+    <string name="shahideditor_tool_rotate">Περιστροφή</string>
+    <string name="shahideditor_tool_flip">Αναστροφή</string>
+    <string name="shahideditor_tool_crop">Περικοπή</string>
+    <string name="shahideditor_tool_crop_free">Ελεύθερο</string>
+    <string name="shahideditor_tool_canvas">Καμβάς</string>
+    <string name="shahideditor_canvas_title">Καμβάς</string>
+    <string name="shahideditor_canvas_applied">Ο καμβάς ορίστηκε σε %s</string>
+    <string name="shahideditor_tool_audio">Εξαγωγή Ήχου</string>
+    <string name="shahideditor_audio_extract_current">Εξαγωγή από βίντεο</string>
+    <string name="shahideditor_audio_extract_current_desc">Εξαγωγή του ηχητικού κομματιού από το τρέχον βίντεο</string>
+    <string name="shahideditor_audio_extracting">Εξαγωγή ήχου…</string>
+    <string name="shahideditor_audio_extracted">Ο ήχος εξήχθη και προστέθηκε στη γραμμή χρόνου</string>
+    <string name="shahideditor_audio_extract_failed">Δεν ήταν δυνατή η εξαγωγή ήχου</string>
+    <string name="shahideditor_audio_added">Ο ήχος προστέθηκε στη γραμμή χρόνου</string>
+    <string name="shahideditor_audio_no_track">Δεν βρέθηκε ηχητικό κομμάτι σε αυτό το βίντεο</string>
+    <string name="shahideditor_tool_split">Διαχωρισμός</string>
+    <string name="shahideditor_tool_delete">Διαγραφή</string>
+    <string name="shahideditor_tool_duplicate">Διπλότυπο</string>
+    <string name="shahideditor_tool_add">Προσθήκη</string>
+    <string name="shahideditor_add_asset_title">Προσθήκη Υλικού</string>
+    <string name="shahideditor_add_asset_image">Εικόνα (5 δευτ. στατική)</string>
+    <string name="shahideditor_add_asset_video">Κλιπ βίντεο</string>
+    <string name="shahideditor_asset_added">Το υλικό προστέθηκε στη γραμμή χρόνου</string>
+    <string name="shahideditor_asset_error">Δεν ήταν δυνατή η προσθήκη υλικού</string>
+    <string name="shahideditor_split_success">Το τμήμα χωρίστηκε στα δύο</string>
+    <string name="shahideditor_split_error">Δεν είναι δυνατός ο διαχωρισμός εδώ</string>
+    <string name="shahideditor_delete_last_segment">Δεν είναι δυνατή η διαγραφή του μοναδικού τμήματος</string>
+    <string name="shahideditor_segment_deleted">Το τμήμα διαγράφηκε</string>
+    <string name="shahideditor_segment_duplicated">Το τμήμα αντιγράφηκε</string>
+    <string name="shahideditor_crop_title">Λόγος Πλευρών Περικοπής</string>
+    <string name="shahideditor_crop_free">Ελεύθερο</string>
+    <string name="shahideditor_crop_applied">Η περικοπή εφαρμόστηκε</string>
+    <string name="shahideditor_crop_cancelled">Η περικοπή ακυρώθηκε</string>
+    <string name="shahideditor_crop_reset">Η περικοπή επαναφέρθηκε</string>
+    <string name="shahideditor_close_confirm_title">Κλείσιμο Επεξεργαστή;</string>
+    <string name="shahideditor_close_confirm_action">Κλείσιμο &amp; Αποθήκευση</string>
+    <string name="shahideditor_close_confirm_subtitle">Αποθήκευση έργου και επιστροφή</string>
+    <string name="shahideditor_close_confirm_helper">Το έργο σας θα αποθηκευτεί αυτόματα.</string>
+    <string name="shahideditor_back_press_exit">Πατήστε ξανά για έξοδο από τον επεξεργαστή</string>
+    <string name="shahideditor_export_back_confirm">Η εξαγωγή είναι σε εξέλιξη. Επιστροφή στον επεξεργαστή;</string>
+    <string name="shahideditor_export_done">Ολοκληρώθηκε</string>
+    <string name="shahideditor_export_back">Πίσω</string>
+    <string name="shahideditor_export_eta">Εκτιμώμενος χρόνος: %s</string>
+    <string name="shahideditor_export_complete_title">Η Εξαγωγή Ολοκληρώθηκε</string>
+    <string name="shahideditor_export_complete_summary">Το βίντεό σας έχει αποθηκευτεί στην καρτέλα Εγγραφές.</string>
     <!-- Export confirmation bottom sheet -->
-    <string name="faditor_export_confirm_title">Εξαγωγή Βίντεο</string>
-    <string name="faditor_export_confirm_action">Εξαγωγή Τώρα</string>
-    <string name="faditor_export_confirm_subtitle">Η εξαγωγή θα συνεχιστεί στο παρασκήνιο</string>
-    <string name="faditor_export_confirm_helper">%1$s • %2$d κλιπ%3$s
+    <string name="shahideditor_export_confirm_title">Εξαγωγή Βίντεο</string>
+    <string name="shahideditor_export_confirm_action">Εξαγωγή Τώρα</string>
+    <string name="shahideditor_export_confirm_subtitle">Η εξαγωγή θα συνεχιστεί στο παρασκήνιο</string>
+    <string name="shahideditor_export_confirm_helper">%1$s • %2$d κλιπ%3$s
 Η εξαγωγή εκτελείται στο παρασκήνιο.</string>
     <!-- Export notification -->
-    <string name="faditor_export_notif_channel">ShahidEditor Εξαγωγή</string>
-    <string name="faditor_export_notif_channel_desc">Ειδοποιήσεις για εξαγωγές βίντεο σε εξέλιξη</string>
-    <string name="faditor_export_notif_title">Εξαγωγή βίντεο…</string>
-    <string name="faditor_export_notif_error_title">Η Εξαγωγή Απέτυχε</string>
+    <string name="shahideditor_export_notif_channel">ShahidEditor Εξαγωγή</string>
+    <string name="shahideditor_export_notif_channel_desc">Ειδοποιήσεις για εξαγωγές βίντεο σε εξέλιξη</string>
+    <string name="shahideditor_export_notif_title">Εξαγωγή βίντεο…</string>
+    <string name="shahideditor_export_notif_error_title">Η Εξαγωγή Απέτυχε</string>
     <!-- Export dock (ShahidEditor Mini tab) -->
-    <string name="faditor_export_progress">Εξαγωγή…</string>
-    <string name="faditor_export_completed">Η Εξαγωγή Ολοκληρώθηκε</string>
-    <string name="faditor_export_cancelled">Η Εξαγωγή Ακυρώθηκε</string>
-    <string name="faditor_export_failed">Η Εξαγωγή Απέτυχε</string>
+    <string name="shahideditor_export_progress">Εξαγωγή…</string>
+    <string name="shahideditor_export_completed">Η Εξαγωγή Ολοκληρώθηκε</string>
+    <string name="shahideditor_export_cancelled">Η Εξαγωγή Ακυρώθηκε</string>
+    <string name="shahideditor_export_failed">Η Εξαγωγή Απέτυχε</string>
     <string name="export_eta_seconds">Εκτ. %d δευτ.</string>
     <string name="export_eta_minutes">Εκτ. %d λεπ.</string>
     <string name="export_eta_hours">Εκτ. %d ωρ.</string>
@@ -1199,54 +1199,54 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="export_error_hint">Πατήστε για απόρριψη</string>
     <string name="export_status">Κατάσταση Εξαγωγής</string>
     <!-- Export info on export screen -->
-    <string name="faditor_export_info">%1$s • %2$d κλιπ%3$s • H.264 + AAC</string>
-    <string name="faditor_flip_title">Αναστροφή</string>
-    <string name="faditor_home_tagline">Ελαφρύς επεξεργαστής βίντεο</string>
-    <string name="faditor_new_project">Νέο Έργο</string>
-    <string name="faditor_start_project">Έναρξη Νέου Έργου</string>
-    <string name="faditor_recent_projects">Πρόσφατα Έργα</string>
-    <string name="faditor_capabilities_title">Τι Μπορείτε να Κάνετε</string>
-    <string name="faditor_feature_trim">Ακρίβειας Περικοπή</string>
-    <string name="faditor_feature_trim_desc">Κόψτε τα βίντεό σας στο ακριβές καρέ</string>
-    <string name="faditor_feature_export">Γρήγορη Εξαγωγή</string>
-    <string name="faditor_feature_export_desc">Εξαγωγή σε MP4 με κωδικοποίηση υλικού</string>
-    <string name="faditor_feature_preview">Ζωντανή Προεπισκόπηση</string>
-    <string name="faditor_feature_preview_desc">Άμεση αναπαραγωγή των περικομμένων κλιπ</string>
-    <string name="faditor_feature_privacy">100% Εκτός Σύνδεσης</string>
-    <string name="faditor_feature_privacy_desc">Όλη η επεξεργασία γίνεται τοπικά</string>
-    <string name="faditor_feature_convert">Έξυπνη Μετατροπή</string>
-    <string name="faditor_feature_convert_desc">Αυτόματη μετατροπή σε αναζητήσιμο MP4</string>
-    <string name="faditor_select_items">Επιλογή στοιχείων</string>
-    <string name="faditor_selected_count">%1$d επιλεγμένα</string>
-    <string name="faditor_delete_projects_title">Διαγραφή έργων;</string>
-    <string name="faditor_delete_projects_message">Διαγραφή %1$d έργων; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.</string>
-    <string name="faditor_delete_confirm">Διαγραφή</string>
-    <string name="faditor_version_info">ShahidEditor Mini · Φάση 1 · Περικοπή + Εξαγωγή</string>
+    <string name="shahideditor_export_info">%1$s • %2$d κλιπ%3$s • H.264 + AAC</string>
+    <string name="shahideditor_flip_title">Αναστροφή</string>
+    <string name="shahideditor_home_tagline">Ελαφρύς επεξεργαστής βίντεο</string>
+    <string name="shahideditor_new_project">Νέο Έργο</string>
+    <string name="shahideditor_start_project">Έναρξη Νέου Έργου</string>
+    <string name="shahideditor_recent_projects">Πρόσφατα Έργα</string>
+    <string name="shahideditor_capabilities_title">Τι Μπορείτε να Κάνετε</string>
+    <string name="shahideditor_feature_trim">Ακρίβειας Περικοπή</string>
+    <string name="shahideditor_feature_trim_desc">Κόψτε τα βίντεό σας στο ακριβές καρέ</string>
+    <string name="shahideditor_feature_export">Γρήγορη Εξαγωγή</string>
+    <string name="shahideditor_feature_export_desc">Εξαγωγή σε MP4 με κωδικοποίηση υλικού</string>
+    <string name="shahideditor_feature_preview">Ζωντανή Προεπισκόπηση</string>
+    <string name="shahideditor_feature_preview_desc">Άμεση αναπαραγωγή των περικομμένων κλιπ</string>
+    <string name="shahideditor_feature_privacy">100% Εκτός Σύνδεσης</string>
+    <string name="shahideditor_feature_privacy_desc">Όλη η επεξεργασία γίνεται τοπικά</string>
+    <string name="shahideditor_feature_convert">Έξυπνη Μετατροπή</string>
+    <string name="shahideditor_feature_convert_desc">Αυτόματη μετατροπή σε αναζητήσιμο MP4</string>
+    <string name="shahideditor_select_items">Επιλογή στοιχείων</string>
+    <string name="shahideditor_selected_count">%1$d επιλεγμένα</string>
+    <string name="shahideditor_delete_projects_title">Διαγραφή έργων;</string>
+    <string name="shahideditor_delete_projects_message">Διαγραφή %1$d έργων; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.</string>
+    <string name="shahideditor_delete_confirm">Διαγραφή</string>
+    <string name="shahideditor_version_info">ShahidEditor Mini · Φάση 1 · Περικοπή + Εξαγωγή</string>
     <!-- ShahidEditor Info Bottom Sheet -->
-    <string name="faditor_empty_title">Κανένα έργο ακόμα</string>
-    <string name="faditor_empty_desc">Πατήστε «Έναρξη Νέου Έργου» για να ξεκινήσετε</string>
-    <string name="faditor_info_title">Σχετικά με το ShahidEditor Mini</string>
-    <string name="faditor_info_subtitle">Όλα όσα πρέπει να γνωρίζετε</string>
-    <string name="faditor_info_how_title">Πώς λειτουργεί</string>
-    <string name="faditor_info_how_desc">Επιλέξτε οποιοδήποτε βίντεο από τη συσκευή σας ή τις εγγραφές ShahidCam. Κόψτε το καρέ-καρέ και εξάγετε. Όλη η επεξεργασία γίνεται τοπικά.</string>
-    <string name="faditor_info_convert_title">Έξυπνη μετατροπή</string>
-    <string name="faditor_info_convert_desc">Το ShahidCam καταγράφει σε κατακερματισμένο MP4 (fMP4). Για χρήση εκτός ShahidCam, πρέπει πρώτα να μετατρέψετε τα αρχεία.</string>
-    <string name="faditor_info_export_title">Εξαγόμενα αρχεία</string>
-    <string name="faditor_info_export_desc">Τα εξαγόμενα βίντεο αποθηκεύονται στην ενεργή τοποθεσία αποθήκευσης με το πρόθεμα «ShahidEditor_».</string>
-    <string name="faditor_info_temp_title">Προσωρινά αρχεία και cache</string>
-    <string name="faditor_info_temp_desc">Τα προσωρινά αρχεία cache καθαρίζονται αυτόματα όταν διαγράφετε ένα έργο.</string>
-    <string name="faditor_info_projects_title">Πρόσφατα έργα</string>
-    <string name="faditor_info_projects_desc">Όλες οι συνεδρίες επεξεργασίας εμφανίζονται για γρήγορη πρόσβαση.</string>
-    <string name="faditor_your_recordings">Οι Εγγραφές σας</string>
-    <string name="faditor_browse_device">Περιήγηση Συσκευής</string>
-    <string name="faditor_no_recordings">Δεν βρέθηκαν ακόμα εγγραφές.</string>
-    <string name="faditor_video_count">%1$d βίντεο</string>
-    <string name="faditor_fadcam_source">ShahidCam</string>
-    <string name="faditor_fadrec_source">ScreenRec</string>
-    <string name="faditor_browse_device_desc">Επιλέξτε οποιοδήποτε βίντεο από τη συσκευή σας</string>
-    <string name="faditor_scanning">Σάρωση εγγραφών…</string>
-    <string name="faditor_source_chooser_desc">Επιλέξτε ένα βίντεο από τη συλλογή σας ή από τις εγγραφές ShahidCam</string>
-    <string name="faditor_recordings_helper">Βίντεο που καταγράφηκαν με το ShahidCam</string>
+    <string name="shahideditor_empty_title">Κανένα έργο ακόμα</string>
+    <string name="shahideditor_empty_desc">Πατήστε «Έναρξη Νέου Έργου» για να ξεκινήσετε</string>
+    <string name="shahideditor_info_title">Σχετικά με το ShahidEditor Mini</string>
+    <string name="shahideditor_info_subtitle">Όλα όσα πρέπει να γνωρίζετε</string>
+    <string name="shahideditor_info_how_title">Πώς λειτουργεί</string>
+    <string name="shahideditor_info_how_desc">Επιλέξτε οποιοδήποτε βίντεο από τη συσκευή σας ή τις εγγραφές ShahidCam. Κόψτε το καρέ-καρέ και εξάγετε. Όλη η επεξεργασία γίνεται τοπικά.</string>
+    <string name="shahideditor_info_convert_title">Έξυπνη μετατροπή</string>
+    <string name="shahideditor_info_convert_desc">Το ShahidCam καταγράφει σε κατακερματισμένο MP4 (fMP4). Για χρήση εκτός ShahidCam, πρέπει πρώτα να μετατρέψετε τα αρχεία.</string>
+    <string name="shahideditor_info_export_title">Εξαγόμενα αρχεία</string>
+    <string name="shahideditor_info_export_desc">Τα εξαγόμενα βίντεο αποθηκεύονται στην ενεργή τοποθεσία αποθήκευσης με το πρόθεμα «ShahidEditor_».</string>
+    <string name="shahideditor_info_temp_title">Προσωρινά αρχεία και cache</string>
+    <string name="shahideditor_info_temp_desc">Τα προσωρινά αρχεία cache καθαρίζονται αυτόματα όταν διαγράφετε ένα έργο.</string>
+    <string name="shahideditor_info_projects_title">Πρόσφατα έργα</string>
+    <string name="shahideditor_info_projects_desc">Όλες οι συνεδρίες επεξεργασίας εμφανίζονται για γρήγορη πρόσβαση.</string>
+    <string name="shahideditor_your_recordings">Οι Εγγραφές σας</string>
+    <string name="shahideditor_browse_device">Περιήγηση Συσκευής</string>
+    <string name="shahideditor_no_recordings">Δεν βρέθηκαν ακόμα εγγραφές.</string>
+    <string name="shahideditor_video_count">%1$d βίντεο</string>
+    <string name="shahideditor_shahidcam_source">ShahidCam</string>
+    <string name="shahideditor_shahidrec_source">ScreenRec</string>
+    <string name="shahideditor_browse_device_desc">Επιλέξτε οποιοδήποτε βίντεο από τη συσκευή σας</string>
+    <string name="shahideditor_scanning">Σάρωση εγγραφών…</string>
+    <string name="shahideditor_source_chooser_desc">Επιλέξτε ένα βίντεο από τη συλλογή σας ή από τις εγγραφές ShahidCam</string>
+    <string name="shahideditor_recordings_helper">Βίντεο που καταγράφηκαν με το ShahidCam</string>
     <string name="setting_audio_title">Εγγραφή Ήχου</string>
     <string name="note_audio">Ενεργοποίηση ή απενεργοποίηση εγγραφής ήχου για βίντεο.
 (Προεπιλογή: Ενεργοποιημένο)</string>
@@ -1492,7 +1492,7 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="applock_verify_to_remove">Επαλήθευση PIN για Αφαίρεση</string>
     <string name="applock_verification_canceled">Η επαλήθευση ακυρώθηκε</string>
     <string name="version_format">v%s</string>
-    <string name="edit_with_faditorx">Επεξεργασία με ShahidEditor Mini</string>
+    <string name="edit_with_shahideditorx">Επεξεργασία με ShahidEditor Mini</string>
     <string name="remote_coming_soon_badge">Σύντομα</string>
     <!-- Update Bottom Sheet Strings -->
     <string name="update_sarcastic_heading">📦 Ω, κοίτα, άλλη μια ενημέρωση…</string>
@@ -1528,7 +1528,7 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="app_icon_faded" translatable="false">0xFF0000</string>
     <string name="app_icon_palestine" translatable="false">I❤️Palestine</string>
     <string name="app_icon_pakistan" translatable="false">ShahidCam</string>
-    <string name="app_icon_fadseclab" translatable="false">CyberShadowPK Lab</string>
+    <string name="app_icon_shahidlabs" translatable="false">CyberShadowPK Lab</string>
     <string name="app_icon_nooristic" translatable="false">ShahidCam ++</string>
     <string name="app_icon_bat" translatable="false">ShahidCam</string>
     <string name="app_icon_redbinary" translatable="false">$ ~/r00t</string>
@@ -1562,8 +1562,8 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="settings_notifications_subtitle">Εγγραφή &amp; προεπιλογή</string>
     <string name="settings_security_title">Ασφάλεια</string>
     <string name="settings_advanced_subtitle">Motion Lab και χειριστήρια</string>
-    <string name="fadcrypt_title">Crypt</string>
-    <string name="fadcrypt_row_subtitle">Κρυπτογραφήστε και προστατέψτε τις εγγραφές σας</string>
+    <string name="shahidvault_title">Crypt</string>
+    <string name="shahidvault_row_subtitle">Κρυπτογραφήστε και προστατέψτε τις εγγραφές σας</string>
     <string name="digital_forensics_title">Ψηφιακή Εγκληματολογία</string>
     <string name="forensic_intelligence_title">Εγκληματολογική Νοημοσύνη</string>
     <string name="digital_forensics_row_subtitle">Χρονολόγιο αποδείξεων και έξυπνες πληροφορίες</string>
@@ -1942,36 +1942,36 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="manage_projects">Διαχείριση Έργων</string>
     <string name="name_your_project">Ονομάστε το Έργο σας</string>
     <string name="project_naming_message">Δώστε ένα όνομα στο έργο σας.</string>
-    <string name="fadrec_projects">Έργα ScreenRec</string>
+    <string name="shahidrec_projects">Έργα ScreenRec</string>
     <string name="delete_project">Διαγραφή Έργου</string>
     <string name="delete_all">Διαγραφή Όλων</string>
     <string name="new_project">Νέο Έργο</string>
     <string name="delete">Διαγραφή</string>
     <!-- ShahidCam Pro Strings -->
-    <string name="fadcam_pro_title">ShahidCam Pro</string>
-    <string name="fadcam_pro_subtitle">Λειτουργίες Premium</string>
-    <string name="fadcam_pro_get_button">Απόκτηση ShahidCam Pro</string>
-    <string name="fadcam_pro_free">Δωρεάν</string>
-    <string name="fadcam_pro_column_label">Pro</string>
-    <string name="fadcam_pro_proplus_label">Pro+</string>
-    <string name="fadcam_pro_lab_label">Lab</string>
-    <string name="fadcam_pro_plus_label">Pro</string>
-    <string name="fadcam_pro_early_bird">Δωρεάν έως 23 Δεκεμβρίου 2025!</string>
-    <string name="fadcam_pro_paid_offer">Ισόβια πρόσβαση για $15.</string>
-    <string name="fadcam_pro_benefit_early_access">Πρόωρη πρόσβαση σε νέες εκδόσεις</string>
-    <string name="fadcam_pro_benefit_lifetime_updates">Ισόβιες ενημερώσεις</string>
-    <string name="fadcam_pro_benefit_support">Άμεση υποστήριξη μέσω Discord</string>
-    <string name="fadcam_pro_coming_soon">Pro+ και Lab σύντομα.</string>
-    <string name="fadcam_pro_support_message">Το ShahidCam θα παραμείνει πάντα δωρεάν.</string>
-    <string name="fadcam_pro_separate_apk">Αυτόνομη εφαρμογή</string>
-    <string name="fadcam_pro_feature_everything_icon">Τα Πάντα</string>
-    <string name="fadcam_pro_feature_everything">Τα Πάντα</string>
-    <string name="fadcam_pro_feature_custom_icon">Προσαρμοσμένο Εικονίδιο</string>
-    <string name="fadcam_pro_feature_notification_icon">Διακριτικό Εικονίδιο Ειδοποίησης</string>
-    <string name="fadcam_pro_feature_user_icon">Εικονίδιο Χρήστη</string>
-    <string name="fadcam_pro_feature_app_name">Προσαρμοσμένο Όνομα</string>
-    <string name="fadcam_pro_feature_faddrive">Drive Cloud Sync</string>
-    <string name="fadcam_pro_header_button">Απόκτησε το Pro</string>
+    <string name="shahidcam_pro_title">ShahidCam Pro</string>
+    <string name="shahidcam_pro_subtitle">Λειτουργίες Premium</string>
+    <string name="shahidcam_pro_get_button">Απόκτηση ShahidCam Pro</string>
+    <string name="shahidcam_pro_free">Δωρεάν</string>
+    <string name="shahidcam_pro_column_label">Pro</string>
+    <string name="shahidcam_pro_proplus_label">Pro+</string>
+    <string name="shahidcam_pro_lab_label">Lab</string>
+    <string name="shahidcam_pro_plus_label">Pro</string>
+    <string name="shahidcam_pro_early_bird">Δωρεάν έως 23 Δεκεμβρίου 2025!</string>
+    <string name="shahidcam_pro_paid_offer">Ισόβια πρόσβαση για $15.</string>
+    <string name="shahidcam_pro_benefit_early_access">Πρόωρη πρόσβαση σε νέες εκδόσεις</string>
+    <string name="shahidcam_pro_benefit_lifetime_updates">Ισόβιες ενημερώσεις</string>
+    <string name="shahidcam_pro_benefit_support">Άμεση υποστήριξη μέσω Discord</string>
+    <string name="shahidcam_pro_coming_soon">Pro+ και Lab σύντομα.</string>
+    <string name="shahidcam_pro_support_message">Το ShahidCam θα παραμείνει πάντα δωρεάν.</string>
+    <string name="shahidcam_pro_separate_apk">Αυτόνομη εφαρμογή</string>
+    <string name="shahidcam_pro_feature_everything_icon">Τα Πάντα</string>
+    <string name="shahidcam_pro_feature_everything">Τα Πάντα</string>
+    <string name="shahidcam_pro_feature_custom_icon">Προσαρμοσμένο Εικονίδιο</string>
+    <string name="shahidcam_pro_feature_notification_icon">Διακριτικό Εικονίδιο Ειδοποίησης</string>
+    <string name="shahidcam_pro_feature_user_icon">Εικονίδιο Χρήστη</string>
+    <string name="shahidcam_pro_feature_app_name">Προσαρμοσμένο Όνομα</string>
+    <string name="shahidcam_pro_feature_shahiddrive">Drive Cloud Sync</string>
+    <string name="shahidcam_pro_header_button">Απόκτησε το Pro</string>
     <!-- Video Player Info Bottom Sheet -->
     <string name="player_info_title">Σχετικά με τον Αναπαραγωγέα Βίντεο</string>
     <string name="player_info_content"><![CDATA[
@@ -2136,8 +2136,8 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="preview_dual_not_supported">Η προεπισκόπηση λειτουργεί μόνο σε μπροστινές/πίσω κάμερες</string>
     <string name="preview_enable_hint">Κρατήστε για ενεργοποίηση κάμερας</string>
     <string name="preview_starting">Εκκίνηση ζωντανής προεπισκόπησης…</string>
-    <string name="fadrec_preview_enable_hint">Κρατήστε για εμφάνιση προεπισκόπησης</string>
-    <string name="fadrec_preview_not_available">Η ζωντανή προεπισκόπηση οθόνης δεν είναι ακόμα διαθέσιμη στο ScreenRec</string>
+    <string name="shahidrec_preview_enable_hint">Κρατήστε για εμφάνιση προεπισκόπησης</string>
+    <string name="shahidrec_preview_not_available">Η ζωντανή προεπισκόπηση οθόνης δεν είναι ακόμα διαθέσιμη στο ScreenRec</string>
     <string name="torch_unavailable">Ο φακός δεν είναι διαθέσιμος για αυτήν την κάμερα</string>
     <!-- Motion Lab -->
     <string name="motion_lab_title">Εργαστήριο Κίνησης</string>
@@ -2268,8 +2268,8 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="watch_pause_desc">Παύση ή συνέχιση εγγραφής</string>
     <string name="watch_fullscreen_label">Προβολή</string>
     <string name="watch_fullscreen_desc">Πλήρης οθόνη</string>
-    <string name="watch_fadshot_label">Λήψη</string>
-    <string name="watch_fadshot_desc">Λήψη φωτογραφίας</string>
+    <string name="watch_shahidshot_label">Λήψη</string>
+    <string name="watch_shahidshot_desc">Λήψη φωτογραφίας</string>
     <string name="watch_trash_title">Πρόσφατα Διαγραμμένα</string>
     <string name="watch_trash_empty">Τίποτα δεν διαγράφηκε</string>
     <string name="watch_trash_delete_all">Διαγραφή Όλων</string>
@@ -2615,7 +2615,7 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
 
     <string name="sidebar_beta_release">Beta Έκδοση</string>
 
-    <string name="sidebar_fadcam_pro">ShahidCam Pro</string>
+    <string name="sidebar_shahidcam_pro">ShahidCam Pro</string>
 
     <string name="badge_new">ΝΕΟ</string>
 
@@ -2649,7 +2649,7 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
 
     <string name="notification_action_stop">Διακοπή</string>
 
-    <string name="fadmic_coming_soon">Mic (Εγγραφή Μικροφώνου) σύντομα!</string>
+    <string name="shahidmic_coming_soon">Mic (Εγγραφή Μικροφώνου) σύντομα!</string>
 
     <string name="toast_stream_server_starting">Ο διακομιστής ροής εκκινεί...</string>
 
@@ -2746,7 +2746,7 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="about_dialog_error">Σφάλμα</string>
     <string name="about_dialog_ok">OK</string>
     <string name="about_get_beta">Λήψη Beta</string>
-    <string name="about_fadcam_feedback">Σχόλια ShahidCam</string>
+    <string name="about_shahidcam_feedback">Σχόλια ShahidCam</string>
 
     <!-- Video split sizes -->
     <string name="video_split_enabled_format">Ενεργοποιημένο (%s)</string>
@@ -2766,16 +2766,16 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
 
     <!-- Settings home tabs -->
     <string name="settings_tab_all">Όλα</string>
-    <string name="settings_tab_fadcam" translatable="false">ShahidCam</string>
-    <string name="settings_tab_fadrec" translatable="false">ScreenRec</string>
+    <string name="settings_tab_shahidcam" translatable="false">ShahidCam</string>
+    <string name="settings_tab_shahidrec" translatable="false">ScreenRec</string>
 
     <!-- Watermark preview labels -->
-    <string name="watermark_preview_fadcam" translatable="false">ShahidCam</string>
-    <string name="watermark_preview_fadrec" translatable="false">ScreenRec</string>
+    <string name="watermark_preview_shahidcam" translatable="false">ShahidCam</string>
+    <string name="watermark_preview_shahidrec" translatable="false">ScreenRec</string>
     <string name="settings_location_update_interval_5s">5.0 δευτερόλεπτα</string>
 
     <!-- Annotation toolbar -->
-    <string name="annotation_by_fadsec_lab">από CyberShadowPK Lab</string>
+    <string name="annotation_by_shahidlabs_lab">από CyberShadowPK Lab</string>
     <string name="annotation_quick_access">Γρήγορη Πρόσβαση</string>
     <string name="annotation_annotate">Σχολιασμός</string>
     <string name="annotation_enable_tools">Ενεργοποίηση εργαλείων</string>
@@ -2853,7 +2853,7 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="desc_delete_text">Διαγραφή κειμένου</string>
     <string name="desc_done">Ολοκληρώθηκε</string>
     <string name="desc_exposure_compensation">Αντιστάθμιση έκθεσης</string>
-    <string name="desc_fadrec_logo">Λογότυπο ScreenRec</string>
+    <string name="desc_shahidrec_logo">Λογότυπο ScreenRec</string>
     <string name="desc_fast_forward">Γρήγορη προώθηση 5 δευτερολέπτων</string>
     <string name="desc_increase">Αύξηση</string>
     <string name="desc_italic">Πλάγια</string>
@@ -2876,7 +2876,7 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="channel_security_alarm">Συναγερμός Ασφαλείας</string>
     <string name="channel_remote_streaming">Απομακρυσμένη Ροή</string>
     <string name="channel_annotation_service">Υπηρεσία Σχολιασμών</string>
-    <string name="channel_fadcam_file_ops">Λειτουργίες Αρχείων ShahidCam</string>
+    <string name="channel_shahidcam_file_ops">Λειτουργίες Αρχείων ShahidCam</string>
 
     <!-- ScreenRecordingService -->
     <string name="screen_rec_failed">Η εγγραφή απέτυχε: %s</string>
@@ -3002,7 +3002,7 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="tutorial_dashcam_setup">Ρύθμιση Dashcam</string>
 
     <!-- iOS Promo -->
-    <string name="fadcam_for_ios_title">ShahidCam για iOS</string>
+    <string name="shahidcam_for_ios_title">ShahidCam για iOS</string>
     <string name="ios_promo_title">Το ShahidCam είναι τώρα διαθέσιμο στο iOS!</string>
     <string name="ios_promo_subtitle">Η ίδια εφαρμογή κάμερας με προστασία απορρήτου που αγαπάς, τώρα διαθέσιμη για iPhone</string>
 

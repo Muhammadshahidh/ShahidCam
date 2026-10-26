@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import androidx.activity.ComponentActivity;
 
-import com.shahid.cam.service.FadRecScreenshotAccessibilityService;
+import com.shahid.cam.service.ShahidRecScreenshotAccessibilityService;
 
 public class ScreenShotCaptureActivity extends ComponentActivity {
     private static final String TAG = "ScreenShotCaptureAct";
@@ -30,7 +30,7 @@ public class ScreenShotCaptureActivity extends ComponentActivity {
         } catch (Exception ignored) {
         }
 
-        if (!FadRecScreenshotAccessibilityService.isServiceEnabled(this)) {
+        if (!ShahidRecScreenshotAccessibilityService.isServiceEnabled(this)) {
             FLog.w(TAG, "Accessibility service disabled. Redirecting to settings.");
             Toast.makeText(this, R.string.screenshot_accessibility_enable_needed, Toast.LENGTH_LONG).show();
             Intent settingsIntent = new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
@@ -40,21 +40,21 @@ public class ScreenShotCaptureActivity extends ComponentActivity {
             return;
         }
 
-        FadRecScreenshotAccessibilityService.markPendingCapture(this);
+        ShahidRecScreenshotAccessibilityService.markPendingCapture(this);
         FLog.d(TAG, "Marked pending screenshot capture. Dispatching trigger broadcast.");
         dispatchScreenshotTrigger();
         finishNow();
     }
 
     private void dispatchScreenshotTrigger() {
-        Intent triggerIntent = new Intent(Constants.ACTION_TRIGGER_FADREC_SCREENSHOT);
+        Intent triggerIntent = new Intent(Constants.ACTION_TRIGGER_SHAHIDREC_SCREENSHOT);
         triggerIntent.setPackage(getPackageName());
         sendBroadcast(triggerIntent);
         FLog.d(TAG, "Sent screenshot trigger broadcast (initial).");
         // Retry once for reliability when accessibility service reconnects slightly later.
         getWindow().getDecorView().postDelayed(() -> {
             try {
-                Intent retryIntent = new Intent(Constants.ACTION_TRIGGER_FADREC_SCREENSHOT);
+                Intent retryIntent = new Intent(Constants.ACTION_TRIGGER_SHAHIDREC_SCREENSHOT);
                 retryIntent.setPackage(getPackageName());
                 sendBroadcast(retryIntent);
                 FLog.d(TAG, "Sent screenshot trigger broadcast (retry).");

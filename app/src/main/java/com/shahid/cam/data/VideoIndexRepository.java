@@ -72,7 +72,7 @@ public class VideoIndexRepository {
 
     /**
      * One-time flag: set to true after stale MMR-based durations have been cleared.
-     * MMR is unreliable for fragmented MP4 (FadCam's recording format) — it reads the
+     * MMR is unreliable for fragmented MP4 (ShahidCam's recording format) — it reads the
      * mvhd box duration which is often wrong. This clears them so the adapter's FFprobe
      * path can re-probe and persist correct values.
      */
@@ -352,7 +352,7 @@ public class VideoIndexRepository {
                         }
 
                         // IMPORTANT: Do NOT use MediaMetadataRetriever (MMR) for video duration here.
-                        // FadCam records in fragmented MP4 (fMP4) format via FragmentedMp4MuxerWrapper.
+                        // ShahidCam records in fragmented MP4 (fMP4) format via FragmentedMp4MuxerWrapper.
                         // MMR reads the `mvhd` duration box, which is often wrong or zero for fMP4
                         // (e.g., returns 26s for a 4s clip). FFprobe, on the other hand, reads actual
                         // frame PTS timestamps and returns the correct "real" duration.
@@ -527,8 +527,8 @@ public class VideoIndexRepository {
                     entity.shotSubtype, VideoItem.ShotSubtype.UNKNOWN);
             VideoItem.CameraSubtype cameraSubtype = safeParseEnum(VideoItem.CameraSubtype.class,
                     entity.cameraSubtype, VideoItem.CameraSubtype.UNKNOWN);
-            VideoItem.FaditorSubtype faditorSubtype = safeParseEnum(VideoItem.FaditorSubtype.class,
-                    entity.faditorSubtype, VideoItem.FaditorSubtype.UNKNOWN);
+            VideoItem.ShahidEditorSubtype shahideditorSubtype = safeParseEnum(VideoItem.ShahidEditorSubtype.class,
+                    entity.shahideditorSubtype, VideoItem.ShahidEditorSubtype.UNKNOWN);
 
             VideoItem item = new VideoItem(
                     uri,
@@ -539,7 +539,7 @@ public class VideoIndexRepository {
                     mediaType,
                     shotSubtype,
                     cameraSubtype,
-                    faditorSubtype
+                    shahideditorSubtype
             );
             item.isNew = Utils.isVideoConsideredNew(entity.lastModified);
             return item;

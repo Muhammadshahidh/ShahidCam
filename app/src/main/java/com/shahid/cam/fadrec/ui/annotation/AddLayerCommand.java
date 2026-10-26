@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.ui.annotation;
+package com.shahid.cam.shahidrec.ui.annotation;
 
 import org.json.JSONException;
 import org.json.JSONObject;

@@ -1,4 +1,4 @@
-package com.shahid.cam.ui.faditor.timeline;
+package com.shahid.cam.ui.shahideditor.timeline;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -25,9 +25,9 @@ import android.widget.OverScroller;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.shahid.cam.ui.faditor.model.AudioClip;
-import com.shahid.cam.ui.faditor.model.Clip;
-import com.shahid.cam.ui.faditor.model.Timeline;
+import com.shahid.cam.ui.shahideditor.model.AudioClip;
+import com.shahid.cam.ui.shahideditor.model.Clip;
+import com.shahid.cam.ui.shahideditor.model.Timeline;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -2210,7 +2210,7 @@ public class EditorTimelineView extends View {
                     + " posInSegmentMs=" + posInSegmentMs + " sourceFrac=" + sourceFrac);
             
             // Pass isDragging=true to prevent loading new clips during active drag
-            // The FaditorEditorActivity will only seek within current clip, then load new one on drag end
+            // The ShahidEditorActivity will only seek within current clip, then load new one on drag end
             listener.onPlayheadSeeked(targetSegment, sourceFrac, true);
         }
         

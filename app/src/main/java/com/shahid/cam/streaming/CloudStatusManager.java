@@ -151,7 +151,7 @@ public class CloudStatusManager {
      * Check if cloud mode is enabled in preferences
      */
     private boolean isCloudModeEnabled() {
-        SharedPreferences prefs = context.getSharedPreferences("FadCamCloudPrefs", Context.MODE_PRIVATE);
+        SharedPreferences prefs = context.getSharedPreferences("ShahidCamCloudPrefs", Context.MODE_PRIVATE);
         int mode = prefs.getInt("streaming_mode", 0);
         return mode == 1; // MODE_CLOUD = 1
     }
@@ -1138,7 +1138,7 @@ public class CloudStatusManager {
      */
     private int getServerPort() {
         // Try to get from preferences where RemoteStreamService saves it
-        SharedPreferences prefs = context.getSharedPreferences("FadCamPrefs", Context.MODE_PRIVATE);
+        SharedPreferences prefs = context.getSharedPreferences("ShahidCamPrefs", Context.MODE_PRIVATE);
         return prefs.getInt("stream_server_port", 8080);
     }
 

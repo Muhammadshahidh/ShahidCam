@@ -139,12 +139,12 @@ public class AudioSettingsFragment extends Fragment {
                     requireContext().getSystemService(Context.AUDIO_SERVICE);
             boolean unprocessedSupported = am != null && "true".equalsIgnoreCase(
                     am.getProperty(android.media.AudioManager.PROPERTY_SUPPORT_AUDIO_SOURCE_UNPROCESSED));
-            FLog.i("FadCamRawAudio", "UI: UNPROCESSED supported = " + unprocessedSupported);
+            FLog.i("ShahidCamRawAudio", "UI: UNPROCESSED supported = " + unprocessedSupported);
             if (!unprocessedSupported) {
                 helper += "\n\n" + getString(R.string.raw_audio_unprocessed_note);
             }
         } catch (Exception e) {
-            FLog.w("FadCamRawAudio", "UI: raw audio capability check failed: " + e.getMessage());
+            FLog.w("ShahidCamRawAudio", "UI: raw audio capability check failed: " + e.getMessage());
         }
         com.shahid.cam.ui.picker.PickerBottomSheetFragment sheet = com.shahid.cam.ui.picker.PickerBottomSheetFragment.newInstanceWithSwitch(
                 getString(R.string.row_raw_audio_title), items, null, resultKey, helper,
@@ -158,7 +158,7 @@ public class AudioSettingsFragment extends Fragment {
             unprocessedSupported = am != null && "true".equalsIgnoreCase(
                     am.getProperty(android.media.AudioManager.PROPERTY_SUPPORT_AUDIO_SOURCE_UNPROCESSED));
         } catch (Exception e) {
-            FLog.w("FadCamRawAudio", "UI: raw audio capability check failed: " + e.getMessage());
+            FLog.w("ShahidCamRawAudio", "UI: raw audio capability check failed: " + e.getMessage());
         }
         if (!unprocessedSupported && sheet.getArguments() != null) {
             sheet.getArguments().putString(

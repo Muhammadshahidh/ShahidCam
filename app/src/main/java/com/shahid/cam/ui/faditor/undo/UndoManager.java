@@ -1,4 +1,4 @@
-package com.shahid.cam.ui.faditor.undo;
+package com.shahid.cam.ui.shahideditor.undo;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Manages undo/redo history for the Faditor editor.
+ * Manages undo/redo history for the ShahidEditor editor.
  *
  * <p>Maintains two stacks: undo and redo. When a new action is performed,
  * it is pushed onto the undo stack and the redo stack is cleared (any

@@ -279,7 +279,7 @@ dependencies {
     implementation(libs.media3.exoplayer)
     implementation(libs.media3.ui)
     implementation(libs.media3.session)
-    // Media3 Transformer + Effect for Faditor Mini video editing
+    // Media3 Transformer + Effect for ShahidEditor Mini video editing
     implementation(libs.media3.transformer)
     implementation(libs.media3.effect)
     // AndroidX Media for MediaStyle notifications

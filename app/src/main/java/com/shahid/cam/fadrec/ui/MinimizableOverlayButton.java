@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.ui;
+package com.shahid.cam.shahidrec.ui;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;

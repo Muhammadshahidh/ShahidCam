@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.ui;
+package com.shahid.cam.shahidrec.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -19,7 +19,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 public class ColorPickerDialogActivity extends Activity {
     
     public static final String EXTRA_SELECTED_COLOR = "selected_color";
-    public static final String ACTION_COLOR_SELECTED = "com.shahid.cam.fadrec.COLOR_SELECTED";
+    public static final String ACTION_COLOR_SELECTED = "com.shahid.cam.shahidrec.COLOR_SELECTED";
     
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -47,7 +47,7 @@ public final class SegmentEncryptor {
      *
      * @param plaintext      Raw {@code seg-N.m4s} bytes from the MediaMuxer.
      * @param deviceKeyBytes 32-byte AES-256 device key (from {@link StreamKeyManager#deriveDeviceKey}).
-     * @return Encrypted payload in the FadCam E2E wire format.
+     * @return Encrypted payload in the ShahidCam E2E wire format.
      * @throws Exception on AES-GCM or JCA failure.
      */
     @NonNull
@@ -82,7 +82,7 @@ public final class SegmentEncryptor {
     }
 
     /**
-     * Check whether the given bytes start with the FadCam E2E magic bytes.
+     * Check whether the given bytes start with the ShahidCam E2E magic bytes.
      *
      * @param data Bytes to inspect (may be any length ≥ 4).
      * @return {@code true} if the first 4 bytes equal {@code 0xFADCE245}.

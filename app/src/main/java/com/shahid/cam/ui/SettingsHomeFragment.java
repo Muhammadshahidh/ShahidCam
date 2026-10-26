@@ -28,14 +28,14 @@ import com.shahid.cam.FLog;
  * SettingsHomeFragment
  * Lightweight entry point replacing the monolithic SettingsFragment.
  * Shows grouped navigation rows with a mode selector popup to filter
- * settings between FadCam, FadRec (Screen Recording), FadMic, or All.
+ * settings between ShahidCam, ShahidRec (Screen Recording), ShahidMic, or All.
  */
 public class SettingsHomeFragment extends Fragment {
 
     /** Set by the home sidebar "See all mini apps" row; consumed on next show to scroll to the Mini Apps section. */
     public static volatile boolean sScrollToMiniApps = false;
 
-    public enum SettingsMode { ALL, FADCAM, FADREC }
+    public enum SettingsMode { ALL, SHAHIDCAM, SHAHIDREC }
 
     private SettingsMode currentMode = SettingsMode.ALL;
     private android.content.SharedPreferences.OnSharedPreferenceChangeListener prefListener;
@@ -185,15 +185,15 @@ public class SettingsHomeFragment extends Fragment {
             updateModeSelectorUI();
             applyModeFilter(currentMode);
         });
-        popupView.findViewById(R.id.mode_fadcam).setOnClickListener(v -> {
-            currentMode = SettingsMode.FADCAM;
+        popupView.findViewById(R.id.mode_shahidcam).setOnClickListener(v -> {
+            currentMode = SettingsMode.SHAHIDCAM;
             updatePopupChecks(popupView, currentMode);
             animatePopupDismiss(popup, popupView);
             updateModeSelectorUI();
             applyModeFilter(currentMode);
         });
-        popupView.findViewById(R.id.mode_fadrec).setOnClickListener(v -> {
-            currentMode = SettingsMode.FADREC;
+        popupView.findViewById(R.id.mode_shahidrec).setOnClickListener(v -> {
+            currentMode = SettingsMode.SHAHIDREC;
             updatePopupChecks(popupView, currentMode);
             animatePopupDismiss(popup, popupView);
             updateModeSelectorUI();
@@ -240,21 +240,21 @@ public class SettingsHomeFragment extends Fragment {
 
     private void updatePopupChecks(View popupView, SettingsMode mode) {
         TextView checkAll = popupView.findViewById(R.id.check_all);
-        TextView checkFadCam = popupView.findViewById(R.id.check_fadcam);
-        TextView checkFadRec = popupView.findViewById(R.id.check_fadrec);
+        TextView checkShahidCam = popupView.findViewById(R.id.check_shahidcam);
+        TextView checkShahidRec = popupView.findViewById(R.id.check_shahidrec);
 
         if (checkAll != null)
             checkAll.setText(mode == SettingsMode.ALL ? "check_circle" : "radio_button_unchecked");
-        if (checkFadCam != null)
-            checkFadCam.setText(mode == SettingsMode.FADCAM ? "check_circle" : "radio_button_unchecked");
-        if (checkFadRec != null)
-            checkFadRec.setText(mode == SettingsMode.FADREC ? "check_circle" : "radio_button_unchecked");
+        if (checkShahidCam != null)
+            checkShahidCam.setText(mode == SettingsMode.SHAHIDCAM ? "check_circle" : "radio_button_unchecked");
+        if (checkShahidRec != null)
+            checkShahidRec.setText(mode == SettingsMode.SHAHIDREC ? "check_circle" : "radio_button_unchecked");
 
         int green = 0xFF4CAF50;
         int grey = 0xFF666666;
         if (checkAll != null) checkAll.setTextColor(mode == SettingsMode.ALL ? green : grey);
-        if (checkFadCam != null) checkFadCam.setTextColor(mode == SettingsMode.FADCAM ? green : grey);
-        if (checkFadRec != null) checkFadRec.setTextColor(mode == SettingsMode.FADREC ? green : grey);
+        if (checkShahidCam != null) checkShahidCam.setTextColor(mode == SettingsMode.SHAHIDCAM ? green : grey);
+        if (checkShahidRec != null) checkShahidRec.setTextColor(mode == SettingsMode.SHAHIDREC ? green : grey);
     }
 
     /** Update the header button text/icon to reflect current mode. */
@@ -269,14 +269,14 @@ public class SettingsHomeFragment extends Fragment {
         if (modeText != null) {
             switch (currentMode) {
                 case ALL: modeText.setText(getString(R.string.settings_tab_all)); break;
-                case FADCAM: modeText.setText(getString(R.string.settings_tab_fadcam)); break;
-                case FADREC: modeText.setText(getString(R.string.settings_tab_fadrec)); break;
+                case SHAHIDCAM: modeText.setText(getString(R.string.settings_tab_shahidcam)); break;
+                case SHAHIDREC: modeText.setText(getString(R.string.settings_tab_shahidrec)); break;
             }
         }
-        // Toggle between material icon text (All/FadCam) and drawable image (FadRec)
+        // Toggle between material icon text (All/ShahidCam) and drawable image (ShahidRec)
         // so the header button always shows the exact same icon as the popup dropdown.
         if (modeIconText != null && modeIconImage != null) {
-            if (currentMode == SettingsMode.FADREC) {
+            if (currentMode == SettingsMode.SHAHIDREC) {
                 modeIconText.setVisibility(View.GONE);
                 modeIconImage.setVisibility(View.VISIBLE);
             } else {
@@ -284,7 +284,7 @@ public class SettingsHomeFragment extends Fragment {
                 modeIconText.setVisibility(View.VISIBLE);
                 switch (currentMode) {
                     case ALL: modeIconText.setText("apps"); break;
-                    case FADCAM: modeIconText.setText("videocam"); break;
+                    case SHAHIDCAM: modeIconText.setText("videocam"); break;
 
                 }
             }
@@ -300,10 +300,10 @@ public class SettingsHomeFragment extends Fragment {
     private void applyModeFilter(SettingsMode mode, View rootView) {
         if (rootView == null) return;
 
-        boolean showVideo = (mode == SettingsMode.ALL || mode == SettingsMode.FADCAM);
-        boolean showAudio = (mode == SettingsMode.ALL || mode == SettingsMode.FADCAM);
-        boolean showWatermark = (mode == SettingsMode.ALL || mode == SettingsMode.FADCAM);
-        boolean showScreenRec = (mode == SettingsMode.ALL || mode == SettingsMode.FADREC);
+        boolean showVideo = (mode == SettingsMode.ALL || mode == SettingsMode.SHAHIDCAM);
+        boolean showAudio = (mode == SettingsMode.ALL || mode == SettingsMode.SHAHIDCAM);
+        boolean showWatermark = (mode == SettingsMode.ALL || mode == SettingsMode.SHAHIDCAM);
+        boolean showScreenRec = (mode == SettingsMode.ALL || mode == SettingsMode.SHAHIDREC);
 
         // Collect all animatable views with their target visibility
         java.util.List<ViewAnim> viewAnims = new java.util.ArrayList<>();
@@ -440,7 +440,7 @@ public class SettingsHomeFragment extends Fragment {
         bindRow(root, R.id.group_video_quick, () -> openSubFragment(new VideoSettingsFragment()));
         bindRow(root, R.id.group_video_player_settings, () -> openSubFragment(new VideoPlayerSettingsFragment()));
         bindRow(root, R.id.group_audio_quick, () -> openSubFragment(new AudioSettingsFragment()));
-        bindRow(root, R.id.group_screen_recording, () -> openSubFragment(new com.shahid.cam.fadrec.ui.ScreenRecordingSettingsFragment()));
+        bindRow(root, R.id.group_screen_recording, () -> openSubFragment(new com.shahid.cam.shahidrec.ui.ScreenRecordingSettingsFragment()));
         bindRow(root, R.id.group_storage, () -> openSubFragment(new StorageSettingsFragment()));
         bindRow(root, R.id.group_security, () -> openSubFragment(new SecuritySettingsFragment()));
         bindRow(root, R.id.group_motion_lab, () -> openSubFragment(new MotionLabSettingsFragment()));

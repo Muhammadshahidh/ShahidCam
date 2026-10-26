@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.ui;
+package com.shahid.cam.shahidrec.ui;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -57,19 +57,19 @@ import androidx.core.app.NotificationCompat;
 import com.shahid.cam.R;
 import com.shahid.cam.SharedPreferencesManager;
 import com.shahid.cam.ui.AvatarToggleView;
-import com.shahid.cam.fadrec.MediaProjectionHelper;
-import com.shahid.cam.fadrec.ui.annotation.AnnotationState;
-import com.shahid.cam.fadrec.ui.annotation.ProjectFileManager;
-import com.shahid.cam.fadrec.ui.overlay.BaseTransparentEditorActivity;
-import com.shahid.cam.fadrec.ui.annotation.AnnotationPage;
-import com.shahid.cam.fadrec.ui.annotation.AnnotationLayer;
-import com.shahid.cam.fadrec.ui.annotation.TextEditorDialog;
-import com.shahid.cam.fadrec.ui.annotation.ShapePickerDialog;
-import com.shahid.cam.fadrec.ui.annotation.objects.TextObject;
-import com.shahid.cam.fadrec.ui.annotation.objects.ShapeObject;
-import com.shahid.cam.fadrec.ui.overlay.BaseEditorOverlay;
-import com.shahid.cam.fadrec.ui.overlay.InlineTextEditor;
-import com.shahid.cam.fadrec.ui.overlay.TextEditorActivity;
+import com.shahid.cam.shahidrec.MediaProjectionHelper;
+import com.shahid.cam.shahidrec.ui.annotation.AnnotationState;
+import com.shahid.cam.shahidrec.ui.annotation.ProjectFileManager;
+import com.shahid.cam.shahidrec.ui.overlay.BaseTransparentEditorActivity;
+import com.shahid.cam.shahidrec.ui.annotation.AnnotationPage;
+import com.shahid.cam.shahidrec.ui.annotation.AnnotationLayer;
+import com.shahid.cam.shahidrec.ui.annotation.TextEditorDialog;
+import com.shahid.cam.shahidrec.ui.annotation.ShapePickerDialog;
+import com.shahid.cam.shahidrec.ui.annotation.objects.TextObject;
+import com.shahid.cam.shahidrec.ui.annotation.objects.ShapeObject;
+import com.shahid.cam.shahidrec.ui.overlay.BaseEditorOverlay;
+import com.shahid.cam.shahidrec.ui.overlay.InlineTextEditor;
+import com.shahid.cam.shahidrec.ui.overlay.TextEditorActivity;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -120,7 +120,7 @@ public class AnnotationService extends Service {
     private Handler recordingTimerHandler;
     private Runnable recordingTimerRunnable;
     private SharedPreferencesManager sharedPreferencesManager;
-    private com.shahid.cam.fadrec.ScreenRecordingState recordingState = com.shahid.cam.fadrec.ScreenRecordingState.NONE;
+    private com.shahid.cam.shahidrec.ScreenRecordingState recordingState = com.shahid.cam.shahidrec.ScreenRecordingState.NONE;
     private boolean isRecordingControlsExpanded = false;
 
     // Project section
@@ -222,7 +222,7 @@ public class AnnotationService extends Service {
             if (!android.provider.Settings.canDrawOverlays(this)) {
                 FLog.e(TAG, "SYSTEM_ALERT_WINDOW permission not granted, cannot start AnnotationService");
                 // Broadcast permission missing error
-                Intent errorBroadcast = new Intent("com.shahid.cam.fadrec.ANNOTATION_SERVICE_PERMISSION_ERROR");
+                Intent errorBroadcast = new Intent("com.shahid.cam.shahidrec.ANNOTATION_SERVICE_PERMISSION_ERROR");
                 sendBroadcast(errorBroadcast);
                 stopSelf();
                 return START_NOT_STICKY;
@@ -269,8 +269,8 @@ public class AnnotationService extends Service {
     private void terminateService() {
         FLog.d(TAG, "Terminate service requested from notification");
         
-        // Broadcast to FadRecHomeFragment to turn off toggle
-        Intent broadcast = new Intent("com.shahid.cam.fadrec.ACTION_SERVICE_TERMINATED");
+        // Broadcast to ShahidRecHomeFragment to turn off toggle
+        Intent broadcast = new Intent("com.shahid.cam.shahidrec.ACTION_SERVICE_TERMINATED");
         sendBroadcast(broadcast);
         
         // Stop service
@@ -621,7 +621,7 @@ public class AnnotationService extends Service {
 
         // Update current project name and save to preferences
         currentProjectName = projectName;
-        android.content.SharedPreferences prefs = getSharedPreferences("fadrec_prefs", MODE_PRIVATE);
+        android.content.SharedPreferences prefs = getSharedPreferences("shahidrec_prefs", MODE_PRIVATE);
         prefs.edit().putString("current_project", currentProjectName).apply();
         FLog.d(TAG, "Updated current project preference: " + currentProjectName);
 
@@ -686,13 +686,13 @@ public class AnnotationService extends Service {
             FLog.d(TAG, "No current project to save — starting fresh");
         }
 
-        // Generate new project name with timestamp - using FadRec prefix
-        String newProjectName = "FadRec_"
+        // Generate new project name with timestamp - using ShahidRec prefix
+        String newProjectName = "ShahidRec_"
                 + new java.text.SimpleDateFormat("yyyyMMdd_HHmmss", java.util.Locale.US).format(new java.util.Date());
         currentProjectName = newProjectName;
 
         // Update preference
-        android.content.SharedPreferences prefs = getSharedPreferences("fadrec_prefs", MODE_PRIVATE);
+        android.content.SharedPreferences prefs = getSharedPreferences("shahidrec_prefs", MODE_PRIVATE);
         prefs.edit().putString("current_project", currentProjectName).apply();
 
         // Create fresh state
@@ -915,11 +915,11 @@ public class AnnotationService extends Service {
     }
 
     /**
-     * Send ANNOTATION_SERVICE_READY broadcast to dismiss loading dialog in FadRecHomeFragment.
+     * Send ANNOTATION_SERVICE_READY broadcast to dismiss loading dialog in ShahidRecHomeFragment.
      * Called from onCreate (in finally block) and onStartCommand (for implicit starts).
      */
     private void sendReadyBroadcast() {
-        Intent readyIntent = new Intent("com.shahid.cam.fadrec.ANNOTATION_SERVICE_READY");
+        Intent readyIntent = new Intent("com.shahid.cam.shahidrec.ANNOTATION_SERVICE_READY");
         sendBroadcast(readyIntent);
         FLog.d(TAG, "ANNOTATION_SERVICE_READY broadcast sent");
     }
@@ -1264,8 +1264,8 @@ public class AnnotationService extends Service {
 
         // Recording controls - Collapsed button click to START recording
         btnRecordingCollapsed.setOnClickListener(v -> {
-            FLog.d(TAG, "Overlay button clicked - currentState: " + recordingState + ", NONE=" + com.shahid.cam.fadrec.ScreenRecordingState.NONE + ", isEqual=" + (recordingState == com.shahid.cam.fadrec.ScreenRecordingState.NONE));
-            if (recordingState == com.shahid.cam.fadrec.ScreenRecordingState.NONE) {
+            FLog.d(TAG, "Overlay button clicked - currentState: " + recordingState + ", NONE=" + com.shahid.cam.shahidrec.ScreenRecordingState.NONE + ", isEqual=" + (recordingState == com.shahid.cam.shahidrec.ScreenRecordingState.NONE));
+            if (recordingState == com.shahid.cam.shahidrec.ScreenRecordingState.NONE) {
                 // Start recording - launch TransparentPermissionActivity directly from service
                 // This works even if app is removed from recents
                 FLog.d(TAG, "Starting recording from overlay - launching permission activity");
@@ -1282,7 +1282,7 @@ public class AnnotationService extends Service {
             if (btnStartStopRec.isEnabled()) {
                 // Stop recording - send intent directly to ScreenRecordingService
                 FLog.d(TAG, "Stop button clicked - sending stop intent to service");
-                Intent stopIntent = new Intent(this, com.shahid.cam.fadrec.services.ScreenRecordingService.class);
+                Intent stopIntent = new Intent(this, com.shahid.cam.shahidrec.services.ScreenRecordingService.class);
                 stopIntent.setAction(com.shahid.cam.Constants.INTENT_ACTION_STOP_SCREEN_RECORDING);
                 startService(stopIntent);
             }
@@ -1291,16 +1291,16 @@ public class AnnotationService extends Service {
         // Recording controls - Pause/Resume button (in expanded state)
         btnPauseResumeRec.setOnClickListener(v -> {
             if (btnPauseResumeRec.isEnabled()) {
-                if (recordingState == com.shahid.cam.fadrec.ScreenRecordingState.IN_PROGRESS) {
+                if (recordingState == com.shahid.cam.shahidrec.ScreenRecordingState.IN_PROGRESS) {
                     // Pause recording
                     FLog.d(TAG, "Pause button clicked - sending pause intent to service");
-                    Intent pauseIntent = new Intent(this, com.shahid.cam.fadrec.services.ScreenRecordingService.class);
+                    Intent pauseIntent = new Intent(this, com.shahid.cam.shahidrec.services.ScreenRecordingService.class);
                     pauseIntent.setAction(com.shahid.cam.Constants.INTENT_ACTION_PAUSE_SCREEN_RECORDING);
                     startService(pauseIntent);
-                } else if (recordingState == com.shahid.cam.fadrec.ScreenRecordingState.PAUSED) {
+                } else if (recordingState == com.shahid.cam.shahidrec.ScreenRecordingState.PAUSED) {
                     // Resume recording
                     FLog.d(TAG, "Resume button clicked - sending resume intent to service");
-                    Intent resumeIntent = new Intent(this, com.shahid.cam.fadrec.services.ScreenRecordingService.class);
+                    Intent resumeIntent = new Intent(this, com.shahid.cam.shahidrec.services.ScreenRecordingService.class);
                     resumeIntent.setAction(com.shahid.cam.Constants.INTENT_ACTION_RESUME_SCREEN_RECORDING);
                     startService(resumeIntent);
                 }
@@ -2664,9 +2664,9 @@ public class AnnotationService extends Service {
 
                 boolean success = projectFileManager.saveProject(state, currentProjectName);
                 if (success) {
-                    FLog.d(TAG, "✅ State saved successfully to: " + currentProjectName + ".fadrec");
+                    FLog.d(TAG, "✅ State saved successfully to: " + currentProjectName + ".shahidrec");
                 } else {
-                    FLog.e(TAG, "❌ Failed to save state to: " + currentProjectName + ".fadrec");
+                    FLog.e(TAG, "❌ Failed to save state to: " + currentProjectName + ".shahidrec");
                 }
             }
         }
@@ -2890,7 +2890,7 @@ public class AnnotationService extends Service {
                         FLog.d(TAG, "New layer name: " + layerName);
 
                         // Use command pattern to enable undo/redo
-                        com.shahid.cam.fadrec.ui.annotation.AddLayerCommand command = new com.shahid.cam.fadrec.ui.annotation.AddLayerCommand(
+                        com.shahid.cam.shahidrec.ui.annotation.AddLayerCommand command = new com.shahid.cam.shahidrec.ui.annotation.AddLayerCommand(
                                 currentPage, layerName);
                         currentPage.executeCommand(command);
                         // CRITICAL: Use notifyStateChangedWithRedraw() to regenerate bitmap with new
@@ -2925,7 +2925,7 @@ public class AnnotationService extends Service {
                                 FLog.d(TAG, "Total layers (including deleted): " + currentPage.getLayers().size());
 
                                 // Use command pattern to enable undo/redo - uses soft-delete
-                                com.shahid.cam.fadrec.ui.annotation.DeleteLayerCommand command = new com.shahid.cam.fadrec.ui.annotation.DeleteLayerCommand(
+                                com.shahid.cam.shahidrec.ui.annotation.DeleteLayerCommand command = new com.shahid.cam.shahidrec.ui.annotation.DeleteLayerCommand(
                                         currentPage, actualIndex);
                                 currentPage.executeCommand(command);
 
@@ -3099,7 +3099,7 @@ public class AnnotationService extends Service {
     }
 
     private Notification createNotification() {
-        // Open app intent - tap notification to open FadCam app
+        // Open app intent - tap notification to open ShahidCam app
         Intent openAppIntent = getPackageManager().getLaunchIntentForPackage(getPackageName());
         if (openAppIntent == null) {
             openAppIntent = new Intent(this, com.shahid.cam.MainActivity.class);
@@ -3129,9 +3129,9 @@ public class AnnotationService extends Service {
                 : getString(R.string.annotation_notification_show_menu);
 
         return new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setContentTitle("FadRec Annotation" + annotationStatus)
+                .setContentTitle("ShahidRec Annotation" + annotationStatus)
                 .setContentText(
-                        "Tap to open FadCam • Project: " + (currentProjectName != null ? currentProjectName : "None"))
+                        "Tap to open ShahidCam • Project: " + (currentProjectName != null ? currentProjectName : "None"))
                 .setSmallIcon(R.drawable.ic_draw_edit)
                 .setPriority(NotificationCompat.PRIORITY_LOW)
                 .setOngoing(true)
@@ -3163,7 +3163,7 @@ public class AnnotationService extends Service {
                     return;
 
                 switch (action) {
-                    case "com.shahid.cam.fadrec.TOGGLE_SNAP_GUIDES":
+                    case "com.shahid.cam.shahidrec.TOGGLE_SNAP_GUIDES":
                         boolean enabled = intent.getBooleanExtra("enabled", true);
                         if (annotationView != null) {
                             annotationView.setSnapGuidesEnabled(enabled);
@@ -3171,11 +3171,11 @@ public class AnnotationService extends Service {
                         }
                         break;
 
-                    case "com.shahid.cam.fadrec.ADD_TEXT":
+                    case "com.shahid.cam.shahidrec.ADD_TEXT":
                         showTextEditorDialog();
                         break;
 
-                    case "com.shahid.cam.fadrec.ADD_SHAPE":
+                    case "com.shahid.cam.shahidrec.ADD_SHAPE":
                         showShapePickerDialog();
                         break;
                 }
@@ -3183,9 +3183,9 @@ public class AnnotationService extends Service {
         };
 
         IntentFilter filter = new IntentFilter();
-        filter.addAction("com.shahid.cam.fadrec.TOGGLE_SNAP_GUIDES");
-        filter.addAction("com.shahid.cam.fadrec.ADD_TEXT");
-        filter.addAction("com.shahid.cam.fadrec.ADD_SHAPE");
+        filter.addAction("com.shahid.cam.shahidrec.TOGGLE_SNAP_GUIDES");
+        filter.addAction("com.shahid.cam.shahidrec.ADD_TEXT");
+        filter.addAction("com.shahid.cam.shahidrec.ADD_SHAPE");
         androidx.core.content.ContextCompat.registerReceiver(this, menuActionReceiver, filter, androidx.core.content.ContextCompat.RECEIVER_NOT_EXPORTED);
         FLog.d(TAG, "Menu action receiver registered");
     }
@@ -3201,21 +3201,21 @@ public class AnnotationService extends Service {
                 FLog.d(TAG, "[BROADCAST] Recording state broadcast received: " + stateStr);
                 if (stateStr != null) {
                     try {
-                        com.shahid.cam.fadrec.ScreenRecordingState oldState = recordingState;
-                        recordingState = com.shahid.cam.fadrec.ScreenRecordingState.valueOf(stateStr);
+                        com.shahid.cam.shahidrec.ScreenRecordingState oldState = recordingState;
+                        recordingState = com.shahid.cam.shahidrec.ScreenRecordingState.valueOf(stateStr);
                         FLog.d(TAG, "[BROADCAST] State updated: " + oldState + " -> " + recordingState);
 
                         // Handle timer based on state changes
-                        if (recordingState == com.shahid.cam.fadrec.ScreenRecordingState.IN_PROGRESS
-                                && oldState != com.shahid.cam.fadrec.ScreenRecordingState.IN_PROGRESS) {
+                        if (recordingState == com.shahid.cam.shahidrec.ScreenRecordingState.IN_PROGRESS
+                                && oldState != com.shahid.cam.shahidrec.ScreenRecordingState.IN_PROGRESS) {
                             // Recording started or resumed
                             FLog.d(TAG, "[BROADCAST] Starting timer due to state change");
                             startRecordingTimer();
-                        } else if (recordingState == com.shahid.cam.fadrec.ScreenRecordingState.NONE) {
+                        } else if (recordingState == com.shahid.cam.shahidrec.ScreenRecordingState.NONE) {
                             // Recording stopped completely
                             FLog.d(TAG, "[BROADCAST] Stopping timer due to state change");
                             stopRecordingTimer();
-                        } else if (recordingState == com.shahid.cam.fadrec.ScreenRecordingState.PAUSED) {
+                        } else if (recordingState == com.shahid.cam.shahidrec.ScreenRecordingState.PAUSED) {
                             // Recording paused - stop updating but keep timer visible with current value
                             if (recordingTimerRunnable != null && recordingTimerHandler != null) {
                                 recordingTimerHandler.removeCallbacks(recordingTimerRunnable);
@@ -3310,7 +3310,7 @@ public class AnnotationService extends Service {
                         FLog.i(TAG, "✅ Project renamed successfully");
 
                         // Update preferences with new name
-                        android.content.SharedPreferences prefs = getSharedPreferences("fadrec_prefs", MODE_PRIVATE);
+                        android.content.SharedPreferences prefs = getSharedPreferences("shahidrec_prefs", MODE_PRIVATE);
                         prefs.edit().putString("current_project", currentProjectName).apply();
 
                         // Update UI immediately
@@ -3404,7 +3404,7 @@ public class AnnotationService extends Service {
                 }
             }
         };
-        IntentFilter layerRenameFilter = new IntentFilter("com.shahid.cam.fadrec.RENAME_LAYER");
+        IntentFilter layerRenameFilter = new IntentFilter("com.shahid.cam.shahidrec.RENAME_LAYER");
         androidx.core.content.ContextCompat.registerReceiver(this, layerRenameReceiver, layerRenameFilter, androidx.core.content.ContextCompat.RECEIVER_NOT_EXPORTED);
 
         // Register page rename receiver
@@ -3418,7 +3418,7 @@ public class AnnotationService extends Service {
                 }
             }
         };
-        IntentFilter pageRenameFilter = new IntentFilter("com.shahid.cam.fadrec.RENAME_PAGE");
+        IntentFilter pageRenameFilter = new IntentFilter("com.shahid.cam.shahidrec.RENAME_PAGE");
         androidx.core.content.ContextCompat.registerReceiver(this, pageRenameReceiver, pageRenameFilter, androidx.core.content.ContextCompat.RECEIVER_NOT_EXPORTED);
     }
     
@@ -3544,8 +3544,8 @@ public class AnnotationService extends Service {
             
             if (containingLayer != null) {
                 // Create command that captures before/after state
-                com.shahid.cam.fadrec.ui.annotation.ModifyTextObjectCommand command = 
-                    new com.shahid.cam.fadrec.ui.annotation.ModifyTextObjectCommand(
+                com.shahid.cam.shahidrec.ui.annotation.ModifyTextObjectCommand command = 
+                    new com.shahid.cam.shahidrec.ui.annotation.ModifyTextObjectCommand(
                         containingLayer, textObject,
                         textWithSpans, color, fontSize, paintAlign,
                         isBold, isItalic, hasBackground, backgroundColor
@@ -3596,8 +3596,8 @@ public class AnnotationService extends Service {
                 textObject.setMaxWidth(maxWidth); // Preserve editor's line breaking
                 
                 // CRITICAL: Use command pattern for undo/redo support
-                com.shahid.cam.fadrec.ui.annotation.AddObjectCommand command = 
-                    new com.shahid.cam.fadrec.ui.annotation.AddObjectCommand(activeLayer, textObject);
+                com.shahid.cam.shahidrec.ui.annotation.AddObjectCommand command = 
+                    new com.shahid.cam.shahidrec.ui.annotation.AddObjectCommand(activeLayer, textObject);
                 currentPage.executeCommand(command);
                 
                 // Select the newly created text object
@@ -3937,7 +3937,7 @@ public class AnnotationService extends Service {
             @Override
             public void run() {
                 // Only continue updating if still in progress
-                if (recordingState == com.shahid.cam.fadrec.ScreenRecordingState.IN_PROGRESS) {
+                if (recordingState == com.shahid.cam.shahidrec.ScreenRecordingState.IN_PROGRESS) {
                     updateTimerDisplay();
                     recordingTimerHandler.postDelayed(this, 1000); // Update every second
                 } else {
@@ -4384,7 +4384,7 @@ public class AnnotationService extends Service {
         stopRecordingTimer();
 
         // Send broadcast to turn off menu switch in app
-        Intent intent = new Intent("com.shahid.cam.fadrec.ANNOTATION_SERVICE_STOPPED");
+        Intent intent = new Intent("com.shahid.cam.shahidrec.ANNOTATION_SERVICE_STOPPED");
         sendBroadcast(intent);
 
         // Unregister broadcast receivers

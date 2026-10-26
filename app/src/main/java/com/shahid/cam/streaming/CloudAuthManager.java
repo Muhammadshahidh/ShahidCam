@@ -9,18 +9,18 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 /**
- * Manages cloud authentication for FadCam Remote.
+ * Manages cloud authentication for ShahidCam Remote.
  * Handles device ID generation, JWT token storage, and cloud account linking.
  * 
  * Security: Uses Android's ANDROID_ID which is unique per app+device combination.
  * JWT tokens are stored in SharedPreferences and used for authenticating with
- * the FadCam Remote cloud service (id.fadseclab.com).
+ * the ShahidCam Remote cloud service (id.shahidlabs.com).
  * 
  * Thread-safe singleton implementation.
  */
 public class CloudAuthManager {
     private static final String TAG = "CloudAuthManager";
-    private static final String PREFS_NAME = "FadCamCloudPrefs";
+    private static final String PREFS_NAME = "ShahidCamCloudPrefs";
     
     // SharedPreferences keys
     private static final String KEY_JWT_TOKEN = "cloud_jwt_token";
@@ -39,7 +39,7 @@ public class CloudAuthManager {
     // Device stream key — never expires, replaces JWT for get-stream-token requests
     private static final String KEY_STREAM_KEY = "cloud_stream_key";
 
-    // E2E verify tag — HMAC-SHA256(master_key, "fadcam-e2e-v1"), fetched from public.users
+    // E2E verify tag — HMAC-SHA256(master_key, "shahidcam-e2e-v1"), fetched from public.users
     private static final String KEY_E2E_VERIFY_TAG = "e2e_verify_tag";
     
     // Supabase configuration
@@ -47,10 +47,10 @@ public class CloudAuthManager {
     static final String SUPABASE_PUBLISHABLE_KEY = "sb_publishable_PwOotJZQHwS9xnCFwUjHsQ_uXLNqkk9";
     
     // Relay server — handles stream token issuance & verification locally
-    static final String RELAY_BASE_URL = "https://live.fadseclab.com:8443";
+    static final String RELAY_BASE_URL = "https://live.shahidlabs.com:8443";
     
     // Cloud service URLs
-    public static final String AUTH_BASE_URL = "https://id.fadseclab.com";
+    public static final String AUTH_BASE_URL = "https://id.shahidlabs.com";
     public static final String DEVICE_LINK_URL = AUTH_BASE_URL + "/device-link";
     
     // Token refresh deduplication - prevents multiple simultaneous refresh calls
@@ -262,7 +262,7 @@ public class CloudAuthManager {
         String token = getJwtToken();
         String userId = getUserId();
         if (token == null || userId == null) {
-            throw new IllegalStateException("Not linked to a FadSec ID account");
+            throw new IllegalStateException("Not linked to a Shahid Labs ID account");
         }
         String url = SUPABASE_URL + "/rest/v1/users?select=e2e_verify_tag&id=eq." + userId;
         java.net.HttpURLConnection conn = (java.net.HttpURLConnection)
@@ -312,7 +312,7 @@ public class CloudAuthManager {
         String token = getJwtToken();
         String userId = getUserId();
         if (token == null || userId == null) {
-            throw new IllegalStateException("Not linked to a FadSec ID account");
+            throw new IllegalStateException("Not linked to a Shahid Labs ID account");
         }
         String url = SUPABASE_URL + "/rest/v1/users?id=eq." + userId;
         java.net.HttpURLConnection conn = (java.net.HttpURLConnection)

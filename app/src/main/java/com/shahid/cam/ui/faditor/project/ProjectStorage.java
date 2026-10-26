@@ -1,4 +1,4 @@
-package com.shahid.cam.ui.faditor.project;
+package com.shahid.cam.ui.shahideditor.project;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -7,11 +7,11 @@ import android.net.Uri;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.shahid.cam.ui.faditor.model.AudioClip;
-import com.shahid.cam.ui.faditor.model.Clip;
-import com.shahid.cam.ui.faditor.model.ExportSettings;
-import com.shahid.cam.ui.faditor.model.FaditorProject;
-import com.shahid.cam.ui.faditor.model.Timeline;
+import com.shahid.cam.ui.shahideditor.model.AudioClip;
+import com.shahid.cam.ui.shahideditor.model.Clip;
+import com.shahid.cam.ui.shahideditor.model.ExportSettings;
+import com.shahid.cam.ui.shahideditor.model.ShahidEditorProject;
+import com.shahid.cam.ui.shahideditor.model.Timeline;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
@@ -36,18 +36,18 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * Handles JSON persistence for Faditor projects.
+ * Handles JSON persistence for ShahidEditor projects.
  *
  * <p>Projects are stored in app-internal storage at:
- * {@code files/faditor/projects/{projectId}/project.json}</p>
+ * {@code files/shahideditor/projects/{projectId}/project.json}</p>
  *
  * <p>Uses Gson for serialization with custom adapters for {@link Uri},
- * {@link Clip}, and {@link FaditorProject} types.</p>
+ * {@link Clip}, and {@link ShahidEditorProject} types.</p>
  */
 public class ProjectStorage {
 
     private static final String TAG = "ProjectStorage";
-    private static final String PROJECTS_DIR = "faditor/projects";
+    private static final String PROJECTS_DIR = "shahideditor/projects";
     private static final String PROJECT_FILE = "project.json";
 
     @NonNull
@@ -81,7 +81,7 @@ public class ProjectStorage {
      * @param project the project to save
      * @return true if successful, false otherwise
      */
-    public boolean save(@NonNull FaditorProject project) {
+    public boolean save(@NonNull ShahidEditorProject project) {
         File projectDir = getProjectDir(project.getId());
         if (!projectDir.exists() && !projectDir.mkdirs()) {
             FLog.e(TAG, "Failed to create project directory: " + projectDir);
@@ -105,7 +105,7 @@ public class ProjectStorage {
      * @return the loaded project, or null if not found or corrupt
      */
     @Nullable
-    public FaditorProject load(@NonNull String projectId) {
+    public ShahidEditorProject load(@NonNull String projectId) {
         File file = new File(getProjectDir(projectId), PROJECT_FILE);
         if (!file.exists()) {
             FLog.d(TAG, "No saved project found: " + projectId);
@@ -113,7 +113,7 @@ public class ProjectStorage {
         }
 
         try (FileReader reader = new FileReader(file)) {
-            return gson.fromJson(reader, FaditorProject.class);
+            return gson.fromJson(reader, ShahidEditorProject.class);
         } catch (Exception e) {
             FLog.e(TAG, "Failed to load project: " + projectId, e);
             return null;
@@ -184,7 +184,7 @@ public class ProjectStorage {
      */
     public boolean delete(@NonNull String projectId) {
         // First, try to load the project to get clip info for cache cleanup
-        FaditorProject project = null;
+        ShahidEditorProject project = null;
         try {
             project = load(projectId);
         } catch (Exception e) {
@@ -302,7 +302,7 @@ public class ProjectStorage {
      * @return JSON string representation
      */
     @NonNull
-    public String toJson(@NonNull FaditorProject project) {
+    public String toJson(@NonNull ShahidEditorProject project) {
         return gson.toJson(project);
     }
 
@@ -314,9 +314,9 @@ public class ProjectStorage {
      * @return the deserialized project, or null if parsing fails
      */
     @Nullable
-    public FaditorProject fromJson(@NonNull String json) {
+    public ShahidEditorProject fromJson(@NonNull String json) {
         try {
-            return gson.fromJson(json, FaditorProject.class);
+            return gson.fromJson(json, ShahidEditorProject.class);
         } catch (Exception e) {
             FLog.e(TAG, "Failed to deserialize project from JSON snapshot", e);
             return null;
@@ -416,8 +416,8 @@ public class ProjectStorage {
     private Gson createGson() {
         return new GsonBuilder()
                 .registerTypeAdapter(Uri.class, new UriAdapter())
-                .registerTypeAdapter(FaditorProject.class, new ProjectSerializer())
-                .registerTypeAdapter(FaditorProject.class, new ProjectDeserializer())
+                .registerTypeAdapter(ShahidEditorProject.class, new ProjectSerializer())
+                .registerTypeAdapter(ShahidEditorProject.class, new ProjectDeserializer())
                 .setPrettyPrinting()
                 .create();
     }
@@ -444,11 +444,11 @@ public class ProjectStorage {
     }
 
     /**
-     * Custom serializer for FaditorProject (flattens nested objects).
+     * Custom serializer for ShahidEditorProject (flattens nested objects).
      */
-    private static class ProjectSerializer implements JsonSerializer<FaditorProject> {
+    private static class ProjectSerializer implements JsonSerializer<ShahidEditorProject> {
         @Override
-        public JsonElement serialize(FaditorProject src, Type typeOfSrc,
+        public JsonElement serialize(ShahidEditorProject src, Type typeOfSrc,
                                      JsonSerializationContext context) {
             JsonObject json = new JsonObject();
             json.addProperty("id", src.getId());
@@ -523,11 +523,11 @@ public class ProjectStorage {
     }
 
     /**
-     * Custom deserializer for FaditorProject (rebuilds from flat JSON).
+     * Custom deserializer for ShahidEditorProject (rebuilds from flat JSON).
      */
-    private static class ProjectDeserializer implements JsonDeserializer<FaditorProject> {
+    private static class ProjectDeserializer implements JsonDeserializer<ShahidEditorProject> {
         @Override
-        public FaditorProject deserialize(JsonElement json, Type typeOfT,
+        public ShahidEditorProject deserialize(JsonElement json, Type typeOfT,
                                           JsonDeserializationContext context)
                 throws JsonParseException {
             JsonObject obj = json.getAsJsonObject();
@@ -535,15 +535,15 @@ public class ProjectStorage {
             String name = obj.has("name") ? obj.get("name").getAsString() : "Untitled";
 
             // Restore project with original ID and timestamps
-            FaditorProject project;
+            ShahidEditorProject project;
             if (obj.has("id") && obj.has("createdAt")) {
                 String id = obj.get("id").getAsString();
                 long createdAt = obj.get("createdAt").getAsLong();
                 long lastModified = obj.has("lastModified")
                         ? obj.get("lastModified").getAsLong() : createdAt;
-                project = new FaditorProject(id, name, createdAt, lastModified);
+                project = new ShahidEditorProject(id, name, createdAt, lastModified);
             } else {
-                project = new FaditorProject(name);
+                project = new ShahidEditorProject(name);
             }
 
             // Restore timeline clips

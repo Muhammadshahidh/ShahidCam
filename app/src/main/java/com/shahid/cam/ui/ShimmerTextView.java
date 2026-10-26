@@ -17,7 +17,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 
 /**
  * A TextView with a built-in shimmer animation effect.
- * Used for the FadCam Pro header button in HomeFragment.
+ * Used for the ShahidCam Pro header button in HomeFragment.
  */
 public class ShimmerTextView extends AppCompatTextView {
 

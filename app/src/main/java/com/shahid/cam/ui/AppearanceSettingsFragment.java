@@ -164,8 +164,8 @@ public class AppearanceSettingsFragment extends Fragment {
         );
         items.add(
             new com.shahid.cam.ui.picker.OptionItem(
-                "Faded Night",
-                "Faded Night",
+                "Shahid Dark",
+                "Shahid Dark",
                 null,
                 ContextCompat.getColor(requireContext(), R.color.amoled_surface)
             )
@@ -437,7 +437,7 @@ public class AppearanceSettingsFragment extends Fragment {
         else if (key.equals(Constants.APP_ICON_FADED)) button.setText(getString(R.string.app_icon_faded));
         else if (key.equals(Constants.APP_ICON_PALESTINE)) button.setText(getString(R.string.app_icon_palestine));
         else if (key.equals(Constants.APP_ICON_PAKISTAN)) button.setText(getString(R.string.app_icon_pakistan));
-        else if (key.equals(Constants.APP_ICON_FADSECLAB)) button.setText(getString(R.string.app_icon_fadseclab));
+        else if (key.equals(Constants.APP_ICON_FADSECLAB)) button.setText(getString(R.string.app_icon_shahidlabs));
         else if (key.equals(Constants.APP_ICON_NOORISTIC)) button.setText(getString(R.string.app_icon_nooristic));
         else if (key.equals(Constants.APP_ICON_BAT)) button.setText(getString(R.string.app_icon_bat));
         else if (key.equals(Constants.APP_ICON_REDBINARY)) button.setText(getString(R.string.app_icon_redbinary));
@@ -501,7 +501,7 @@ public class AppearanceSettingsFragment extends Fragment {
             iconOption(Constants.APP_ICON_PAKISTAN, getString(R.string.app_icon_pakistan), "MadeInPK", R.mipmap.ic_launcher_pakistan)
         );
         items.add(
-            iconOption(Constants.APP_ICON_FADSECLAB, getString(R.string.app_icon_fadseclab), "r00t", R.mipmap.ic_launcher_fadseclab)
+            iconOption(Constants.APP_ICON_FADSECLAB, getString(R.string.app_icon_shahidlabs), "r00t", R.mipmap.ic_launcher_shahidlabs)
         );
         items.add(
             iconOption(Constants.APP_ICON_NOORISTIC, getString(R.string.app_icon_nooristic), "Nooristic", R.mipmap.ic_launcher_nooristic)
@@ -573,9 +573,9 @@ public class AppearanceSettingsFragment extends Fragment {
             requireContext(),
             "com.shahid.cam.MainActivity.PakistanIcon"
         );
-        ComponentName fadseclabIcon = new ComponentName(
+        ComponentName shahidlabsIcon = new ComponentName(
             requireContext(),
-            "com.shahid.cam.MainActivity.FadSecLabIcon"
+            "com.shahid.cam.MainActivity.ShahidLabsIcon"
         );
         ComponentName nooristicIcon = new ComponentName(
             requireContext(),
@@ -632,7 +632,7 @@ public class AppearanceSettingsFragment extends Fragment {
             fadedIcon,
             palestineIcon,
             pakistanIcon,
-            fadseclabIcon,
+            shahidlabsIcon,
             nooristicIcon,
             batIcon,
             redbinaryIcon,
@@ -664,7 +664,7 @@ public class AppearanceSettingsFragment extends Fragment {
         else if (Constants.APP_ICON_PAKISTAN.equals(iconKey)) enable =
             pakistanIcon;
         else if (Constants.APP_ICON_FADSECLAB.equals(iconKey)) enable =
-            fadseclabIcon;
+            shahidlabsIcon;
         else if (Constants.APP_ICON_NOORISTIC.equals(iconKey)) enable = nooristicIcon;
         else if (Constants.APP_ICON_BAT.equals(iconKey)) enable = batIcon;
         else if (Constants.APP_ICON_REDBINARY.equals(iconKey)) enable =
@@ -766,7 +766,7 @@ public class AppearanceSettingsFragment extends Fragment {
                         resultKey,
                         getString(R.string.setting_header_logo_desc),
                         true);
-        // Enable avatar icon rendering; FadCam logo uses default static icon.
+        // Enable avatar icon rendering; ShahidCam logo uses default static icon.
         if (sheet.getArguments() != null) {
             sheet.getArguments().putBoolean(
                     com.shahid.cam.ui.picker.PickerBottomSheetFragment.ARG_BROWSE_MODE, true);

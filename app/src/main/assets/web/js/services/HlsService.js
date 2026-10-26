@@ -32,12 +32,12 @@ class HlsService {
         const baseConfig = { ...CONFIG.HLS_CONFIG };
         
         // Check if we're in cloud mode and have a stream token
-        const isCloudMode = typeof FadCamRemote !== 'undefined' && 
-                           typeof FadCamRemote.isCloudMode === 'function' && 
-                           FadCamRemote.isCloudMode();
+        const isCloudMode = typeof ShahidCamRemote !== 'undefined' && 
+                           typeof ShahidCamRemote.isCloudMode === 'function' && 
+                           ShahidCamRemote.isCloudMode();
         
         if (isCloudMode) {
-            const streamToken = FadCamRemote.getStreamToken();
+            const streamToken = ShahidCamRemote.getStreamToken();
             if (streamToken) {
                 console.log('[HlsService] ☁️ Cloud mode detected, using URL token auth');
                 
@@ -45,7 +45,7 @@ class HlsService {
                 // This is the recommended way per hls.js documentation
                 baseConfig.xhrSetup = function(xhr, url) {
                     // Only modify cloud stream URLs that don't already have a token
-                    if ((url.includes('/stream/') || url.includes('live.fadseclab.com')) && !url.includes('token=')) {
+                    if ((url.includes('/stream/') || url.includes('live.shahidlabs.com')) && !url.includes('token=')) {
                         const separator = url.includes('?') ? '&' : '?';
                         // Add cache-busting timestamp for playlist files to prevent stale segments
                         const cacheBust = url.includes('.m3u8') ? `&_t=${Date.now()}` : '';
@@ -56,11 +56,11 @@ class HlsService {
                 };
 
                 // Use the E2E-decrypting fragment loader if available
-                if (typeof FadCamFragLoader !== 'undefined') {
-                    baseConfig.fLoader = FadCamFragLoader;
+                if (typeof ShahidCamFragLoader !== 'undefined') {
+                    baseConfig.fLoader = ShahidCamFragLoader;
                     console.log('[HlsService] 🔐 E2E fragment loader attached');
                 } else {
-                    console.warn('[HlsService] FadCamFragLoader not loaded — segments will NOT be decrypted');
+                    console.warn('[HlsService] ShahidCamFragLoader not loaded — segments will NOT be decrypted');
                 }
             } else {
                 console.warn('[HlsService] ☁️ Cloud mode but no stream token available!');

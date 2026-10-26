@@ -67,7 +67,7 @@
                 android:layout_height="@dimen/home_pro_btn_h"
                 android:paddingHorizontal="@dimen/home_pro_btn_padding_h"
                 android:background="@drawable/bg_golden_header_button"
-                android:text="@string/fadcam_pro_header_button"
+                android:text="@string/shahidcam_pro_header_button"
                 android:textAllCaps="true"
                 android:textColor="#1A1A1A"
                 android:textSize="@dimen/home_pro_btn_text"
@@ -81,7 +81,7 @@
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:nextFocusUp="@+id/ivAppTitle"
-                android:nextFocusDown="@+id/segment_fadcam" />
+                android:nextFocusDown="@+id/segment_shahidcam" />
 
             <!-- Pro Badge Dot -->
             <View
@@ -117,7 +117,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header_bar">
 
-    <!-- Mode Switcher (FadCam, FadRec, FadMic) -->
+    <!-- Mode Switcher (ShahidCam, ShahidRec, ShahidMic) -->
     <include android:id="@+id/mode_switcher" layout="@layout/mode_switcher_segmented" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/home_switcher_margin_h" android:layout_marginEnd="@dimen/home_switcher_margin_h" android:layout_marginTop="0dp" android:clipChildren="false" />
 
     <LinearLayout android:id="@+id/layoutCards" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="0dp" android:orientation="horizontal" android:clipChildren="false" android:clipToPadding="false">
@@ -276,7 +276,7 @@
                     android:alpha="0.72"
                     android:scaleType="fitCenter"
                     android:contentDescription="@null"
-                    android:src="@drawable/fadseclab_flag"
+                    android:src="@drawable/shahidcam_server_room_bg_flag"
                     android:translationX="0dp"
                     android:translationY="6dp" />
 
@@ -700,7 +700,7 @@
                         android:layout_width="@dimen/home_zoom_viewport"
                         android:layout_height="@dimen/home_zoom_viewport"
                         android:layout_gravity="top|start"
-                        android:background="@drawable/fadcam_zoom_viewport_indicator" />
+                        android:background="@drawable/shahidcam_zoom_viewport_indicator" />
                 </FrameLayout>
 
                 <com.google.android.material.button.MaterialButton
@@ -897,12 +897,12 @@
                         android:tint="@android:color/white"
                         android:scaleType="centerInside"
                         android:padding="@dimen/home_quick_icon_padding"
-                        android:contentDescription="@string/watch_fadshot_desc" />
+                        android:contentDescription="@string/watch_shahidshot_desc" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="FadShot"
+                        android:text="ShahidShot"
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/home_quick_label_size"
                         android:textStyle="bold"
@@ -974,16 +974,16 @@
             android:nextFocusDown="@+id/buttonCamSwitch" />
 
                 <FrameLayout
-            android:id="@+id/fadrec_mute_wrapper"
+            android:id="@+id/shahidrec_mute_wrapper"
             android:layout_width="@dimen/home_control_btn_size"
             android:layout_height="@dimen/home_control_btn_size"
             android:layout_marginStart="@dimen/home_control_gap"
             android:visibility="gone" android:clipChildren="false" android:clipToPadding="false">
 
-<com.google.android.material.button.MaterialButton android:id="@+id/buttonFadRecMute" android:layout_width="match_parent" android:layout_height="match_parent" app:iconGravity="textStart" app:iconPadding="0dp" android:enabled="false" android:background="@drawable/control_button_bg_orange" app:iconTint="@color/white" app:cornerRadius="@dimen/home_control_corner" android:visibility="gone" />
+<com.google.android.material.button.MaterialButton android:id="@+id/buttonShahidRecMute" android:layout_width="match_parent" android:layout_height="match_parent" app:iconGravity="textStart" app:iconPadding="0dp" android:enabled="false" android:background="@drawable/control_button_bg_orange" app:iconTint="@color/white" app:cornerRadius="@dimen/home_control_corner" android:visibility="gone" />
 
             <TextView
-                android:id="@+id/fadrec_mute_icon"
+                android:id="@+id/shahidrec_mute_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -993,7 +993,7 @@
                 android:fontFamily="@font/materialicons"/>
 
             <TextView
-                android:id="@+id/fadrec_mute_status_label"
+                android:id="@+id/shahidrec_mute_status_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"

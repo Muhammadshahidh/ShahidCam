@@ -28,16 +28,16 @@ import com.shahid.cam.utils.PhotoStorageHelper;
 
 import java.util.concurrent.Executors;
 
-public class FadRecScreenshotAccessibilityService extends AccessibilityService {
-    private static final String TAG = "FadRecScreenshotSvc";
-    private static final String PREFS_NAME = "fadrec_screenshot_shortcut";
+public class ShahidRecScreenshotAccessibilityService extends AccessibilityService {
+    private static final String TAG = "ShahidRecScreenshotSvc";
+    private static final String PREFS_NAME = "shahidrec_screenshot_shortcut";
     private static final String KEY_PENDING_CAPTURE = "pending_capture";
 
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
     private final BroadcastReceiver triggerReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (intent == null || !Constants.ACTION_TRIGGER_FADREC_SCREENSHOT.equals(intent.getAction())) {
+            if (intent == null || !Constants.ACTION_TRIGGER_SHAHIDREC_SCREENSHOT.equals(intent.getAction())) {
                 return;
             }
             FLog.d(TAG, "Trigger broadcast received in accessibility service.");
@@ -68,7 +68,7 @@ public class FadRecScreenshotAccessibilityService extends AccessibilityService {
             return;
         }
         try {
-            IntentFilter filter = new IntentFilter(Constants.ACTION_TRIGGER_FADREC_SCREENSHOT);
+            IntentFilter filter = new IntentFilter(Constants.ACTION_TRIGGER_SHAHIDREC_SCREENSHOT);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 registerReceiver(triggerReceiver, filter, Context.RECEIVER_NOT_EXPORTED);
             } else {
@@ -154,7 +154,7 @@ public class FadRecScreenshotAccessibilityService extends AccessibilityService {
                     getApplicationContext(),
                     copyBitmap,
                     false,
-                    PhotoStorageHelper.ShotSource.FADREC);
+                    PhotoStorageHelper.ShotSource.SHAHIDREC);
             if (savedUri != null) {
                 FLog.i(TAG, "Screenshot saved successfully. uri=" + savedUri);
                 clearPendingCapture();
@@ -207,7 +207,7 @@ public class FadRecScreenshotAccessibilityService extends AccessibilityService {
             if (enabledServices == null) {
                 return false;
             }
-            ComponentName componentName = new ComponentName(context, FadRecScreenshotAccessibilityService.class);
+            ComponentName componentName = new ComponentName(context, ShahidRecScreenshotAccessibilityService.class);
             boolean enabledForApp = enabledServices.contains(componentName.flattenToString());
             FLog.d(TAG, "isServiceEnabled=" + enabledForApp + ", enabledServices=" + enabledServices);
             return enabledForApp;

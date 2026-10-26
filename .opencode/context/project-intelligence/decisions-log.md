@@ -15,7 +15,7 @@
 
 **Date**: 2024 (initial development)
 **Status**: Decided
-**Owner**: anonfaded
+**Owner**: Muhammadshahidh
 
 ### Context
 Needed background recording capability (screen off) for dashcam and discreet recording use cases.
@@ -43,7 +43,7 @@ CameraX abstracts away camera control and doesn't support recording with screen 
 
 **Date**: 2024
 **Status**: Decided
-**Owner**: anonfaded
+**Owner**: Muhammadshahidh
 
 ### Context
 Users reported corrupted video files when phone crashed or battery died during recording.
@@ -65,7 +65,7 @@ Standard MP4 requires finalization (writing moov atom at end of file). If record
 
 **Date**: 2024 (project inception)
 **Status**: Decided
-**Owner**: anonfaded
+**Owner**: Muhammadshahidh
 
 ### Context
 Starting a new Android project in 2024 when Kotlin is the recommended language.
@@ -92,7 +92,7 @@ Developer preference and familiarity. The codebase grew organically in Java and 
 
 **Date**: 2024
 **Status**: Decided
-**Owner**: anonfaded
+**Owner**: Muhammadshahidh
 
 ### Context
 Privacy-focused positioning requires zero data collection.
@@ -114,7 +114,7 @@ Privacy is the product's core value proposition. Any data collection would contr
 
 **Date**: 2024
 **Status**: Decided
-**Owner**: anonfaded
+**Owner**: Muhammadshahidh
 
 ### Context
 Need revenue to sustain development without compromising privacy-first ethos.
@@ -136,7 +136,7 @@ One-time purchase aligns with open-source values. No subscription model. Build v
 
 **Date**: 2024
 **Status**: Decided
-**Owner**: anonfaded
+**Owner**: Muhammadshahidh
 
 ### Context
 Maximize reach while respecting user choice of app stores.
@@ -158,7 +158,7 @@ Different user segments prefer different stores. F-Droid for FOSS users, Amazon 
 
 **Date**: 2025
 **Status**: Decided
-**Owner**: anonfaded
+**Owner**: Muhammadshahidh
 
 ### Context
 Google requires apps to target recent SDK levels. Android 16 (API 36) brings edge-to-edge enforcement and adaptive app requirements.

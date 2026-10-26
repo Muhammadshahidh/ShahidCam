@@ -1,8 +1,8 @@
 # Workflow Preferences
 
 - Never scp/rsync files; does all work locally and the user pushes to GitHub, then the deploy script handles the rest (the env-file scp is an exception that should remain). Confidence: 0.9
-- Never edits the nested fadcam repo; always edits the main FadCam repo, and the user handles pull/push. Confidence: 0.9
-- Owns sibling repos adjacent to the main project (e.g., the media3-patched fork, one folder back from FadCam) and expects them to be edited directly when a fix spans them — they are the user's own repos, not read-only third-party code. Confidence: 0.9
+- Never edits the nested shahidcam repo; always edits the main ShahidCam repo, and the user handles pull/push. Confidence: 0.9
+- Owns sibling repos adjacent to the main project (e.g., the media3-patched fork, one folder back from ShahidCam) and expects them to be edited directly when a fix spans them — they are the user's own repos, not read-only third-party code. Confidence: 0.9
 - Asks before making structural changes instead of silently adding templates or TODOs. Confidence: 0.8
 - Documents system architecture and usage semantics in markdown files for later reference and Q&A, based on verified facts rather than assumptions. Confidence: 0.85
 - When deferring a dependency upgrade/migration (e.g., media3), wants a repo-root markdown doc capturing the decision rationale ("stay pinned for now"), the current verified state, what newer versions offer, a migration checklist, and open questions — but explicitly does NOT want speculative research done at deferral time; the doc should note that fresh research happens when the migration actually starts. Confidence: 0.85

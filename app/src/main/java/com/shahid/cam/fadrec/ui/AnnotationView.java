@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.ui;
+package com.shahid.cam.shahidrec.ui;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -19,15 +19,15 @@ import android.view.View;
 
 import java.util.List;
 
-import com.shahid.cam.fadrec.ui.annotation.AddPathCommand;
-import com.shahid.cam.fadrec.ui.annotation.AnnotationLayer;
-import com.shahid.cam.fadrec.ui.annotation.AnnotationPage;
-import com.shahid.cam.fadrec.ui.annotation.AnnotationState;
-import com.shahid.cam.fadrec.ui.annotation.ClearLayerCommand;
-import com.shahid.cam.fadrec.ui.annotation.ClearAllLayersCommand;
-import com.shahid.cam.fadrec.ui.annotation.DrawingPath;
-import com.shahid.cam.fadrec.ui.annotation.objects.AnnotationObject;
-import com.shahid.cam.fadrec.ui.annotation.objects.PathObject;
+import com.shahid.cam.shahidrec.ui.annotation.AddPathCommand;
+import com.shahid.cam.shahidrec.ui.annotation.AnnotationLayer;
+import com.shahid.cam.shahidrec.ui.annotation.AnnotationPage;
+import com.shahid.cam.shahidrec.ui.annotation.AnnotationState;
+import com.shahid.cam.shahidrec.ui.annotation.ClearLayerCommand;
+import com.shahid.cam.shahidrec.ui.annotation.ClearAllLayersCommand;
+import com.shahid.cam.shahidrec.ui.annotation.DrawingPath;
+import com.shahid.cam.shahidrec.ui.annotation.objects.AnnotationObject;
+import com.shahid.cam.shahidrec.ui.annotation.objects.PathObject;
 
 /**
  * Custom view for drawing annotations on screen during recording.
@@ -113,7 +113,7 @@ public class AnnotationView extends View {
     }
     
     public interface OnTextEditRequestListener {
-        void onTextEditRequested(com.shahid.cam.fadrec.ui.annotation.objects.TextObject textObject);
+        void onTextEditRequested(com.shahid.cam.shahidrec.ui.annotation.objects.TextObject textObject);
     }
     
     public AnnotationView(Context context) {
@@ -300,7 +300,7 @@ public class AnnotationView extends View {
         }
     }
     
-    private void showTextEditDialog(com.shahid.cam.fadrec.ui.annotation.objects.TextObject textObject) {
+    private void showTextEditDialog(com.shahid.cam.shahidrec.ui.annotation.objects.TextObject textObject) {
         if (textEditRequestListener != null) {
             textEditRequestListener.onTextEditRequested(textObject);
         }
@@ -771,7 +771,7 @@ public class AnnotationView extends View {
         canvas.drawCircle(centerX, topHandleY, handleRadius, handleBorderPaint);
         
         // If it's a text object, add an "Edit" button at bottom
-        if (obj instanceof com.shahid.cam.fadrec.ui.annotation.objects.TextObject) {
+        if (obj instanceof com.shahid.cam.shahidrec.ui.annotation.objects.TextObject) {
             float editHandleY = scaledBottom + 30;
             
             // Draw edit button (same size as other handles)
@@ -951,7 +951,7 @@ public class AnnotationView extends View {
                         
                         // Edit button for text (bottom)
                         float distEdit = Float.MAX_VALUE;
-                        if (selectedObject instanceof com.shahid.cam.fadrec.ui.annotation.objects.TextObject) {
+                        if (selectedObject instanceof com.shahid.cam.shahidrec.ui.annotation.objects.TextObject) {
                             float editDx = 0; // centerX - centerX
                             float editDy = (scaledBottom + 30) - centerY;
                             float editX = centerX + editDx * cos - editDy * sin;
@@ -964,7 +964,7 @@ public class AnnotationView extends View {
                             // Edit button clicked
                             activeHandle = HandleType.EDIT;
                             FLog.d("AnnotationView", "EDIT handle activated");
-                            showTextEditDialog((com.shahid.cam.fadrec.ui.annotation.objects.TextObject) selectedObject);
+                            showTextEditDialog((com.shahid.cam.shahidrec.ui.annotation.objects.TextObject) selectedObject);
                             return true;
                         } else if (distTop < touchRadius) {
                             // Rotation handle

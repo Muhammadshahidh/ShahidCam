@@ -1,6 +1,6 @@
 # 👁️ Interactive Avatar Component
 
-> **Created by [Faded](https://github.com/anonfaded) | December 9, 2025**
+> **Created by [Faded](https://github.com/Muhammadshahidh) | December 9, 2025**
 
 A standalone avatar with mouse-following eyes that change color based on proximity. Zero dependencies, pure vanilla JS.
 
@@ -252,7 +252,7 @@ extracted_avatar/
 
 ## 🙏 Credits
 
-Built by **[Faded](https://github.com/anonfaded)** | Extracted from [faded.dev](https://faded.dev)
+Built by **[Faded](https://github.com/Muhammadshahidh)** | Extracted from [shahidcam.app](https://shahidcam.app)
 
 ---
 

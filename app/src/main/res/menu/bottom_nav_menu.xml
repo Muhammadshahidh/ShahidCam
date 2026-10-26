@@ -13,9 +13,9 @@
         android:icon="@drawable/unknown_icon0"
         android:title="@string/nav_remote" />
     <item
-        android:id="@+id/navigation_faditor_mini"
+        android:id="@+id/navigation_shahideditor_mini"
         android:icon="@drawable/movie_edit_24px"
-        android:title="@string/nav_faditor_mini" />
+        android:title="@string/nav_shahideditor_mini" />
     <item
         android:id="@+id/navigation_settings"
         android:icon="@drawable/ic_nav_settings"

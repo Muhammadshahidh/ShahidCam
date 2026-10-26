@@ -130,7 +130,7 @@ public class SeekableFragmentedMp4MediaSourceFactory {
      * Creates a MediaSource for a {@code content://} URI fMP4 file.
      *
      * <p>First tries to reconstruct the real file path from the SAF URI
-     * (e.g. {@code /storage/emulated/0/Download/FadCam/file.mp4}). If the
+     * (e.g. {@code /storage/emulated/0/Download/ShahidCam/file.mp4}). If the
      * file is accessible on disk, uses the full
      * {@link FragmentedMp4IndexBuilder} approach (same quality as
      * {@code file://} URIs). Otherwise falls back to the
@@ -248,8 +248,8 @@ public class SeekableFragmentedMp4MediaSourceFactory {
      * <p>SAF URIs on primary/external storage often contain a colon-separated
      * relative path. For example:
      * <pre>
-     * content://...document/primary:Download/FadCam/file.mp4
-     * content://...document/XXXX-XXXX:FadCam/file.mp4  (SD card)
+     * content://...document/primary:Download/ShahidCam/file.mp4
+     * content://...document/XXXX-XXXX:ShahidCam/file.mp4  (SD card)
      * </pre>
      * This method checks ALL mounted storage volumes (internal + SD cards)
      * instead of hardcoding {@code /storage/emulated/0/}.
@@ -634,7 +634,7 @@ public class SeekableFragmentedMp4MediaSourceFactory {
             if (seekableChunkIndex != null) {
                 // Always use our pre-built ChunkIndex — the delegate extractor's
                 // SeekMap may be "seekable" but broken (all seeks → position 0,
-                // especially for Faditor-converted standard MP4 files).
+                // especially for ShahidEditor-converted standard MP4 files).
                 if (!seekMap.isSeekable()) {
                     FLog.i(TAG_OUTPUT, "*** REPLACING UNSEEKABLE SeekMap with pre-built ChunkIndex ***");
                 } else {

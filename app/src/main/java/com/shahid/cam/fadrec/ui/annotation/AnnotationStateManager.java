@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.ui.annotation;
+package com.shahid.cam.shahidrec.ui.annotation;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;

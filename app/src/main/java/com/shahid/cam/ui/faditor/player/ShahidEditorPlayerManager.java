@@ -1,4 +1,4 @@
-package com.shahid.cam.ui.faditor.player;
+package com.shahid.cam.ui.shahideditor.player;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -15,18 +15,18 @@ import androidx.media3.exoplayer.ExoPlayer;
 import androidx.media3.exoplayer.SeekParameters;
 import androidx.media3.ui.PlayerView;
 
-import com.shahid.cam.ui.faditor.model.Clip;
+import com.shahid.cam.ui.shahideditor.model.Clip;
 
 /**
- * Manages ExoPlayer lifecycle for the Faditor editor.
+ * Manages ExoPlayer lifecycle for the ShahidEditor editor.
  *
  * <p>Binds to an Activity lifecycle to auto-pause on background and release on destroy.
  * Handles single-clip playback with manual trim bounds (no ClippingConfiguration)
  * to support fragmented MP4 and SAF content:// URIs reliably.</p>
  */
-public class FaditorPlayerManager implements DefaultLifecycleObserver {
+public class ShahidEditorPlayerManager implements DefaultLifecycleObserver {
 
-    private static final String TAG = "FaditorPlayerManager";
+    private static final String TAG = "ShahidEditorPlayerManager";
 
     @Nullable
     private ExoPlayer player;
@@ -87,7 +87,7 @@ public class FaditorPlayerManager implements DefaultLifecycleObserver {
         }
     };
 
-    public FaditorPlayerManager(@NonNull Context context) {
+    public ShahidEditorPlayerManager(@NonNull Context context) {
         this.context = context.getApplicationContext();
     }
 
@@ -493,7 +493,7 @@ public class FaditorPlayerManager implements DefaultLifecycleObserver {
      *
      * <p>SAF content:// URIs use {@code ContentDataSource} in ExoPlayer,
      * which does NOT support random-access seeking. For fragmented MP4
-     * recorded by FadCam, this means seeks silently fail. Converting to
+     * recorded by ShahidCam, this means seeks silently fail. Converting to
      * file:// enables {@code FileDataSource} with proper seeking.</p>
      *
      * <p>Handles both internal storage ("primary" → /storage/emulated/0)

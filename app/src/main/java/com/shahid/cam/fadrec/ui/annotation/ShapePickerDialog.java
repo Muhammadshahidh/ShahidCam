@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.ui.annotation;
+package com.shahid.cam.shahidrec.ui.annotation;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 
 import com.shahid.cam.R;
-import com.shahid.cam.fadrec.ui.annotation.objects.ShapeObject;
+import com.shahid.cam.shahidrec.ui.annotation.objects.ShapeObject;
 import com.shahid.cam.ui.AvatarToggleView;
 
 /**

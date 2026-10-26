@@ -111,7 +111,7 @@ public class SharedPreferencesManager {
             currentTheme != null &&
             (currentTheme.equalsIgnoreCase("AMOLED") ||
                 currentTheme.equalsIgnoreCase("Amoled") ||
-                currentTheme.equalsIgnoreCase("Faded Night"))
+                currentTheme.equalsIgnoreCase("Shahid Dark"))
         ) {
             return "#424242"; // Dark Grey for AMOLED
         } else if (currentTheme.equals("Crimson Bloom")) {
@@ -151,7 +151,7 @@ public class SharedPreferencesManager {
             if (
                 currentTheme.equalsIgnoreCase("AMOLED") ||
                 currentTheme.equalsIgnoreCase("Amoled") ||
-                currentTheme.equalsIgnoreCase("Faded Night")
+                currentTheme.equalsIgnoreCase("Shahid Dark")
             ) {
                 setClockCardColor("#424242"); // Dark Grey for AMOLED
             } else if (currentTheme.equals("Crimson Bloom")) {
@@ -425,7 +425,7 @@ public class SharedPreferencesManager {
             .apply();
     }
 
-    /** Quick-action button order as comma-separated tokens (e.g. "mute,full,fadshot"). */
+    /** Quick-action button order as comma-separated tokens (e.g. "mute,full,shahidshot"). */
     public String getQuickActionsOrder() {
         return sharedPreferences.getString(
             Constants.PREF_QUICK_ACTIONS_ORDER,
@@ -1995,7 +1995,7 @@ public class SharedPreferencesManager {
     // (SharedPreferencesManager_notification_customization) -----
     // Notification customization constants
     public static final String PREF_NOTIFICATION_PRESET = "notification_preset";
-    public static final String NOTIFICATION_PRESET_DEFAULT = "default"; // Default FadCam notification
+    public static final String NOTIFICATION_PRESET_DEFAULT = "default"; // Default ShahidCam notification
     public static final String NOTIFICATION_PRESET_SYSTEM_UPDATE =
         "system_update"; // System update notification
     public static final String NOTIFICATION_PRESET_DOWNLOADING = "downloading"; // Downloading notification
@@ -2315,7 +2315,7 @@ public class SharedPreferencesManager {
         ) return com.shahid.cam.R.mipmap.ic_launcher_pakistan;
         if (
             Constants.APP_ICON_FADSECLAB.equals(iconKey)
-        ) return com.shahid.cam.R.mipmap.ic_launcher_fadseclab;
+        ) return com.shahid.cam.R.mipmap.ic_launcher_shahidlabs;
         if (
             Constants.APP_ICON_NOORISTIC.equals(iconKey)
         ) return com.shahid.cam.R.mipmap.ic_launcher_nooristic;
@@ -2366,7 +2366,7 @@ public class SharedPreferencesManager {
             if (Constants.APP_ICON_FADED.equals(key)) return context.getString(R.string.app_icon_faded);
             if (Constants.APP_ICON_PALESTINE.equals(key)) return context.getString(R.string.app_icon_palestine);
             if (Constants.APP_ICON_PAKISTAN.equals(key)) return context.getString(R.string.app_icon_pakistan);
-            if (Constants.APP_ICON_FADSECLAB.equals(key)) return context.getString(R.string.app_icon_fadseclab);
+            if (Constants.APP_ICON_FADSECLAB.equals(key)) return context.getString(R.string.app_icon_shahidlabs);
             if (Constants.APP_ICON_NOORISTIC.equals(key)) return context.getString(R.string.app_icon_nooristic);
             if (Constants.APP_ICON_BAT.equals(key)) return context.getString(R.string.app_icon_bat);
             if (Constants.APP_ICON_REDBINARY.equals(key)) return context.getString(R.string.app_icon_redbinary);
@@ -2393,7 +2393,7 @@ public class SharedPreferencesManager {
         return prefs.getBoolean(PREF_AUTO_UPDATE_CHECK, true);
     }
 
-    // -------------- FadRec (Screen Recording) Preferences Start --------------
+    // -------------- ShahidRec (Screen Recording) Preferences Start --------------
 
     /**
      * Gets the current screen recording audio source preference.
@@ -2957,7 +2957,7 @@ public class SharedPreferencesManager {
     }
 
     /**
-     * Returns whether FadRec recording is currently muted.
+     * Returns whether ShahidRec recording is currently muted.
      */
     public boolean isScreenRecordingMuted() {
         return safeGetBoolean(
@@ -2967,7 +2967,7 @@ public class SharedPreferencesManager {
     }
 
     /**
-     * Persists FadRec recording muted state.
+     * Persists ShahidRec recording muted state.
      */
     public void setScreenRecordingMuted(boolean muted) {
         sharedPreferences
@@ -2977,19 +2977,19 @@ public class SharedPreferencesManager {
     }
 
     /**
-     * Gets the current recording mode (FadCam or FadRec).
-     * @return Current mode string (MODE_FADCAM or MODE_FADREC)
+     * Gets the current recording mode (ShahidCam or ShahidRec).
+     * @return Current mode string (MODE_SHAHIDCAM or MODE_SHAHIDREC)
      */
     public String getCurrentRecordingMode() {
         return sharedPreferences.getString(
             "current_recording_mode",
-            Constants.MODE_FADCAM // Default to FadCam
+            Constants.MODE_SHAHIDCAM // Default to ShahidCam
         );
     }
 
     /**
      * Sets the current recording mode.
-     * @param mode Mode string (MODE_FADCAM or MODE_FADREC)
+     * @param mode Mode string (MODE_SHAHIDCAM or MODE_SHAHIDREC)
      */
     public void setCurrentRecordingMode(String mode) {
         sharedPreferences
@@ -3175,7 +3175,7 @@ public class SharedPreferencesManager {
     // -------------- Digital Forensics (Advanced) Preferences End --------------
 
     /**
-     * Gets whether floating controls (assistive touch) is enabled for FadRec.
+     * Gets whether floating controls (assistive touch) is enabled for ShahidRec.
      * @return true if floating controls enabled, false otherwise
      */
     public boolean isFloatingControlsEnabled() {
@@ -3186,7 +3186,7 @@ public class SharedPreferencesManager {
     }
 
     /**
-     * Sets whether floating controls (assistive touch) is enabled for FadRec.
+     * Sets whether floating controls (assistive touch) is enabled for ShahidRec.
      * @param enabled true to enable, false to disable
      */
     public void setFloatingControlsEnabled(boolean enabled) {
@@ -3197,7 +3197,7 @@ public class SharedPreferencesManager {
         FLog.d("SharedPrefs", "Floating controls enabled: " + enabled);
     }
 
-    // -------------- FadRec (Screen Recording) Preferences End --------------
+    // -------------- ShahidRec (Screen Recording) Preferences End --------------
 
     // -------------- Fadex Notification Preferences Start --------------
     private static final String PREF_NOTIFICATION_HISTORY = "fadex_notification_history";

@@ -137,11 +137,11 @@ public class FastFileScanner {
             }
         });
 
-        // Faditor
+        // ShahidEditor
         scanner.submit(() -> {
             try {
-                scanInternalDirectory(results, new File(baseDir, Constants.RECORDING_SUBDIR_FADITOR),
-                        VideoItem.Category.FADITOR);
+                scanInternalDirectory(results, new File(baseDir, Constants.RECORDING_SUBDIR_SHAHIDEDITOR),
+                        VideoItem.Category.SHAHIDEDITOR);
             } finally {
                 latch.countDown();
             }
@@ -211,7 +211,7 @@ public class FastFileScanner {
                 VideoIndexEntity entity = buildEntityFromFile(child, category,
                         VideoItem.ShotSubtype.UNKNOWN,
                         VideoItem.CameraSubtype.UNKNOWN,
-                        VideoItem.FaditorSubtype.UNKNOWN);
+                        VideoItem.ShahidEditorSubtype.UNKNOWN);
                 if (entity != null) out.add(entity);
             }
         }
@@ -222,14 +222,14 @@ public class FastFileScanner {
 
         VideoItem.ShotSubtype shotSubtype = VideoItem.ShotSubtype.UNKNOWN;
         VideoItem.CameraSubtype cameraSubtype = VideoItem.CameraSubtype.UNKNOWN;
-        VideoItem.FaditorSubtype faditorSubtype = VideoItem.FaditorSubtype.UNKNOWN;
+        VideoItem.ShahidEditorSubtype shahideditorSubtype = VideoItem.ShahidEditorSubtype.UNKNOWN;
 
         if (category == VideoItem.Category.SHOT) {
             shotSubtype = inferShotSubtypeFromFolder(folderName);
         } else if (category == VideoItem.Category.CAMERA) {
             cameraSubtype = inferCameraSubtypeFromFolder(folderName);
-        } else if (category == VideoItem.Category.FADITOR) {
-            faditorSubtype = inferFaditorSubtypeFromFolder(folderName);
+        } else if (category == VideoItem.Category.SHAHIDEDITOR) {
+            shahideditorSubtype = inferShahidEditorSubtypeFromFolder(folderName);
         }
 
         File[] files = subdir.listFiles();
@@ -240,7 +240,7 @@ public class FastFileScanner {
             if (file.isDirectory()) {
                 scanInternalSubdirectory(out, file, category);
             } else if (file.isFile()) {
-                VideoIndexEntity entity = buildEntityFromFile(file, category, shotSubtype, cameraSubtype, faditorSubtype);
+                VideoIndexEntity entity = buildEntityFromFile(file, category, shotSubtype, cameraSubtype, shahideditorSubtype);
                 if (entity != null) out.add(entity);
             }
         }
@@ -274,8 +274,8 @@ public class FastFileScanner {
                     ? resolveShotSubtype(name) : VideoItem.ShotSubtype.UNKNOWN).name();
             entity.cameraSubtype = (category == VideoItem.Category.CAMERA
                     ? resolveCameraSubtype(name) : VideoItem.CameraSubtype.UNKNOWN).name();
-            entity.faditorSubtype = (category == VideoItem.Category.FADITOR
-                    ? resolveFaditorSubtype(name) : VideoItem.FaditorSubtype.UNKNOWN).name();
+            entity.shahideditorSubtype = (category == VideoItem.Category.SHAHIDEDITOR
+                    ? resolveShahidEditorSubtype(name) : VideoItem.ShahidEditorSubtype.UNKNOWN).name();
             entity.isTemporary = false;
             entity.durationResolved = false;
             entity.indexedAt = System.currentTimeMillis();
@@ -290,7 +290,7 @@ public class FastFileScanner {
             @NonNull VideoItem.Category category,
             @NonNull VideoItem.ShotSubtype shotSubtype,
             @NonNull VideoItem.CameraSubtype cameraSubtype,
-            @NonNull VideoItem.FaditorSubtype faditorSubtype
+            @NonNull VideoItem.ShahidEditorSubtype shahideditorSubtype
     ) {
         String name = file.getName();
         String mediaType = inferMediaType(name);
@@ -316,8 +316,8 @@ public class FastFileScanner {
                 ? resolveEffectiveShotSubtype(shotSubtype, name) : VideoItem.ShotSubtype.UNKNOWN).name();
         entity.cameraSubtype = (category == VideoItem.Category.CAMERA
                 ? resolveEffectiveCameraSubtype(cameraSubtype, name) : VideoItem.CameraSubtype.UNKNOWN).name();
-        entity.faditorSubtype = (category == VideoItem.Category.FADITOR
-                ? resolveEffectiveFaditorSubtype(faditorSubtype, name) : VideoItem.FaditorSubtype.UNKNOWN).name();
+        entity.shahideditorSubtype = (category == VideoItem.Category.SHAHIDEDITOR
+                ? resolveEffectiveShahidEditorSubtype(shahideditorSubtype, name) : VideoItem.ShahidEditorSubtype.UNKNOWN).name();
 
         entity.isTemporary = false;
         entity.durationResolved = false;
@@ -345,12 +345,12 @@ public class FastFileScanner {
             }
 
             // Use the tree root directly as the recording root.
-            // Fallback: check if there's a "FadCam" subdirectory (some setups may
-            // point to a parent directory containing a FadCam folder).
+            // Fallback: check if there's a "ShahidCam" subdirectory (some setups may
+            // point to a parent directory containing a ShahidCam folder).
             DocumentFile recordingRoot = treeDoc;
             DocumentFile fadCamChild = treeDoc.findFile(Constants.RECORDING_DIRECTORY);
             if (fadCamChild != null && fadCamChild.isDirectory()) {
-                FLog.d(TAG, "Found FadCam subdirectory under tree, using it as root");
+                FLog.d(TAG, "Found ShahidCam subdirectory under tree, using it as root");
                 recordingRoot = fadCamChild;
             } else {
             }
@@ -359,14 +359,14 @@ public class FastFileScanner {
             scanSafCategory(results, recordingRoot, Constants.RECORDING_SUBDIR_CAMERA, VideoItem.Category.CAMERA);
             scanSafCategory(results, recordingRoot, Constants.RECORDING_SUBDIR_DUAL, VideoItem.Category.CAMERA);
             scanSafCategory(results, recordingRoot, Constants.RECORDING_SUBDIR_SCREEN, VideoItem.Category.SCREEN);
-            scanSafCategory(results, recordingRoot, Constants.RECORDING_SUBDIR_FADITOR, VideoItem.Category.FADITOR);
+            scanSafCategory(results, recordingRoot, Constants.RECORDING_SUBDIR_SHAHIDEDITOR, VideoItem.Category.SHAHIDEDITOR);
             scanSafCategory(results, recordingRoot, Constants.RECORDING_SUBDIR_STREAM, VideoItem.Category.STREAM);
             scanSafCategory(results, recordingRoot, Constants.RECORDING_SUBDIR_SHOT, VideoItem.Category.SHOT);
             scanSafCategory(results, recordingRoot, Constants.RECORDING_SUBDIR_MINIAPPS, VideoItem.Category.MINIAPPS);
 
             // Root-level legacy files
             scanSafDirectoryFiles(results, recordingRoot.getUri(), VideoItem.Category.UNKNOWN,
-                    VideoItem.ShotSubtype.UNKNOWN, VideoItem.CameraSubtype.UNKNOWN, VideoItem.FaditorSubtype.UNKNOWN,
+                    VideoItem.ShotSubtype.UNKNOWN, VideoItem.CameraSubtype.UNKNOWN, VideoItem.ShahidEditorSubtype.UNKNOWN,
                     true);
 
         } catch (Exception e) {
@@ -382,13 +382,13 @@ public class FastFileScanner {
         if (subdir == null || !subdir.isDirectory()) return;
 
         if (category == VideoItem.Category.SHOT || category == VideoItem.Category.CAMERA
-                || category == VideoItem.Category.FADITOR) {
+                || category == VideoItem.Category.SHAHIDEDITOR) {
             // These have sub-subdirectories (Back, Front, Selfie, etc.)
             scanSafWithSubdirectories(out, subdir, category);
         } else {
             scanSafDirectoryFiles(out, subdir.getUri(), category,
                     VideoItem.ShotSubtype.UNKNOWN, VideoItem.CameraSubtype.UNKNOWN,
-                    VideoItem.FaditorSubtype.UNKNOWN, false);
+                    VideoItem.ShahidEditorSubtype.UNKNOWN, false);
         }
     }
 
@@ -423,14 +423,14 @@ public class FastFileScanner {
                     // It's a subdirectory — determine subtype from folder name
                     VideoItem.ShotSubtype shotSub = VideoItem.ShotSubtype.UNKNOWN;
                     VideoItem.CameraSubtype camSub = VideoItem.CameraSubtype.UNKNOWN;
-                    VideoItem.FaditorSubtype fadSub = VideoItem.FaditorSubtype.UNKNOWN;
+                    VideoItem.ShahidEditorSubtype fadSub = VideoItem.ShahidEditorSubtype.UNKNOWN;
 
                     if (category == VideoItem.Category.SHOT) {
                         shotSub = inferShotSubtypeFromFolder(name);
                     } else if (category == VideoItem.Category.CAMERA) {
                         camSub = inferCameraSubtypeFromFolder(name);
-                    } else if (category == VideoItem.Category.FADITOR) {
-                        fadSub = inferFaditorSubtypeFromFolder(name);
+                    } else if (category == VideoItem.Category.SHAHIDEDITOR) {
+                        fadSub = inferShahidEditorSubtypeFromFolder(name);
                     }
 
                     Uri subdirUri = DocumentsContract.buildDocumentUriUsingTree(categoryDir.getUri(), docId);
@@ -440,7 +440,7 @@ public class FastFileScanner {
                     VideoIndexEntity entity = buildEntityFromSafCursor(
                             categoryDir.getUri(), docId, name, mimeType, size, lastMod,
                             category, VideoItem.ShotSubtype.UNKNOWN,
-                            VideoItem.CameraSubtype.UNKNOWN, VideoItem.FaditorSubtype.UNKNOWN);
+                            VideoItem.CameraSubtype.UNKNOWN, VideoItem.ShahidEditorSubtype.UNKNOWN);
                     if (entity != null) out.add(entity);
                 }
             }
@@ -459,7 +459,7 @@ public class FastFileScanner {
                                        VideoItem.Category category,
                                        VideoItem.ShotSubtype shotSubtype,
                                        VideoItem.CameraSubtype cameraSubtype,
-                                       VideoItem.FaditorSubtype faditorSubtype,
+                                       VideoItem.ShahidEditorSubtype shahideditorSubtype,
                                        boolean legacyInfer) {
         ContentResolver cr = context.getContentResolver();
         String docId = DocumentsContract.getDocumentId(directoryUri);
@@ -493,7 +493,7 @@ public class FastFileScanner {
                 VideoItem.Category effectiveCategory = category;
                 VideoItem.ShotSubtype effectiveShot = shotSubtype;
                 VideoItem.CameraSubtype effectiveCam = cameraSubtype;
-                VideoItem.FaditorSubtype effectiveFad = faditorSubtype;
+                VideoItem.ShahidEditorSubtype effectiveFad = shahideditorSubtype;
 
                 if (legacyInfer && category == VideoItem.Category.UNKNOWN && name != null) {
                     effectiveCategory = inferCategoryFromLegacyName(name);
@@ -501,8 +501,8 @@ public class FastFileScanner {
                         effectiveShot = resolveShotSubtype(name);
                     } else if (effectiveCategory == VideoItem.Category.CAMERA) {
                         effectiveCam = resolveCameraSubtype(name);
-                    } else if (effectiveCategory == VideoItem.Category.FADITOR) {
-                        effectiveFad = resolveFaditorSubtype(name);
+                    } else if (effectiveCategory == VideoItem.Category.SHAHIDEDITOR) {
+                        effectiveFad = resolveShahidEditorSubtype(name);
                     }
                 }
 
@@ -523,7 +523,7 @@ public class FastFileScanner {
             VideoItem.Category category,
             VideoItem.ShotSubtype shotSubtype,
             VideoItem.CameraSubtype cameraSubtype,
-            VideoItem.FaditorSubtype faditorSubtype) {
+            VideoItem.ShahidEditorSubtype shahideditorSubtype) {
 
         if (name == null) return null;
 
@@ -544,7 +544,7 @@ public class FastFileScanner {
         entity.mediaType = mediaTypeStr;
         entity.shotSubtype = resolveEffectiveShotSubtype(shotSubtype, name).name();
         entity.cameraSubtype = resolveEffectiveCameraSubtype(cameraSubtype, name).name();
-        entity.faditorSubtype = resolveEffectiveFaditorSubtype(faditorSubtype, name).name();
+        entity.shahideditorSubtype = resolveEffectiveShahidEditorSubtype(shahideditorSubtype, name).name();
         entity.isTemporary = false;
         entity.durationResolved = false;
         entity.indexedAt = System.currentTimeMillis();
@@ -573,10 +573,10 @@ public class FastFileScanner {
         if (fileName == null) return VideoItem.Category.UNKNOWN;
         if (fileName.startsWith(Constants.RECORDING_DIRECTORY + "_")) return VideoItem.Category.CAMERA;
         if (fileName.startsWith("DualCam_")) return VideoItem.Category.CAMERA;
-        if (fileName.startsWith(Constants.RECORDING_FILE_PREFIX_FADREC)) return VideoItem.Category.SCREEN;
-        if (fileName.startsWith("Faditor_")) return VideoItem.Category.FADITOR;
+        if (fileName.startsWith(Constants.RECORDING_FILE_PREFIX_SHAHIDREC)) return VideoItem.Category.SCREEN;
+        if (fileName.startsWith("ShahidEditor_")) return VideoItem.Category.SHAHIDEDITOR;
         if (fileName.startsWith("Stream_")) return VideoItem.Category.STREAM;
-        if (fileName.startsWith(Constants.RECORDING_FILE_PREFIX_FADSHOT)) return VideoItem.Category.SHOT;
+        if (fileName.startsWith(Constants.RECORDING_FILE_PREFIX_SHAHIDSHOT)) return VideoItem.Category.SHOT;
         return VideoItem.Category.UNKNOWN;
     }
 
@@ -585,7 +585,7 @@ public class FastFileScanner {
     private VideoItem.ShotSubtype inferShotSubtypeFromFolder(@Nullable String folderName) {
         if (folderName == null) return VideoItem.ShotSubtype.UNKNOWN;
         if (Constants.RECORDING_SUBDIR_SHOT_SELFIE.equalsIgnoreCase(folderName)) return VideoItem.ShotSubtype.SELFIE;
-        if (Constants.RECORDING_SUBDIR_SHOT_FADREC.equalsIgnoreCase(folderName)) return VideoItem.ShotSubtype.FADREC;
+        if (Constants.RECORDING_SUBDIR_SHOT_SHAHIDREC.equalsIgnoreCase(folderName)) return VideoItem.ShotSubtype.SHAHIDREC;
         if (Constants.RECORDING_SUBDIR_SHOT_BACK.equalsIgnoreCase(folderName)) return VideoItem.ShotSubtype.BACK;
         return VideoItem.ShotSubtype.UNKNOWN;
     }
@@ -593,9 +593,9 @@ public class FastFileScanner {
     @NonNull
     private VideoItem.ShotSubtype resolveShotSubtype(@Nullable String name) {
         if (name == null) return VideoItem.ShotSubtype.BACK;
-        if (name.startsWith(Constants.RECORDING_FILE_PREFIX_FADSHOT + "Selfie_")) return VideoItem.ShotSubtype.SELFIE;
-        if (name.startsWith(Constants.RECORDING_FILE_PREFIX_FADSHOT + "FadRec_")) return VideoItem.ShotSubtype.FADREC;
-        if (name.startsWith(Constants.RECORDING_FILE_PREFIX_FADSHOT + "Back_")) return VideoItem.ShotSubtype.BACK;
+        if (name.startsWith(Constants.RECORDING_FILE_PREFIX_SHAHIDSHOT + "Selfie_")) return VideoItem.ShotSubtype.SELFIE;
+        if (name.startsWith(Constants.RECORDING_FILE_PREFIX_SHAHIDSHOT + "ShahidRec_")) return VideoItem.ShotSubtype.SHAHIDREC;
+        if (name.startsWith(Constants.RECORDING_FILE_PREFIX_SHAHIDSHOT + "Back_")) return VideoItem.ShotSubtype.BACK;
         return VideoItem.ShotSubtype.BACK;
     }
 
@@ -628,26 +628,26 @@ public class FastFileScanner {
         return resolveCameraSubtype(name);
     }
 
-    // -- Faditor subtypes --
+    // -- ShahidEditor subtypes --
     @NonNull
-    private VideoItem.FaditorSubtype inferFaditorSubtypeFromFolder(@Nullable String folderName) {
-        if (folderName == null) return VideoItem.FaditorSubtype.UNKNOWN;
-        if (Constants.RECORDING_SUBDIR_FADITOR_CONVERTED.equalsIgnoreCase(folderName)) return VideoItem.FaditorSubtype.CONVERTED;
-        if (Constants.RECORDING_SUBDIR_FADITOR_MERGE.equalsIgnoreCase(folderName)) return VideoItem.FaditorSubtype.MERGE;
-        return VideoItem.FaditorSubtype.UNKNOWN;
+    private VideoItem.ShahidEditorSubtype inferShahidEditorSubtypeFromFolder(@Nullable String folderName) {
+        if (folderName == null) return VideoItem.ShahidEditorSubtype.UNKNOWN;
+        if (Constants.RECORDING_SUBDIR_SHAHIDEDITOR_CONVERTED.equalsIgnoreCase(folderName)) return VideoItem.ShahidEditorSubtype.CONVERTED;
+        if (Constants.RECORDING_SUBDIR_SHAHIDEDITOR_MERGE.equalsIgnoreCase(folderName)) return VideoItem.ShahidEditorSubtype.MERGE;
+        return VideoItem.ShahidEditorSubtype.UNKNOWN;
     }
 
     @NonNull
-    private VideoItem.FaditorSubtype resolveFaditorSubtype(@Nullable String name) {
-        if (name == null) return VideoItem.FaditorSubtype.OTHER;
-        if (name.startsWith(Constants.RECORDING_FILE_PREFIX_FADITOR_STANDARD)) return VideoItem.FaditorSubtype.CONVERTED;
-        if (name.startsWith(Constants.RECORDING_FILE_PREFIX_FADITOR_MERGE)) return VideoItem.FaditorSubtype.MERGE;
-        return VideoItem.FaditorSubtype.OTHER;
+    private VideoItem.ShahidEditorSubtype resolveShahidEditorSubtype(@Nullable String name) {
+        if (name == null) return VideoItem.ShahidEditorSubtype.OTHER;
+        if (name.startsWith(Constants.RECORDING_FILE_PREFIX_SHAHIDEDITOR_STANDARD)) return VideoItem.ShahidEditorSubtype.CONVERTED;
+        if (name.startsWith(Constants.RECORDING_FILE_PREFIX_SHAHIDEDITOR_MERGE)) return VideoItem.ShahidEditorSubtype.MERGE;
+        return VideoItem.ShahidEditorSubtype.OTHER;
     }
 
     @NonNull
-    private VideoItem.FaditorSubtype resolveEffectiveFaditorSubtype(@NonNull VideoItem.FaditorSubtype explicit, @Nullable String name) {
-        if (explicit != VideoItem.FaditorSubtype.UNKNOWN) return explicit;
-        return resolveFaditorSubtype(name);
+    private VideoItem.ShahidEditorSubtype resolveEffectiveShahidEditorSubtype(@NonNull VideoItem.ShahidEditorSubtype explicit, @Nullable String name) {
+        if (explicit != VideoItem.ShahidEditorSubtype.UNKNOWN) return explicit;
+        return resolveShahidEditorSubtype(name);
     }
 }

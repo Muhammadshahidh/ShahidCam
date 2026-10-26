@@ -35,9 +35,9 @@
 ## Open Questions
 | Question | Stakeholders | Status | Next Action |
 |----------|--------------|--------|-------------|
-| iOS/Desktop version architecture | anonfaded | Open | Define cross-platform strategy |
-| Scheduled recording implementation | anonfaded | Open | Design WorkManager-based scheduler |
-| Faditor Mini video editor scope | anonfaded | Open | Define MVP feature set |
+| iOS/Desktop version architecture | Muhammadshahidh | Open | Define cross-platform strategy |
+| Scheduled recording implementation | Muhammadshahidh | Open | Design WorkManager-based scheduler |
+| ShahidEditor Mini video editor scope | Muhammadshahidh | Open | Define MVP feature set |
 
 ## Known Issues
 | Issue | Severity | Workaround | Status |
@@ -79,10 +79,10 @@
 ## Active Projects
 | Project | Goal | Owner | Timeline |
 |---------|------|-------|----------|
-| v3.0.0 release | Stable release with all core features | anonfaded | Current |
-| Scheduled recording | Auto start/stop at set times | anonfaded | Upcoming |
-| Faditor Mini | In-app video editor | anonfaded | Planned |
-| iOS/Desktop version | Cross-platform expansion | anonfaded | Planned |
+| v3.0.0 release | Stable release with all core features | Muhammadshahidh | Current |
+| Scheduled recording | Auto start/stop at set times | Muhammadshahidh | Upcoming |
+| ShahidEditor Mini | In-app video editor | Muhammadshahidh | Planned |
+| iOS/Desktop version | Cross-platform expansion | Muhammadshahidh | Planned |
 
 ## Archive (Resolved Items)
 ### Resolved: Migrate from ExoPlayer 2.x to Media3

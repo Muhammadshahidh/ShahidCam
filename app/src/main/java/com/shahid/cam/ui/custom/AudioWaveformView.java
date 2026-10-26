@@ -25,7 +25,7 @@ import java.util.concurrent.Executors;
  * Audio waveform visualization for the video player progress bar.
  *
  * <p>Renders mirror-style waveform bars (upper + lower, split by a centerline),
- * matching the same visual style used in the Faditor Mini editor timeline.</p>
+ * matching the same visual style used in the ShahidEditor Mini editor timeline.</p>
  *
  * <ul>
  *   <li>Upper bars use the primary wave colour, lower bars a dimmed version.</li>
@@ -38,7 +38,7 @@ public class AudioWaveformView extends View {
 
     private static final String TAG = "AudioWaveformView";
 
-    // ── Colours (matching Faditor Mini editor timeline) ──────────────
+    // ── Colours (matching ShahidEditor Mini editor timeline) ──────────────
     /** Primary upper-bar colour (green, matching editor). */
     private static final int COLOR_WAVE         = 0xFF4CAF50;
     /** Dimmed lower-bar colour (alpha-reduced green). */
@@ -449,8 +449,8 @@ public class AudioWaveformView extends View {
      *
      * <p>SAF URIs on primary storage often contain a colon-separated relative
      * path, e.g.
-     * {@code content://...document/primary:Download/FadCam/file.mp4}
-     * → {@code /storage/emulated/0/Download/FadCam/file.mp4}.
+     * {@code content://...document/primary:Download/ShahidCam/file.mp4}
+     * → {@code /storage/emulated/0/Download/ShahidCam/file.mp4}.
      *
      * @return the reconstructed absolute path if the file exists and is
      *         readable, or {@code null} otherwise.

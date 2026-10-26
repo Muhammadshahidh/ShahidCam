@@ -41,7 +41,7 @@
             <span class="hamburger-line short-left"></span>
         </button>
         <h1>
-            <a id="headerLogoLink" href="https://id.fadseclab.com/lab" target="_blank" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px;" title="ShahidCam Lab">
+            <a id="headerLogoLink" href="https://id.shahidlabs.com/lab" target="_blank" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px;" title="ShahidCam Lab">
                 <img src="assets/images/favicon.webp" alt="ShahidCam" style="width: 28px; height: 28px; border-radius: 6px;">
                 ShahidCam Remote
             </a>
@@ -487,7 +487,7 @@
             <div class="sidebar-footer">
                 <!-- Footer Info Text -->
                 <div style="font-size: 11px; color: #8b949e; display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 0 12px;">
-                    <span>© 2024-2026 <a href="https://fadseclab.com" target="_blank" style="color: #ff6b6b; text-decoration: none; transition: color 200ms;" onmouseover="this.style.color='#ff5252'" onmouseout="this.style.color='#ff6b6b'">fadseclab.com</a></span>
+                    <span>© 2024-2026 <a href="https://shahidlabs.com" target="_blank" style="color: #ff6b6b; text-decoration: none; transition: color 200ms;" onmouseover="this.style.color='#ff5252'" onmouseout="this.style.color='#ff6b6b'">shahidlabs.com</a></span>
                     <div class="footer-links">
                     <a href="https://discord.gg/kvAZvdkuuN" target="_blank" title="Discord Community" class="footer-link">
                         <i class="fab fa-discord"></i>
@@ -553,14 +553,14 @@
                             <i class="fas fa-lock e2e-tooltip-icon"></i>
                             <div>
                                 <strong>Decrypted only on your device</strong>
-                                <p>Segments are encrypted on your phone before upload. Your LabPass derivation and the decryption key never leave your browser — FadSec Lab's infrastructure only ever receives and relays ciphertext.</p>
+                                <p>Segments are encrypted on your phone before upload. Your LabPass derivation and the decryption key never leave your browser — Shahid Labs's infrastructure only ever receives and relays ciphertext.</p>
                             </div>
                         </div>
                         <div class="e2e-tooltip-row">
                             <i class="fas fa-shield-halved e2e-tooltip-icon"></i>
                             <div>
-                                <strong>Not even FadSec Lab can watch</strong>
-                                <p>FadSec Lab's authentication infrastructure stores only a one-way HMAC verification tag — not your password or decryption key. It is mathematically impossible to reconstruct the stream key from what the server holds.</p>
+                                <strong>Not even Shahid Labs can watch</strong>
+                                <p>Shahid Labs's authentication infrastructure stores only a one-way HMAC verification tag — not your password or decryption key. It is mathematically impossible to reconstruct the stream key from what the server holds.</p>
                             </div>
                         </div>
                         <div class="e2e-tooltip-row">
@@ -572,7 +572,7 @@
                         </div>
                         <div class="e2e-tooltip-brand">
                             <i class="fas fa-shield-halved"></i>
-                            Security infrastructure by <strong>FadSec Lab</strong>
+                            Security infrastructure by <strong>Shahid Labs</strong>
                         </div>
                     </div>
                 </span>
@@ -739,7 +739,7 @@
                                 <td style="padding: 12px; text-align: center;">−</td>
                             </tr>
                             <tr>
-                                <td style="padding: 12px; color: #e6edf3; font-weight: 600; border-right: 1px solid #30363d;">FadDrive Cloud Sync</td>
+                                <td style="padding: 12px; color: #e6edf3; font-weight: 600; border-right: 1px solid #30363d;">ShahidDrive Cloud Sync</td>
                                 <td style="padding: 12px; text-align: center;">−</td>
                                 <td style="padding: 12px; text-align: center;">−</td>
                                 <td style="padding: 12px; text-align: center;">−</td>
@@ -755,10 +755,10 @@
                 </div>
 
                 <div style="background: rgba(244, 67, 54, 0.1); border-left: 3px solid #f44336; border-radius: 6px; padding: 12px; margin-bottom: 20px;">
-                    <p style="color: #f44336; font-size: 12px; margin: 0; line-height: 1.5;"><i class="fas fa-info-circle" style="margin-right: 6px;"></i>Pro+ and Lab features coming soon with custom icon uploads, custom app names, and FadDrive cloud sync.</p>
+                    <p style="color: #f44336; font-size: 12px; margin: 0; line-height: 1.5;"><i class="fas fa-info-circle" style="margin-right: 6px;"></i>Pro+ and Lab features coming soon with custom icon uploads, custom app names, and ShahidDrive cloud sync.</p>
                 </div>
 
-                <a href="https://www.patreon.com/posts/fadcam-pro-free-145013262" target="_blank" style="display: block; width: 100%; padding: 14px; background: linear-gradient(135deg, #d4af37 0%, #c19a3a 100%); color: #1a1a1a; text-align: center; border-radius: 12px; text-decoration: none; font-weight: 700; border: none; cursor: pointer; font-size: 14px; transition: all 200ms ease;">
+                <a href="https://www.patreon.com/posts/shahidcam-pro-free-145013262" target="_blank" style="display: block; width: 100%; padding: 14px; background: linear-gradient(135deg, #d4af37 0%, #c19a3a 100%); color: #1a1a1a; text-align: center; border-radius: 12px; text-decoration: none; font-weight: 700; border: none; cursor: pointer; font-size: 14px; transition: all 200ms ease;">
                     <i class="fas fa-crown" style="margin-right: 6px;"></i>Get ShahidCam Pro
                 </a>
 
@@ -2050,7 +2050,7 @@
                 const streamToken = typeof ShahidCamRemote !== 'undefined' ? ShahidCamRemote.getStreamToken() : null;
                 const userId = typeof ShahidCamRemote !== 'undefined' && ShahidCamRemote.streamContext ? ShahidCamRemote.streamContext().userId : null;
                 if (streamToken && userId) {
-                    const relayBase = 'https://live.fadseclab.com:8443';
+                    const relayBase = 'https://live.shahidlabs.com:8443';
                     const histRes = await fetch(`${relayBase}/api/usage-history?user_id=${userId}`, {
                         headers: { Authorization: `Bearer ${streamToken}` }
                     });
@@ -3063,8 +3063,8 @@
             controlSelectors.forEach(selector => {
                 document.querySelectorAll(selector).forEach(btn => {
                     // Skip footer elements - they should always be clickable
-                    if (btn.closest('.footer') || btn.closest('.fadcam-pro-btn') || 
-                        btn.classList.contains('footer-link') || btn.classList.contains('fadcam-pro-btn')) {
+                    if (btn.closest('.footer') || btn.closest('.shahidcam-pro-btn') || 
+                        btn.classList.contains('footer-link') || btn.classList.contains('shahidcam-pro-btn')) {
                         return;
                     }
                     
@@ -5713,6 +5713,6 @@
     </div>
 
     <!-- ShahidCam Remote Cloud Integration (only loads features on web access) -->
-    <script src="js/fadcam-remote.js?v=2.5.0"></script>
+    <script src="js/shahidcam-remote.js?v=2.5.0"></script>
 </body>
 </html>

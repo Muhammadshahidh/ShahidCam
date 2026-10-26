@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.ui.annotation;
+package com.shahid.cam.shahidrec.ui.annotation;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -9,7 +9,7 @@ import android.graphics.RectF;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.shahid.cam.fadrec.ui.annotation.objects.AnnotationObject;
+import com.shahid.cam.shahidrec.ui.annotation.objects.AnnotationObject;
 
 /**
  * Selection handles overlay for annotation objects.

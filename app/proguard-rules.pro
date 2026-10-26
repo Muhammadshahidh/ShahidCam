@@ -154,7 +154,7 @@
 -keep public class * extends android.content.BroadcastReceiver
 -keep public class * extends android.content.ContentProvider
 
-# Specifically keep FadCam's MainActivity and its inner classes (for aliases)
+# Specifically keep ShahidCam's MainActivity and its inner classes (for aliases)
 -keep public class com.shahid.cam.MainActivity { *; }
 -keep public class com.shahid.cam.MainActivity$* { *; }
 

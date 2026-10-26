@@ -29,7 +29,7 @@
 -->
 
 # Note
-`Many users are unaware of a hidden feature in FadCam. Yes, there is a trash directory, but it is normally inaccessible for the user’s privacy. To access it, simply long-press the FadCam icon you see in the header of the Home tab, and you will enter it. From there, you can recover deleted files or permanently delete them. Hopefully, this will reduce emails about “Where is my deleted video?” :)`
+`Many users are unaware of a hidden feature in ShahidCam. Yes, there is a trash directory, but it is normally inaccessible for the user’s privacy. To access it, simply long-press the ShahidCam icon you see in the header of the Home tab, and you will enter it. From there, you can recover deleted files or permanently delete them. Hopefully, this will reduce emails about “Where is my deleted video?” :)`
 
 # Patch Note
 `This version is a patch update to v3.0.0, addressing critical bug regarding MIC and F-Droid compatibility.`
@@ -38,22 +38,22 @@
 
 # ✨ New Features  
 
-## FadCam Pro - Limited Time Free Offer!
-- **FadCam Pro** is now available for free until December 23, 2025 only. Get customized builds with custom notification icons that actually display in your notification bar. [Learn more on Patreon](https://www.patreon.com/posts/fadcam-pro-free-145013262)
+## ShahidCam Pro - Limited Time Free Offer!
+- **ShahidCam Pro** is now available for free until December 23, 2025 only. Get customized builds with custom notification icons that actually display in your notification bar. [Learn more on Patreon](https://www.patreon.com/posts/shahidcam-pro-free-145013262)
 
 ## This What's New Page
 - As a user, I dislike external links for every little thing in the app, so here is the new in-app **What's New** page to showcase new features after updates.
 
-## 📸 FadRec - Screen Recorder & Annotation
-- Record your screen using the **FadRec** tab. Videos are saved in the `Records` tab with the `FadRec_` prefix.
+## 📸 ShahidRec - Screen Recorder & Annotation
+- Record your screen using the **ShahidRec** tab. Videos are saved in the `Records` tab with the `ShahidRec_` prefix.
 - **Screen annotation tools** including pen, eraser, text, and shapes
 - **Layer and page management** for complex multi-page designs
 - **Version control system** with undo/redo and soft delete architecture
 - **Automatic project saving** with full recovery options
 - **Sidebar overlay menu** for quick-access recording controls from any app
 
-## 🏠 FadCam Remote - Live Streaming & Remote Control
-![fadcam_remote_demo.png](fadcam_remote_demo.png)
+## 🏠 ShahidCam Remote - Live Streaming & Remote Control
+![shahidcam_remote_demo.png](shahidcam_remote_demo.png)
 
 - Stream your camera feed live over your local network with a beautiful web interface.
 - Remote control features: start/stop recording, change settings, toggle torch, trigger security alarms.
@@ -77,11 +77,11 @@
 ## 🐞 Bug Fixes 
 - Fixed video corruption issues - videos now remain playable even if the app crashes or phone shuts down unexpectedly.
 - Patched a memory leak issue.
-- **Standalone Beta Installation** — FadCam Beta now installs alongside the main app with fully isolated storage without needing to uninstall the main app.
+- **Standalone Beta Installation** — ShahidCam Beta now installs alongside the main app with fully isolated storage without needing to uninstall the main app.
 - Various minor bug fixes and improvements.
 
 ## ⚡ Performance Optimization
-- We've significantly optimized FadCam to use less CPU and battery during recording. Debug logging is now smart - it automatically pauses when you're recording, and error logs stay active for troubleshooting. Storage updates, clock rendering, and memory allocations have all been fine-tuned for better overall performance.
+- We've significantly optimized ShahidCam to use less CPU and battery during recording. Debug logging is now smart - it automatically pauses when you're recording, and error logs stay active for troubleshooting. Storage updates, clock rendering, and memory allocations have all been fine-tuned for better overall performance.
 - Refactored wake lock management to be handled within the RecordingService instead of HomeFragment.
 
 | Metric | Before | After | Improvement |
@@ -93,4 +93,4 @@
 
 ---
 
-Thank you for using FadCam :)
+Thank you for using ShahidCam :)

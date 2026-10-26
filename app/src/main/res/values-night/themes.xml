@@ -37,7 +37,7 @@
         <item name="homeRailTextSecondary">#B4B8BE</item>
         <item name="homeRailAccent">#BFCBDA</item>
         
-        <!-- Picker component overrides for better contrast in Faded Night theme ONLY -->
+        <!-- Picker component overrides for better contrast in Shahid Dark theme ONLY -->
         <item name="pickerButtonBackground">@color/picker_button_background</item>
         <item name="pickerButtonText">@color/picker_button_text</item>
         <item name="pickerIconTint">@color/picker_icon_tint</item>

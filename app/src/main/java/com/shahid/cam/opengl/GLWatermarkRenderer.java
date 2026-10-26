@@ -244,8 +244,8 @@ public class GLWatermarkRenderer {
     }
 
     private float[] computeWatermarkRectVertices(float ndcWidth, float ndcHeight) {
-        // For screen recording (FadRec), position watermark with padding below the statusbar.
-        // For camera recording (FadCam), position at the very top (no padding).
+        // For screen recording (ShahidRec), position watermark with padding below the statusbar.
+        // For camera recording (ShahidCam), position at the very top (no padding).
         float topY = 1.0f;
         
         if (isScreenRecording) {
@@ -1236,7 +1236,7 @@ public class GLWatermarkRenderer {
         float totalTextHeight = 0f;
         for (int i = 0; i < lines.length; i++) {
             String l = lines[i];
-            boolean hasIcon = l != null && (l.contains("<ICON>") || l.contains("<FADCAM_ICON>"));
+            boolean hasIcon = l != null && (l.contains("<ICON>") || l.contains("<SHAHIDCAM_ICON>"));
             lineHeights[i] = hasIcon ? Math.max(lineHeight, iconLineH) : lineHeight;
             totalTextHeight += lineHeights[i];
         }
@@ -1244,11 +1244,11 @@ public class GLWatermarkRenderer {
         float maxLineWidth = 0f;
         for (String line : lines) {
             if (line == null) continue;
-            float lineW = watermarkPaint.measureText(line.replace("<ICON>", "").replace("<FADCAM_ICON>", ""));
+            float lineW = watermarkPaint.measureText(line.replace("<ICON>", "").replace("<SHAHIDCAM_ICON>", ""));
             if (line.contains("<ICON>")) {
-                lineW += measureIconWidth("fadrec", iconLineH) + (padding * 0.25f);
+                lineW += measureIconWidth("shahidrec", iconLineH) + (padding * 0.25f);
             }
-            if (line.contains("<FADCAM_ICON>")) {
+            if (line.contains("<SHAHIDCAM_ICON>")) {
                 lineW += measureIconWidth("menu_icon_unknown", iconLineH) + (padding * 0.25f);
             }
             maxLineWidth = Math.max(maxLineWidth, lineW);
@@ -1273,7 +1273,7 @@ public class GLWatermarkRenderer {
                 continue;
             }
 
-            if (line.contains("<ICON>") || line.contains("<FADCAM_ICON>")) {
+            if (line.contains("<ICON>") || line.contains("<SHAHIDCAM_ICON>")) {
                 drawLineWithIcons(canvas, line, textY, padding, fm, iconLineH, watermarkPaint);
             } else {
                 canvas.drawText(line, padding, textY, watermarkPaint);
@@ -1340,19 +1340,19 @@ public class GLWatermarkRenderer {
     }
 
     /**
-     * Draws a watermark line that may contain {@code <ICON>} (FadRec icon) and/or
-     * {@code <FADCAM_ICON>} (FadCam icon) placeholders inline with the text.
+     * Draws a watermark line that may contain {@code <ICON>} (ShahidRec icon) and/or
+     * {@code <SHAHIDCAM_ICON>} (ShahidCam icon) placeholders inline with the text.
      * Icons are scaled to the font bounding-box height so they align flush with glyphs.
      */
     private void drawLineWithIcons(Canvas canvas, String line, float textY, int padding,
                                    Paint.FontMetrics fm, float iconH, Paint paint) {
         // Tokenise the line: split on the two placeholder tokens, keeping which token was found
         java.util.List<String> tokens = new java.util.ArrayList<>();
-        java.util.List<Boolean> tokenIsFadrec = new java.util.ArrayList<>();  // true=<ICON>, false=<FADCAM_ICON>
+        java.util.List<Boolean> tokenIsFadrec = new java.util.ArrayList<>();  // true=<ICON>, false=<SHAHIDCAM_ICON>
         String remaining = line;
         while (!remaining.isEmpty()) {
             int idx1 = remaining.indexOf("<ICON>");
-            int idx2 = remaining.indexOf("<FADCAM_ICON>");
+            int idx2 = remaining.indexOf("<SHAHIDCAM_ICON>");
             // Pick whichever placeholder comes first
             boolean hasIcon = idx1 >= 0;
             boolean hasFadcam = idx2 >= 0;
@@ -1370,7 +1370,7 @@ public class GLWatermarkRenderer {
                 tokenIsFadrec.add(null);
             }
             // The icon token itself
-            String token = firstIsFadrec ? "<ICON>" : "<FADCAM_ICON>";
+            String token = firstIsFadrec ? "<ICON>" : "<SHAHIDCAM_ICON>";
             tokens.add(token);
             tokenIsFadrec.add(firstIsFadrec);
             remaining = remaining.substring(first + token.length());
@@ -1394,7 +1394,7 @@ public class GLWatermarkRenderer {
                 }
             } else {
                 // Icon segment
-                String drawableName = isFadrec ? "fadrec" : "menu_icon_unknown";
+                String drawableName = isFadrec ? "shahidrec" : "menu_icon_unknown";
                 android.graphics.Bitmap iconBmp = getIconBitmap(drawableName);
                 if (iconBmp != null) {
                     float iconW = iconH * ((float) iconBmp.getWidth() / (float) iconBmp.getHeight());

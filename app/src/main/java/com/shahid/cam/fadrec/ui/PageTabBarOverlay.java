@@ -1,4 +1,4 @@
-package com.shahid.cam.fadrec.ui;
+package com.shahid.cam.shahidrec.ui;
 
 import android.content.ClipData;
 import android.content.ClipDescription;
@@ -27,8 +27,8 @@ import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
 
 import com.shahid.cam.R;
-import com.shahid.cam.fadrec.ui.annotation.AnnotationState;
-import com.shahid.cam.fadrec.ui.annotation.AnnotationPage;
+import com.shahid.cam.shahidrec.ui.annotation.AnnotationState;
+import com.shahid.cam.shahidrec.ui.annotation.AnnotationPage;
 
 /**
  * Overlay showing horizontal page tabs at the top of the screen.
@@ -391,7 +391,7 @@ public class PageTabBarOverlay {
         if (btnRenamePage != null) {
             btnRenamePage.setOnClickListener(v -> {
                 // Broadcast rename intent
-                Intent intent = new Intent("com.shahid.cam.fadrec.RENAME_PAGE");
+                Intent intent = new Intent("com.shahid.cam.shahidrec.RENAME_PAGE");
                 intent.putExtra("page_index", index);
                 intent.putExtra("page_name", page.getName());
                 context.sendBroadcast(intent);

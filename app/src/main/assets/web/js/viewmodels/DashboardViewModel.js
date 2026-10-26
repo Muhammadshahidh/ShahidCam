@@ -3,9 +3,9 @@
  * 
  * Supports two modes (handled by ApiService internally):
  * - Local mode: Phone's HTTP server (192.168.x.x)
- * - Cloud mode: Relay server (live.fadseclab.com:8443)
+ * - Cloud mode: Relay server (live.shahidlabs.com:8443)
  * 
- * ApiService automatically detects the mode based on FadCamRemote.isCloudMode()
+ * ApiService automatically detects the mode based on ShahidCamRemote.isCloudMode()
  * 
  * Multi-tab support (Step 6.11.5.4):
  * Uses BroadcastChannel to coordinate polling across tabs. Only the active/visible
@@ -38,7 +38,7 @@ class DashboardViewModel {
         }
         
         try {
-            this.broadcastChannel = new BroadcastChannel('fadcam_dashboard_sync');
+            this.broadcastChannel = new BroadcastChannel('shahidcam_dashboard_sync');
             
             // Listen for messages from other tabs
             this.broadcastChannel.onmessage = (event) => {
@@ -143,14 +143,14 @@ class DashboardViewModel {
         // to complete and cloud mode to activate.
         const urlParams = new URLSearchParams(window.location.search);
         const hasHandoffToken = urlParams.has('token');
-        const hasStreamDevice = typeof FadCamRemote !== 'undefined' &&
-            typeof FadCamRemote.isWebAccess === 'function' &&
-            FadCamRemote.isWebAccess() &&
-            typeof FadCamRemote.getStreamDeviceId === 'function' &&
-            !!FadCamRemote.getStreamDeviceId();
+        const hasStreamDevice = typeof ShahidCamRemote !== 'undefined' &&
+            typeof ShahidCamRemote.isWebAccess === 'function' &&
+            ShahidCamRemote.isWebAccess() &&
+            typeof ShahidCamRemote.getStreamDeviceId === 'function' &&
+            !!ShahidCamRemote.getStreamDeviceId();
         const isCloudStreamPage = hasHandoffToken || hasStreamDevice;
         
-        // Listen for cloud mode ready event (FadCamRemote sets up stream context)
+        // Listen for cloud mode ready event (ShahidCamRemote sets up stream context)
         if (typeof eventBus !== 'undefined') {
             eventBus.on('cloud-mode-ready', (ctx) => {
                 console.log('[DashboardViewModel] ☁️ Cloud mode ready, reinitializing...', ctx);
@@ -163,9 +163,9 @@ class DashboardViewModel {
             });
         }
         
-        if (typeof FadCamRemote !== 'undefined' &&
-            typeof FadCamRemote.isCloudMode === 'function' &&
-            FadCamRemote.isCloudMode()) {
+        if (typeof ShahidCamRemote !== 'undefined' &&
+            typeof ShahidCamRemote.isCloudMode === 'function' &&
+            ShahidCamRemote.isCloudMode()) {
             this.pollingAllowed = true;
             await this.updateStatus();
             this.startPolling();
@@ -202,9 +202,9 @@ class DashboardViewModel {
             console.error('❌ [DashboardViewModel] Failed to update status:', error.message);
             
             // Determine if we're in cloud mode (web access)
-            const isWebMode = typeof FadCamRemote !== 'undefined' && 
-                              typeof FadCamRemote.isWebAccess === 'function' && 
-                              FadCamRemote.isWebAccess();
+            const isWebMode = typeof ShahidCamRemote !== 'undefined' && 
+                              typeof ShahidCamRemote.isWebAccess === 'function' && 
+                              ShahidCamRemote.isWebAccess();
             
             // Emit offline status with cloudMode flag for proper staleness detection
             this.statusModel.update({ state: 'offline', cloudMode: isWebMode });

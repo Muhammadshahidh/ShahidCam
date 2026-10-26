@@ -1,4 +1,4 @@
-package com.shahid.cam.ui.faditor.export;
+package com.shahid.cam.ui.shahideditor.export;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -31,12 +31,12 @@ import androidx.media3.transformer.Transformer;
 
 import com.shahid.cam.Constants;
 import com.shahid.cam.SharedPreferencesManager;
-import com.shahid.cam.ui.faditor.CanvasPickerBottomSheet;
-import com.shahid.cam.ui.faditor.model.AudioClip;
-import com.shahid.cam.ui.faditor.model.Clip;
-import com.shahid.cam.ui.faditor.model.ExportSettings;
-import com.shahid.cam.ui.faditor.model.FaditorProject;
-import com.shahid.cam.ui.faditor.model.Timeline;
+import com.shahid.cam.ui.shahideditor.CanvasPickerBottomSheet;
+import com.shahid.cam.ui.shahideditor.model.AudioClip;
+import com.shahid.cam.ui.shahideditor.model.Clip;
+import com.shahid.cam.ui.shahideditor.model.ExportSettings;
+import com.shahid.cam.ui.shahideditor.model.ShahidEditorProject;
+import com.shahid.cam.ui.shahideditor.model.Timeline;
 import com.shahid.cam.utils.RecordingStoragePaths;
 
 import java.io.File;
@@ -123,7 +123,7 @@ public class ExportManager {
      *
      * @param project the project to export
      */
-    public void export(@NonNull FaditorProject project) {
+    public void export(@NonNull ShahidEditorProject project) {
         if (isExporting) {
             FLog.w(TAG, "Export already in progress");
             return;
@@ -204,7 +204,7 @@ public class ExportManager {
                     // Clean up temp file on error
                     File tempFile = new File(outputPath);
                     if (tempFile.getParentFile() != null
-                            && tempFile.getParentFile().getName().equals("faditor_export")) {
+                            && tempFile.getParentFile().getName().equals("shahideditor_export")) {
                         tempFile.delete();
                     }
                     FLog.e(TAG, "Export failed", exception);
@@ -291,7 +291,7 @@ public class ExportManager {
     // ── Internal ─────────────────────────────────────────────────────
 
     @NonNull
-    private Composition buildComposition(@NonNull FaditorProject project) {
+    private Composition buildComposition(@NonNull ShahidEditorProject project) {
         List<EditedMediaItem> items = new ArrayList<>();
 
         // Resolve canvas dimensions if a canvas preset is active
@@ -545,7 +545,7 @@ public class ExportManager {
      */
     @Nullable
     private File getOrCreateSilenceFile() {
-        File cacheDir = new File(context.getCacheDir(), "faditor_export");
+        File cacheDir = new File(context.getCacheDir(), "shahideditor_export");
         if (!cacheDir.exists()) cacheDir.mkdirs();
 
         File silenceFile = new File(cacheDir, "silence.wav");
@@ -675,23 +675,23 @@ public class ExportManager {
     /**
      * Generate an output file path respecting the user's storage preference.
      *
-     * <p>Internal mode: writes to the app-private FadCam directory
+     * <p>Internal mode: writes to the app-private ShahidCam directory
      * (same location as recordings).</p>
      * <p>Custom/SAF mode: writes to a temporary cache file; on export
      * completion the file is copied to the SAF directory.</p>
      */
     @NonNull
-    private String generateOutputPath(@NonNull FaditorProject project) {
+    private String generateOutputPath(@NonNull ShahidEditorProject project) {
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US)
                 .format(new Date());
-        String fileName = "Faditor_" + timestamp + "." + Constants.RECORDING_FILE_EXTENSION;
+        String fileName = "ShahidEditor_" + timestamp + "." + Constants.RECORDING_FILE_EXTENSION;
 
         String storageMode = prefsManager.getStorageMode();
 
         if (SharedPreferencesManager.STORAGE_MODE_CUSTOM.equals(storageMode)) {
             // SAF/Custom mode — Transformer only accepts file paths, so write to
             // a temp location first; onCompleted will copy to SAF.
-            File tempDir = new File(context.getCacheDir(), "faditor_export");
+            File tempDir = new File(context.getCacheDir(), "shahideditor_export");
             if (!tempDir.exists()) {
                 tempDir.mkdirs();
             }
@@ -703,7 +703,7 @@ public class ExportManager {
             // Internal mode — same directory as recordings
             File outputDir = RecordingStoragePaths.getInternalCategoryDir(
                     context,
-                    RecordingStoragePaths.Category.FADITOR,
+                    RecordingStoragePaths.Category.SHAHIDEDITOR,
                     true
             );
             if (outputDir == null) {
@@ -745,11 +745,11 @@ public class ExportManager {
             }
             pickedDir = RecordingStoragePaths.findOrCreateChildDirectory(
                     pickedDir,
-                    Constants.RECORDING_SUBDIR_FADITOR,
+                    Constants.RECORDING_SUBDIR_SHAHIDEDITOR,
                     true
             );
             if (pickedDir == null || !pickedDir.canWrite()) {
-                FLog.e(TAG, "SAF copy: cannot write to Faditor subdirectory");
+                FLog.e(TAG, "SAF copy: cannot write to ShahidEditor subdirectory");
                 return null;
             }
 

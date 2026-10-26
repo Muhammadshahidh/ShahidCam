@@ -244,7 +244,7 @@ public class HomeFragment extends BaseFragment {
     // inline total will be rendered in tvSpaceTitle using spans
     
     /**
-     * Changed from private to protected to allow FadRecHomeFragment to update timer displays.
+     * Changed from private to protected to allow ShahidRecHomeFragment to update timer displays.
      */
     protected TextView tvElapsedTitle;
     protected TextView tvElapsedSubtitle;
@@ -278,7 +278,7 @@ public class HomeFragment extends BaseFragment {
     private TextView tvPreviewHint; // Hint text for long press to enable preview
     
     /**
-     * Changed from private to protected to allow FadRecHomeFragment to access in overridden methods.
+     * Changed from private to protected to allow ShahidRecHomeFragment to access in overridden methods.
      */
     protected MaterialButton buttonStartStop;
     protected MaterialButton buttonPauseResume;
@@ -701,7 +701,7 @@ public class HomeFragment extends BaseFragment {
             boolean isAmoledLocal =
                 "AMOLED".equalsIgnoreCase(themeName) ||
                 "Amoled".equalsIgnoreCase(themeName) ||
-                "Faded Night".equalsIgnoreCase(themeName);
+                "Shahid Dark".equalsIgnoreCase(themeName);
             int flashColor = isAmoledLocal
                 ? Color.parseColor("#232323")
                 : Color.parseColor("#302745");
@@ -1884,7 +1884,7 @@ public class HomeFragment extends BaseFragment {
      * This means recording is stopped and the user can initiate a new one.
      * Should only be called when the fragment is attached and view is available.
      * 
-     * Note: Changed from private to protected to allow FadRecHomeFragment to override
+     * Note: Changed from private to protected to allow ShahidRecHomeFragment to override
      * with screen recording-specific behavior.
      */
     protected void resetUIButtonsToIdleState() {
@@ -1905,7 +1905,7 @@ public class HomeFragment extends BaseFragment {
             boolean isAmoledLocal =
                 "AMOLED".equalsIgnoreCase(themeName) ||
                 "Amoled".equalsIgnoreCase(themeName) ||
-                "Faded Night".equalsIgnoreCase(themeName);
+                "Shahid Dark".equalsIgnoreCase(themeName);
             if (buttonStartStop != null) {
                 applyButtonTransition(buttonStartStop, getString(R.string.button_start),
                         AppCompatResources.getDrawable(getContext(), R.drawable.play_button_rounded), () -> {
@@ -1955,7 +1955,7 @@ public class HomeFragment extends BaseFragment {
     /**
      * Updates the start button state based on camera resource availability.
      * 
-     * Note: Changed from private to protected to allow FadRecHomeFragment to override
+     * Note: Changed from private to protected to allow ShahidRecHomeFragment to override
      * with screen recording-specific behavior.
      */
     protected void updateStartButtonAvailability() {
@@ -2371,7 +2371,7 @@ public class HomeFragment extends BaseFragment {
         if (getContext() == null || !isAdded()) return;
 
         String fullErrorMessage =
-            "FadCam could not start recording.\n\nPlease copy this error and report it on GitHub or Discord.\n\n" +
+            "ShahidCam could not start recording.\n\nPlease copy this error and report it on GitHub or Discord.\n\n" +
             "-----------------------------------\n" +
             "Error Message:\n" +
             (errorMessage != null ? errorMessage : "No message") +
@@ -2405,7 +2405,7 @@ public class HomeFragment extends BaseFragment {
                     );
                 android.content.ClipData clip =
                     android.content.ClipData.newPlainText(
-                        "FadCam Error",
+                        "ShahidCam Error",
                         fullErrorMessage
                     );
                 clipboard.setPrimaryClip(clip);
@@ -3943,7 +3943,7 @@ public class HomeFragment extends BaseFragment {
             currentTheme != null &&
             (currentTheme.equalsIgnoreCase("AMOLED") ||
                 currentTheme.equalsIgnoreCase("Amoled") ||
-                currentTheme.equalsIgnoreCase("Faded Night"));
+                currentTheme.equalsIgnoreCase("Shahid Dark"));
 
         // default) -----
         String lastTheme = sharedPreferencesManager.sharedPreferences.getString(
@@ -4648,8 +4648,8 @@ public class HomeFragment extends BaseFragment {
                     FLog.e(TAG, "Error marking pro as seen", e);
                 }
                 
-                // Open FadCam Pro Activity
-                Intent intent = new Intent(getActivity(), FadCamProActivity.class);
+                // Open ShahidCam Pro Activity
+                Intent intent = new Intent(getActivity(), ShahidCamProActivity.class);
                 startActivity(intent);
             });
             // ShimmerTextView handles its own shimmer animation
@@ -5269,7 +5269,7 @@ public class HomeFragment extends BaseFragment {
     }
 
     /**
-     * Volume shutter single click: capture a FadShot photo.
+     * Volume shutter single click: capture a ShahidShot photo.
      * Called by MainActivity when the user taps a volume key while the home tab
      * is visible. Mirrors the capture-shot button behavior exactly.
      */
@@ -5397,7 +5397,7 @@ public class HomeFragment extends BaseFragment {
         CameraType selectedCamera = sharedPreferencesManager.getCameraSelection();
         boolean shouldShow =
             (selectedCamera == CameraType.FRONT || selectedCamera.isDual()) &&
-            !getClass().getName().contains("FadRecHomeFragment");
+            !getClass().getName().contains("ShahidRecHomeFragment");
 
         View mirrorWrapper = getView() != null ? getView().findViewById(R.id.mirror_btn_wrapper) : null;
         if (mirrorWrapper == null) return;
@@ -6480,7 +6480,7 @@ public class HomeFragment extends BaseFragment {
 
     /**
      * Update storage info and timer displays.
-     * Changed from private to protected to allow FadRecHomeFragment to override with screen recording logic.
+     * Changed from private to protected to allow ShahidRecHomeFragment to override with screen recording logic.
      */
     protected void updateStorageInfo() {
         // NOTE: Logging here is minimized to reduce spam during 1s update loop in startUpdatingInfo()
@@ -10179,7 +10179,7 @@ public class HomeFragment extends BaseFragment {
         if (ivAppTitle == null) return;
 
         // Only animate once per process session — skip if already played
-        // (e.g. returning after switching to FadRec/other mode).
+        // (e.g. returning after switching to ShahidRec/other mode).
         if (sLogoAnimationPlayed) {
             ivAppTitle.setAlpha(1f);
             ivAppTitle.setTranslationY(0f);
@@ -10234,11 +10234,11 @@ public class HomeFragment extends BaseFragment {
         }
     }
 
-    // ── Header Logo Style (Default FadCam text vs Animated Avatar) ──────────
+    // ── Header Logo Style (Default ShahidCam text vs Animated Avatar) ──────────
 
     /**
      * Reads the header logo preference and swaps the header ImageView between
-     * the static FadCam logo and a small animated avatar that blinks.
+     * the static ShahidCam logo and a small animated avatar that blinks.
      * Safe to call repeatedly (e.g. on resume) — only mutates when the pref changes.
      */
     private void applyHeaderLogoStyle() {
@@ -10252,7 +10252,7 @@ public class HomeFragment extends BaseFragment {
             ivAppTitle.setImageResource(resolveHomeDrawable(RES_IDLE));
             startHeaderBlinkLoop();
         } else {
-            // Restore default FadCam text logo.
+            // Restore default ShahidCam text logo.
             stopHeaderBlinkLoop();
             ivAppTitle.setScaleType(android.widget.ImageView.ScaleType.FIT_CENTER);
             ivAppTitle.setImageResource(R.drawable.menu_icon_unknown);
@@ -10454,7 +10454,7 @@ public class HomeFragment extends BaseFragment {
                 (com.google.android.material.button.MaterialButton) view.findViewById(R.id.buttonTorchSwitch),
                 (com.google.android.material.button.MaterialButton) view.findViewById(R.id.buttonStartStop),
                 (com.google.android.material.button.MaterialButton) view.findViewById(R.id.buttonPauseResume),
-                (com.google.android.material.button.MaterialButton) view.findViewById(R.id.buttonFadRecMute),
+                (com.google.android.material.button.MaterialButton) view.findViewById(R.id.buttonShahidRecMute),
                 (com.google.android.material.button.MaterialButton) view.findViewById(R.id.buttonCamSwitch),
                 (com.google.android.material.button.MaterialButton) view.findViewById(R.id.buttonMirrorSwitch)
             };
@@ -11250,7 +11250,7 @@ public class HomeFragment extends BaseFragment {
         int padL = quickActionsRow.getPaddingLeft();
         int padR = quickActionsRow.getPaddingRight();
         int contentW = rowW - padL - padR;
-        quickSlotCount = Math.max(4, contentW / quickSlotWidth); // min 4 slots (mute, full, fadshot, timer)
+        quickSlotCount = Math.max(4, contentW / quickSlotWidth); // min 4 slots (mute, full, shahidshot, timer)
         // Equal spacing across the padded content area — symmetric on both sides.
         quickSlotStep = contentW / (float) quickSlotCount;
         quickSlotMap.clear();
@@ -11301,7 +11301,7 @@ public class HomeFragment extends BaseFragment {
 
         // Default layout: the timer is pinned to the very left available slot,
         // and the remaining buttons stay right-packed together (mute, full,
-        // fadshot) so the row looks organized instead of cluttered.
+        // shahidshot) so the row looks organized instead of cluttered.
         // Any button missing from the saved slots (corrupt/outdated data) is
         // placed into the default position so the layout is never broken.
         View[] buttons = { btnQuickTimer, btnQuickMuteAudio, btnFullscreenPreview, btnCaptureShotPreview };
@@ -11590,7 +11590,7 @@ public class HomeFragment extends BaseFragment {
         int padL = quickActionsRow.getPaddingLeft();
         int padR = quickActionsRow.getPaddingRight();
         int contentW = rowW - padL - padR;
-        quickSlotCount = Math.max(4, contentW / quickSlotWidth); // min 4 slots (mute, full, fadshot, timer)
+        quickSlotCount = Math.max(4, contentW / quickSlotWidth); // min 4 slots (mute, full, shahidshot, timer)
         quickSlotStep = contentW / (float) quickSlotCount;
         // Skeleton mirrors the real button: icon-shaped ghost + label bar ghost.
         int outlineSize = Math.round(getResources().getDimension(R.dimen.home_quick_icon_size));
@@ -11690,7 +11690,7 @@ public class HomeFragment extends BaseFragment {
     private int quickActionTokenToId(String token) {
         if ("mute".equals(token)) return R.id.btnQuickMuteAudio;
         if ("full".equals(token)) return R.id.btnFullscreenPreview;
-        if ("fadshot".equals(token)) return R.id.btnCaptureShotPreview;
+        if ("shahidshot".equals(token)) return R.id.btnCaptureShotPreview;
         if ("timer".equals(token)) return R.id.btnQuickTimer;
         return 0;
     }
@@ -11698,7 +11698,7 @@ public class HomeFragment extends BaseFragment {
     private String quickActionIdToToken(int id) {
         if (id == R.id.btnQuickMuteAudio) return "mute";
         if (id == R.id.btnFullscreenPreview) return "full";
-        if (id == R.id.btnCaptureShotPreview) return "fadshot";
+        if (id == R.id.btnCaptureShotPreview) return "shahidshot";
         if (id == R.id.btnQuickTimer) return "timer";
         return null;
     }
@@ -12465,7 +12465,7 @@ public class HomeFragment extends BaseFragment {
         // Check for AMOLED theme first (prioritize this check)
         if (
             "AMOLED".equals(themeName) ||
-            "Faded Night".equals(themeName) ||
+            "Shahid Dark".equals(themeName) ||
             "Amoled".equals(themeName) ||
             "amoled".equals(themeName)
         ) {
@@ -12710,13 +12710,13 @@ public class HomeFragment extends BaseFragment {
     }
 
     /**
-     * Apply Faded Night theme styling to recording control tiles
+     * Apply Shahid Dark theme styling to recording control tiles
      */
     private void applyFadedNightThemeToTiles() {
-        // Define the Faded Night surface color (same as used for cards)
+        // Define the Shahid Dark surface color (same as used for cards)
         int fadedNightSurface = Color.parseColor("#181A1B");
 
-        // Create a custom drawable with ripple effect for Faded Night theme
+        // Create a custom drawable with ripple effect for Shahid Dark theme
         android.graphics.drawable.GradientDrawable shape =
             new android.graphics.drawable.GradientDrawable();
         shape.setShape(android.graphics.drawable.GradientDrawable.RECTANGLE);
@@ -12863,7 +12863,7 @@ public class HomeFragment extends BaseFragment {
     }
 
     /**
-     * Apply theme-specific colors to the mode switcher (FadCam, FadRec, FadMic)
+     * Apply theme-specific colors to the mode switcher (ShahidCam, ShahidRec, ShahidMic)
      */
     private void applyModeSwitcherTheming(String themeName) {
         try {
@@ -12875,13 +12875,13 @@ public class HomeFragment extends BaseFragment {
                 activeIndicator.setBackgroundResource(R.drawable.segment_active_background);
             }
 
-            View segmentFadCam = root.findViewById(R.id.segment_fadcam);
-            View segmentFadRec = root.findViewById(R.id.segment_fadrec);
-            View segmentFadMic = root.findViewById(R.id.segment_fadmic);
+            View segmentShahidCam = root.findViewById(R.id.segment_shahidcam);
+            View segmentShahidRec = root.findViewById(R.id.segment_shahidrec);
+            View segmentShahidMic = root.findViewById(R.id.segment_shahidmic);
 
-            if (segmentFadCam != null) segmentFadCam.setBackground(null);
-            if (segmentFadRec != null) segmentFadRec.setBackground(null);
-            if (segmentFadMic != null) segmentFadMic.setBackground(null);
+            if (segmentShahidCam != null) segmentShahidCam.setBackground(null);
+            if (segmentShahidRec != null) segmentShahidRec.setBackground(null);
+            if (segmentShahidMic != null) segmentShahidMic.setBackground(null);
         } catch (Exception e) {
             FLog.w(
                 "HomeFragment",

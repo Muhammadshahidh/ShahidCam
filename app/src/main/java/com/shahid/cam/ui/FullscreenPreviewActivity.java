@@ -400,7 +400,7 @@ public class FullscreenPreviewActivity extends AppCompatActivity {
 
         int styleRes;
         switch (theme) {
-            case "Faded Night":   styleRes = R.style.Theme_ShahidCam_Amoled;       break;
+            case "Shahid Dark":   styleRes = R.style.Theme_ShahidCam_Amoled;       break;
             case "Midnight Dusk": styleRes = R.style.Theme_ShahidCam_MidnightDusk; break;
             case "Premium Gold":  styleRes = R.style.Theme_ShahidCam_Gold;         break;
             case "Silent Forest": styleRes = R.style.Theme_ShahidCam_SilentForest; break;

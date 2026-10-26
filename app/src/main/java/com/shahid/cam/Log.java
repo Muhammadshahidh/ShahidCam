@@ -23,7 +23,7 @@ public class Log {
     private static File logFile;
 
     private static final String TAG = "Log";
-    private static final String DEBUG_FILE_NAME = "FADCAM_debug.html";
+    private static final String DEBUG_FILE_NAME = "SHAHIDCAM_debug.html";
     private static final int DEFAULT_MAX_LOG_LINES = 5000;
     private static final int TRIM_MARGIN = 120;
 
@@ -202,7 +202,7 @@ public class Log {
                     ContentValues contentValues = new ContentValues();
                     contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, debugFileName);
                     contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "text/html");
-                    contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS + "/FadCam");
+                    contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS + "/ShahidCam");
                     fileUri = context.getContentResolver().insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, contentValues);
                 } catch (Exception mediaStoreEx) {
                     // Some OEMs (e.g., Huawei EMUI 10) can deny inserts unpredictably
@@ -447,7 +447,7 @@ public class Log {
     private static void startWorkerIfNeeded() {
         if (!isDebugEnabled) return;
         if (workerRunning && logThread != null && logHandler != null) return;
-        logThread = new android.os.HandlerThread("FadCamLog");
+        logThread = new android.os.HandlerThread("ShahidCamLog");
         logThread.start();
         logHandler = new android.os.Handler(logThread.getLooper());
         workerRunning = true;
@@ -621,7 +621,7 @@ public class Log {
         sb.append("<!DOCTYPE html><html lang=\"en\"><head>\n");
         sb.append("<meta charset=\"UTF-8\">\n");
         sb.append("<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n");
-        sb.append("<title>FadCam · Debug Log</title>\n");
+        sb.append("<title>ShahidCam · Debug Log</title>\n");
         sb.append("<style>\n");
         sb.append("*{margin:0;padding:0;box-sizing:border-box}\n");
         sb.append(":root{--bg:#0d0d0d;--surface:#141414;--border:#222;--text:#ddd;--muted:#777;--red:#dc2626;--red2:#b91c1c;--amber:#d97706;--green:#16a34a;--blue:#5b9bd5;--gray:#8b8b8b;--purple:#9333ea}\n");
@@ -670,7 +670,7 @@ public class Log {
         sb.append("</style></head><body>\n");
 
         String today = new SimpleDateFormat("dd MMM yyyy, hh:mm a", Locale.getDefault()).format(new Date());
-        sb.append("<div class=\"topbar\"><h1>FADCAM <span>· DEBUG DOSSIER</span></h1><div class=\"meta\">");
+        sb.append("<div class=\"topbar\"><h1>SHAHIDCAM <span>· DEBUG DOSSIER</span></h1><div class=\"meta\">");
         sb.append(today + " &nbsp; | &nbsp; " + Build.MANUFACTURER + " " + Build.MODEL + " &nbsp; | &nbsp; Android " + Build.VERSION.RELEASE + " &nbsp; | &nbsp; " + BuildConfig.VERSION_NAME);
         sb.append("</div></div>\n");
 
@@ -731,7 +731,7 @@ public class Log {
             String full = buildFullHtmlPage(ctx);
             java.io.File tmpDir = new java.io.File(ctx.getExternalCacheDir(), "debug_share");
             if (!tmpDir.exists()) tmpDir.mkdirs();
-            java.io.File tmp = new java.io.File(tmpDir, "FadCam_Debug.html");
+            java.io.File tmp = new java.io.File(tmpDir, "ShahidCam_Debug.html");
             java.io.FileWriter fw = null;
             try {
                 fw = new java.io.FileWriter(tmp);

@@ -1,6 +1,6 @@
-# FadCam Live Streaming Web Interface
+# ShahidCam Live Streaming Web Interface
 
-This folder contains the web interface for FadCam's HLS live streaming feature.
+This folder contains the web interface for ShahidCam's HLS live streaming feature.
 
 ## Files
 
@@ -115,7 +115,7 @@ Then open browser DevTools (F12) to see:
 The HTML file is loaded by `LiveM3U8Server.java`:
 
 ```java
-InputStream htmlStream = getClass().getResourceAsStream("/com/fadcam/streaming/web/index.html");
+InputStream htmlStream = getClass().getResourceAsStream("/com/shahidcam/streaming/web/index.html");
 ```
 
 Changes to `index.html` require rebuilding the APK to take effect.

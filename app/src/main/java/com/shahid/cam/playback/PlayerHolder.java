@@ -281,7 +281,7 @@ public final class PlayerHolder {
             // Always use our SeekableFragmentedMp4MediaSourceFactory — it handles
             // both fMP4 (with fragment index) and standard MP4 (with ClippingMediaSource
             // for correct duration-based seeking). The default ProgressiveMediaSource
-            // fails for standard MP4 files with broken moov atoms (Faditor-converted).
+            // fails for standard MP4 files with broken moov atoms (ShahidEditor-converted).
             boolean usedFmp4Factory = false;
             if (fmp4SourceFactory != null) {
                 try {

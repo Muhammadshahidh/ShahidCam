@@ -93,11 +93,11 @@ public class KoFiSupportBottomSheet extends BottomSheetDialogFragment {
         // Styled description (left-aligned, only keywords bold, project names red/clickable)
         TextView tvKoFiDescription = view.findViewById(R.id.tvKoFiDescription);
         if (tvKoFiDescription != null) {
-            String desc = "Built and maintained by the developer behind FadCam, FadCrypt, and other projects at FadSec Lab — a community-driven initiative focused on privacy-first, ad-free, tracker-free, and fully open-source tools, crafted over hundreds of hours of effort.\n\nIf you find value in this work and want to support the vision, you're welcome to buy the maintainer a coffee. ☕";
+            String desc = "Built and maintained by the developer behind ShahidCam, ShahidVault, and other projects at Shahid Labs — a community-driven initiative focused on privacy-first, ad-free, tracker-free, and fully open-source tools, crafted over hundreds of hours of effort.\n\nIf you find value in this work and want to support the vision, you're welcome to buy the maintainer a coffee. ☕";
             android.text.SpannableString spannable = new android.text.SpannableString(desc);
-            // Make FadCam red and clickable
-            int fadCamStart = desc.indexOf("FadCam");
-            int fadCamEnd = fadCamStart + "FadCam".length();
+            // Make ShahidCam red and clickable
+            int fadCamStart = desc.indexOf("ShahidCam");
+            int fadCamEnd = fadCamStart + "ShahidCam".length();
             if (fadCamStart >= 0) {
                 spannable.setSpan(new android.text.style.ForegroundColorSpan(Color.parseColor("#E43C3C")), fadCamStart, fadCamEnd, android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
                 spannable.setSpan(new android.text.style.ClickableSpan() {
@@ -114,15 +114,15 @@ public class KoFiSupportBottomSheet extends BottomSheetDialogFragment {
                     }
                 }, fadCamStart, fadCamEnd, android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             }
-            // Make FadCrypt red and clickable
-            int fadCryptStart = desc.indexOf("FadCrypt");
-            int fadCryptEnd = fadCryptStart + "FadCrypt".length();
+            // Make ShahidVault red and clickable
+            int fadCryptStart = desc.indexOf("ShahidVault");
+            int fadCryptEnd = fadCryptStart + "ShahidVault".length();
             if (fadCryptStart >= 0) {
                 spannable.setSpan(new android.text.style.ForegroundColorSpan(Color.parseColor("#E43C3C")), fadCryptStart, fadCryptEnd, android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
                 spannable.setSpan(new android.text.style.ClickableSpan() {
                     @Override
                     public void onClick(@NonNull View widget) {
-                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/anonfaded/FadCrypt"));
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Muhammadshahidh/ShahidVault"));
                         widget.getContext().startActivity(browserIntent);
                     }
                     @Override
@@ -133,15 +133,15 @@ public class KoFiSupportBottomSheet extends BottomSheetDialogFragment {
                     }
                 }, fadCryptStart, fadCryptEnd, android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             }
-            // Make FadSec Lab red and clickable
-            int fadSecLabStart = desc.indexOf("FadSec Lab");
-            int fadSecLabEnd = fadSecLabStart + "FadSec Lab".length();
+            // Make Shahid Labs red and clickable
+            int fadSecLabStart = desc.indexOf("Shahid Labs");
+            int fadSecLabEnd = fadSecLabStart + "Shahid Labs".length();
             if (fadSecLabStart >= 0) {
                 spannable.setSpan(new android.text.style.ForegroundColorSpan(Color.parseColor("#E43C3C")), fadSecLabStart, fadSecLabEnd, android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
                 spannable.setSpan(new android.text.style.ClickableSpan() {
                     @Override
                     public void onClick(@NonNull View widget) {
-                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/fadsec-lab"));
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/shahidlabs-lab"));
                         widget.getContext().startActivity(browserIntent);
                     }
                     @Override
@@ -166,10 +166,10 @@ public class KoFiSupportBottomSheet extends BottomSheetDialogFragment {
             tvKoFiDescription.setGravity(android.view.Gravity.START);
         }
 
-        // Footer: Made with Palestine at FadSec Lab in Pakistan here
+        // Footer: Made with Palestine at Shahid Labs in Pakistan here
         TextView tvKoFiFooterFull = view.findViewById(R.id.tvKoFiFooterFull);
         if (tvKoFiFooterFull != null) {
-            String footer = "Made with Palestine at FadSec Lab in Pakistan";
+            String footer = "Made with Palestine at Shahid Labs in Pakistan";
             SpannableString spannable = new SpannableString(footer);
             // Palestine flag image
             Drawable palestine = AppCompatResources.getDrawable(requireContext(), R.drawable.palestine);
@@ -193,15 +193,15 @@ public class KoFiSupportBottomSheet extends BottomSheetDialogFragment {
                     spannable.setSpan(pakistanSpan, pakistanIndex, pakistanIndex + "Pakistan".length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 }
             }
-            // FadSec Lab clickable, bold, and red
-            int fadSecLabStart = footer.indexOf("FadSec Lab");
-            int fadSecLabEnd = fadSecLabStart + "FadSec Lab".length();
+            // Shahid Labs clickable, bold, and red
+            int fadSecLabStart = footer.indexOf("Shahid Labs");
+            int fadSecLabEnd = fadSecLabStart + "Shahid Labs".length();
             if (fadSecLabStart >= 0) {
                 spannable.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), fadSecLabStart, fadSecLabEnd, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 spannable.setSpan(new android.text.style.ClickableSpan() {
                     @Override
                     public void onClick(@NonNull View widget) {
-                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/fadsec-lab"));
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/shahidlabs-lab"));
                         widget.getContext().startActivity(browserIntent);
                     }
                     @Override

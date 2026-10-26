@@ -1,14 +1,14 @@
 /**
- * E2EKeyManager — End-to-end stream encryption key management for the FadCam dashboard.
+ * E2EKeyManager — End-to-end stream encryption key management for the ShahidCam dashboard.
  *
  * Key derivation chain (must be identical to Android StreamKeyManager):
  *   password + user_uuid
  *       ↓  PBKDF2-SHA256, 600 000 iterations, 512-bit output
  *   master_key  (64 bytes)
- *       ├──  HMAC-SHA256(master_key, "fadcam-e2e-v1")  →  verify_tag  (hex-encoded, stored in Supabase)
- *       └──  HKDF-SHA256(master_key, "fadcam-stream-v1" + deviceId)  →  device_key  (32 bytes, AES-256)
+ *       ├──  HMAC-SHA256(master_key, "shahidcam-e2e-v1")  →  verify_tag  (hex-encoded, stored in Supabase)
+ *       └──  HKDF-SHA256(master_key, "shahidcam-stream-v1" + deviceId)  →  device_key  (32 bytes, AES-256)
  *
- * Persistence: master_key CryptoKey stored in IndexedDB ("fadcam-e2e" / "keys" / "master").
+ * Persistence: master_key CryptoKey stored in IndexedDB ("shahidcam-e2e" / "keys" / "master").
  * The CryptoKey is non-extractable for device_key derivation, but we store the raw bytes
  * of the master_key so we can run HMAC on it to compute the verify_tag on demand.
  *
@@ -17,12 +17,12 @@
 (function () {
   'use strict';
 
-  const DB_NAME   = 'fadcam-e2e';
+  const DB_NAME   = 'shahidcam-e2e';
   const STORE     = 'keys';
   const MASTER_ID = 'master';
 
-  const E2E_VERIFY_INFO = 'fadcam-e2e-v1';
-  const STREAM_KEY_INFO_PREFIX = 'fadcam-stream-v1';
+  const E2E_VERIFY_INFO = 'shahidcam-e2e-v1';
+  const STREAM_KEY_INFO_PREFIX = 'shahidcam-stream-v1';
 
   const enc = (s) => new TextEncoder().encode(s);
 
@@ -129,7 +129,7 @@
    * Derive master key from password + userUuid, compute verify_tag,
    * optionally PUT it to Supabase, then persist master key bytes in IndexedDB.
    *
-   * @param {string} password            User's FadSec ID password.
+   * @param {string} password            User's Shahid Labs ID password.
    * @param {string} userUuid            User's UUID (PBKDF2 salt).
    * @param {string} supabaseAccessToken Supabase JWT for the authenticated user.
    * @param {string} supabaseUrl         Supabase project URL.

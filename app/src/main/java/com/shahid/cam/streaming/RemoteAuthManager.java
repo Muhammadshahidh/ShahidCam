@@ -15,7 +15,7 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Manages authentication sessions for FadCam Remote access.
+ * Manages authentication sessions for ShahidCam Remote access.
  * Handles token generation, validation, storage, and session lifecycle.
  * Thread-safe singleton implementation.
  */

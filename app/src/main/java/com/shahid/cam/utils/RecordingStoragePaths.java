@@ -20,7 +20,7 @@ public final class RecordingStoragePaths {
         CAMERA,
         DUAL,
         SCREEN,
-        FADITOR,
+        SHAHIDEDITOR,
         STREAM,
         SHOT,
         MINIAPPS,
@@ -31,7 +31,7 @@ public final class RecordingStoragePaths {
     public enum ShotSource {
         BACK,
         SELFIE,
-        FADREC
+        SHAHIDREC
     }
 
     public enum CameraSource {
@@ -40,7 +40,7 @@ public final class RecordingStoragePaths {
         DUAL
     }
 
-    public enum FaditorOutputType {
+    public enum ShahidEditorOutputType {
         CONVERTED,
         MERGE
     }
@@ -57,8 +57,8 @@ public final class RecordingStoragePaths {
                 return Constants.RECORDING_SUBDIR_DUAL;
             case SCREEN:
                 return Constants.RECORDING_SUBDIR_SCREEN;
-            case FADITOR:
-                return Constants.RECORDING_SUBDIR_FADITOR;
+            case SHAHIDEDITOR:
+                return Constants.RECORDING_SUBDIR_SHAHIDEDITOR;
             case STREAM:
                 return Constants.RECORDING_SUBDIR_STREAM;
             case SHOT:
@@ -79,7 +79,7 @@ public final class RecordingStoragePaths {
         if (Constants.RECORDING_SUBDIR_CAMERA.equals(folderName)) return Category.CAMERA;
         if (Constants.RECORDING_SUBDIR_DUAL.equals(folderName)) return Category.DUAL;
         if (Constants.RECORDING_SUBDIR_SCREEN.equals(folderName)) return Category.SCREEN;
-        if (Constants.RECORDING_SUBDIR_FADITOR.equals(folderName)) return Category.FADITOR;
+        if (Constants.RECORDING_SUBDIR_SHAHIDEDITOR.equals(folderName)) return Category.SHAHIDEDITOR;
         if (Constants.RECORDING_SUBDIR_STREAM.equals(folderName)) return Category.STREAM;
         if (Constants.RECORDING_SUBDIR_SHOT.equals(folderName)) return Category.SHOT;
         if (Constants.RECORDING_SUBDIR_MINIAPPS.equals(folderName)) return Category.MINIAPPS;
@@ -93,8 +93,8 @@ public final class RecordingStoragePaths {
         switch (source) {
             case SELFIE:
                 return Constants.RECORDING_SUBDIR_SHOT_SELFIE;
-            case FADREC:
-                return Constants.RECORDING_SUBDIR_SHOT_FADREC;
+            case SHAHIDREC:
+                return Constants.RECORDING_SUBDIR_SHOT_SHAHIDREC;
             case BACK:
             default:
                 return Constants.RECORDING_SUBDIR_SHOT_BACK;
@@ -116,14 +116,14 @@ public final class RecordingStoragePaths {
     }
 
     @NonNull
-    public static String folderNameForFaditorOutput(@Nullable FaditorOutputType outputType) {
-        if (outputType == null) return Constants.RECORDING_SUBDIR_FADITOR_CONVERTED;
+    public static String folderNameForShahidEditorOutput(@Nullable ShahidEditorOutputType outputType) {
+        if (outputType == null) return Constants.RECORDING_SUBDIR_SHAHIDEDITOR_CONVERTED;
         switch (outputType) {
             case MERGE:
-                return Constants.RECORDING_SUBDIR_FADITOR_MERGE;
+                return Constants.RECORDING_SUBDIR_SHAHIDEDITOR_MERGE;
             case CONVERTED:
             default:
-                return Constants.RECORDING_SUBDIR_FADITOR_CONVERTED;
+                return Constants.RECORDING_SUBDIR_SHAHIDEDITOR_CONVERTED;
         }
     }
 
@@ -179,15 +179,15 @@ public final class RecordingStoragePaths {
     }
 
     @Nullable
-    public static File getInternalFaditorOutputDir(
+    public static File getInternalShahidEditorOutputDir(
             @NonNull Context context,
-            @Nullable FaditorOutputType outputType,
+            @Nullable ShahidEditorOutputType outputType,
             boolean createIfMissing
     ) {
-        File faditorRoot = getInternalCategoryDir(context, Category.FADITOR, createIfMissing);
-        if (faditorRoot == null) return null;
-        String sourceFolder = folderNameForFaditorOutput(outputType);
-        File sourceDir = new File(faditorRoot, sourceFolder);
+        File shahideditorRoot = getInternalCategoryDir(context, Category.SHAHIDEDITOR, createIfMissing);
+        if (shahideditorRoot == null) return null;
+        String sourceFolder = folderNameForShahidEditorOutput(outputType);
+        File sourceDir = new File(shahideditorRoot, sourceFolder);
         if (!sourceDir.exists() && createIfMissing && !sourceDir.mkdirs()) return null;
         return sourceDir;
     }
@@ -217,7 +217,7 @@ public final class RecordingStoragePaths {
         String folderName = folderNameForCategory(category);
         if (folderName.isEmpty()) return base;
         // If the user selected the category folder itself (e.g. picked Camera/
-        // instead of the FadCam root), use it directly to prevent double-prefixing
+        // instead of the ShahidCam root), use it directly to prevent double-prefixing
         // like Camera/Back/Camera/Back.
         if (folderName.equals(base.getName())) return base;
         return findOrCreateChildDirectory(base, folderName, createIfMissing);
@@ -253,15 +253,15 @@ public final class RecordingStoragePaths {
     }
 
     @Nullable
-    public static DocumentFile getSafFaditorOutputDir(
+    public static DocumentFile getSafShahidEditorOutputDir(
             @NonNull Context context,
             @Nullable String treeUriString,
-            @Nullable FaditorOutputType outputType,
+            @Nullable ShahidEditorOutputType outputType,
             boolean createIfMissing
     ) {
-        DocumentFile faditorRoot = getSafCategoryDir(context, treeUriString, Category.FADITOR, createIfMissing);
-        if (faditorRoot == null) return null;
-        return findOrCreateChildDirectory(faditorRoot, folderNameForFaditorOutput(outputType), createIfMissing);
+        DocumentFile shahideditorRoot = getSafCategoryDir(context, treeUriString, Category.SHAHIDEDITOR, createIfMissing);
+        if (shahideditorRoot == null) return null;
+        return findOrCreateChildDirectory(shahideditorRoot, folderNameForShahidEditorOutput(outputType), createIfMissing);
     }
 
     @Nullable

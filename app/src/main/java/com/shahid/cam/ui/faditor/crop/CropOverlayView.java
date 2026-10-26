@@ -1,4 +1,4 @@
-package com.shahid.cam.ui.faditor.crop;
+package com.shahid.cam.ui.shahideditor.crop;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
