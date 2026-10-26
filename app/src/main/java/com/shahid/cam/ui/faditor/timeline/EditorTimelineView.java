@@ -97,7 +97,7 @@ public class EditorTimelineView extends View {
     private static final int COLOR_AUDIO_BG_SEL   = 0xFF1B3A20;
     private static final int COLOR_AUDIO_WAVE     = 0xFF4CAF50;
     private static final int COLOR_AUDIO_WAVE_MUTED = 0xFF555555;
-    private static final int COLOR_AUDIO_WAVE_DIM = 0x404CAF50; // Faded version for mirror half
+    private static final int COLOR_AUDIO_WAVE_DIM = 0x404CAF50; // Shahid version for mirror half
     private static final int COLOR_AUDIO_CENTERLINE = 0x334CAF50;
     private static final int COLOR_AUDIO_LABEL    = 0xBBFFFFFF;
     private static final int COLOR_AUDIO_TRACK_BG = 0xFF151515;

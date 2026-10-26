@@ -12712,15 +12712,15 @@ public class HomeFragment extends BaseFragment {
     /**
      * Apply Shahid Dark theme styling to recording control tiles
      */
-    private void applyFadedNightThemeToTiles() {
+    private void applyShahidNightThemeToTiles() {
         // Define the Shahid Dark surface color (same as used for cards)
-        int fadedNightSurface = Color.parseColor("#181A1B");
+        int shahidNightSurface = Color.parseColor("#181A1B");
 
         // Create a custom drawable with ripple effect for Shahid Dark theme
         android.graphics.drawable.GradientDrawable shape =
             new android.graphics.drawable.GradientDrawable();
         shape.setShape(android.graphics.drawable.GradientDrawable.RECTANGLE);
-        shape.setColor(fadedNightSurface);
+        shape.setColor(shahidNightSurface);
         shape.setCornerRadius(8 * getResources().getDisplayMetrics().density); // 8dp in pixels
 
         // Create ripple drawable with the custom background
@@ -12745,7 +12745,7 @@ public class HomeFragment extends BaseFragment {
             expShape.setShape(
                 android.graphics.drawable.GradientDrawable.RECTANGLE
             );
-            expShape.setColor(fadedNightSurface);
+            expShape.setColor(shahidNightSurface);
             expShape.setCornerRadius(
                 8 * getResources().getDisplayMetrics().density
             );
@@ -12767,7 +12767,7 @@ public class HomeFragment extends BaseFragment {
             zoomShape.setShape(
                 android.graphics.drawable.GradientDrawable.RECTANGLE
             );
-            zoomShape.setColor(fadedNightSurface);
+            zoomShape.setColor(shahidNightSurface);
             zoomShape.setCornerRadius(
                 8 * getResources().getDisplayMetrics().density
             );

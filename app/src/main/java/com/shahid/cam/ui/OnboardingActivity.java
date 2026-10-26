@@ -121,7 +121,7 @@ public class OnboardingActivity extends AppIntro {
             viewPager.setEnabled(true); // Ensure the ViewPager is enabled
 
             // Set page transformer
-            viewPager.setPageTransformer(true, new FadePageTransformer());
+            viewPager.setPageTransformer(true, new ShahidePageTransformer());
 
             // Listen for page changes to update navigation buttons
             viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -345,7 +345,7 @@ public class OnboardingActivity extends AppIntro {
                                         getString(R.string.onboarding_intro_line4)
                                 };
                                 final String cursorChar = "▌";
-                                final int rowFadeDuration = 220;
+                                final int rowShahideDuration = 220;
                                 final int rowPauseDelay = 1200;
                                 final int blinkFrameDelay = 32;
                                 final int blinkDuration = 900;
@@ -354,7 +354,7 @@ public class OnboardingActivity extends AppIntro {
                                 final boolean[] fadingOut = { true };
                                 final int cursorColor = 0xFFE43C3C;
                                 descView.setText("");
-                                // Define startBlinkingCursor before RowFadeAnimator so it is in scope
+                                // Define startBlinkingCursor before RowShahideAnimator so it is in scope
                                 final Runnable startBlinkingCursor = new Runnable() {
                                     @Override
                                     public void run() {
@@ -392,12 +392,12 @@ public class OnboardingActivity extends AppIntro {
                                         handler.post(blinkRunnable[0]);
                                     }
                                 };
-                                class RowFadeAnimator {
+                                class RowShahideAnimator {
                                     private final Runnable startBlinkingCursor;
                                     int rowIdx = 0;
                                     StringBuilder shownText = new StringBuilder();
 
-                                    RowFadeAnimator(Runnable startBlinkingCursor) {
+                                    RowShahideAnimator(Runnable startBlinkingCursor) {
                                         this.startBlinkingCursor = startBlinkingCursor;
                                     }
 
@@ -417,7 +417,7 @@ public class OnboardingActivity extends AppIntro {
                                         shownText.append("\n").append(lines[rowIdx]);
                                         descView.setAlpha(0f);
                                         updateTextWithCursor();
-                                        descView.animate().alpha(1f).setDuration(rowFadeDuration).withEndAction(() -> {
+                                        descView.animate().alpha(1f).setDuration(rowShahideDuration).withEndAction(() -> {
                                             // As the last line animates in, fade in swipe instruction and arrow
                                             if (rowIdx == lines.length - 1 && swipeInstruction != null
                                                     && lottieArrow != null) {
@@ -469,7 +469,7 @@ public class OnboardingActivity extends AppIntro {
                                         descView.setText(span);
                                     }
                                 }
-                                final RowFadeAnimator rowAnimator = new RowFadeAnimator(startBlinkingCursor);
+                                final RowShahideAnimator rowAnimator = new RowShahideAnimator(startBlinkingCursor);
                                             handler.postDelayed(rowAnimator::start, 200);
                                         }; // closes afterWake
                                         // Play wake AVD; call afterWake on completion
@@ -521,7 +521,7 @@ public class OnboardingActivity extends AppIntro {
     }
 
     // Implement a custom page transformer for fade transitions
-    private static class FadePageTransformer implements ViewPager.PageTransformer {
+    private static class ShahidePageTransformer implements ViewPager.PageTransformer {
         private static final float MIN_ALPHA = 0.0f;
         private static final float MAX_ALPHA = 1.0f;
 

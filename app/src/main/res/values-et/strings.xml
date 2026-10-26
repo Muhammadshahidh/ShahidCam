@@ -1500,7 +1500,7 @@ Soovitatav: 192000 bps, 48000 Hz enamikele kasutajatele.</string>
     <string name="app_icon_dialog_title">Vali rakenduse ikoon</string>
     <string name="app_icon_default" translatable="false">ShahidCam</string>
     <string name="app_icon_alternative" translatable="false">Camera</string>
-    <string name="app_icon_faded" translatable="false">0xFF0000</string>
+    <string name="app_icon_shahid" translatable="false">0xFF0000</string>
     <string name="app_icon_palestine" translatable="false">I❤️Palestine</string>
     <string name="app_icon_pakistan" translatable="false">ShahidCam</string>
     <string name="app_icon_shahidlabs" translatable="false">CyberShadowPK Lab</string>

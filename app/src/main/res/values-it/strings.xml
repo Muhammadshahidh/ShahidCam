@@ -2339,7 +2339,7 @@
     <string name="header_logo_avatar" translatable="false">Avatar</string>
     <string name="app_icon_default" translatable="false">ShahidCam</string>
     <string name="app_icon_alternative" translatable="false">Camera</string>
-    <string name="app_icon_faded" translatable="false">0xFF0000</string>
+    <string name="app_icon_shahid" translatable="false">0xFF0000</string>
     <string name="app_icon_palestine" translatable="false">I❤️Palestine</string>
     <string name="app_icon_pakistan" translatable="false">ShahidCam</string>
     <string name="app_icon_shahidlabs" translatable="false">CyberShadowPK Lab</string>

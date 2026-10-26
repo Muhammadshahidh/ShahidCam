@@ -1569,7 +1569,7 @@ Recomendado: 192000 bps, 48000 Hz para la mayoría de usuarios.</string>
     <string name="app_icon_dialog_title">Elegir ícono de la app</string>
     <string name="app_icon_default" translatable="false">ShahidCam</string>
     <string name="app_icon_alternative" translatable="false">Camera</string>
-    <string name="app_icon_faded" translatable="false">0xFF0000</string>
+    <string name="app_icon_shahid" translatable="false">0xFF0000</string>
     <string name="app_icon_palestine" translatable="false">I❤️Palestine</string>
     <string name="app_icon_pakistan" translatable="false">ShahidCam</string>
     <string name="app_icon_shahidlabs" translatable="false">CyberShadowPK Lab</string>

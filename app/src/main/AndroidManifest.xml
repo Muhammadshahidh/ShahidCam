@@ -122,8 +122,8 @@
             </intent-filter>
         </activity-alias>
 
-        <!-- Faded App Icon (Activity Alias) -->
-        <activity-alias android:name=".MainActivity.FadedIcon" android:enabled="false" android:label="0xFF0000" android:icon="@mipmap/ic_launcher_faded" android:roundIcon="@mipmap/ic_launcher_faded_round" android:targetActivity=".MainActivity" android:exported="true">
+        <!-- Shahid App Icon (Activity Alias) -->
+        <activity-alias android:name=".MainActivity.ShahidIcon" android:enabled="false" android:label="0xFF0000" android:icon="@mipmap/ic_launcher_shahid" android:roundIcon="@mipmap/ic_launcher_shahid_round" android:targetActivity=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -162,7 +162,7 @@
             </intent-filter>
         </activity-alias>
 
-        <!-- FadBat App Icon (Activity Alias) -->
+        <!-- ShahidBat App Icon (Activity Alias) -->
         <activity-alias android:name=".MainActivity.BatIcon" android:enabled="false" android:label="ShahidCam" android:icon="@mipmap/ic_launcher_bat" android:roundIcon="@mipmap/ic_launcher_bat_round" android:targetActivity=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

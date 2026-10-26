@@ -1,5 +1,5 @@
 /**
- * Fadex Notification Constants
+ * Shahidex Notification Constants
  * Central configuration for push notification polling, caching, and behavior
  */
 
@@ -109,7 +109,7 @@ const NotificationConstants = {
     /**
      * Log prefix for identification
      */
-    LOG_PREFIX: '[Fadex Notification]',
+    LOG_PREFIX: '[Shahidex Notification]',
 };
 
 // Export for use

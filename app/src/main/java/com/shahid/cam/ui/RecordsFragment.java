@@ -427,7 +427,7 @@ public class RecordsFragment extends BaseFragment implements
     private com.shahid.cam.ui.utils.AnimatedChip chipShotAll;
     private com.shahid.cam.ui.utils.AnimatedChip chipShotBack;
     private com.shahid.cam.ui.utils.AnimatedChip chipShotSelfie;
-    private com.shahid.cam.ui.utils.AnimatedChip chipShotFadrec;
+    private com.shahid.cam.ui.utils.AnimatedChip chipShotShahidrec;
     private TextView filterHelperText;
     private TextView filterChecklistButton;
     private View selectionActionsRow;
@@ -1769,7 +1769,7 @@ public class RecordsFragment extends BaseFragment implements
         chipShotAll = view.findViewById(R.id.chip_shot_all);
         chipShotBack = view.findViewById(R.id.chip_shot_back);
         chipShotSelfie = view.findViewById(R.id.chip_shot_selfie);
-        chipShotFadrec = view.findViewById(R.id.chip_shot_shahidrec);
+        chipShotShahidrec = view.findViewById(R.id.chip_shot_shahidrec);
 
         chipFilterMiniApps = view.findViewById(R.id.chip_filter_miniapps);
         chipGroupMiniAppsFilter = view.findViewById(R.id.chip_group_miniapps_filter);
@@ -3468,8 +3468,8 @@ public class RecordsFragment extends BaseFragment implements
         if (chipShotSelfie != null) {
             chipShotSelfie.setOnClickListener(v -> setActiveShotSubtype(VideoItem.ShotSubtype.SELFIE));
         }
-        if (chipShotFadrec != null) {
-            chipShotFadrec.setOnClickListener(v -> setActiveShotSubtype(VideoItem.ShotSubtype.SHAHIDREC));
+        if (chipShotShahidrec != null) {
+            chipShotShahidrec.setOnClickListener(v -> setActiveShotSubtype(VideoItem.ShotSubtype.SHAHIDREC));
         }
         if (chipMiniAppsAll != null) {
             chipMiniAppsAll.setOnClickListener(v -> setActiveMiniAppsSubtype(null));
@@ -3791,7 +3791,7 @@ public class RecordsFragment extends BaseFragment implements
         if (chipShotAll != null) chipShotAll.setChecked(activeShotSubtype == VideoItem.ShotSubtype.ALL);
         if (chipShotBack != null) chipShotBack.setChecked(activeShotSubtype == VideoItem.ShotSubtype.BACK);
         if (chipShotSelfie != null) chipShotSelfie.setChecked(activeShotSubtype == VideoItem.ShotSubtype.SELFIE);
-        if (chipShotFadrec != null) chipShotFadrec.setChecked(activeShotSubtype == VideoItem.ShotSubtype.SHAHIDREC);
+        if (chipShotShahidrec != null) chipShotShahidrec.setChecked(activeShotSubtype == VideoItem.ShotSubtype.SHAHIDREC);
     }
 
     private void updateMiniAppsFilterRowVisibility() {
@@ -3866,7 +3866,7 @@ public class RecordsFragment extends BaseFragment implements
         applyChipIcon(chipShotAll, R.drawable.ic_list);
         applyChipIcon(chipShotBack, R.drawable.ic_chip_photo_camera);
         applyChipIcon(chipShotSelfie, R.drawable.ic_chip_photo_camera_front);
-        applyChipIcon(chipShotFadrec, R.drawable.ic_chip_mobile_camera);
+        applyChipIcon(chipShotShahidrec, R.drawable.ic_chip_mobile_camera);
         styleFilterChip(chipFilterAll);
         styleFilterChip(chipFilterCamera);
         styleFilterChip(chipFilterScreen);
@@ -3886,7 +3886,7 @@ public class RecordsFragment extends BaseFragment implements
         styleFilterChip(chipShotAll);
         styleFilterChip(chipShotBack);
         styleFilterChip(chipShotSelfie);
-        styleFilterChip(chipShotFadrec);
+        styleFilterChip(chipShotShahidrec);
     }
 
     private void applyChipIcon(@Nullable Chip chip, int drawableRes) {
@@ -3981,7 +3981,7 @@ public class RecordsFragment extends BaseFragment implements
         setChipLabelWithCount(chipShotAll, R.string.records_filter_shot_all, all);
         setChipLabelWithCount(chipShotBack, R.string.records_filter_shot_back, back);
         setChipLabelWithCount(chipShotSelfie, R.string.records_filter_shot_selfie, selfie);
-        setChipLabelWithCount(chipShotFadrec, R.string.records_filter_shot_shahidrec, shahidrec);
+        setChipLabelWithCount(chipShotShahidrec, R.string.records_filter_shot_shahidrec, shahidrec);
     }
 
     private void updateShahidEditorFilterChipLabels() {
@@ -5321,7 +5321,7 @@ public class RecordsFragment extends BaseFragment implements
     }
 
     /**
-     * Fades the AppLock overlay in or out with animation.
+     * Shahides the AppLock overlay in or out with animation.
      * 
      * @param show true to fade in (show), false to fade out (hide)
      */
@@ -6298,7 +6298,7 @@ public class RecordsFragment extends BaseFragment implements
         }, 500);
     }
 
-    // (No delayed hide) Fade animation helper
+    // (No delayed hide) Shahide animation helper
     private void showNavigationFab() {
         if (fabScrollNavigation == null)
             return;

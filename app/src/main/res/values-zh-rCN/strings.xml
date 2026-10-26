@@ -72,7 +72,7 @@
     <string name="button_settings_cam_front">前摄</string>
     <string name="note_quailty">选择视频分辨率\n(默认: HD)</string>
     <string name="setting_watermark">水印</string>
-    <string name="note_watermark">调整视频水印\n(默认: 时间与\"Fadcam\"字样)</string>
+    <string name="note_watermark">调整视频水印\n(默认: 时间与\"Shahidcam\"字样)</string>
     <string name="note_watermark_extra">想让视频保存速度更快？选择\"无水印\". 想加水印？那么片刻的等待是值得的, 就只需要多等一小会!</string>
     <string name="note_location">向水印添加位置信息. \n需要打开手机的位置信息功能 \n(默认: 关闭)</string>
     <string name="note_location_extra">添加经纬度信息至视频水印需要打开手机的位置信息功能。</string>
@@ -143,7 +143,7 @@
     <string name="discord_title">Discord服务器</string>
     <string name="thankyou_msg">感谢你使用ShahidCam!</string>
     <string name="settings_title">设置</string>
-    <string name="array_watermark_time_shahidcam">时间与\"Fadcam\"字样</string>
+    <string name="array_watermark_time_shahidcam">时间与\"Shahidcam\"字样</string>
     <string name="array_watermark_timeonly">仅时间</string>
     <string name="array_watermark_nomark">无水印</string>
     <string name="toast_video_not_found">出错：视频未找到</string>

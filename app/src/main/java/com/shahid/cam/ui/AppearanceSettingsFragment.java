@@ -434,7 +434,7 @@ public class AppearanceSettingsFragment extends Fragment {
         );
         else if (key.equals(Constants.APP_ICON_MINIMAL)) button.setText(getString(R.string.app_icon_minimal));
         else if (key.equals(Constants.APP_ICON_ALTERNATIVE)) button.setText(getString(R.string.app_icon_alternative));
-        else if (key.equals(Constants.APP_ICON_FADED)) button.setText(getString(R.string.app_icon_faded));
+        else if (key.equals(Constants.APP_ICON_SHAHID)) button.setText(getString(R.string.app_icon_shahid));
         else if (key.equals(Constants.APP_ICON_PALESTINE)) button.setText(getString(R.string.app_icon_palestine));
         else if (key.equals(Constants.APP_ICON_PAKISTAN)) button.setText(getString(R.string.app_icon_pakistan));
         else if (key.equals(Constants.APP_ICON_FADSECLAB)) button.setText(getString(R.string.app_icon_shahidlabs));
@@ -492,7 +492,7 @@ public class AppearanceSettingsFragment extends Fragment {
             iconOption(Constants.APP_ICON_ALTERNATIVE, getString(R.string.app_icon_alternative), "Detective", R.mipmap.ic_launcher_2)
         );
         items.add(
-            iconOption(Constants.APP_ICON_FADED, getString(R.string.app_icon_faded), "Faded", R.mipmap.ic_launcher_faded)
+            iconOption(Constants.APP_ICON_SHAHID, getString(R.string.app_icon_shahid), "Shahid", R.mipmap.ic_launcher_shahid)
         );
         items.add(
             iconOption(Constants.APP_ICON_PALESTINE, getString(R.string.app_icon_palestine), "Sumud صمود", R.mipmap.ic_launcher_palestine)
@@ -507,7 +507,7 @@ public class AppearanceSettingsFragment extends Fragment {
             iconOption(Constants.APP_ICON_NOORISTIC, getString(R.string.app_icon_nooristic), "Nooristic", R.mipmap.ic_launcher_nooristic)
         );
         items.add(
-            iconOption(Constants.APP_ICON_BAT, getString(R.string.app_icon_bat), "FadBat", R.mipmap.ic_launcher_bat)
+            iconOption(Constants.APP_ICON_BAT, getString(R.string.app_icon_bat), "ShahidBat", R.mipmap.ic_launcher_bat)
         );
         items.add(
             iconOption(Constants.APP_ICON_REDBINARY, getString(R.string.app_icon_redbinary), "RedBinary", R.mipmap.ic_launcher_redbinary)
@@ -561,9 +561,9 @@ public class AppearanceSettingsFragment extends Fragment {
             requireContext(),
             "com.shahid.cam.MainActivity.AlternativeIcon"
         );
-        ComponentName fadedIcon = new ComponentName(
+        ComponentName shahidIcon = new ComponentName(
             requireContext(),
-            "com.shahid.cam.MainActivity.FadedIcon"
+            "com.shahid.cam.MainActivity.ShahidIcon"
         );
         ComponentName palestineIcon = new ComponentName(
             requireContext(),
@@ -629,7 +629,7 @@ public class AppearanceSettingsFragment extends Fragment {
         ComponentName[] all = {
             defaultIcon,
             alternativeIcon,
-            fadedIcon,
+            shahidIcon,
             palestineIcon,
             pakistanIcon,
             shahidlabsIcon,
@@ -658,7 +658,7 @@ public class AppearanceSettingsFragment extends Fragment {
         if (Constants.APP_ICON_DEFAULT.equals(iconKey)) enable = defaultIcon;
         else if (Constants.APP_ICON_ALTERNATIVE.equals(iconKey)) enable =
             alternativeIcon;
-        else if (Constants.APP_ICON_FADED.equals(iconKey)) enable = fadedIcon;
+        else if (Constants.APP_ICON_SHAHID.equals(iconKey)) enable = shahidIcon;
         else if (Constants.APP_ICON_PALESTINE.equals(iconKey)) enable =
             palestineIcon;
         else if (Constants.APP_ICON_PAKISTAN.equals(iconKey)) enable =

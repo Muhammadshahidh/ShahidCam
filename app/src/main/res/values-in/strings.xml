@@ -676,7 +676,7 @@ Tips: Dengan H.265 (HEVC), Anda dapat menggunakan sekitar setengah bitrate H.264
     <string name="discord_title">Server Discord</string>
     <string name="thankyou_msg">Terima kasih telah menggunakan ShahidCam!</string>
     <string name="settings_title">Pengaturan</string>
-    <string name="array_watermark_time_shahidcam">Waktu dengan Fadcam</string>
+    <string name="array_watermark_time_shahidcam">Waktu dengan Shahidcam</string>
     <string name="array_watermark_timeonly">Cap waktu</string>
     <string name="array_watermark_nomark">Tidak ada Watermark</string>
     <string name="watermark_preview_funny">Masa iya? :( \n ＞﹏＜</string>
@@ -1607,7 +1607,7 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
     <string name="app_icon_dialog_title">Pilih Ikon Aplikasi</string>
     <string name="app_icon_default" translatable="false">ShahidCam</string>
     <string name="app_icon_alternative" translatable="false">Camera</string>
-    <string name="app_icon_faded" translatable="false">0xFF0000</string>
+    <string name="app_icon_shahid" translatable="false">0xFF0000</string>
     <string name="app_icon_palestine" translatable="false">I❤️Palestine</string>
     <string name="app_icon_pakistan" translatable="false">ShahidCam</string>
     <string name="app_icon_shahidlabs" translatable="false">CyberShadowPK Lab</string>

@@ -632,12 +632,12 @@ public abstract class Constants {
 
     public static final String APP_ICON_DEFAULT = "default"; // Original icon
     public static final String APP_ICON_ALTERNATIVE = "alternative"; // Detective icon
-    public static final String APP_ICON_FADED = "faded"; // Faded icon
+    public static final String APP_ICON_SHAHID = "shahid"; // Shahid icon
     public static final String APP_ICON_PALESTINE = "palestine"; // Sumud icon
     public static final String APP_ICON_PAKISTAN = "pakistan"; // MadeInPK icon
     public static final String APP_ICON_FADSECLAB = "shahidlabs"; // r00t icon
     public static final String APP_ICON_NOORISTIC = "nooristic"; // Nooristic icon
-    public static final String APP_ICON_BAT = "bat"; // FadBat icon
+    public static final String APP_ICON_BAT = "bat"; // ShahidBat icon
     public static final String APP_ICON_REDBINARY = "redbinary"; // RedBinary icon
     public static final String APP_ICON_NOTES = "notes"; // Notes icon
     public static final String APP_ICON_CALCULATOR = "calculator"; // Calculator icon

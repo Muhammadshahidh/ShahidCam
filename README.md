@@ -14,7 +14,7 @@
 > This project is part of the [Shahid Labs suite](https://github.com/shahidlabs-lab). <br> Discover our focus on ad-free, privacy-first applications and stay updated on future releases!
 
 > [!Note]
-> Unlock ShahidCam Pro with lifetime access: Visit the [Shop](https://www.patreon.com/cw/Fadedx/shop) <br> ShahidCam for Desktop is planned! 
+> Unlock ShahidCam Pro with lifetime access: Visit the [Shop](https://www.patreon.com/cw/Shahidx/shop) <br> ShahidCam for Desktop is planned! 
 
 
 ---
@@ -36,8 +36,8 @@
 [<img src="https://shields.rbtlog.dev/simple/com.shahid.cam" alt="badge">](https://shields.rbtlog.dev/com.shahid.cam)
 
 [![ko-fi badge](https://img.shields.io/badge/buy_me_a-coffee-red)](https://ko-fi.com/D1D510FNSV)
-[![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3DFadedx%26type%3Dpatrons%26suffix%3Dpatrons%2520%257C%2520Shop&style=social)](https://www.patreon.com/cw/Fadedx/shop)
-<!-- [![Patreon](https://img.shields.io/badge/Patreon-orange?logo=patreon&label=Patreon)](https://www.patreon.com/cw/Fadedx/shop) -->
+[![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3DShahidx%26type%3Dpatrons%26suffix%3Dpatrons%2520%257C%2520Shop&style=social)](https://www.patreon.com/cw/Shahidx/shop)
+<!-- [![Patreon](https://img.shields.io/badge/Patreon-orange?logo=patreon&label=Patreon)](https://www.patreon.com/cw/Shahidx/shop) -->
 <br>
 <sub>Scan to visit Patreon shop:</sub>
 <br>
@@ -438,7 +438,7 @@ Join our [Discord server](https://discord.gg/kvAZvdkuuN) to share ideas, seek he
 
 Buy ShahidCam Pro (lifetime access) from my Patreon shop. Your purchases help fund development and maintenance.
 
-[![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3DFadedx%26type%3Dpatrons%26suffix%3Dpatrons%2520%257C%2520Shop&style=for-the-badge)](https://www.patreon.com/cw/Fadedx/shop)
+[![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3DShahidx%26type%3Dpatrons%26suffix%3Dpatrons%2520%257C%2520Shop&style=for-the-badge)](https://www.patreon.com/cw/Shahidx/shop)
 
 <br>
 <sub>Scan to visit Patreon shop:</sub><br>

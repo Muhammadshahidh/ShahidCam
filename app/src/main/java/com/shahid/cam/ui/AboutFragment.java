@@ -465,7 +465,7 @@ public class AboutFragment extends BaseFragment {
 
     private void sendEmail() {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse("mailto:fadedhood@proton.me"));
+        intent.setData(Uri.parse("mailto:shahidhood@proton.me"));
         intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.about_shahidcam_feedback));
         startActivity(intent);
     }

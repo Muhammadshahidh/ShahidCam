@@ -1348,31 +1348,31 @@ public class GLWatermarkRenderer {
                                    Paint.FontMetrics fm, float iconH, Paint paint) {
         // Tokenise the line: split on the two placeholder tokens, keeping which token was found
         java.util.List<String> tokens = new java.util.ArrayList<>();
-        java.util.List<Boolean> tokenIsFadrec = new java.util.ArrayList<>();  // true=<ICON>, false=<SHAHIDCAM_ICON>
+        java.util.List<Boolean> tokenIsShahidrec = new java.util.ArrayList<>();  // true=<ICON>, false=<SHAHIDCAM_ICON>
         String remaining = line;
         while (!remaining.isEmpty()) {
             int idx1 = remaining.indexOf("<ICON>");
             int idx2 = remaining.indexOf("<SHAHIDCAM_ICON>");
             // Pick whichever placeholder comes first
             boolean hasIcon = idx1 >= 0;
-            boolean hasFadcam = idx2 >= 0;
-            if (!hasIcon && !hasFadcam) {
+            boolean hasShahidcam = idx2 >= 0;
+            if (!hasIcon && !hasShahidcam) {
                 tokens.add(remaining);
-                tokenIsFadrec.add(null); // plain text segment
+                tokenIsShahidrec.add(null); // plain text segment
                 break;
             }
-            int first = hasIcon && hasFadcam ? Math.min(idx1, idx2)
+            int first = hasIcon && hasShahidcam ? Math.min(idx1, idx2)
                     : (hasIcon ? idx1 : idx2);
-            boolean firstIsFadrec = hasIcon && (!hasFadcam || idx1 <= idx2);
+            boolean firstIsShahidrec = hasIcon && (!hasShahidcam || idx1 <= idx2);
             // Text before the placeholder
             if (first > 0) {
                 tokens.add(remaining.substring(0, first));
-                tokenIsFadrec.add(null);
+                tokenIsShahidrec.add(null);
             }
             // The icon token itself
-            String token = firstIsFadrec ? "<ICON>" : "<SHAHIDCAM_ICON>";
+            String token = firstIsShahidrec ? "<ICON>" : "<SHAHIDCAM_ICON>";
             tokens.add(token);
-            tokenIsFadrec.add(firstIsFadrec);
+            tokenIsShahidrec.add(firstIsShahidrec);
             remaining = remaining.substring(first + token.length());
         }
 
@@ -1385,8 +1385,8 @@ public class GLWatermarkRenderer {
         float currentX = padding;
         for (int i = 0; i < tokens.size(); i++) {
             String tok = tokens.get(i);
-            Boolean isFadrec = tokenIsFadrec.get(i);
-            if (isFadrec == null) {
+            Boolean isShahidrec = tokenIsShahidrec.get(i);
+            if (isShahidrec == null) {
                 // Plain text segment
                 if (!tok.isEmpty()) {
                     canvas.drawText(tok, currentX, textY, paint);
@@ -1394,7 +1394,7 @@ public class GLWatermarkRenderer {
                 }
             } else {
                 // Icon segment
-                String drawableName = isFadrec ? "shahidrec" : "menu_icon_unknown";
+                String drawableName = isShahidrec ? "shahidrec" : "menu_icon_unknown";
                 android.graphics.Bitmap iconBmp = getIconBitmap(drawableName);
                 if (iconBmp != null) {
                     float iconW = iconH * ((float) iconBmp.getWidth() / (float) iconBmp.getHeight());

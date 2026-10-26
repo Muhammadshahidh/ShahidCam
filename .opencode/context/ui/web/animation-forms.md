@@ -70,7 +70,7 @@ success: 600ms bounce [S0→1.2, R0→360°, α0→1]
 
 ## Scroll Animations
 
-### Scroll-Triggered Fade In
+### Scroll-Triggered Shahide In
 
 ```css
 .fade-in-on-scroll {
@@ -86,7 +86,7 @@ success: 600ms bounce [S0→1.2, R0→360°, α0→1]
 
 **Micro-syntax**:
 ```
-scrollFadeIn: 500ms ease-out [Y+40→0, α0→1]
+scrollShahideIn: 500ms ease-out [Y+40→0, α0→1]
 ```
 
 ### Auto-Scroll

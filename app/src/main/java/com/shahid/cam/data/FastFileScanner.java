@@ -493,7 +493,7 @@ public class FastFileScanner {
                 VideoItem.Category effectiveCategory = category;
                 VideoItem.ShotSubtype effectiveShot = shotSubtype;
                 VideoItem.CameraSubtype effectiveCam = cameraSubtype;
-                VideoItem.ShahidEditorSubtype effectiveFad = shahideditorSubtype;
+                VideoItem.ShahidEditorSubtype effectiveShahid = shahideditorSubtype;
 
                 if (legacyInfer && category == VideoItem.Category.UNKNOWN && name != null) {
                     effectiveCategory = inferCategoryFromLegacyName(name);
@@ -502,13 +502,13 @@ public class FastFileScanner {
                     } else if (effectiveCategory == VideoItem.Category.CAMERA) {
                         effectiveCam = resolveCameraSubtype(name);
                     } else if (effectiveCategory == VideoItem.Category.SHAHIDEDITOR) {
-                        effectiveFad = resolveShahidEditorSubtype(name);
+                        effectiveShahid = resolveShahidEditorSubtype(name);
                     }
                 }
 
                 VideoIndexEntity entity = buildEntityFromSafCursor(
                         directoryUri, childDocId, name, mimeType, size, lastMod,
-                        effectiveCategory, effectiveShot, effectiveCam, effectiveFad);
+                        effectiveCategory, effectiveShot, effectiveCam, effectiveShahid);
                 if (entity != null) out.add(entity);
             }
         } catch (Exception e) {

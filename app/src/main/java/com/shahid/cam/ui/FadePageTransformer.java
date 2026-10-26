@@ -11,7 +11,7 @@ import androidx.viewpager2.widget.ViewPager2;
  * Eliminates ViewPager2's default horizontal translation for a "teleport" effect.
  * Prevents click-through by disabling touch events on non-active pages.
  */
-public class FadePageTransformer implements ViewPager2.PageTransformer {
+public class ShahidePageTransformer implements ViewPager2.PageTransformer {
     
     @Override
     public void transformPage(@NonNull View page, float position) {

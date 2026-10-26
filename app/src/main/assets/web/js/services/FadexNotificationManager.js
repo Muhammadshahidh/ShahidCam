@@ -1,17 +1,17 @@
 /**
- * Fadex Notification Manager
+ * Shahidex Notification Manager
  * Handles polling, caching, parsing, and display of push notifications from GitHub
  * Architecture: Single responsibility - manages notification lifecycle only
  */
 
-class FadexNotificationManager {
+class ShahidexNotificationManager {
     /**
      * Constructor
      * Initializes notification manager with constants
      */
     constructor() {
         if (!NotificationConstants) {
-            console.error('[FadexNotificationManager] NotificationConstants not loaded');
+            console.error('[ShahidexNotificationManager] NotificationConstants not loaded');
             return;
         }
 
@@ -639,7 +639,7 @@ class FadexNotificationManager {
             }
             console.log(`📥 [CACHE-LOAD] No cached notifications found`);
         } catch (error) {
-            console.error('[Fadex] Error loading from cache:', error);
+            console.error('[Shahidex] Error loading from cache:', error);
         }
         return [];
     }
@@ -656,7 +656,7 @@ class FadexNotificationManager {
             localStorage.setItem(this.constants.CACHE_KEY_NOTIFICATION, JSON.stringify(notifications));
             this.notificationHistory = notifications;
         } catch (error) {
-            console.error('[Fadex] Error saving to cache:', error);
+            console.error('[Shahidex] Error saving to cache:', error);
             // Fallback to in-memory if localStorage fails
             this.notificationHistory = notifications;
         }
@@ -859,9 +859,9 @@ class FadexNotificationManager {
     log(message, data = {}, level = 'info') {
         // Only log errors and warnings
         if (level === 'error') {
-            console.error('[Fadex Notification]', message, data);
+            console.error('[Shahidex Notification]', message, data);
         } else if (level === 'warning') {
-            console.warn('[Fadex Notification]', message, data);
+            console.warn('[Shahidex Notification]', message, data);
         }
         // Info logs are silent in production
     }
@@ -873,11 +873,11 @@ let fadexNotificationManager = null;
 /**
  * Get or initialize notification manager
  *
- * @returns {FadexNotificationManager}
+ * @returns {ShahidexNotificationManager}
  */
-function initFadexNotificationManager() {
+function initShahidexNotificationManager() {
     if (!fadexNotificationManager) {
-        fadexNotificationManager = new FadexNotificationManager();
+        fadexNotificationManager = new ShahidexNotificationManager();
     }
     return fadexNotificationManager;
 }

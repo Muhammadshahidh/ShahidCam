@@ -77,7 +77,7 @@
 ## 🐞 Bug Fixes 
 - Fixed video corruption issues - videos now remain playable even if the app crashes or phone shuts down unexpectedly.
 - Patched a memory leak issue.
-- **Standalone Beta Installation** — ShahidCam Beta now installs alongside the main app with fully isolated storage without needing to uninstall the main app.
+- **Standalone Beta Installation** — ShahidCam now installs alongside the main app with fully isolated storage without needing to uninstall the main app.
 - Various minor bug fixes and improvements.
 
 ## ⚡ Performance Optimization

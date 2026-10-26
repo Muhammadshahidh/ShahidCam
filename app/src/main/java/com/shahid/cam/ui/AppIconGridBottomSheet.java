@@ -87,7 +87,7 @@ public class AppIconGridBottomSheet extends BottomSheetDialogFragment {
             getString(R.string.app_icon_jet),              // JF-17 fighter jet
             getString(R.string.app_icon_palestine),        // Palestine flag
             getString(R.string.app_icon_pakistan),         // Pakistan flag
-            getString(R.string.app_icon_faded),            // Faded icon
+            getString(R.string.app_icon_shahid),            // Shahid icon
             getString(R.string.app_icon_clock),            // Utility icons
             getString(R.string.app_icon_weather),          // last
             getString(R.string.app_icon_notes),
@@ -109,7 +109,7 @@ public class AppIconGridBottomSheet extends BottomSheetDialogFragment {
             R.mipmap.ic_launcher_jet,            // JF-17 jet
             R.mipmap.ic_launcher_palestine,      // Palestine
             R.mipmap.ic_launcher_pakistan,       // Pakistan
-            R.mipmap.ic_launcher_faded,          // Faded
+            R.mipmap.ic_launcher_shahid,          // Shahid
             R.mipmap.ic_launcher_clock,          // Utility icons
             R.mipmap.ic_launcher_weather,
             R.mipmap.ic_launcher_notes,
@@ -131,7 +131,7 @@ public class AppIconGridBottomSheet extends BottomSheetDialogFragment {
             Constants.APP_ICON_JET,              // JF-17 jet
             Constants.APP_ICON_PALESTINE,        // Palestine
             Constants.APP_ICON_PAKISTAN,         // Pakistan
-            Constants.APP_ICON_FADED,            // Faded
+            Constants.APP_ICON_SHAHID,            // Shahid
             Constants.APP_ICON_CLOCK,            // Utility icons
             Constants.APP_ICON_WEATHER,
             Constants.APP_ICON_NOTES,

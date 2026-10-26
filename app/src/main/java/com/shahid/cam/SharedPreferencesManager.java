@@ -2305,8 +2305,8 @@ public class SharedPreferencesManager {
             Constants.APP_ICON_ALTERNATIVE.equals(iconKey)
         ) return com.shahid.cam.R.mipmap.ic_launcher_2;
         if (
-            Constants.APP_ICON_FADED.equals(iconKey)
-        ) return com.shahid.cam.R.mipmap.ic_launcher_faded;
+            Constants.APP_ICON_SHAHID.equals(iconKey)
+        ) return com.shahid.cam.R.mipmap.ic_launcher_shahid;
         if (
             Constants.APP_ICON_PALESTINE.equals(iconKey)
         ) return com.shahid.cam.R.mipmap.ic_launcher_palestine;
@@ -2363,7 +2363,7 @@ public class SharedPreferencesManager {
             if (Constants.APP_ICON_DEFAULT.equals(key)) return context.getString(R.string.app_icon_default);
             if (Constants.APP_ICON_MINIMAL.equals(key)) return context.getString(R.string.app_icon_minimal);
             if (Constants.APP_ICON_ALTERNATIVE.equals(key)) return context.getString(R.string.app_icon_alternative);
-            if (Constants.APP_ICON_FADED.equals(key)) return context.getString(R.string.app_icon_faded);
+            if (Constants.APP_ICON_SHAHID.equals(key)) return context.getString(R.string.app_icon_shahid);
             if (Constants.APP_ICON_PALESTINE.equals(key)) return context.getString(R.string.app_icon_palestine);
             if (Constants.APP_ICON_PAKISTAN.equals(key)) return context.getString(R.string.app_icon_pakistan);
             if (Constants.APP_ICON_FADSECLAB.equals(key)) return context.getString(R.string.app_icon_shahidlabs);
@@ -3199,7 +3199,7 @@ public class SharedPreferencesManager {
 
     // -------------- ShahidRec (Screen Recording) Preferences End --------------
 
-    // -------------- Fadex Notification Preferences Start --------------
+    // -------------- Shahidex Notification Preferences Start --------------
     private static final String PREF_NOTIFICATION_HISTORY = "fadex_notification_history";
     private static final long NOTIFICATION_CACHE_DURATION_MS = 30 * 24 * 60 * 60 * 1000L; // 30 days
 
@@ -3272,7 +3272,7 @@ public class SharedPreferencesManager {
             .apply();
     }
 
-    // -------------- Fadex Notification Preferences End --------------
+    // -------------- Shahidex Notification Preferences End --------------
 
     // -------------- Generic Boolean Preferences (for new features badges) ------
 

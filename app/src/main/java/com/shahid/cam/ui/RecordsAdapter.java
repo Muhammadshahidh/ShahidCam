@@ -3221,7 +3221,7 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         String currentTheme = sharedPreferencesManager.sharedPreferences.getString(Constants.PREF_APP_THEME,
                 Constants.DEFAULT_APP_THEME);
         boolean isSnowVeilTheme = "Snow Veil".equals(currentTheme);
-        boolean isFadedNightTheme = "Shahid Dark".equals(currentTheme);
+        boolean isShahidNightTheme = "Shahid Dark".equals(currentTheme);
 
         if (isSnowVeilTheme) {
             // Set black text color for both positive and negative buttons
@@ -3234,7 +3234,7 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             if (dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_NEUTRAL) != null) {
                 dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_NEUTRAL).setTextColor(Color.BLACK);
             }
-        } else if (isFadedNightTheme) {
+        } else if (isShahidNightTheme) {
             // Set white text color for Shahid Dark theme buttons
             if (dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_POSITIVE) != null) {
                 dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_POSITIVE).setTextColor(Color.WHITE);

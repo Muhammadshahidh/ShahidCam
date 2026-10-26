@@ -75,7 +75,7 @@ public class RecordsOptionsBottomSheet extends BottomSheetDialogFragment {
         // Get current theme
         String currentTheme = sharedPreferencesManager.sharedPreferences.getString(Constants.PREF_APP_THEME, Constants.DEFAULT_APP_THEME);
         boolean isSnowVeilTheme = "Snow Veil".equals(currentTheme);
-        boolean isFadedNightTheme = "Shahid Dark".equals(currentTheme);
+        boolean isShahidNightTheme = "Shahid Dark".equals(currentTheme);
         
         // Set up the sort options radio group
         RadioGroup sortOptionsGroup = view.findViewById(R.id.sort_options_group);
@@ -178,7 +178,7 @@ public class RecordsOptionsBottomSheet extends BottomSheetDialogFragment {
             
             // Set other text colors
             setTextColorsRecursive(view, textColorPrimary, textColorSecondary);
-        } else if (isFadedNightTheme) {
+        } else if (isShahidNightTheme) {
             // Use white text and radio buttons for Shahid Dark theme
             int textColorPrimary = ContextCompat.getColor(requireContext(), android.R.color.white);
             int textColorSecondary = ContextCompat.getColor(requireContext(), R.color.gray_text_light);

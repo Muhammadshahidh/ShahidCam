@@ -371,9 +371,9 @@ public class TrashFragment extends BaseFragment implements TrashAdapter.OnTrashI
         // Set the restore button to blue color for Shahid Dark theme
         String currentTheme = sharedPreferencesManager.sharedPreferences.getString(com.shahid.cam.Constants.PREF_APP_THEME,
                 com.shahid.cam.Constants.DEFAULT_APP_THEME);
-        boolean isFadedNightTheme = "Shahid Dark".equals(currentTheme);
+        boolean isShahidNightTheme = "Shahid Dark".equals(currentTheme);
 
-        if (isFadedNightTheme && buttonRestoreSelected != null) {
+        if (isShahidNightTheme && buttonRestoreSelected != null) {
             // Use a blue color for restore button in Shahid Dark theme
             int blueColor = Color.parseColor("#4285F4"); // Google blue
             buttonRestoreSelected.setTextColor(blueColor);
@@ -636,9 +636,9 @@ public class TrashFragment extends BaseFragment implements TrashAdapter.OnTrashI
             // Set proper color based on theme
             String currentTheme = sharedPreferencesManager.sharedPreferences
                     .getString(com.shahid.cam.Constants.PREF_APP_THEME, com.shahid.cam.Constants.DEFAULT_APP_THEME);
-            boolean isFadedNightTheme = "Shahid Dark".equals(currentTheme);
+            boolean isShahidNightTheme = "Shahid Dark".equals(currentTheme);
 
-            if (isFadedNightTheme) {
+            if (isShahidNightTheme) {
                 // For Shahid Dark theme, use blue color
                 buttonRestoreSelected.setTextColor(Color.parseColor("#4285F4")); // Google blue
             } else {
@@ -653,9 +653,9 @@ public class TrashFragment extends BaseFragment implements TrashAdapter.OnTrashI
             // Check current theme to apply appropriate styling
             String currentTheme = sharedPreferencesManager.sharedPreferences
                     .getString(com.shahid.cam.Constants.PREF_APP_THEME, com.shahid.cam.Constants.DEFAULT_APP_THEME);
-            boolean isFadedNightTheme = "Shahid Dark".equals(currentTheme);
+            boolean isShahidNightTheme = "Shahid Dark".equals(currentTheme);
 
-            if (isFadedNightTheme) {
+            if (isShahidNightTheme) {
                 // For Shahid Dark theme, use darker blue for disabled state
                 buttonRestoreSelected.setTextColor(Color.parseColor("#2A4374")); // Darker blue
             }
@@ -1025,7 +1025,7 @@ public class TrashFragment extends BaseFragment implements TrashAdapter.OnTrashI
         String currentTheme = sharedPreferencesManager.sharedPreferences.getString(com.shahid.cam.Constants.PREF_APP_THEME,
                 com.shahid.cam.Constants.DEFAULT_APP_THEME);
         boolean isSnowVeilTheme = "Snow Veil".equals(currentTheme);
-        boolean isFadedNightTheme = "Shahid Dark".equals(currentTheme);
+        boolean isShahidNightTheme = "Shahid Dark".equals(currentTheme);
 
         int textColor = ContextCompat.getColor(requireContext(),
                 isSnowVeilTheme ? android.R.color.black : android.R.color.white);
@@ -1078,7 +1078,7 @@ public class TrashFragment extends BaseFragment implements TrashAdapter.OnTrashI
         dialog.show();
 
         // After dialog is shown, tint the radio buttons for Shahid Dark theme
-        if (isFadedNightTheme && dialog.getListView() != null) {
+        if (isShahidNightTheme && dialog.getListView() != null) {
             try {
                 // Force a small delay to ensure the ListView has been populated
                 new Handler(Looper.getMainLooper()).postDelayed(() -> {
@@ -1154,7 +1154,7 @@ public class TrashFragment extends BaseFragment implements TrashAdapter.OnTrashI
 
         // Highlight the Save button with blue for better visibility in Shahid Dark
         // theme
-        if (isFadedNightTheme && dialog.getButton(AlertDialog.BUTTON_POSITIVE) != null) {
+        if (isShahidNightTheme && dialog.getButton(AlertDialog.BUTTON_POSITIVE) != null) {
             dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#4285F4"));
         }
     }
@@ -1346,7 +1346,7 @@ public class TrashFragment extends BaseFragment implements TrashAdapter.OnTrashI
         String currentTheme = sharedPreferencesManager.sharedPreferences.getString(com.shahid.cam.Constants.PREF_APP_THEME,
                 com.shahid.cam.Constants.DEFAULT_APP_THEME);
         boolean isSnowVeilTheme = "Snow Veil".equals(currentTheme);
-        boolean isFadedNightTheme = "Shahid Dark".equals(currentTheme);
+        boolean isShahidNightTheme = "Shahid Dark".equals(currentTheme);
 
         if (isSnowVeilTheme) {
             // Set black text color for buttons in Snow Veil theme
@@ -1359,7 +1359,7 @@ public class TrashFragment extends BaseFragment implements TrashAdapter.OnTrashI
             if (dialog.getButton(AlertDialog.BUTTON_NEUTRAL) != null) {
                 dialog.getButton(AlertDialog.BUTTON_NEUTRAL).setTextColor(Color.BLACK);
             }
-        } else if (isFadedNightTheme) {
+        } else if (isShahidNightTheme) {
             // Set white text color for Shahid Dark theme buttons
             if (dialog.getButton(AlertDialog.BUTTON_POSITIVE) != null) {
                 dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.WHITE);
@@ -1482,8 +1482,8 @@ public class TrashFragment extends BaseFragment implements TrashAdapter.OnTrashI
 
         // Color the restore button specially for Shahid Dark theme
         String currentTheme = sharedPreferencesManager.sharedPreferences.getString(com.shahid.cam.Constants.PREF_APP_THEME, com.shahid.cam.Constants.DEFAULT_APP_THEME);
-        boolean isFadedNightTheme = "Shahid Dark".equals(currentTheme);
-        if (isFadedNightTheme && dialog.getButton(AlertDialog.BUTTON_POSITIVE) != null) {
+        boolean isShahidNightTheme = "Shahid Dark".equals(currentTheme);
+        if (isShahidNightTheme && dialog.getButton(AlertDialog.BUTTON_POSITIVE) != null) {
             dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#4285F4"));
         }
     }

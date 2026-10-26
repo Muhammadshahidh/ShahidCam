@@ -83,7 +83,7 @@ ShahidCam a été présenté dans les chaînes YouTube populaires comme <font co
 (Par défaut: %1$s)
 Astuce : Avec H.265 (HEVC), vous pouvez utiliser environ la moitié du débit de H.264 pour une qualité équivalente. Exemple : Pour FHD, utilisez 8 Mbps au lieu de 16 Mbps.</string>
     <string name="setting_watermark">Filigrane</string>
-    <string name="note_watermark">Sélectionner l\'option filigrane\n(Défaut: Horodatage avec Fadcam)</string>
+    <string name="note_watermark">Sélectionner l\'option filigrane\n(Défaut: Horodatage avec Shahidcam)</string>
     <string name="note_watermark_extra">Pour une sauvegarde rapide, choisissez \'Aucun\'. Ajouter un filigrane ? Ça vaut la peine d\'attendre, juste un peu plus pour traiter !</string>
     <string name="setting_location_title">Données localisation</string>
     <string name="note_location">Inclure les données de localisation dans le filigrane. \nNécessite le GPS activé \n(Défaut: Désactivé)</string>
@@ -2539,7 +2539,7 @@ Recommandé : 192000 bps, 48000 Hz pour la plupart des utilisateurs.</string>
 
 <string name="app_icon_alternative" translatable="false">Camera</string>
 
-<string name="app_icon_faded" translatable="false">0xFF0000</string>
+<string name="app_icon_shahid" translatable="false">0xFF0000</string>
 
 <string name="app_icon_palestine" translatable="false">I❤️Palestine</string>
 

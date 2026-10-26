@@ -48,9 +48,9 @@
         </h1>
         <!-- Header Actions (Notification + Profile) -->
         <div class="header-actions">
-            <!-- Fadex Notification Bell Icon -->
+            <!-- Shahidex Notification Bell Icon -->
             <div class="fadex-notification-container">
-                <button class="fadex-bell-btn" id="fadex-notification-bell" title="Fadex Notifications">
+                <button class="fadex-bell-btn" id="fadex-notification-bell" title="Shahidex Notifications">
                     <i class="fas fa-bell"></i>
                     <div class="fadex-badge" id="fadex-notification-badge">1</div>
                 </button>
@@ -64,7 +64,7 @@
         </div>
     </div>
 
-    <!-- Fadex Notification History Panel -->
+    <!-- Shahidex Notification History Panel -->
     <div class="fadex-notification-panel" id="fadexNotificationPanel">
         <div class="fadex-panel-header">
             <h3>Notifications</h3>
@@ -1032,7 +1032,7 @@
         </div>
     </div>
 
-    <!-- Fadex Notification Modal -->
+    <!-- Shahidex Notification Modal -->
     <div class="modal fadex-notification-modal" id="fadexNotificationModal">
         <div class="modal-content fadex-notification-content">
             <div class="fadex-notification-header">
@@ -1150,7 +1150,7 @@
     <script src="js/services/ShahidCamFragLoader.js?v=1.0.0"></script>
     <script src="js/services/ApiService.js?v=2.8.0"></script>
     <script src="js/services/HlsService.js?v=2.7.0"></script>
-    <script src="js/services/FadexNotificationManager.js?v=2.5.0"></script>
+    <script src="js/services/ShahidexNotificationManager.js?v=2.5.0"></script>
     <script src="js/models/ServerStatus.js?v=2.5.0"></script>
     <script src="js/viewmodels/DashboardViewModel.js?v=2.5.0"></script>
     
@@ -3891,13 +3891,13 @@
                     'position:fixed', 'inset:0', 'z-index:11000',
                     'display:flex', 'align-items:center', 'justify-content:center', 'padding:16px',
                     'background:rgba(0,0,0,0.7)', 'backdrop-filter:blur(6px)',
-                    'animation:cfFadeIn 0.18s ease-out',
+                    'animation:cfShahideIn 0.18s ease-out',
                     'font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif'
                 ].join(';');
 
                 el.innerHTML = `
                   <style>
-                    @keyframes cfFadeIn  { from{opacity:0}           to{opacity:1} }
+                    @keyframes cfShahideIn  { from{opacity:0}           to{opacity:1} }
                     @keyframes cfScaleIn { from{opacity:0;transform:scale(0.95)} to{opacity:1;transform:scale(1)} }
                     #confirm-overlay-dialog { animation: cfScaleIn 0.18s ease-out; }
                     #cf-confirm-btn:hover:not(:disabled) {
@@ -5258,8 +5258,8 @@
         // ===== FADEX NOTIFICATION MANAGER INITIALIZATION =====
         document.addEventListener('DOMContentLoaded', () => {
             try {
-                // Initialize Fadex Notification Manager
-                const notificationManager = initFadexNotificationManager();
+                // Initialize Shahidex Notification Manager
+                const notificationManager = initShahidexNotificationManager();
                 
                 // Store globally for HTML onclick handlers
                 window.fadexManager = notificationManager;
@@ -5293,7 +5293,7 @@
                     panelRefreshBtn.addEventListener('click', (e) => {
                         e.stopPropagation();
                         panelRefreshBtn.classList.add('loading');
-                        console.log('🔄 [Fadex Refresh] User triggered manual refresh');
+                        console.log('🔄 [Shahidex Refresh] User triggered manual refresh');
                         notificationManager.checkForUpdates().finally(() => {
                             panelRefreshBtn.classList.remove('loading');
                         });
@@ -5333,12 +5333,12 @@
                 // In DEBUG mode: Local file is tried first (/fadex/pushnotification.jsonc)
                 // In PRODUCTION mode: GitHub URL is used only
                 const mode = NotificationConstants.DEBUG_MODE ? 'DEBUG (local + GitHub fallback)' : 'PRODUCTION (GitHub only)';
-                console.log(`✅ Fadex Notification Manager initialized - Mode: ${mode}`);
+                console.log(`✅ Shahidex Notification Manager initialized - Mode: ${mode}`);
 
                 // Start notification polling
                 notificationManager.start();
             } catch (error) {
-                console.error('❌ Failed to initialize Fadex Notification Manager:', error);
+                console.error('❌ Failed to initialize Shahidex Notification Manager:', error);
             }
         });
 

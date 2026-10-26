@@ -311,7 +311,7 @@
     <string name="discord_title">Сервер Discord</string>
     <string name="thankyou_msg">Спасибо за использование ShahidCam!</string>
     <string name="settings_title">Настройки</string>
-    <string name="array_watermark_time_shahidcam">Время с Fadcam</string>
+    <string name="array_watermark_time_shahidcam">Время с Shahidcam</string>
     <string name="array_watermark_timeonly">Временная метка</string>
     <string name="array_watermark_nomark">Без водяного знака</string>
     <string name="watermark_preview_funny">По-настоящему? :( \n    ＞﹏＜</string>
@@ -1022,7 +1022,7 @@
     <string name="app_icon_dialog_title">Выбрать иконку приложения</string>
     <string name="app_icon_default" translatable="false">ShahidCam</string>
     <string name="app_icon_alternative" translatable="false">Camera</string>
-    <string name="app_icon_faded" translatable="false">0xFF0000</string>
+    <string name="app_icon_shahid" translatable="false">0xFF0000</string>
     <string name="app_icon_palestine" translatable="false">I❤️Palestine</string>
     <string name="app_icon_pakistan" translatable="false">ShahidCam</string>
     <string name="app_icon_shahidlabs" translatable="false">CyberShadowPK Lab</string>

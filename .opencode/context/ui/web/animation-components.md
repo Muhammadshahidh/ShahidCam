@@ -115,8 +115,8 @@ modalExit: 250ms ease-in [Y0→+40, α1→0]
   to { transform: translateX(0); opacity: 1; }
 }
 
-.overlay { animation: overlayFade 300ms ease-out; }
-@keyframes overlayFade {
+.overlay { animation: overlayShahide 300ms ease-out; }
+@keyframes overlayShahide {
   from { opacity: 0; backdrop-filter: blur(0); }
   to { opacity: 1; backdrop-filter: blur(4px); }
 }

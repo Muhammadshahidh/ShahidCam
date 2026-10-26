@@ -85,7 +85,7 @@ public class KoFiSupportBottomSheet extends BottomSheetDialogFragment {
         View layoutKoFiButtonRow = view.findViewById(R.id.layoutKoFiButtonRow);
         if (layoutKoFiButtonRow != null) {
             layoutKoFiButtonRow.setOnClickListener(v -> {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://ko-fi.com/fadedx"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://ko-fi.com/shahidx"));
                 startActivity(browserIntent);
             });
         }

@@ -156,13 +156,13 @@ useEffect(() => {
 
 ## Step 7: Add Text Overlays
 
-Fade text in/out at specific scroll positions:
+Shahide text in/out at specific scroll positions:
 
 ```tsx
 <motion.div
   style={{
     opacity: useTransform(scrollYProgress, 
-      [0.25, 0.30, 0.35], // Fade in 25-30%, out 35%
+      [0.25, 0.30, 0.35], // Shahide in 25-30%, out 35%
       [0, 1, 0]
     )
   }}

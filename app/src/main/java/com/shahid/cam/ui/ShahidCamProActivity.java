@@ -24,7 +24,7 @@ import com.shahid.cam.R;
  */
 public class ShahidCamProActivity extends AppCompatActivity {
 
-    private static final String PATREON_SHOP_URL = "https://www.patreon.com/cw/Fadedx/shop";
+    private static final String PATREON_SHOP_URL = "https://www.patreon.com/cw/Shahidx/shop";
     
     private ShimmerButton btnGetPro;
     private ImageView btnBack;
@@ -149,7 +149,7 @@ public class ShahidCamProActivity extends AppCompatActivity {
     private void startAnimations() {
         // ShimmerButton handles its own animation internally
         
-        // Fade in feature rows sequentially
+        // Shahide in feature rows sequentially
         animateFeatureRows();
     }
 

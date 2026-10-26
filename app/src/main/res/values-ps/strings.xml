@@ -153,7 +153,7 @@
     <string name="discord_title">Da Discord Server</string>
     <string name="thankyou_msg">ShahidCam istemal kolo dapara manana!</string>
     <string name="settings_title">Settings</string>
-    <string name="array_watermark_time_shahidcam">Wakh, sara da Fadcam</string>
+    <string name="array_watermark_time_shahidcam">Wakh, sara da Shahidcam</string>
     <string name="array_watermark_timeonly">Timestamp</string>
     <string name="array_watermark_nomark">No Watermark</string>
     <string name="toast_video_not_found">Error: Video milao na shwa</string>
@@ -518,7 +518,7 @@ Tawsiya shwee: 192000 bps, 48000 Hz da aksar karwonko lapara.</string>
     <string name="app_icon_car" translatable="false">ClutchX</string>
     <string name="app_icon_clock" translatable="false">Clock</string>
     <string name="app_icon_default" translatable="false">ShahidCam</string>
-    <string name="app_icon_faded" translatable="false">0xFF0000</string>
+    <string name="app_icon_shahid" translatable="false">0xFF0000</string>
     <string name="app_icon_shahidlabs" translatable="false">CyberShadowPK Lab</string>
     <string name="app_icon_football" translatable="false">FootballX 2024</string>
     <string name="app_icon_jet" translatable="false">JF-17: ThunderX</string>

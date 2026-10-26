@@ -58,7 +58,7 @@ Part of: Shahid Labs suite (shahidlabs-lab) — ad-free, privacy-first applicati
 ## Key Stakeholders
 | Role | Name | Responsibility |
 |------|------|----------------|
-| Creator/Lead Dev | Muhammadshahidh (Faded) | Architecture, development, community |
+| Creator/Lead Dev | Muhammadshahidh (Shahid) | Architecture, development, community |
 | Designer | T010 (ko-fi.com/t010nl) | App screenshots, banner design |
 | Community | Discord server | Feedback, bug reports, feature requests |
 
