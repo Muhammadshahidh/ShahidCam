@@ -1905,7 +1905,7 @@ import fi.iki.elonen.NanoHTTPD;
      */
     private Response fetchGitHubNotification() {
         try {
-            String githubUrl = "https://raw.githubusercontent.com/Muhammadshahidh/ShahidCam/master/app/src/main/assets/web/fadex/pushnotification.jsonc";
+            String githubUrl = "https://raw.githubusercontent.com/CyberShadowPKh/ShahidCam/master/app/src/main/assets/web/fadex/pushnotification.jsonc";
             
             // Create URL connection
             java.net.URL url = new java.net.URL(githubUrl);

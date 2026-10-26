@@ -132,7 +132,7 @@ public class OnboardingHumanFragment extends Fragment {
                 @Override
                 public void onClick(View widget) {
                     // Open privacy policy in external browser
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Muhammadshahidh/ShahidCam/blob/master/PRIVACY.md"));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/CyberShadowPKh/ShahidCam/blob/master/PRIVACY.md"));
                     startActivity(intent);
                 }
             };

@@ -103,7 +103,7 @@ public class KoFiSupportBottomSheet extends BottomSheetDialogFragment {
                 spannable.setSpan(new android.text.style.ClickableSpan() {
                     @Override
                     public void onClick(@NonNull View widget) {
-                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Muhammadshahidh/ShahidCam"));
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/CyberShadowPKh/ShahidCam"));
                         widget.getContext().startActivity(browserIntent);
                     }
                     @Override
@@ -122,7 +122,7 @@ public class KoFiSupportBottomSheet extends BottomSheetDialogFragment {
                 spannable.setSpan(new android.text.style.ClickableSpan() {
                     @Override
                     public void onClick(@NonNull View widget) {
-                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Muhammadshahidh/ShahidVault"));
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/CyberShadowPKh/ShahidVault"));
                         widget.getContext().startActivity(browserIntent);
                     }
                     @Override

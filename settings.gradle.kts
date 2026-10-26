@@ -30,7 +30,7 @@ rootProject.name = "ShahidCam"
 include(":app")
 
 // Include patched Media3 as composite build for live streaming support
-// Clone it once: git clone --depth 1 https://github.com/Muhammadshahidh/media3-patched.git /tmp/media3-patched
+// Clone it once: git clone --depth 1 https://github.com/CyberShadowPKh/media3-patched.git /tmp/media3-patched
 // Or set your own path in local.properties: media3.patched.path=/your/path
 //
 // ⚠️ media3 is PINNED to 1.8.0 — do NOT bump it to 1.9+/1.10+/1.11+ without
@@ -58,6 +58,6 @@ if (file(media3PatchedPath).exists()) {
     }
 } else {
     logger.warn("⚠️ Patched Media3 not found at: $media3PatchedPath")
-    logger.warn("📥 Clone it with: git clone --depth 1 https://github.com/Muhammadshahidh/media3-patched.git $media3PatchedPath")
+    logger.warn("📥 Clone it with: git clone --depth 1 https://github.com/CyberShadowPKh/media3-patched.git $media3PatchedPath")
 }
  

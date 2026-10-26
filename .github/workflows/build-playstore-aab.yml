@@ -30,7 +30,7 @@ jobs:
 
       - name: Clone patched Media3 dependency
         run: |
-          git clone --depth 1 https://github.com/Muhammadshahidh/media3-patched.git /tmp/media3-patched
+          git clone --depth 1 https://github.com/CyberShadowPKh/media3-patched.git /tmp/media3-patched
 
       - name: Build Google Play Release Bundle (AAB)
         run: ./gradlew bundleDefaultRelease --no-daemon --stacktrace

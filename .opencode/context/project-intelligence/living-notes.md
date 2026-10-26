@@ -35,9 +35,9 @@
 ## Open Questions
 | Question | Stakeholders | Status | Next Action |
 |----------|--------------|--------|-------------|
-| iOS/Desktop version architecture | Muhammadshahidh | Open | Define cross-platform strategy |
-| Scheduled recording implementation | Muhammadshahidh | Open | Design WorkManager-based scheduler |
-| ShahidEditor Mini video editor scope | Muhammadshahidh | Open | Define MVP feature set |
+| iOS/Desktop version architecture | CyberShadowPKh | Open | Define cross-platform strategy |
+| Scheduled recording implementation | CyberShadowPKh | Open | Design WorkManager-based scheduler |
+| ShahidEditor Mini video editor scope | CyberShadowPKh | Open | Define MVP feature set |
 
 ## Known Issues
 | Issue | Severity | Workaround | Status |
@@ -79,10 +79,10 @@
 ## Active Projects
 | Project | Goal | Owner | Timeline |
 |---------|------|-------|----------|
-| v3.0.0 release | Stable release with all core features | Muhammadshahidh | Current |
-| Scheduled recording | Auto start/stop at set times | Muhammadshahidh | Upcoming |
-| ShahidEditor Mini | In-app video editor | Muhammadshahidh | Planned |
-| iOS/Desktop version | Cross-platform expansion | Muhammadshahidh | Planned |
+| v3.0.0 release | Stable release with all core features | CyberShadowPKh | Current |
+| Scheduled recording | Auto start/stop at set times | CyberShadowPKh | Upcoming |
+| ShahidEditor Mini | In-app video editor | CyberShadowPKh | Planned |
+| iOS/Desktop version | Cross-platform expansion | CyberShadowPKh | Planned |
 
 ## Archive (Resolved Items)
 ### Resolved: Migrate from ExoPlayer 2.x to Media3
