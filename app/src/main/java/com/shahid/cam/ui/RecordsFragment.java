@@ -5321,7 +5321,7 @@ public class RecordsFragment extends BaseFragment implements
     }
 
     /**
-     * Shahides the AppLock overlay in or out with animation.
+     * Fades the AppLock overlay in or out with animation.
      * 
      * @param show true to fade in (show), false to fade out (hide)
      */
@@ -6298,7 +6298,7 @@ public class RecordsFragment extends BaseFragment implements
         }, 500);
     }
 
-    // (No delayed hide) Shahide animation helper
+    // (No delayed hide) Fade animation helper
     private void showNavigationFab() {
         if (fabScrollNavigation == null)
             return;

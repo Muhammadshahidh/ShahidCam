@@ -115,19 +115,19 @@ public class DockRevealAnimator {
         slideUp.setInterpolator(premiumCurve);
 
         // 4. Icons / labels fade in after the pill is mostly expanded
-        ObjectAnimator iconsShahide = navView != null
+        ObjectAnimator iconsFade = navView != null
                 ? ObjectAnimator.ofFloat(navView, View.ALPHA, 0f, 1f)
                 : null;
-        if (iconsShahide != null) {
-            iconsShahide.setDuration(ICONS_DURATION);
+        if (iconsFade != null) {
+            iconsFade.setDuration(ICONS_DURATION);
         }
 
         // ── Animator set ──────────────────────────────────────────────────
         AnimatorSet set = new AnimatorSet();
 
-        if (iconsShahide != null) {
+        if (iconsFade != null) {
             set.play(expandX).with(alphaIn).with(slideUp);
-            set.play(iconsShahide).after(ICONS_DELAY);
+            set.play(iconsFade).after(ICONS_DELAY);
         } else {
             set.playTogether(expandX, alphaIn, slideUp);
         }

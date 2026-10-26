@@ -149,7 +149,7 @@ public class ShahidCamProActivity extends AppCompatActivity {
     private void startAnimations() {
         // ShimmerButton handles its own animation internally
         
-        // Shahide in feature rows sequentially
+        // Fade in feature rows sequentially
         animateFeatureRows();
     }
 

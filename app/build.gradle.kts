@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.shahid.cam"
+    namespace = "com.cybershadowpk.shahidcam"
     compileSdk = 36
 
     val isBundle = gradle.startParameter.taskNames.any { it.lowercase().contains("bundle") }
@@ -28,7 +28,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.shahid.cam"
+        applicationId = "com.cybershadowpk.shahidcam"
         minSdk = 24
         targetSdk = 36
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -65,7 +65,7 @@ android {
 
     buildTypes {
         debug {
-            applicationIdSuffix = ".beta"
+            applicationIdSuffix ""
             isDebuggable = true
             versionNameSuffix = "-beta10.6" // Increment the beta version suffix for each release. Use `beta1` for the first beta release, then `beta2`, etc.
             resValue("string", "app_name", "ShahidCam")

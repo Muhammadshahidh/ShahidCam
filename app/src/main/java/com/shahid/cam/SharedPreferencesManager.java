@@ -3199,7 +3199,7 @@ public class SharedPreferencesManager {
 
     // -------------- ShahidRec (Screen Recording) Preferences End --------------
 
-    // -------------- Shahidex Notification Preferences Start --------------
+    // -------------- Fadex Notification Preferences Start --------------
     private static final String PREF_NOTIFICATION_HISTORY = "fadex_notification_history";
     private static final long NOTIFICATION_CACHE_DURATION_MS = 30 * 24 * 60 * 60 * 1000L; // 30 days
 
@@ -3272,7 +3272,7 @@ public class SharedPreferencesManager {
             .apply();
     }
 
-    // -------------- Shahidex Notification Preferences End --------------
+    // -------------- Fadex Notification Preferences End --------------
 
     // -------------- Generic Boolean Preferences (for new features badges) ------
 

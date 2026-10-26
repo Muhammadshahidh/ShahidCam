@@ -81,7 +81,7 @@ public class AnimatedMaterialButton extends MaterialButton {
 
     /**
      * Crossfades the button icon from the current icon to {@code newIcon}.
-     * Shahides the current icon out, swaps drawables, then fades the new icon in.
+     * Fades the current icon out, swaps drawables, then fades the new icon in.
      *
      * @param newIcon    The new icon drawable (may be null to clear the icon)
      * @param durationMs Total duration; each half-cycle takes durationMs/2 ms
