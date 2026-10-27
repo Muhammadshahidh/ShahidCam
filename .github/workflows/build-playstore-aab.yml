@@ -33,7 +33,7 @@ jobs:
           git clone --depth 1 https://github.com/anonfaded/media3-patched.git /tmp/media3-patched
 
       - name: Build Google Play Release Bundle (AAB)
-        run: ./gradlew bundleDefaultRelease --no-daemon --stacktrace
+        run: for i in 1 2 3; do ./gradlew bundleDefaultRelease --no-daemon --stacktrace && break || (echo "Retrying in 10s..." && sleep 10); done
 
       - name: Upload Google Play Release AAB Artifact
         uses: actions/upload-artifact@v4
