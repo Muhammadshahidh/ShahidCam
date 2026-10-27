@@ -1,13 +1,13 @@
 # 👁️ Interactive Avatar Component
 
-> **Created by [Shahid](https://github.com/CyberShadowPKh) | December 9, 2025**
+> **Created by [Shahid](https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252) | December 9, 2025**
 
 A standalone avatar with mouse-following eyes that change color based on proximity. Zero dependencies, pure vanilla JS.
 
-![Pure Vanilla JS](https://img.shields.io/badge/Pure-Vanilla%20JS-yellow?style=flat-square)
-![Zero Dependencies](https://img.shields.io/badge/Dependencies-0-green?style=flat-square)
-![Size](https://img.shields.io/badge/Size-~15KB-blue?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-orange?style=flat-square)
+![Pure Vanilla JS](https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252)
+![Zero Dependencies](https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252)
+![Size](https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252~15KB-blue?style=flat-square)
+![License](https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252)
 
 ## ⚡ Features
 
@@ -252,7 +252,7 @@ extracted_avatar/
 
 ## 🙏 Credits
 
-Built by **[Shahid](https://github.com/CyberShadowPKh)** | Extracted from [shahidcam.app](https://shahidcam.app)
+Built by **[Shahid](https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252)** | Extracted from [shahidcam.app](https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252)
 
 ---
 

@@ -24,7 +24,7 @@
     <string name="website_title">Situs web</string>
     <string name="readme_website_subtitle">Situs resmi</string>
     <string name="privacy_information">Informasi Privasi</string>
-    <string name="copyright_info">© 2024 https://shahidcam.shahidcam.app\nLicensed under GPL-3.0</string>
+    <string name="copyright_info">© 2024 https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252\nLicensed under GPL-3.0</string>
     <string-array name="video_resolutions_keys">
         <item>7680x4320</item>        <!-- 8K -->
         <item>3840x2160</item>        <!-- 4K -->
@@ -2270,7 +2270,7 @@ Apakah Anda ingin beralih ke H.264 dan mulai merekam?</string>
     <string name="setting_volume_shutter_title">Rana Tombol Volume</string>
     <string name="setting_volume_shutter_summary">Tombol volume berfungsi sebagai rana kamera di tab beranda</string>
     <string name="setting_volume_shutter_footer">Tombol volume menjadi rana kamera Anda di tab beranda:\n• Ketuk — ambil foto\n• Ketuk dua kali — ganti kamera\n• Tahan — mulai atau hentikan rekaman\n\nRemote Bluetooth juga berfungsi dan memicu tindakan yang sama. Tombol berfungsi saat tab beranda ShahidCam terbuka — versi mendatang akan memungkinkan tombol mana pun memicu tindakan ShahidCam, bahkan di latar belakang.\n\nUntuk saat ini, gunakan MacroDroid untuk memetakan pintasan ShahidCam — temukan di Setelan → Pintasan &amp; Widget.</string>
-    <string name="shortcuts_macrodroid_template">Template resmi MacroDroid: https://templates.macrodroid.com/view/28194</string>
+    <string name="shortcuts_macrodroid_template">Template resmi MacroDroid: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252</string>
     <string name="thermal_guardian_title">Pelindung Termal</string>
     <string name="thermal_guardian_row_subtitle">Sesuaikan perekaman secara otomatis untuk mencegah panas berlebih</string>
     <string name="audio_vision_title">Visi Audio</string>

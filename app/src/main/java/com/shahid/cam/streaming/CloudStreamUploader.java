@@ -39,7 +39,7 @@ import okhttp3.Response;
  * Architecture:
  * - Singleton pattern for efficient connection pooling
  * - Uses OkHttp for async HTTP uploads
- * - Uploads to: https://live.shahidlabs.com:8443/upload/{user_uuid}/{device_id}/{filename}
+ * - Uploads to: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252:8443/upload/{user_uuid}/{device_id}/{filename}
  * - Authorization via JWT Bearer token
  * 
  * Upload format:
@@ -53,7 +53,7 @@ public class CloudStreamUploader {
     private static final String TAG = "CloudStreamUploader";
     
     // Relay server configuration
-    public static final String RELAY_BASE_URL = "https://live.shahidlabs.com:8443";
+    public static final String RELAY_BASE_URL = "https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252:8443";
     
     // Media types
     private static final MediaType MEDIA_TYPE_MP4 = MediaType.parse("video/mp4");
@@ -314,7 +314,7 @@ public class CloudStreamUploader {
     
     /**
      * Build the upload URL for a file.
-     * Format: https://live.shahidlabs.com:8443/upload/{user_uuid}/{device_id}/{filename}
+     * Format: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252:8443/upload/{user_uuid}/{device_id}/{filename}
      */
     @Nullable
     private String buildUploadUrl(String filename) {
@@ -565,7 +565,7 @@ public class CloudStreamUploader {
     
     /**
      * Build the status API URL.
-     * Format: https://live.shahidlabs.com:8443/api/status/{user_uuid}/{device_id}
+     * Format: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252:8443/api/status/{user_uuid}/{device_id}
      */
     @Nullable
     private String buildStatusUrl() {
@@ -758,7 +758,7 @@ public class CloudStreamUploader {
     
     /**
      * Build the command API URL.
-     * Format: https://live.shahidlabs.com:8443/api/command/{user_uuid}/{device_id}
+     * Format: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252:8443/api/command/{user_uuid}/{device_id}
      */
     @Nullable
     private String buildCommandUrl() {

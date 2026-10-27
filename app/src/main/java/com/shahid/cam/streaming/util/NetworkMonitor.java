@@ -33,8 +33,8 @@ public class NetworkMonitor {
     
     // Test URLs (small files for quick testing)
     private static final String[] TEST_URLS = {
-        "https://www.google.com/favicon.ico",
-        "https://www.github.com/favicon.ico"
+        "https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252",
+        "https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252"
     };
     
     private final ExecutorService executorService;

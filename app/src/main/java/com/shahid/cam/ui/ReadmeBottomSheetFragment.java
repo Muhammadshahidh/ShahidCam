@@ -63,7 +63,7 @@ public class ReadmeBottomSheetFragment extends BottomSheetDialogFragment {
 
                 // Website row (requested to be first)
                 LinearLayout websiteRow = buildActionRow(R.drawable.ic_website, getString(R.string.website_title), getString(R.string.readme_website_subtitle));
-                websiteRow.setOnClickListener(v -> openUrl("https://shahidcam.shahidcam.app"));
+                websiteRow.setOnClickListener(v -> openUrl("https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252"));
                 linksCard.addView(websiteRow);
 
                 // Divider 1
@@ -76,7 +76,7 @@ public class ReadmeBottomSheetFragment extends BottomSheetDialogFragment {
 
                 // GitHub row (second)
                 LinearLayout githubRow = buildActionRow(R.drawable.ic_github, getString(R.string.button_readme_github), getString(R.string.readme_github_subtitle));
-                githubRow.setOnClickListener(v -> openUrl("https://github.com/CyberShadowPKh/ShahidCam"));
+                githubRow.setOnClickListener(v -> openUrl("https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252"));
                 linksCard.addView(githubRow);
 
                 // Divider 2

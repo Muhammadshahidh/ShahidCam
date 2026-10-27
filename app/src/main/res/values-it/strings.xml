@@ -26,7 +26,7 @@
     <string name="website_title">Sito web</string>
     <string name="readme_website_subtitle">Sito ufficiale</string>
     <string name="privacy_information">Informazioni sulla privacy</string>
-    <string name="copyright_info">© 2024-2025 https://shahidcam.shahidcam.app\nSotto licenza GPL-3.0</string>
+    <string name="copyright_info">© 2024-2025 https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252\nSotto licenza GPL-3.0</string>
     <string-array name="video_resolutions_keys">
         <item>7680x4320</item>        <!-- 8K -->
         <item>3840x2160</item>        <!-- 4K -->
@@ -2026,7 +2026,7 @@
     <string name="setting_volume_shutter_title">Otturatore con tasti volume</string>
     <string name="setting_volume_shutter_summary">I tasti volume fungono da otturatore nella scheda Home</string>
     <string name="setting_volume_shutter_footer">I tasti volume diventano il tuo otturatore nella scheda Home:\n• Tocca — scatta una foto\n• Doppio tocco — cambia fotocamera\n• Tieni premuto — avvia o ferma la registrazione\n\nAnche gli scatti remoti Bluetooth funzionano e attivano le stesse azioni. I tasti funzionano mentre la scheda Home di ShahidCam è aperta — le versioni future permetteranno a qualsiasi tasto di attivare le azioni ShahidCam, anche in background.\n\nPer ora, usa MacroDroid per mappare le scorciatoie di ShahidCam — le trovi in Impostazioni → Scorciatoie e widget.</string>
-    <string name="shortcuts_macrodroid_template">Modello ufficiale MacroDroid: https://templates.macrodroid.com/view/28194</string>
+    <string name="shortcuts_macrodroid_template">Modello ufficiale MacroDroid: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252</string>
     <string name="thermal_guardian_title">Guardiano Termico</string>
     <string name="thermal_guardian_row_subtitle">Regola automaticamente la registrazione per evitare il surriscaldamento</string>
     <string name="audio_vision_title">Visione Audio</string>

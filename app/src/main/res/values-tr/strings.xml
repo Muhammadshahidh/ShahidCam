@@ -17,7 +17,7 @@
     <string name="send_email">E-posta gönder</string>
     <string name="join_community">Yardım, fikir paylaşımı ve gelecek uygulama güncellemeleri için topluluğa katıl</string>
     <string name="privacy_information">Gizlilik Bilgileri</string>
-    <string name="copyright_info"> 2024 https://shahidcam.shahidcam.app\nGPL-3.0 lisansı altında</string>
+    <string name="copyright_info"> 2024 https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252\nGPL-3.0 lisansı altında</string>
     <string-array name="video_resolutions_keys">
         <item>7680x4320</item>
         <!-- 8K -->
@@ -2319,7 +2319,7 @@ En sorunsuz oynatma deneyimi için VLC gibi harici bir oynatıcı kullanabilirsi
     <string name="setting_volume_shutter_title">Ses Tuşu Deklanşörü</string>
     <string name="setting_volume_shutter_summary">Ses tuşları ana sekmede kamera deklanşörü görevi görür</string>
     <string name="setting_volume_shutter_footer">Ses tuşları ana sekmede deklanşörünüz olur:\n• Dokun — fotoğraf çek\n• Çift dokun — kamerayı değiştir\n• Basılı tut — kaydı başlat veya durdur\n\nBluetooth uzaktan deklanşörler de çalışır ve aynı eylemleri tetikler. Tuşlar ShahidCam ana sekmesi açıkken çalışır — gelecek sürümler herhangi bir tuşun ShahidCam eylemlerini arka planda bile tetiklemesini sağlayacak.\n\nŞimdilik ShahidCam kısayollarını eşlemek için MacroDroid kullanın — bunları Ayarlar → Kısayollar ve Widget\'lar bölümünde bulabilirsiniz.</string>
-    <string name="shortcuts_macrodroid_template">Resmi MacroDroid şablonu: https://templates.macrodroid.com/view/28194</string>
+    <string name="shortcuts_macrodroid_template">Resmi MacroDroid şablonu: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252</string>
     <string name="thermal_guardian_title">Isı Koruyucu</string>
     <string name="thermal_guardian_row_subtitle">Aşırı ısınmayı önlemek için kaydı otomatik ayarla</string>
     <string name="audio_vision_title">Ses Görüşü</string>

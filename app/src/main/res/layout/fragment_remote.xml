@@ -1049,7 +1049,7 @@
                         android:id="@+id/root_url_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="http://---.---.---.---:----/"
+                        android:text="https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252:----/"
                         android:textSize="12sp"
                         android:layout_marginTop="2dp"
                         android:textColor="@android:color/darker_gray"

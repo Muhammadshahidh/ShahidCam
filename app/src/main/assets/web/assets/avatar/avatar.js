@@ -1,6 +1,6 @@
 /**
  * Interactive Avatar Component
- * Created by Shahid - https://github.com/CyberShadowPKh
+ * Created by Shahid - https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252
  * December 9, 2025
  */
 

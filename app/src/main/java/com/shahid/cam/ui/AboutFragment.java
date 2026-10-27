@@ -261,7 +261,7 @@ public class AboutFragment extends BaseFragment {
                 spannable.setSpan(new android.text.style.ClickableSpan() {
                     @Override
                     public void onClick(@NonNull View widget) {
-                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/shahidlabs-lab"));
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252"));
                         widget.getContext().startActivity(browserIntent);
                     }
                     @Override
@@ -307,7 +307,7 @@ public class AboutFragment extends BaseFragment {
                     .append("<font color='" + answerColorHex + "'>").append(answers[i]).append("</font><br><br>");
         }
         privacyInfoContent.setText(Html.fromHtml(qnaContent.toString(), Html.FROM_HTML_MODE_LEGACY));
-        sourceCodeButton.setOnClickListener(v -> openUrl("https://github.com/shahidlabs-lab/"));
+        sourceCodeButton.setOnClickListener(v -> openUrl("https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252"));
         donateButton.setOnClickListener(v -> {
             KoFiSupportBottomSheet bottomSheet = new KoFiSupportBottomSheet();
             bottomSheet.show(getParentFragmentManager(), "KoFiSupportBottomSheet");

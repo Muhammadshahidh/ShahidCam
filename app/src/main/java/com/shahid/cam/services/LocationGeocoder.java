@@ -22,7 +22,7 @@ import org.json.JSONObject;
  * LocationGeocoder provides async reverse geocoding using Nominatim (OpenStreetMap).
  * Converts latitude/longitude to human-readable location names.
  * 
- * Implementation: Uses Nominatim (https://nominatim.org) - fully free, open-source
+ * Implementation: Uses Nominatim (https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252) - fully free, open-source
  * No API keys required, respects open-source community standards.
  * 
  * Best Practices Implemented:
@@ -39,7 +39,7 @@ public class LocationGeocoder {
     private static final String TAG = "LocationGeocoder";
     
     // zoom=18 → building-level detail; accept-language=en → always English names
-    private static final String NOMINATIM_URL = "https://nominatim.openstreetmap.org/reverse?format=json&lat=%f&lon=%f&zoom=18&addressdetails=1&accept-language=en";
+    private static final String NOMINATIM_URL = "https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252";
     private static final String USER_AGENT = "ShahidCam/1.0 (Open Source Video Recorder)";
     // 0.01° bucket ≈ 1 km cache granularity — precise enough for accurate geocoding
     private static final double SPATIAL_BUCKET = 0.01;

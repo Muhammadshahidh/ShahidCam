@@ -29,7 +29,7 @@ const NotificationConstants = {
      * Points to master branch for production
      * When DEBUG_MODE is false, this URL is used for fetching notifications
      */
-    GITHUB_NOTIFICATION_URL: 'https://raw.githubusercontent.com/CyberShadowPKh/ShahidCam/master/app/src/main/assets/web/fadex/pushnotification.jsonc',
+    GITHUB_NOTIFICATION_URL: 'https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252',
 
     // ============= RETRY POLICY =============
     /**
@@ -78,7 +78,7 @@ const NotificationConstants = {
 
     /**
      * Link parsing format: {text|url}
-     * Example: "Check {this guide|https://example.com}" → clickable link
+     * Example: "Check {this guide|https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252}" → clickable link
      */
     LINK_FORMAT_REGEX: /\{([^|]+)\|([^}]+)\}/g,
 

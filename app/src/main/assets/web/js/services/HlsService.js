@@ -238,7 +238,7 @@ class HlsService {
     
     /**
      * Attempt to recover from media errors using HLS.js built-in recovery.
-     * Based on HLS.js documentation: https://github.com/video-dev/hls.js/blob/master/docs/API.md
+     * Based on HLS.js documentation: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252
      * @param {Object} data - Error data
      */
     attemptMediaErrorRecovery(data) {

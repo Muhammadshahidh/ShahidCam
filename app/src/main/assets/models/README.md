@@ -13,10 +13,10 @@ Expected path in app assets:
 Use TensorFlow Lite EfficientDet-Lite1 (metadata) from TF Hub.
 
 TF Hub page:
-- https://tfhub.dev/tensorflow/lite-model/efficientdet/lite1/detection/metadata/1
+- https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252
 
 Direct TFLite download:
-- https://tfhub.dev/tensorflow/lite-model/efficientdet/lite1/detection/metadata/1?lite-format=tflite
+- https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252
 
 ## Notes
 

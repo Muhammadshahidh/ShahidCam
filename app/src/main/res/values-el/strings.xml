@@ -16,7 +16,7 @@
     <string name="website_title">Ιστοσελίδα</string>
     <string name="readme_website_subtitle">Επίσημη ιστοσελίδα</string>
     <string name="privacy_information">Πληροφορίες Ιδιωτικότητας</string>
-    <string name="copyright_info"> 2024-2025 https://shahidcam.shahidcam.app\nLicensed under GPL-3.0</string>
+    <string name="copyright_info"> 2024-2025 https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252\nLicensed under GPL-3.0</string>
     <string-array name="video_resolutions_keys">
         <item>7680x4320</item>        <!-- 8K -->        <item>3840x2160</item>        <!-- 4K -->        <item>2560x1440</item>        <!-- 2K -->        <item>1920x1080</item>        <!-- FHD -->        <item>1280x720</item>        <!-- HD -->        <item>640x480</item>        <!-- SD -->        <item>720x480</item>        <!-- SD -->        <item>480x360</item>        <!-- SD -->    </string-array>
     <string-array name="video_resolutions_values">
@@ -2147,7 +2147,7 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="setting_volume_shutter_title">Σκανδάλη πλήκτρων έντασης</string>
     <string name="setting_volume_shutter_summary">Τα πλήκτρα έντασης λειτουργούν ως κλείστρο κάμερας στην αρχική καρτέλα</string>
     <string name="setting_volume_shutter_footer">Τα πλήκτρα έντασης γίνονται το κλείστρο σας στην αρχική καρτέλα:\n• Πάτημα — λήψη φωτογραφίας\n• Διπλό πάτημα — εναλλαγή κάμερας\n• Παρατεταμένο πάτημα — έναρξη ή διακοπή εγγραφής\n\nΤα τηλεχειριστήρια Bluetooth λειτουργούν επίσης και ενεργοποιούν τις ίδιες ενέργειες. Τα πλήκτρα λειτουργούν όσο η αρχική καρτέλα ShahidCam είναι ανοιχτή — οι μελλοντικές εκδόσεις θα επιτρέπουν σε οποιοδήποτε πλήκτρο να ενεργοποιεί ενέργειες ShahidCam, ακόμη και στο παρασκήνιο.\n\nΠρος το παρόν, χρησιμοποιήστε το MacroDroid για να αντιστοιχίσετε τις συντομεύσεις ShahidCam — θα τις βρείτε στις Ρυθμίσεις → Συντομεύσεις &amp; Widgets.</string>
-    <string name="shortcuts_macrodroid_template">Επίσημο πρότυπο MacroDroid: https://templates.macrodroid.com/view/28194</string>
+    <string name="shortcuts_macrodroid_template">Επίσημο πρότυπο MacroDroid: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252</string>
     <string name="thermal_guardian_title">Θερμικός Φύλακας</string>
     <string name="thermal_guardian_row_subtitle">Αυτόματη προσαρμογή εγγραφής για αποφυγή υπερθέρμανσης</string>
     <string name="audio_vision_title">Ηχητική Όραση</string>

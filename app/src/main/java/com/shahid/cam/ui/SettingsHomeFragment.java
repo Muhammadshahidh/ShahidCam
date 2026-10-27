@@ -633,7 +633,7 @@ public class SettingsHomeFragment extends Fragment {
         } catch (Exception e) {
             // Fallback to web
             try {
-                android.net.Uri uri = android.net.Uri.parse("https://play.google.com/store/apps/details?id=" + requireContext().getPackageName());
+                android.net.Uri uri = android.net.Uri.parse("https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252" + requireContext().getPackageName());
                 android.content.Intent intent = new android.content.Intent(android.content.Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             } catch (Exception ignore) {}

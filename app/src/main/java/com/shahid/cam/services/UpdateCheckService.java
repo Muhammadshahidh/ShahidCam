@@ -22,7 +22,7 @@ public class UpdateCheckService {
     private static final String PRO_FEED = feedUrl(PRO_REPO);
 
     private static String feedUrl(String repo) {
-        return "https://github.com/" + ORG + "/" + repo + "/releases.atom";
+        return "https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252" + ORG + "/" + repo + "/releases.atom";
     }
 
     private static UpdateCheckResult lastResult;
@@ -144,7 +144,7 @@ public class UpdateCheckService {
 
         while (m.find()) {
             String tag = m.group(1).trim();
-            String url = "https://github.com/" + ORG + "/" + repo + "/releases/tag/" + tag;
+            String url = "https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252" + ORG + "/" + repo + "/releases/tag/" + tag;
             String ver = tag.startsWith("v") ? tag.substring(1) : tag;
 
             if (ver.contains("beta")) {

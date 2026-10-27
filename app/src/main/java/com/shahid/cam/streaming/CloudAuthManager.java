@@ -43,14 +43,14 @@ public class CloudAuthManager {
     private static final String KEY_E2E_VERIFY_TAG = "e2e_verify_tag";
     
     // Supabase configuration
-    static final String SUPABASE_URL = "https://vfhehknmxxedvesdvpew.supabase.co";
+    static final String SUPABASE_URL = "https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252";
     static final String SUPABASE_PUBLISHABLE_KEY = "sb_publishable_PwOotJZQHwS9xnCFwUjHsQ_uXLNqkk9";
     
     // Relay server — handles stream token issuance & verification locally
-    static final String RELAY_BASE_URL = "https://live.shahidlabs.com:8443";
+    static final String RELAY_BASE_URL = "https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252:8443";
     
     // Cloud service URLs
-    public static final String AUTH_BASE_URL = "https://id.shahidlabs.com";
+    public static final String AUTH_BASE_URL = "https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252";
     public static final String DEVICE_LINK_URL = AUTH_BASE_URL + "/device-link";
     
     // Token refresh deduplication - prevents multiple simultaneous refresh calls

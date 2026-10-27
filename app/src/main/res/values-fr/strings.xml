@@ -16,7 +16,7 @@ ShahidCam a été présenté dans les chaînes YouTube populaires comme <font co
     <string name="send_email">Envoyer email</string>
     <string name="join_community">Rejoignez la communauté pour obtenir de l\'aide, partager des idées et les mises à jour futur de l\'application</string>
     <string name="privacy_information">Information Confidentialité</string>
-    <string name="copyright_info">© 2024 https://shahidcam.shahidcam.app\nSous licence GPL-3.0</string>
+    <string name="copyright_info">© 2024 https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252\nSous licence GPL-3.0</string>
     <string name="mainpage_storage_indicator" formatted="false">\n    <![CDATA[
     <font color=\'#FFFFFF\' style=\'font-size:16sp;\'><b>Disponible :</b></font><br>
     <font color=\'#CCCCCC\' style=\'font-size:14sp;\'>%.2f GB / %.2f GB</font><br><br>
@@ -3474,7 +3474,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
 <string name="setting_volume_shutter_title">Déclencheur par volume</string>
 <string name="setting_volume_shutter_summary">Les touches de volume agissent comme un déclencheur sur l\'onglet d\'accueil</string>
 <string name="setting_volume_shutter_footer">Les touches de volume deviennent votre déclencheur sur l\'onglet d\'accueil :\n• Toucher — prendre une photo\n• Double toucher — changer de caméra\n• Appui long — démarrer ou arrêter l\'enregistrement\n\nLes déclencheurs Bluetooth fonctionnent aussi et déclenchent les mêmes actions. Les touches fonctionnent tant que l\'onglet d\'accueil de ShahidCam est ouvert — les versions futures permettront à n\'importe quelle touche de déclencher les actions ShahidCam, même en arrière-plan.\n\nPour l\'instant, utilisez MacroDroid pour mapper les raccourcis de ShahidCam — retrouvez-les dans Réglages → Raccourcis et widgets.</string>
-<string name="shortcuts_macrodroid_template">Modèle officiel MacroDroid : https://templates.macrodroid.com/view/28194</string>
+<string name="shortcuts_macrodroid_template">Modèle officiel MacroDroid : https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252</string>
 <string name="thermal_guardian_title">Garde Thermique</string>
 <string name="thermal_guardian_row_subtitle">Ajuster automatiquement l\'enregistrement pour éviter la surchauffe</string>
 

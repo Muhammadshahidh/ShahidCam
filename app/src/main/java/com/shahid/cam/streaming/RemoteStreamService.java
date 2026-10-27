@@ -93,7 +93,7 @@ public class RemoteStreamService extends Service {
         }
         
         // Start foreground with notification
-        startForeground(NOTIFICATION_ID, buildNotification("Ready. Start recording to begin streaming.", "http://..."));
+        startForeground(NOTIFICATION_ID, buildNotification("Ready. Start recording to begin streaming.", "https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252"));
         
         // Check streaming mode (0 = local, 1 = cloud)
         int streamingMode = getSharedPreferences("ShahidCamCloudPrefs", MODE_PRIVATE).getInt("streaming_mode", 0);
@@ -489,7 +489,7 @@ public class RemoteStreamService extends Service {
         if (isCloudMode) {
             // Cloud mode - show cloud dashboard URL with device ID (even if activePort == -1)
             String deviceId = android.provider.Settings.Secure.getString(getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
-            dashboardUrl = "https://shahidcam.shahidlabs.com/stream/" + deviceId + "/";
+            dashboardUrl = "https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252" + deviceId + "/";
             
             if (fragmentCount > 0) {
                 contentText = "Cloud Streaming: " + dashboardUrl + " (" + fragmentCount + " fragments)";
@@ -557,7 +557,7 @@ public class RemoteStreamService extends Service {
         if (isCloudMode) {
             // Cloud mode - return cloud dashboard URL with device ID
             String deviceId = android.provider.Settings.Secure.getString(getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
-            return "https://shahidcam.shahidlabs.com/stream/" + deviceId + "/";
+            return "https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252" + deviceId + "/";
         } else {
             // Local mode - return local dashboard URL (root)
             String ipAddress = getLocalIpAddress();

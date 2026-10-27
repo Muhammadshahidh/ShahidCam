@@ -24,7 +24,7 @@
     <string name="website_title">Веб-сайт</string>
     <string name="readme_website_subtitle">Официальный сайт</string>
     <string name="privacy_information">Политика конфиденциальности</string>
-    <string name="copyright_info">2024-2025 https://shahidcam.shahidcam.app\nЛицензировано по GPL-3.0</string>
+    <string name="copyright_info">2024-2025 https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252\nЛицензировано по GPL-3.0</string>
     <string-array name="video_resolutions_keys">
         <item>7680x4320</item>        <!-- 8K -->
         <item>3840x2160</item>        <!-- 4K -->
@@ -2885,7 +2885,7 @@ ShahidCam использует фрагментированный формат M
     <string name="setting_volume_shutter_title">Затвор клавишами громкости</string>
     <string name="setting_volume_shutter_summary">Клавиши громкости работают как затвор камеры на главной вкладке</string>
     <string name="setting_volume_shutter_footer">Клавиши громкости становятся затвором на главной вкладке:\n• Касание — фото\n• Двойное касание — смена камеры\n• Долгое нажатие — начать или остановить запись\n\nBluetooth-пульты-затворы тоже работают и запускают те же действия. Клавиши работают, пока открыта главная вкладка ShahidCam — будущие версии позволят любой кнопке запускать действия ShahidCam, даже в фоне.\n\nПока используйте MacroDroid для назначения ярлыков ShahidCam — они в разделе «Настройки → Ярлыки и виджеты».</string>
-    <string name="shortcuts_macrodroid_template">Официальный шаблон MacroDroid: https://templates.macrodroid.com/view/28194</string>
+    <string name="shortcuts_macrodroid_template">Официальный шаблон MacroDroid: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252</string>
     <string name="thermal_guardian_title">Тепловой Защитник</string>
     <string name="thermal_guardian_row_subtitle">Автоматическая настройка записи для предотвращения перегрева</string>
     <string name="audio_vision_title">Аудио Видение</string>

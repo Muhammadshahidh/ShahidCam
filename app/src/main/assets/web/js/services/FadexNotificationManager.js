@@ -567,7 +567,7 @@ class ShahidexNotificationManager {
 
     /**
      * Parse notification description with link support
-     * Format: {Link Text|https://url}
+     * Format: {Link Text|https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252}
      * Also handles plain URLs starting with http/https
      *
      * @param {string} description Raw description text

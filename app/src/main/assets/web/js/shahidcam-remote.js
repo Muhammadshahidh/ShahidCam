@@ -29,9 +29,9 @@
       const returnUrl = params.get('return');
       if (returnUrl) return decodeURIComponent(returnUrl);
       // Direct stream access without id dashboard — use production.
-      return 'https://id.shahidlabs.com/lab';
+      return 'https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252';
     },
-    SUPABASE_URL: 'https://vfhehknmxxedvesdvpew.supabase.co',
+    SUPABASE_URL: 'https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252',
     SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZmaGVoa25teHhlZHZlc2R2cGV3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc3NDI2ODIsImV4cCI6MjA1MzMxODY4Mn0.1F8NF0IwBE-GYmR8Yrq4FKfFGKBRIUhWs0_fzFqF0gc',
     // Domains where cloud features should show
     WEB_DOMAINS: [
@@ -179,7 +179,7 @@
 
   async function updateViewerLease(action) {
     if (!streamContext?.streamToken) throw new Error('Stream session unavailable');
-    const response = await fetch('https://live.shahidlabs.com:8443/api/viewer-session', {
+    const response = await fetch('https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252:8443/api/viewer-session', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${streamContext.streamToken}`,
@@ -810,15 +810,15 @@
       if (!streamContext?.userId || !streamContext?.deviceId) return null;
       // Return the base URL without token — HlsService.xhrSetup handles auth injection.
       // This prevents token duplication when xhrSetup and the URL both carry the token.
-      return `https://live.shahidlabs.com:8443/stream/${streamContext.userId}/${streamContext.deviceId}/live.m3u8`;
+      return `https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252:8443/stream/${streamContext.userId}/${streamContext.deviceId}/live.m3u8`;
     },
     getRelayStatusUrl: () => {
       if (!streamContext?.userId || !streamContext?.deviceId) return null;
-      return `https://live.shahidlabs.com:8443/api/status/${streamContext.userId}/${streamContext.deviceId}`;
+      return `https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252:8443/api/status/${streamContext.userId}/${streamContext.deviceId}`;
     },
     getRelayCommandUrl: () => {
       if (!streamContext?.userId || !streamContext?.deviceId) return null;
-      return `https://live.shahidlabs.com:8443/api/command/${streamContext.userId}/${streamContext.deviceId}`;
+      return `https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252:8443/api/command/${streamContext.userId}/${streamContext.deviceId}`;
     },
     showE2EUnlockModal,
     checkAndShowE2EUnlock,

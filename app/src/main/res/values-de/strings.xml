@@ -18,7 +18,7 @@
     <string name="send_email">E-Mail senden</string>
     <string name="join_community">Tritt der Community bei für Hilfe, Ideenaustausch und zukünftige App-Updates</string>
     <string name="privacy_information">Datenschutzinformationen</string>
-    <string name="copyright_info"> 2024-2025 https://shahidcam.shahidcam.app\nLizenziert unter GPL-3.0</string>
+    <string name="copyright_info"> 2024-2025 https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252\nLizenziert unter GPL-3.0</string>
     <string-array name="video_resolutions_keys">
         <item>7680x4320</item>
         <!-- 8K -->
@@ -1964,7 +1964,7 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="setting_volume_shutter_title">Lautstärketasten-Auslöser</string>
     <string name="setting_volume_shutter_summary">Die Lautstärketasten dienen als Kameraauslöser auf dem Start-Tab</string>
     <string name="setting_volume_shutter_footer">Die Lautstärketasten werden auf dem Start-Tab zu Ihrem Auslöser:\n• Tippen — Foto aufnehmen\n• Doppeltippen — Kamera wechseln\n• Gedrückt halten — Aufnahme starten oder stoppen\n\nBluetooth-Fernauslöser funktionieren ebenfalls und lösen dieselben Aktionen aus. Die Tasten funktionieren, solange der ShahidCam-Start-Tab geöffnet ist — zukünftige Versionen lassen jede Taste ShahidCam-Aktionen auslösen, auch im Hintergrund.\n\nNutzen Sie vorerst MacroDroid, um ShahidCam-Verknüpfungen zuzuordnen — Sie finden sie unter Einstellungen → Verknüpfungen &amp; Widgets.</string>
-    <string name="shortcuts_macrodroid_template">Offizielle MacroDroid-Vorlage: https://templates.macrodroid.com/view/28194</string>
+    <string name="shortcuts_macrodroid_template">Offizielle MacroDroid-Vorlage: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252</string>
     <string name="thermal_guardian_title">Wärmeschutz</string>
     <string name="thermal_guardian_row_subtitle">Aufnahme automatisch anpassen, um Überhitzung zu vermeiden</string>
     <string name="audio_vision_title">Audio Vision</string>

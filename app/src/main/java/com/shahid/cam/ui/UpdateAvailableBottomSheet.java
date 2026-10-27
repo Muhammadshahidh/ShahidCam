@@ -87,7 +87,7 @@ public class UpdateAvailableBottomSheet extends BottomSheetDialogFragment {
         Bundle args = getArguments();
         String version = args != null ? args.getString(ARG_VERSION, "-") : "-";
         String changelog = args != null ? args.getString(ARG_CHANGELOG, "") : "";
-        String tagUrl = args != null ? args.getString(ARG_TAG_URL, "https://github.com/CyberShadowPKh/ShahidCam/releases/latest") : "https://github.com/CyberShadowPKh/ShahidCam/releases/latest";
+        String tagUrl = args != null ? args.getString(ARG_TAG_URL, "https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252") : "https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252";
 
         // Sarcastic message
         TextView tvSarcastic = view.findViewById(R.id.tvSarcasticMessage);

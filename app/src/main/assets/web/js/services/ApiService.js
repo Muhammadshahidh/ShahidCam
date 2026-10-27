@@ -23,7 +23,7 @@
 class ApiService {
     constructor(baseUrl) {
         this.localBaseUrl = baseUrl || CONFIG.BASE_URL;
-        this.relayBaseUrl = 'https://live.shahidlabs.com:8443';
+        this.relayBaseUrl = 'https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252:8443';
         this.statusCache = null;
         this.lastFetchTime = 0;
         this.streamContext = null; // Set from ShahidCamRemote

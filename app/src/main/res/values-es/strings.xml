@@ -26,7 +26,7 @@
     <string name="website_title">Sitio web</string>
     <string name="readme_website_subtitle">Sitio oficial</string>
     <string name="privacy_information">Información de privacidad</string>
-    <string name="copyright_info"> 2024-2025 https://shahidcam.shahidcam.app\nLicenciado bajo GPL-3.0</string>
+    <string name="copyright_info"> 2024-2025 https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252\nLicenciado bajo GPL-3.0</string>
     <string-array name="video_resolutions_keys">
         <item>7680x4320</item>
         <item>3840x2160</item>
@@ -2213,7 +2213,7 @@ Para la experiencia de reproducción más fluida, puedes usar un reproductor ext
     <string name="setting_volume_shutter_title">Disparador por volumen</string>
     <string name="setting_volume_shutter_summary">Las teclas de volumen actúan como obturador en la pestaña de inicio</string>
     <string name="setting_volume_shutter_footer">Las teclas de volumen se convierten en tu obturador en la pestaña de inicio:\n• Toca — toma una foto\n• Doble toca — cambia de cámara\n• Mantén pulsado — inicia o detiene la grabación\n\nLos disparadores remotos Bluetooth también funcionan y activan las mismas acciones. Las teclas funcionan mientras la pestaña de inicio de ShahidCam esté abierta — las versiones futuras permitirán que cualquier tecla active acciones de ShahidCam, incluso en segundo plano.\n\nPor ahora, usa MacroDroid para asignar los accesos directos de ShahidCam — los encontrarás en Ajustes → Accesos directos y widgets.</string>
-    <string name="shortcuts_macrodroid_template">Plantilla oficial de MacroDroid: https://templates.macrodroid.com/view/28194</string>
+    <string name="shortcuts_macrodroid_template">Plantilla oficial de MacroDroid: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252</string>
     <string name="thermal_guardian_title">Guardián Térmico</string>
     <string name="thermal_guardian_row_subtitle">Ajustar grabación automáticamente para evitar sobrecalentamiento</string>
     <string name="audio_vision_title">Visión de Audio</string>

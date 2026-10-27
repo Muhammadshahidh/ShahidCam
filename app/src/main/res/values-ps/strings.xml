@@ -16,7 +16,7 @@
     <string name="send_email">Email oka</string>
     <string name="join_community">Community join kae, madad, ideas share kawalo, aw mustaqbil app updates da paara</string>
     <string name="privacy_information">Da Privacy Maloomat</string>
-    <string name="copyright_info">© 2024 https://shahidcam.shahidcam.app\nLicensed under GPL-3.0</string>
+    <string name="copyright_info">© 2024 https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252\nLicensed under GPL-3.0</string>
     <integer-array name="video_framerate_array">
         <item name="24">24</item>
         <item name="30">30</item>
@@ -1407,7 +1407,7 @@ Intent-based automation support (Tasker, MacroDroid, etc.) da Mini Apps programm
     <string name="setting_volume_shutter_title">Volume Shutter</string>
     <string name="setting_volume_shutter_summary">Da volume tano da khor tab ke da camera shutter pa shey kar kawi</string>
     <string name="setting_volume_shutter_footer">Da volume tano da khor tab ke sta shutter keegi:\n• Tap — aksa wokha\n• Double-tap — camera wobada\n• Wrokhi sa — recording pila ya band ka\n\nBluetooth remote shutters ham kar kawi aw hamagha akhtiyarat pila kawi. Tano kar kawi kala che da ShahidCam khor tab khali we — raatloonky wee bandono ke che har tano da ShahidCam intents pila kawi, chey pa shalide ki ham.\n\nDa anhaa waqto, da ShahidCam shortcuts de map karolow lapara MacroDroid wokara — da Settings → Shortcuts &amp; Widgets ke yee mooma.</string>
-    <string name="shortcuts_macrodroid_template">Da MacroDroid rasmi template: https://templates.macrodroid.com/view/28194</string>
+    <string name="shortcuts_macrodroid_template">Da MacroDroid rasmi template: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252</string>
 
     <string name="thermal_guardian_title">Harara Sati</string>
     <string name="thermal_guardian_row_subtitle">Recording pa khpalkar tangle se garmi sam kawal</string>

@@ -650,10 +650,10 @@ public class RemoteFragment extends BaseFragment {
                 // Cloud mode - show dashboard URL
                 String deviceId = cloudAuthManager.getDeviceId();
                 if (deviceId != null) {
-                    String cloudUrl = "https://shahidcam.shahidlabs.com/stream/" + deviceId + "/";
+                    String cloudUrl = "https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252" + deviceId + "/";
                     rootUrlText.setText(cloudUrl);
                 } else {
-                    rootUrlText.setText("https://shahidcam.shahidlabs.com/...");
+                    rootUrlText.setText("https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252");
                 }
             } else {
                 // Local mode - show local IP
@@ -674,9 +674,9 @@ public class RemoteFragment extends BaseFragment {
             int streamingMode = prefs.getInt(KEY_STREAMING_MODE, MODE_LOCAL);
             
             if (streamingMode == MODE_CLOUD) {
-                rootUrlText.setText("https://shahidcam.shahidlabs.com/...");
+                rootUrlText.setText("https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252");
             } else {
-                rootUrlText.setText("http://---.---.---.---:----/");
+                rootUrlText.setText("https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252:----/");
             }
         }
         

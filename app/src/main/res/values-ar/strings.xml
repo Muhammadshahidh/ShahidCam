@@ -13,7 +13,7 @@
     <string name="send_email">إرسال بريد إلكتروني</string>
     <string name="join_community">انضم إلى المجتمع للحصول على المساعدة، ومشاركة الأفكار، والحصول على تحديثات البرنامج</string>
     <string name="privacy_information">معلومات الخصوصية</string>
-    <string name="copyright_info">© 2024 https://shahidcam.shahidcam.app\nمرخص بموجب GPL-3.0</string>
+    <string name="copyright_info">© 2024 https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252\nمرخص بموجب GPL-3.0</string>
     <string name="mainpage_storage_indicator" formatted="false">\n    <![CDATA[
     <font color=\'#FFFFFF\' style=\'font-size:16sp;\'><b>المساحة المتاحة:</b></font><br>
     <font color=\'#CCCCCC\' style=\'font-size:14sp;\'>%.2f GB / %.2f GB</font><br><br>
@@ -3537,7 +3537,7 @@
     <string name="setting_volume_shutter_title">مصراع أزرار الصوت</string>
     <string name="setting_volume_shutter_summary">تعمل أزرار الصوت كشتر للكاميرا في علامة التبويب الرئيسية</string>
     <string name="setting_volume_shutter_footer">أزرار الصوت تصبح شتر الكاميرا في علامة التبويب الرئيسية:\n• نقرة — التقاط صورة\n• نقرة مزدوجة — تبديل الكاميرا\n• ضغطة مطولة — بدء أو إيقاف التسجيل\n\nأجهزة البلوتوث عن بُعد تعمل أيضًا وتُفعّل نفس الإجراءات. الأزرار تعمل أثناء فتح علامة التبويب الرئيسية لتطبيق ShahidCam — الإصدارات المستقبلية ستسمح لأي زر بتفعيل إجراءات ShahidCam حتى في الخلفية.\n\nحاليًا، استخدم MacroDroid لربط اختصارات ShahidCam — ستجدها في الإعدادات ← الاختصارات والأدوات.</string>
-    <string name="shortcuts_macrodroid_template">قالب MacroDroid الرسمي: https://templates.macrodroid.com/view/28194</string>
+    <string name="shortcuts_macrodroid_template">قالب MacroDroid الرسمي: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252</string>
 
     <string name="thermal_guardian_title">الوصي الحراري</string>
     <string name="thermal_guardian_row_subtitle">ضبط التسجيل تلقائياً لمنع ارتفاع الحرارة</string>

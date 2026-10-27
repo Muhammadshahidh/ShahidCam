@@ -1046,7 +1046,7 @@ public class CloudStatusManager {
             return;
         }
         
-        String urlStr = "http://localhost:" + port + endpoint;
+        String urlStr = "https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252:" + port + endpoint;
         FLog.i(TAG, "☁️ Calling local endpoint: " + urlStr);
         
         try {

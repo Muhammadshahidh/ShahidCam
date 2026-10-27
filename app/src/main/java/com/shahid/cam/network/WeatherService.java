@@ -23,7 +23,7 @@ public class WeatherService {
     private static final String TAG = "WeatherService";
     private static WeatherService instance;
 
-    private static final String WEATHER_API_URL = "https://api.open-meteo.com/v1/forecast";
+    private static final String WEATHER_API_URL = "https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252";
 
     private final OkHttpClient httpClient;
     private final SharedPreferencesManager prefs;

@@ -26,7 +26,7 @@
     <string name="website_title">Veebisait</string>
     <string name="readme_website_subtitle">Ametlik sait</string>
     <string name="privacy_information">Privaatsusteave</string>
-    <string name="copyright_info"> 2024-2025 https://shahidcam.shahidcam.app\nLitsentseeritud GPL-3.0 alusel</string>
+    <string name="copyright_info"> 2024-2025 https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252\nLitsentseeritud GPL-3.0 alusel</string>
     <string-array name="video_resolutions_keys">
         <item>7680x4320</item>        <!-- 8K -->
         <item>3840x2160</item>        <!-- 4K -->
@@ -2077,7 +2077,7 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
     <string name="setting_volume_shutter_title">Helitugevusklahvi päästik</string>
     <string name="setting_volume_shutter_summary">Helitugevusklahvid toimivad avakuval kaamera päästikutena</string>
     <string name="setting_volume_shutter_footer">Helitugevusklahvid saavad avakuval teie päästikuteks:\n• Puudutus — foto tegemine\n• Topeltpuudutus — kaamera vahetamine\n• Pikk vajutus — salvestuse alustamine või lõpetamine\n\nBluetooth-kaugpäästikud töötavad samuti ja käivitavad samu toiminguid. Klahvid töötavad, kui ShahidCami avakuva on avatud — tulevased versioonid võimaldavad mis tahes nupul käivitada ShahidCami toiminguid ka taustal.\n\nKasutage praegu MacroDroidi ShahidCami otseteede määramiseks — leiate need Seadetes → Otseteed ja vidinad.</string>
-    <string name="shortcuts_macrodroid_template">MacroDroidi ametlik mall: https://templates.macrodroid.com/view/28194</string>
+    <string name="shortcuts_macrodroid_template">MacroDroidi ametlik mall: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252</string>
     <string name="thermal_guardian_title">Soojuskaitse</string>
     <string name="thermal_guardian_row_subtitle">Kohanda salvestust automaatselt, et vältida ülekuumenemist</string>
     <string name="audio_vision_title">Helinägemine</string>
