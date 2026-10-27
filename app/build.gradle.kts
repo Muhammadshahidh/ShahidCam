@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.cybershadowpk.shahidcam"
+    namespace = "com.shahid.cam"
     compileSdk = 36
 
     val isBundle = gradle.startParameter.taskNames.any { it.lowercase().contains("bundle") }
@@ -66,7 +66,7 @@ android {
     buildTypes {
         debug {
             isDebuggable = true
-            versionNameSuffix = "-beta10.6" // Increment the beta version suffix for each release. Use `beta1` for the first beta release, then `beta2`, etc.
+            versionNameSuffix = ""
             resValue("string", "app_name", "ShahidCam")
         }
         
@@ -92,7 +92,7 @@ android {
             if (releaseSigningConfigValid) {
                 signingConfig = signingConfigs.getByName("release")
             }
-            versionNameSuffix = "-Pro"
+            versionNameSuffix = ""
         }
         
         create("proPlus") {
@@ -106,7 +106,7 @@ android {
             if (releaseSigningConfigValid) {
                 signingConfig = signingConfigs.getByName("release")
             }
-            versionNameSuffix = "-Pro+"
+            versionNameSuffix = ""
             // Custom app name via gradle property
             val customAppName = project.findProperty("customAppName")?.toString() ?: "ShahidCam Pro+"
             resValue("string", "app_name", customAppName)
