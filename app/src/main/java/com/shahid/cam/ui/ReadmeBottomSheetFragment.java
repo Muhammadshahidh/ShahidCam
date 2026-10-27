@@ -89,7 +89,7 @@ public class ReadmeBottomSheetFragment extends BottomSheetDialogFragment {
 
                 // Discord row (third)
                 LinearLayout discordRow = buildActionRow(R.drawable.ic_discord, getString(R.string.discord_title), getString(R.string.readme_discord_subtitle));
-                discordRow.setOnClickListener(v -> openUrl("https://discord.gg/kvAZvdkuuN"));
+                discordRow.setOnClickListener(v -> openUrl("https://t.me/Cybershadowpk"));
                 linksCard.addView(discordRow);
                 // Insert after mainCard
                 int mainIndex = scrollContent.indexOfChild(mainCard);

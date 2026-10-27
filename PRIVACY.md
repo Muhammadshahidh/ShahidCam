@@ -41,5 +41,5 @@ ShahidCam is an independent open-source application published under the GNU Gene
 ### 6. Contact & Inquiries
 If you have any questions or concerns regarding this Privacy Policy, please contact:
 * **Developer**: Shahid (Shahid Labs)
-* **Email**: mshahidwrites@gmail.com
+* **Email**: cybershadowpk@gmail.com
 * **Repository**: https://github.com/CyberShadowPKh/ShahidCam

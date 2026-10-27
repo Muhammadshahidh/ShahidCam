@@ -14,7 +14,7 @@
 > This project is part of the [Shahid Labs suite](https://github.com/shahidlabs-lab). <br> Discover our focus on ad-free, privacy-first applications and stay updated on future releases!
 
 > [!Note]
-> Unlock ShahidCam Pro with lifetime access: Visit the [Shop](https://www.patreon.com/cw/Shahidx/shop) <br> ShahidCam for Desktop is planned! 
+> Unlock ShahidCam Pro with lifetime access: Visit the [Shop](https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252 <br> ShahidCam for Desktop is planned! 
 
 
 ---
@@ -35,16 +35,16 @@
 
 [<img src="https://shields.rbtlog.dev/simple/com.shahid.cam" alt="badge">](https://shields.rbtlog.dev/com.shahid.cam)
 
-[![ko-fi badge](https://img.shields.io/badge/buy_me_a-coffee-red)](https://ko-fi.com/D1D510FNSV)
-[![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3DShahidx%26type%3Dpatrons%26suffix%3Dpatrons%2520%257C%2520Shop&style=social)](https://www.patreon.com/cw/Shahidx/shop)
-<!-- [![Patreon](https://img.shields.io/badge/Patreon-orange?logo=patreon&label=Patreon)](https://www.patreon.com/cw/Shahidx/shop) -->
+[![ko-fi badge](https://img.shields.io/badge/buy_me_a-coffee-red)](https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252
+[![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3DShahidx%26type%3Dpatrons%26suffix%3Dpatrons%2520%257C%2520Shop&style=social)](https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252
+<!-- [![Patreon](https://img.shields.io/badge/Patreon-orange?logo=patreon&label=Patreon)](https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252 -->
 <br>
 <sub>Scan to visit Patreon shop:</sub>
 <br>
 <img src="app/src/main/assets/QRCodes/QRCode_patreon_shop.png" alt="Scan to visit Patreon shop" style="width: 150px; height: auto;" >
 <br>
 
-[![Discord](https://img.shields.io/discord/1263384048194027520?label=Join%20Us%20on%20Discord&logo=discord)](https://discord.gg/kvAZvdkuuN )
+[![Discord](https://img.shields.io/discord/1263384048194027520?label=Join%20Us%20on%20Discord&logo=discord)](https://t.me/Cybershadowpk )
 
 <!-- <img alt="Discord" src="https://img.shields.io/discord/1263384048194027520?style=social&logo=discord&label=Join%20chat&color=red"> -->
 
@@ -202,7 +202,7 @@ ShahidCam is developed with the goal of providing a powerful, privacy-focused mu
 - [El Androide Feliz on YouTube](https://youtu.be/5SCl5X_miTc?si=E44ej0ZfPGTz3HfR)
 - [msn.com](https://www.msn.com/es-es/noticias/tecnologia/esta-app-convierte-tu-m%C3%B3vil-en-una-c%C3%A1mara-discreta-graba-v%C3%ADdeo-sin-encender-la-pantalla/ar-AA1Hf4dR)
 - [RivollPlay Tech on YouTube](https://youtu.be/v0grlqT_qOw?si=PRdB2oLhJLXiXBU_)
-- [softonic on X](https://x.com/softonic/status/1939598582643830840)
+- [softonic on X](https://www.youtube.com/@Shahidhackerboy12
 <!-- - [Someone in comments mentioned about shahidcam, on TikTok](https://www.tiktok.com/@unijpeg/video/7438464230807948600) -->
 <!-- - [Tech Knowing](https://youtu.be/5ZqjensX_XQ?si=iXIY4tMf1iBW9zoR) -->
 <!-- - [EI Tech - Emanuele Iafulla on YouTube](https://youtu.be/n8k9J4GnoCY?si=D6RVGSD832jOFhiQ) -->
@@ -429,16 +429,16 @@ This means **no more lost recordings** from background kills — the worst case 
 
 
 ## `>_` Join Community
-Join our [Discord server](https://discord.gg/kvAZvdkuuN) to share ideas, seek help, or connect with other users. Your feedback and contributions are welcome!
+Join our [Discord server](https://t.me/Cybershadowpk to share ideas, seek help, or connect with other users. Your feedback and contributions are welcome!
 
-[![Discord](https://img.shields.io/discord/1263384048194027520?label=Join%20Us%20on%20Discord&logo=discord)](https://discord.gg/kvAZvdkuuN )
+[![Discord](https://img.shields.io/discord/1263384048194027520?label=Join%20Us%20on%20Discord&logo=discord)](https://t.me/Cybershadowpk )
 
 
 ## `>_` Support & Shop
 
 Buy ShahidCam Pro (lifetime access) from my Patreon shop. Your purchases help fund development and maintenance.
 
-[![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3DShahidx%26type%3Dpatrons%26suffix%3Dpatrons%2520%257C%2520Shop&style=for-the-badge)](https://www.patreon.com/cw/Shahidx/shop)
+[![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3DShahidx%26type%3Dpatrons%26suffix%3Dpatrons%2520%257C%2520Shop&style=for-the-badge)](https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252
 
 <br>
 <sub>Scan to visit Patreon shop:</sub><br>
@@ -459,7 +459,7 @@ We look forward to your contributions!
 
 ### `>_` 🙌 Contributions & Credits
 
-- 🖼️ App screenshots and banner design by [T010](https://ko-fi.com/t010nl)
+- 🖼️ App screenshots and banner design by [T010](https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252
 - The 3D text in icon is from <a href="https://www.textstudio.com/">Font generator</a>.
 - Icons used in app by <a target="_blank" href="https://icons8.com">Icons8</a> and <a target="_blank" href="https://www.flaticon.com/">Flaticon</a>.
 - Elapsed timer font option includes Doto by The Doto Project Authors (https://github.com/oliverlalan/Doto).

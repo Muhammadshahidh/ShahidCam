@@ -39,7 +39,7 @@
 # ✨ New Features  
 
 ## ShahidCam Pro - Limited Time Free Offer!
-- **ShahidCam Pro** is now available for free until December 23, 2025 only. Get customized builds with custom notification icons that actually display in your notification bar. [Learn more on Patreon](https://www.patreon.com/posts/shahidcam-pro-free-145013262)
+- **ShahidCam Pro** is now available for free until December 23, 2025 only. Get customized builds with custom notification icons that actually display in your notification bar. [Learn more on Patreon](https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252
 
 ## This What's New Page
 - As a user, I dislike external links for every little thing in the app, so here is the new in-app **What's New** page to showcase new features after updates.

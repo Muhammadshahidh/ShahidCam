@@ -298,7 +298,7 @@ public class HomeSidebarFragment extends DialogFragment {
             discordRow.setOnClickListener(v -> {
                 try {
                     Intent intent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("https://discord.gg/kvAZvdkuuN"));
+                        Uri.parse("https://t.me/Cybershadowpk"));
                     startActivity(intent);
                 } catch (Exception e) {
                     FLog.w("HomeSidebar", "Failed to open Discord link", e);

@@ -56,7 +56,7 @@
 ./app/libs/AppLockLibrary/src/main/java/com/guardanis/applock/views/UnlockViewController.java:11:import com.shahidcam.R;
 ./app/libs/AppLockLibrary/src/main/java/com/guardanis/applock/AppLock.java:8:import com.shahidcam.R;
 ./app/libs/AppLockLibrary/src/main/res/layout/applock__unlock.xml:48:        android:src="@drawable/shahidseclab"
-./app/src/main/assets/changelog/main.md:42:- **ShahidCam Pro** is now available for free until December 23, 2025 only. Get customized builds with custom notification icons that actually display in your notification bar. [Learn more on Patreon](https://www.patreon.com/posts/shahidcam-pro-free-145013262)
+./app/src/main/assets/changelog/main.md:42:- **ShahidCam Pro** is now available for free until December 23, 2025 only. Get customized builds with custom notification icons that actually display in your notification bar. [Learn more on Patreon](https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252
 ./app/src/main/assets/changelog/main.md:56:![shahidcam_remote_demo.png](shahidcam_remote_demo.png)
 ./app/src/main/assets/web/assets/avatar/README.md:3:> **Created by [Shahid](https://github.com/anonshahid) | December 9, 2025**
 ./app/src/main/assets/web/assets/avatar/README.md:255:Built by **[Shahid](https://github.com/anonshahid)** | Extracted from [shahid.dev](https://shahid.dev)
@@ -109,7 +109,7 @@
 ./app/src/main/assets/web/index.html:44:            <a id="headerLogoLink" href="https://id.shahidseclab.com/lab" target="_blank" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px;" title="ShahidCam Lab">
 ./app/src/main/assets/web/index.html:490:                    <span>© 2024-2026 <a href="https://shahidseclab.com" target="_blank" style="color: #ff6b6b; text-decoration: none; transition: color 200ms;" onmouseover="this.style.color='#ff5252'" onmouseout="this.style.color='#ff6b6b'">shahidseclab.com</a></span>
 ./app/src/main/assets/web/index.html:496:                    <a href="https://github.com/anonshahid/ShahidCam" target="_blank" title="GitHub Repository" class="footer-link">
-./app/src/main/assets/web/index.html:761:                <a href="https://www.patreon.com/posts/shahidcam-pro-free-145013262" target="_blank" style="display: block; width: 100%; padding: 14px; background: linear-gradient(135deg, #d4af37 0%, #c19a3a 100%); color: #1a1a1a; text-align: center; border-radius: 12px; text-decoration: none; font-weight: 700; border: none; cursor: pointer; font-size: 14px; transition: all 200ms ease;">
+./app/src/main/assets/web/index.html:761:                <a href="https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252" target="_blank" style="display: block; width: 100%; padding: 14px; background: linear-gradient(135deg, #d4af37 0%, #c19a3a 100%); color: #1a1a1a; text-align: center; border-radius: 12px; text-decoration: none; font-weight: 700; border: none; cursor: pointer; font-size: 14px; transition: all 200ms ease;">
 ./app/src/main/assets/web/index.html:2053:                    const relayBase = 'https://live.shahidseclab.com:8443';
 ./app/src/main/assets/web/index.html:3066:                    if (btn.closest('.footer') || btn.closest('.shahidcam-pro-btn') || 
 ./app/src/main/assets/web/index.html:3067:                        btn.classList.contains('footer-link') || btn.classList.contains('shahidcam-pro-btn')) {
@@ -2580,7 +2580,7 @@
 ./app/src/main/java/com/shahidcam/ui/InputActionBottomSheetFragment.java:348:    private View previewEntryRow(com.shahidcam.util.PreferencesBackupUtil.PreviewEntry e) {
 ./app/src/main/java/com/shahidcam/ui/KoFiSupportBottomSheet.java:1:package com.shahidcam.ui;
 ./app/src/main/java/com/shahidcam/ui/KoFiSupportBottomSheet.java:31:import com.shahidcam.R;
-./app/src/main/java/com/shahidcam/ui/KoFiSupportBottomSheet.java:88:                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://ko-fi.com/shahidx"));
+./app/src/main/java/com/shahidcam/ui/KoFiSupportBottomSheet.java:88:                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252"));
 ./app/src/main/java/com/shahidcam/ui/KoFiSupportBottomSheet.java:106:                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/anonshahid/ShahidCam"));
 ./app/src/main/java/com/shahidcam/ui/KoFiSupportBottomSheet.java:125:                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/anonshahid/ShahidVault"));
 ./app/src/main/java/com/shahidcam/ui/KoFiSupportBottomSheet.java:144:                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/shahidsec-lab"));

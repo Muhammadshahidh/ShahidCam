@@ -636,7 +636,7 @@
           {
             actions: [
               { label: 'Back to Lab', href: CLOUD_CONFIG.LAB_URL, icon: 'fa-solid fa-flask' },
-              { label: 'Contact on Discord', href: 'https://discord.gg/kvAZvdkuuN', icon: 'fab fa-discord', newTab: true }
+              { label: 'Contact on Discord', href: 'https://t.me/Cybershadowpk', icon: 'fab fa-discord', newTab: true }
             ]
           }
         );

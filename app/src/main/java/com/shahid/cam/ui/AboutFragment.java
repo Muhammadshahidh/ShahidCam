@@ -314,7 +314,7 @@ public class AboutFragment extends BaseFragment {
         });
         checkUpdatesButton.setOnClickListener(v -> checkForUpdates());
         emailText.setOnClickListener(v -> sendEmail());
-        discordText.setOnClickListener(v -> openUrl("https://discord.gg/kvAZvdkuuN"));
+        discordText.setOnClickListener(v -> openUrl("https://t.me/Cybershadowpk"));
         setupPrivacyInfo(privacyInfoCard, scrollView);
         view.findViewById(R.id.check_updates_button).setOnClickListener(v -> checkForUpdates());
 

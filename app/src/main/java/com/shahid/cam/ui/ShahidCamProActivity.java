@@ -24,7 +24,7 @@ import com.shahid.cam.R;
  */
 public class ShahidCamProActivity extends AppCompatActivity {
 
-    private static final String PATREON_SHOP_URL = "https://www.patreon.com/cw/Shahidx/shop";
+    private static final String PATREON_SHOP_URL = "https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252";
     
     private ShimmerButton btnGetPro;
     private ImageView btnBack;
