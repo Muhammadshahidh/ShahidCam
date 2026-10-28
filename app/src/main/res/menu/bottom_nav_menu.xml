@@ -23,5 +23,5 @@
     <item
         android:id="@+id/navigation_lab"
         android:icon="@drawable/biotech_24px"
-        android:title="@string/nav_lab" />
+        android:title="@string/nav_lab"  android:visible="false" />
 </menu>

@@ -168,7 +168,8 @@
         </LinearLayout>
 
         
-        <TextView ns0:id="@+id/header_advanced" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:layout_marginTop="20dp" ns0:layout_marginBottom="8dp" ns0:text="@string/settings_advanced_title" ns0:textColor="?attr/sectionHeaderColor" ns0:textStyle="bold" />
+        <LinearLayout ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="vertical" ns0:visibility="gone">
+<TextView ns0:id="@+id/header_advanced" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:layout_marginTop="20dp" ns0:layout_marginBottom="8dp" ns0:text="@string/settings_advanced_title" ns0:textColor="?attr/sectionHeaderColor" ns0:textStyle="bold" />
 
         
         <LinearLayout ns0:id="@+id/group_card_advanced_nav" ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="vertical" ns0:background="@drawable/settings_group_card_bg">
@@ -179,6 +180,7 @@
                     <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/settings_haptics_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
                     <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/settings_haptics_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
                 </LinearLayout>
+</LinearLayout>
                 <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
             </LinearLayout>
 
@@ -274,7 +276,8 @@
         </LinearLayout>
 
         
-        <TextView ns0:id="@+id/header_mini_apps" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:layout_marginTop="20dp" ns0:layout_marginBottom="8dp" ns0:text="@string/mini_apps_title" ns0:textColor="?attr/sectionHeaderColor" ns0:textStyle="bold" />
+        <LinearLayout ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="vertical" ns0:visibility="gone">
+<TextView ns0:id="@+id/header_mini_apps" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:layout_marginTop="20dp" ns0:layout_marginBottom="8dp" ns0:text="@string/mini_apps_title" ns0:textColor="?attr/sectionHeaderColor" ns0:textStyle="bold" />
 
         
         <LinearLayout ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="horizontal" ns0:paddingStart="2dp" ns0:paddingEnd="2dp" ns0:layout_marginTop="4dp" ns0:layout_marginBottom="3dp">
@@ -308,7 +311,9 @@
         </LinearLayout>
 
         
-        <TextView ns0:id="@+id/header_about" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:layout_marginTop="32dp" ns0:layout_marginBottom="8dp" ns0:text="@string/settings_section_app" ns0:textColor="?attr/sectionHeaderColor" ns0:textStyle="bold" />
+        
+</LinearLayout>
+<TextView ns0:id="@+id/header_about" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:layout_marginTop="32dp" ns0:layout_marginBottom="8dp" ns0:text="@string/settings_section_app" ns0:textColor="?attr/sectionHeaderColor" ns0:textStyle="bold" />
 
         
         <LinearLayout ns0:id="@+id/group_card_about" ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="vertical" ns0:background="@drawable/settings_group_card_bg">
