@@ -153,9 +153,7 @@ public class HomeSidebarFragment extends DialogFragment {
         }
 
         // Profiles row
-        View profilesRow = view.findViewById(R.id.row_profiles);
         if (profilesRow != null) {
-            profilesRow.setOnClickListener(v -> {
                 showProfilesComingSoon();
                 dismiss();
             });
@@ -310,21 +308,17 @@ public class HomeSidebarFragment extends DialogFragment {
         setupMiniAppRows(view);
 
         // Mini Apps Info Button
-        View btnMiniAppsInfo = view.findViewById(R.id.btn_mini_apps_info);
         if (btnMiniAppsInfo != null) {
             // Small 20dp icon: slightly bigger press scale so it's perceptible.
             com.shahid.cam.Utils.attachPressScale(btnMiniAppsInfo, 1.15f);
-            btnMiniAppsInfo.setOnClickListener(v -> {
                 MiniAppsInfoBottomSheet infoBS = MiniAppsInfoBottomSheet.newInstance();
                 infoBS.show(getParentFragmentManager(), "mini_apps_info");
             });
         }
 
         // Mini Apps Edit/Reorder Button
-        View btnMiniAppsEdit = view.findViewById(R.id.btn_mini_apps_edit);
         if (btnMiniAppsEdit != null) {
             com.shahid.cam.Utils.attachPressScale(btnMiniAppsEdit, 1.15f);
-            btnMiniAppsEdit.setOnClickListener(v -> {
                 MiniAppsReorderBottomSheet reorderBS = MiniAppsReorderBottomSheet.newInstance();
                 reorderBS.show(getParentFragmentManager(), "mini_apps_reorder");
             });
@@ -338,7 +332,6 @@ public class HomeSidebarFragment extends DialogFragment {
                 });
 
         // See all mini apps -> Settings tab, scrolled to the Mini Apps section
-        View seeAllRow = view.findViewById(R.id.row_mini_apps_see_all);
         if (seeAllRow != null) {
             seeAllRow.setOnClickListener(v -> {
                 try {
@@ -406,28 +399,21 @@ public class HomeSidebarFragment extends DialogFragment {
         }
         // Speedometer Mini App - Coming Soon
         View speedometerRow = view.findViewById(R.id.row_mini_app_speedometer);
-        if (speedometerRow != null) speedometerRow.setOnClickListener(v -> showMiniAppComingSoon(this, "speedometer"));
         // Clinometer Mini App - Coming Soon
         View clinometerRow = view.findViewById(R.id.row_mini_app_clinometer);
-        if (clinometerRow != null) clinometerRow.setOnClickListener(v -> showMiniAppComingSoon(this, "clinometer"));
         // QR Scanner Mini App - ready to use
         View qrScannerRow = view.findViewById(R.id.row_mini_app_qr_scanner);
         if (qrScannerRow != null) qrScannerRow.setOnClickListener(v -> {
-            Intent intent = new Intent(getContext(), com.shahid.cam.ui.miniapps.QRScannerActivity.class);
             startActivity(intent);
             dismiss();
         });
         // Pedometer Mini App - Coming Soon
         View pedometerRow = view.findViewById(R.id.row_mini_app_pedometer);
-        if (pedometerRow != null) pedometerRow.setOnClickListener(v -> showMiniAppComingSoon(this, "pedometer"));
         // Metal Detector Mini App - Coming Soon
         View metalDetectorRow = view.findViewById(R.id.row_mini_app_metal_detector);
-        if (metalDetectorRow != null) metalDetectorRow.setOnClickListener(v -> showMiniAppComingSoon(this, "metal_detector"));
         // Parking Marker Mini App - Coming Soon
         View parkingMarkerRow = view.findViewById(R.id.row_mini_app_parking_marker);
-        if (parkingMarkerRow != null) parkingMarkerRow.setOnClickListener(v -> showMiniAppComingSoon(this, "parking_marker"));
         View qrGeneratorRow = view.findViewById(R.id.row_mini_app_qr_generator);
-        if (qrGeneratorRow != null) qrGeneratorRow.setOnClickListener(v -> showMiniAppComingSoon(this, "qr_generator"));
 
         applyMiniAppVisibility(view);
 
@@ -476,7 +462,6 @@ public class HomeSidebarFragment extends DialogFragment {
                 R.id.divider_mini_app_9, R.id.divider_mini_app_10
             };
 
-            android.widget.LinearLayout container = view.findViewById(R.id.mini_apps_list_container);
             if (container == null) return;
 
             // Capture views once — cached references stay valid even when rows
@@ -486,8 +471,6 @@ public class HomeSidebarFragment extends DialogFragment {
                 for (int i = 0; i < rowIds.length; i++) miniAppRows[i] = view.findViewById(rowIds[i]);
                 miniAppDividers = new View[dividerIds.length];
                 for (int i = 0; i < dividerIds.length; i++) miniAppDividers[i] = view.findViewById(dividerIds[i]);
-                miniAppSeeAllDivider = view.findViewById(R.id.divider_mini_app_see_all);
-                miniAppSeeAllRow = view.findViewById(R.id.row_mini_apps_see_all);
             }
 
             // Rebuild: top-N rows in saved order, a divider after every row

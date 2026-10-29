@@ -433,7 +433,6 @@ public class SettingsHomeFragment extends Fragment {
 
     /** Wire click handlers for all settings rows. */
     private void setupRowHandlers(View root) {
-        bindRow(root, R.id.row_haptics_settings,
                 () -> openSubFragment(new HapticsSettingsFragment()));
 
         bindRow(root, R.id.group_appearance, () -> openSubFragment(new AppearanceSettingsFragment()));
@@ -443,21 +442,14 @@ public class SettingsHomeFragment extends Fragment {
         bindRow(root, R.id.group_screen_recording, () -> openSubFragment(new com.shahid.cam.shahidrec.ui.ScreenRecordingSettingsFragment()));
         bindRow(root, R.id.group_storage, () -> openSubFragment(new StorageSettingsFragment()));
         bindRow(root, R.id.group_security, () -> openSubFragment(new SecuritySettingsFragment()));
-        bindRow(root, R.id.group_motion_lab, () -> openSubFragment(new MotionLabSettingsFragment()));
-        bindRow(root, R.id.group_digital_forensics, () -> openSubFragment(new DigitalForensicsSettingsFragment()));
-        bindRow(root, R.id.group_thermal_guardian, () -> {
             android.widget.Toast.makeText(requireContext(), R.string.mini_app_coming_soon_desc, android.widget.Toast.LENGTH_SHORT).show();
         });
-        bindRow(root, R.id.group_audio_vision, () -> {
             android.widget.Toast.makeText(requireContext(), R.string.mini_app_coming_soon_desc, android.widget.Toast.LENGTH_SHORT).show();
         });
-        bindRow(root, R.id.group_scheduled_recording, () -> {
             android.widget.Toast.makeText(requireContext(), R.string.mini_app_coming_soon_desc, android.widget.Toast.LENGTH_SHORT).show();
         });
-        bindRow(root, R.id.group_profiles, () -> {
             android.widget.Toast.makeText(requireContext(), R.string.mini_app_coming_soon_desc, android.widget.Toast.LENGTH_SHORT).show();
         });
-        bindRow(root, R.id.group_automation, () -> openSubFragment(new AutomationSettingsFragment()));
         bindRow(root, R.id.group_widgets, () -> openSubFragment(new ShortcutsSettingsFragment()));
         bindRow(root, R.id.group_notifications, () -> openSubFragment(new NotificationSettingsFragment()));
         bindRow(root, R.id.group_prefs_backup, () -> {
@@ -518,7 +510,6 @@ public class SettingsHomeFragment extends Fragment {
     }
 
     private void setupMiniAppCards(View root) {
-        setupMiniCard(root, R.id.group_mini_torch, R.string.mini_app_torch_title,
                 R.string.mini_app_torch_desc, "flashlight_on", 0, () -> {
             try {
                 com.shahid.cam.ui.miniapps.TorchToolFragment torchTool = com.shahid.cam.ui.miniapps.TorchToolFragment.newInstance();
@@ -527,37 +518,27 @@ public class SettingsHomeFragment extends Fragment {
                 FLog.w("SettingsHome", "Failed to open torch", e);
             }
         });
-        setupMiniCard(root, R.id.group_mini_compass, R.string.mini_app_compass_title,
                 R.string.mini_app_compass_desc, "explore", R.string.mini_app_coming_soon,
                 () -> HomeSidebarFragment.showMiniAppComingSoon(this, "compass"));
-        setupMiniCard(root, R.id.group_mini_sound_meter, R.string.mini_app_sound_meter_title,
                 R.string.mini_app_sound_meter_desc, "graphic_eq", R.string.mini_app_coming_soon,
                 () -> HomeSidebarFragment.showMiniAppComingSoon(this, "sound_meter"));
-        setupMiniCard(root, R.id.group_mini_sensor, R.string.mini_app_sensor_dashboard_title,
                 R.string.mini_app_sensor_dashboard_desc, "sensors", R.string.mini_app_coming_soon,
                 () -> HomeSidebarFragment.showMiniAppComingSoon(this, "sensor_dashboard"));
-        setupMiniCard(root, R.id.group_mini_speedometer, R.string.mini_app_speedometer_title,
                 R.string.mini_app_speedometer_desc, "speed", R.string.mini_app_coming_soon,
                 () -> HomeSidebarFragment.showMiniAppComingSoon(this, "speedometer"));
-        setupMiniCard(root, R.id.group_mini_clinometer, R.string.mini_app_clinometer_title,
                 R.string.mini_app_clinometer_desc, "architecture", R.string.mini_app_coming_soon,
                 () -> HomeSidebarFragment.showMiniAppComingSoon(this, "clinometer"));
-        setupMiniCard(root, R.id.group_mini_qr_scanner, R.string.mini_app_qr_scanner_title,
                 R.string.mini_app_qr_scanner_desc, "qr_code_scanner", 0, // no "Soon" badge — it's ready
                 () -> {
                     Intent intent = new Intent(requireContext(), com.shahid.cam.ui.miniapps.QRScannerActivity.class);
                     startActivity(intent);
                 });
-        setupMiniCard(root, R.id.group_mini_pedometer, R.string.mini_app_pedometer_title,
                 R.string.mini_app_pedometer_desc, "directions_walk", R.string.mini_app_coming_soon,
                 () -> HomeSidebarFragment.showMiniAppComingSoon(this, "pedometer"));
-        setupMiniCard(root, R.id.group_mini_metal_detector, R.string.mini_app_metal_detector_title,
                 R.string.mini_app_metal_detector_desc, "travel_explore", R.string.mini_app_coming_soon,
                 () -> HomeSidebarFragment.showMiniAppComingSoon(this, "metal_detector"));
-        setupMiniCard(root, R.id.group_mini_parking_marker, R.string.mini_app_parking_marker_title,
                 R.string.mini_app_parking_marker_desc, "location_on", R.string.mini_app_coming_soon,
                 () -> HomeSidebarFragment.showMiniAppComingSoon(this, "parking_marker"));
-        setupMiniCard(root, R.id.group_mini_qr_generator, R.string.mini_app_qr_generator_title,
                 R.string.mini_app_qr_generator_desc, "qr_code_2", R.string.mini_app_coming_soon,
                 () -> HomeSidebarFragment.showMiniAppComingSoon(this, "qr_generator"));
     }
@@ -591,10 +572,6 @@ public class SettingsHomeFragment extends Fragment {
     private void equalizeMiniCardRows(View root) {
         root.post(() -> {
             int[][] rows = {
-                {R.id.group_mini_torch, R.id.group_mini_qr_scanner, R.id.group_mini_sound_meter},
-                {R.id.group_mini_sensor, R.id.group_mini_speedometer, R.id.group_mini_clinometer},
-                {R.id.group_mini_compass, R.id.group_mini_pedometer, R.id.group_mini_metal_detector},
-                {R.id.group_mini_parking_marker, R.id.group_mini_qr_generator}
             };
             for (int[] row : rows) {
                 int maxHeight = 0;

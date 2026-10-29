@@ -33,7 +33,6 @@ import com.shahid.cam.ui.RemoteFragment;
 import com.shahid.cam.ui.HomeFragment;
 import com.shahid.cam.ui.ShahidEditorMiniFragment;
 import com.shahid.cam.ui.SettingsHomeFragment;
-import com.shahid.cam.forensics.ui.ForensicIntelligenceFragment;
 import com.shahid.cam.ui.utils.NewFeatureManager;
 import com.shahid.cam.utils.RuntimeCompat;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -671,9 +670,7 @@ public class MainActivity extends AppCompatActivity {
                 targetPosition = 3;
             } else if (itemId == R.id.navigation_settings) {
                 targetPosition = 4;
-            } else if (itemId == R.id.navigation_lab) {
-                targetPosition = 5;
-            }
+            } else 
             
             if (targetPosition != -1) {
                 // Always use instant switch with fade animation

@@ -8,8 +8,6 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import com.shahid.cam.Constants;
 import com.shahid.cam.SharedPreferencesManager;
 import com.shahid.cam.shahidrec.ui.ShahidRecHomeFragment;
-import com.shahid.cam.forensics.ui.ForensicIntelligenceFragment;
-
 /**
  * ViewPagerAdapter manages fragments for the main ViewPager.
  * Creates appropriate HomeFragment based on current recording mode (ShahidCam/ShahidRec).
@@ -39,8 +37,7 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
             case 4:
                 // Phase 1: Use new SettingsHomeFragment (legacy fragment accessible from inside)
                 return new SettingsHomeFragment();
-            case 5:
-                return new ForensicIntelligenceFragment();
+            
             default:
                 return new HomeFragment();
         }
@@ -67,6 +64,6 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 6; // Home, Records, Remote, ShahidEditor Mini, Settings, Lab
+        return 5; // Home, Records, Remote, ShahidEditor Mini, Settings, Lab
     }
 }
