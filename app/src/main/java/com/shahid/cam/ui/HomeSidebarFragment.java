@@ -103,7 +103,8 @@ public class HomeSidebarFragment extends DialogFragment {
                 // Recursively clear backgrounds from all child views that Material added
                 clearMaterialBackgrounds(group);
             }
-
+        });
+        
         return dialog;
     }
     
@@ -152,10 +153,12 @@ public class HomeSidebarFragment extends DialogFragment {
         }
 
         // Profiles row
-        // Profiles removed
-
+        View profilesRow = view.findViewById(R.id.row_profiles);
+        if (profilesRow != null) {
+            profilesRow.setOnClickListener(v -> {
+                showProfilesComingSoon();
                 dismiss();
-
+            });
         }
 
         // What's New row
@@ -173,7 +176,7 @@ public class HomeSidebarFragment extends DialogFragment {
                 // Mark badge as seen when clicked
                 com.shahid.cam.ui.utils.NewFeatureManager.markFeatureAsSeen(requireContext(), "whats_new");
                 dismiss();
-
+            });
         }
 
         // Tips row
@@ -182,7 +185,7 @@ public class HomeSidebarFragment extends DialogFragment {
             tipsRow.setOnClickListener(v -> {
                 openTipsPicker();
                 dismiss();
-
+            });
         }
 
         // Preview control row - bind to existing layout elements and use centralized strings/prefs.
@@ -218,7 +221,7 @@ public class HomeSidebarFragment extends DialogFragment {
                             b.putBoolean("preview_enabled", isChecked);
                             getParentFragmentManager().setFragmentResult(resultKey, b);
                         } catch (Exception ignored) {}
-
+                    });
                     previewRow.setOnClickListener(v -> swPreview.performClick());
                 }
             }
@@ -247,7 +250,7 @@ public class HomeSidebarFragment extends DialogFragment {
                             b.putBoolean("preview_quick_actions_always_visible", isChecked);
                             getParentFragmentManager().setFragmentResult(resultKey, b);
                         } catch (Exception ignored) {}
-
+                    });
                     quickActionsRow.setOnClickListener(v -> sw.performClick());
                 }
             }
@@ -276,7 +279,7 @@ public class HomeSidebarFragment extends DialogFragment {
                             b.putBoolean("grid_lines_enabled", isChecked);
                             getParentFragmentManager().setFragmentResult(resultKey, b);
                         } catch (Exception ignored) {}
-
+                    });
                     gridRow.setOnClickListener(v -> swGrid.performClick());
                 }
             }
@@ -300,7 +303,7 @@ public class HomeSidebarFragment extends DialogFragment {
                 } catch (Exception e) {
                     FLog.w("HomeSidebar", "Failed to open Discord link", e);
                 }
-
+            });
         }
 
         // Mini Apps Section
@@ -314,7 +317,7 @@ public class HomeSidebarFragment extends DialogFragment {
             btnMiniAppsInfo.setOnClickListener(v -> {
                 MiniAppsInfoBottomSheet infoBS = MiniAppsInfoBottomSheet.newInstance();
                 infoBS.show(getParentFragmentManager(), "mini_apps_info");
-
+            });
         }
 
         // Mini Apps Edit/Reorder Button
@@ -324,7 +327,7 @@ public class HomeSidebarFragment extends DialogFragment {
             btnMiniAppsEdit.setOnClickListener(v -> {
                 MiniAppsReorderBottomSheet reorderBS = MiniAppsReorderBottomSheet.newInstance();
                 reorderBS.show(getParentFragmentManager(), "mini_apps_reorder");
-
+            });
         }
 
         // Re-apply mini app visibility in real time when the reorder sheet closes
@@ -332,6 +335,7 @@ public class HomeSidebarFragment extends DialogFragment {
                 MiniAppsReorderBottomSheet.RESULT_KEY, this, (key, bundle) -> {
                     View v = getView();
                     if (v != null) applyMiniAppVisibility(v);
+                });
 
         // See all mini apps -> Settings tab, scrolled to the Mini Apps section
         View seeAllRow = view.findViewById(R.id.row_mini_apps_see_all);
@@ -346,7 +350,7 @@ public class HomeSidebarFragment extends DialogFragment {
                 } catch (Exception e) {
                     FLog.w("HomeSidebar", "Failed to open mini apps section", e);
                 }
-
+            });
         }
     }
 
@@ -363,7 +367,73 @@ public class HomeSidebarFragment extends DialogFragment {
     }
 
     private void setupMiniAppRows(View view) {
-        // Mini apps removed as requested
+        // Mini apps permanently disabled
+        if (true) return;
+        // Torch Mini App - open full screen tool
+        View torchRow = view.findViewById(R.id.row_mini_app_torch);
+        if (torchRow != null) {
+            torchRow.setOnClickListener(v -> {
+                try {
+                    TorchToolFragment torchTool = TorchToolFragment.newInstance();
+                    OverlayNavUtil.show(requireActivity(), torchTool, "torch_tool");
+                    dismiss();
+                } catch (Exception e) {
+                    FLog.w("HomeSidebar", "Failed to open torch tool", e);
+                }
+            });
+        }
+
+        // Compass Mini App - Coming Soon
+        View compassRow = view.findViewById(R.id.row_mini_app_compass);
+        if (compassRow != null) {
+            compassRow.setOnClickListener(v -> {
+                showMiniAppComingSoon(this, "compass");
+            });
+        }
+
+        // Sound Meter Mini App - Coming Soon
+        View soundMeterRow = view.findViewById(R.id.row_mini_app_sound_meter);
+        if (soundMeterRow != null) {
+            soundMeterRow.setOnClickListener(v -> {
+                showMiniAppComingSoon(this, "sound_meter");
+            });
+        }
+
+        // Sensor Dashboard Mini App - Coming Soon
+        View sensorDashboardRow = view.findViewById(R.id.row_mini_app_sensor_dashboard);
+        if (sensorDashboardRow != null) {
+            sensorDashboardRow.setOnClickListener(v -> {
+                showMiniAppComingSoon(this, "sensor_dashboard");
+            });
+        }
+        // Speedometer Mini App - Coming Soon
+        View speedometerRow = view.findViewById(R.id.row_mini_app_speedometer);
+        if (speedometerRow != null) speedometerRow.setOnClickListener(v -> showMiniAppComingSoon(this, "speedometer"));
+        // Clinometer Mini App - Coming Soon
+        View clinometerRow = view.findViewById(R.id.row_mini_app_clinometer);
+        if (clinometerRow != null) clinometerRow.setOnClickListener(v -> showMiniAppComingSoon(this, "clinometer"));
+        // QR Scanner Mini App - ready to use
+        View qrScannerRow = view.findViewById(R.id.row_mini_app_qr_scanner);
+        if (qrScannerRow != null) qrScannerRow.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), com.shahid.cam.ui.miniapps.QRScannerActivity.class);
+            startActivity(intent);
+            dismiss();
+        });
+        // Pedometer Mini App - Coming Soon
+        View pedometerRow = view.findViewById(R.id.row_mini_app_pedometer);
+        if (pedometerRow != null) pedometerRow.setOnClickListener(v -> showMiniAppComingSoon(this, "pedometer"));
+        // Metal Detector Mini App - Coming Soon
+        View metalDetectorRow = view.findViewById(R.id.row_mini_app_metal_detector);
+        if (metalDetectorRow != null) metalDetectorRow.setOnClickListener(v -> showMiniAppComingSoon(this, "metal_detector"));
+        // Parking Marker Mini App - Coming Soon
+        View parkingMarkerRow = view.findViewById(R.id.row_mini_app_parking_marker);
+        if (parkingMarkerRow != null) parkingMarkerRow.setOnClickListener(v -> showMiniAppComingSoon(this, "parking_marker"));
+        View qrGeneratorRow = view.findViewById(R.id.row_mini_app_qr_generator);
+        if (qrGeneratorRow != null) qrGeneratorRow.setOnClickListener(v -> showMiniAppComingSoon(this, "qr_generator"));
+
+        applyMiniAppVisibility(view);
+
+        setupUpdateCards(view);
     }
 
     /**
@@ -373,7 +443,81 @@ public class HomeSidebarFragment extends DialogFragment {
      * visible row (the last one sits above the "See all" row).
      */
     private void applyMiniAppVisibility(View view) {
-        // Mini apps removed as requested
+        // Mini apps visibility disabled
+        if (true) return;
+        try {
+            SharedPreferencesManager prefs = SharedPreferencesManager.getInstance(requireContext());
+            String orderStr = prefs.getSidebarMiniAppsOrder();
+            int count = prefs.getSidebarMiniAppsCount();
+
+            // Parse stored order, dedupe, keep only known ids
+            List<String> order = new ArrayList<>();
+            if (orderStr != null) {
+                for (String id : orderStr.split("\\|")) {
+                    if (!id.isEmpty() && !order.contains(id)) order.add(id);
+                }
+            }
+            // Safety: append any known ids missing from the stored order
+            for (String id : MiniAppsReorderBottomSheet.ALL_MINI_APP_IDS) {
+                if (!order.contains(id)) order.add(id);
+            }
+            // Clamp count to [1, total apps]
+            count = Math.max(1, Math.min(count, order.size()));
+
+            int[] rowIds = {
+                R.id.row_mini_app_torch, R.id.row_mini_app_qr_scanner,
+                R.id.row_mini_app_compass, R.id.row_mini_app_sound_meter,
+                R.id.row_mini_app_sensor_dashboard, R.id.row_mini_app_speedometer,
+                R.id.row_mini_app_clinometer, R.id.row_mini_app_pedometer,
+                R.id.row_mini_app_metal_detector, R.id.row_mini_app_parking_marker,
+                R.id.row_mini_app_qr_generator
+            };
+            int[] dividerIds = {
+                R.id.divider_mini_app_1, R.id.divider_mini_app_2,
+                R.id.divider_mini_app_3, R.id.divider_mini_app_4,
+                R.id.divider_mini_app_5, R.id.divider_mini_app_6,
+                R.id.divider_mini_app_7, R.id.divider_mini_app_8,
+                R.id.divider_mini_app_9, R.id.divider_mini_app_10
+            };
+
+            android.widget.LinearLayout container = view.findViewById(R.id.mini_apps_list_container);
+            if (container == null) return;
+
+            // Capture views once — cached references stay valid even when rows
+            // are detached/re-attached (findViewById cannot find detached views).
+            if (miniAppRows == null) {
+                miniAppRows = new View[rowIds.length];
+                for (int i = 0; i < rowIds.length; i++) miniAppRows[i] = view.findViewById(rowIds[i]);
+                miniAppDividers = new View[dividerIds.length];
+                for (int i = 0; i < dividerIds.length; i++) miniAppDividers[i] = view.findViewById(dividerIds[i]);
+                miniAppSeeAllDivider = view.findViewById(R.id.divider_mini_app_see_all);
+                miniAppSeeAllRow = view.findViewById(R.id.row_mini_apps_see_all);
+            }
+
+            // Rebuild: top-N rows in saved order, a divider after every row
+            // (the 10 row dividers first, then the see-all divider after the last row)
+            container.removeAllViews();
+            int dividerCursor = 0;
+            for (int i = 0; i < count && i < order.size(); i++) {
+                String appId = order.get(i);
+                int rowIndex = -1;
+                for (int j = 0; j < MiniAppsReorderBottomSheet.ALL_MINI_APP_IDS.length; j++) {
+                    if (MiniAppsReorderBottomSheet.ALL_MINI_APP_IDS[j].equals(appId)) {
+                        rowIndex = j;
+                        break;
+                    }
+                }
+                if (rowIndex < 0 || miniAppRows[rowIndex] == null) continue;
+                container.addView(miniAppRows[rowIndex]);
+                View divider = dividerCursor < miniAppDividers.length ? miniAppDividers[dividerCursor] : miniAppSeeAllDivider;
+                if (divider != null) container.addView(divider);
+                dividerCursor++;
+            }
+            // "See all" row always sits at the bottom of the mini apps group
+            if (miniAppSeeAllRow != null) container.addView(miniAppSeeAllRow);
+        } catch (Exception e) {
+            FLog.w("HomeSidebar", "Failed to apply mini app visibility", e);
+        }
     }
 
     private void showProfilesComingSoon() {
@@ -534,7 +678,7 @@ public class HomeSidebarFragment extends DialogFragment {
                     UpdateAvailableBottomSheet.newInstance(r.stableVersion, "", r.stableUrl)
                             .show(getParentFragmentManager(), "UpdateSheet");
                     dismiss();
-
+                });
         else hideCard(view, R.id.card_update_stable);
 
         if (r.hasBeta) setupCard(view, R.id.card_update_beta, R.id.tv_beta_version,
@@ -542,7 +686,7 @@ public class HomeSidebarFragment extends DialogFragment {
                     BetaUpdateBottomSheet.newInstance(r.betaVersion, r.betaUrl, cur)
                             .show(getParentFragmentManager(), "BetaSheet");
                     dismiss();
-
+                });
         else hideCard(view, R.id.card_update_beta);
 
         if (r.hasPro) setupCard(view, R.id.card_update_pro, R.id.tv_pro_version,
@@ -550,7 +694,7 @@ public class HomeSidebarFragment extends DialogFragment {
                     ProUpdateBottomSheet.newInstance(r.proVersion, r.proUrl, cur)
                             .show(getParentFragmentManager(), "ProSheet");
                     dismiss();
-
+                });
         else hideCard(view, R.id.card_update_pro);
     }
 
