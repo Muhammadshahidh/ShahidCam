@@ -1,4 +1,6 @@
 package com.shahid.cam.forensics.ui;
+import com.shahid.cam.forensics.ui.view.ForensicsCardContainerView;
+import com.shahid.cam.forensics.data.local.model.ForensicsSnapshotWithMedia;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;

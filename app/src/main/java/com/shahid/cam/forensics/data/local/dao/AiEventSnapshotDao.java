@@ -1,4 +1,5 @@
 package com.shahid.cam.forensics.data.local.dao;
+import com.shahid.cam.forensics.data.local.model.ForensicsSnapshotWithMedia;
 
 import androidx.room.Dao;
 import androidx.room.Insert;

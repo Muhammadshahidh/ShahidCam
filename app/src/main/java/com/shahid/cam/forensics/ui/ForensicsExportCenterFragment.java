@@ -1,4 +1,6 @@
 package com.shahid.cam.forensics.ui;
+import com.shahid.cam.forensics.data.local.model.ForensicsSnapshotWithMedia;
+import com.shahid.cam.forensics.data.local.ForensicsDatabase;
 
 import android.net.Uri;
 import android.os.Bundle;

@@ -1,4 +1,5 @@
 package com.shahid.cam.services;
+import com.shahid.cam.forensics.service.DigitalForensicsEventRecorder;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;

@@ -1,4 +1,5 @@
 package com.shahid.cam.forensics.service;
+import com.shahid.cam.forensics.data.local.ForensicsDatabase;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
