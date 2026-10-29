@@ -29,7 +29,6 @@ import com.bumptech.glide.request.target.Target;
 import com.shahid.cam.Constants;
 import com.shahid.cam.R;
 import com.shahid.cam.SharedPreferencesManager;
-import com.shahid.cam.forensics.ui.ForensicsEvidenceInfoBottomSheet;
 
 import java.text.DateFormat;
 import java.util.Date;

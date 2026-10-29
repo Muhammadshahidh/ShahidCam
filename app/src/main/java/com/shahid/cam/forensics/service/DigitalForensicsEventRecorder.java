@@ -11,14 +11,12 @@ import androidx.annotation.NonNull;
 
 import com.shahid.cam.SharedPreferencesManager;
 import com.shahid.cam.Constants;
-import com.shahid.cam.forensics.data.local.ForensicsDatabase;
 import com.shahid.cam.forensics.data.local.dao.AiEventDao;
 import com.shahid.cam.forensics.data.local.dao.AiEventSnapshotDao;
 import com.shahid.cam.forensics.data.local.dao.MediaAssetDao;
 import com.shahid.cam.forensics.data.local.entity.AiEventEntity;
 import com.shahid.cam.forensics.data.local.entity.AiEventSnapshotEntity;
 import com.shahid.cam.forensics.data.local.entity.MediaAssetEntity;
-import com.shahid.cam.forensics.domain.fingerprint.ForensicsMetadataUtils;
 import com.shahid.cam.motion.domain.detector.EfficientDetLite1Detector;
 
 import java.io.File;

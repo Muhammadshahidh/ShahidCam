@@ -63,7 +63,6 @@ import com.shahid.cam.utils.PhotoStorageHelper;
 import com.shahid.cam.utils.RecordingStoragePaths;
 import com.shahid.cam.utils.RuntimeCompat;
 import com.shahid.cam.utils.ServiceStartPolicy;
-import com.shahid.cam.forensics.service.DigitalForensicsEventRecorder;
 
 import java.io.File;
 import java.io.FileInputStream;

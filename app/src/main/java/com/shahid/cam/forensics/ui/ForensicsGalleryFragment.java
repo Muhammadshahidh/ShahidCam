@@ -37,8 +37,6 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.shahid.cam.Constants;
 import com.shahid.cam.R;
 import com.shahid.cam.SharedPreferencesManager;
-import com.shahid.cam.forensics.data.local.ForensicsDatabase;
-import com.shahid.cam.forensics.data.local.model.ForensicsSnapshotWithMedia;
 import com.shahid.cam.ui.ImageViewerActivity;
 import com.shahid.cam.ui.InputActionBottomSheetFragment;
 import com.shahid.cam.ui.OverlayNavUtil;
