@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ON idle state: eyes FULLY OPEN (scaleY=1.0).
-  Used as:
-  - Static display after AVD finishes (fix for "eyes disappear on re-open" bug)
-  - Base for toggle_off_anim.xml (eyes open → closing transition)
-  - Base for toggle_on_blink.xml (eyes open → blink → open)
-  pivotY=198 at the chord so blink/close transitions animate correctly.
--->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt"
     android:width="52dp"
@@ -14,22 +6,76 @@
     android:viewportWidth="400"
     android:viewportHeight="400">
 
-    <!-- Head sphere: same gradient as toggle_on.xml -->
+    <path
+        android:name="shadow"
+        android:pathData="M 30,205 A 170,170 0 1,0 370,205 A 170,170 0 1,0 30,205 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="200"
+                android:centerY="215"
+                android:gradientRadius="175"
+                android:startColor="#45000000"
+                android:endColor="#00000000" />
+        </aapt:attr>
+    </path>
+
     <path
         android:name="head"
         android:pathData="M 30,200 A 170,170 0 1,0 370,200 A 170,170 0 1,0 30,200 Z">
         <aapt:attr name="android:fillColor">
             <gradient
                 android:type="radial"
-                android:centerX="150"
-                android:centerY="100"
-                android:gradientRadius="280"
-                android:startColor="#c8c8c8"
-                android:endColor="#2e2e2e" />
+                android:centerX="135"
+                android:centerY="110"
+                android:gradientRadius="265"
+                android:startColor="#737c87"
+                android:centerColor="#2d3238"
+                android:endColor="#111316" />
         </aapt:attr>
     </path>
 
-    <!-- eye_group: fully awake (scaleY=1.0, translateY=0). pivotY=178 for animations. -->
+    <path
+        android:name="specular_sheen"
+        android:pathData="M 70,135 A 130,130 0 0,1 270,75 A 160,160 0 0,0 70,135 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="70"
+                android:startY="135"
+                android:endX="270"
+                android:endY="75"
+                android:startColor="#55ffffff"
+                android:endColor="#00ffffff" />
+        </aapt:attr>
+    </path>
+
+    <path
+        android:name="rim_bounce"
+        android:pathData="M 100,345 A 170,170 0 0,0 355,245 A 166,166 0 0,1 100,345 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="100"
+                android:startY="345"
+                android:endX="355"
+                android:endY="245"
+                android:startColor="#3568778a"
+                android:endColor="#00000000" />
+        </aapt:attr>
+    </path>
+
+    <path
+        android:name="left_socket"
+        android:pathData="M 86,165 A 44,44 0 0,0 174,165 Z"
+        android:fillColor="#0c0d10"
+        android:fillAlpha="0.9" />
+    <path
+        android:name="right_socket"
+        android:pathData="M 226,165 A 44,44 0 0,0 314,165 Z"
+        android:fillColor="#0c0d10"
+        android:fillAlpha="0.9" />
+
     <group
         android:name="eye_group"
         android:translateX="0"
@@ -37,58 +83,25 @@
         android:pivotX="200"
         android:pivotY="165"
         android:scaleY="1.0">
-
-        <!-- LEFT eye glow group (named so sleep AVD can fade it out) -->
         <group android:name="left_glow_group" android:alpha="1">
-            <!-- Dome halos -->
-            <path android:pathData="M 89,165 A 41,41 0 0 0 171,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.18" />
-            <path android:pathData="M 88,165 A 42,42 0 0 0 172,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.14" />
-            <path android:pathData="M 86,165 A 44,44 0 0 0 174,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.10" />
-            <path android:pathData="M 84,165 A 46,46 0 0 0 176,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.07" />
-            <path android:pathData="M 81,165 A 49,49 0 0 0 179,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.04" />
-            <path android:pathData="M 77,165 A 53,53 0 0 0 183,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.02" />
-            <path android:pathData="M 72,165 A 58,58 0 0 0 188,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.01" />
-            <!-- Flat-bottom halos -->
-            <path android:pathData="M 90,165 A 40,4 0 0 1 170,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.24" />
-            <path android:pathData="M 89,165 A 41,7 0 0 1 171,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.16" />
-            <path android:pathData="M 88,165 A 42,11 0 0 1 172,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.09" />
-            <path android:pathData="M 86,165 A 44,15 0 0 1 174,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.04" />
-            <path android:pathData="M 83,165 A 47,20 0 0 1 177,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.01" />
+            <path android:pathData="M 82,165 A 48,48 0 0,0 178,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.10" />
+            <path android:pathData="M 85,165 A 45,45 0 0,0 175,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.18" />
+            <path android:pathData="M 88,165 A 42,42 0 0,0 172,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.30" />
         </group>
-
-        <!-- LEFT eye: solid bright core on top -->
         <path
             android:name="left_eye"
-            android:pathData="M 90,165 A 40,40 0 0 0 170,165 Z"
+            android:pathData="M 90,165 A 40,40 0 0,0 170,165 Z"
             android:fillColor="#ffffff"
             android:fillAlpha="1" />
-
-        <!-- RIGHT eye glow group -->
         <group android:name="right_glow_group" android:alpha="1">
-            <!-- Dome halos -->
-            <path android:pathData="M 229,165 A 41,41 0 0 0 311,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.18" />
-            <path android:pathData="M 228,165 A 42,42 0 0 0 312,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.14" />
-            <path android:pathData="M 226,165 A 44,44 0 0 0 314,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.10" />
-            <path android:pathData="M 224,165 A 46,46 0 0 0 316,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.07" />
-            <path android:pathData="M 221,165 A 49,49 0 0 0 319,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.04" />
-            <path android:pathData="M 217,165 A 53,53 0 0 0 323,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.02" />
-            <path android:pathData="M 212,165 A 58,58 0 0 0 328,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.01" />
-            <!-- Flat-bottom halos -->
-            <path android:pathData="M 230,165 A 40,4 0 0 1 310,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.24" />
-            <path android:pathData="M 229,165 A 41,7 0 0 1 311,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.16" />
-            <path android:pathData="M 228,165 A 42,11 0 0 1 312,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.09" />
-            <path android:pathData="M 226,165 A 44,15 0 0 1 314,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.04" />
-            <path android:pathData="M 223,165 A 47,20 0 0 1 317,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.01" />
+            <path android:pathData="M 222,165 A 48,48 0 0,0 318,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.10" />
+            <path android:pathData="M 225,165 A 45,45 0 0,0 315,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.18" />
+            <path android:pathData="M 228,165 A 42,42 0 0,0 312,165 Z" android:fillColor="#ffffff" android:fillAlpha="0.30" />
         </group>
-
-        <!-- RIGHT eye: solid bright core on top -->
         <path
             android:name="right_eye"
-            android:pathData="M 230,165 A 40,40 0 0 0 310,165 Z"
+            android:pathData="M 230,165 A 40,40 0 0,0 310,165 Z"
             android:fillColor="#ffffff"
             android:fillAlpha="1" />
-
     </group>
-
 </vector>
-

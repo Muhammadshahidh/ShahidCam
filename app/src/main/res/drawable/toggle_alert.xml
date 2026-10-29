@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="52dp"
+    android:height="52dp"
+    android:viewportWidth="400"
+    android:viewportHeight="400">
+
+    <path
+        android:name="head"
+        android:pathData="M 30,200 A 170,170 0 1,0 370,200 A 170,170 0 1,0 30,200 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="135"
+                android:centerY="110"
+                android:gradientRadius="265"
+                android:startColor="#736357"
+                android:centerColor="#2d2420"
+                android:endColor="#160f0c" />
+        </aapt:attr>
+    </path>
+
+    <group android:name="eye_group" android:translateX="0" android:translateY="0" android:pivotX="200" android:pivotY="165">
+        <path android:name="left_eye" android:pathData="M 90,165 A 40,40 0 0 0 170,165 Z" android:fillColor="#ff9100" android:fillAlpha="1" />
+        <path android:name="right_eye" android:pathData="M 230,165 A 40,40 0 0 0 310,165 Z" android:fillColor="#ff9100" android:fillAlpha="1" />
+    </group>
+</vector>
