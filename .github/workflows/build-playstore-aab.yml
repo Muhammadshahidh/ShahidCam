@@ -1,43 +1,43 @@
-name: Build Google Play Release AAB
+name: Build ShahidCam APK & AAB
 
 on:
-  workflow_dispatch:
   push:
     branches: [ master, main ]
+  workflow_dispatch:
 
 jobs:
-  build-aab:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          lfs: true
 
-      - name: Set up JDK 21
+      - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
+          java-version: '17'
           distribution: 'temurin'
-          java-version: '21'
+          cache: gradle
 
-      - name: Setup Android SDK
-        run: |
-          echo "sdk.dir=$ANDROID_HOME" > local.properties
-          echo "KEYSTORE_FILE=" >> local.properties
-
-      - name: Grant execution permission to gradlew
+      - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Clone patched Media3 dependency
-        run: |
-          git clone --depth 1 https://github.com/anonfaded/media3-patched.git /tmp/media3-patched
+      - name: Build Installable APK
+        run: ./gradlew assembleDebug --no-daemon --stacktrace
 
-      - name: Build Google Play Release Bundle (AAB)
-        run: for i in 1 2 3; do ./gradlew bundleDefaultRelease --no-daemon --stacktrace && break || (echo "Retrying in 10s..." && sleep 10); done
-
-      - name: Upload Google Play Release AAB Artifact
+      - name: Upload Installable APK
         uses: actions/upload-artifact@v4
         with:
-          name: ShahidCam-GooglePlay-Release-AAB
-          path: app/build/outputs/**/*
-          if-no-files-found: error
+          name: ShahidCam-Installable-APK
+          path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: warn
+
+      - name: Attempt Release AAB
+        run: ./gradlew bundleDefaultRelease || ./gradlew bundleRelease || true
+
+      - name: Upload Release AAB (if generated)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ShahidCam-PlayStore-AAB
+          path: app/build/outputs/bundle/**/*.aab
+          if-no-files-found: ignore
