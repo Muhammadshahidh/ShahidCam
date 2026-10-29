@@ -433,7 +433,8 @@ public class SettingsHomeFragment extends Fragment {
 
     /** Wire click handlers for all settings rows. */
     private void setupRowHandlers(View root) {
-                
+        bindRow(root, R.id.row_haptics_settings,
+                () -> openSubFragment(new HapticsSettingsFragment()));
 
         bindRow(root, R.id.group_appearance, () -> openSubFragment(new AppearanceSettingsFragment()));
         bindRow(root, R.id.group_video_quick, () -> openSubFragment(new VideoSettingsFragment()));
@@ -441,7 +442,14 @@ public class SettingsHomeFragment extends Fragment {
         bindRow(root, R.id.group_audio_quick, () -> openSubFragment(new AudioSettingsFragment()));
         bindRow(root, R.id.group_screen_recording, () -> openSubFragment(new com.shahid.cam.shahidrec.ui.ScreenRecordingSettingsFragment()));
         bindRow(root, R.id.group_storage, () -> openSubFragment(new StorageSettingsFragment()));
-        bindRow(root, R.id.group_security, () -> openSubFragment(new SecuritySettingsFragment()));});});});});
+        bindRow(root, R.id.group_security, () -> openSubFragment(new SecuritySettingsFragment()));
+        
+        
+        
+        
+        
+        
+        
         bindRow(root, R.id.group_widgets, () -> openSubFragment(new ShortcutsSettingsFragment()));
         bindRow(root, R.id.group_notifications, () -> openSubFragment(new NotificationSettingsFragment()));
         bindRow(root, R.id.group_prefs_backup, () -> {
@@ -502,34 +510,7 @@ public class SettingsHomeFragment extends Fragment {
     }
 
     private void setupMiniAppCards(View root) {
-        // Mini apps removed as requested
-    } catch (Exception e) {
-                FLog.w("SettingsHome", "Failed to open torch", e);
-            }
-        });
-                R.string.mini_app_compass_desc, "explore", R.string.mini_app_coming_soon,
-                () -> HomeSidebarFragment.showMiniAppComingSoon(this, "compass"));
-                R.string.mini_app_sound_meter_desc, "graphic_eq", R.string.mini_app_coming_soon,
-                () -> HomeSidebarFragment.showMiniAppComingSoon(this, "sound_meter"));
-                R.string.mini_app_sensor_dashboard_desc, "sensors", R.string.mini_app_coming_soon,
-                () -> HomeSidebarFragment.showMiniAppComingSoon(this, "sensor_dashboard"));
-                R.string.mini_app_speedometer_desc, "speed", R.string.mini_app_coming_soon,
-                () -> HomeSidebarFragment.showMiniAppComingSoon(this, "speedometer"));
-                R.string.mini_app_clinometer_desc, "architecture", R.string.mini_app_coming_soon,
-                () -> HomeSidebarFragment.showMiniAppComingSoon(this, "clinometer"));
-                R.string.mini_app_qr_scanner_desc, "qr_code_scanner", 0, // no "Soon" badge — it's ready
-                () -> {
-                    Intent intent = new Intent(requireContext(), com.shahid.cam.ui.miniapps.QRScannerActivity.class);
-                    startActivity(intent);
-                });
-                R.string.mini_app_pedometer_desc, "directions_walk", R.string.mini_app_coming_soon,
-                () -> HomeSidebarFragment.showMiniAppComingSoon(this, "pedometer"));
-                R.string.mini_app_metal_detector_desc, "travel_explore", R.string.mini_app_coming_soon,
-                () -> HomeSidebarFragment.showMiniAppComingSoon(this, "metal_detector"));
-                R.string.mini_app_parking_marker_desc, "location_on", R.string.mini_app_coming_soon,
-                () -> HomeSidebarFragment.showMiniAppComingSoon(this, "parking_marker"));
-                R.string.mini_app_qr_generator_desc, "qr_code_2", R.string.mini_app_coming_soon,
-                () -> HomeSidebarFragment.showMiniAppComingSoon(this, "qr_generator"));
+        // Cleaned and removed
     }
 
     private void bindRow(View root, int id, Runnable action) {
@@ -537,48 +518,12 @@ public class SettingsHomeFragment extends Fragment {
         if (v != null) v.setOnClickListener(x -> action.run());
     }
 
-    private void 
-        if (card == null) return;
-        TextView iconTv = card.findViewById(R.id.mini_card_icon);
-        if (iconTv != null) iconTv.setText(icon);
-        TextView titleTv = card.findViewById(R.id.mini_card_title);
-        if (titleTv != null) titleTv.setText(titleRes);
-        TextView descTv = card.findViewById(R.id.mini_card_desc);
-        if (descTv != null) descTv.setText(descRes);
-        TextView badgeTv = card.findViewById(R.id.mini_card_badge);
-        if (badgeTv != null) {
-            if (badgeRes != 0) {
-                badgeTv.setText(badgeRes);
-                badgeTv.setVisibility(View.VISIBLE);
-            } else {
-                badgeTv.setVisibility(View.GONE);
-            }
-        }
-        card.setOnClickListener(v -> action.run());
+    private void setupMiniCard(View root, int cardId, int titleRes, int descRes, String icon, int badgeRes, Runnable action) {
+        // Cleaned and removed
     }
 
     private void equalizeMiniCardRows(View root) {
-        // Mini apps removed as requested
-    };
-            for (int[] row : rows) {
-                int maxHeight = 0;
-                View[] cards = new View[row.length];
-                for (int i = 0; i < row.length; i++) {
-                    cards[i] = root.findViewById(row[i]);
-                    if (cards[i] != null) {
-                        maxHeight = Math.max(maxHeight, cards[i].getMeasuredHeight());
-                    }
-                }
-                if (maxHeight == 0) continue;
-                for (View card : cards) {
-                    if (card != null) {
-                        ViewGroup.LayoutParams lp = card.getLayoutParams();
-                        lp.height = maxHeight;
-                        card.setLayoutParams(lp);
-                    }
-                }
-            }
-        });
+        // Cleaned and removed
     }
 
     private void openSubFragment(Fragment fragment) {
