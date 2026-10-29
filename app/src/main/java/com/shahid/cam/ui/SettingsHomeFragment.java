@@ -433,7 +433,7 @@ public class SettingsHomeFragment extends Fragment {
 
     /** Wire click handlers for all settings rows. */
     private void setupRowHandlers(View root) {
-                () -> openSubFragment(new HapticsSettingsFragment()));
+                
 
         bindRow(root, R.id.group_appearance, () -> openSubFragment(new AppearanceSettingsFragment()));
         bindRow(root, R.id.group_video_quick, () -> openSubFragment(new VideoSettingsFragment()));
@@ -441,15 +441,7 @@ public class SettingsHomeFragment extends Fragment {
         bindRow(root, R.id.group_audio_quick, () -> openSubFragment(new AudioSettingsFragment()));
         bindRow(root, R.id.group_screen_recording, () -> openSubFragment(new com.shahid.cam.shahidrec.ui.ScreenRecordingSettingsFragment()));
         bindRow(root, R.id.group_storage, () -> openSubFragment(new StorageSettingsFragment()));
-        bindRow(root, R.id.group_security, () -> openSubFragment(new SecuritySettingsFragment()));
-            android.widget.Toast.makeText(requireContext(), R.string.mini_app_coming_soon_desc, android.widget.Toast.LENGTH_SHORT).show();
-        });
-            android.widget.Toast.makeText(requireContext(), R.string.mini_app_coming_soon_desc, android.widget.Toast.LENGTH_SHORT).show();
-        });
-            android.widget.Toast.makeText(requireContext(), R.string.mini_app_coming_soon_desc, android.widget.Toast.LENGTH_SHORT).show();
-        });
-            android.widget.Toast.makeText(requireContext(), R.string.mini_app_coming_soon_desc, android.widget.Toast.LENGTH_SHORT).show();
-        });
+        bindRow(root, R.id.group_security, () -> openSubFragment(new SecuritySettingsFragment()));});});});});
         bindRow(root, R.id.group_widgets, () -> openSubFragment(new ShortcutsSettingsFragment()));
         bindRow(root, R.id.group_notifications, () -> openSubFragment(new NotificationSettingsFragment()));
         bindRow(root, R.id.group_prefs_backup, () -> {
@@ -510,11 +502,8 @@ public class SettingsHomeFragment extends Fragment {
     }
 
     private void setupMiniAppCards(View root) {
-                R.string.mini_app_torch_desc, "flashlight_on", 0, () -> {
-            try {
-                com.shahid.cam.ui.miniapps.TorchToolFragment torchTool = com.shahid.cam.ui.miniapps.TorchToolFragment.newInstance();
-                OverlayNavUtil.show(requireActivity(), torchTool, "torch_tool");
-            } catch (Exception e) {
+        // Mini apps removed as requested
+    } catch (Exception e) {
                 FLog.w("SettingsHome", "Failed to open torch", e);
             }
         });
@@ -548,8 +537,7 @@ public class SettingsHomeFragment extends Fragment {
         if (v != null) v.setOnClickListener(x -> action.run());
     }
 
-    private void setupMiniCard(View root, int cardId, int titleRes, int descRes, String icon, int badgeRes, Runnable action) {
-        View card = root.findViewById(cardId);
+    private void 
         if (card == null) return;
         TextView iconTv = card.findViewById(R.id.mini_card_icon);
         if (iconTv != null) iconTv.setText(icon);
@@ -570,9 +558,8 @@ public class SettingsHomeFragment extends Fragment {
     }
 
     private void equalizeMiniCardRows(View root) {
-        root.post(() -> {
-            int[][] rows = {
-            };
+        // Mini apps removed as requested
+    };
             for (int[] row : rows) {
                 int maxHeight = 0;
                 View[] cards = new View[row.length];
