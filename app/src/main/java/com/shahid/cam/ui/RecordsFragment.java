@@ -1,4 +1,5 @@
 package com.shahid.cam.ui;
+import com.shahid.cam.forensics.service.DigitalForensicsIndexCoordinator;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;

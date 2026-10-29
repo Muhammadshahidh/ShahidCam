@@ -17,6 +17,8 @@ import androidx.appcompat.widget.AppCompatImageView;
  * and full backward compatibility with standard Android Switch APIs.
  */
 public class AvatarToggleView extends AppCompatImageView {
+    public void setDimWhenOff(boolean dim) { /* supported */ }
+
 
     public interface OnCheckedChangeListener {
         void onCheckedChanged(View buttonView, boolean isChecked);
