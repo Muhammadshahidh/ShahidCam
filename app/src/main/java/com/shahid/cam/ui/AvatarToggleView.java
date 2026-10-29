@@ -12,23 +12,28 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
 
 /**
- * Premium 3D Metallic Sphere Avatar Face with realistic materials,
- * cybernetic glowing eyes, dynamic floating/breathing, and 4 states:
- * ACTIVE, SLEEP, NIGHT, ALERT.
- * Battery-optimized: lifecycle auto-pause on screen off/detached.
+ * Premium 3D Metallic Sphere Avatar Face with Realistic Materials,
+ * Cybernetic glowing eyes, 4 states (ACTIVE, SLEEP, NIGHT, ALERT),
+ * and full backward compatibility with standard Android Switch APIs.
  */
 public class AvatarToggleView extends AppCompatImageView {
+
+    public interface OnCheckedChangeListener {
+        void onCheckedChanged(View buttonView, boolean isChecked);
+    }
 
     public enum SphereState {
         ACTIVE,  // ON: Bright cyber-glowing aperture eyes, metallic sheen
         SLEEP,   // OFF: Smooth breathing pulse, dim dormant visor
-        NIGHT,   // Low-light stealth mode, emerald green low-frequency glow
-        ALERT    // Recording/Motion active: Crimson glow with alert pulse
+        NIGHT,   // Low-light stealth mode, emerald green glow
+        ALERT    // Recording/Motion alert: Crimson glow
     }
 
     private SphereState currentState = SphereState.SLEEP;
+    private boolean isChecked = false;
+    private OnCheckedChangeListener onCheckedChangeListener;
+
     private AnimatorSet idleAnimatorSet;
-    private ValueAnimator eyeBreathingAnimator;
     private boolean isAnimating = false;
 
     public AvatarToggleView(@NonNull Context context) {
@@ -50,39 +55,68 @@ public class AvatarToggleView extends AppCompatImageView {
         setScaleType(ScaleType.FIT_CENTER);
         applyStateDrawable(currentState);
         setupAnimations();
+
+        setOnClickListener(v -> toggle());
+    }
+
+    public void setChecked(boolean checked) {
+        setChecked(checked, true);
+    }
+
+    public void setChecked(boolean checked, boolean animate) {
+        if (this.isChecked != checked) {
+            this.isChecked = checked;
+            setState(checked ? SphereState.ACTIVE : SphereState.SLEEP, animate);
+            if (onCheckedChangeListener != null) {
+                onCheckedChangeListener.onCheckedChanged(this, checked);
+            }
+        } else {
+            applyStateDrawable(checked ? SphereState.ACTIVE : SphereState.SLEEP);
+        }
+    }
+
+    public boolean isChecked() {
+        return isChecked;
+    }
+
+    public void toggle() {
+        setChecked(!isChecked);
+    }
+
+    public void setOnCheckedChangeListener(@Nullable OnCheckedChangeListener listener) {
+        this.onCheckedChangeListener = listener;
     }
 
     public void setState(@NonNull SphereState state) {
-        if (this.currentState == state) return;
-        this.currentState = state;
+        setState(state, true);
+    }
 
-        // Smooth state transition with gentle 3D bounce
-        animate()
-            .scaleX(0.85f)
-            .scaleY(0.85f)
-            .setDuration(120)
-            .withEndAction(() -> {
-                applyStateDrawable(currentState);
-                animate()
-                    .scaleX(1.0f)
-                    .scaleY(1.0f)
-                    .setDuration(160)
-                    .setInterpolator(new AccelerateDecelerateInterpolator())
-                    .start();
-            })
-            .start();
+    public void setState(@NonNull SphereState state, boolean animate) {
+        this.currentState = state;
+        this.isChecked = (state == SphereState.ACTIVE || state == SphereState.ALERT);
+
+        if (animate) {
+            animate()
+                .scaleX(0.85f)
+                .scaleY(0.85f)
+                .setDuration(100)
+                .withEndAction(() -> {
+                    applyStateDrawable(currentState);
+                    animate()
+                        .scaleX(1.0f)
+                        .scaleY(1.0f)
+                        .setDuration(140)
+                        .setInterpolator(new AccelerateDecelerateInterpolator())
+                        .start();
+                })
+                .start();
+        } else {
+            applyStateDrawable(currentState);
+        }
     }
 
     public SphereState getState() {
         return currentState;
-    }
-
-    public void toggleState() {
-        if (currentState == SphereState.SLEEP) {
-            setState(SphereState.ACTIVE);
-        } else {
-            setState(SphereState.SLEEP);
-        }
     }
 
     private void applyStateDrawable(SphereState state) {
@@ -110,14 +144,12 @@ public class AvatarToggleView extends AppCompatImageView {
     }
 
     private void setupAnimations() {
-        // 1. Idle 3D floating animation (subtle Y-axis levitation)
-        ObjectAnimator floatAnim = ObjectAnimator.ofFloat(this, "translationY", -4f, 4f);
+        ObjectAnimator floatAnim = ObjectAnimator.ofFloat(this, "translationY", -3.5f, 3.5f);
         floatAnim.setDuration(2400);
         floatAnim.setRepeatMode(ValueAnimator.REVERSE);
         floatAnim.setRepeatCount(ValueAnimator.INFINITE);
         floatAnim.setInterpolator(new AccelerateDecelerateInterpolator());
 
-        // 2. Subtle organic breathing scale
         ObjectAnimator breathAnimX = ObjectAnimator.ofFloat(this, "scaleX", 0.985f, 1.015f);
         breathAnimX.setDuration(2400);
         breathAnimX.setRepeatMode(ValueAnimator.REVERSE);

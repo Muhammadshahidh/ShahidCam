@@ -2256,7 +2256,7 @@ public class MainActivity extends AppCompatActivity {
             case 2: return R.id.navigation_remote;
             case 3: return R.id.navigation_shahideditor_mini;
             case 4: return R.id.navigation_settings;
-            case 5: return R.id.navigation_lab;
+            case 5: return 0;
             default: return -1;
         }
     }
