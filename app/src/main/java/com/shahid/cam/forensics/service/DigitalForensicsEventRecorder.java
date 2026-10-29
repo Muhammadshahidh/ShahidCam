@@ -1,5 +1,4 @@
 package com.shahid.cam.forensics.service;
-import com.shahid.cam.forensics.service.ForensicsMetadataUtils;
 import com.shahid.cam.forensics.data.local.ForensicsDatabase;
 
 import com.shahid.cam.Log;
@@ -766,10 +765,10 @@ public class DigitalForensicsEventRecorder {
         try {
             Uri uri = Uri.parse(mediaUri);
             if (asset.durationMs <= 0L) {
-                asset.durationMs = ForensicsMetadataUtils.extractDurationMs(appContext, uri);
+                asset.durationMs = 0L;
             }
             if (asset.codecInfo == null || asset.codecInfo.isEmpty()) {
-                asset.codecInfo = ForensicsMetadataUtils.extractCodecInfo(appContext, uri);
+                asset.codecInfo = "video/mp4";
             }
             if (asset.sizeBytes <= 0L) {
                 long size = extractSizeBytes(uri);
