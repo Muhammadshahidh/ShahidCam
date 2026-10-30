@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.shahid.cam"
-    compileSdk = 36
+    compileSdk 35
 
     val isBundle = gradle.startParameter.taskNames.any { it.lowercase().contains("bundle") }
     val isProBuild = gradle.startParameter.taskNames.any { it.lowercase().contains("pro") }
@@ -30,7 +30,7 @@ android {
     defaultConfig {
         applicationId = "com.cybershadowpk.shahidcam"
         minSdk = 24
-        targetSdk = 36
+        targetSdk 35
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         versionCode = 52
         versionName = "4.0.0"
