@@ -2218,7 +2218,8 @@ public class MainActivity extends AppCompatActivity {
         // Update bottom nav selection
         int navItemId = getNavItemIdForPosition(position);
         if (navItemId != -1) {
-            bottomNavigationView.setSelectedItemId(navItemId);
+            int targetNavId = navItemId;
+if (targetNavId != 0) { bottomNavigationView.setSelectedItemId(targetNavId); }
         }
         
         // Restore correct bar colors for the selected tab
@@ -2256,7 +2257,6 @@ public class MainActivity extends AppCompatActivity {
             case 2: return R.id.navigation_remote;
             case 3: return R.id.navigation_shahideditor_mini;
             case 4: return R.id.navigation_settings;
-            case 5: return 0;
             default: return -1;
         }
     }

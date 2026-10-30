@@ -188,7 +188,7 @@ public class AvatarToggleView extends AppCompatImageView {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        startAnimations();
+        post(() -> { try { startAnimations(); } catch (Exception ignored) {} });
     }
 
     @Override
@@ -201,7 +201,7 @@ public class AvatarToggleView extends AppCompatImageView {
     protected void onVisibilityChanged(@NonNull View changedView, int visibility) {
         super.onVisibilityChanged(changedView, visibility);
         if (visibility == View.VISIBLE) {
-            startAnimations();
+            post(() -> { try { startAnimations(); } catch (Exception ignored) {} });
         } else {
             stopAnimations();
         }
