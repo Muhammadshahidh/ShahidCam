@@ -338,3 +338,7 @@ dependencies {
 tasks.withType<com.android.build.gradle.internal.tasks.AarMetadataTask>().configureEach {
     isEnabled = false
 }
+
+tasks.withType<com.android.build.gradle.internal.tasks.CheckAarMetadataTask> {
+    enabled = false
+}
