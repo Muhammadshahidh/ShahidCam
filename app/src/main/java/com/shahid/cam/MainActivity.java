@@ -33,6 +33,7 @@ import com.shahid.cam.ui.RemoteFragment;
 import com.shahid.cam.ui.HomeFragment;
 import com.shahid.cam.ui.ShahidEditorMiniFragment;
 import com.shahid.cam.ui.SettingsHomeFragment;
+import com.shahid.cam.forensics.ui.ForensicIntelligenceFragment;
 import com.shahid.cam.ui.utils.NewFeatureManager;
 import com.shahid.cam.utils.RuntimeCompat;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -670,7 +671,9 @@ public class MainActivity extends AppCompatActivity {
                 targetPosition = 3;
             } else if (itemId == R.id.navigation_settings) {
                 targetPosition = 4;
-            } else 
+            } else if (itemId == R.id.navigation_lab) {
+                targetPosition = 5;
+            }
             
             if (targetPosition != -1) {
                 // Always use instant switch with fade animation
@@ -2218,8 +2221,7 @@ public class MainActivity extends AppCompatActivity {
         // Update bottom nav selection
         int navItemId = getNavItemIdForPosition(position);
         if (navItemId != -1) {
-            int targetNavId = navItemId;
-if (targetNavId != 0) { bottomNavigationView.setSelectedItemId(targetNavId); }
+            bottomNavigationView.setSelectedItemId(navItemId);
         }
         
         // Restore correct bar colors for the selected tab
@@ -2257,6 +2259,7 @@ if (targetNavId != 0) { bottomNavigationView.setSelectedItemId(targetNavId); }
             case 2: return R.id.navigation_remote;
             case 3: return R.id.navigation_shahideditor_mini;
             case 4: return R.id.navigation_settings;
+            case 5: return R.id.navigation_lab;
             default: return -1;
         }
     }

@@ -61,7 +61,8 @@
             android:clickable="true"
             android:focusable="true">
 
-        <LinearLayout android:visibility="gone"             android:id="@+id/row_profiles"
+        <LinearLayout
+            android:id="@+id/row_profiles"
             style="@style/SettingsGroupRow"
             android:clickable="true" android:focusable="true"
             android:minHeight="56dp">
@@ -505,8 +506,7 @@
         </LinearLayout>
 
         <!-- Group: Mini Apps -->
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
-<LinearLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -611,7 +611,6 @@
                         android:ellipsize="none" />
 
                 </LinearLayout>
-</LinearLayout>
 
                 <!-- Arrow -->
                 <ImageView

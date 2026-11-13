@@ -1,5 +1,4 @@
 package com.shahid.cam.services;
-import com.shahid.cam.forensics.service.DigitalForensicsEventRecorder;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -64,6 +63,7 @@ import com.shahid.cam.utils.PhotoStorageHelper;
 import com.shahid.cam.utils.RecordingStoragePaths;
 import com.shahid.cam.utils.RuntimeCompat;
 import com.shahid.cam.utils.ServiceStartPolicy;
+import com.shahid.cam.forensics.service.DigitalForensicsEventRecorder;
 
 import java.io.File;
 import java.io.FileInputStream;

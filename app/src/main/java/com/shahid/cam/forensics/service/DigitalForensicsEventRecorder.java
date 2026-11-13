@@ -1,5 +1,4 @@
 package com.shahid.cam.forensics.service;
-import com.shahid.cam.forensics.data.local.ForensicsDatabase;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -12,12 +11,14 @@ import androidx.annotation.NonNull;
 
 import com.shahid.cam.SharedPreferencesManager;
 import com.shahid.cam.Constants;
+import com.shahid.cam.forensics.data.local.ForensicsDatabase;
 import com.shahid.cam.forensics.data.local.dao.AiEventDao;
 import com.shahid.cam.forensics.data.local.dao.AiEventSnapshotDao;
 import com.shahid.cam.forensics.data.local.dao.MediaAssetDao;
 import com.shahid.cam.forensics.data.local.entity.AiEventEntity;
 import com.shahid.cam.forensics.data.local.entity.AiEventSnapshotEntity;
 import com.shahid.cam.forensics.data.local.entity.MediaAssetEntity;
+import com.shahid.cam.forensics.domain.fingerprint.ForensicsMetadataUtils;
 import com.shahid.cam.motion.domain.detector.EfficientDetLite1Detector;
 
 import java.io.File;
@@ -765,10 +766,10 @@ public class DigitalForensicsEventRecorder {
         try {
             Uri uri = Uri.parse(mediaUri);
             if (asset.durationMs <= 0L) {
-                asset.durationMs = 0L;
+                asset.durationMs = ForensicsMetadataUtils.extractDurationMs(appContext, uri);
             }
             if (asset.codecInfo == null || asset.codecInfo.isEmpty()) {
-                asset.codecInfo = "video/mp4";
+                asset.codecInfo = ForensicsMetadataUtils.extractCodecInfo(appContext, uri);
             }
             if (asset.sizeBytes <= 0L) {
                 long size = extractSizeBytes(uri);

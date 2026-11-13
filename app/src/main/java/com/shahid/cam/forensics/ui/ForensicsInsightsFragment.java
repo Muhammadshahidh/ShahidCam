@@ -1,5 +1,4 @@
 package com.shahid.cam.forensics.ui;
-import com.shahid.cam.forensics.data.local.ForensicsDatabase;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -21,6 +20,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.shahid.cam.R;
+import com.shahid.cam.forensics.data.local.ForensicsDatabase;
 import com.shahid.cam.forensics.data.local.entity.AiEventEntity;
 import com.shahid.cam.ui.OverlayNavUtil;
 import com.google.android.material.chip.Chip;

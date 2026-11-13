@@ -1,15 +1,16 @@
 package com.shahid.cam.forensics.service;
-import com.shahid.cam.forensics.data.local.ForensicsDatabase;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
 import android.content.Context;
 import android.net.Uri;
 import com.shahid.cam.SharedPreferencesManager;
+import com.shahid.cam.forensics.data.local.ForensicsDatabase;
 import com.shahid.cam.forensics.data.local.dao.IntegrityLinkLogDao;
 import com.shahid.cam.forensics.data.local.dao.MediaAssetDao;
 import com.shahid.cam.forensics.data.local.entity.IntegrityLinkLogEntity;
 import com.shahid.cam.forensics.data.local.entity.MediaAssetEntity;
+import com.shahid.cam.forensics.domain.fingerprint.ForensicsMetadataUtils;
 import com.shahid.cam.ui.VideoItem;
 
 import java.util.List;
@@ -54,8 +55,8 @@ public class DigitalForensicsIndexer {
         String uriString = item.uri.toString();
         MediaAssetEntity existingByUri = mediaAssetDao.findByCurrentUri(uriString);
 
-        long durationMs = 0L;
-        String codecInfo = "video/mp4";
+        long durationMs = ForensicsMetadataUtils.extractDurationMs(appContext, item.uri);
+        String codecInfo = ForensicsMetadataUtils.extractCodecInfo(appContext, item.uri);
 
         if (existingByUri != null) {
             mediaAssetDao.updateLinkAndMetadata(

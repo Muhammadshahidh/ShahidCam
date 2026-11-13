@@ -1,5 +1,4 @@
 package com.shahid.cam.forensics.ui;
-import com.shahid.cam.forensics.data.local.ForensicsDatabase;
 
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -25,6 +24,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.shahid.cam.R;
+import com.shahid.cam.forensics.data.local.ForensicsDatabase;
 import com.shahid.cam.forensics.data.local.model.AiEventWithMedia;
 import com.shahid.cam.ui.OverlayNavUtil;
 import com.shahid.cam.ui.VideoPlayerActivity;

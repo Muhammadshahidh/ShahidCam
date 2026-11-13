@@ -1,5 +1,4 @@
 package com.shahid.cam.data;
-import com.shahid.cam.forensics.data.local.ForensicsDatabase;
 
 import android.content.Context;
 

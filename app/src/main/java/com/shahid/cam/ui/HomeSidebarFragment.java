@@ -367,8 +367,6 @@ public class HomeSidebarFragment extends DialogFragment {
     }
 
     private void setupMiniAppRows(View view) {
-        // Mini apps permanently disabled
-        if (true) return;
         // Torch Mini App - open full screen tool
         View torchRow = view.findViewById(R.id.row_mini_app_torch);
         if (torchRow != null) {
@@ -443,8 +441,6 @@ public class HomeSidebarFragment extends DialogFragment {
      * visible row (the last one sits above the "See all" row).
      */
     private void applyMiniAppVisibility(View view) {
-        // Mini apps visibility disabled
-        if (true) return;
         try {
             SharedPreferencesManager prefs = SharedPreferencesManager.getInstance(requireContext());
             String orderStr = prefs.getSidebarMiniAppsOrder();

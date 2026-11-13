@@ -1,5 +1,4 @@
 package com.shahid.cam.forensics.ui;
-import com.shahid.cam.forensics.data.local.ForensicsDatabase;
 
 import android.net.Uri;
 import android.view.Gravity;
@@ -18,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.shahid.cam.R;
 import com.shahid.cam.SharedPreferencesManager;
+import com.shahid.cam.forensics.data.local.ForensicsDatabase;
 import com.shahid.cam.forensics.data.local.entity.AiEventSnapshotEntity;
 import com.shahid.cam.forensics.data.local.model.AiEventWithMedia;
 

@@ -1,5 +1,4 @@
 package com.shahid.cam.ui;
-import com.shahid.cam.forensics.ui.ForensicsEvidenceInfoBottomSheet;
 
 import android.net.Uri;
 import android.os.Build;
@@ -30,6 +29,7 @@ import com.bumptech.glide.request.target.Target;
 import com.shahid.cam.Constants;
 import com.shahid.cam.R;
 import com.shahid.cam.SharedPreferencesManager;
+import com.shahid.cam.forensics.ui.ForensicsEvidenceInfoBottomSheet;
 
 import java.text.DateFormat;
 import java.util.Date;

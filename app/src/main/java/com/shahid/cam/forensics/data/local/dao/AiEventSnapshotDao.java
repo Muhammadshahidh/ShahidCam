@@ -1,5 +1,4 @@
 package com.shahid.cam.forensics.data.local.dao;
-import com.shahid.cam.forensics.data.local.model.ForensicsSnapshotWithMedia;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
@@ -7,6 +6,7 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 import com.shahid.cam.forensics.data.local.entity.AiEventSnapshotEntity;
+import com.shahid.cam.forensics.data.local.model.ForensicsSnapshotWithMedia;
 
 import java.util.List;
 

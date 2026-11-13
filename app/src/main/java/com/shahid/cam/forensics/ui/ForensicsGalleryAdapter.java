@@ -1,6 +1,4 @@
 package com.shahid.cam.forensics.ui;
-import com.shahid.cam.forensics.ui.view.ForensicsCardContainerView;
-import com.shahid.cam.forensics.data.local.model.ForensicsSnapshotWithMedia;
 
 import com.shahid.cam.Log;
 import com.shahid.cam.FLog;
@@ -24,6 +22,8 @@ import com.shahid.cam.BuildConfig;
 import com.shahid.cam.R;
 import com.shahid.cam.SharedPreferencesManager;
 import com.shahid.cam.Utils;
+import com.shahid.cam.forensics.data.local.model.ForensicsSnapshotWithMedia;
+import com.shahid.cam.forensics.ui.view.ForensicsCardContainerView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
