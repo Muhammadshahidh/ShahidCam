@@ -1322,11 +1322,6 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     ctx.getString(R.string.video_menu_upload_shahiddrive, "Upload to ShahidDrive"), "cloud",
                     ctx.getString(R.string.remote_coming_soon_badge), R.drawable.badge_background_green, true, null));
         }
-        // Edit with ShahidEditor Mini
-        if (!isImage) {
-            items.add(OptionItem.withLigature("action_edit_shahideditorx", ctx.getString(R.string.edit_with_shahideditorx),
-                    "content_cut"));
-        }
         items.add(OptionItem.withLigature("action_delete", ctx.getString(R.string.video_menu_del), "delete"));
 
         String resultKey = "video_actions:"
@@ -1339,9 +1334,6 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             if (id == null)
                 return;
             switch (id) {
-                case "action_edit_shahideditorx":
-                    launchShahidEditorMini(ctx, videoItem);
-                    break;
                 case "action_upload_shahiddrive":
                     Toast.makeText(ctx, R.string.remote_toast_coming_soon, Toast.LENGTH_SHORT).show();
                     break;
@@ -1355,11 +1347,7 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     showRenameDialog(videoItem);
                     break;
                 case "action_info":
-                    if (videoItem.category == VideoItem.Category.MINIAPPS) {
-                        showMiniAppsInfoDialog(videoItem);
-                    } else {
-                        showVideoInfoDialog(videoItem);
-                    }
+                    showVideoInfoDialog(videoItem);
                     break;
                 case "action_delete":
                     if (actionListener != null)
@@ -1511,7 +1499,6 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 : new PopupMenu(context, holder.menuButtonContainer);
         popup.getMenuInflater().inflate(R.menu.video_item_menu, popup.getMenu());
         if (isImage) {
-            popup.getMenu().removeItem(R.id.action_edit_shahideditorx);
             popup.getMenu().removeItem(R.id.action_upload_youtube);
             popup.getMenu().removeItem(R.id.action_upload_drive);
         }
@@ -1545,10 +1532,7 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         // Handle all menu actions
         popup.setOnMenuItemClickListener(item -> {
             int id = item.getItemId();
-            if (id == R.id.action_edit_shahideditorx) {
-                launchShahidEditorMini(context, videoItem);
-                return true;
-            } else if (id == R.id.action_save) {
+            if (id == R.id.action_save) {
                 saveVideoToGalleryInternal(videoItem);
                 return true;
             } else if (id == R.id.action_fix_video) {
@@ -1558,11 +1542,7 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 showRenameDialog(videoItem);
                 return true;
             } else if (id == R.id.action_info) {
-                if (videoItem.category == VideoItem.Category.MINIAPPS) {
-                    showMiniAppsInfoDialog(videoItem);
-                } else {
-                    showVideoInfoDialog(videoItem);
-                }
+                showVideoInfoDialog(videoItem);
                 return true;
             } else if (id == R.id.action_delete) {
                 if (actionListener != null)
@@ -1577,9 +1557,6 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             }
             return false;
         });
-
-        // Edit with ShahidEditor Mini – no special badge needed
-        // (Item is fully functional — launches editor)
 
         return popup;
     }
@@ -1973,17 +1950,6 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
     }
 
-    private void showMiniAppsInfoDialog(VideoItem videoItem) {
-        if (context == null || videoItem == null || videoItem.uri == null) return;
-        try {
-            if (context instanceof FragmentActivity) {
-                ScanInfoBottomSheet sheet = ScanInfoBottomSheet.newInstance(
-                        videoItem.uri.toString(), videoItem.displayName);
-                sheet.show(((FragmentActivity) context).getSupportFragmentManager(), "scan_info");
-            }
-        } catch (Exception e) { FLog.w(TAG, "Info sheet error", e); }
-    }
-
     /**
      * Shows comprehensive video information in a custom 2-column bottom sheet
      * with enhanced metadata including FPS, codec, bitrate, and geotag data.
@@ -2015,25 +1981,6 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         } catch (Exception e) {
             FLog.e(TAG, "Error showing video info bottom sheet", e);
             Toast.makeText(context, context.getString(R.string.records_error_video_info), Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    /**
-     * Launches ShahidEditor Mini editor with the selected video.
-     *
-     * @param ctx       the current context (must be an Activity)
-     * @param videoItem the video to edit
-     */
-    private void launchShahidEditorMini(@NonNull Context ctx, @NonNull VideoItem videoItem) {
-        if (videoItem.uri == null) return;
-        try {
-            Intent intent = new Intent(ctx, com.shahid.cam.ui.shahideditor.ShahidEditorActivity.class);
-            intent.setData(videoItem.uri);
-            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-            ctx.startActivity(intent);
-        } catch (Exception e) {
-            FLog.e(TAG, "Failed to launch ShahidEditor Mini", e);
-            Toast.makeText(ctx, ctx.getString(R.string.records_cannot_open_editor), Toast.LENGTH_SHORT).show();
         }
     }
 

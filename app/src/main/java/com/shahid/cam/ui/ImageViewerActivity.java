@@ -29,25 +29,11 @@ import com.bumptech.glide.request.target.Target;
 import com.shahid.cam.Constants;
 import com.shahid.cam.R;
 import com.shahid.cam.SharedPreferencesManager;
-import com.shahid.cam.forensics.ui.ForensicsEvidenceInfoBottomSheet;
-
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
 
 public class ImageViewerActivity extends AppCompatActivity {
 
     private static final int OVERLAY_ANIM_DURATION = 200;
 
-    public static final String EXTRA_SOURCE_VIDEO_URI = "com.shahid.cam.extra.SOURCE_VIDEO_URI";
-    public static final String EXTRA_OPEN_AT_MS = "com.shahid.cam.extra.OPEN_AT_MS";
-    public static final String EXTRA_EVENT_TYPE = "com.shahid.cam.extra.EVENT_TYPE";
-    public static final String EXTRA_CLASS_NAME = "com.shahid.cam.extra.CLASS_NAME";
-    public static final String EXTRA_CONFIDENCE = "com.shahid.cam.extra.CONFIDENCE";
-    public static final String EXTRA_CAPTURED_AT = "com.shahid.cam.extra.CAPTURED_AT";
-    public static final String EXTRA_SOURCE_LABEL = "com.shahid.cam.extra.SOURCE_LABEL";
-
-    @Nullable private String itemCategory;
     @Nullable private String itemDisplayName;
 
     @Nullable
@@ -55,18 +41,6 @@ public class ImageViewerActivity extends AppCompatActivity {
     @Nullable
     private View bottomDock;
     private boolean overlayVisible = true;
-
-    @Nullable
-    private Uri sourceVideoUri;
-    private long openAtMs = 0L;
-    @Nullable
-    private String eventType;
-    @Nullable
-    private String className;
-    private float confidence = 0f;
-    private long capturedAt = 0L;
-    @Nullable
-    private String sourceLabel;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -106,18 +80,13 @@ public class ImageViewerActivity extends AppCompatActivity {
             finish();
             return;
         }
-        sourceVideoUri = parseUri(getIntent().getStringExtra(EXTRA_SOURCE_VIDEO_URI));
-        openAtMs = Math.max(0L, getIntent().getLongExtra(EXTRA_OPEN_AT_MS, 0L));
-        eventType = getIntent().getStringExtra(EXTRA_EVENT_TYPE);
-        className = getIntent().getStringExtra(EXTRA_CLASS_NAME);
-        confidence = getIntent().getFloatExtra(EXTRA_CONFIDENCE, 0f);
-        capturedAt = getIntent().getLongExtra(EXTRA_CAPTURED_AT, 0L);
-        sourceLabel = getIntent().getStringExtra(EXTRA_SOURCE_LABEL);
-        itemCategory = getIntent().getStringExtra("item_category");
         itemDisplayName = getIntent().getStringExtra("item_display_name");
 
         if (metaView != null) {
-            metaView.setText(buildInlineMeta());
+            String fallbackName = !TextUtils.isEmpty(itemDisplayName)
+                    ? itemDisplayName
+                    : (uri.getLastPathSegment() != null ? uri.getLastPathSegment() : "");
+            metaView.setText(fallbackName);
         }
         if (more != null) {
             more.setOnClickListener(v -> showInfoSheet(uri));
@@ -272,42 +241,11 @@ public class ImageViewerActivity extends AppCompatActivity {
         }
     }
 
-    @NonNull
-    private String buildInlineMeta() {
-        String classLabel = !TextUtils.isEmpty(className)
-                ? className
-                : (!TextUtils.isEmpty(eventType) ? eventType : "Evidence");
-        String when = capturedAt > 0L
-                ? DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT, Locale.getDefault())
-                .format(new Date(capturedAt))
-                : getString(R.string.forensics_unknown_time);
-        return String.format(
-                Locale.US,
-                "%s • conf %.2f • %s",
-                classLabel.toUpperCase(Locale.US),
-                confidence,
-                when
-        );
-    }
-
     private void showInfoSheet(@NonNull Uri snapshotUri) {
-        if ("MINIAPPS".equals(itemCategory)) {
-            String name = itemDisplayName != null ? itemDisplayName
-                    : snapshotUri.getLastPathSegment();
-            ScanInfoBottomSheet.newInstance(snapshotUri.toString(), name)
-                    .show(getSupportFragmentManager(), "scan_info");
-            return;
-        }
-        ForensicsEvidenceInfoBottomSheet.newInstance(
-                className,
-                eventType,
-                confidence,
-                capturedAt,
-                openAtMs,
-                sourceLabel,
-                sourceVideoUri != null ? sourceVideoUri.toString() : null,
-                snapshotUri.toString()
-        ).show(getSupportFragmentManager(), "ForensicsEvidenceInfoBottomSheet");
+        String name = itemDisplayName != null ? itemDisplayName
+                : snapshotUri.getLastPathSegment();
+        ScanInfoBottomSheet.newInstance(snapshotUri.toString(), name)
+                .show(getSupportFragmentManager(), "scan_info");
     }
 
 }

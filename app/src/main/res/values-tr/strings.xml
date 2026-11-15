@@ -783,7 +783,6 @@
     <string name="setting_cloak_recents_title">Ekran Görüntüsünü Engelle ve Son Kullanılanlar\'da Gizle</string>
     <string name="setting_cloak_recents_switch">Önizlemeyi gizle</string>
     <string name="setting_cloak_recents_helper">Uygulama önizlemesini son kullanılanlar uygulamalarında gizler ve uygulama içinde ekran görüntüsünü engeller. Bu, hassas içeriğin yakalanmasını veya uygulama değiştiricide görünmesini önler.\n(Varsayılan: Devre Dışı)</string>
-    <string name="support_ko_fi">Bizi Ko-fi\'de destekleyin</string>
     <string name="version_format">v%s</string>
     <string name="update_sarcastic_heading">📦 Bakın hele, yine bir güncelleme...</string>
     <string name="update_version_arrow">  &gt;&gt;  </string>
@@ -1965,9 +1964,6 @@
 <string name="saf_permission_missing_dialog_message_for_start_recording">Kayıtları özel bir konuma kaydetmek için ShahidCam\'in seçilen klasöre erişmesi gerekir. İstendiğinde erişim izni verin.</string>
 <string name="grant_permission_button">İzin Ver</string>
 <string name="trash_auto_delete_picker_helper">Çöp\'teki öğelerin ne zaman otomatik silineceğini seçin.</string>
-<string name="kofi_description">Açıklama kod içinde ayarlanacak.</string>
-<string name="kofi_button_text">Bana bir Ko-fi ısmarla</string>
-<string name="kofi_footer_text">Made with    at CyberShadowPK Lab in   </string>
 <string name="choose_language">Dil Seç</string>
 <string name="onboarding_human_checkbox3">Gizlilik Politikası\'nı kabul ediyorum</string>
 <string name="applock_set_pin_enable">PIN Belirle &amp; Etkinleştir</string>
@@ -2341,7 +2337,6 @@ En sorunsuz oynatma deneyimi için VLC gibi harici bir oynatıcı kullanabilirsi
     <string name="motion_lab_sensitivity">Hassasiyet</string>
     <string name="motion_lab_sensitivity_hint">Bunu bir hareket \"duyma\" düğmesi gibi düşünün. Yüksek, daha küçük hareketlere tepki verir (kenara yakın bir el gibi). Düşük, küçük hareketleri yok sayar. Çoğu oda için varsayılan 80\'de bırakın.</string>
     <string name="motion_lab_analysis_fps">Analiz FPS</string>
-    <string name="motion_lab_analysis_helper">AI\'nın sahneyi saniyede kaç kez kontrol ettiği. Daha fazla kontrol daha hızlı tepki verir, ancak daha fazla pil kullanır ve telefonu ısıtabilir. EfficientDet çok sınıflı tespiti için, günlük kullanımda yaklaşık 6 fps\'de tutun (5-8 güvenilir bölgedir).</string>
     <string name="motion_lab_debounce">Debounce</string>
     <string name="motion_lab_debounce_hint">Kayıt başlamadan önce kısa bir onay gecikmesi. Hareketin gerçek olduğunu onaylamak için küçük bir an beklemek gibi düşünün. Düşük daha hızlı başlatır, yüksek yanlış başlatmaları önler. Çoğu oda için yaklaşık 220 ms\'de tutun.</string>
     <string name="motion_lab_post_roll">Kayıt Sonrası</string>

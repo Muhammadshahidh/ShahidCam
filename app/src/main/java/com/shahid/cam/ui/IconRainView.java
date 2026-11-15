@@ -21,7 +21,6 @@ import java.util.Random;
 
 /**
  * IconRainView: Animated falling icons for onboarding slides.
- * This is independent from CoffeeRainView and uses unknown_icon3.png.
  */
 public class IconRainView extends View {
     private static class IconDrop {

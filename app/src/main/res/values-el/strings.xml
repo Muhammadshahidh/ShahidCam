@@ -1417,10 +1417,6 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="video_split_size_summary_gb">Τρέχον: %1$s GB</string>
     <string name="video_splitting_title">Ενεργοποίηση Διαχωρισμού Βίντεο</string>
     <string name="video_splitting_description">Αυτόματος διαχωρισμός εγγραφών σε μικρότερα αρχεία.</string>
-    <string name="support_ko_fi">Υποστηρίξτε μας στο Ko-fi</string>
-    <string name="kofi_description">Η περιγραφή θα οριστεί στον κώδικα.</string>
-    <string name="kofi_button_text">Αγοράστε μου ένα Ko-fi</string>
-    <string name="kofi_footer_text">Φτιαγμένο με στο CyberShadowPK Lab</string>
     <string name="setting_audio_input_source_title">Πηγή Εισόδου Ήχου</string>
     <string name="setting_audio_input_source_status_default">Μικρόφωνο Τηλεφώνου</string>
     <string name="setting_audio_input_source_status_wired">Ενσύρματο Μικρόφωνο</string>
@@ -2169,7 +2165,6 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="motion_lab_sensitivity">Ευαισθησία</string>
     <string name="motion_lab_sensitivity_hint">Υψηλότερη αντιδρά σε μικρότερη κίνηση.</string>
     <string name="motion_lab_analysis_fps">FPS Ανάλυσης</string>
-    <string name="motion_lab_analysis_helper">Πόσο συχνά το AI ελέγχει τη σκηνή κάθε δευτερόλεπτο.</string>
     <string name="motion_lab_analysis_2_desc">Εξοικονόμηση ενέργειας, πιο αργή απόκριση.</string>
     <string name="motion_lab_analysis_3_desc">Ισορροπημένη προεπιλογή.</string>
     <string name="motion_lab_analysis_5_desc">Ταχύτερη απόκριση, περισσότερη CPU.</string>

@@ -29,7 +29,6 @@ import com.shahid.cam.model.TrashItem;
 import com.shahid.cam.utils.TrashManager;
 import com.shahid.cam.SharedPreferencesManager;
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.chip.Chip;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import org.json.JSONObject;
 import java.util.ArrayList;
@@ -92,19 +91,8 @@ public class TrashFragment extends BaseFragment implements TrashAdapter.OnTrashI
     private ImageView selectAllCheck;
     private ImageView selectAllBg;
     private ImageView settingsIcon;
-    private Chip chipAll;
-    private Chip chipVideos;
-    private Chip chipEvidence;
-    private TrashFilter activeFilter = TrashFilter.ALL;
     private TextView statsVideosText;
-    private TextView statsEvidenceText;
     private TextView statsSizeText;
-
-    private enum TrashFilter {
-        ALL,
-        VIDEOS,
-        EVIDENCE
-    }
 
     private static final String PREF_APPLOCK_ENABLED = "applock_enabled";
     private boolean isUnlocked = false;
@@ -221,11 +209,7 @@ public class TrashFragment extends BaseFragment implements TrashAdapter.OnTrashI
                 sharedPreferencesManager.setShowTrashInSettings(newVal);
             });
         }
-        chipAll = view.findViewById(R.id.chip_trash_all);
-        chipVideos = view.findViewById(R.id.chip_trash_videos);
-        chipEvidence = view.findViewById(R.id.chip_trash_evidence);
         statsVideosText = view.findViewById(R.id.text_trash_stat_videos);
-        statsEvidenceText = view.findViewById(R.id.text_trash_stat_evidence);
         statsSizeText = view.findViewById(R.id.text_trash_stat_size);
     selectAllContainer = view.findViewById(R.id.action_select_all_container);
     selectAllCheck = view.findViewById(R.id.action_select_all_check);
@@ -276,26 +260,6 @@ public class TrashFragment extends BaseFragment implements TrashAdapter.OnTrashI
     if (selectAllContainer != null) selectAllContainer.setVisibility(View.GONE);
     if (selectAllBg != null) selectAllBg.setVisibility(View.INVISIBLE);
     if (selectAllCheck != null) selectAllCheck.setVisibility(View.INVISIBLE);
-        if (chipAll != null) {
-            chipAll.setOnClickListener(v -> {
-                activeFilter = TrashFilter.ALL;
-                applyTrashFilter();
-            });
-        }
-        if (chipVideos != null) {
-            chipVideos.setOnClickListener(v -> {
-                activeFilter = TrashFilter.VIDEOS;
-                applyTrashFilter();
-            });
-        }
-        if (chipEvidence != null) {
-            chipEvidence.setOnClickListener(v -> {
-                activeFilter = TrashFilter.EVIDENCE;
-                applyTrashFilter();
-            });
-        }
-        styleFilterChips();
-        updateFilterSelection();
 
     setupRecyclerView();
     setupButtonListeners();
@@ -425,49 +389,32 @@ public class TrashFragment extends BaseFragment implements TrashAdapter.OnTrashI
     }
 
     private void applyTrashFilter() {
-        updateFilterLabels();
         trashItems.clear();
         for (TrashItem item : allTrashItems) {
-            if (item == null) continue;
-            if (activeFilter == TrashFilter.ALL) {
+            if (item != null) {
                 trashItems.add(item);
-            } else if (activeFilter == TrashFilter.EVIDENCE) {
-                if (item.isForensicsEvidence()) {
-                    trashItems.add(item);
-                }
-            } else {
-                if (!item.isForensicsEvidence()) {
-                    trashItems.add(item);
-                }
             }
         }
         if (trashAdapter != null) {
             trashAdapter.clearSelections();
             trashAdapter.rebuildAndNotify();
         }
-        updateFilterSelection();
         updateActionButtonsState();
         checkEmptyState();
         updateHeaderStats();
     }
 
     /**
-     * Updates the header stats row with video count, evidence count, and total trash size.
-     * Iterates allTrashItems (unfiltered) to always reflect the full trash state.
+     * Updates the header stats row with item count and total trash size.
      */
     private void updateHeaderStats() {
         if (getContext() == null) return;
         java.io.File trashDir = TrashManager.getTrashDirectory(getContext());
-        int videos = 0;
-        int evidence = 0;
+        int count = 0;
         long totalBytes = 0L;
         for (TrashItem item : allTrashItems) {
             if (item == null) continue;
-            if (item.isForensicsEvidence()) {
-                evidence++;
-            } else {
-                videos++;
-            }
+            count++;
             try {
                 java.io.File file = new java.io.File(trashDir, item.getTrashFileName());
                 if (file.exists()) {
@@ -477,81 +424,8 @@ public class TrashFragment extends BaseFragment implements TrashAdapter.OnTrashI
                 FLog.w(TAG, "updateHeaderStats: error reading file size for " + item.getTrashFileName(), e);
             }
         }
-        if (statsVideosText != null) statsVideosText.setText(String.valueOf(videos));
-        if (statsEvidenceText != null) statsEvidenceText.setText(String.valueOf(evidence));
+        if (statsVideosText != null) statsVideosText.setText(String.valueOf(count));
         if (statsSizeText != null) statsSizeText.setText(Formatter.formatShortFileSize(requireContext(), totalBytes));
-    }
-
-    private void updateFilterLabels() {
-        int total = allTrashItems.size();
-        int evidence = 0;
-        for (TrashItem item : allTrashItems) {
-            if (item != null && item.isForensicsEvidence()) evidence++;
-        }
-        int videos = Math.max(0, total - evidence);
-        if (chipAll != null) chipAll.setText(makeChipLabel(getString(R.string.forensics_filter_all), total));
-        if (chipVideos != null) chipVideos.setText(makeChipLabel(getString(R.string.nav_records), videos));
-        if (chipEvidence != null) chipEvidence.setText(makeChipLabel(getString(R.string.forensics_gallery_title), evidence));
-    }
-
-    private android.text.SpannableString makeChipLabel(String label, int count) {
-        android.text.SpannableString ss = new android.text.SpannableString(label + "  " + count);
-        int accent = resolveThemeColor(R.attr.colorButton);
-        int shade = android.graphics.Color.rgb(
-                android.graphics.Color.red(accent) + (255 - android.graphics.Color.red(accent)) / 8,
-                android.graphics.Color.green(accent) + (255 - android.graphics.Color.green(accent)) / 8,
-                android.graphics.Color.blue(accent) + (255 - android.graphics.Color.blue(accent)) / 8);
-        float density = getResources().getDisplayMetrics().density;
-        ss.setSpan(new com.shahid.cam.ui.utils.PillBadgeSpan(shade, 0xFFFFFFFF, density),
-                label.length() + 2, ss.length(), android.text.Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        return ss;
-    }
-
-    private void updateFilterSelection() {
-        if (chipAll != null) {
-            chipAll.setChecked(activeFilter == TrashFilter.ALL);
-        }
-        if (chipVideos != null) {
-            chipVideos.setChecked(activeFilter == TrashFilter.VIDEOS);
-        }
-        if (chipEvidence != null) {
-            chipEvidence.setChecked(activeFilter == TrashFilter.EVIDENCE);
-        }
-    }
-
-    private void styleFilterChips() {
-        applyChipIcon(chipAll, R.drawable.ic_list);
-        applyChipIcon(chipVideos, R.drawable.ic_chip_videocam);
-        applyChipIcon(chipEvidence, R.drawable.ic_photo);
-        styleFilterChip(chipAll);
-        styleFilterChip(chipVideos);
-        styleFilterChip(chipEvidence);
-    }
-
-    private void applyChipIcon(@Nullable Chip chip, int drawableRes) {
-        if (chip == null) return;
-        chip.setChipIconResource(drawableRes);
-        chip.setChipIconVisible(true);
-        chip.setCheckedIconVisible(false);
-        chip.setIconStartPadding(dpToPx(2));
-        chip.setChipIconSize(dpToPx(16));
-    }
-
-    private void styleFilterChip(@Nullable Chip chip) {
-        if (chip == null || getContext() == null) return;
-        int checkedBg = resolveThemeColor(R.attr.colorButton);
-        int uncheckedBg = androidx.core.graphics.ColorUtils.setAlphaComponent(checkedBg, 77);
-        int checkedText = isDarkColor(checkedBg) ? Color.WHITE : Color.BLACK;
-        int uncheckedText = Color.WHITE;
-        int[][] states = new int[][]{
-                new int[]{android.R.attr.state_checked},
-                new int[]{}
-        };
-        chip.setChipBackgroundColor(new ColorStateList(states, new int[]{checkedBg, uncheckedBg}));
-        chip.setTextColor(new ColorStateList(states, new int[]{checkedText, uncheckedText}));
-        chip.setChipIconTint(new ColorStateList(states, new int[]{checkedText, uncheckedText}));
-        chip.setChipStrokeWidth(0f);
-        chip.setEnsureMinTouchTargetSize(false);
     }
 
     private int resolveThemeColor(int attr) {

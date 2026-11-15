@@ -2467,13 +2467,9 @@ Recommandé : 192000 bps, 48000 Hz pour la plupart des utilisateurs.</string>
 
 <string name="trash_auto_delete_picker_helper">Choose when items in Trash should be auto‑deleted.</string>
 
-<string name="support_ko_fi">Support us on Ko-fi</string>
 
-<string name="kofi_description">Description will be set in code.</string>
 
-<string name="kofi_button_text">Buy me a Ko-fi</string>
 
-<string name="kofi_footer_text">Made with    at CyberShadowPK Lab in   </string>
 
 <string name="choose_language">Choose Language</string>
 
@@ -3511,7 +3507,6 @@ For the smoothest playback experience, you can use an external player like VLC. 
 
 <string name="motion_lab_analysis_fps">Analysis FPS</string>
 
-<string name="motion_lab_analysis_helper">How often AI checks the scene every second. More checks react faster, but also use more battery and can heat the phone. For EfficientDet multi-class detection, keep around 6 fps for daily use (5-8 is the reliable zone).</string>
 
 <string name="motion_lab_analysis_2_desc">Power saving, slower response.</string>
 

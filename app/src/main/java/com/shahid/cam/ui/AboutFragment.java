@@ -92,7 +92,6 @@ public class AboutFragment extends BaseFragment {
         TextView appDescription = view.findViewById(R.id.app_description);
         MaterialCardView fadSecInfoCard = view.findViewById(R.id.shahid_sec_info_card);
         MaterialButton sourceCodeButton = view.findViewById(R.id.source_code_button);
-        MaterialButton donateButton = view.findViewById(R.id.donate_button);
         MaterialButton checkUpdatesButton = view.findViewById(R.id.check_updates_button);
         TextView emailText = view.findViewById(R.id.email_text);
         TextView discordText = view.findViewById(R.id.discord_text);
@@ -203,11 +202,6 @@ public class AboutFragment extends BaseFragment {
         sourceCodeButton.setStrokeColor(ColorStateList.valueOf(ContextCompat.getColor(requireContext(), R.color.gray)));
         sourceCodeButton.setTextColor(Color.WHITE);
         sourceCodeButton.setIconTint(ColorStateList.valueOf(Color.WHITE));
-        int gold = ContextCompat.getColor(requireContext(), R.color.gold);
-        int black = ContextCompat.getColor(requireContext(), R.color.black);
-        donateButton.setBackgroundTintList(ColorStateList.valueOf(gold));
-        donateButton.setTextColor(black);
-        donateButton.setIconTint(ColorStateList.valueOf(black));
         emailText.setTextColor(Color.WHITE);
         discordText.setTextColor(Color.WHITE);
         privacyInfoCard.setCardBackgroundColor(colorDialog);
@@ -308,10 +302,6 @@ public class AboutFragment extends BaseFragment {
         }
         privacyInfoContent.setText(Html.fromHtml(qnaContent.toString(), Html.FROM_HTML_MODE_LEGACY));
         sourceCodeButton.setOnClickListener(v -> openUrl("https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252"));
-        donateButton.setOnClickListener(v -> {
-            KoFiSupportBottomSheet bottomSheet = new KoFiSupportBottomSheet();
-            bottomSheet.show(getParentFragmentManager(), "KoFiSupportBottomSheet");
-        });
         checkUpdatesButton.setOnClickListener(v -> checkForUpdates());
         emailText.setOnClickListener(v -> sendEmail());
         discordText.setOnClickListener(v -> openUrl("https://t.me/Cybershadowpk"));
@@ -715,7 +705,6 @@ public class AboutFragment extends BaseFragment {
             
             // Apply to other UI elements
             MaterialButton sourceCodeButton = rootView.findViewById(R.id.source_code_button);
-            MaterialButton donateButton = rootView.findViewById(R.id.donate_button);
             MaterialButton checkUpdatesButton = rootView.findViewById(R.id.check_updates_button);
             
             if (sourceCodeButton != null) {
@@ -723,11 +712,6 @@ public class AboutFragment extends BaseFragment {
                 sourceCodeButton.setIconTint(ColorStateList.valueOf(Color.WHITE));
                 sourceCodeButton.setStrokeColor(ColorStateList.valueOf(ContextCompat.getColor(requireContext(), R.color.gray)));
                 sourceCodeButton.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(requireContext(), R.color.gray_button_filled)));
-            }
-            
-            if (donateButton != null) {
-                donateButton.setTextColor(Color.BLACK);
-                donateButton.setIconTint(ColorStateList.valueOf(Color.BLACK));
             }
             
             if (checkUpdatesButton != null) {

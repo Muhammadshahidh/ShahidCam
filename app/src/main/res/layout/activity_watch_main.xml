@@ -11,7 +11,7 @@
     android:layout_height="match_parent"
     android:background="#000000">
 
-    <!-- Swipeable pages: Camera / Records / Remote / Settings -->
+    <!-- Swipeable pages: Camera / Records / Settings -->
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/watch_viewpager"
         android:layout_width="0dp"
@@ -21,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Page dot indicator — 4 dots -->
+    <!-- Page dot indicator — 3 dots -->
     <LinearLayout
         android:id="@+id/watch_page_indicator"
         android:layout_width="wrap_content"
@@ -38,8 +38,6 @@
         <View android:id="@+id/dot_1" android:layout_width="5dp" android:layout_height="5dp"
             android:layout_marginEnd="3dp" android:background="@drawable/watch_dot_unselected" />
         <View android:id="@+id/dot_2" android:layout_width="5dp" android:layout_height="5dp"
-            android:layout_marginEnd="3dp" android:background="@drawable/watch_dot_unselected" />
-        <View android:id="@+id/dot_3" android:layout_width="5dp" android:layout_height="5dp"
             android:background="@drawable/watch_dot_unselected" />
 
     </LinearLayout>

@@ -1488,10 +1488,6 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
     <string name="video_split_size_summary_gb">Current: %1$s GB</string>
     <string name="video_splitting_title">Enable Video Splitting</string>
     <string name="video_splitting_description">Automatically split recordings into smaller files (Disabled by default). Recommended: 2 GB for balance. Presets up to 4 GB and custom sizes are available. This helps manage large recordings and avoids device file size limits.</string>
-    <string name="support_ko_fi">Support us on Ko-fi</string>
-    <string name="kofi_description">Description will be set in code.</string>
-    <string name="kofi_button_text">Buy me a Ko-fi</string>
-    <string name="kofi_footer_text">Made with    at CyberShadowPK in   </string>
 
     <string name="setting_audio_input_source_title">Audio Input Source</string>
     <string name="setting_audio_input_source_status_default">Phone Microphone</string>
@@ -2331,7 +2327,6 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="motion_lab_sensitivity">Sensitivity</string>
     <string name="motion_lab_sensitivity_hint">Think of this like a motion \"hearing\" knob. Higher reacts to smaller movement (like a hand near the edge). Lower ignores tiny movement. Keep the default 80 for most rooms.</string>
     <string name="motion_lab_analysis_fps">Analysis FPS</string>
-    <string name="motion_lab_analysis_helper">How often AI checks the scene every second. More checks react faster, but also use more battery and can heat the phone. For EfficientDet multi-class detection, keep around 6 fps for daily use (5-8 is the reliable zone).</string>
     <string name="motion_lab_analysis_2_desc">Power saving, slower response.</string>
     <string name="motion_lab_analysis_3_desc">Balanced default.</string>
     <string name="motion_lab_analysis_5_desc">Faster response, more CPU.</string>

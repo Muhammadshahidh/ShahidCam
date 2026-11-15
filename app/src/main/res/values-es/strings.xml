@@ -1460,10 +1460,6 @@ Recomendado: 192000 bps, 48000 Hz para la mayoría de usuarios.</string>
     <string name="video_split_size_summary_gb">Actual: %1$s GB</string>
     <string name="video_splitting_title">Habilitar división de video</string>
     <string name="video_splitting_description">Dividir automáticamente grabaciones en archivos más pequeños (Desactivado por defecto). Recomendado: 2 GB para equilibrio. Preajustes hasta 4 GB y tamaños personalizados disponibles. Esto ayuda a gestionar grabaciones grandes y evita límites de tamaño de archivo del dispositivo.</string>
-    <string name="support_ko_fi">Apóyanos en Ko-fi</string>
-    <string name="kofi_description">La descripción se establecerá en el código.</string>
-    <string name="kofi_button_text">Invítame un Ko-fi</string>
-    <string name="kofi_footer_text">Hecho con    en CyberShadowPK Lab en   </string>
 
     <string name="setting_audio_input_source_title">Fuente de entrada de audio</string>
     <string name="setting_audio_input_source_status_default">Micrófono del teléfono</string>
@@ -2235,7 +2231,6 @@ Para la experiencia de reproducción más fluida, puedes usar un reproductor ext
     <string name="motion_lab_sensitivity">Sensibilidad</string>
     <string name="motion_lab_sensitivity_hint">Piensa en esto como una perilla de \"oído\" de motion. Más alto reacciona a movimiento más pequeño (como una mano cerca del borde). Más bajo ignora movimiento pequeño. Mantén el predeterminado 80 para la mayoría de habitaciones.</string>
     <string name="motion_lab_analysis_fps">FPS de análisis</string>
-    <string name="motion_lab_analysis_helper">Con qué frecuencia la IA revisa la escena cada segundo. Más revisiones reaccionan más rápido, pero también usan más batería y pueden calentar el teléfono. Para detección multi-clase EfficientDet, mantén alrededor de 6 fps para uso diario (5-8 es la zona confiable).</string>
     <string name="motion_lab_analysis_2_desc">Ahorro de energía, respuesta más lenta.</string>
     <string name="motion_lab_analysis_3_desc">Predeterminado equilibrado.</string>
     <string name="motion_lab_analysis_5_desc">Respuesta más rápida, más CPU.</string>

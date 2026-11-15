@@ -37,7 +37,6 @@ public class GLWatermarkRenderer {
     private static final String TAG = "GLWatermarkRenderer";
     private static final int WATERMARK_BITMAP_WIDTH = 2400;
     private static final int WATERMARK_BITMAP_HEIGHT = 160;
-    private static final String DF_OVERLAY_PREFIX = "__DF_OVERLAY__:";
 
     private EGLDisplay eglDisplay = EGL14.EGL_NO_DISPLAY;
     private EGLContext eglContext = EGL14.EGL_NO_CONTEXT;
@@ -58,14 +57,6 @@ public class GLWatermarkRenderer {
         = new java.util.HashMap<>();
     private int watermarkTextureId;
     private String watermarkText = "";
-    private Bitmap forensicsOverlayBitmap;
-    private int forensicsOverlayTextureId;
-    private FloatBuffer forensicsOverlayRectBuffer;
-    private String forensicsOverlayPayload = "";
-    private int previewOverlayVpX = 0;
-    private int previewOverlayVpY = 0;
-    private int previewOverlayVpW = 0;
-    private int previewOverlayVpH = 0;
     private final Paint watermarkPaint;
 
     private boolean initialized = false;
@@ -954,17 +945,11 @@ public class GLWatermarkRenderer {
                 // Switch to the fit viewport for the sharp foreground
                 GLES20.glViewport(vpX, vpY, vpW, vpH);
             }
-            previewOverlayVpX = vpX;
-            previewOverlayVpY = vpY;
-            previewOverlayVpW = vpW;
-            previewOverlayVpH = vpH;
-
             // Pass 2: Sharp content at the aspect-ratio-preserving viewport
             drawOESTexture(previewCameraMvp, previewTexMatrix);
 
-            // Watermark and AI overlay in preview.
+            // Watermark in preview.
             drawWatermark();
-            drawForensicsOverlayLayer();
 
             // Draw PiP overlay on preview too (if dual camera mode is active)
             // Use identity MVP for PiP so aspect-ratio correction doesn't distort it.
@@ -1089,19 +1074,7 @@ public class GLWatermarkRenderer {
     private void setupWatermarkTexture() {
         watermarkBitmap = Bitmap.createBitmap(WATERMARK_BITMAP_WIDTH, WATERMARK_BITMAP_HEIGHT, Bitmap.Config.ARGB_8888);
         watermarkTextureId = createTexture();
-        forensicsOverlayTextureId = createTexture();
-        float[] overlayFullRect = new float[] {
-                -1.0f, 1.0f,
-                1.0f, 1.0f,
-                -1.0f, -1.0f,
-                1.0f, -1.0f
-        };
-        forensicsOverlayRectBuffer = ByteBuffer.allocateDirect(overlayFullRect.length * 4)
-                .order(ByteOrder.nativeOrder())
-                .asFloatBuffer();
-        forensicsOverlayRectBuffer.put(overlayFullRect).position(0);
         updateWatermarkTexture();
-        updateForensicsOverlayTexture();
     }
 
     private int createTexture() {
@@ -1145,31 +1118,12 @@ public class GLWatermarkRenderer {
     }
 
     private void applyWatermarkAndOverlayPayload(String rawText) {
-        String text = rawText == null ? "" : rawText;
-        String overlayPayload = "";
-        String watermarkOnlyText = text;
-        if (text.startsWith(DF_OVERLAY_PREFIX)) {
-            String payload = text.substring(DF_OVERLAY_PREFIX.length());
-            int splitIndex = payload.indexOf("||wm||");
-            if (splitIndex >= 0) {
-                overlayPayload = payload.substring(0, splitIndex);
-                watermarkOnlyText = payload.substring(splitIndex + "||wm||".length());
-            } else {
-                overlayPayload = payload;
-                watermarkOnlyText = "";
-            }
-        }
-
+        String watermarkOnlyText = rawText == null ? "" : rawText;
         boolean watermarkChanged = !watermarkOnlyText.equals(this.watermarkText);
-        boolean overlayChanged = !overlayPayload.equals(this.forensicsOverlayPayload);
         this.watermarkText = watermarkOnlyText;
-        this.forensicsOverlayPayload = overlayPayload;
 
         if (watermarkChanged || watermarkTextureId == 0 || watermarkBitmap == null) {
             updateWatermarkTexture();
-        }
-        if (overlayChanged || forensicsOverlayTextureId == 0) {
-            updateForensicsOverlayTexture();
         }
     }
     // method(updateWatermarkTextOnGlThread)-----------
@@ -1458,149 +1412,6 @@ public class GLWatermarkRenderer {
         lastWatermarkBitmapH = dynamicBitmapHeight;
         lastWatermarkNdcW = ndcWidth;
         lastWatermarkNdcH = ndcHeight;
-    }
-
-    private void drawForensicsOverlay(Canvas canvas, String payload) {
-        if (payload == null || payload.isEmpty()) {
-            return;
-        }
-        String[] entries = payload.split(";");
-        for (String entry : entries) {
-            if (entry == null || entry.trim().isEmpty()) {
-                continue;
-            }
-            drawForensicsOverlayEntry(canvas, entry.trim());
-        }
-    }
-
-    private void drawForensicsOverlayEntry(Canvas canvas, String payload) {
-        if (payload == null || payload.isEmpty()) {
-            return;
-        }
-        int overlayWidth = Math.max(1, canvas.getWidth());
-        int overlayHeight = Math.max(1, canvas.getHeight());
-        // payload format: LABEL|CONF|cx|cy|w|h|TYPE
-        String[] parts = payload.split("\\|");
-        if (parts.length != 7) {
-            return;
-        }
-        String classLabel = parts[0];
-        float confidence;
-        String coarseType = parts[6] != null ? parts[6].trim().toUpperCase() : "OBJECT";
-        int cursor = 2;
-        try {
-            confidence = clamp01(Float.parseFloat(parts[1]));
-        } catch (Exception ignored) {
-            confidence = 0f;
-        }
-        float cx;
-        float cy;
-        float boxW;
-        float boxH;
-        try {
-            cx = clamp01(Float.parseFloat(parts[cursor]));
-            cy = clamp01(Float.parseFloat(parts[cursor + 1]));
-            boxW = clamp01(Float.parseFloat(parts[cursor + 2]));
-            boxH = clamp01(Float.parseFloat(parts[cursor + 3]));
-        } catch (Exception ignored) {
-            return;
-        }
-
-        float left = (cx - (boxW / 2f)) * overlayWidth;
-        float top = (cy - (boxH / 2f)) * overlayHeight;
-        float right = (cx + (boxW / 2f)) * overlayWidth;
-        float bottom = (cy + (boxH / 2f)) * overlayHeight;
-        RectF rect = new RectF(
-                Math.max(0f, left),
-                Math.max(0f, top),
-                Math.min(overlayWidth, right),
-                Math.min(overlayHeight, bottom)
-        );
-
-        Paint stroke = new Paint(Paint.ANTI_ALIAS_FLAG);
-        stroke.setStyle(Paint.Style.STROKE);
-        stroke.setStrokeWidth(Math.max(2f, overlayWidth * 0.0022f));
-        stroke.setColor(colorForType(coarseType));
-        float corner = Math.max(8f, overlayWidth * 0.010f);
-        canvas.drawRoundRect(rect, corner, corner, stroke);
-
-        Paint labelBg = new Paint(Paint.ANTI_ALIAS_FLAG);
-        labelBg.setStyle(Paint.Style.FILL);
-        labelBg.setColor(adjustAlpha(colorForType(coarseType), 210));
-        Paint labelPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        labelPaint.setColor(Color.WHITE);
-        labelPaint.setTextSize(Math.max(14f, overlayWidth * 0.020f));
-        try {
-            labelPaint.setTypeface(android.graphics.Typeface.createFromAsset(context.getAssets(), "ubuntu_regular.ttf"));
-        } catch (Exception ignored) {
-            labelPaint.setTypeface(android.graphics.Typeface.create(android.graphics.Typeface.SANS_SERIF,
-                    android.graphics.Typeface.BOLD));
-        }
-        labelPaint.setFakeBoldText(true);
-        labelPaint.setLetterSpacing(0.02f);
-        String prettyLabel = classLabel == null || classLabel.trim().isEmpty() ? "object" : classLabel.trim().toLowerCase();
-        String label = String.format(java.util.Locale.US, "%s %d%%", prettyLabel, Math.round(confidence * 100f));
-
-        float textWidth = labelPaint.measureText(label);
-        float labelPaddingX = Math.max(8f, overlayWidth * 0.008f);
-        float labelPaddingY = Math.max(5f, overlayHeight * 0.010f);
-        float labelHeight = (labelPaint.getTextSize() + (labelPaddingY * 2f));
-        float labelLeft = Math.max(0f, rect.left);
-        float labelTop = Math.max(0f, rect.top - labelHeight - 5f);
-        RectF labelRect = new RectF(labelLeft, labelTop, labelLeft + textWidth + (labelPaddingX * 2f), labelTop + labelHeight);
-        canvas.drawRoundRect(labelRect, Math.max(6f, overlayWidth * 0.007f), Math.max(6f, overlayWidth * 0.007f), labelBg);
-        float baseline = labelRect.top + labelPaddingY - labelPaint.ascent();
-        canvas.drawText(label, labelRect.left + labelPaddingX, baseline, labelPaint);
-    }
-
-    private int colorForType(String coarseType) {
-        if ("PERSON".equalsIgnoreCase(coarseType)) {
-            return Color.parseColor("#33D17A");
-        }
-        if ("VEHICLE".equalsIgnoreCase(coarseType)) {
-            return Color.parseColor("#29B6F6");
-        }
-        if ("PET".equalsIgnoreCase(coarseType)) {
-            return Color.parseColor("#BA68C8");
-        }
-        return Color.parseColor("#FFB74D");
-    }
-
-    private int adjustAlpha(int color, int alpha) {
-        return Color.argb(Math.max(0, Math.min(255, alpha)), Color.red(color), Color.green(color), Color.blue(color));
-    }
-
-    private void updateForensicsOverlayTexture() {
-        if (forensicsOverlayTextureId == 0) {
-            return;
-        }
-        String payload = forensicsOverlayPayload;
-        int overlayWidth = Math.max(640, videoWidth > 0 ? videoWidth : 1280);
-        int overlayHeight = Math.max(360, videoHeight > 0 ? videoHeight : 720);
-        if (forensicsOverlayBitmap == null
-                || forensicsOverlayBitmap.getWidth() != overlayWidth
-                || forensicsOverlayBitmap.getHeight() != overlayHeight) {
-            if (forensicsOverlayBitmap != null) {
-                forensicsOverlayBitmap.recycle();
-            }
-            forensicsOverlayBitmap = Bitmap.createBitmap(overlayWidth, overlayHeight, Bitmap.Config.ARGB_8888);
-        }
-        Canvas canvas = new Canvas(forensicsOverlayBitmap);
-        canvas.drawColor(Color.TRANSPARENT, android.graphics.PorterDuff.Mode.CLEAR);
-        if (payload != null && !payload.isEmpty()) {
-            drawForensicsOverlay(canvas, payload);
-        }
-        android.graphics.Matrix flipMatrix = new android.graphics.Matrix();
-        flipMatrix.preScale(1.0f, -1.0f);
-        Bitmap flippedBitmap = Bitmap.createBitmap(forensicsOverlayBitmap, 0, 0, forensicsOverlayBitmap.getWidth(),
-                forensicsOverlayBitmap.getHeight(), flipMatrix, true);
-        GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, forensicsOverlayTextureId);
-        GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, flippedBitmap, 0);
-        flippedBitmap.recycle();
-    }
-
-    private float clamp01(float value) {
-        return Math.max(0f, Math.min(1f, value));
     }
 
     public Surface getCameraInputSurface() {
@@ -1919,33 +1730,6 @@ public class GLWatermarkRenderer {
         GLES20.glDisable(GLES20.GL_BLEND);
     }
 
-    private void drawForensicsOverlayLayer() {
-        if (forensicsOverlayPayload == null || forensicsOverlayPayload.isEmpty() || forensicsOverlayTextureId == 0) {
-            return;
-        }
-        int[] previousViewport = new int[4];
-        GLES20.glGetIntegerv(GLES20.GL_VIEWPORT, previousViewport, 0);
-        if (previewOverlayVpW > 0 && previewOverlayVpH > 0) {
-            GLES20.glViewport(previewOverlayVpX, previewOverlayVpY, previewOverlayVpW, previewOverlayVpH);
-        }
-        GLES20.glEnable(GLES20.GL_BLEND);
-        GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA, GLES20.GL_ONE_MINUS_SRC_ALPHA);
-        GLES20.glUseProgram(watermarkProgram);
-        GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, forensicsOverlayTextureId);
-        GLES20.glEnableVertexAttribArray(watermarkPositionHandle);
-        GLES20.glVertexAttribPointer(watermarkPositionHandle, 2, GLES20.GL_FLOAT, false, 0, forensicsOverlayRectBuffer);
-        GLES20.glEnableVertexAttribArray(watermarkTexCoordHandle);
-        GLES20.glVertexAttribPointer(watermarkTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, watermarkTexCoordBuffer);
-        GLES20.glUniform1i(watermarkSamplerHandle, 0);
-        GLES20.glDrawArrays(GLES20.GL_TRIANGLE_STRIP, 0, 4);
-        GLES20.glDisableVertexAttribArray(watermarkPositionHandle);
-        GLES20.glDisableVertexAttribArray(watermarkTexCoordHandle);
-        GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, 0);
-        GLES20.glUseProgram(0);
-        GLES20.glDisable(GLES20.GL_BLEND);
-        GLES20.glViewport(previousViewport[0], previousViewport[1], previousViewport[2], previousViewport[3]);
-    }
-
     private int createProgram(String vertexSource, String fragmentSource) {
         int vertexShader = loadShader(GLES20.GL_VERTEX_SHADER, vertexSource);
         int fragmentShader = loadShader(GLES20.GL_FRAGMENT_SHADER, fragmentSource);
@@ -2062,9 +1846,6 @@ public class GLWatermarkRenderer {
             outputSurface = null;
             cameraInputSurface = null;
             cameraSurfaceTexture = null;
-            if (forensicsOverlayBitmap != null) {
-                forensicsOverlayBitmap.recycle();
-            }
             if (flippedWatermarkBitmap != null) {
                 flippedWatermarkBitmap.recycle();
                 flippedWatermarkBitmap = null;
@@ -2074,10 +1855,7 @@ public class GLWatermarkRenderer {
             }
             iconBitmapCache.clear();
             watermarkBitmap = null;
-            forensicsOverlayBitmap = null;
             watermarkTextureId = 0;
-            forensicsOverlayTextureId = 0;
-            forensicsOverlayPayload = "";
             mFullFrameBlit = null;
             initialized = false;
         }

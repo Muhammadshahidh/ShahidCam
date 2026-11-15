@@ -183,40 +183,6 @@ public abstract class Constants {
         "com.shahid.cam.ON_EXPOSURE_CHANGED";
     public static final String EXTRA_BROADCAST_EXPOSURE_COMPENSATION =
         "com.shahid.cam.EXTRA_BROADCAST_EXPOSURE_COMPENSATION";
-    public static final String BROADCAST_MOTION_LAB_DEBUG =
-        "com.shahid.cam.MOTION_LAB_DEBUG";
-    public static final String EXTRA_MOTION_DEBUG_SCORE = "motion_debug_score";
-    public static final String EXTRA_MOTION_DEBUG_RAW_SCORE =
-        "motion_debug_raw_score";
-    public static final String EXTRA_MOTION_DEBUG_START_THRESHOLD =
-        "motion_debug_start_threshold";
-    public static final String EXTRA_MOTION_DEBUG_STOP_THRESHOLD =
-        "motion_debug_stop_threshold";
-    public static final String EXTRA_MOTION_DEBUG_STATE = "motion_debug_state";
-    public static final String EXTRA_MOTION_DEBUG_ACTION = "motion_debug_action";
-    public static final String EXTRA_MOTION_DEBUG_PERSON_CONF =
-        "motion_debug_person_conf";
-    public static final String EXTRA_MOTION_DEBUG_PERSON = "motion_debug_person";
-    public static final String EXTRA_MOTION_DEBUG_CLASS_NAME =
-        "motion_debug_class_name";
-    public static final String EXTRA_MOTION_DEBUG_CLASS_CONF =
-        "motion_debug_class_conf";
-    public static final String EXTRA_MOTION_DEBUG_EVENT_TYPE =
-        "motion_debug_event_type";
-    public static final String EXTRA_MOTION_DEBUG_FRAME_JPEG =
-        "motion_debug_frame_jpeg";
-    public static final String EXTRA_MOTION_DEBUG_CHANGED_AREA =
-        "motion_debug_changed_area";
-    public static final String EXTRA_MOTION_DEBUG_STRONG_AREA =
-        "motion_debug_strong_area";
-    public static final String EXTRA_MOTION_DEBUG_MEAN_DELTA =
-        "motion_debug_mean_delta";
-    public static final String EXTRA_MOTION_DEBUG_BG_DELTA =
-        "motion_debug_bg_delta";
-    public static final String EXTRA_MOTION_DEBUG_MAX_DELTA =
-        "motion_debug_max_delta";
-    public static final String EXTRA_MOTION_DEBUG_GLOBAL_SUPPRESSED =
-        "motion_debug_global_suppressed";
     public static final String BROADCAST_CAMERA_ERROR = "CAMERA_ACCESS_ERROR";
 
     public static final String INTENT_ACTION_STOP_RECORDING =
@@ -316,24 +282,6 @@ public abstract class Constants {
         "com.shahid.cam.ACTION_SCREEN_RECORDING_PERMISSION_DENIED";
 
     // Batch media actions (Records tab automations)
-    public static final String INTENT_ACTION_BATCH_EXPORT_STANDARD_MP4 =
-        "com.shahid.cam.ACTION_BATCH_EXPORT_STANDARD_MP4";
-    public static final String INTENT_ACTION_BATCH_MERGE_VIDEOS =
-        "com.shahid.cam.ACTION_BATCH_MERGE_VIDEOS";
-    public static final String EXTRA_BATCH_INPUT_URIS =
-        "com.shahid.cam.EXTRA_BATCH_INPUT_URIS";
-    public static final String EXTRA_BATCH_CUSTOM_TREE_URI =
-        "com.shahid.cam.EXTRA_BATCH_CUSTOM_TREE_URI";
-    public static final String EXTRA_BATCH_OUTPUT_MODE =
-        "com.shahid.cam.EXTRA_BATCH_OUTPUT_MODE";
-    public static final String BATCH_OUTPUT_MODE_DEFAULT_SHAHIDEDITOR =
-        "DEFAULT_SHAHIDEDITOR";
-    public static final String BATCH_OUTPUT_MODE_CUSTOM_TREE_URI =
-        "CUSTOM_TREE_URI";
-    public static final String ACTION_BATCH_MEDIA_COMPLETED =
-        "com.shahid.cam.ACTION_BATCH_MEDIA_COMPLETED";
-    public static final String EXTRA_BATCH_COMPLETED_MESSAGE =
-        "com.shahid.cam.EXTRA_BATCH_COMPLETED_MESSAGE";
     public static final String ACTION_RECORDS_DELETE_SESSION_UPDATED =
         "com.shahid.cam.ACTION_RECORDS_DELETE_SESSION_UPDATED";
     public static final String ACTION_RECORDS_DELETE_ITEM_COMPLETED =
@@ -425,14 +373,6 @@ public abstract class Constants {
     // v2 so polluted positions saved by earlier broken drag builds are discarded.
     public static final String PREF_QUICK_ACTIONS_ORDER = "pref_quick_actions_slots_v2";
     public static final String DEFAULT_QUICK_ACTIONS_ORDER = "timer,mute,full,shahidshot";
-    // Sidebar mini apps: pipe-separated order of ALL mini app ids (user-reorderable)
-    // + how many of the top of that order are shown in the home sidebar (default 3).
-    // Count key bumped to v2 so early test builds' stored values are discarded.
-    public static final String PREF_SIDEBAR_MINI_APPS_ORDER = "sidebar_mini_apps_order";
-    public static final String PREF_SIDEBAR_MINI_APPS_COUNT = "sidebar_mini_apps_count_v2";
-    public static final int DEFAULT_SIDEBAR_MINI_APPS_COUNT = 3;
-    public static final String DEFAULT_SIDEBAR_MINI_APPS_ORDER =
-        "torch|qr_scanner|compass|sound_meter|sensor_dashboard|speedometer|clinometer|pedometer|metal_detector|parking_marker|qr_generator";
     /** Pan offset Y for zoom: float -1.0 (full top) to +1.0 (full bottom), 0.0 = centre */
     public static final String EXTRA_PAN_Y = "com.shahid.cam.EXTRA_PAN_Y"; // float
     public static final String INTENT_ACTION_PAUSE_RECORDING =
@@ -536,8 +476,6 @@ public abstract class Constants {
     // Broadcast action sent when files are restored from trash
     public static final String ACTION_FILES_RESTORED =
         "com.shahid.cam.FILES_RESTORED";
-    public static final String ACTION_FORENSICS_SNAPSHOT_PERSISTED =
-        "com.shahid.cam.ACTION_FORENSICS_SNAPSHOT_PERSISTED";
 
     // Broadcast Actions for Video Processing State
     public static final String ACTION_PROCESSING_STARTED =
@@ -588,7 +526,6 @@ public abstract class Constants {
     public static final String TRASH_METADATA_FILENAME = "trash_metadata.json";
     public static final String TRASH_SUBDIR_VIDEO_RECORDINGS = "VideoRecordings";
     public static final String TRASH_SUBDIR_FORENSICS_EVIDENCE = "ForensicsEvidence";
-    public static final String TRASH_SUBDIR_MINIAPPS = "MiniApps";
 
     // Request codes
     public static final int REQUEST_CODE_OPEN_DOCUMENT_TREE_FOR_SAF = 1001; // Added request code
@@ -679,28 +616,8 @@ public abstract class Constants {
     public static final String PREF_PLAYER_CONTROLS_TIMEOUT_SECONDS =
         "pref_player_controls_timeout_seconds";
     public static final int DEFAULT_PLAYER_CONTROLS_TIMEOUT_SECONDS = 5; // default 5 seconds
-    // Motion Lab (advanced) preferences
-    public static final String PREF_MOTION_MODE_ENABLED = "pref_motion_mode_enabled";
-    public static final String PREF_MOTION_TRIGGER_MODE = "pref_motion_trigger_mode"; // any_motion|person_confirmed
-    public static final String PREF_MOTION_SENSITIVITY = "pref_motion_sensitivity"; // 0-100
-    public static final String PREF_MOTION_ANALYSIS_FPS = "pref_motion_analysis_fps"; // 2/3/5
-    public static final String PREF_MOTION_DEBOUNCE_MS = "pref_motion_debounce_ms";
-    public static final String PREF_MOTION_POST_ROLL_MS = "pref_motion_post_roll_ms";
-    public static final String PREF_MOTION_PRE_ROLL_SECONDS = "pref_motion_pre_roll_seconds";
-    public static final String PREF_MOTION_ZONES_JSON = "pref_motion_zones_json";
-    public static final String PREF_MOTION_AUTO_TORCH_ENABLED = "pref_motion_auto_torch_enabled";
-    public static final String PREF_MOTION_DEBUG_UI_ACTIVE = "pref_motion_debug_ui_active";
-    // Digital Forensics (advanced) preferences
-    public static final String PREF_DF_ENABLED = "pref_df_enabled";
-    public static final String PREF_DF_EVENT_PERSON = "pref_df_event_person";
-    public static final String PREF_DF_EVENT_VEHICLE = "pref_df_event_vehicle";
-    public static final String PREF_DF_EVENT_PET = "pref_df_event_pet";
-    public static final String PREF_DF_EVENT_DANGEROUS_OBJECT = "pref_df_event_dangerous_object";
-    public static final String PREF_DF_OVERLAY_ENABLED = "pref_df_overlay_enabled";
-    public static final String PREF_DF_DAILY_SUMMARY_ENABLED = "pref_df_daily_summary_enabled";
-    public static final String PREF_DF_HEATMAP_ENABLED = "pref_df_heatmap_enabled";
-    public static final String PREF_DF_EVIDENCE_ENABLED = "pref_df_evidence_enabled";
-    public static final String PREF_DF_CAPTURE_SCOPE = "pref_df_capture_scope"; // people|objects|both
+    // Motion Lab (advanced) preferences // any_motion|person_confirmed // 0-100 // 2/3/5
+    // Digital Forensics (advanced) preferences // people|objects|both
 
     // ── Dual Camera (PiP) Constants ────────────────────────────────────────
     public static final String PREF_DUAL_CAMERA_ENABLED = "dual_camera_enabled";

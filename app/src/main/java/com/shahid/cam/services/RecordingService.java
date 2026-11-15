@@ -63,7 +63,6 @@ import com.shahid.cam.utils.PhotoStorageHelper;
 import com.shahid.cam.utils.RecordingStoragePaths;
 import com.shahid.cam.utils.RuntimeCompat;
 import com.shahid.cam.utils.ServiceStartPolicy;
-import com.shahid.cam.forensics.service.DigitalForensicsEventRecorder;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -206,52 +205,6 @@ public class RecordingService extends Service {
     private boolean manualAeLockActive = false;
     // Locks per-session output folder so split segments don't jump folders during camera switches.
     private RecordingStoragePaths.CameraSource recordingSessionCameraSource = RecordingStoragePaths.CameraSource.BACK;
-    // Motion Lab (advanced, opt-in): sidecar analysis path. No control-flow impact unless explicitly wired later.
-    private boolean motionLabEnabledForSession = false;
-    private ImageReader motionAnalysisReader;
-    private long motionAnalysisIntervalMs = 333L; // ~3fps default
-    private long lastMotionAnalysisTimestampMs = 0L;
-    private volatile com.shahid.cam.motion.domain.detector.MotionDetector motionDetector =
-            new com.shahid.cam.motion.domain.detector.FrameDiffMotionDetector();
-    private volatile com.shahid.cam.motion.domain.detector.EfficientDetLite1Detector efficientDetDetector;
-    private com.shahid.cam.motion.domain.policy.MotionPolicy motionPolicy =
-            new com.shahid.cam.motion.domain.policy.MotionPolicy();
-    private com.shahid.cam.motion.domain.state.MotionStateMachine motionStateMachine;
-    private boolean motionAutoPaused = false;
-    private boolean motionSafeMode = false;
-    private int motionConsecutivePersonHits = 0;
-    private long motionFramesAnalyzed = 0L;
-    private long motionTriggerActionCount = 0L;
-    private long motionSuppressedSignalCount = 0L;
-    private float motionScoreEma = Float.NaN;
-    private long motionLastDebugBroadcastMs = 0L;
-    private long motionLastTelemetryLogMs = 0L;
-    private long motionPersonLikelyUntilMs = 0L;
-    private volatile boolean motionOpenCvActive = false;
-    private volatile boolean motionDetectorWarmupScheduled = false;
-    private volatile boolean motionDetectorWarmupCompleted = false;
-    private java.util.concurrent.ExecutorService motionDetectorWarmupExecutor;
-    private DigitalForensicsEventRecorder digitalForensicsEventRecorder;
-    private boolean motionLastPersonDetected = false;
-    private float motionLastPersonConfidence = 0f;
-    private float motionLastScore = 0f;
-    private float motionLastChangedArea = 0f;
-    private float motionLastStrongArea = 0f;
-    private float motionLastCenterX = 0.5f;
-    private float motionLastCenterY = 0.5f;
-    private float motionLastBoxWidth = 0.16f;
-    private float motionLastBoxHeight = 0.16f;
-    private String motionLastEventType = null;
-    private String motionLastClassName = null;
-    private float motionLastDetectionConfidence = 0f;
-    private boolean motionLastGlobalSuppressed = false;
-    private long motionLastForensicsHeartbeatMs = 0L;
-    private String motionLastOverlayPayload = null;
-    private long motionJpegAttemptCount = 0L;
-    private long motionJpegSuccessCount = 0L;
-    private long motionJpegSkipCount = 0L;
-    private long motionJpegEncodeTotalMs = 0L;
-    private long motionLastPerfLogMs = 0L;
 
     // --- Lifecycle Methods ---
     @Override
@@ -314,19 +267,10 @@ public class RecordingService extends Service {
         backgroundThread = new HandlerThread("CameraBackground");
         backgroundThread.start();
         backgroundHandler = new Handler(backgroundThread.getLooper());
-        motionDetectorWarmupExecutor = java.util.concurrent.Executors.newSingleThreadExecutor();
 
         // Initialize PowerManager and WakeLock
         android.os.PowerManager powerManager = (android.os.PowerManager) getSystemService(Context.POWER_SERVICE);
         recordingWakeLock = powerManager.newWakeLock(android.os.PowerManager.PARTIAL_WAKE_LOCK, "ShahidCam:RecordingService");
-        try {
-            digitalForensicsEventRecorder = new DigitalForensicsEventRecorder(getApplicationContext());
-        } catch (Exception e) {
-            FLog.w(TAG, "Digital forensics event recorder init failed", e);
-            digitalForensicsEventRecorder = null;
-        }
-
-        FLog.i(TAG, "Motion detectors deferred: service startup uses lazy background warmup only when Motion Lab is enabled");
 
         // Broadcast initial camera resource availability
         broadcastCameraResourceAvailability(true);
@@ -416,56 +360,6 @@ public class RecordingService extends Service {
         }
     }
 
-    private void scheduleMotionDetectorWarmupIfNeeded() {
-        if (!motionLabEnabledForSession || motionDetectorWarmupCompleted || motionDetectorWarmupScheduled) {
-            return;
-        }
-        if (motionDetectorWarmupExecutor == null) {
-            FLog.w(TAG, "Motion detector warmup requested before executor was ready");
-            return;
-        }
-
-        motionDetectorWarmupScheduled = true;
-        motionDetectorWarmupExecutor.execute(() -> {
-            long startMs = SystemClock.elapsedRealtime();
-            FLog.i(TAG, "Motion detector warmup started off the recording hot path");
-
-            try {
-                if (efficientDetDetector == null) {
-                    try {
-                        com.shahid.cam.motion.domain.detector.EfficientDetLite1Detector detector =
-                                new com.shahid.cam.motion.domain.detector.EfficientDetLite1Detector(getApplicationContext());
-                        if (detector.isAvailable()) {
-                            efficientDetDetector = detector;
-                            FLog.i(TAG, "EfficientDet detector available: true");
-                        } else {
-                            FLog.w(TAG, "EfficientDet detector warmup completed but detector is unavailable");
-                        }
-                    } catch (Throwable t) {
-                        FLog.w(TAG, "EfficientDet warmup failed; continuing without AI detector", t);
-                    }
-                }
-
-                if (!motionOpenCvActive) {
-                    try {
-                        motionDetector = new com.shahid.cam.motion.domain.detector.OpenCvMog2MotionDetector();
-                        motionOpenCvActive = true;
-                        FLog.i(TAG, "Motion detector backend: OpenCV MOG2");
-                    } catch (Throwable t) {
-                        motionDetector = new com.shahid.cam.motion.domain.detector.FrameDiffMotionDetector();
-                        motionOpenCvActive = false;
-                        FLog.w(TAG, "OpenCV backend unavailable; keeping FrameDiffMotionDetector", t);
-                    }
-                }
-            } finally {
-                motionDetectorWarmupCompleted = true;
-                long elapsedMs = SystemClock.elapsedRealtime() - startMs;
-                FLog.i(TAG, "Motion detector warmup finished in " + elapsedMs
-                        + " ms, aiReady=" + (efficientDetDetector != null)
-                        + ", openCv=" + motionOpenCvActive);
-            }
-        });
-    }
 
     // method(applyExposureCompensation)-----------
     /**
@@ -478,7 +372,7 @@ public class RecordingService extends Service {
         if (currentCameraCharacteristics != null) {
             Range<Integer> range = currentCameraCharacteristics.get(CameraCharacteristics.CONTROL_AE_COMPENSATION_RANGE);
             if (range != null) {
-                // Persist the device's actual range so RemoteStreamManager can surface it
+                // Persist the device's actual exposure compensation range
                 try {
                     if (sharedPreferencesManager != null) {
                         sharedPreferencesManager.setExposureCompensationRange(range.getLower(), range.getUpper());
@@ -1620,26 +1514,6 @@ public class RecordingService extends Service {
                 FLog.d(TAG, "WeatherService initialized for recording");
             }
             
-            // STREAM ENFORCEMENT GATE: Validate and gate streaming mode
-            boolean streamingEnabled = com.shahid.cam.streaming.RemoteStreamManager.getInstance().isStreamingEnabled();
-            android.content.SharedPreferences shahidcamPrefs = getSharedPreferences("ShahidCamPrefs", Context.MODE_PRIVATE);
-            String presetName = shahidcamPrefs.getString("quality_preset", "HIGH");
-            int presetBitrate = shahidcamPrefs.getInt("stream_bitrate", 5_000_000);
-            int presetFps = shahidcamPrefs.getInt("stream_fps_cap", 30);
-            
-            if (streamingEnabled) {
-                FLog.i(TAG, "🔴 [STREAM MODE ENFORCED] Starting recording with streaming server ACTIVE");
-                FLog.i(TAG, "   Preset: " + presetName + " | Bitrate: " + (presetBitrate/1_000_000) + " Mbps | FPS cap: " + presetFps + "fps");
-                // Validate preset values were actually stored
-                if (presetBitrate <= 0 || presetFps <= 0) {
-                    FLog.e(TAG, "❌ INVALID STREAM PRESET - bitrate=" + presetBitrate + ", fps=" + presetFps);
-                    mainHandler.post(() -> Toast.makeText(getApplicationContext(), 
-                        "Stream preset invalid - check quality settings", Toast.LENGTH_SHORT).show());
-                    return START_STICKY;
-                }
-            } else {
-                FLog.i(TAG, "📺 [NORMAL RECORDING] Starting recording - streaming server OFF");
-            }
             
             // Check for rapid start attempts
             long currentTime = System.currentTimeMillis();
@@ -1701,7 +1575,6 @@ public class RecordingService extends Service {
                 recordingSessionCameraSource = selectedType == CameraType.FRONT
                         ? RecordingStoragePaths.CameraSource.FRONT
                         : RecordingStoragePaths.CameraSource.BACK;
-                configureMotionLabForSession();
 
                 // Set initial torch state
                 isRecordingTorchEnabled = intent.getBooleanExtra(Constants.INTENT_EXTRA_INITIAL_TORCH_STATE, false);
@@ -1871,7 +1744,6 @@ public class RecordingService extends Service {
                 Constants.EXTRA_BROADCAST_EXPOSURE_COMPENSATION,
                 sharedPreferencesManager.getSavedExposureCompensation());
             sendBroadcast(exposureBroadcast.setPackage(getPackageName()));
-            com.shahid.cam.streaming.RemoteStreamManager.getInstance().invalidateStatusCache();
             }
             return START_STICKY;
         } else if (Constants.INTENT_ACTION_TOGGLE_AE_LOCK.equals(action)) {
@@ -1941,7 +1813,6 @@ public class RecordingService extends Service {
                     zoomBcast.putExtra(Constants.EXTRA_BROADCAST_PAN_Y, broadcastPanY);
                     this.sendBroadcast(zoomBcast.setPackage(this.getPackageName()));
                 }
-                com.shahid.cam.streaming.RemoteStreamManager.getInstance().invalidateStatusCache();
             }
             return START_STICKY;
         } else if (Constants.INTENT_ACTION_SET_FRONT_VIDEO_MIRROR.equals(action)) {
@@ -2254,14 +2125,6 @@ public class RecordingService extends Service {
             }
         }
 
-        if (motionDetectorWarmupExecutor != null) {
-            try {
-                motionDetectorWarmupExecutor.shutdownNow();
-            } catch (Exception e) {
-                FLog.w(TAG, "Error shutting down motion detector warmup executor", e);
-            }
-            motionDetectorWarmupExecutor = null;
-        }
 
         FLog.d(TAG, "Service destroyed.");
         // Clean up GeotagHelper when service is destroyed
@@ -2323,31 +2186,12 @@ public class RecordingService extends Service {
             return;
         }
 
-        if (motionLabEnabledForSession) {
-            FLog.i(TAG, "MotionLab summary: frames=" + motionFramesAnalyzed
-                    + ", actions=" + motionTriggerActionCount
-                    + ", suppressed=" + motionSuppressedSignalCount
-                    + ", safeMode=" + motionSafeMode
-                    + ", detectorAvailable=" + (efficientDetDetector != null && efficientDetDetector.isAvailable()));
-        }
-        if (digitalForensicsEventRecorder != null) {
-            long timelineMs = getEffectiveTimelineMs();
-            digitalForensicsEventRecorder.flush(timelineMs);
-        }
 
         // First update the state to prevent any new operations
         recordingState = RecordingState.NONE;
         sharedPreferencesManager.setRecordingInProgress(false);
         com.shahid.cam.ActiveRecordingStats.clearActiveSegment();
         
-        // Notify RemoteStreamManager that recording stopped
-        try {
-            com.shahid.cam.streaming.RemoteStreamManager.getInstance().stopRecording();
-            FLog.i(TAG, "🛑 RemoteStreamManager notified: recording stopped");
-            
-        } catch (Exception e) {
-            FLog.e(TAG, "Failed to notify RemoteStreamManager about recording stop", e);
-        }
 
         recordingStartTime = 0L;
         pauseStartedAt = 0L;
@@ -2399,52 +2243,6 @@ public class RecordingService extends Service {
                     }
                 }
 
-                // Delete temporary file if in STREAM_ONLY mode
-                if (currentSegmentFile != null && currentSegmentFile.exists()) {
-                    com.shahid.cam.streaming.RemoteStreamManager.StreamingMode streamingMode = 
-                        com.shahid.cam.streaming.RemoteStreamManager.getInstance().getStreamingMode();
-                    if (streamingMode == com.shahid.cam.streaming.RemoteStreamManager.StreamingMode.STREAM_ONLY) {
-                        boolean deleted = currentSegmentFile.delete();
-                        if (deleted) {
-                            FLog.i(TAG, "🗑️ STREAM_ONLY: Deleted temporary file: " + currentSegmentFile.getName());
-                        } else {
-                            FLog.w(TAG, "⚠️ Failed to delete temporary file: " + currentSegmentFile.getAbsolutePath());
-                        }
-                    }
-                }
-
-                // STREAM_ONLY: Clean up ALL tracked temporary files (internal storage)
-                // Handles segment splits where multiple temp files were created
-                if (!streamOnlyTempFiles.isEmpty()) {
-                    FLog.i(TAG, "🗑️ STREAM_ONLY: Cleaning up " + streamOnlyTempFiles.size() + " tracked temp files");
-                    for (File tempFile : streamOnlyTempFiles) {
-                        if (tempFile != null && tempFile.exists()) {
-                            boolean deleted = tempFile.delete();
-                            FLog.i(TAG, "🗑️ STREAM_ONLY: " + (deleted ? "Deleted" : "FAILED to delete") + " temp: " + tempFile.getName());
-                        }
-                    }
-                    streamOnlyTempFiles.clear();
-                }
-
-                // STREAM_ONLY (SAF): Clean up tracked SAF URIs (SD card storage)
-                // These are 0-byte files created for the GL pipeline but never written to
-                if (!streamOnlySafUris.isEmpty()) {
-                    FLog.i(TAG, "🗑️ STREAM_ONLY (SAF): Cleaning up " + streamOnlySafUris.size() + " tracked SAF files");
-                    for (String uriStr : streamOnlySafUris) {
-                        try {
-                            Uri safUri = Uri.parse(uriStr);
-                            androidx.documentfile.provider.DocumentFile docFile =
-                                    androidx.documentfile.provider.DocumentFile.fromSingleUri(RecordingService.this, safUri);
-                            if (docFile != null && docFile.exists()) {
-                                boolean deleted = docFile.delete();
-                                FLog.i(TAG, "🗑️ STREAM_ONLY (SAF): " + (deleted ? "Deleted" : "FAILED to delete") + " URI: " + uriStr);
-                            }
-                        } catch (Exception e) {
-                            FLog.w(TAG, "⚠️ STREAM_ONLY (SAF): Error deleting URI: " + uriStr + " - " + e.getMessage());
-                        }
-                    }
-                    streamOnlySafUris.clear();
-                }
 
                 // Give some time for the GL pipeline to release resources
                 try {
@@ -2591,15 +2389,12 @@ public class RecordingService extends Service {
         if (durationLimitController != null && durationLimitController.pauseSession()) {
             FLog.d(TAG, "Paused maximum recording duration countdown");
         }
-        // Notify RemoteStreamManager so status JSON reflects paused state
-        com.shahid.cam.streaming.RemoteStreamManager.getInstance().pauseRecording();
 
         // Battery saving: release camera while paused (unless motion detection needs it).
         // The GL pipeline stays alive (paused) so recording can resume instantly.
-        if (!motionLabEnabledForSession && !isSwitchingCamera) {
-            FLog.d(TAG, "Releasing camera during pause (motion detection disabled)");
+        if (!isSwitchingCamera) {
+            FLog.d(TAG, "Releasing camera during pause");
             releaseDummyBackgroundSurface();
-            releaseMotionAnalysisReader();
             closeCameraResourcesForSwitch();
         }
 
@@ -2623,7 +2418,7 @@ public class RecordingService extends Service {
 
         // Reopen camera if it was released during pause (motion detection disabled).
         // openCamera() is async — the pipeline handles frames arriving after resume.
-        if (!motionLabEnabledForSession && cameraDevice == null && !isSwitchingCamera) {
+        if (cameraDevice == null && !isSwitchingCamera) {
             FLog.d(TAG, "Reopening camera for resume (was released during pause)");
             openCamera();
         }
@@ -2640,8 +2435,6 @@ public class RecordingService extends Service {
         if (durationLimitController != null && durationLimitController.resumeSession()) {
             FLog.d(TAG, "Resumed maximum recording duration countdown");
         }
-        // Notify RemoteStreamManager so status JSON reflects resumed (recording) state
-        com.shahid.cam.streaming.RemoteStreamManager.getInstance().resumeRecording();
         
         // Resume noise monitor and sensors if they were enabled
         if (sharedPreferencesManager != null && sharedPreferencesManager.isNoiseEnabled() && noiseMonitor != null) {
@@ -2955,7 +2748,6 @@ public class RecordingService extends Service {
 
         // Release dummy background surface first
         releaseDummyBackgroundSurface();
-        releaseMotionAnalysisReader();
 
         isStopping = true;
         try {
@@ -3004,513 +2796,12 @@ public class RecordingService extends Service {
         sharedPreferencesManager.setRecordingInProgress(false);
     }
 
-    private void configureMotionLabForSession() {
-        motionLabEnabledForSession = sharedPreferencesManager != null && sharedPreferencesManager.isMotionModeEnabled();
-        lastMotionAnalysisTimestampMs = 0L;
-        motionAutoPaused = false;
-        motionSafeMode = RuntimeCompat.shouldUseSafeMotionAnalysis(getApplicationContext());
-        motionConsecutivePersonHits = 0;
-        motionFramesAnalyzed = 0L;
-        motionTriggerActionCount = 0L;
-        motionSuppressedSignalCount = 0L;
-        motionScoreEma = Float.NaN;
-        motionLastDebugBroadcastMs = 0L;
-        motionLastTelemetryLogMs = 0L;
-        motionPersonLikelyUntilMs = 0L;
-        motionLastForensicsHeartbeatMs = 0L;
-        motionJpegAttemptCount = 0L;
-        motionJpegSuccessCount = 0L;
-        motionJpegSkipCount = 0L;
-        motionJpegEncodeTotalMs = 0L;
-        motionLastPerfLogMs = 0L;
-        motionStateMachine = motionLabEnabledForSession
-                ? new com.shahid.cam.motion.domain.state.MotionStateMachine(motionPolicy)
-                : null;
-        if (!motionLabEnabledForSession) {
-            releaseMotionAnalysisReader();
-        } else {
-            scheduleMotionDetectorWarmupIfNeeded();
-        }
-        if (sharedPreferencesManager != null) {
-            int sensitivity = sharedPreferencesManager.getMotionSensitivity();
-            int fps = sharedPreferencesManager.getMotionAnalysisFps();
-            int debounce = sharedPreferencesManager.getMotionDebounceMs();
-            int postRoll = sharedPreferencesManager.getMotionPostRollMs();
-            String scope = sharedPreferencesManager.getDfCaptureScope();
-            float start = motionPolicy.startThresholdFromSensitivity(sensitivity);
-            float stop = motionPolicy.stopThresholdFromSensitivity(sensitivity);
-        }
-    }
 
-    private void maybeAttachMotionAnalysisSurface(List<Surface> surfaces, int targetFrameRate) {
-        if (!motionLabEnabledForSession) {
-            return;
-        }
-        Surface surface = getOrCreateMotionAnalysisSurface();
-        if (surface != null) {
-            surfaces.add(surface);
-            FLog.d(TAG, "Motion analysis surface attached to camera session");
-        } else {
-            disableMotionLabForSession("analysis_surface_unavailable");
-        }
-    }
 
-    private void disableMotionLabForSession(String reason) {
-        if (!motionLabEnabledForSession) {
-            return;
-        }
-        motionLabEnabledForSession = false;
-        motionStateMachine = null;
-        motionAutoPaused = false;
-        releaseMotionAnalysisReader();
-        FLog.w(TAG, "Motion Lab disabled for current session. reason=" + reason + "; continuing normal recording flow");
-    }
 
-    private Surface getOrCreateMotionAnalysisSurface() {
-        try {
-            int analysisFps = sharedPreferencesManager != null ? sharedPreferencesManager.getMotionAnalysisFps() : 3;
-            if (motionOpenCvActive && !motionSafeMode) {
-                // Keep detector responsive while limiting CPU spikes.
-                analysisFps = Math.max(3, Math.min(6, analysisFps));
-            }
-            if (motionSafeMode) {
-                analysisFps = Math.min(2, analysisFps);
-            }
-            motionAnalysisIntervalMs = Math.max(100L, 1000L / Math.max(1, analysisFps));
-            Size selected = sharedPreferencesManager != null
-                    ? sharedPreferencesManager.getCameraResolution()
-                    : Constants.DEFAULT_VIDEO_RESOLUTION;
-            // Scale divisor with recording resolution: MOG2 and EfficientDet both work
-            // fine at lower resolutions, but the camera ISP has to produce YUV frames
-            // for the analysis surface, which can starve the encoder at high res+fps.
-            int recordingHeight = selected.getHeight();
-            int divisor = motionSafeMode ? 6
-                    : (motionOpenCvActive
-                        ? (recordingHeight >= 2160 ? 4 : (recordingHeight >= 1080 ? 3 : 1))
-                        : 2);
-            int maxWidth = motionSafeMode ? 192 : (motionOpenCvActive ? 640 : 640);
-            int maxHeight = motionSafeMode ? 108 : (motionOpenCvActive ? 360 : 360);
-            int width = Math.max(96, Math.min(maxWidth, selected.getWidth() / divisor));
-            int height = Math.max(54, Math.min(maxHeight, selected.getHeight() / divisor));
-            boolean recreate = motionAnalysisReader == null
-                    || motionAnalysisReader.getWidth() != width
-                    || motionAnalysisReader.getHeight() != height;
-            if (recreate) {
-                releaseMotionAnalysisReader();
-                motionAnalysisReader = ImageReader.newInstance(width, height, android.graphics.ImageFormat.YUV_420_888, 2);
-                motionAnalysisReader.setOnImageAvailableListener(reader -> {
-                    Image image = null;
-                    try {
-                        image = reader.acquireLatestImage();
-                        if (image == null) {
-                            return;
-                        }
-                        long now = SystemClock.elapsedRealtime();
-                        // When the motion state has been IDLE (no motion for a while), throttle analysis
-                        // to 1 fps to save power and reduce heat.  Cameras with a third output surface
-                        // (analysis YUV) keep the ISP active even when nothing is recording.
-                        long effectiveIntervalMs = motionAnalysisIntervalMs;
-                        if (motionStateMachine != null
-                                && motionStateMachine.getState() == com.shahid.cam.motion.domain.state.MotionSessionState.IDLE
-                                && recordingState == RecordingState.PAUSED) {
-                            effectiveIntervalMs = Math.max(effectiveIntervalMs, 1000L);
-                        }
-                        if (now - lastMotionAnalysisTimestampMs < effectiveIntervalMs) {
-                            return;
-                        }
-                        lastMotionAnalysisTimestampMs = now;
-                        float rawMotionScore = motionDetector.detectScore(image);
-                        com.shahid.cam.motion.domain.detector.EfficientDetLite1Detector.FramePacket framePacket =
-                                com.shahid.cam.motion.domain.detector.EfficientDetLite1Detector.FramePacket.copyFrom(image);
-                        image.close();
-                        image = null;
-                        processMotionFrame(rawMotionScore, framePacket, now);
-                    } catch (Throwable t) {
-                        FLog.w(TAG, "Motion analysis frame processing failed", t);
-                    } finally {
-                        if (image != null) {
-                            image.close();
-                        }
-                    }
-                }, backgroundHandler);
-                FLog.d(TAG, "Created motion analysis reader: " + width + "x" + height + " @" + analysisFps + "fps");
-            }
-            return motionAnalysisReader.getSurface();
-        } catch (Throwable t) {
-            FLog.e(TAG, "Unable to create motion analysis surface", t);
-            releaseMotionAnalysisReader();
-            return null;
-        }
-    }
 
-    private void processMotionFrame(
-            float rawMotionScore,
-            @Nullable com.shahid.cam.motion.domain.detector.EfficientDetLite1Detector.FramePacket framePacket,
-            long nowMs
-    ) {
-        motionFramesAnalyzed++;
-        // OpenCV MOG2 outputs are intentionally conservative; normalize to policy scale.
-        if (motionOpenCvActive) {
-            rawMotionScore = Math.min(1f, rawMotionScore * 1.35f);
-        }
-        if (Float.isNaN(motionScoreEma)) {
-            motionScoreEma = rawMotionScore;
-        } else {
-            // Rise fast to avoid missed starts; decay slower to avoid threshold chatter.
-            float riseAlpha = 0.72f;
-            float fallAlpha = 0.34f;
-            float alpha = rawMotionScore >= motionScoreEma ? riseAlpha : fallAlpha;
-            motionScoreEma = (alpha * rawMotionScore) + ((1f - alpha) * motionScoreEma);
-        }
-        float motionScore = motionScoreEma;
-        List<com.shahid.cam.motion.domain.detector.EfficientDetLite1Detector.DetectionResult> detections =
-                (efficientDetDetector != null && framePacket != null)
-                        ? efficientDetDetector.detect(framePacket)
-                        : java.util.Collections.emptyList();
-        com.shahid.cam.motion.domain.detector.EfficientDetLite1Detector.DetectionResult primaryDetection =
-                efficientDetDetector != null ? efficientDetDetector.choosePrimary(detections) : null;
-        float personConfidence = efficientDetDetector != null ? efficientDetDetector.bestPersonConfidence(detections) : 0f;
-        boolean personDetectedRaw = efficientDetDetector != null && efficientDetDetector.hasPerson(detections);
-        if (personDetectedRaw) {
-            motionConsecutivePersonHits++;
-        } else {
-            motionConsecutivePersonHits = Math.max(0, motionConsecutivePersonHits - 1);
-        }
-        int requiredHits = motionSafeMode ? 3 : 2;
-        boolean personDetected = personDetectedRaw && motionConsecutivePersonHits >= requiredHits;
-        if (personDetectedRaw && personConfidence >= 0.62f) {
-            motionPersonLikelyUntilMs = nowMs + 2500L;
-        }
-        // Keep person-confirmed signal stable across single-frame classifier misses.
-        if (!personDetected && motionConsecutivePersonHits >= requiredHits && personConfidence >= 0.55f) {
-            personDetected = true;
-        }
-        boolean personLikely = personDetected
-                || (personDetectedRaw && personConfidence >= 0.70f)
-                || nowMs <= motionPersonLikelyUntilMs;
-        float debugChangedArea = 0f;
-        float debugStrongArea = 0f;
-        float debugMeanDelta = 0f;
-        float debugBackgroundDelta = 0f;
-        float debugMaxDelta = 0f;
-        float debugCenterX = 0.5f;
-        float debugCenterY = 0.5f;
-        boolean debugGlobalSuppressed = false;
-        if (motionDetector instanceof com.shahid.cam.motion.domain.detector.MotionDebugInfoProvider) {
-            com.shahid.cam.motion.domain.detector.MotionDebugInfoProvider detector =
-                    (com.shahid.cam.motion.domain.detector.MotionDebugInfoProvider) motionDetector;
-            debugChangedArea = detector.getLastChangedAreaRatio();
-            debugStrongArea = detector.getLastStrongAreaRatio();
-            debugMeanDelta = detector.getLastMeanDelta();
-            debugBackgroundDelta = detector.getLastBackgroundDelta();
-            debugMaxDelta = detector.getLastMaxDelta();
-            debugCenterX = detector.getLastMotionCenterX();
-            debugCenterY = detector.getLastMotionCenterY();
-            debugGlobalSuppressed = detector.isLastGlobalMotionSuppressed();
-        }
-        com.shahid.cam.motion.domain.state.MotionSessionState stateBefore =
-                motionStateMachine != null ? motionStateMachine.getState() : null;
-        if (motionStateMachine != null && sharedPreferencesManager != null) {
-            com.shahid.cam.motion.domain.model.MotionSettings settings = new com.shahid.cam.motion.domain.model.MotionSettings(
-                    sharedPreferencesManager.isMotionModeEnabled(),
-                    com.shahid.cam.motion.domain.model.MotionTriggerMode.fromValue(
-                            sharedPreferencesManager.getMotionTriggerMode()),
-                    sharedPreferencesManager.getMotionSensitivity(),
-                    sharedPreferencesManager.getMotionAnalysisFps(),
-                    sharedPreferencesManager.getMotionDebounceMs(),
-                    sharedPreferencesManager.getMotionPostRollMs(),
-                    sharedPreferencesManager.getMotionPreRollSeconds(),
-                    sharedPreferencesManager.isMotionAutoTorchEnabled());
-            float startThreshold = motionPolicy.startThresholdFromSensitivity(settings.getSensitivity());
-            com.shahid.cam.motion.domain.state.MotionStateMachine.TransitionAction action =
-                    motionStateMachine.onSignal(settings, new com.shahid.cam.motion.domain.model.MotionSignal(
-                            nowMs,
-                            motionScore,
-                            personDetected));
-            if (action == com.shahid.cam.motion.domain.state.MotionStateMachine.TransitionAction.NONE
-                    && motionStateMachine.getState() != com.shahid.cam.motion.domain.state.MotionSessionState.RECORDING
-                    && !debugGlobalSuppressed
-                    && personLikely
-                    && personConfidence >= 0.70f
-                    && debugChangedArea >= 0.008f
-                    && debugMeanDelta >= 0.005f
-                    && debugStrongArea >= 0.008f) {
-                // Dedicated far-subject lane: small distant motion often has tiny changed area.
-                float farAssistFloor = Math.max(
-                        motionPolicy.stopThresholdFromSensitivity(settings.getSensitivity()) + 0.02f,
-                        startThreshold * 0.88f
-                );
-                float farAssistScore = Math.max(motionScore, Math.min(1f, farAssistFloor));
-                if (farAssistScore > motionScore) {
-                    action = motionStateMachine.onSignal(settings, new com.shahid.cam.motion.domain.model.MotionSignal(
-                            nowMs,
-                            farAssistScore,
-                            true));
-                    motionScore = farAssistScore;
-                }
-            }
-            if (action == com.shahid.cam.motion.domain.state.MotionStateMachine.TransitionAction.NONE
-                    && motionStateMachine.getState() != com.shahid.cam.motion.domain.state.MotionSessionState.RECORDING
-                    && !debugGlobalSuppressed
-                    && motionOpenCvActive
-                    && debugChangedArea >= 0.004f
-                    && debugChangedArea <= 0.085f
-                    && debugMeanDelta >= 0.007f
-                    && (debugStrongArea >= 0.018f || debugMaxDelta >= 0.58f)
-                    && rawMotionScore >= 0.06f) {
-                // Edge-entry lane: catches partial face / hand / corner movement bursts.
-                float edgeAssistFloor = Math.max(
-                        motionPolicy.stopThresholdFromSensitivity(settings.getSensitivity()) + 0.03f,
-                        startThreshold * 0.90f
-                );
-                float edgeAssistScore = Math.max(motionScore, Math.min(1f, edgeAssistFloor));
-                if (edgeAssistScore > motionScore) {
-                    action = motionStateMachine.onSignal(settings, new com.shahid.cam.motion.domain.model.MotionSignal(
-                            nowMs,
-                            edgeAssistScore,
-                            personLikely));
-                    motionScore = edgeAssistScore;
-                }
-            }
-            if (action == com.shahid.cam.motion.domain.state.MotionStateMachine.TransitionAction.NONE
-                    && motionStateMachine.getState() != com.shahid.cam.motion.domain.state.MotionSessionState.RECORDING
-                    && !debugGlobalSuppressed
-                    && motionOpenCvActive
-                    && personLikely
-                    && personConfidence >= 0.66f
-                    && debugMeanDelta >= 0.008f
-                    && debugMaxDelta >= 0.48f
-                    && (debugChangedArea >= 0.003f || debugStrongArea >= 0.010f)) {
-                // Micro-entry lane: partial face/hand at edge should start quickly.
-                float microEntryFloor = Math.max(
-                        motionPolicy.stopThresholdFromSensitivity(settings.getSensitivity()) + 0.045f,
-                        startThreshold * 0.94f
-                );
-                float microEntryScore = Math.max(motionScore, Math.min(1f, microEntryFloor));
-                if (microEntryScore > motionScore) {
-                    action = motionStateMachine.onSignal(settings, new com.shahid.cam.motion.domain.model.MotionSignal(
-                            nowMs,
-                            microEntryScore,
-                            true));
-                    motionScore = microEntryScore;
-                }
-            }
-            if (action == com.shahid.cam.motion.domain.state.MotionStateMachine.TransitionAction.NONE
-                    && motionStateMachine.getState() != com.shahid.cam.motion.domain.state.MotionSessionState.RECORDING
-                    && !debugGlobalSuppressed
-                    && debugChangedArea >= 0.05f
-                    && debugMeanDelta >= 0.010f
-                    && debugStrongArea >= 0.020f
-                    && personLikely) {
-                // Assist far/low-contrast motion so starts are not missed when person is confirmed.
-                float assistedFloor = Math.max(startThreshold * 0.84f,
-                        motionPolicy.stopThresholdFromSensitivity(settings.getSensitivity()) + 0.015f);
-                float assistedScore = Math.max(motionScore, Math.min(1f, assistedFloor));
-                if (assistedScore > motionScore) {
-                    action = motionStateMachine.onSignal(settings, new com.shahid.cam.motion.domain.model.MotionSignal(
-                            nowMs,
-                            assistedScore,
-                            personLikely));
-                    motionScore = assistedScore;
-                }
-            }
-            if (action == com.shahid.cam.motion.domain.state.MotionStateMachine.TransitionAction.NONE
-                    && stateBefore == com.shahid.cam.motion.domain.state.MotionSessionState.IDLE
-                    && personDetectedRaw
-                    && personConfidence >= (debugGlobalSuppressed ? 0.78f : 0.60f)
-                    && (!debugGlobalSuppressed || debugChangedArea < 0.45f)) {
-                float boostedScore = Math.max(
-                        motionScore,
-                        startThreshold + (debugGlobalSuppressed ? 0.08f : 0.03f)
-                );
-                action = motionStateMachine.onSignal(settings, new com.shahid.cam.motion.domain.model.MotionSignal(
-                        nowMs,
-                        Math.min(1f, boostedScore),
-                        true
-                ));
-                if (action != com.shahid.cam.motion.domain.state.MotionStateMachine.TransitionAction.NONE) {
-                    motionScore = boostedScore;
-                    personDetected = true;
-                }
-            }
-            applyMotionTransitionAction(action);
-            motionLastPersonDetected = personDetected;
-            motionLastPersonConfidence = personConfidence;
-            motionLastScore = motionScore;
-            motionLastChangedArea = debugChangedArea;
-            motionLastStrongArea = debugStrongArea;
-            if (primaryDetection != null) {
-                motionLastCenterX = primaryDetection.centerX;
-                motionLastCenterY = primaryDetection.centerY;
-                motionLastBoxWidth = primaryDetection.width;
-                motionLastBoxHeight = primaryDetection.height;
-                motionLastEventType = primaryDetection.coarseType;
-                motionLastClassName = primaryDetection.className;
-                motionLastDetectionConfidence = primaryDetection.confidence;
-            } else {
-                motionLastEventType = null;
-                motionLastClassName = null;
-                motionLastDetectionConfidence = 0f;
-            }
-            motionLastOverlayPayload = buildOverlayPayloadFromDetections(detections);
-            motionLastGlobalSuppressed = debugGlobalSuppressed;
-            if (action == com.shahid.cam.motion.domain.state.MotionStateMachine.TransitionAction.NONE
-                    && motionScore > 0f
-                    && stateBefore == com.shahid.cam.motion.domain.state.MotionSessionState.IDLE) {
-                motionSuppressedSignalCount++;
-            }
-            if (stateBefore != motionStateMachine.getState() ||
-                    action != com.shahid.cam.motion.domain.state.MotionStateMachine.TransitionAction.NONE) {
-                FLog.d(TAG, "MotionLab: score=" + String.format(Locale.US, "%.3f", motionScore)
-                        + ", raw=" + String.format(Locale.US, "%.3f", rawMotionScore)
-                        + ", thresholds(start/stop)="
-                        + String.format(Locale.US, "%.3f", startThreshold)
-                        + "/"
-                        + String.format(Locale.US, "%.3f", motionPolicy.stopThresholdFromSensitivity(settings.getSensitivity()))
-                        + ", personRaw=" + personDetectedRaw
-                        + ", personConf=" + String.format(Locale.US, "%.3f", personConfidence)
-                        + ", area=" + String.format(Locale.US, "%.3f", debugChangedArea)
-                        + ", strong=" + String.format(Locale.US, "%.3f", debugStrongArea)
-                        + ", meanDelta=" + String.format(Locale.US, "%.3f", debugMeanDelta)
-                        + ", bgDelta=" + String.format(Locale.US, "%.3f", debugBackgroundDelta)
-                        + ", maxDelta=" + String.format(Locale.US, "%.3f", debugMaxDelta)
-                        + ", globalSuppressed=" + debugGlobalSuppressed
-                        + ", personHits=" + motionConsecutivePersonHits + "/" + requiredHits
-                        + ", person=" + personDetected
-                        + ", state=" + motionStateMachine.getState()
-                        + ", action=" + action
-                        + ", counters={frames=" + motionFramesAnalyzed
-                        + ", actions=" + motionTriggerActionCount
-                        + ", suppressed=" + motionSuppressedSignalCount + "}");
-            }
-            if ((nowMs - motionLastTelemetryLogMs) >= 10000L) {
-                motionLastTelemetryLogMs = nowMs;
-                FLog.d(TAG, "MotionLab Live: state=" + motionStateMachine.getState()
-                        + ", action=" + action
-                        + ", backend=" + (motionOpenCvActive ? "opencv_mog2" : "frame_diff")
-                        + ", raw=" + String.format(Locale.US, "%.3f", rawMotionScore)
-                        + ", smoothed=" + String.format(Locale.US, "%.3f", motionScore)
-                        + ", startThreshold=" + String.format(Locale.US, "%.3f", startThreshold)
-                        + ", stopThreshold=" + String.format(Locale.US, "%.3f", motionPolicy.stopThresholdFromSensitivity(settings.getSensitivity()))
-                        + ", person=" + personDetected
-                        + ", personConf=" + String.format(Locale.US, "%.3f", personConfidence)
-                        + ", area=" + String.format(Locale.US, "%.3f", debugChangedArea)
-                        + ", strong=" + String.format(Locale.US, "%.3f", debugStrongArea)
-                        + ", meanDelta=" + String.format(Locale.US, "%.3f", debugMeanDelta)
-                        + ", bgDelta=" + String.format(Locale.US, "%.3f", debugBackgroundDelta)
-                        + ", maxDelta=" + String.format(Locale.US, "%.3f", debugMaxDelta)
-                        + ", globalSuppressed=" + debugGlobalSuppressed);
-            }
-            boolean forensicsCaptureEnabled = sharedPreferencesManager != null
-                    && sharedPreferencesManager.isDigitalForensicsEnabled()
-                    && sharedPreferencesManager.isDfEvidenceCollectionEnabled();
-            boolean shouldEmitForensicsSnapshot = digitalForensicsEventRecorder != null
-                    && forensicsCaptureEnabled
-                    && motionStateMachine.getState() == com.shahid.cam.motion.domain.state.MotionSessionState.RECORDING
-                    && (nowMs - motionLastForensicsHeartbeatMs) >= FORENSICS_HEARTBEAT_INTERVAL_MS;
-            boolean shouldEmitDebugFrame = (nowMs - motionLastDebugBroadcastMs) >= 900L
-                    || stateBefore != motionStateMachine.getState()
-                    || (action != null && action != com.shahid.cam.motion.domain.state.MotionStateMachine.TransitionAction.NONE);
-            boolean shouldEncodeJpeg = shouldEncodeFrameJpeg(shouldEmitForensicsSnapshot, shouldEmitDebugFrame);
-            byte[] frameJpeg = null;
-            if (shouldEncodeJpeg) {
-                motionJpegAttemptCount++;
-                long encodeStart = SystemClock.elapsedRealtime();
-                frameJpeg = buildMotionDebugFrameJpeg(framePacket);
-                motionJpegEncodeTotalMs += Math.max(0L, SystemClock.elapsedRealtime() - encodeStart);
-                if (frameJpeg != null && frameJpeg.length > 0) {
-                    motionJpegSuccessCount++;
-                } else {
-                    motionJpegSkipCount++;
-                }
-            } else {
-                motionJpegSkipCount++;
-            }
-            maybeBroadcastMotionDebug(rawMotionScore, motionScore, settings, motionStateMachine.getState(), action, personDetected, personConfidence, stateBefore, frameJpeg, debugChangedArea, debugStrongArea, debugMeanDelta, debugBackgroundDelta, debugMaxDelta, debugGlobalSuppressed);
 
-            if (shouldEmitForensicsSnapshot) {
-                motionLastForensicsHeartbeatMs = nowMs;
-                long timelineMs = getEffectiveTimelineMs();
-                digitalForensicsEventRecorder.onDetections(
-                        getCurrentRecordingMediaUri(),
-                        timelineMs,
-                        detections,
-                        frameJpeg,
-                        recordingSessionCameraSource == RecordingStoragePaths.CameraSource.FRONT,
-                        getCurrentSensorOrientationDegrees(),
-                        sharedPreferencesManager != null ? sharedPreferencesManager.getVideoOrientation() : "portrait",
-                        shouldMirrorForensicsSnapshots()
-                );
-                if ((nowMs - motionLastTelemetryLogMs) >= 10000L) {
-                    FLog.i(TAG, "Forensics heartbeat: detections=" + detections.size()
-                            + ", personConf=" + String.format(Locale.US, "%.2f", personConfidence)
-                            + ", frame=" + (framePacket != null ? framePacket.width + "x" + framePacket.height : "none")
-                            + ", front=" + (recordingSessionCameraSource == RecordingStoragePaths.CameraSource.FRONT));
-                }
-            }
-            maybeLogForensicsPerf(nowMs);
-        }
-    }
 
-    private void applyMotionTransitionAction(com.shahid.cam.motion.domain.state.MotionStateMachine.TransitionAction action) {
-        if (!motionLabEnabledForSession || action == null || action == com.shahid.cam.motion.domain.state.MotionStateMachine.TransitionAction.NONE) {
-            return;
-        }
-        // Run control actions on main thread to stay consistent with service state updates.
-        mainHandler.post(() -> {
-            if (!motionLabEnabledForSession) {
-                return;
-            }
-            if (action == com.shahid.cam.motion.domain.state.MotionStateMachine.TransitionAction.START_RECORDING) {
-                reportForensicsMotionTransition(action);
-                // Auto-resume on ANY pause (manual or auto) in motion recording mode.
-                // The motionAutoPaused flag was removed from this guard because it
-                // caused a permanent deadlock: if the user manually paused, motionAutoPaused
-                // stayed false and motion detection could NEVER auto-resume again.
-                if (recordingState == RecordingState.PAUSED) {
-                    FLog.i(TAG, "MotionLab action START_RECORDING -> resuming recording");
-                    motionTriggerActionCount++;
-                    motionAutoPaused = false;
-                    Intent resumeIntent = new Intent(getApplicationContext(), RecordingService.class);
-                    resumeIntent.setAction(Constants.INTENT_ACTION_RESUME_RECORDING);
-                    ServiceStartPolicy.startRecordingAction(getApplicationContext(), resumeIntent);
-                    if (sharedPreferencesManager != null && sharedPreferencesManager.isMotionAutoTorchEnabled()) {
-                        setMotionTorchState(true);
-                    }
-                }
-                return;
-            }
-            if (action == com.shahid.cam.motion.domain.state.MotionStateMachine.TransitionAction.STOP_RECORDING) {
-                reportForensicsMotionTransition(action);
-                if (recordingState == RecordingState.IN_PROGRESS) {
-                    FLog.i(TAG, "MotionLab action STOP_RECORDING -> pausing recording");
-                    motionTriggerActionCount++;
-                    motionAutoPaused = true;
-                    Intent pauseIntent = new Intent(getApplicationContext(), RecordingService.class);
-                    pauseIntent.setAction(Constants.INTENT_ACTION_PAUSE_RECORDING);
-                    ServiceStartPolicy.startRecordingAction(getApplicationContext(), pauseIntent);
-                    if (sharedPreferencesManager != null && sharedPreferencesManager.isMotionAutoTorchEnabled()) {
-                        setMotionTorchState(false);
-                    }
-                }
-            }
-        });
-    }
-
-    private void reportForensicsMotionTransition(com.shahid.cam.motion.domain.state.MotionStateMachine.TransitionAction action) {
-        if (digitalForensicsEventRecorder == null || action == null) {
-            return;
-        }
-        String activeMediaUri = getCurrentRecordingMediaUri();
-        long timelineMs = getEffectiveTimelineMs();
-
-        if (action == com.shahid.cam.motion.domain.state.MotionStateMachine.TransitionAction.START_RECORDING) {
-            // Real-time recorder updates are now driven by per-frame detection heartbeats.
-            return;
-        } else if (action == com.shahid.cam.motion.domain.state.MotionStateMachine.TransitionAction.STOP_RECORDING) {
-            digitalForensicsEventRecorder.onMotionStop(timelineMs);
-        }
-    }
 
     private String getCurrentRecordingMediaUri() {
         if (currentSegmentUriString != null && !currentSegmentUriString.isEmpty()) {
@@ -3528,105 +2819,14 @@ public class RecordingService extends Service {
         return null;
     }
 
-    @Nullable
-    private String buildForensicsOverlayPayload() {
-        if (sharedPreferencesManager == null || !sharedPreferencesManager.isDfOverlayEnabled()) {
-            return null;
-        }
-        if (!motionLabEnabledForSession) {
-            return null;
-        }
-        String payload = motionLastOverlayPayload;
-        if (payload == null || payload.isEmpty()) {
-            return null;
-        }
 
-        String watermarkText = buildBaseWatermarkText();
-        if (watermarkText == null) {
-            watermarkText = "";
-        }
-        // Only sanitize the separator token; preserve newlines for proper watermark layout
-        watermarkText = watermarkText.replace("||wm||", " ");
 
-        return "__DF_OVERLAY__:" + payload
-                + "||wm||" + watermarkText;
-    }
-
-    @Nullable
-    private String buildOverlayPayloadFromDetections(
-            @Nullable List<com.shahid.cam.motion.domain.detector.EfficientDetLite1Detector.DetectionResult> detections
-    ) {
-        if (detections == null || detections.isEmpty()) {
-            return null;
-        }
-        StringBuilder out = new StringBuilder();
-        int emitted = 0;
-        for (com.shahid.cam.motion.domain.detector.EfficientDetLite1Detector.DetectionResult detection : detections) {
-            if (detection == null || detection.confidence < 0.45f) {
-                continue;
-            }
-            if (emitted >= 6) {
-                break;
-            }
-            if (out.length() > 0) {
-                out.append(';');
-            }
-            String label = detection.className == null ? "object" : detection.className.trim().toLowerCase(Locale.US);
-            out.append(label).append('|')
-                    .append(String.format(Locale.US, "%.4f", Math.max(0f, Math.min(1f, detection.confidence)))).append('|')
-                    .append(String.format(Locale.US, "%.4f", clamp01(detection.centerX))).append('|')
-                    .append(String.format(Locale.US, "%.4f", clamp01(detection.centerY))).append('|')
-                    .append(String.format(Locale.US, "%.4f", clampBox(detection.width))).append('|')
-                    .append(String.format(Locale.US, "%.4f", clampBox(detection.height))).append('|')
-                    .append(detection.coarseType == null ? "OBJECT" : detection.coarseType.toUpperCase(Locale.US));
-            emitted++;
-        }
-        return out.length() == 0 ? null : out.toString();
-    }
-
-    private String buildBaseWatermarkText() {
-        if (sharedPreferencesManager == null) {
-            return "";
-        }
-        String watermarkOption = sharedPreferencesManager.getWatermarkOption();
-        String locationText = sharedPreferencesManager.isLocalisationEnabled() ? getLocationData() : "";
-        String customText = sharedPreferencesManager.getWatermarkCustomText();
-        String customTextLine = (customText != null && !customText.isEmpty()) ? "\n" + customText : "";
-        String finalText;
-        switch (watermarkOption) {
-            case "timestamp_shahidcam":
-                finalText = "Captured by <SHAHIDCAM_ICON> - " + getCurrentTimestamp() + getTimezoneSuffix() + locationText + customTextLine;
-                break;
-            case "badge_shahidcam":
-                finalText = "Captured by <SHAHIDCAM_ICON>" + customTextLine;
-                break;
-            case "timestamp":
-                finalText = getCurrentTimestamp() + getTimezoneSuffix() + locationText + customTextLine;
-                break;
-            case "no_watermark":
-                finalText = "";
-                break;
-            default:
-                finalText = "Captured by ShahidCam - " + getCurrentTimestamp() + getTimezoneSuffix() + locationText + customTextLine;
-        }
-        if (!finalText.isEmpty()) {
-            finalText += getExtendedSensorData();
-            FLog.d(TAG, "🎬 Watermark text generated: [" + finalText.replace("\n", " | ") + "]");
-        } else {
-            finalText += getExtendedSensorData();
-        }
-        return finalText;
-    }
 
     private void ensureWatermarkInfoProvider() {
         if (watermarkInfoProvider != null) return;
         watermarkInfoProvider = new WatermarkInfoProvider() {
             @Override
             public String getWatermarkText() {
-                String dfOverlayPayload = buildForensicsOverlayPayload();
-                if (dfOverlayPayload != null) {
-                    return dfOverlayPayload;
-                }
                 String watermarkOption = sharedPreferencesManager.getWatermarkOption();
                 String locationText = sharedPreferencesManager.isLocalisationEnabled() ? getLocationData() : "";
                 String customText = sharedPreferencesManager.getWatermarkCustomText();
@@ -3657,143 +2857,11 @@ public class RecordingService extends Service {
         };
     }
 
-    private float clamp01(float value) {
-        return Math.max(0f, Math.min(1f, value));
-    }
 
-    private float clampBox(float value) {
-        return Math.max(0.02f, Math.min(0.90f, value));
-    }
 
-    private void setMotionTorchState(boolean shouldBeOn) {
-        if (recordingState != RecordingState.IN_PROGRESS && recordingState != RecordingState.PAUSED) {
-            return;
-        }
-        if (isRecordingTorchEnabled == shouldBeOn) {
-            return;
-        }
-        FLog.d(TAG, "MotionLab torch auto-control: target=" + shouldBeOn + ", current=" + isRecordingTorchEnabled);
-        toggleRecordingTorch();
-    }
 
-    private void maybeBroadcastMotionDebug(
-            float rawScore,
-            float smoothedScore,
-            com.shahid.cam.motion.domain.model.MotionSettings settings,
-            com.shahid.cam.motion.domain.state.MotionSessionState currentState,
-            com.shahid.cam.motion.domain.state.MotionStateMachine.TransitionAction action,
-            boolean personDetected,
-            float personConfidence,
-            com.shahid.cam.motion.domain.state.MotionSessionState previousState,
-            @Nullable byte[] frameJpeg,
-            float changedAreaRatio,
-            float strongAreaRatio,
-            float meanDelta,
-            float backgroundDelta,
-            float maxDelta,
-            boolean globalSuppressed
-    ) {
-        long now = SystemClock.elapsedRealtime();
-        boolean significant = previousState != currentState
-                || (action != null && action != com.shahid.cam.motion.domain.state.MotionStateMachine.TransitionAction.NONE);
-        if (!significant && (now - motionLastDebugBroadcastMs) < 900L) {
-            return;
-        }
-        motionLastDebugBroadcastMs = now;
 
-        Intent debugIntent = new Intent(Constants.BROADCAST_MOTION_LAB_DEBUG);
-        debugIntent.putExtra(Constants.EXTRA_MOTION_DEBUG_RAW_SCORE, rawScore);
-        debugIntent.putExtra(Constants.EXTRA_MOTION_DEBUG_SCORE, smoothedScore);
-        debugIntent.putExtra(
-                Constants.EXTRA_MOTION_DEBUG_START_THRESHOLD,
-                motionPolicy.startThresholdFromSensitivity(settings.getSensitivity())
-        );
-        debugIntent.putExtra(
-                Constants.EXTRA_MOTION_DEBUG_STOP_THRESHOLD,
-                motionPolicy.stopThresholdFromSensitivity(settings.getSensitivity())
-        );
-        debugIntent.putExtra(
-                Constants.EXTRA_MOTION_DEBUG_STATE,
-                currentState == null ? "UNKNOWN" : currentState.name()
-        );
-        debugIntent.putExtra(
-                Constants.EXTRA_MOTION_DEBUG_ACTION,
-                action == null ? "NONE" : action.name()
-        );
-        debugIntent.putExtra(Constants.EXTRA_MOTION_DEBUG_PERSON, personDetected);
-        debugIntent.putExtra(Constants.EXTRA_MOTION_DEBUG_PERSON_CONF, personConfidence);
-        debugIntent.putExtra(
-                Constants.EXTRA_MOTION_DEBUG_CLASS_NAME,
-                motionLastClassName == null ? "" : motionLastClassName
-        );
-        debugIntent.putExtra(Constants.EXTRA_MOTION_DEBUG_CLASS_CONF, motionLastDetectionConfidence);
-        debugIntent.putExtra(
-                Constants.EXTRA_MOTION_DEBUG_EVENT_TYPE,
-                motionLastEventType == null ? "" : motionLastEventType
-        );
-        debugIntent.putExtra(Constants.EXTRA_MOTION_DEBUG_CHANGED_AREA, changedAreaRatio);
-        debugIntent.putExtra(Constants.EXTRA_MOTION_DEBUG_STRONG_AREA, strongAreaRatio);
-        debugIntent.putExtra(Constants.EXTRA_MOTION_DEBUG_MEAN_DELTA, meanDelta);
-        debugIntent.putExtra(Constants.EXTRA_MOTION_DEBUG_BG_DELTA, backgroundDelta);
-        debugIntent.putExtra(Constants.EXTRA_MOTION_DEBUG_MAX_DELTA, maxDelta);
-        debugIntent.putExtra(Constants.EXTRA_MOTION_DEBUG_GLOBAL_SUPPRESSED, globalSuppressed);
-        if (frameJpeg != null && frameJpeg.length > 0) {
-            debugIntent.putExtra(Constants.EXTRA_MOTION_DEBUG_FRAME_JPEG, frameJpeg);
-        }
-        debugIntent.setPackage(getPackageName());
-        sendBroadcast(debugIntent);
-    }
 
-    @Nullable
-    private byte[] buildMotionDebugFrameJpeg(
-            @Nullable com.shahid.cam.motion.domain.detector.EfficientDetLite1Detector.FramePacket framePacket
-    ) {
-        if (framePacket == null) {
-            return null;
-        }
-        try {
-            int width = framePacket.width;
-            int height = framePacket.height;
-            if (width <= 0 || height <= 0) {
-                return null;
-            }
-            byte[] nv21 = framePacketToNv21(framePacket);
-            if (nv21 == null || nv21.length == 0) {
-                return null;
-            }
-            android.graphics.YuvImage yuvImage = new android.graphics.YuvImage(
-                    nv21,
-                    android.graphics.ImageFormat.NV21,
-                    width,
-                    height,
-                    null
-            );
-            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            boolean encoded = yuvImage.compressToJpeg(new Rect(0, 0, width, height), 72, outputStream);
-            if (!encoded) {
-                return null;
-            }
-            return outputStream.toByteArray();
-        } catch (IllegalStateException ignored) {
-            return null;
-        } catch (Throwable t) {
-            return null;
-        }
-    }
-
-    private boolean shouldEncodeFrameJpeg(boolean shouldEmitForensicsSnapshot, boolean shouldEmitDebugFrame) {
-        if (shouldEmitForensicsSnapshot) {
-            return true;
-        }
-        if (!shouldEmitDebugFrame) {
-            return false;
-        }
-        // Always encode the JPEG when a debug broadcast is due; the broadcast receiver
-        // is only registered while MotionLabSettingsFragment is on-screen, so the
-        // frame data is only consumed when the UI is visible.  The 900 ms throttle
-        // in maybeBroadcastMotionDebug already bounds encoding frequency.
-        return sharedPreferencesManager != null;
-    }
 
     private int getCurrentSensorOrientationDegrees() {
         if (currentCameraCharacteristics == null) {
@@ -3851,57 +2919,7 @@ public class RecordingService extends Service {
                 + ", suppressed=" + motionSuppressedSignalCount);
     }
 
-    @Nullable
-    private byte[] framePacketToNv21(
-            @NonNull com.shahid.cam.motion.domain.detector.EfficientDetLite1Detector.FramePacket framePacket
-    ) {
-        int width = framePacket.width;
-        int height = framePacket.height;
-        if (width <= 0 || height <= 0) {
-            return null;
-        }
-        int ySize = width * height;
-        int uvSize = ySize / 2;
-        byte[] out = new byte[ySize + uvSize];
 
-        // Y plane
-        for (int row = 0; row < height; row++) {
-            int srcRow = row * framePacket.yRowStride;
-            int dstRow = row * width;
-            for (int col = 0; col < width; col++) {
-                int srcIndex = srcRow + (col * framePacket.yPixelStride);
-                out[dstRow + col] = framePacket.y[srcIndex];
-            }
-        }
-
-        int uvHeight = height / 2;
-        int uvWidth = width / 2;
-        int dst = ySize;
-        for (int row = 0; row < uvHeight; row++) {
-            int uvRow = row * framePacket.uvRowStride;
-            for (int col = 0; col < uvWidth; col++) {
-                int uvIndex = uvRow + (col * framePacket.uvPixelStride);
-                byte v = framePacket.v[uvIndex];
-                byte u = framePacket.u[uvIndex];
-                out[dst++] = v;
-                out[dst++] = u;
-            }
-        }
-        return out;
-    }
-
-    private void releaseMotionAnalysisReader() {
-        if (motionAnalysisReader != null) {
-            try {
-                motionAnalysisReader.setOnImageAvailableListener(null, null);
-                motionAnalysisReader.close();
-            } catch (Exception e) {
-                FLog.w(TAG, "Failed releasing motion analysis reader", e);
-            } finally {
-                motionAnalysisReader = null;
-            }
-        }
-    }
 
     /**
      * Checks if the service has any active work (recording, pausing, or processing)
@@ -4573,22 +3591,10 @@ public class RecordingService extends Service {
             // supports it
             int targetFrameRate = sharedPreferencesManager.getSpecificVideoFrameRate(cameraType);
             
-            // Apply streaming FPS cap only when server is actually ON
-            boolean isStreamingForFps1 = com.shahid.cam.streaming.RemoteStreamManager.getInstance().isStreamingEnabled();
-            android.content.SharedPreferences shahidcamPrefs = getSharedPreferences("ShahidCamPrefs", Context.MODE_PRIVATE);
-            if (isStreamingForFps1) {
-                int streamFpsCap = shahidcamPrefs.getInt("stream_fps_cap", -1);
-                if (streamFpsCap > 0 && targetFrameRate > streamFpsCap) {
-                    FLog.i(TAG, "[STREAM PRESET] Capping camera FPS: " + targetFrameRate + " → " + streamFpsCap + "fps (server ON)");
-                    targetFrameRate = streamFpsCap;
-                }
-            } else {
-            }
             
             boolean isHighFrameRate = targetFrameRate >= 120;
             boolean useHighSpeedSession = false;
             Size selected = sharedPreferencesManager.getCameraResolution();
-            maybeAttachMotionAnalysisSurface(surfaces, targetFrameRate);
 
             if (isHighFrameRate && characteristics != null) {
                 showFrameRateToast(targetFrameRate);
@@ -4655,18 +3661,6 @@ public class RecordingService extends Service {
             // Get target frame rate from settings for specific camera
             int targetFrameRate = sharedPreferencesManager.getSpecificVideoFrameRate(cameraType);
             
-            // Apply streaming FPS cap only when server is actually ON
-            boolean isStreamingForFps2 = com.shahid.cam.streaming.RemoteStreamManager.getInstance().isStreamingEnabled();
-            android.content.SharedPreferences shahidcamPrefs = getSharedPreferences("ShahidCamPrefs", Context.MODE_PRIVATE);
-            if (isStreamingForFps2) {
-                int streamFpsCap = shahidcamPrefs.getInt("stream_fps_cap", -1);
-                if (streamFpsCap > 0 && targetFrameRate > streamFpsCap) {
-                    FLog.i(TAG, "[STREAM PRESET] Capping camera FPS: " + targetFrameRate + " → " + streamFpsCap + "fps (server ON)");
-                    targetFrameRate = streamFpsCap;
-                }
-            } else {
-            }
-            maybeAttachMotionAnalysisSurface(surfaces, targetFrameRate);
 
             // Log device info once for debugging
             DeviceHelper.logDeviceInfo();
@@ -5037,22 +4031,7 @@ public class RecordingService extends Service {
 
     private int getVideoBitrate() {
         int videoBitrate;
-        boolean isStreaming = com.shahid.cam.streaming.RemoteStreamManager.getInstance().isStreamingEnabled();
-        
-        if (isStreaming) {
-            // Server is ON: enforce stream quality preset bitrate, ignore user settings
-            android.content.SharedPreferences shahidcamPrefs = getSharedPreferences("ShahidCamPrefs", android.content.Context.MODE_PRIVATE);
-            int streamBitrate = shahidcamPrefs.getInt("stream_bitrate", -1);
-            String preset = shahidcamPrefs.getString("quality_preset", "HIGH");
-            if (streamBitrate > 0) {
-                videoBitrate = streamBitrate;
-                FLog.i(TAG, "[STREAM PRESET] Bitrate enforced: " + (videoBitrate / 1_000_000) + " Mbps (preset=" + preset + ") — user settings ignored");
-            } else {
-                // Preset not set yet, fall back to default HIGH
-                videoBitrate = 5_000_000;
-                FLog.w(TAG, "[STREAM PRESET] Server ON but no preset stored — using default HIGH (5 Mbps)");
-            }
-        } else if (sharedPreferencesManager.sharedPreferences.getBoolean("bitrate_mode_custom", false)) {
+        if (sharedPreferencesManager.sharedPreferences.getBoolean("bitrate_mode_custom", false)) {
             videoBitrate = sharedPreferencesManager.sharedPreferences.getInt("bitrate_custom_value", 16000) * 1000;
         } else {
             videoBitrate = Utils.estimateBitrate(sharedPreferencesManager.getCameraResolution(),
@@ -5816,7 +4795,6 @@ public class RecordingService extends Service {
                     intent.putExtra(Constants.INTENT_EXTRA_TORCH_STATE, isRecordingTorchEnabled);
                     sendBroadcast(intent);
                     
-                    // Update SharedPreferences so RemoteStreamManager can read current torch state
                     android.content.SharedPreferences prefs = getSharedPreferences(com.shahid.cam.Constants.PREFS_NAME, android.content.Context.MODE_PRIVATE);
                     prefs.edit()
                         .putBoolean(Constants.PREF_TORCH_STATE, isRecordingTorchEnabled)
@@ -5923,35 +4901,20 @@ public class RecordingService extends Service {
     }
 
     @Nullable
-    private File resolveInternalRecordingVideoDir(boolean isStreamAndSave) {
-        if (isStreamAndSave) {
-            return RecordingStoragePaths.getInternalCategoryDir(this, RecordingStoragePaths.Category.STREAM, true);
-        }
+    private File resolveInternalRecordingVideoDir() {
         return RecordingStoragePaths.getInternalCameraSourceDir(this, recordingSessionCameraSource, true);
     }
 
     @Nullable
-    private DocumentFile resolveSafRecordingVideoDir(@Nullable String customUriString, boolean isStreamAndSave) {
+    private DocumentFile resolveSafRecordingVideoDir(@Nullable String customUriString) {
         if (customUriString == null || customUriString.isEmpty()) return null;
-        if (isStreamAndSave) {
-            return RecordingStoragePaths.getSafCategoryDir(
-                    this,
-                    customUriString,
-                    RecordingStoragePaths.Category.STREAM,
-                    true);
-        }
         return RecordingStoragePaths.getSafCameraSourceDir(this, customUriString, recordingSessionCameraSource, true);
     }
 
     private File createNextSegmentOutputFile(int nextSegmentNumber) {
         String storageMode = sharedPreferencesManager.getStorageMode();
         
-        // Use "Stream_" prefix only if streaming is actually enabled (server running)
-        boolean isStreamingActive = com.shahid.cam.streaming.RemoteStreamManager.getInstance().isStreamingEnabled();
-        com.shahid.cam.streaming.RemoteStreamManager.StreamingMode streamingMode = 
-            com.shahid.cam.streaming.RemoteStreamManager.getInstance().getStreamingMode();
-        boolean isStreamAndSave = isStreamingActive && (streamingMode == com.shahid.cam.streaming.RemoteStreamManager.StreamingMode.STREAM_AND_SAVE);
-        String filenamePrefix = isStreamAndSave ? "Stream_" : Constants.RECORDING_DIRECTORY + "_";
+        String filenamePrefix = Constants.RECORDING_DIRECTORY + "_";
         
         if (SharedPreferencesManager.STORAGE_MODE_CUSTOM.equals(storageMode)) {
             // SAF/DocumentFile mode
@@ -5960,7 +4923,7 @@ public class RecordingService extends Service {
                 FLog.e(TAG, "createNextSegmentOutputFile: Custom storage selected but URI is null");
                 return null;
             }
-            DocumentFile pickedDir = resolveSafRecordingVideoDir(customUriString, isStreamAndSave);
+            DocumentFile pickedDir = resolveSafRecordingVideoDir(customUriString);
             if (pickedDir == null || !pickedDir.canWrite()) {
                 FLog.e(TAG, "createNextSegmentOutputFile: Cannot write to selected custom directory");
                 return null;
@@ -5998,7 +4961,7 @@ public class RecordingService extends Service {
                     + Constants.RECORDING_FILE_EXTENSION;
 
             // Use the same directory as the first segment (app's external files directory)
-            File videoDir = resolveInternalRecordingVideoDir(isStreamAndSave);
+            File videoDir = resolveInternalRecordingVideoDir();
             if (videoDir == null) {
                 FLog.e(TAG, "Cannot create recording directory for split segment");
                 Toast.makeText(this, getString(R.string.toast_create_recording_dir_error), Toast.LENGTH_LONG).show();
@@ -6779,25 +5742,6 @@ public class RecordingService extends Service {
                 // Broadcast that recording has started
                 broadcastOnRecordingStarted();
 
-                // Notify RemoteStreamManager about active recording file
-                if (currentSegmentFile != null) {
-                    try {
-                        com.shahid.cam.streaming.RemoteStreamManager.getInstance()
-                            .startRecording(currentSegmentFile);
-                        FLog.i(TAG, "🎬 RemoteStreamManager notified: recording started");
-                    } catch (Exception e) {
-                        FLog.e(TAG, "Failed to notify RemoteStreamManager about recording start", e);
-                    }
-                }
-                if (motionLabEnabledForSession) {
-                    // In Motion Lab, arm in paused state first and let motion transitions resume recording.
-                    FLog.i(TAG, "MotionLab armed: entering paused state until trigger");
-                    motionAutoPaused = true;
-                    pauseRecording();
-                    if (sharedPreferencesManager != null && sharedPreferencesManager.isMotionAutoTorchEnabled()) {
-                        setMotionTorchState(false);
-                    }
-                }
             } catch (Exception e) {
                 FLog.e(TAG, "Failed to start recording", e);
                 stopRecording();
@@ -6939,26 +5883,16 @@ public class RecordingService extends Service {
     private ParcelFileDescriptor currentSegmentParcelFileDescriptor;
     private ParcelFileDescriptor previousSegmentParcelFileDescriptor;
     
-    // Track all temporary files created during STREAM_ONLY mode for cleanup
-    // In STREAM_ONLY, 0-byte segment files are created (GL pipeline needs a handle)
-    // but no data is written. All of them must be deleted when recording stops.
-    private final java.util.List<File> streamOnlyTempFiles = new java.util.ArrayList<>();
-    private final java.util.List<String> streamOnlySafUris = new java.util.ArrayList<>();
     
     // Add this helper method for OpenGL pipeline direct output
     private File getFinalOutputFile() {
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());
         String segmentSuffix = ""; // No segment number for the initial file
         
-        // Use "Stream_" prefix only if streaming is actually enabled (server running)
-        boolean isStreamingActive = com.shahid.cam.streaming.RemoteStreamManager.getInstance().isStreamingEnabled();
-        com.shahid.cam.streaming.RemoteStreamManager.StreamingMode streamingMode = 
-            com.shahid.cam.streaming.RemoteStreamManager.getInstance().getStreamingMode();
-        boolean isStreamAndSave = isStreamingActive && (streamingMode == com.shahid.cam.streaming.RemoteStreamManager.StreamingMode.STREAM_AND_SAVE);
-        String filenamePrefix = isStreamAndSave ? "Stream_" : Constants.RECORDING_DIRECTORY + "_";
+        String filenamePrefix = Constants.RECORDING_DIRECTORY + "_";
         String baseFilename = filenamePrefix + timestamp + segmentSuffix + "."
                 + Constants.RECORDING_FILE_EXTENSION;
-        File videoDir = resolveInternalRecordingVideoDir(isStreamAndSave);
+        File videoDir = resolveInternalRecordingVideoDir();
         if (videoDir == null) {
             FLog.e(TAG, "Cannot create internal recording directory for active session");
             Toast.makeText(this, getString(R.string.toast_create_storage_dir_error), Toast.LENGTH_LONG).show();
@@ -6983,13 +5917,7 @@ public class RecordingService extends Service {
                     stopRecording();
                     return;
                 }
-                boolean isStreamingActive = com.shahid.cam.streaming.RemoteStreamManager.getInstance().isStreamingEnabled();
-                com.shahid.cam.streaming.RemoteStreamManager.StreamingMode streamingMode =
-                        com.shahid.cam.streaming.RemoteStreamManager.getInstance().getStreamingMode();
-                boolean isStreamAndSave = isStreamingActive
-                        && (streamingMode == com.shahid.cam.streaming.RemoteStreamManager.StreamingMode.STREAM_AND_SAVE);
-                androidx.documentfile.provider.DocumentFile pickedDir = resolveSafRecordingVideoDir(
-                        customUriString, isStreamAndSave);
+                androidx.documentfile.provider.DocumentFile pickedDir = resolveSafRecordingVideoDir(customUriString);
                 if (pickedDir == null || !pickedDir.canWrite()) {
                     FLog.e(TAG, "Segment rollover: Cannot write to selected custom directory");
                     stopRecording();
@@ -6997,7 +5925,7 @@ public class RecordingService extends Service {
                 }
                 String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());
                 String segmentSuffix = String.format(Locale.US, "_part%d", nextSegmentNumber);
-                String filenamePrefix = isStreamAndSave ? "Stream_" : Constants.RECORDING_DIRECTORY + "_";
+                String filenamePrefix = Constants.RECORDING_DIRECTORY + "_";
                 String baseFilename = filenamePrefix + timestamp + segmentSuffix + ".mp4";
                 FLog.d(TAG, "Creating new segment file: " + baseFilename);
                 androidx.documentfile.provider.DocumentFile videoFile = pickedDir.createFile("video/mp4", baseFilename);
@@ -7011,13 +5939,6 @@ public class RecordingService extends Service {
                 currentSegmentPath = safUri.toString();
                 currentSegmentFile = null;
                 com.shahid.cam.ActiveRecordingStats.rolloverToNewSegment(null, safUri.toString(), RecordingService.this);
-                // Track SAF URI for STREAM_ONLY cleanup during segment rollover
-                boolean isStreamOnlyRollover = isStreamingActive
-                        && (streamingMode == com.shahid.cam.streaming.RemoteStreamManager.StreamingMode.STREAM_ONLY);
-                if (isStreamOnlyRollover) {
-                    streamOnlySafUris.add(safUri.toString());
-                    FLog.i(TAG, "📺 STREAM_ONLY (SAF rollover): Tracking temp URI: " + safUri);
-                }
                 
                 // SAMSUNG SAF FIX: The GL pipeline now fully stops and releases the old muxer
                 // BEFORE invoking this callback (see GLRecordingPipeline.rolloverSegment()).
@@ -7083,9 +6004,7 @@ public class RecordingService extends Service {
             } else {
                 FLog.d(TAG, "Using internal storage for segment rollover");
                 
-                // Notify RemoteStreamManager about COMPLETED segment (before creating next)
-                // Fragments are delivered via FragmentedMp4MuxerWrapper callbacks (patched Media3)
-                if (currentSegmentFile != null && currentSegmentFile.exists()) {
+                                if (currentSegmentFile != null && currentSegmentFile.exists()) {
                     long fileSize = currentSegmentFile.length();
                     FLog.i(TAG, "📹 SEGMENT ROLLOVER: #" + (nextSegmentNumber - 1) + 
                         ", Size: " + (fileSize / 1024) + " KB, Path: " + currentSegmentFile.getName());
@@ -7126,9 +6045,6 @@ public class RecordingService extends Service {
             return;
         }
 
-        // Clear STREAM_ONLY temp file tracking from any previous session
-        streamOnlyTempFiles.clear();
-        streamOnlySafUris.clear();
 
         // Clear runtime overrides so saved preferences take priority on fresh recording
         // session
@@ -7170,9 +6086,6 @@ public class RecordingService extends Service {
 
             ensureWatermarkInfoProvider();
 
-            // Re-fetch streaming state and config at actual recording start
-            boolean isStreamingActive = com.shahid.cam.streaming.RemoteStreamManager.getInstance().isStreamingEnabled();
-            android.content.SharedPreferences shahidcamPrefs = getSharedPreferences("ShahidCamPrefs", Context.MODE_PRIVATE);
             
             // Resolution always from Recording Settings — presets only control bitrate + FPS
             String orientation = sharedPreferencesManager.getVideoOrientation();
@@ -7180,17 +6093,9 @@ public class RecordingService extends Service {
             int videoWidth  = resolution.getWidth();
             int videoHeight = resolution.getHeight();
             
-            int recordingBitrate = getVideoBitrate();  // Reads preset bitrate if streaming
+            int recordingBitrate = getVideoBitrate();
             int recordingFps = sharedPreferencesManager.getSpecificVideoFrameRate(sharedPreferencesManager.getCameraSelection());
-            if (isStreamingActive && recordingFps > 0) {
-                int streamFpsCap = shahidcamPrefs.getInt("stream_fps_cap", -1);
-                if (streamFpsCap > 0 && recordingFps > streamFpsCap) {
-                    recordingFps = streamFpsCap;  // Apply FPS cap
-                }
-            }
-            
-            FLog.i(TAG, "🎬 [RECORDING INITIALIZED] Res: " + videoWidth + "x" + videoHeight + " | FPS: " + recordingFps + " | Bitrate: " + (recordingBitrate/1_000_000) + "Mbps"
-                + (isStreamingActive ? " [STREAM PRESET ACTIVE]" : " [Normal recording]"));
+            FLog.i(TAG, "🎬 [RECORDING INITIALIZED] Res: " + videoWidth + "x" + videoHeight + " | FPS: " + recordingFps + " | Bitrate: " + (recordingBitrate/1_000_000) + "Mbps");
 
             // Get sensor orientation
             CameraManager cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
@@ -7209,15 +6114,7 @@ public class RecordingService extends Service {
             }
             int videoBitrate = getVideoBitrate();
             
-            // Get camera's target framerate and apply streaming FPS cap if server is ON
             int videoFramerate = sharedPreferencesManager.getSpecificVideoFrameRate(cameraType);
-            if (isStreamingActive) {
-                int streamFpsCap = shahidcamPrefs.getInt("stream_fps_cap", -1);
-                if (streamFpsCap > 0 && videoFramerate > streamFpsCap) {
-                    FLog.i(TAG, "[STREAM PRESET] Applying FPS cap at MediaRecorder: " + videoFramerate + " → " + streamFpsCap + "fps");
-                    videoFramerate = streamFpsCap;
-                }
-            }
             // Set splitSizeBytes to 0 if video splitting is disabled
             long splitSizeBytes = 0;
             if (sharedPreferencesManager.isVideoSplittingEnabled()) {
@@ -7237,13 +6134,7 @@ public class RecordingService extends Service {
                     stopSelf();
                     return;
                 }
-                boolean isSafStreamingActive = com.shahid.cam.streaming.RemoteStreamManager.getInstance().isStreamingEnabled();
-                com.shahid.cam.streaming.RemoteStreamManager.StreamingMode streamingMode = 
-                    com.shahid.cam.streaming.RemoteStreamManager.getInstance().getStreamingMode();
-                boolean isStreamAndSave = isSafStreamingActive
-                        && (streamingMode == com.shahid.cam.streaming.RemoteStreamManager.StreamingMode.STREAM_AND_SAVE);
-                androidx.documentfile.provider.DocumentFile pickedDir = resolveSafRecordingVideoDir(
-                        customUriString, isStreamAndSave);
+                androidx.documentfile.provider.DocumentFile pickedDir = resolveSafRecordingVideoDir(customUriString);
                 if (pickedDir == null || !pickedDir.canWrite()) {
                     FLog.e(TAG, "Cannot write to selected custom directory");
                     Toast.makeText(this, getString(R.string.toast_cannot_write_custom_dir), Toast.LENGTH_LONG).show();
@@ -7251,7 +6142,7 @@ public class RecordingService extends Service {
                     return;
                 }
                 String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());
-                String filenamePrefix = isStreamAndSave ? "Stream_" : Constants.RECORDING_DIRECTORY + "_";
+                String filenamePrefix = Constants.RECORDING_DIRECTORY + "_";
                 String baseFilename = filenamePrefix + timestamp + ".mp4";
                 androidx.documentfile.provider.DocumentFile videoFile = pickedDir.createFile("video/mp4", baseFilename);
                 if (videoFile == null) {
@@ -7265,13 +6156,6 @@ public class RecordingService extends Service {
                 currentSegmentPath = safUri.toString();
                 currentSegmentFile = null;
                 com.shahid.cam.ActiveRecordingStats.setActiveSegment(null, safUri.toString());
-                // Track SAF URI for STREAM_ONLY cleanup (0-byte files created but no data written)
-                boolean isStreamOnlySaf = isStreamingActive
-                        && (streamingMode == com.shahid.cam.streaming.RemoteStreamManager.StreamingMode.STREAM_ONLY);
-                if (isStreamOnlySaf) {
-                    streamOnlySafUris.add(safUri.toString());
-                    FLog.i(TAG, "📺 STREAM_ONLY (SAF): Tracking temp URI for cleanup: " + safUri);
-                }
                 // -----
                 safRecordingPfd = getContentResolver().openFileDescriptor(safUri, "w");
                 if (safRecordingPfd == null) {
@@ -7320,30 +6204,12 @@ public class RecordingService extends Service {
                     FLog.d(TAG, "No location available for internal recording metadata");
                 }
                 
-                // Check streaming mode to determine output file handling
-                com.shahid.cam.streaming.RemoteStreamManager.StreamingMode streamingMode = 
-                    com.shahid.cam.streaming.RemoteStreamManager.getInstance().getStreamingMode();
-                boolean isStreamOnly = (streamingMode == com.shahid.cam.streaming.RemoteStreamManager.StreamingMode.STREAM_ONLY);
-                
-                File outputFile;
-                if (isStreamOnly) {
-                    // STREAM_ONLY: Use temporary file that will be deleted after recording
-                    outputFile = new File(getCacheDir(), "stream_temp_" + System.currentTimeMillis() + ".mp4");
-                    streamOnlyTempFiles.add(outputFile); // Track for cleanup
-                    FLog.i(TAG, "📺 STREAM_ONLY mode: Using temporary file: " + outputFile.getName());
-                } else {
-                    // STREAM_AND_SAVE: Write directly to final MP4 file (removed .tmp/remux logic)
-                    outputFile = getFinalOutputFile();
-                    FLog.d(TAG, "💾 STREAM_AND_SAVE mode: Writing directly to file: " + outputFile.getAbsolutePath());
-                }
-                
-                // Track initial segment file for streaming
+                File outputFile = getFinalOutputFile();
                 currentSegmentFile = outputFile;
                 currentSegmentPath = outputFile.getAbsolutePath();
                 currentSegmentUriString = Uri.fromFile(outputFile).toString();
                 com.shahid.cam.ActiveRecordingStats.setActiveSegment(outputFile.getAbsolutePath(), null);
-                FLog.i(TAG, "[STORAGE] Internal mode: path=" + outputFile.getAbsolutePath()
-                        + " | streamOnly=" + isStreamOnly);
+                FLog.i(TAG, "[STORAGE] Internal mode: path=" + outputFile.getAbsolutePath());
                 
                 glRecordingPipeline = new com.shahid.cam.opengl.GLRecordingPipeline(this, watermarkInfoProvider, videoWidth,
                         videoHeight, videoFramerate, outputFile.getAbsolutePath(), splitSizeBytes, initialSegmentNumber,
@@ -7352,20 +6218,6 @@ public class RecordingService extends Service {
 
             glRecordingPipeline.prepareSurfaces();
 
-            // Notify RemoteStreamManager that recording started
-            try {
-                if (currentSegmentFile != null) {
-                    com.shahid.cam.streaming.RemoteStreamManager.getInstance().startRecording(currentSegmentFile);
-                    FLog.i(TAG, "🎬 RemoteStreamManager notified: recording started for file: "
-                            + currentSegmentFile.getAbsolutePath());
-                } else {
-                    // SAF mode: no File object available, use flag-based notification
-                    com.shahid.cam.streaming.RemoteStreamManager.getInstance().startRecordingSaf();
-                }
-                
-            } catch (Exception e) {
-                FLog.e(TAG, "Failed to notify RemoteStreamManager about recording start", e);
-            }
 
             createCameraPreviewSession();
         } catch (Exception e) {

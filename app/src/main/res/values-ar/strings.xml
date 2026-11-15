@@ -2516,13 +2516,9 @@
 
     <string name="trash_auto_delete_picker_helper">اختر متى يتم حذف العناصر في سلة المهملات تلقائيًا.</string>
 
-    <string name="support_ko_fi">ادعمنا على Ko-fi</string>
 
-    <string name="kofi_description">سيتم تعيين الوصف في الكود.</string>
 
-    <string name="kofi_button_text">اشترِ لي Ko-fi</string>
 
-    <string name="kofi_footer_text">صُنع بـ    في CyberShadowPK Lab في   </string>
 
     <string name="choose_language">اختر اللغة</string>
 
@@ -3577,7 +3573,6 @@
 
     <string name="motion_lab_analysis_fps">تحليل FPS</string>
 
-    <string name="motion_lab_analysis_helper">كم مرة يتحقق AI من المشهد كل ثانية. فحوص أكثر تتفاعل أسرع، لكن تستخدم بطارية أكثر وقد تسخن الهاتف. لكشف EfficientDet متعدد الفئات، أبقِ حوالي 6 fps للاستخدام اليومي (5-8 هو النطاق الموثوق).</string>
 
     <string name="motion_lab_analysis_2_desc">توفير الطاقة، استجابة أبطأ.</string>
 

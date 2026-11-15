@@ -1,6 +1,5 @@
 package com.shahid.cam.model;
 
-import com.shahid.cam.Constants;
 
 import java.util.Objects;
 
@@ -54,13 +53,6 @@ public class TrashItem {
         return sizeBytes;
     }
 
-    public boolean isForensicsEvidence() {
-        if (trashFileName == null) {
-            return false;
-        }
-        return trashFileName.startsWith(Constants.TRASH_SUBDIR_FORENSICS_EVIDENCE + "/")
-                || trashFileName.startsWith(Constants.TRASH_SUBDIR_FORENSICS_EVIDENCE + java.io.File.separator);
-    }
 
     // Setters (might be needed for Gson or other reflection-based libraries, though often not if constructor is used)
     public void setOriginalUriString(String originalUriString) {

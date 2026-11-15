@@ -74,17 +74,6 @@
         <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
-    <style name="KoFiButtonStyle" parent="Widget.AppCompat.Button">
-        <item name="android:background">@drawable/kofi_button_bg</item>
-        <item name="android:textColor">#222222</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:singleLine">true</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:drawablePadding">12dp</item>
-        <item name="android:paddingStart">24dp</item>
-        <item name="android:paddingEnd">24dp</item>
-    </style>
 
     <!-- Fix Start: Add missing Material text appearance styles for compatibility -->
     <style name="textAppearanceSubtitle1" parent="TextAppearance.Material3.BodyLarge">
@@ -154,28 +143,6 @@
     <!-- ShahidCam Pro Activity Theme with Ubuntu Font -->
     <style name="ShahidCamProTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:fontFamily">@font/ubuntu_regular</item>
-    </style>
-
-    <!-- ShahidEditor Editor dark immersive theme -->
-    <style name="Theme.ShahidCam.ShahidEditorEditor" parent="Theme.Material3.Dark.NoActionBar">
-        <item name="colorSurface">#FF1A1A1A</item>
-        <item name="colorSurfaceVariant">#FF252525</item>
-        <item name="colorOnSurface">#FFFFFFFF</item>
-        <item name="colorOnSurfaceVariant">#FFAAAAAA</item>
-        <item name="colorPrimary">#FF4CAF50</item>
-        <item name="colorOnPrimary">#FF000000</item>
-        <item name="colorSecondaryContainer">#FF2E7D32</item>
-        <item name="android:windowBackground">#FF0D0D0D</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">#FF1A1A1A</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <!-- Required for picker_bottom_sheet and InputActionBottomSheetFragment -->
-        <item name="pickerTextSecondary">#999999</item>
-        <item name="pickerTextPrimary">@android:color/white</item>
-        <item name="colorHeading">#FF4CAF50</item>
-        <item name="pickerGradientStart">@color/black</item>
-        <item name="pickerGradientMid">#FF1A1A1A</item>
-        <item name="pickerGradientEnd">#FF2A2A2A</item>
     </style>
 
     <!-- Dark delete confirmation dialog with red action buttons.

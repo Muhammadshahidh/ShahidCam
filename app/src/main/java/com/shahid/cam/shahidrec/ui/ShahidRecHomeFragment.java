@@ -1905,23 +1905,7 @@ public class ShahidRecHomeFragment extends HomeFragment {
      */
     @Override
     protected void updateStorageInfo() {
-        boolean isStreamOnlyMode = false;
-        if (sharedPreferencesManager != null) {
-            try {
-                // STREAM_ONLY UI ("Unlimited" label, no storage deduction) is only meaningful
-                // when the remote server is actually active.  If the server is off we always
-                // behave like STREAM_AND_SAVE so the UI stays accurate.
-                boolean serverActive =
-                    com.shahid.cam.streaming.RemoteStreamManager.getInstance().isStreamingEnabled();
-                com.shahid.cam.streaming.RemoteStreamManager.StreamingMode mode =
-                    sharedPreferencesManager.getStreamingMode();
-                isStreamOnlyMode = serverActive &&
-                    (mode == com.shahid.cam.streaming.RemoteStreamManager.StreamingMode.STREAM_ONLY);
-            } catch (Exception e) {
-                FLog.e(TAG, "Error checking streaming mode", e);
-            }
-        }
-        updateStorageInfoForScreenRecording(isStreamOnlyMode);
+        updateStorageInfoForScreenRecording(false);
     }
 
     /**

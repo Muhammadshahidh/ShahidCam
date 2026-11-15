@@ -25,7 +25,7 @@
 
 # `>_` ShahidCam
 
-**Privacy-focused Android multimedia suite: background video recording, dashcam, screen recorder, live streaming & remote control - ad-free & open-source.**
+**Privacy-focused Android multimedia suite: background video recording, dashcam, screen recorder - ad-free & open-source.**
 
 <a href="https://trendshift.io/repositories/12830" target="_blank"><img src="https://trendshift.io/api/badge/repositories/12830" alt="CyberShadowPKh%2FShahidCam | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
@@ -35,14 +35,6 @@
 
 [<img src="https://shields.rbtlog.dev/simple/com.shahid.cam" alt="badge">](https://shields.rbtlog.dev/com.shahid.cam)
 
-[![ko-fi badge](https://img.shields.io/badge/buy_me_a-coffee-red)](https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252
-[![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3DShahidx%26type%3Dpatrons%26suffix%3Dpatrons%2520%257C%2520Shop&style=social)](https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252
-<!-- [![Patreon](https://img.shields.io/badge/Patreon-orange?logo=patreon&label=Patreon)](https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252 -->
-<br>
-<sub>Scan to visit Patreon shop:</sub>
-<br>
-<img src="app/src/main/assets/QRCodes/QRCode_patreon_shop.png" alt="Scan to visit Patreon shop" style="width: 150px; height: auto;" >
-<br>
 
 [![Discord](https://img.shields.io/discord/1263384048194027520?label=Join%20Us%20on%20Discord&logo=discord)](https://t.me/Cybershadowpk )
 
@@ -232,7 +224,6 @@ ShahidCam is developed with the goal of providing a powerful, privacy-focused mu
 - [gadgetstouse.com](https://gadgetstouse.com/blog/2024/08/22/record-video-with-screen-off-on-android/)
 - [summarize.tech](https://www.summarize.tech/www.youtube.com/watch?v=gU9ddvtqL3E)
 - [phcorner.net](https://phcorner.net/threads/shahidcam-open-source-seamless-background-video-recorder-for-android.2069335/)
-- [danielbuenotecnologia.com](https://danielbuenotecnologia.com/2024/09/13/protege-tu-vida-con-la-app-fad-cam/)
 - [nothingforum.com](https://nothingforum.com/konu/shahidcam-video-kaydi-icin-guvenli-bir-cozum.1982/)
 - [manualdousuario.net](https://manualdousuario.net/shahidcam-videos-android-tela-desligada/)
 - [techwiser.com](https://techwiser.com/how-to-secretly-record-a-video-with-screen-off-on-android/)
@@ -434,15 +425,6 @@ Join our [Discord server](https://t.me/Cybershadowpk to share ideas, seek help, 
 [![Discord](https://img.shields.io/discord/1263384048194027520?label=Join%20Us%20on%20Discord&logo=discord)](https://t.me/Cybershadowpk )
 
 
-## `>_` Support & Shop
-
-Buy ShahidCam Pro (lifetime access) from my Patreon shop. Your purchases help fund development and maintenance.
-
-[![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3DShahidx%26type%3Dpatrons%26suffix%3Dpatrons%2520%257C%2520Shop&style=for-the-badge)](https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252
-
-<br>
-<sub>Scan to visit Patreon shop:</sub><br>
-<img src="app/src/main/assets/QRCodes/QRCode_patreon_shop.png" alt="Scan to visit Patreon shop" style="width: 150px; height: auto;" >
 
 
 ## `>_` Contributions

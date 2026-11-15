@@ -156,7 +156,6 @@ public class TorchService extends Service {
             // Update state and UI regardless of mode
             isTorchOn.set(newState);
             
-            // Update SharedPreferences so RemoteStreamManager can read current torch state
             sharedPreferences.edit()
                 .putBoolean(Constants.PREF_TORCH_STATE, newState)
                 .apply();

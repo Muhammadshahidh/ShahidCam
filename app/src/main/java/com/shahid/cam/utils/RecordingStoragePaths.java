@@ -40,10 +40,6 @@ public final class RecordingStoragePaths {
         DUAL
     }
 
-    public enum ShahidEditorOutputType {
-        CONVERTED,
-        MERGE
-    }
 
     private RecordingStoragePaths() {
     }
@@ -113,18 +109,7 @@ public final class RecordingStoragePaths {
             default:
                 return Constants.RECORDING_SUBDIR_CAMERA_BACK;
         }
-    }
 
-    @NonNull
-    public static String folderNameForShahidEditorOutput(@Nullable ShahidEditorOutputType outputType) {
-        if (outputType == null) return Constants.RECORDING_SUBDIR_SHAHIDEDITOR_CONVERTED;
-        switch (outputType) {
-            case MERGE:
-                return Constants.RECORDING_SUBDIR_SHAHIDEDITOR_MERGE;
-            case CONVERTED:
-            default:
-                return Constants.RECORDING_SUBDIR_SHAHIDEDITOR_CONVERTED;
-        }
     }
 
     @Nullable
@@ -178,19 +163,6 @@ public final class RecordingStoragePaths {
         return sourceDir;
     }
 
-    @Nullable
-    public static File getInternalShahidEditorOutputDir(
-            @NonNull Context context,
-            @Nullable ShahidEditorOutputType outputType,
-            boolean createIfMissing
-    ) {
-        File shahideditorRoot = getInternalCategoryDir(context, Category.SHAHIDEDITOR, createIfMissing);
-        if (shahideditorRoot == null) return null;
-        String sourceFolder = folderNameForShahidEditorOutput(outputType);
-        File sourceDir = new File(shahideditorRoot, sourceFolder);
-        if (!sourceDir.exists() && createIfMissing && !sourceDir.mkdirs()) return null;
-        return sourceDir;
-    }
 
     @Nullable
     public static DocumentFile getSafBaseDir(@NonNull Context context, @Nullable String treeUriString) {
@@ -252,17 +224,6 @@ public final class RecordingStoragePaths {
         return findOrCreateChildDirectory(cameraRoot, srcName, createIfMissing);
     }
 
-    @Nullable
-    public static DocumentFile getSafShahidEditorOutputDir(
-            @NonNull Context context,
-            @Nullable String treeUriString,
-            @Nullable ShahidEditorOutputType outputType,
-            boolean createIfMissing
-    ) {
-        DocumentFile shahideditorRoot = getSafCategoryDir(context, treeUriString, Category.SHAHIDEDITOR, createIfMissing);
-        if (shahideditorRoot == null) return null;
-        return findOrCreateChildDirectory(shahideditorRoot, folderNameForShahidEditorOutput(outputType), createIfMissing);
-    }
 
     @Nullable
     public static DocumentFile findOrCreateChildDirectory(

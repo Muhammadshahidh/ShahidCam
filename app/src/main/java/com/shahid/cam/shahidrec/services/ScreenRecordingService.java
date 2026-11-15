@@ -689,22 +689,7 @@ public class ScreenRecordingService extends Service {
             pauseStartTime = 0;
             totalPausedTime = 0;
 
-            // Capture stream-only intent at session start.  We only go stream-only when the
-            // remote server is *currently active* AND the user chose STREAM_ONLY mode.  Storing
-            // this once prevents a stale SharedPreference from deleting a recording that was
-            // made without an active server.
-            try {
-                boolean serverOn = com.shahid.cam.streaming.RemoteStreamManager.getInstance().isStreamingEnabled();
-                com.shahid.cam.streaming.RemoteStreamManager.StreamingMode sessionMode =
-                    sharedPreferencesManager.getStreamingMode();
-                isStreamOnlySession = serverOn &&
-                    (sessionMode == com.shahid.cam.streaming.RemoteStreamManager.StreamingMode.STREAM_ONLY);
-                FLog.d(TAG, "Session stream-only flag: " + isStreamOnlySession
-                    + " (serverOn=" + serverOn + ", mode=" + sessionMode + ")");
-            } catch (Exception e) {
-                FLog.e(TAG, "Failed to determine streaming mode at session start", e);
-                isStreamOnlySession = false;
-            }
+            isStreamOnlySession = false;
             
             // Save recording start time to SharedPreferences for UI timer updates
             sharedPreferencesManager.sharedPreferences.edit()
@@ -734,16 +719,6 @@ public class ScreenRecordingService extends Service {
                 sharedPreferencesManager.setScreenRecordingInProgress(true);
                 sharedPreferencesManager.setScreenRecordingState(ScreenRecordingState.IN_PROGRESS.name());
             });
-            
-            // Notify RemoteStreamManager for potential streaming
-            if (outputFile != null) {
-                try {
-                    com.shahid.cam.streaming.RemoteStreamManager.getInstance().startRecording(outputFile);
-                    FLog.i(TAG, "🎬 RemoteStreamManager notified: screen recording started");
-                } catch (Exception e) {
-                    FLog.e(TAG, "Failed to notify RemoteStreamManager", e);
-                }
-            }
             
         } catch (IllegalStateException e) {
             FLog.e(

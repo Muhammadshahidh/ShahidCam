@@ -92,7 +92,6 @@ import com.shahid.cam.VideoCodec;
 import com.shahid.cam.services.RecordingService;
 import com.shahid.cam.services.TorchService;
 import com.shahid.cam.dualcam.service.DualCameraRecordingService;
-import com.shahid.cam.streaming.RemoteStreamManager;
 import com.shahid.cam.ui.helpers.HomeFragmentHelper;
 import com.shahid.cam.ui.components.ModeSwitcherComponent;
 import com.shahid.cam.utils.DebouncedRunnable;
@@ -5507,17 +5506,6 @@ public class HomeFragment extends BaseFragment {
             return;
         }
 
-        // Check if codec is HEVC - browsers don't support HEVC for HLS live streaming
-        // Only validate if streaming is actually enabled (server running)
-        if (RemoteStreamManager.getInstance().isStreamingEnabled()) {
-            VideoCodec selectedCodec = sharedPreferencesManager.getVideoCodec();
-            if (selectedCodec == VideoCodec.HEVC) {
-                // HEVC is not browser-compatible for HLS streaming
-                // Show Material Dialog with option to auto-switch to AVC
-                showCodecIncompatibilityDialog();
-                return; // Block recording start
-            }
-        }
 
         // Force reset recording state if service is not running
         if (!isMyServiceRunning(RecordingService.class)) {
@@ -5674,40 +5662,6 @@ public class HomeFragment extends BaseFragment {
         vibrateTouch();
     }
 
-    /**
-     * Shows a Material Dialog when HEVC codec is selected but live streaming requires AVC.
-     * Offers user to automatically switch to AVC codec and start recording.
-     */
-    private void showCodecIncompatibilityDialog() {
-        if (getContext() == null) return;
-
-        new MaterialAlertDialogBuilder(getContext())
-                .setTitle(getString(R.string.codec_hevc_incompatible_title))
-                .setMessage(getString(R.string.codec_hevc_incompatible_message))
-                .setPositiveButton(getString(R.string.codec_switch_and_record), (dialog, which) -> {
-                    // Auto-switch codec to AVC
-                    FLog.d(TAG, "User requested auto-switch from HEVC to AVC codec");
-                    sharedPreferencesManager.sharedPreferences.edit()
-                        .putString(Constants.PREF_VIDEO_CODEC, VideoCodec.AVC.toString())
-                        .apply();
-                    
-                    // Show confirmation toast
-                    Toast.makeText(
-                        getContext(),
-                        getString(R.string.codec_switched_to_h264),
-                        Toast.LENGTH_SHORT
-                    ).show();
-                    
-                    // Proceed with recording start
-                    proceedWithRecordingStart();
-                })
-                .setNegativeButton(android.R.string.cancel, (dialog, which) -> {
-                    FLog.d(TAG, "User cancelled recording due to codec incompatibility");
-                    dialog.dismiss();
-                })
-                .setCancelable(true)
-                .show();
-    }
 
     /**
      * Continue with recording start after codec validation passes.
@@ -6677,20 +6631,7 @@ public class HomeFragment extends BaseFragment {
         // Adjust available bytes for recording
         long adjustedAvailable;
         if (isRecording() || isPaused()) {
-            // Check if streaming is active in STREAM_ONLY mode - if so, don't deduct estimated bytes
-            boolean isStreamOnlyMode = false;
-            try {
-                boolean serverActive = RemoteStreamManager.getInstance().isStreamingEnabled();
-                com.shahid.cam.streaming.RemoteStreamManager.StreamingMode mode =
-                    sharedPreferencesManager.getStreamingMode();
-                isStreamOnlyMode = serverActive &&
-                    (mode == com.shahid.cam.streaming.RemoteStreamManager.StreamingMode.STREAM_ONLY);
-            } catch (Exception e) {
-                FLog.e(TAG, "Error checking streaming mode for storage calculation", e);
-            }
-            adjustedAvailable = isStreamOnlyMode
-                ? storageInfo.availableBytes
-                : storageInfo.availableBytes - estimatedBytesUsed;
+            adjustedAvailable = storageInfo.availableBytes - estimatedBytesUsed;
         } else {
             adjustedAvailable = storageInfo.availableBytes;
         }
@@ -6841,18 +6782,7 @@ public class HomeFragment extends BaseFragment {
         final boolean showLiveRemaining = isRecording() || isPaused();
         final String finalTimeLeftText;
         if (showLiveRemaining) {
-            // Check if streaming is active in STREAM_ONLY mode - if so, show "Unlimited"
-            boolean isStreamOnlyMode = false;
-            try {
-                boolean serverActive = RemoteStreamManager.getInstance().isStreamingEnabled();
-                com.shahid.cam.streaming.RemoteStreamManager.StreamingMode mode =
-                    sharedPreferencesManager.getStreamingMode();
-                isStreamOnlyMode = serverActive &&
-                    (mode == com.shahid.cam.streaming.RemoteStreamManager.StreamingMode.STREAM_ONLY);
-            } catch (Exception e) {
-                FLog.e(TAG, "Error checking streaming mode in camera recording UI", e);
-            }
-            finalTimeLeftText = isStreamOnlyMode ? "Unlimited" : formatRemainingTime(days, hours, minutes, seconds);
+            finalTimeLeftText = formatRemainingTime(days, hours, minutes, seconds);
         } else {
             finalTimeLeftText = selectedEstimate;
         }
@@ -9633,7 +9563,6 @@ public class HomeFragment extends BaseFragment {
             isTorchOn = !isTorchOn;
             cameraManager.setTorchMode(targetCameraId, isTorchOn);
 
-            // Update SharedPreferences so RemoteStreamManager can read current torch state
             android.content.SharedPreferences prefs = getContext().getSharedPreferences(com.shahid.cam.Constants.PREFS_NAME, android.content.Context.MODE_PRIVATE);
             prefs.edit()
                 .putBoolean(Constants.PREF_TORCH_STATE, isTorchOn)
@@ -10479,11 +10408,11 @@ public class HomeFragment extends BaseFragment {
         requireContext().registerReceiver(gpsProviderReceiver, gpsFilter);
 
         // Listen for location-related pref changes so the banner updates immediately
-        // when the user toggles location watermark or motion lab features
+        // when the user toggles location watermark features
         sharedPreferencesManager.sharedPreferences
             .registerOnSharedPreferenceChangeListener((sp, key) -> {
                 if (key != null && (key.startsWith("location_") || key.startsWith("embed_location")
-                        || key.startsWith("watermark_location") || key.startsWith("motion_"))) {
+                        || key.startsWith("watermark_location"))) {
                     updateGpsWarningBanner();
                 }
                 if (key != null && (SharedPreferencesManager.PREF_MAX_RECORDING_DURATION_OPTION.equals(key)

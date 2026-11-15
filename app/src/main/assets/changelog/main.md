@@ -39,7 +39,7 @@
 # ✨ New Features  
 
 ## ShahidCam Pro - Limited Time Free Offer!
-- **ShahidCam Pro** is now available for free until December 23, 2025 only. Get customized builds with custom notification icons that actually display in your notification bar. [Learn more on Patreon](https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252
+- **ShahidCam Pro** is now available for free until December 23, 2025 only. Get customized builds with custom notification icons that actually display in your notification bar.
 
 ## This What's New Page
 - As a user, I dislike external links for every little thing in the app, so here is the new in-app **What's New** page to showcase new features after updates.
@@ -52,12 +52,6 @@
 - **Automatic project saving** with full recovery options
 - **Sidebar overlay menu** for quick-access recording controls from any app
 
-## 🏠 ShahidCam Remote - Live Streaming & Remote Control
-![shahidcam_remote_demo.png](shahidcam_remote_demo.png)
-
-- Stream your camera feed live over your local network with a beautiful web interface.
-- Remote control features: start/stop recording, change settings, toggle torch, trigger security alarms.
-- Real-time monitoring: battery level, storage status, recording status, and memory/storage usage.
 
 ## 🏠 Home
 - Improved UI for better user experience.

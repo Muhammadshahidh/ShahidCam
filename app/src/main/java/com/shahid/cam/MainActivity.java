@@ -29,11 +29,8 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
 import com.shahid.cam.ui.RecordsFragment;
-import com.shahid.cam.ui.RemoteFragment;
 import com.shahid.cam.ui.HomeFragment;
-import com.shahid.cam.ui.ShahidEditorMiniFragment;
 import com.shahid.cam.ui.SettingsHomeFragment;
-import com.shahid.cam.forensics.ui.ForensicIntelligenceFragment;
 import com.shahid.cam.ui.utils.NewFeatureManager;
 import com.shahid.cam.utils.RuntimeCompat;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -278,33 +275,6 @@ public class MainActivity extends AppCompatActivity {
         try {
             if (bottomNavigationView == null) {
                 return;
-            }
-            
-            // Handle Remote badge
-            boolean shouldShowRemoteBadge = NewFeatureManager.shouldShowBadge(this, "remote");
-            FLog.d("MainActivity", "updateFeatureBadgeVisibility: shouldShowRemoteBadge=" + shouldShowRemoteBadge);
-            
-            if (shouldShowRemoteBadge) {
-                // Show badge on Remote nav item
-                try {
-                    com.google.android.material.badge.BadgeDrawable badge = 
-                        bottomNavigationView.getOrCreateBadge(R.id.navigation_remote);
-                    badge.setVisible(true);
-                    badge.setText("NEW"); // Show "NEW" text instead of number
-                    badge.setBackgroundColor(0xFF4CAF50); // Green background
-                    badge.setBadgeTextColor(0xFFFFFFFF); // White text color
-                    FLog.d("MainActivity", "Badge shown for remote");
-                } catch (Exception e) {
-                    FLog.e("MainActivity", "Error creating badge", e);
-                }
-            } else {
-                // Remove badge from Remote nav item
-                try {
-                    bottomNavigationView.removeBadge(R.id.navigation_remote);
-                    FLog.d("MainActivity", "Badge removed for remote");
-                } catch (Exception e) {
-                    FLog.e("MainActivity", "Error removing badge", e);
-                }
             }
             
             // Handle Settings Nav Badge (separate from watermark option inside settings)
@@ -635,10 +605,13 @@ public class MainActivity extends AppCompatActivity {
             // Configuration change / process death — FragmentManager restores all added fragments
             // We need to find which was the current one and ensure others are hidden
             int restoredPosition = savedInstanceState.getInt("current_fragment_position", 0);
+            if (restoredPosition < 0 || restoredPosition >= 3) {
+                restoredPosition = 0;
+            }
             androidx.fragment.app.FragmentManager fm = getSupportFragmentManager();
             
             // Hide all fragments except the current one, and restore currentFragmentPosition
-            for (int i = 0; i < 6; i++) {
+            for (int i = 0; i < 3; i++) {
                 String visibleTag = i == 0 ? getHomeFragmentTagForCurrentMode() : FRAGMENT_TAG_PREFIX + i;
                 for (String tag : getFragmentTagsForPosition(i)) {
                     Fragment f = fm.findFragmentByTag(tag);
@@ -665,14 +638,8 @@ public class MainActivity extends AppCompatActivity {
                 applyHomeNavIcon();
             } else if (itemId == R.id.navigation_records) {
                 targetPosition = 1;
-            } else if (itemId == R.id.navigation_remote) {
-                targetPosition = 2;
-            } else if (itemId == R.id.navigation_shahideditor_mini) {
-                targetPosition = 3;
             } else if (itemId == R.id.navigation_settings) {
-                targetPosition = 4;
-            } else if (itemId == R.id.navigation_lab) {
-                targetPosition = 5;
+                targetPosition = 2;
             }
             
             if (targetPosition != -1) {
@@ -719,8 +686,8 @@ public class MainActivity extends AppCompatActivity {
             if (reopenAppearance) {
                 // Clear flag to avoid loops
                 reopenPrefs.edit().putBoolean("reopen_appearance_after_theme", false).apply();
-                //  Ensure Settings tab selected (index 4)
-                switchFragment(4, false);
+                //  Ensure Settings tab selected (index 2)
+                switchFragment(2, false);
                 // Post to allow SettingsHomeFragment attach
                 new Handler(Looper.getMainLooper()).postDelayed(() -> {
                     try {
@@ -843,7 +810,7 @@ public class MainActivity extends AppCompatActivity {
                     // RTL-aware tab navigation: reverse direction in RTL layout
                     int direction = isRtl ? (dx > 0 ? 1 : -1) : (dx < 0 ? 1 : -1);
                     int target = currentFragmentPosition + direction;
-                    if (target >= 0 && target <= 5) {
+                    if (target >= 0 && target <= 2) {
                         switchFragment(target, true);
                         swipeHandled = true;
                         swipeCandidate = false;
@@ -1005,7 +972,7 @@ public class MainActivity extends AppCompatActivity {
             // Handle widget intent to open shortcuts
             if (intent.getBooleanExtra("open_shortcuts_widgets", false)) {
                 // Navigate to Settings tab and then open Shortcuts & Widgets screen
-                switchFragment(4, false); // Settings tab
+                switchFragment(2, false); // Settings tab
                 new Handler(Looper.getMainLooper()).postDelayed(() -> {
                     try {
                         com.shahid.cam.ui.ShortcutsSettingsFragment frag = new com.shahid.cam.ui.ShortcutsSettingsFragment();
@@ -1272,7 +1239,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             // Switch to next tab if not at end
-            if (currentPos < 4) {
+            if (currentPos < 2) {
                 switchFragment(currentPos + 1, true);
                 return true;
             }
@@ -1778,7 +1745,7 @@ public class MainActivity extends AppCompatActivity {
             
             // TRANSACTION 1: Detach all added fragments
             androidx.fragment.app.FragmentTransaction detachTx = fm.beginTransaction();
-            for (int i = 0; i < 6; i++) {
+            for (int i = 0; i < 3; i++) {
                 for (String tag : getFragmentTagsForPosition(i)) {
                     Fragment f = fm.findFragmentByTag(tag);
                     if (f != null) {
@@ -1791,7 +1758,7 @@ public class MainActivity extends AppCompatActivity {
             
             // TRANSACTION 2: Re-attach all fragments (they will re-inflate with new orientation's layout)
             androidx.fragment.app.FragmentTransaction attachTx = fm.beginTransaction();
-            for (int i = 0; i < 6; i++) {
+            for (int i = 0; i < 3; i++) {
                 String visibleTag = i == 0 ? getHomeFragmentTagForCurrentMode() : FRAGMENT_TAG_PREFIX + i;
                 for (String tag : getFragmentTagsForPosition(i)) {
                     Fragment f = fm.findFragmentByTag(tag);
@@ -1821,17 +1788,10 @@ public class MainActivity extends AppCompatActivity {
      * Called from onResume to ensure colors are correct when returning from background.
      */
     private void restoreBarColorsForCurrentTab() {
-        if (currentFragmentPosition == 2) {
-            // Remote tab uses black bars
-            setBottomNavColor(0xFF000000);
-            setStatusBarColor(0xFF000000);
-            setNavigationBarColor(0xFF000000);
-        } else {
-            // All other tabs use theme default colors
-            setBottomNavColor(0);
-            setStatusBarColor(0);
-            setNavigationBarColor(0);
-        }
+        // All tabs use theme default colors
+        setBottomNavColor(0);
+        setStatusBarColor(0);
+        setNavigationBarColor(0);
     }
 
     /**
@@ -2195,16 +2155,7 @@ public class MainActivity extends AppCompatActivity {
                 newFragment = new RecordsFragment();
                 break;
             case 2:
-                newFragment = new RemoteFragment();
-                break;
-            case 3:
-                newFragment = new ShahidEditorMiniFragment();
-                break;
-            case 4:
                 newFragment = new com.shahid.cam.ui.SettingsHomeFragment();
-                break;
-            case 5:
-                newFragment = new com.shahid.cam.forensics.ui.ForensicIntelligenceFragment();
                 break;
             default:
                 newFragment = new com.shahid.cam.ui.HomeFragment();
@@ -2241,11 +2192,7 @@ public class MainActivity extends AppCompatActivity {
                     FLog.e("MainActivity", "Error triggering Records lazy load", e);
                 }
                 break;
-            case 5: // Lab tab
-                // Mark feature as seen
-                com.shahid.cam.ui.utils.NewFeatureManager.markFeatureAsSeen(this, "lab");
-                refreshFeatureBadges();
-                break;
+
         }
     }
     
@@ -2256,10 +2203,7 @@ public class MainActivity extends AppCompatActivity {
         switch (position) {
             case 0: return R.id.navigation_home;
             case 1: return R.id.navigation_records;
-            case 2: return R.id.navigation_remote;
-            case 3: return R.id.navigation_shahideditor_mini;
-            case 4: return R.id.navigation_settings;
-            case 5: return R.id.navigation_lab;
+            case 2: return R.id.navigation_settings;
             default: return -1;
         }
     }

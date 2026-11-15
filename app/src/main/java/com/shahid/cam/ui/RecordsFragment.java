@@ -69,14 +69,10 @@ import com.shahid.cam.Utils;
 import com.shahid.cam.utils.RecordingStoragePaths;
 import com.shahid.cam.ui.picker.OptionItem;
 import com.shahid.cam.ui.picker.PickerBottomSheetFragment;
-import com.shahid.cam.forensics.service.DigitalForensicsIndexCoordinator;
 import com.shahid.cam.service.RecordsDeletionRequestItem;
 import com.shahid.cam.service.RecordsDeletionService;
 import com.shahid.cam.service.RecordsDeletionSessionSnapshot;
 import com.shahid.cam.service.RecordsDeletionSessionStore;
-import com.shahid.cam.service.BatchOperationSessionSnapshot;
-import com.shahid.cam.service.BatchOperationSessionStore;
-import com.shahid.cam.service.BatchOperationConstants;
 // Import the new VideoItem class
 // Ensure adapter import is correct
 import com.shahid.cam.utils.TrashManager; // <<< ADD IMPORT FOR TrashManager
@@ -400,14 +396,8 @@ public class RecordsFragment extends BaseFragment implements
     private android.widget.ImageView selectAllCheck;
     private CharSequence originalToolbarTitle;
     private com.shahid.cam.ui.utils.AnimatedChip chipFilterAll;
-    private com.shahid.cam.ui.utils.AnimatedChip chipFilterMiniApps;
-    private ChipGroup chipGroupMiniAppsFilter;
-    private com.shahid.cam.ui.utils.AnimatedChip chipMiniAppsAll;
-    private com.shahid.cam.ui.utils.AnimatedChip chipMiniAppsQR;
     private com.shahid.cam.ui.utils.AnimatedChip chipFilterCamera;
     private com.shahid.cam.ui.utils.AnimatedChip chipFilterScreen;
-    private com.shahid.cam.ui.utils.AnimatedChip chipFilterShahidEditor;
-    private com.shahid.cam.ui.utils.AnimatedChip chipFilterStream;
     private com.shahid.cam.ui.utils.AnimatedChip chipFilterShot;
     private ChipGroup chipGroupRecordsFilter;
     private View cameraFilterRow;
@@ -416,13 +406,7 @@ public class RecordsFragment extends BaseFragment implements
     private com.shahid.cam.ui.utils.AnimatedChip chipCameraBack;
     private com.shahid.cam.ui.utils.AnimatedChip chipCameraFront;
     private com.shahid.cam.ui.utils.AnimatedChip chipCameraDual;
-    private View shahideditorFilterRow;
-    private ChipGroup chipGroupShahidEditorFilter;
-    private com.shahid.cam.ui.utils.AnimatedChip chipShahidEditorAll;
-    private com.shahid.cam.ui.utils.AnimatedChip chipShahidEditorConverted;
-    private com.shahid.cam.ui.utils.AnimatedChip chipShahidEditorMerge;
     private View shotFilterRow;
-    private View miniappsFilterRow;
     private ChipGroup chipGroupShotFilter;
     private com.shahid.cam.ui.utils.AnimatedChip chipShotAll;
     private com.shahid.cam.ui.utils.AnimatedChip chipShotBack;
@@ -433,27 +417,18 @@ public class RecordsFragment extends BaseFragment implements
     private View selectionActionsRow;
     private TextView btnActionSelectAll;
     private TextView btnActionBatchSave;
-    private TextView btnActionBatchShahidEditor;
     private TextView btnActionBatchDelete;
     private VideoItem.Category activeFilter = VideoItem.Category.ALL;
     private VideoItem.CameraSubtype activeCameraSubtype = VideoItem.CameraSubtype.ALL;
-    private VideoItem.ShahidEditorSubtype activeShahidEditorSubtype = VideoItem.ShahidEditorSubtype.ALL;
     private VideoItem.ShotSubtype activeShotSubtype = VideoItem.ShotSubtype.ALL;
-    private String activeMiniAppsSubtype = null; // null=ALL, "QR"=QRScanner
     private ActivityResultLauncher<Uri> customExportTreePickerLauncher;
     private List<Uri> pendingCustomExportUris = new ArrayList<>();
-    private BroadcastReceiver batchMediaCompletedReceiver;
-    private boolean isBatchMediaReceiverRegistered = false;
     private BroadcastReceiver recordsDeletionUpdateReceiver;
     private boolean isRecordsDeletionReceiverRegistered = false;
-    private BroadcastReceiver batchOperationUpdateReceiver;
     private BroadcastReceiver repairScanReceiver;
     private boolean isRepairScanReceiverRegistered;
-    private boolean isBatchOperationReceiverRegistered = false;
     private RecordsDeletionSessionStore deletionSessionStore;
-    private BatchOperationSessionStore batchOperationSessionStore;
     private RecordsDeletionSessionSnapshot deletionSnapshot;
-    private BatchOperationSessionSnapshot batchOperationSnapshot;
     private View deletionDock;
     private ImageView deletionDockIcon;
     private com.shahid.cam.ui.utils.AnimatedTextView deletionDockTitle;
@@ -982,8 +957,6 @@ public class RecordsFragment extends BaseFragment implements
                 // Check which operation is finished
                 if (deletionSnapshot != null && deletionSnapshot.isFinished() && !deletionSnapshot.completionAcknowledged) {
                     acknowledgeDeletionCompletion();
-                } else if (batchOperationSnapshot != null && batchOperationSnapshot.isFinished() && !batchOperationSnapshot.completionAcknowledged) {
-                    acknowledgeBatchOperationCompletion();
                 }
             }
         });
@@ -1055,151 +1028,6 @@ public class RecordsFragment extends BaseFragment implements
         );
     }
 
-    private void acknowledgeBatchOperationCompletion() {
-        if (!isAdded() || batchOperationSnapshot == null || !batchOperationSnapshot.isFinished()) {
-            return;
-        }
-        // Mark as acknowledged
-        batchOperationSnapshot.completionAcknowledged = true;
-        batchOperationSessionStore.write(batchOperationSnapshot);
-        batchOperationSnapshot = null;
-        renderBatchOperationSnapshot(null, false);
-        new Handler(Looper.getMainLooper()).postDelayed(
-                () -> {
-                    if (isAdded() && batchOperationSessionStore != null) {
-                        batchOperationSessionStore.clear();
-                    }
-                },
-                260L
-        );
-    }
-
-    private void syncBatchOperationUiFromStore(boolean immediate) {
-        if (batchOperationSessionStore == null) {
-            return;
-        }
-        BatchOperationSessionSnapshot snapshot = batchOperationSessionStore.read();
-        batchOperationSnapshot = snapshot;
-        renderBatchOperationSnapshot(snapshot, immediate);
-    }
-
-    private void renderBatchOperationSnapshot(
-            @Nullable BatchOperationSessionSnapshot snapshot,
-            boolean immediate
-    ) {
-        if (deletionDock == null || deletionDockTitle == null || deletionDockProgress == null
-                || deletionDockCurrentItem == null || deletionDockEta == null
-                || deletionDockSummary == null || deletionDockOk == null || deletionDockIcon == null) {
-            return;
-        }
-
-        // Don't show dock if we already have a deletion session active
-        if (deletionSnapshot != null && deletionSnapshot.isActive()) {
-            return;
-        }
-
-        boolean showDock = snapshot != null && (!snapshot.completionAcknowledged)
-                && (snapshot.isActive() || snapshot.isFinished());
-        if (!showDock) {
-            animateDeletionDock(false, immediate);
-            return;
-        }
-
-        if (snapshot.isFinished()) {
-            // Finished state
-            if (snapshot.getState() == BatchOperationSessionSnapshot.State.COMPLETED_SUCCESS) {
-                deletionDockTitle.animateSlot(
-                        getOperationTypeName(snapshot.getOperationType()) + " completed", 300);
-                deletionDockIcon.setImageResource(R.drawable.ic_check_circle);
-                deletionDockCurrentItem.setText("Successfully processed " + snapshot.getCompletedItemCount() + " items");
-            } else if (snapshot.getState() == BatchOperationSessionSnapshot.State.COMPLETED_PARTIAL) {
-                deletionDockTitle.animateSlot(
-                        getOperationTypeName(snapshot.getOperationType()) + " completed",
-                        300);
-                deletionDockIcon.setImageResource(R.drawable.ic_error);
-                deletionDockCurrentItem.setText("Processed " + snapshot.getCompletedItemCount() + ", skipped " + snapshot.getSkippedItemCount());
-            } else {
-                deletionDockTitle.animateSlot(
-                        getOperationTypeName(snapshot.getOperationType()) + " failed", 300);
-                deletionDockIcon.setImageResource(R.drawable.ic_error);
-                deletionDockCurrentItem.setText("Failed to process " + snapshot.getFailedItemCount() + " items");
-            }
-            deletionDockProgress.setProgress(100);
-            deletionDockEta.setText(getString(R.string.records_delete_header_dismiss_hint));
-            deletionDockSummary.setText("Completed: " + snapshot.getCompletedItemCount() + "/" + snapshot.getTotalItemCount() + " (Failed: " + snapshot.getFailedItemCount() + ")");
-            showDeletionDockActionButton(true, false, immediate);
-            animateDeletionDock(true, immediate);
-            return;
-        }
-
-        // Active/running state
-        int progressIndex = Math.min(snapshot.getCompletedItemCount() + 1, snapshot.getTotalItemCount());
-        deletionDockTitle.animateSlot(
-                getOperationTypeName(snapshot.getOperationType()) + " " + progressIndex + "/" + snapshot.getTotalItemCount(), 300);
-        deletionDockIcon.setImageResource(getOperationTypeIcon(snapshot.getOperationType()));
-        deletionDockProgress.setProgress(snapshot.getProgressPercent());
-        deletionDockCurrentItem.setText(snapshot.getCurrentItemName() == null || snapshot.getCurrentItemName().trim().isEmpty()
-                ? getString(R.string.records_processing)
-                : snapshot.getCurrentItemName());
-        String eta = buildBatchOperationEta(snapshot);
-        deletionDockEta.setText(eta == null ? getString(R.string.records_delete_header_working) : eta);
-        deletionDockSummary.setText("Completed: " + snapshot.getCompletedItemCount() + ", Failed: " + snapshot.getFailedItemCount());
-        showDeletionDockActionButton(true, true, immediate);
-        animateDeletionDock(true, immediate);
-    }
-
-    @NonNull
-    private String getOperationTypeName(@NonNull BatchOperationSessionSnapshot.OperationType type) {
-        switch (type) {
-            case MERGE_VIDEOS:
-                return getString(R.string.records_merge_label);
-            case EXPORT_STANDARD_MP4:
-                return getString(R.string.records_export_label);
-            case EXPORT_CUSTOM:
-                return getString(R.string.records_export_custom_label);
-            default:
-                return getString(R.string.records_batch_operation);
-        }
-    }
-
-    private int getOperationTypeIcon(@NonNull BatchOperationSessionSnapshot.OperationType type) {
-        switch (type) {
-            case MERGE_VIDEOS:
-            case EXPORT_STANDARD_MP4:
-            case EXPORT_CUSTOM:
-                return R.drawable.ic_drive;
-            default:
-                return R.drawable.ic_delete_white;
-        }
-    }
-
-    @Nullable
-    private String buildBatchOperationEta(@NonNull BatchOperationSessionSnapshot snapshot) {
-        if (snapshot.getTotalBytes() <= 0L || snapshot.getProcessedBytes() <= 0L || snapshot.getStartedAtMs() <= 0L) {
-            return null;
-        }
-        long elapsedMs = System.currentTimeMillis() - snapshot.getStartedAtMs();
-        if (elapsedMs < 1500L) {
-            return null;
-        }
-        long remainingBytes = snapshot.getTotalBytes() - snapshot.getProcessedBytes();
-        if (remainingBytes <= 0L) {
-            return getString(R.string.records_delete_header_finishing);
-        }
-        double bytesPerMs = snapshot.getProcessedBytes() / (double) Math.max(1L, elapsedMs);
-        if (bytesPerMs <= 0d) {
-            return null;
-        }
-        long remainingMs = (long) (remainingBytes / bytesPerMs);
-        long totalSeconds = Math.max(1L, remainingMs / 1000L);
-        long minutes = totalSeconds / 60L;
-        long seconds = totalSeconds % 60L;
-        if (minutes > 0L) {
-            return getString(R.string.records_delete_header_eta_minutes, minutes, seconds);
-        }
-        return getString(R.string.records_delete_header_eta_seconds, seconds);
-    }
-
     // *** Register in onStart (except recordingCompleteReceiver — stays until onDestroyView) ***
     @Override
     public void onStart() {
@@ -1207,9 +1035,7 @@ public class RecordsFragment extends BaseFragment implements
         registerStorageLocationChangedReceiver();
         registerProcessingStateReceivers();
         registerSegmentCompleteReceiver();
-        registerBatchMediaCompletedReceiver();
         registerRecordsDeletionReceiver();
-        registerBatchOperationReceiver();
         registerRepairScanReceiver();
         if (invalidationCoordinator == null && getContext() != null) {
             invalidationCoordinator = new RealtimeMediaInvalidationCoordinator(requireContext());
@@ -1238,9 +1064,7 @@ public class RecordsFragment extends BaseFragment implements
         unregisterStorageLocationChangedReceiver();
         unregisterProcessingStateReceivers();
         unregisterSegmentCompleteReceiver();
-        unregisterBatchMediaCompletedReceiver();
         unregisterRecordsDeletionReceiver();
-        unregisterBatchOperationReceiver();
         unregisterRepairScanReceiver();
     }
 
@@ -1280,42 +1104,6 @@ public class RecordsFragment extends BaseFragment implements
         } catch (IllegalArgumentException ignored) {
         }
         isRepairScanReceiverRegistered = false;
-    }
-
-    private void registerBatchMediaCompletedReceiver() {
-        if (isBatchMediaReceiverRegistered || getContext() == null) return;
-        if (batchMediaCompletedReceiver == null) {
-            batchMediaCompletedReceiver = new BroadcastReceiver() {
-                @Override
-                public void onReceive(Context context, Intent intent) {
-                    if (!isAdded() || intent == null) return;
-                    if (!Constants.ACTION_BATCH_MEDIA_COMPLETED.equals(intent.getAction())) return;
-                    String message = intent.getStringExtra(Constants.EXTRA_BATCH_COMPLETED_MESSAGE);
-                    if (message == null || message.trim().isEmpty()) {
-                        message = getString(R.string.records_batch_completed);
-                    }
-                    Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show();
-                    // Delta scan will pick up new/changed files automatically
-                    loadRecordsList();
-                }
-            };
-        }
-        ContextCompat.registerReceiver(
-                requireContext(),
-                batchMediaCompletedReceiver,
-                new IntentFilter(Constants.ACTION_BATCH_MEDIA_COMPLETED),
-                ContextCompat.RECEIVER_NOT_EXPORTED
-        );
-        isBatchMediaReceiverRegistered = true;
-    }
-
-    private void unregisterBatchMediaCompletedReceiver() {
-        if (!isBatchMediaReceiverRegistered || batchMediaCompletedReceiver == null || getContext() == null) return;
-        try {
-            requireContext().unregisterReceiver(batchMediaCompletedReceiver);
-        } catch (IllegalArgumentException ignored) {
-        }
-        isBatchMediaReceiverRegistered = false;
     }
 
     private void registerRecordsDeletionReceiver() {
@@ -1381,52 +1169,6 @@ public class RecordsFragment extends BaseFragment implements
         } catch (IllegalArgumentException ignored) {
         }
         isRecordsDeletionReceiverRegistered = false;
-    }
-
-    private void registerBatchOperationReceiver() {
-        if (isBatchOperationReceiverRegistered || getContext() == null) {
-            return;
-        }
-        if (batchOperationUpdateReceiver == null) {
-            batchOperationUpdateReceiver = new BroadcastReceiver() {
-                @Override
-                public void onReceive(Context context, Intent intent) {
-                    if (!isAdded() || intent == null) {
-                        return;
-                    }
-                    String action = intent.getAction();
-                    if (BatchOperationConstants.ACTION_BATCH_OPERATION_UPDATED.equals(action)
-                            || BatchOperationConstants.ACTION_BATCH_OPERATION_FINISHED.equals(action)) {
-                        BatchOperationSessionSnapshot snapshot = BatchOperationSessionSnapshot.fromJson(
-                                intent.getStringExtra(BatchOperationConstants.EXTRA_SESSION_SNAPSHOT_JSON));
-                        batchOperationSnapshot = snapshot;
-                        renderBatchOperationSnapshot(snapshot, false);
-                    }
-                }
-            };
-        }
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(BatchOperationConstants.ACTION_BATCH_OPERATION_UPDATED);
-        filter.addAction(BatchOperationConstants.ACTION_BATCH_OPERATION_FINISHED);
-        ContextCompat.registerReceiver(
-                requireContext(),
-                batchOperationUpdateReceiver,
-                filter,
-                ContextCompat.RECEIVER_NOT_EXPORTED
-        );
-        isBatchOperationReceiverRegistered = true;
-        syncBatchOperationUiFromStore(true);
-    }
-
-    private void unregisterBatchOperationReceiver() {
-        if (!isBatchOperationReceiverRegistered || batchOperationUpdateReceiver == null || getContext() == null) {
-            return;
-        }
-        try {
-            requireContext().unregisterReceiver(batchOperationUpdateReceiver);
-        } catch (IllegalArgumentException ignored) {
-        }
-        isBatchOperationReceiverRegistered = false;
     }
 
     // ** NEW: Method to register the storage location change receiver **
@@ -1726,7 +1468,6 @@ public class RecordsFragment extends BaseFragment implements
 
         sharedPreferencesManager = SharedPreferencesManager.getInstance(requireContext());
         deletionSessionStore = new RecordsDeletionSessionStore(requireContext());
-        batchOperationSessionStore = new BatchOperationSessionStore(requireContext());
 
         // Initialize header elements
         titleText = view.findViewById(R.id.title_text);
@@ -1748,8 +1489,6 @@ public class RecordsFragment extends BaseFragment implements
         chipFilterAll = view.findViewById(R.id.chip_filter_all);
         chipFilterCamera = view.findViewById(R.id.chip_filter_camera);
         chipFilterScreen = view.findViewById(R.id.chip_filter_screen);
-        chipFilterShahidEditor = view.findViewById(R.id.chip_filter_shahideditor);
-        chipFilterStream = view.findViewById(R.id.chip_filter_stream);
         chipFilterShot = view.findViewById(R.id.chip_filter_shot);
         chipGroupRecordsFilter = view.findViewById(R.id.chip_group_records_filter);
         cameraFilterRow = view.findViewById(R.id.records_camera_filter_row);
@@ -1758,29 +1497,17 @@ public class RecordsFragment extends BaseFragment implements
         chipCameraBack = view.findViewById(R.id.chip_camera_back);
         chipCameraFront = view.findViewById(R.id.chip_camera_front);
         chipCameraDual = view.findViewById(R.id.chip_camera_dual);
-        shahideditorFilterRow = view.findViewById(R.id.records_shahideditor_filter_row);
-        chipGroupShahidEditorFilter = view.findViewById(R.id.chip_group_shahideditor_filter);
-        chipShahidEditorAll = view.findViewById(R.id.chip_shahideditor_all);
-        chipShahidEditorConverted = view.findViewById(R.id.chip_shahideditor_converted);
-        chipShahidEditorMerge = view.findViewById(R.id.chip_shahideditor_merge);
         shotFilterRow = view.findViewById(R.id.records_shot_filter_row);
-        miniappsFilterRow = view.findViewById(R.id.records_miniapps_filter_row);
         chipGroupShotFilter = view.findViewById(R.id.chip_group_shot_filter);
         chipShotAll = view.findViewById(R.id.chip_shot_all);
         chipShotBack = view.findViewById(R.id.chip_shot_back);
         chipShotSelfie = view.findViewById(R.id.chip_shot_selfie);
         chipShotShahidrec = view.findViewById(R.id.chip_shot_shahidrec);
-
-        chipFilterMiniApps = view.findViewById(R.id.chip_filter_miniapps);
-        chipGroupMiniAppsFilter = view.findViewById(R.id.chip_group_miniapps_filter);
-        chipMiniAppsAll = view.findViewById(R.id.chip_miniapps_all);
-        chipMiniAppsQR = view.findViewById(R.id.chip_miniapps_qr);
         filterHelperText = view.findViewById(R.id.filter_helper_text);
         filterChecklistButton = view.findViewById(R.id.btn_filter_checklist);
         selectionActionsRow = view.findViewById(R.id.selection_actions_row);
         btnActionSelectAll = view.findViewById(R.id.btn_action_select_all);
         btnActionBatchSave = view.findViewById(R.id.btn_action_batch_save);
-        btnActionBatchShahidEditor = view.findViewById(R.id.btn_action_batch_shahideditor);
         btnActionBatchDelete = view.findViewById(R.id.btn_action_batch_delete);
 
         // Setup menu button click listener
@@ -2724,8 +2451,6 @@ public class RecordsFragment extends BaseFragment implements
         // Legacy dual root folder support (mapped under CAMERA category)
         scanCategoryDirectoryInternal(items, new File(baseDir, Constants.RECORDING_SUBDIR_DUAL), VideoItem.Category.CAMERA);
         scanCategoryDirectoryInternal(items, new File(baseDir, Constants.RECORDING_SUBDIR_SCREEN), VideoItem.Category.SCREEN);
-        scanCategoryDirectoryInternal(items, new File(baseDir, Constants.RECORDING_SUBDIR_SHAHIDEDITOR), VideoItem.Category.SHAHIDEDITOR);
-        scanCategoryDirectoryInternal(items, new File(baseDir, Constants.RECORDING_SUBDIR_STREAM), VideoItem.Category.STREAM);
         scanCategoryDirectoryInternal(items, new File(baseDir, Constants.RECORDING_SUBDIR_SHOT), VideoItem.Category.SHOT);
 
         // Backward compatibility: include legacy root-level files under ShahidCam.
@@ -2751,10 +2476,6 @@ public class RecordsFragment extends BaseFragment implements
             scanCameraDirectoryInternal(out, directory);
             return;
         }
-        if (category == VideoItem.Category.SHAHIDEDITOR) {
-            scanShahidEditorDirectoryInternal(out, directory);
-            return;
-        }
         File[] files = directory.listFiles();
         if (files == null) return;
         for (File file : files) {
@@ -2766,39 +2487,6 @@ public class RecordsFragment extends BaseFragment implements
                     VideoItem.CameraSubtype.UNKNOWN,
                     VideoItem.ShahidEditorSubtype.UNKNOWN);
             if (item != null) out.add(item);
-        }
-    }
-
-    private void scanShahidEditorDirectoryInternal(@NonNull List<VideoItem> out, @NonNull File shahideditorRoot) {
-        File[] children = shahideditorRoot.listFiles();
-        if (children == null) return;
-        for (File child : children) {
-            if (child == null) continue;
-            if (child.isFile()) {
-                VideoItem item = buildVideoItemFromInternalFile(
-                        child,
-                        VideoItem.Category.SHAHIDEDITOR,
-                        VideoItem.ShotSubtype.UNKNOWN,
-                        VideoItem.CameraSubtype.UNKNOWN,
-                        inferShahidEditorSubtypeFromName(child.getName()));
-                if (item != null) out.add(item);
-                continue;
-            }
-            if (!child.isDirectory()) continue;
-            VideoItem.ShahidEditorSubtype subtype = inferShahidEditorSubtypeFromFolder(child.getName());
-            File[] nested = child.listFiles();
-            if (nested == null) continue;
-            for (File nestedFile : nested) {
-                if (nestedFile != null && nestedFile.isFile()) {
-                    VideoItem item = buildVideoItemFromInternalFile(
-                            nestedFile,
-                            VideoItem.Category.SHAHIDEDITOR,
-                            VideoItem.ShotSubtype.UNKNOWN,
-                            VideoItem.CameraSubtype.UNKNOWN,
-                            subtype);
-                    if (item != null) out.add(item);
-                }
-            }
         }
     }
 
@@ -2894,9 +2582,7 @@ public class RecordsFragment extends BaseFragment implements
         VideoItem.CameraSubtype cameraSubtype = category == VideoItem.Category.CAMERA
                 ? resolveCameraSubtype(explicitCameraSubtype, name)
                 : VideoItem.CameraSubtype.UNKNOWN;
-        VideoItem.ShahidEditorSubtype shahideditorSubtype = category == VideoItem.Category.SHAHIDEDITOR
-                ? resolveShahidEditorSubtype(explicitShahidEditorSubtype, name)
-                : VideoItem.ShahidEditorSubtype.UNKNOWN;
+        VideoItem.ShahidEditorSubtype shahideditorSubtype = VideoItem.ShahidEditorSubtype.UNKNOWN;
         VideoItem newItem = new VideoItem(
                 Uri.fromFile(file),
                 name,
@@ -2944,9 +2630,7 @@ public class RecordsFragment extends BaseFragment implements
                     inferred == VideoItem.Category.CAMERA
                             ? resolveCameraSubtype(VideoItem.CameraSubtype.UNKNOWN, name)
                             : VideoItem.CameraSubtype.UNKNOWN,
-                    inferred == VideoItem.Category.SHAHIDEDITOR
-                            ? resolveShahidEditorSubtype(VideoItem.ShahidEditorSubtype.UNKNOWN, name)
-                            : VideoItem.ShahidEditorSubtype.UNKNOWN);
+                    VideoItem.ShahidEditorSubtype.UNKNOWN);
             item.isNew = Utils.isVideoConsideredNew(finalTimestamp);
             out.add(item);
         }
@@ -2979,8 +2663,6 @@ public class RecordsFragment extends BaseFragment implements
         // Legacy dual root folder support (mapped under CAMERA category)
         addSafCategoryFiles(bucketedFiles, targetDir, Constants.RECORDING_SUBDIR_DUAL, VideoItem.Category.CAMERA);
         addSafCategoryFiles(bucketedFiles, targetDir, Constants.RECORDING_SUBDIR_SCREEN, VideoItem.Category.SCREEN);
-        addSafCategoryFiles(bucketedFiles, targetDir, Constants.RECORDING_SUBDIR_SHAHIDEDITOR, VideoItem.Category.SHAHIDEDITOR);
-        addSafCategoryFiles(bucketedFiles, targetDir, Constants.RECORDING_SUBDIR_STREAM, VideoItem.Category.STREAM);
         addSafCategoryFiles(bucketedFiles, targetDir, Constants.RECORDING_SUBDIR_SHOT, VideoItem.Category.SHOT);
 
         // Backward compatibility: include root files and infer category by filename prefix.
@@ -3426,17 +3108,8 @@ public class RecordsFragment extends BaseFragment implements
         if (chipFilterScreen != null) {
             chipFilterScreen.setOnClickListener(v -> setActiveFilter(VideoItem.Category.SCREEN));
         }
-        if (chipFilterShahidEditor != null) {
-            chipFilterShahidEditor.setOnClickListener(v -> setActiveFilter(VideoItem.Category.SHAHIDEDITOR));
-        }
-        if (chipFilterStream != null) {
-            chipFilterStream.setOnClickListener(v -> setActiveFilter(VideoItem.Category.STREAM));
-        }
         if (chipFilterShot != null) {
             chipFilterShot.setOnClickListener(v -> setActiveFilter(VideoItem.Category.SHOT));
-        }
-        if (chipFilterMiniApps != null) {
-            chipFilterMiniApps.setOnClickListener(v -> setActiveFilter(VideoItem.Category.MINIAPPS));
         }
         if (chipCameraAll != null) {
             chipCameraAll.setOnClickListener(v -> setActiveCameraSubtype(VideoItem.CameraSubtype.ALL));
@@ -3450,15 +3123,6 @@ public class RecordsFragment extends BaseFragment implements
         if (chipCameraDual != null) {
             chipCameraDual.setOnClickListener(v -> setActiveCameraSubtype(VideoItem.CameraSubtype.DUAL));
         }
-        if (chipShahidEditorAll != null) {
-            chipShahidEditorAll.setOnClickListener(v -> setActiveShahidEditorSubtype(VideoItem.ShahidEditorSubtype.ALL));
-        }
-        if (chipShahidEditorConverted != null) {
-            chipShahidEditorConverted.setOnClickListener(v -> setActiveShahidEditorSubtype(VideoItem.ShahidEditorSubtype.CONVERTED));
-        }
-        if (chipShahidEditorMerge != null) {
-            chipShahidEditorMerge.setOnClickListener(v -> setActiveShahidEditorSubtype(VideoItem.ShahidEditorSubtype.MERGE));
-        }
         if (chipShotAll != null) {
             chipShotAll.setOnClickListener(v -> setActiveShotSubtype(VideoItem.ShotSubtype.ALL));
         }
@@ -3470,12 +3134,6 @@ public class RecordsFragment extends BaseFragment implements
         }
         if (chipShotShahidrec != null) {
             chipShotShahidrec.setOnClickListener(v -> setActiveShotSubtype(VideoItem.ShotSubtype.SHAHIDREC));
-        }
-        if (chipMiniAppsAll != null) {
-            chipMiniAppsAll.setOnClickListener(v -> setActiveMiniAppsSubtype(null));
-        }
-        if (chipMiniAppsQR != null) {
-            chipMiniAppsQR.setOnClickListener(v -> setActiveMiniAppsSubtype("QR"));
         }
         if (filterChecklistButton != null) {
             filterChecklistButton.setOnClickListener(v -> {
@@ -3491,15 +3149,9 @@ public class RecordsFragment extends BaseFragment implements
         updateCameraFilterRowVisibility();
         updateCameraFilterChipLabels();
         updateCameraFilterChipUi();
-        updateShahidEditorFilterRowVisibility();
-        updateShahidEditorFilterChipLabels();
-        updateShahidEditorFilterChipUi();
         updateShotFilterRowVisibility();
         updateShotFilterChipLabels();
         updateShotFilterChipUi();
-        updateMiniAppsFilterRowVisibility();
-        updateMiniAppsFilterChipLabels();
-        updateMiniAppsFilterChipUi();
         updateFilterHelperText();
     }
 
@@ -3509,10 +3161,6 @@ public class RecordsFragment extends BaseFragment implements
         }
         if (btnActionBatchSave != null) {
             btnActionBatchSave.setOnClickListener(v -> Toast.makeText(requireContext(),
-                    getString(R.string.records_batch_coming_soon), Toast.LENGTH_SHORT).show());
-        }
-        if (btnActionBatchShahidEditor != null) {
-            btnActionBatchShahidEditor.setOnClickListener(v -> Toast.makeText(requireContext(),
                     getString(R.string.records_batch_coming_soon), Toast.LENGTH_SHORT).show());
         }
         if (btnActionBatchDelete != null) {
@@ -3534,9 +3182,6 @@ public class RecordsFragment extends BaseFragment implements
         if (activeFilter != VideoItem.Category.CAMERA) {
             activeCameraSubtype = VideoItem.CameraSubtype.ALL;
         }
-        if (activeFilter != VideoItem.Category.SHAHIDEDITOR) {
-            activeShahidEditorSubtype = VideoItem.ShahidEditorSubtype.ALL;
-        }
         if (activeFilter != VideoItem.Category.SHOT) {
             activeShotSubtype = VideoItem.ShotSubtype.ALL;
         }
@@ -3556,25 +3201,9 @@ public class RecordsFragment extends BaseFragment implements
         applyActiveFilterToUi();
     }
 
-    private void setActiveMiniAppsSubtype(@Nullable String subtype) {
-        if (Objects.equals(activeMiniAppsSubtype, subtype)) return;
-        activeMiniAppsSubtype = subtype;
-        if (isInSelectionMode) exitSelectionMode();
-        applyActiveFilterToUi();
-    }
-
     private void setActiveShotSubtype(@NonNull VideoItem.ShotSubtype shotSubtype) {
         if (activeShotSubtype == shotSubtype) return;
         activeShotSubtype = shotSubtype;
-        if (isInSelectionMode) {
-            exitSelectionMode();
-        }
-        applyActiveFilterToUi();
-    }
-
-    private void setActiveShahidEditorSubtype(@NonNull VideoItem.ShahidEditorSubtype shahideditorSubtype) {
-        if (activeShahidEditorSubtype == shahideditorSubtype) return;
-        activeShahidEditorSubtype = shahideditorSubtype;
         if (isInSelectionMode) {
             exitSelectionMode();
         }
@@ -3588,14 +3217,7 @@ public class RecordsFragment extends BaseFragment implements
                 if (activeFilter == VideoItem.Category.CAMERA && !matchesCameraSubtype(item, activeCameraSubtype)) {
                     continue;
                 }
-                if (activeFilter == VideoItem.Category.SHAHIDEDITOR && !matchesShahidEditorSubtype(item, activeShahidEditorSubtype)) {
-                    continue;
-                }
                 if (activeFilter == VideoItem.Category.SHOT && !matchesShotSubtype(item, activeShotSubtype)) {
-                    continue;
-                }
-                if (activeFilter == VideoItem.Category.MINIAPPS && "QR".equals(activeMiniAppsSubtype)
-                        && !item.uri.toString().contains("QRScanner")) {
                     continue;
                 }
                 filteredItems.add(item);
@@ -3611,15 +3233,9 @@ public class RecordsFragment extends BaseFragment implements
         updateCameraFilterRowVisibility();
         updateCameraFilterChipLabels();
         updateCameraFilterChipUi();
-        updateShahidEditorFilterRowVisibility();
-        updateShahidEditorFilterChipLabels();
-        updateShahidEditorFilterChipUi();
         updateShotFilterRowVisibility();
         updateShotFilterChipLabels();
         updateShotFilterChipUi();
-        updateMiniAppsFilterRowVisibility();
-        updateMiniAppsFilterChipLabels();
-        updateMiniAppsFilterChipUi();
         updateFilterHelperText();
         updateUiVisibility();
         updateSelectionActionRow();
@@ -3629,10 +3245,7 @@ public class RecordsFragment extends BaseFragment implements
         if (chipFilterAll != null) chipFilterAll.setChecked(activeFilter == VideoItem.Category.ALL);
         if (chipFilterCamera != null) chipFilterCamera.setChecked(activeFilter == VideoItem.Category.CAMERA);
         if (chipFilterScreen != null) chipFilterScreen.setChecked(activeFilter == VideoItem.Category.SCREEN);
-        if (chipFilterShahidEditor != null) chipFilterShahidEditor.setChecked(activeFilter == VideoItem.Category.SHAHIDEDITOR);
-        if (chipFilterStream != null) chipFilterStream.setChecked(activeFilter == VideoItem.Category.STREAM);
         if (chipFilterShot != null) chipFilterShot.setChecked(activeFilter == VideoItem.Category.SHOT);
-        if (chipFilterMiniApps != null) chipFilterMiniApps.setChecked(activeFilter == VideoItem.Category.MINIAPPS);
     }
 
     private void updateCameraFilterRowVisibility() {
@@ -3671,82 +3284,6 @@ public class RecordsFragment extends BaseFragment implements
                 })
                 .start();
         }
-    }
-
-    private void updateShahidEditorFilterRowVisibility() {
-        if (shahideditorFilterRow == null) return;
-        
-        boolean shouldShow = activeFilter == VideoItem.Category.SHAHIDEDITOR;
-        boolean isCurrentlyVisible = shahideditorFilterRow.getVisibility() == View.VISIBLE;
-        
-        if (shouldShow && !isCurrentlyVisible) {
-            // Show with fluid amoeba-like animation
-            shahideditorFilterRow.setVisibility(View.VISIBLE);
-            shahideditorFilterRow.setAlpha(0f);
-            shahideditorFilterRow.setScaleY(0.3f);
-            shahideditorFilterRow.setTranslationY(-20f);
-            
-            shahideditorFilterRow.animate()
-                .alpha(1f)
-                .scaleY(1f)
-                .translationY(0f)
-                .setDuration(400)
-                .setInterpolator(new android.view.animation.OvershootInterpolator(1.5f))
-                .start();
-        } else if (!shouldShow && isCurrentlyVisible) {
-            // Hide with smooth collapse animation - completes fully before hiding
-            shahideditorFilterRow.animate()
-                .alpha(0f)
-                .scaleY(0f)
-                .translationY(-30f)
-                .setDuration(250)
-                .setInterpolator(new android.view.animation.AccelerateInterpolator())
-                .withEndAction(() -> {
-                    shahideditorFilterRow.setVisibility(View.GONE);
-                    // Reset for next animation
-                    shahideditorFilterRow.setScaleY(0.3f);
-                    shahideditorFilterRow.setTranslationY(-20f);
-                })
-                .start();
-        }
-    }
-
-    private void updateCameraFilterChipUi() {
-        if (chipCameraAll != null) chipCameraAll.setChecked(activeCameraSubtype == VideoItem.CameraSubtype.ALL);
-        if (chipCameraBack != null) chipCameraBack.setChecked(activeCameraSubtype == VideoItem.CameraSubtype.BACK);
-        if (chipCameraFront != null) chipCameraFront.setChecked(activeCameraSubtype == VideoItem.CameraSubtype.FRONT);
-        if (chipCameraDual != null) chipCameraDual.setChecked(activeCameraSubtype == VideoItem.CameraSubtype.DUAL);
-    }
-
-    private boolean matchesCameraSubtype(@NonNull VideoItem item, @NonNull VideoItem.CameraSubtype filterSubtype) {
-        if (item.category != VideoItem.Category.CAMERA && item.category != VideoItem.Category.DUAL) return false;
-        if (filterSubtype == VideoItem.CameraSubtype.ALL) return true;
-        VideoItem.CameraSubtype itemSubtype = item.cameraSubtype == null
-                ? VideoItem.CameraSubtype.UNKNOWN
-                : item.cameraSubtype;
-        if (itemSubtype == VideoItem.CameraSubtype.UNKNOWN) {
-            itemSubtype = VideoItem.CameraSubtype.BACK;
-        }
-        return itemSubtype == filterSubtype;
-    }
-
-    private void updateShahidEditorFilterChipUi() {
-        if (chipShahidEditorAll != null) chipShahidEditorAll.setChecked(activeShahidEditorSubtype == VideoItem.ShahidEditorSubtype.ALL);
-        if (chipShahidEditorConverted != null)
-            chipShahidEditorConverted.setChecked(activeShahidEditorSubtype == VideoItem.ShahidEditorSubtype.CONVERTED);
-        if (chipShahidEditorMerge != null) chipShahidEditorMerge.setChecked(activeShahidEditorSubtype == VideoItem.ShahidEditorSubtype.MERGE);
-    }
-
-    private boolean matchesShahidEditorSubtype(@NonNull VideoItem item, @NonNull VideoItem.ShahidEditorSubtype filterSubtype) {
-        if (item.category != VideoItem.Category.SHAHIDEDITOR) return false;
-        if (filterSubtype == VideoItem.ShahidEditorSubtype.ALL) return true;
-        VideoItem.ShahidEditorSubtype itemSubtype = item.shahideditorSubtype == null
-                ? VideoItem.ShahidEditorSubtype.UNKNOWN
-                : item.shahideditorSubtype;
-        if (itemSubtype == VideoItem.ShahidEditorSubtype.UNKNOWN) {
-            itemSubtype = VideoItem.ShahidEditorSubtype.OTHER;
-        }
-        return itemSubtype == filterSubtype;
     }
 
     private void updateShotFilterRowVisibility() {
@@ -3794,46 +3331,6 @@ public class RecordsFragment extends BaseFragment implements
         if (chipShotShahidrec != null) chipShotShahidrec.setChecked(activeShotSubtype == VideoItem.ShotSubtype.SHAHIDREC);
     }
 
-    private void updateMiniAppsFilterRowVisibility() {
-        if (miniappsFilterRow == null) return;
-        boolean shouldShow = activeFilter == VideoItem.Category.MINIAPPS;
-        if (shouldShow) {
-            miniappsFilterRow.setVisibility(View.VISIBLE);
-            miniappsFilterRow.setAlpha(0f); miniappsFilterRow.setScaleY(0.3f); miniappsFilterRow.setTranslationY(-20f);
-            miniappsFilterRow.animate().alpha(1f).scaleY(1f).translationY(0f).setDuration(400)
-                .setInterpolator(new android.view.animation.OvershootInterpolator(1.5f)).start();
-        } else {
-            miniappsFilterRow.setVisibility(View.GONE);
-        }
-    }
-
-    private void updateMiniAppsFilterChipUi() {
-        if (chipMiniAppsAll != null) chipMiniAppsAll.setChecked(activeMiniAppsSubtype == null);
-        if (chipMiniAppsQR != null) chipMiniAppsQR.setChecked("QR".equals(activeMiniAppsSubtype));
-    }
-
-    private void updateMiniAppsFilterChipLabels() {
-        int all = getMiniAppsSubtypeCount(null);
-        int qr = getMiniAppsSubtypeCount("QR");
-        setChipLabelWithCount(chipMiniAppsAll, R.string.records_filter_miniapps_all, all);
-        if (chipMiniAppsQR != null) {
-            chipMiniAppsQR.animateSlot(makeChipLabel("QR", qr), 300);
-        }
-    }
-
-    private int getMiniAppsSubtypeCount(@Nullable String subtype) {
-        int count = 0;
-        for (VideoItem item : allLoadedItems) {
-            if (item.category != VideoItem.Category.MINIAPPS) continue;
-            if (subtype == null) {
-                count++;
-            } else if ("QR".equals(subtype) && item.uri.toString().contains("QRScanner")) {
-                count++;
-            }
-        }
-        return count;
-    }
-
     private boolean matchesShotSubtype(@NonNull VideoItem item, @NonNull VideoItem.ShotSubtype filterSubtype) {
         if (item.category != VideoItem.Category.SHOT) return false;
         if (filterSubtype == VideoItem.ShotSubtype.ALL) return true;
@@ -3850,19 +3347,11 @@ public class RecordsFragment extends BaseFragment implements
         applyChipIcon(chipFilterAll, R.drawable.ic_list);
         applyChipIcon(chipFilterCamera, R.drawable.ic_chip_videocam);
         applyChipIcon(chipFilterScreen, R.drawable.screen_recorder);
-        applyChipIcon(chipFilterShahidEditor, R.drawable.ic_edit_cut);
-        applyChipIcon(chipFilterStream, R.drawable.ic_wifi);
         applyChipIcon(chipFilterShot, R.drawable.ic_chip_add_a_photo);
-        applyChipIcon(chipFilterMiniApps, R.drawable.ic_settings);
         applyChipIcon(chipCameraAll, R.drawable.ic_list);
         applyChipIcon(chipCameraBack, R.drawable.ic_chip_video_camera_back);
         applyChipIcon(chipCameraFront, R.drawable.ic_chip_video_camera_front);
         applyChipIcon(chipCameraDual, R.drawable.ic_chip_switch_camera);
-        applyChipIcon(chipShahidEditorAll, R.drawable.ic_list);
-        applyChipIcon(chipShahidEditorConverted, R.drawable.ic_update);
-        applyChipIcon(chipShahidEditorMerge, R.drawable.ic_split_file);
-        applyChipIcon(chipMiniAppsAll, R.drawable.ic_list);
-        applyChipIcon(chipMiniAppsQR, R.drawable.ic_settings);
         applyChipIcon(chipShotAll, R.drawable.ic_list);
         applyChipIcon(chipShotBack, R.drawable.ic_chip_photo_camera);
         applyChipIcon(chipShotSelfie, R.drawable.ic_chip_photo_camera_front);
@@ -3870,19 +3359,11 @@ public class RecordsFragment extends BaseFragment implements
         styleFilterChip(chipFilterAll);
         styleFilterChip(chipFilterCamera);
         styleFilterChip(chipFilterScreen);
-        styleFilterChip(chipFilterShahidEditor);
-        styleFilterChip(chipFilterStream);
         styleFilterChip(chipFilterShot);
-        styleFilterChip(chipFilterMiniApps);
         styleFilterChip(chipCameraAll);
         styleFilterChip(chipCameraBack);
         styleFilterChip(chipCameraFront);
         styleFilterChip(chipCameraDual);
-        styleFilterChip(chipShahidEditorAll);
-        styleFilterChip(chipShahidEditorConverted);
-        styleFilterChip(chipShahidEditorMerge);
-        styleFilterChip(chipMiniAppsAll);
-        styleFilterChip(chipMiniAppsQR);
         styleFilterChip(chipShotAll);
         styleFilterChip(chipShotBack);
         styleFilterChip(chipShotSelfie);
@@ -3942,22 +3423,14 @@ public class RecordsFragment extends BaseFragment implements
         int all = getCategoryCount(VideoItem.Category.ALL);
         int camera = getCategoryCount(VideoItem.Category.CAMERA);
         int screen = getCategoryCount(VideoItem.Category.SCREEN);
-        int shahideditor = getCategoryCount(VideoItem.Category.SHAHIDEDITOR);
-        int stream = getCategoryCount(VideoItem.Category.STREAM);
         int shot = getCategoryCount(VideoItem.Category.SHOT);
-        int miniapps = getCategoryCount(VideoItem.Category.MINIAPPS);
 
         setChipLabelWithCount(chipFilterAll, R.string.records_filter_all, all);
         setChipLabelWithCount(chipFilterCamera, R.string.records_filter_camera, camera);
         setChipLabelWithCount(chipFilterScreen, R.string.records_filter_screen, screen);
-        setChipLabelWithCount(chipFilterShahidEditor, R.string.records_filter_shahideditor, shahideditor);
-        setChipLabelWithCount(chipFilterStream, R.string.records_filter_stream, stream);
         setChipLabelWithCount(chipFilterShot, R.string.records_filter_shot, shot);
-        if (chipFilterMiniApps != null) {
-            chipFilterMiniApps.animateSlot(makeChipLabel("Mini Apps", miniapps), 300);
-        }
 
-        reorderFilterChipsByCount(camera, screen, shahideditor, stream, shot, miniapps);
+        reorderFilterChipsByCount(camera, screen, shot);
     }
 
     private void updateCameraFilterChipLabels() {
@@ -3982,15 +3455,6 @@ public class RecordsFragment extends BaseFragment implements
         setChipLabelWithCount(chipShotBack, R.string.records_filter_shot_back, back);
         setChipLabelWithCount(chipShotSelfie, R.string.records_filter_shot_selfie, selfie);
         setChipLabelWithCount(chipShotShahidrec, R.string.records_filter_shot_shahidrec, shahidrec);
-    }
-
-    private void updateShahidEditorFilterChipLabels() {
-        int all = getShahidEditorSubtypeCount(VideoItem.ShahidEditorSubtype.ALL);
-        int converted = getShahidEditorSubtypeCount(VideoItem.ShahidEditorSubtype.CONVERTED);
-        int merge = getShahidEditorSubtypeCount(VideoItem.ShahidEditorSubtype.MERGE);
-        setChipLabelWithCount(chipShahidEditorAll, R.string.records_filter_shahideditor_all, all);
-        setChipLabelWithCount(chipShahidEditorConverted, R.string.records_filter_shahideditor_converted, converted);
-        setChipLabelWithCount(chipShahidEditorMerge, R.string.records_filter_shahideditor_merge, merge);
     }
 
     private void setChipLabelWithCount(@Nullable com.shahid.cam.ui.utils.AnimatedChip chip, int baseLabelRes, int count) {
@@ -4034,26 +3498,12 @@ public class RecordsFragment extends BaseFragment implements
         return count;
     }
 
-    private int getShahidEditorSubtypeCount(@NonNull VideoItem.ShahidEditorSubtype subtype) {
-        int count = 0;
-        for (VideoItem item : allLoadedItems) {
-            if (item.category != VideoItem.Category.SHAHIDEDITOR) continue;
-            if (matchesShahidEditorSubtype(item, subtype)) {
-                count++;
-            }
-        }
-        return count;
-    }
-
-    private void reorderFilterChipsByCount(int camera, int screen, int shahideditor, int stream, int shot, int miniapps) {
+    private void reorderFilterChipsByCount(int camera, int screen, int shot) {
         if (chipGroupRecordsFilter == null || chipFilterAll == null) return;
         List<ChipOrderItem> ordered = new ArrayList<>();
         ordered.add(new ChipOrderItem(chipFilterCamera, camera));
         ordered.add(new ChipOrderItem(chipFilterScreen, screen));
-        ordered.add(new ChipOrderItem(chipFilterShahidEditor, shahideditor));
-        ordered.add(new ChipOrderItem(chipFilterStream, stream));
         ordered.add(new ChipOrderItem(chipFilterShot, shot));
-        ordered.add(new ChipOrderItem(chipFilterMiniApps, miniapps));
         Collections.sort(ordered, (a, b) -> Integer.compare(b.count, a.count));
 
         chipGroupRecordsFilter.removeAllViews();
@@ -4072,14 +3522,8 @@ public class RecordsFragment extends BaseFragment implements
                 return R.id.chip_filter_camera;
             case SCREEN:
                 return R.id.chip_filter_screen;
-            case SHAHIDEDITOR:
-                return R.id.chip_filter_shahideditor;
-            case STREAM:
-                return R.id.chip_filter_stream;
             case SHOT:
                 return R.id.chip_filter_shot;
-            case MINIAPPS:
-                return R.id.chip_filter_miniapps;
             case UNKNOWN:
             case ALL:
             default:
@@ -4120,12 +3564,7 @@ public class RecordsFragment extends BaseFragment implements
             } else {
                 cameraSubtype = VideoItem.CameraSubtype.UNKNOWN;
             }
-            VideoItem.ShahidEditorSubtype shahideditorSubtype = item.shahideditorSubtype;
-            if (category == VideoItem.Category.SHAHIDEDITOR) {
-                shahideditorSubtype = resolveShahidEditorSubtypeFromItem(item);
-            } else {
-                shahideditorSubtype = VideoItem.ShahidEditorSubtype.UNKNOWN;
-            }
+            VideoItem.ShahidEditorSubtype shahideditorSubtype = VideoItem.ShahidEditorSubtype.UNKNOWN;
             VideoItem copy = new VideoItem(
                     item.uri,
                     item.displayName,
@@ -4167,14 +3606,6 @@ public class RecordsFragment extends BaseFragment implements
                 || uri.contains("%2F" + Constants.RECORDING_SUBDIR_SCREEN + "%2F")) {
             return VideoItem.Category.SCREEN;
         }
-        if (uri.contains("/" + Constants.RECORDING_SUBDIR_SHAHIDEDITOR + "/")
-                || uri.contains("%2F" + Constants.RECORDING_SUBDIR_SHAHIDEDITOR + "%2F")) {
-            return VideoItem.Category.SHAHIDEDITOR;
-        }
-        if (uri.contains("/" + Constants.RECORDING_SUBDIR_STREAM + "/")
-                || uri.contains("%2F" + Constants.RECORDING_SUBDIR_STREAM + "%2F")) {
-            return VideoItem.Category.STREAM;
-        }
         if (uri.contains("/" + Constants.RECORDING_SUBDIR_SHOT + "/")
                 || uri.contains("%2F" + Constants.RECORDING_SUBDIR_SHOT + "%2F")) {
             return VideoItem.Category.SHOT;
@@ -4211,25 +3642,6 @@ public class RecordsFragment extends BaseFragment implements
                 break;
             case SCREEN:
                 helper = getString(R.string.records_filter_helper_screen);
-                break;
-            case SHAHIDEDITOR:
-                switch (activeShahidEditorSubtype) {
-                    case CONVERTED:
-                        helper = getString(R.string.records_filter_helper_shahideditor_converted);
-                        break;
-                    case MERGE:
-                        helper = getString(R.string.records_filter_helper_shahideditor_merge);
-                        break;
-                    case OTHER:
-                    case UNKNOWN:
-                    case ALL:
-                    default:
-                        helper = getString(R.string.records_filter_helper_shahideditor_all);
-                        break;
-                }
-                break;
-            case STREAM:
-                helper = getString(R.string.records_filter_helper_stream);
                 break;
             case SHOT:
                 switch (activeShotSubtype) {
@@ -4296,16 +3708,6 @@ public class RecordsFragment extends BaseFragment implements
                 return Constants.RECORDING_SUBDIR_CAMERA;
             case SCREEN:
                 return Constants.RECORDING_SUBDIR_SCREEN;
-            case SHAHIDEDITOR:
-                if (activeShahidEditorSubtype == VideoItem.ShahidEditorSubtype.CONVERTED) {
-                    return Constants.RECORDING_SUBDIR_SHAHIDEDITOR + "/" + Constants.RECORDING_SUBDIR_SHAHIDEDITOR_CONVERTED;
-                }
-                if (activeShahidEditorSubtype == VideoItem.ShahidEditorSubtype.MERGE) {
-                    return Constants.RECORDING_SUBDIR_SHAHIDEDITOR + "/" + Constants.RECORDING_SUBDIR_SHAHIDEDITOR_MERGE;
-                }
-                return Constants.RECORDING_SUBDIR_SHAHIDEDITOR;
-            case STREAM:
-                return Constants.RECORDING_SUBDIR_STREAM;
             case SHOT:
                 if (activeShotSubtype == VideoItem.ShotSubtype.SELFIE) {
                     return Constants.RECORDING_SUBDIR_SHOT + "/" + Constants.RECORDING_SUBDIR_SHOT_SELFIE;
@@ -4366,11 +3768,6 @@ public class RecordsFragment extends BaseFragment implements
                 getString(R.string.records_batch_save_desc),
                 null, null, R.drawable.ic_arrow_right, null, null, "download"));
         items.add(new OptionItem(
-                "batch_shahideditor_actions",
-                getString(R.string.records_batch_shahideditor) + suffix,
-                getString(R.string.records_batch_shahideditor_desc),
-                null, null, R.drawable.ic_arrow_right, null, null, "auto_awesome"));
-        items.add(new OptionItem(
                 "batch_delete",
                 getString(R.string.records_batch_delete) + suffix,
                 getString(R.string.records_batch_delete_desc),
@@ -4391,13 +3788,6 @@ public class RecordsFragment extends BaseFragment implements
                         Toast.makeText(requireContext(), getString(R.string.records_batch_select_items_first), Toast.LENGTH_SHORT).show();
                     } else {
                         showBatchSaveOptionsSheet();
-                    }
-                    break;
-                case "batch_shahideditor_actions":
-                    if (selectedUris.isEmpty()) {
-                        Toast.makeText(requireContext(), getString(R.string.records_batch_select_items_first), Toast.LENGTH_SHORT).show();
-                    } else {
-                        showBatchShahidEditorOptionsSheet();
                     }
                     break;
                 case "batch_delete":
@@ -4476,64 +3866,6 @@ public class RecordsFragment extends BaseFragment implements
         Bundle args = sheet.getArguments();
         if (args != null) args.putBoolean(PickerBottomSheetFragment.ARG_HIDE_CHECK, true);
         sheet.show(activity.getSupportFragmentManager(), "records_batch_save_sheet");
-    }
-
-    private void showBatchShahidEditorOptionsSheet() {
-        if (!isAdded() || getContext() == null || getActivity() == null) return;
-        if (!(getActivity() instanceof FragmentActivity)) return;
-
-        ArrayList<OptionItem> items = new ArrayList<>();
-        items.add(new OptionItem(
-                "shahideditor_export_standard_mp4",
-                getString(R.string.records_batch_shahideditor_export_standard),
-                getString(R.string.records_batch_shahideditor_export_standard_desc),
-                null, null, null, null, null, "movie_edit"));
-        items.add(new OptionItem(
-                "shahideditor_merge_selected",
-                getString(R.string.records_batch_shahideditor_merge),
-                getString(R.string.records_batch_shahideditor_merge_desc),
-                null, null, null, null, null, "merge_type"));
-
-        FragmentActivity activity = (FragmentActivity) getActivity();
-        String resultKey = "records_batch_shahideditor_options";
-        activity.getSupportFragmentManager().setFragmentResultListener(resultKey, activity, (requestKey, bundle) -> {
-            if (bundle == null) return;
-            String id = bundle.getString(PickerBottomSheetFragment.BUNDLE_SELECTED_ID);
-            if ("shahideditor_export_standard_mp4".equals(id)) {
-                startBatchMediaAction(Constants.INTENT_ACTION_BATCH_EXPORT_STANDARD_MP4);
-            } else if ("shahideditor_merge_selected".equals(id)) {
-                startBatchMediaAction(Constants.INTENT_ACTION_BATCH_MERGE_VIDEOS);
-            }
-        });
-
-        PickerBottomSheetFragment sheet = PickerBottomSheetFragment.newInstanceGradient(
-                getString(R.string.records_batch_shahideditor_sheet_title),
-                items,
-                null,
-                resultKey,
-                null,
-                true
-        );
-        Bundle args = sheet.getArguments();
-        if (args != null) args.putBoolean(PickerBottomSheetFragment.ARG_HIDE_CHECK, true);
-        sheet.show(activity.getSupportFragmentManager(), "records_batch_shahideditor_sheet");
-    }
-
-    private void startBatchMediaAction(@NonNull String action) {
-        if (selectedUris.isEmpty() || getContext() == null) {
-            Toast.makeText(requireContext(), getString(R.string.records_batch_select_items_first), Toast.LENGTH_SHORT).show();
-            return;
-        }
-        Intent intent = new Intent(requireContext(), com.shahid.cam.service.BatchMediaActionService.class);
-        intent.setAction(action);
-        ArrayList<String> uriStrings = new ArrayList<>();
-        for (Uri uri : selectedUris) {
-            uriStrings.add(uri.toString());
-        }
-        intent.putStringArrayListExtra(Constants.EXTRA_BATCH_INPUT_URIS, uriStrings);
-        intent.putExtra(Constants.EXTRA_BATCH_OUTPUT_MODE, Constants.BATCH_OUTPUT_MODE_DEFAULT_SHAHIDEDITOR);
-        ContextCompat.startForegroundService(requireContext(), intent);
-        Toast.makeText(requireContext(), getString(R.string.records_batch_shahideditor_queued, uriStrings.size()), Toast.LENGTH_SHORT).show();
     }
 
     @NonNull
@@ -5615,9 +4947,6 @@ public class RecordsFragment extends BaseFragment implements
                     // Keep caches in sync
                     com.shahid.cam.utils.VideoSessionCache.updateSessionCache(normalized);
 
-                    // Digital forensics indexing (non-blocking)
-                    DigitalForensicsIndexCoordinator.getInstance(requireContext()).enqueueIndex(normalized);
-
                     // Deliver directly to UI — no skeleton transition
                     new Handler(Looper.getMainLooper()).post(() -> {
                         if (!isAdded()) return;
@@ -5685,9 +5014,6 @@ public class RecordsFragment extends BaseFragment implements
 
                 long loadElapsed = System.currentTimeMillis() - loadStart;
                 FLog.i(TAG, "loadRecordsList: Cold start — " + normalized.size() + " items ready in " + loadElapsed + "ms");
-
-                // Digital forensics indexing (non-blocking)
-                DigitalForensicsIndexCoordinator.getInstance(requireContext()).enqueueIndex(normalized);
 
                 // Deliver results to UI — replaces skeleton
                 new Handler(Looper.getMainLooper()).post(() -> {
@@ -5982,78 +5308,11 @@ public class RecordsFragment extends BaseFragment implements
         if (fileName.startsWith(Constants.RECORDING_DIRECTORY + "_")) return VideoItem.Category.CAMERA;
         if (fileName.startsWith("DualCam_")) return VideoItem.Category.CAMERA;
         if (fileName.startsWith(Constants.RECORDING_FILE_PREFIX_SHAHIDREC)) return VideoItem.Category.SCREEN;
-        if (fileName.startsWith("ShahidEditor_")) return VideoItem.Category.SHAHIDEDITOR;
-        if (fileName.startsWith("Stream_")) return VideoItem.Category.STREAM;
         if (fileName.startsWith(Constants.RECORDING_FILE_PREFIX_SHAHIDSHOT)) return VideoItem.Category.SHOT;
         return VideoItem.Category.UNKNOWN;
     }
 
     @NonNull
-    private VideoItem.ShahidEditorSubtype inferShahidEditorSubtypeFromFolder(@Nullable String folderName) {
-        if (folderName == null) return VideoItem.ShahidEditorSubtype.UNKNOWN;
-        if (Constants.RECORDING_SUBDIR_SHAHIDEDITOR_CONVERTED.equalsIgnoreCase(folderName)) {
-            return VideoItem.ShahidEditorSubtype.CONVERTED;
-        }
-        if (Constants.RECORDING_SUBDIR_SHAHIDEDITOR_MERGE.equalsIgnoreCase(folderName)) {
-            return VideoItem.ShahidEditorSubtype.MERGE;
-        }
-        return VideoItem.ShahidEditorSubtype.UNKNOWN;
-    }
-
-    @NonNull
-    private VideoItem.ShahidEditorSubtype inferShahidEditorSubtypeFromName(@Nullable String fileName) {
-        if (fileName == null) return VideoItem.ShahidEditorSubtype.UNKNOWN;
-        if (fileName.startsWith(Constants.RECORDING_FILE_PREFIX_SHAHIDEDITOR_STANDARD)) {
-            return VideoItem.ShahidEditorSubtype.CONVERTED;
-        }
-        if (fileName.startsWith(Constants.RECORDING_FILE_PREFIX_SHAHIDEDITOR_MERGE)) {
-            return VideoItem.ShahidEditorSubtype.MERGE;
-        }
-        return VideoItem.ShahidEditorSubtype.UNKNOWN;
-    }
-
-    @NonNull
-    private VideoItem.ShahidEditorSubtype resolveShahidEditorSubtype(
-            @NonNull VideoItem.ShahidEditorSubtype explicitSubtype,
-            @Nullable String fileName
-    ) {
-        if (explicitSubtype != VideoItem.ShahidEditorSubtype.UNKNOWN) {
-            return explicitSubtype;
-        }
-        VideoItem.ShahidEditorSubtype byName = inferShahidEditorSubtypeFromName(fileName);
-        if (byName != VideoItem.ShahidEditorSubtype.UNKNOWN) {
-            return byName;
-        }
-        return VideoItem.ShahidEditorSubtype.OTHER;
-    }
-
-    @NonNull
-    private VideoItem.ShahidEditorSubtype resolveShahidEditorSubtypeFromItem(@NonNull VideoItem item) {
-        if (item.shahideditorSubtype != null && item.shahideditorSubtype != VideoItem.ShahidEditorSubtype.UNKNOWN) {
-            return item.shahideditorSubtype;
-        }
-        VideoItem.ShahidEditorSubtype byUri = inferShahidEditorSubtypeFromUri(item.uri);
-        if (byUri != VideoItem.ShahidEditorSubtype.UNKNOWN) {
-            return byUri;
-        }
-        return resolveShahidEditorSubtype(VideoItem.ShahidEditorSubtype.UNKNOWN, item.displayName);
-    }
-
-    @NonNull
-    private VideoItem.ShahidEditorSubtype inferShahidEditorSubtypeFromUri(@Nullable Uri uri) {
-        if (uri == null) return VideoItem.ShahidEditorSubtype.UNKNOWN;
-        String value = uri.toString();
-        if (value.contains("/" + Constants.RECORDING_SUBDIR_SHAHIDEDITOR + "/" + Constants.RECORDING_SUBDIR_SHAHIDEDITOR_CONVERTED + "/")
-                || value.contains("%2F" + Constants.RECORDING_SUBDIR_SHAHIDEDITOR + "%2F" + Constants.RECORDING_SUBDIR_SHAHIDEDITOR_CONVERTED + "%2F")) {
-            return VideoItem.ShahidEditorSubtype.CONVERTED;
-        }
-        if (value.contains("/" + Constants.RECORDING_SUBDIR_SHAHIDEDITOR + "/" + Constants.RECORDING_SUBDIR_SHAHIDEDITOR_MERGE + "/")
-                || value.contains("%2F" + Constants.RECORDING_SUBDIR_SHAHIDEDITOR + "%2F" + Constants.RECORDING_SUBDIR_SHAHIDEDITOR_MERGE + "%2F")) {
-            return VideoItem.ShahidEditorSubtype.MERGE;
-        }
-        return VideoItem.ShahidEditorSubtype.UNKNOWN;
-    }
-
     private void addSafCategoryFiles(
             @NonNull List<SafCandidate> out,
             @NonNull DocumentFile baseDir,
@@ -6070,10 +5329,6 @@ public class RecordsFragment extends BaseFragment implements
         }
         if (category == VideoItem.Category.SHOT) {
             addSafShotFiles(out, childDir);
-            return;
-        }
-        if (category == VideoItem.Category.SHAHIDEDITOR) {
-            addSafShahidEditorFiles(out, childDir);
             return;
         }
         DocumentFile[] files = childDir.listFiles();
@@ -6137,37 +5392,6 @@ public class RecordsFragment extends BaseFragment implements
         }
     }
 
-    private void addSafShahidEditorFiles(@NonNull List<SafCandidate> out, @NonNull DocumentFile shahideditorRoot) {
-        DocumentFile[] entries = shahideditorRoot.listFiles();
-        if (entries == null) return;
-        for (DocumentFile entry : entries) {
-            if (entry == null) continue;
-            if (entry.isFile()) {
-                out.add(new SafCandidate(
-                        entry,
-                        VideoItem.Category.SHAHIDEDITOR,
-                        VideoItem.ShotSubtype.UNKNOWN,
-                        VideoItem.CameraSubtype.UNKNOWN,
-                        inferShahidEditorSubtypeFromName(entry.getName())));
-                continue;
-            }
-            if (!entry.isDirectory()) continue;
-            VideoItem.ShahidEditorSubtype subtype = inferShahidEditorSubtypeFromFolder(entry.getName());
-            DocumentFile[] nested = entry.listFiles();
-            if (nested == null) continue;
-            for (DocumentFile nestedFile : nested) {
-                if (nestedFile != null && nestedFile.isFile()) {
-                    out.add(new SafCandidate(
-                            nestedFile,
-                            VideoItem.Category.SHAHIDEDITOR,
-                            VideoItem.ShotSubtype.UNKNOWN,
-                            VideoItem.CameraSubtype.UNKNOWN,
-                            subtype));
-                }
-            }
-        }
-    }
-
     private void addSafMediaItem(
             @NonNull List<VideoItem> out,
             @NonNull DocumentFile docFile,
@@ -6196,9 +5420,7 @@ public class RecordsFragment extends BaseFragment implements
         VideoItem.CameraSubtype cameraSubtype = category == VideoItem.Category.CAMERA
                 ? resolveCameraSubtype(explicitCameraSubtype, fileName)
                 : VideoItem.CameraSubtype.UNKNOWN;
-        VideoItem.ShahidEditorSubtype shahideditorSubtype = category == VideoItem.Category.SHAHIDEDITOR
-                ? resolveShahidEditorSubtype(explicitShahidEditorSubtype, fileName)
-                : VideoItem.ShahidEditorSubtype.UNKNOWN;
+        VideoItem.ShahidEditorSubtype shahideditorSubtype = VideoItem.ShahidEditorSubtype.UNKNOWN;
         VideoItem item = new VideoItem(
                 docFile.getUri(),
                 fileName,

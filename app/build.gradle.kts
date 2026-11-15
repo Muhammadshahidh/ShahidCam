@@ -217,7 +217,7 @@ android {
     packaging {
         jniLibs {
             excludes += listOf("**/x86/**", "**/x86_64/**", "**/mips/**", "**/mips64/**")
-            // OpenCV and ffmpeg-kit both bundle libc++_shared.so. Keep one copy.
+            // Keep single copy of libc++_shared.so if multiple native libs bundle it.
             pickFirsts += listOf("**/libc++_shared.so")
             // Enable 16KB page size alignment for Android 15 compatibility
             useLegacyPackaging = false
@@ -263,7 +263,6 @@ dependencies {
     implementation(libs.camerax.core)
     implementation(libs.camerax.extensions)
     implementation(libs.camerax.view)
-    implementation(libs.zxing.android.embedded)
     implementation(libs.camerax.lifecycle)
     implementation(libs.camerax.video)
     implementation(libs.constraintlayout)
@@ -273,9 +272,6 @@ dependencies {
     implementation(libs.media3.exoplayer)
     implementation(libs.media3.ui)
     implementation(libs.media3.session)
-    // Media3 Transformer + Effect for ShahidEditor Mini video editing
-    implementation(libs.media3.transformer)
-    implementation(libs.media3.effect)
     // AndroidX Media for MediaStyle notifications
     implementation(libs.media)
     implementation(libs.glide)
@@ -285,11 +281,6 @@ dependencies {
     implementation(libs.navigation.fragment.ktx)
     implementation(libs.navigation.ui.ktx)
     implementation(libs.okhttp)
-    implementation(libs.tensorflow.lite)
-    implementation(libs.tensorflow.lite.task.vision) {
-        exclude(group = "org.tensorflow", module = "tensorflow-lite-api")
-    }
-    implementation(libs.opencv.android)
     implementation(libs.osmdroid.android)
     implementation(libs.osmdroid.wms)
     implementation(libs.swiperefreshlayout)

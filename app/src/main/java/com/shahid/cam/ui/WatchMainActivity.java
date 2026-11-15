@@ -20,11 +20,10 @@ import com.shahid.cam.SharedPreferencesManager;
 /**
  * Watch-optimized main activity for Wear OS smartwatch devices.
  *
- * <p>4-page swipe navigation:</p>
+ * <p>3-page swipe navigation:</p>
  * <ol>
  *   <li>Camera — {@link WatchCameraFragment}</li>
  *   <li>Records — {@link WatchRecordsFragment}</li>
- *   <li>Remote  — {@link WatchRemoteFragment}</li>
  *   <li>Settings — {@link WatchSettingsFragment}</li>
  * </ol>
  *
@@ -34,7 +33,7 @@ import com.shahid.cam.SharedPreferencesManager;
  */
 public class WatchMainActivity extends AppCompatActivity {
 
-    private static final int PAGE_COUNT = 4;
+    private static final int PAGE_COUNT = 3;
 
     private ViewPager2 viewPager;
     private final View[] dots = new View[PAGE_COUNT];
@@ -125,7 +124,6 @@ public class WatchMainActivity extends AppCompatActivity {
         dots[0]   = findViewById(R.id.dot_0);
         dots[1]   = findViewById(R.id.dot_1);
         dots[2]   = findViewById(R.id.dot_2);
-        dots[3]   = findViewById(R.id.dot_3);
 
         FLog.d("WatchMainActivity", "ViewPager and dots found");
 
@@ -167,8 +165,7 @@ public class WatchMainActivity extends AppCompatActivity {
         public Fragment createFragment(int position) {
             switch (position) {
                 case 1:  return new WatchRecordsFragment();
-                case 2:  return new WatchRemoteFragment();
-                case 3:  return new WatchSettingsFragment();
+                case 2:  return new WatchSettingsFragment();
                 default: return new WatchCameraFragment();
             }
         }

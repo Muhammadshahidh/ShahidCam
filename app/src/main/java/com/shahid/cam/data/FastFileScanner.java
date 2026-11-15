@@ -112,7 +112,7 @@ public class FastFileScanner {
         // Parallel scan of all category directories
         CopyOnWriteArrayList<VideoIndexEntity> results = new CopyOnWriteArrayList<>();
         ExecutorService scanner = Executors.newFixedThreadPool(SCAN_PARALLELISM);
-        CountDownLatch latch = new CountDownLatch(7); // 6 category submits + 1 extra countDown
+        CountDownLatch latch = new CountDownLatch(4);
 
         // Camera
         scanner.submit(() -> {
@@ -137,33 +137,12 @@ public class FastFileScanner {
             }
         });
 
-        // ShahidEditor
-        scanner.submit(() -> {
-            try {
-                scanInternalDirectory(results, new File(baseDir, Constants.RECORDING_SUBDIR_SHAHIDEDITOR),
-                        VideoItem.Category.SHAHIDEDITOR);
-            } finally {
-                latch.countDown();
-            }
-        });
-
-        // Stream
-        scanner.submit(() -> {
-            try {
-                scanInternalDirectory(results, new File(baseDir, Constants.RECORDING_SUBDIR_STREAM),
-                        VideoItem.Category.STREAM);
-            } finally {
-                latch.countDown();
-            }
-        });
 
         // Shot
         scanner.submit(() -> {
             try {
                 scanInternalDirectory(results, new File(baseDir, Constants.RECORDING_SUBDIR_SHOT),
                         VideoItem.Category.SHOT);
-                scanInternalDirectory(results, new File(baseDir, Constants.RECORDING_SUBDIR_MINIAPPS),
-                        VideoItem.Category.MINIAPPS);
             } finally {
                 latch.countDown();
             }
@@ -178,8 +157,6 @@ public class FastFileScanner {
             }
         });
 
-        // Extra latch count for the combined Camera+Dual task
-        latch.countDown(); // Adjust — we used 7 but only 6 submits (Camera+Dual share one)
 
         try {
             latch.await(30, TimeUnit.SECONDS);
@@ -359,10 +336,7 @@ public class FastFileScanner {
             scanSafCategory(results, recordingRoot, Constants.RECORDING_SUBDIR_CAMERA, VideoItem.Category.CAMERA);
             scanSafCategory(results, recordingRoot, Constants.RECORDING_SUBDIR_DUAL, VideoItem.Category.CAMERA);
             scanSafCategory(results, recordingRoot, Constants.RECORDING_SUBDIR_SCREEN, VideoItem.Category.SCREEN);
-            scanSafCategory(results, recordingRoot, Constants.RECORDING_SUBDIR_SHAHIDEDITOR, VideoItem.Category.SHAHIDEDITOR);
-            scanSafCategory(results, recordingRoot, Constants.RECORDING_SUBDIR_STREAM, VideoItem.Category.STREAM);
             scanSafCategory(results, recordingRoot, Constants.RECORDING_SUBDIR_SHOT, VideoItem.Category.SHOT);
-            scanSafCategory(results, recordingRoot, Constants.RECORDING_SUBDIR_MINIAPPS, VideoItem.Category.MINIAPPS);
 
             // Root-level legacy files
             scanSafDirectoryFiles(results, recordingRoot.getUri(), VideoItem.Category.UNKNOWN,

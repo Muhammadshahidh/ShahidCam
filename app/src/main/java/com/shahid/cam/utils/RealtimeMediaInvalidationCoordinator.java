@@ -105,7 +105,6 @@ public class RealtimeMediaInvalidationCoordinator {
         filter.addAction(Constants.ACTION_RECORDING_SEGMENT_COMPLETE);
         filter.addAction(Constants.ACTION_STORAGE_LOCATION_CHANGED);
         filter.addAction(Constants.ACTION_FILES_RESTORED);
-        filter.addAction(Constants.ACTION_FORENSICS_SNAPSHOT_PERSISTED);
         ContextCompat.registerReceiver(
                 appContext,
                 receiver,

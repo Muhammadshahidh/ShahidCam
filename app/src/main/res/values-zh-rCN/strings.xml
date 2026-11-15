@@ -841,10 +841,6 @@
     <string name="saf_permission_missing_dialog_message_for_start_recording">为将录制内容保存到自定义位置，ShahidCam 需要权限以访问您所选的文件夹。请在系统提示时授予访问权限。</string>
     <string name="grant_permission_button">授予权限</string>
     <string name="trash_auto_delete_picker_helper">选择何时自动删除垃圾箱中的项目。</string>
-    <string name="support_ko_fi">在 Ko-fi 上支持我们</string>
-    <string name="kofi_description">描述信息将由代码设置。</string>
-    <string name="kofi_button_text">请我喝杯咖啡 (Ko-fi)</string>
-    <string name="kofi_footer_text">匠心打造于 CyberShadowPKLab</string>
     <string name="choose_language">选择语言</string>
     <string name="onboarding_human_checkbox3">我同意隐私政策</string>
     <string name="applock_set_pin_enable">设置PIN码并启用</string>
@@ -2990,7 +2986,6 @@ ShahidCam 为录制使用分段式 MP4 格式。这意味着视频被保存为�
 <string name="motion_lab_analysis_fps">分析帧率</string>
 
 <!-- motion_lab_analysis_helper -->
-<string name="motion_lab_analysis_helper">AI每秒检查场景的频率。更多检查响应更快，但也更耗电并可能导致手机发热。对于EfficientDet多类检测，日常使用保持在6帧/秒左右（5-8是可靠区间）。</string>
 
 <!-- motion_lab_auto_torch -->
 <string name="motion_lab_auto_torch">运动时自动开启手电筒</string>

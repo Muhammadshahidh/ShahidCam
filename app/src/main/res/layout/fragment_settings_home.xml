@@ -20,29 +20,14 @@
         <LinearLayout ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="vertical" ns0:paddingStart="16dp" ns0:paddingEnd="16dp" ns0:paddingTop="16dp" ns0:focusable="false">
 
         
-        <TextView ns0:id="@+id/header_readme" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:layout_marginTop="4dp" ns0:layout_marginBottom="8dp" ns0:text="@string/button_settings_readme" ns0:textColor="?attr/sectionHeaderColor" ns0:textStyle="bold" />
 
-        
-        <LinearLayout ns0:id="@+id/group_card_readme" ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="vertical" ns0:background="@drawable/settings_group_card_bg">
-
-            <LinearLayout ns0:id="@+id/group_readme" style="@style/SettingsGroupRow" ns0:clickable="true" ns0:focusable="true" ns0:nextFocusUp="@+id/mode_selector_btn" ns0:nextFocusDown="@+id/group_video_quick">
-                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_info" ns0:tint="@android:color/darker_gray" />
-                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
-                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/note_from_developer_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
-                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/note_from_developer_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
-                </LinearLayout>
-                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
-            </LinearLayout>
-        </LinearLayout>
-
-        
-        <TextView ns0:id="@+id/header_recording_quick_access" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:layout_marginTop="20dp" ns0:layout_marginBottom="8dp" ns0:text="@string/recording_quick_access" ns0:textColor="?attr/sectionHeaderColor" ns0:textStyle="bold" />
+<TextView ns0:id="@+id/header_recording_quick_access" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:layout_marginTop="20dp" ns0:layout_marginBottom="8dp" ns0:text="@string/recording_quick_access" ns0:textColor="?attr/sectionHeaderColor" ns0:textStyle="bold" />
 
         
         <LinearLayout ns0:id="@+id/group_card_quick_access" ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="vertical" ns0:background="@drawable/settings_group_card_bg">
 
             
-            <LinearLayout ns0:id="@+id/group_video_quick" style="@style/SettingsGroupRow" ns0:clickable="true" ns0:focusable="true" ns0:nextFocusUp="@+id/group_readme" ns0:nextFocusDown="@+id/group_audio_quick">
+            <LinearLayout ns0:id="@+id/group_video_quick" style="@style/SettingsGroupRow" ns0:clickable="true" ns0:focusable="true" ns0:nextFocusUp="@+id/mode_selector_btn" ns0:nextFocusDown="@+id/group_audio_quick">
                 <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/play_button_rounded" ns0:padding="2dp" ns0:tint="@android:color/darker_gray" />
                 <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
                     <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/settings_video_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
@@ -168,146 +153,7 @@
         </LinearLayout>
 
         
-        <TextView ns0:id="@+id/header_advanced" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:layout_marginTop="20dp" ns0:layout_marginBottom="8dp" ns0:text="@string/settings_advanced_title" ns0:textColor="?attr/sectionHeaderColor" ns0:textStyle="bold" />
 
-        
-        <LinearLayout ns0:id="@+id/group_card_advanced_nav" ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="vertical" ns0:background="@drawable/settings_group_card_bg">
-
-            <LinearLayout ns0:id="@+id/row_haptics_settings" style="@style/SettingsGroupRow">
-                <TextView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:fontFamily="@font/materialicons" ns0:gravity="center" ns0:text="vibration" ns0:textColor="@android:color/darker_gray" ns0:textSize="22sp" />
-                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
-                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/settings_haptics_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
-                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/settings_haptics_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
-                </LinearLayout>
-                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
-            </LinearLayout>
-
-            <View style="@style/SettingsDivider" />
-
-            <LinearLayout ns0:id="@+id/group_motion_lab" style="@style/SettingsGroupRow">
-                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_focus_target" ns0:tint="@android:color/darker_gray" />
-                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
-                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/motion_lab_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
-                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/motion_lab_row_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
-                </LinearLayout>
-                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
-            </LinearLayout>
-
-            <View style="@style/SettingsDivider" />
-
-            <LinearLayout ns0:id="@+id/group_digital_forensics" style="@style/SettingsGroupRow">
-                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_lock" ns0:tint="@android:color/darker_gray" />
-                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
-                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/digital_forensics_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
-                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/digital_forensics_row_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
-                </LinearLayout>
-                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
-            </LinearLayout>
-
-            <View style="@style/SettingsDivider" />
-
-            <LinearLayout ns0:id="@+id/group_automation" style="@style/SettingsGroupRow">
-                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_settings" ns0:tint="@android:color/darker_gray" />
-                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
-                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/automation_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
-                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/automation_row_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
-                </LinearLayout>
-                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
-            </LinearLayout>
-
-            <View style="@style/SettingsDivider" />
-
-            <LinearLayout ns0:id="@+id/group_thermal_guardian" style="@style/SettingsGroupRow">
-                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_thermometer" ns0:tint="@android:color/darker_gray" />
-                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
-                    <LinearLayout ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:orientation="horizontal" ns0:gravity="center_vertical">
-                        <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/thermal_guardian_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
-                        <TextView ns0:id="@+id/thermal_guardian_coming_soon_badge" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:paddingHorizontal="6dp" ns0:paddingVertical="2dp" ns0:text="@string/remote_coming_soon_badge" ns0:textColor="#FFFFFF" ns0:textSize="8sp" ns0:textStyle="bold" ns0:background="@drawable/bg_coming_soon_badge" />
-                    </LinearLayout>
-                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/thermal_guardian_row_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
-                </LinearLayout>
-                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
-            </LinearLayout>
-
-            <View style="@style/SettingsDivider" />
-
-            <LinearLayout ns0:id="@+id/group_audio_vision" style="@style/SettingsGroupRow">
-                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_audio" ns0:tint="@android:color/darker_gray" />
-                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
-                    <LinearLayout ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:orientation="horizontal" ns0:gravity="center_vertical">
-                        <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/audio_vision_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
-                        <TextView ns0:id="@+id/audio_vision_coming_soon_badge" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:paddingHorizontal="6dp" ns0:paddingVertical="2dp" ns0:text="@string/remote_coming_soon_badge" ns0:textColor="#FFFFFF" ns0:textSize="8sp" ns0:textStyle="bold" ns0:background="@drawable/bg_coming_soon_badge" />
-                    </LinearLayout>
-                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/audio_vision_row_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
-                </LinearLayout>
-                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
-            </LinearLayout>
-
-            <View style="@style/SettingsDivider" />
-
-            <LinearLayout ns0:id="@+id/group_scheduled_recording" style="@style/SettingsGroupRow">
-                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_schedule" ns0:tint="@android:color/darker_gray" />
-                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
-                    <LinearLayout ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:orientation="horizontal" ns0:gravity="center_vertical">
-                        <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/scheduled_recording_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
-                        <TextView ns0:id="@+id/scheduled_recording_coming_soon_badge" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:paddingHorizontal="6dp" ns0:paddingVertical="2dp" ns0:text="@string/remote_coming_soon_badge" ns0:textColor="#FFFFFF" ns0:textSize="8sp" ns0:textStyle="bold" ns0:background="@drawable/bg_coming_soon_badge" />
-                    </LinearLayout>
-                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/scheduled_recording_row_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
-                </LinearLayout>
-                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
-            </LinearLayout>
-
-            <View style="@style/SettingsDivider" />
-
-            <LinearLayout ns0:id="@+id/group_profiles" style="@style/SettingsGroupRow">
-                <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_profiles" ns0:tint="@android:color/darker_gray" />
-                <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
-                    <LinearLayout ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:orientation="horizontal" ns0:gravity="center_vertical">
-                        <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/profiles_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
-                        <TextView ns0:id="@+id/profiles_coming_soon_badge" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:paddingHorizontal="6dp" ns0:paddingVertical="2dp" ns0:text="@string/remote_coming_soon_badge" ns0:textColor="#FFFFFF" ns0:textSize="8sp" ns0:textStyle="bold" ns0:background="@drawable/bg_coming_soon_badge" />
-                    </LinearLayout>
-                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/profiles_row_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
-                </LinearLayout>
-                <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        
-        <TextView ns0:id="@+id/header_mini_apps" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:layout_marginTop="20dp" ns0:layout_marginBottom="8dp" ns0:text="@string/mini_apps_title" ns0:textColor="?attr/sectionHeaderColor" ns0:textStyle="bold" />
-
-        
-        <LinearLayout ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="horizontal" ns0:paddingStart="2dp" ns0:paddingEnd="2dp" ns0:layout_marginTop="4dp" ns0:layout_marginBottom="3dp">
-
-            <include ns0:id="@+id/group_mini_torch" layout="@layout/item_mini_app_card" />
-            <include ns0:id="@+id/group_mini_qr_scanner" layout="@layout/item_mini_app_card" />
-            <include ns0:id="@+id/group_mini_sound_meter" layout="@layout/item_mini_app_card" />
-        </LinearLayout>
-
-        <LinearLayout ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="horizontal" ns0:paddingStart="2dp" ns0:paddingEnd="2dp" ns0:layout_marginTop="0dp" ns0:layout_marginBottom="3dp">
-
-            <include ns0:id="@+id/group_mini_sensor" layout="@layout/item_mini_app_card" />
-            <include ns0:id="@+id/group_mini_speedometer" layout="@layout/item_mini_app_card" />
-            <include ns0:id="@+id/group_mini_clinometer" layout="@layout/item_mini_app_card" />
-        </LinearLayout>
-
-        <LinearLayout ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="horizontal" ns0:paddingStart="2dp" ns0:paddingEnd="2dp" ns0:layout_marginTop="0dp" ns0:layout_marginBottom="3dp">
-
-            <include ns0:id="@+id/group_mini_compass" layout="@layout/item_mini_app_card" />
-            <include ns0:id="@+id/group_mini_pedometer" layout="@layout/item_mini_app_card" />
-            <include ns0:id="@+id/group_mini_metal_detector" layout="@layout/item_mini_app_card" />
-        </LinearLayout>
-
-        
-        <LinearLayout ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:orientation="horizontal" ns0:paddingStart="2dp" ns0:paddingEnd="2dp" ns0:layout_marginTop="0dp" ns0:layout_marginBottom="3dp">
-
-            <View ns0:layout_width="0dp" ns0:layout_height="match_parent" ns0:layout_weight="0.5" />
-            <include ns0:id="@+id/group_mini_parking_marker" layout="@layout/item_mini_app_card" />
-            <include ns0:id="@+id/group_mini_qr_generator" layout="@layout/item_mini_app_card" />
-            <View ns0:layout_width="0dp" ns0:layout_height="match_parent" ns0:layout_weight="0.5" />
-        </LinearLayout>
-
-        
         <TextView ns0:id="@+id/header_about" ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:layout_marginStart="8dp" ns0:layout_marginTop="32dp" ns0:layout_marginBottom="8dp" ns0:text="@string/settings_section_app" ns0:textColor="?attr/sectionHeaderColor" ns0:textStyle="bold" />
 
         
