@@ -3286,6 +3286,25 @@ public class RecordsFragment extends BaseFragment implements
         }
     }
 
+    private void updateCameraFilterChipUi() {
+        if (chipCameraAll != null) chipCameraAll.setChecked(activeCameraSubtype == VideoItem.CameraSubtype.ALL);
+        if (chipCameraBack != null) chipCameraBack.setChecked(activeCameraSubtype == VideoItem.CameraSubtype.BACK);
+        if (chipCameraFront != null) chipCameraFront.setChecked(activeCameraSubtype == VideoItem.CameraSubtype.FRONT);
+        if (chipCameraDual != null) chipCameraDual.setChecked(activeCameraSubtype == VideoItem.CameraSubtype.DUAL);
+    }
+
+    private boolean matchesCameraSubtype(@NonNull VideoItem item, @NonNull VideoItem.CameraSubtype filterSubtype) {
+        if (item.category != VideoItem.Category.CAMERA && item.category != VideoItem.Category.DUAL) return false;
+        if (filterSubtype == VideoItem.CameraSubtype.ALL) return true;
+        VideoItem.CameraSubtype itemSubtype = item.cameraSubtype == null
+                ? VideoItem.CameraSubtype.UNKNOWN
+                : item.cameraSubtype;
+        if (itemSubtype == VideoItem.CameraSubtype.UNKNOWN) {
+            itemSubtype = VideoItem.CameraSubtype.BACK;
+        }
+        return itemSubtype == filterSubtype;
+    }
+
     private void updateShotFilterRowVisibility() {
         if (shotFilterRow == null) return;
         

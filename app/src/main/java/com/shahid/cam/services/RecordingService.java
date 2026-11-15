@@ -2897,27 +2897,7 @@ public class RecordingService extends Service {
         return total % 360;
     }
 
-    private boolean shouldMirrorForensicsSnapshots() {
-        // Keep snapshots aligned with recorded output, not selfie-preview mirror.
-        return false;
-    }
 
-    private void maybeLogForensicsPerf(long nowMs) {
-        if ((nowMs - motionLastPerfLogMs) < 10000L) {
-            return;
-        }
-        motionLastPerfLogMs = nowMs;
-        long avgEncodeMs = motionJpegSuccessCount <= 0
-                ? 0L
-                : (motionJpegEncodeTotalMs / Math.max(1L, motionJpegSuccessCount));
-        FLog.i(TAG, "ForensicsPerf: frames=" + motionFramesAnalyzed
-                + ", jpegAttempt=" + motionJpegAttemptCount
-                + ", jpegOk=" + motionJpegSuccessCount
-                + ", jpegSkip=" + motionJpegSkipCount
-                + ", avgEncodeMs=" + avgEncodeMs
-                + ", actions=" + motionTriggerActionCount
-                + ", suppressed=" + motionSuppressedSignalCount);
-    }
 
 
 
