@@ -293,7 +293,7 @@ public class MainActivity extends AppCompatActivity {
     public void refreshIntruderNavBadge() {
         if (tvIntruderBadge == null) return;
         try {
-            int count = IntruderStorage.countRecords(this);
+            int count = IntruderStorage.getRecordCount(this);
             if (count > 0) {
                 tvIntruderBadge.setText(count > 99 ? "99+" : String.valueOf(count));
                 tvIntruderBadge.setVisibility(View.VISIBLE);

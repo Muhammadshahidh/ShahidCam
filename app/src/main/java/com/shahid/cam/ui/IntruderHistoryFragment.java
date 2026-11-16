@@ -181,7 +181,7 @@ public class IntruderHistoryFragment extends Fragment implements IntruderHistory
         }
     }
 
-    private void reloadRecords() {
+    public void reloadRecords() {
         if (!isAdded() || ioExecutor == null || ioExecutor.isShutdown()) return;
         final Context appCtx = requireContext().getApplicationContext();
         ioExecutor.execute(() -> {

@@ -180,7 +180,7 @@ public class SecuritySettingsFragment extends Fragment {
             }
         }
         if (valueIntruderCount != null) {
-            int count = IntruderStorage.countRecords(requireContext());
+            int count = IntruderStorage.getRecordCount(requireContext());
             valueIntruderCount.setText(String.valueOf(count));
         }
         if (getActivity() instanceof MainActivity) {
