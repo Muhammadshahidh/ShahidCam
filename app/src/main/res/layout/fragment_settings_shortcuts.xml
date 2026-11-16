@@ -115,7 +115,7 @@ app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/clay_text_primary"
                         android:textSize="14sp"
                         android:text="@string/shortcut_toggle_recording"/>
                     <TextView
@@ -153,7 +153,7 @@ app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/clay_text_primary"
                         android:textSize="14sp"
                         android:text="@string/shortcut_start_back"/>
                     <TextView
@@ -191,7 +191,7 @@ app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/clay_text_primary"
                         android:textSize="14sp"
                         android:text="@string/stop_recording"/>
                     <TextView
@@ -229,7 +229,7 @@ app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/clay_text_primary"
                         android:textSize="14sp"
                         android:text="@string/torch_shortcut_short_label"/>
                     <TextView
@@ -276,7 +276,7 @@ app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/clay_text_primary"
                         android:textSize="14sp"
                         android:text="@string/shortcut_start_front"/>
                     <TextView
@@ -314,7 +314,7 @@ app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/clay_text_primary"
                         android:textSize="14sp"
                         android:text="@string/shortcut_start_current"/>
                     <TextView
@@ -352,7 +352,7 @@ app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/clay_text_primary"
                         android:textSize="14sp"
                         android:text="@string/shortcut_start_dual"/>
                     <TextView
@@ -418,7 +418,7 @@ app:layout_constraintTop_toTopOf="parent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/clay_text_primary"
                     android:textSize="14sp"
                     android:text="@string/shortcut_take_photo" />
                 <TextView
@@ -456,7 +456,7 @@ app:layout_constraintTop_toTopOf="parent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/clay_text_primary"
                     android:textSize="14sp"
                     android:text="@string/shortcut_take_photo_front" />
                 <TextView
@@ -494,7 +494,7 @@ app:layout_constraintTop_toTopOf="parent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/clay_text_primary"
                     android:textSize="14sp"
                     android:text="@string/shortcut_take_screenshot" />
                 <TextView
@@ -599,7 +599,7 @@ app:layout_constraintTop_toTopOf="parent"
                     android:layout_weight="1"
                     android:text="@string/widget_label_clock"
                     android:textStyle="bold"
-                    android:textColor="@android:color/white"/>
+                    android:textColor="@color/clay_text_primary"/>
                 <ImageView
                     android:layout_width="14dp"
                     android:layout_height="14dp"

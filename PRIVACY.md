@@ -1,45 +1,43 @@
 # Privacy Policy for ShahidCam
 
-**Last Updated:** October 26, 2026
+**Last Updated:** 2026
+**Developer:** Shahid Hussain
 
-ShahidCam ("we", "our", or "the application") is developed as a privacy-focused dashcam, background recording, and security utility. We believe that your privacy is a fundamental right. This Privacy Policy explains our commitment to transparency and data protection.
-
----
-
-### 1. Zero Data Collection & Zero Telemetry
-ShahidCam does **not** collect, harvest, monetize, sell, or transmit any personal identifiable information (PII). The application operates without user accounts, analytics trackers, advertising SDKs, or cloud telemetry.
+ShahidCam is a privacy-focused mobile camera, screen recorder, and local device security utility. We respect user privacy and operate on a strict local-first architecture.
 
 ---
 
-### 2. Device Permissions & How They Are Used
-All permissions requested by ShahidCam are strictly utilized on-device to deliver core functionality:
-
-* **Camera (`android.permission.CAMERA`)**: Used exclusively to record video and capture photographs according to user commands (front camera, back camera, and dual camera modes).
-* **Microphone (`android.permission.RECORD_AUDIO`)**: Used solely to capture synchronized audio with video recordings. Can be muted at any time in settings.
-* **Storage & Media (`READ_MEDIA_VIDEO`)**: Used to store captured recordings locally in device memory and display them in your gallery and records list.
-* **Location (`ACCESS_FINE_LOCATION`, `ACCESS_COARSE_LOCATION`)**: Used only when Dashcam Mode is active to compute speed and optional geographic coordinates for the on-screen video watermark. Location data is never stored separately or transmitted off-device.
-* **Notifications (`POST_NOTIFICATIONS`)**: Used to display persistent foreground service indicators while active recording or streaming is in progress, complying with Android system requirements.
-* **Sensors (Accelerometer)**: Used locally by the Emergency Collision Detector to sense sudden vehicular impact and protect the current video file from loop overwrite.
+### 1. Zero Telemetry & Zero External Data Collection
+ShahidCam does **not** collect, harvest, sell, or transmit your personal files, recordings, or intruder photos to external developer servers. The application operates without ad SDKs or behavioral analytics trackers.
 
 ---
 
-### 3. Local Web Streaming & Network Communication
-When the local Web Studio feature is activated, ShahidCam hosts an internal HTTP server (`NanoHTTPD`) strictly on your local Wi-Fi / private network. Video streams and controls are transmitted directly point-to-point between your phone and your browser. No video data passes through any third-party cloud servers.
+### 2. Permissions & On-Device Usage
+
+* **Camera (`android.permission.CAMERA`)**:
+  - Used for primary video recording, photo capture, and Dual Camera mode when initiated by the user.
+  - Used optionally for **Intruder Selfie Detection**: when explicitly enabled by the user and App Lock detects an incorrect PIN/password attempt, ShahidCam uses the front-facing camera (triggering standard Android camera privacy indicators) to save a single local photo exclusively inside private app storage. No covert background bypassing is performed, and photos are never uploaded off-device.
+* **Microphone (`android.permission.RECORD_AUDIO`)**: Used solely for synchronized audio recording or voice recording mode according to user settings.
+* **Storage & Media (`READ_MEDIA_VIDEO` / scoped storage)**: Used strictly to save and organize user recordings inside device storage folders or user-selected SAF directories.
+* **Location (`ACCESS_FINE_LOCATION`, `ACCESS_COARSE_LOCATION`)**: Optional, used only when location watermarking or dashcam features are active to obtain GPS coordinates on-device.
+* **Notifications (`POST_NOTIFICATIONS`)**: Displays ongoing foreground service indicators while recording or screen capturing is active.
+* **Biometrics / Security (`USE_BIOMETRIC`, `USE_FINGERPRINT`)**: Used for App Lock unlock verification.
 
 ---
 
-### 4. Children’s Privacy
-ShahidCam does not address anyone under the age of 13. We do not knowingly collect personal identifiable information from children.
+### 3. Optional Network Requests
+Certain optional user-initiated features connect directly to public services:
+* **App Update Check**: Reads GitHub release Atom feeds (`github.com/MuhammadShahidh/ShahidCam/releases.atom`) when checking for updates.
+* **Weather / Reverse Geocoding (optional watermark metadata)**: Requests Open-Meteo (`api.open-meteo.com`) or OpenStreetMap Nominatim (`nominatim.openstreetmap.org`) only when weather/location metadata options are turned on by the user.
 
 ---
 
-### 5. Open Source & Licensing
-ShahidCam is an independent open-source application published under the GNU General Public License v3.0 (GPL-3.0). The full source code is publicly accessible for audit and verification.
+### 4. Licensing & Attributions
+ShahidCam is distributed under the GNU General Public License v3.0 (GPL-3.0) and incorporates open-source libraries including AndroidX, Material Components, Media3/ExoPlayer, AppIntro, Guardanis AppLock, OSMDroid, and AOSP/Grafika utilities in accordance with their respective licenses.
 
 ---
 
-### 6. Contact & Inquiries
-If you have any questions or concerns regarding this Privacy Policy, please contact:
-* **Developer**: Shahid (Shahid Labs)
-* **Email**: cybershadowpk@gmail.com
-* **Repository**: https://github.com/CyberShadowPKh/ShahidCam
+### 5. Contact
+* **Developer**: Shahid Hussain
+* **Email**: mshahidwrites@gmail.com
+* **Repository**: https://github.com/MuhammadShahidh/ShahidCam

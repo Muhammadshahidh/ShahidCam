@@ -86,8 +86,8 @@
             <LinearLayout ns0:id="@+id/group_appearance" style="@style/SettingsGroupRow">
                 <ImageView ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginEnd="16dp" ns0:src="@drawable/ic_theme" ns0:tint="@android:color/darker_gray" />
                 <LinearLayout ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_weight="1" ns0:orientation="vertical">
-                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/setting_theme_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
-                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/settings_option_theme" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/settings_appearance_title" ns0:textColor="?attr/colorHeading" ns0:textStyle="bold" ns0:textSize="15sp" />
+                    <TextView ns0:layout_width="wrap_content" ns0:layout_height="wrap_content" ns0:text="@string/settings_appearance_subtitle" ns0:textColor="@android:color/darker_gray" ns0:textSize="12sp" />
                 </LinearLayout>
                 <ImageView ns0:layout_width="14dp" ns0:layout_height="14dp" ns0:src="@drawable/ic_arrow_right" ns0:tint="@android:color/darker_gray" />
             </LinearLayout>

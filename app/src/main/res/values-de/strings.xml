@@ -4,7 +4,7 @@
     <string name="trash_auto_delete_info_immediate">Elemente werden sofort gelöscht.</string>
     <string name="app_icon_description">Wähle ein Symbol und einen Namen für die App. Dadurch wird die Anzeige der App auf dem Startbildschirm geändert.</string>
     <string name="check_for_updates">Auf Updates überprüfen</string>
-    <string name="shahid_sec_info">ShahidCam ist Teil der CyberShadowPK Lab Suite. Für weitere Informationen klicke unten auf \'Quellcode anzeigen\'.</string>
+    <string name="shahid_sec_info">ShahidCam ist Teil der ShahidCam Suite. Für weitere Informationen klicke unten auf \'Quellcode anzeigen\'.</string>
     <string name="app_description">
     <![CDATA[
     ShahidCam ist eine werbefreie Open-Source-Videoaufzeichnungs-App, die den Datenschutz priorisiert, indem sie keine Daten verfolgt oder erfasst. Es ist exklusiv auf GitHub und über die im README genannten offiziellen Links erhältlich.
@@ -18,7 +18,7 @@
     <string name="send_email">E-Mail senden</string>
     <string name="join_community">Tritt der Community bei für Hilfe, Ideenaustausch und zukünftige App-Updates</string>
     <string name="privacy_information">Datenschutzinformationen</string>
-    <string name="copyright_info"> 2024-2025 https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252\nLizenziert unter GPL-3.0</string>
+    <string name="copyright_info"> 2024-2025 https://github.com/MuhammadShahidh/ShahidCam\nLizenziert unter GPL-3.0</string>
     <string-array name="video_resolutions_keys">
         <item>7680x4320</item>
         <!-- 8K -->
@@ -528,7 +528,7 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="app_icon_shahid" translatable="false">0xFF0000</string>
     <string name="app_icon_palestine" translatable="false">Sumud (صُمود)</string>
     <string name="app_icon_pakistan" translatable="false">ShahidCam</string>
-    <string name="app_icon_shahidlabs" translatable="false">CyberShadowPK Lab</string>
+    <string name="app_icon_shahidlabs" translatable="false">ShahidCam</string>
     <string name="app_icon_nooristic" translatable="false">ShahidCam ++</string>
     <string name="app_icon_bat" translatable="false">ShahidCam</string>
     <string name="app_icon_redbinary" translatable="false">$ ~/r00t</string>
@@ -777,11 +777,11 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="home_elapsed_font_doto">Doto</string>
     <string name="home_elapsed_font_doto_desc">Verwendet die Doto-Schriftart für einen markanteren digitalen Timer-Look</string>
     <string name="home_elapsed_flag_option">Akzent-Flagge</string>
-    <string name="home_elapsed_flag_option_desc">CyberShadowPK Lab Akzent-Flagge hinter dem Timer anzeigen oder ausblenden</string>
-    <string name="home_elapsed_flag_helper">Wähle, ob die CyberShadowPK Lab Akzent-Flagge hinter der verstrichenen Zeit angezeigt wird.</string>
-    <string name="home_elapsed_flag_show">CyberShadowPK Lab Flagge anzeigen (Standard)</string>
+    <string name="home_elapsed_flag_option_desc">ShahidCam Akzent-Flagge hinter dem Timer anzeigen oder ausblenden</string>
+    <string name="home_elapsed_flag_helper">Wähle, ob die ShahidCam Akzent-Flagge hinter der verstrichenen Zeit angezeigt wird.</string>
+    <string name="home_elapsed_flag_show">ShahidCam Flagge anzeigen (Standard)</string>
     <string name="home_elapsed_flag_show_desc">Markierte Akzent-Flagge hinter dem Timer anzeigen</string>
-    <string name="home_elapsed_flag_hide">CyberShadowPK Lab Flagge ausblenden</string>
+    <string name="home_elapsed_flag_hide">ShahidCam Flagge ausblenden</string>
     <string name="home_elapsed_flag_hide_desc">Bereich der verstrichenen Zeit ohne Akzent-Flagge sauber halten</string>
     <string name="home_elapsed_background_option">Hintergrund</string>
     <string name="home_elapsed_background_option_desc">Wähle, ob die verstrichene Zeit auf einem schwarzen, weißen oder transparenten Hintergrund sitzt</string>
@@ -1296,7 +1296,7 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="widget_black_background_title">Schwarzer Hintergrund</string>
     <string name="widget_arabic_date_title">Arabisches Datum</string>
     <string name="widget_arabic_date_format_title">Arabisches Datumsformat</string>
-    <string name="widget_branding_title">CyberShadowPKLab-Branding</string>
+    <string name="widget_branding_title">ShahidCam-Branding</string>
     <string name="widget_time_format_12h">12-Stunden (3:30 PM)</string>
     <string name="widget_time_format_24h">24-Stunden (15:30)</string>
     <string name="widget_option_enabled">Aktiviert</string>
@@ -1415,10 +1415,10 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="button_share">Teilen</string>
     <string name="button_torch">Taschenlampe</string>
     <string name="close">Schließen</string>
-    <string name="cloud_account_button_desc">CyberShadowPK Cloud</string>
+    <string name="cloud_account_button_desc">ShahidCam Cloud</string>
     <string name="cloud_account_connecting">Verbinde…</string>
     <string name="cloud_account_device_id">Geräte-ID</string>
-    <string name="cloud_account_device_name_desc">Dieser Name wird in deinem CyberShadowPK Cloud-Dashboard angezeigt</string>
+    <string name="cloud_account_device_name_desc">Dieser Name wird in deinem ShahidCam Cloud-Dashboard angezeigt</string>
     <string name="cloud_account_device_name_hint">Gerätenamen eingeben (z.B. Mein Telefon)</string>
     <string name="cloud_account_device_name_title">Gib deinem Gerät einen Namen</string>
     <string name="cloud_account_helper_text">Trenne die Verbindung, um dich von deinem Konto abzumelden. Du kannst dich erneut mit einem anderen Namen verbinden.</string>
@@ -1428,16 +1428,16 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="cloud_account_linked">Gerät verbunden</string>
     <string name="cloud_account_login_required">Bitte melde dich an, um dein Gerät zu verbinden</string>
     <string name="cloud_account_not_linked">Nicht verbunden</string>
-    <string name="cloud_account_title">CyberShadowPK Cloud</string>
+    <string name="cloud_account_title">ShahidCam Cloud</string>
     <string name="cloud_account_unlink">Gerät trennen</string>
     <string name="cloud_account_unlink_confirm">Bist du sicher, dass du dieses Gerät trennen möchtest?</string>
     <string name="cloud_account_unlink_success">Gerät getrennt</string>
-    <string name="cloud_account_webview_title">CyberShadowPK Cloud</string>
-    <string name="cloud_button_label">CyberShadowPK Cloud</string>
-    <string name="cloud_button_title">CyberShadowPK Cloud</string>
+    <string name="cloud_account_webview_title">ShahidCam Cloud</string>
+    <string name="cloud_button_label">ShahidCam Cloud</string>
+    <string name="cloud_button_title">ShahidCam Cloud</string>
     <string name="cloud_streaming_not_linked">Verbinde zuerst das Gerät, um zu aktivieren</string>
     <string name="cloud_streaming_status_off">Nur lokal streamen</string>
-    <string name="cloud_streaming_status_on">Lade auf CyberShadowPK Cloud hoch</string>
+    <string name="cloud_streaming_status_on">Lade auf ShahidCam Cloud hoch</string>
     <string name="cloud_streaming_title">Cloud-Streaming</string>
     <string name="codec_go_to_settings">Zu den Einstellungen</string>
     <string name="codec_hevc_incompatible_message">📡 Live-Streaming via HLS erfordert den H.264-Codec.\n\nH.265 ist nicht mit Browser-Playern kompatibel.\n\nMöchtest du zu H.264 wechseln und die Aufnahme starten?</string>
@@ -1515,8 +1515,8 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="e2e_encryption_change_title">E2E-Verschlüsselungspasswort ändern</string>
     <string name="e2e_encryption_configured">Konfiguriert – Segmente sind Ende-zu-Ende verschlüsselt</string>
     <string name="e2e_encryption_not_configured">Nicht konfiguriert – konfiguriere, um Cloud-Streaming zu aktivieren</string>
-    <string name="e2e_encryption_setup_desc">Dein CyberShadowPK-ID-Passwort wird verwendet, um den Stream-Verschlüsselungsschlüssel abzuleiten. Dies muss mit dem Passwort übereinstimmen, das du im ShahidCam-Dashboard zum Anzeigen von Streams verwendest.</string>
-    <string name="e2e_encryption_setup_hint">Gib dein CyberShadowPK-ID-Passwort ein</string>
+    <string name="e2e_encryption_setup_desc">Dein ShahidCam-ID-Passwort wird verwendet, um den Stream-Verschlüsselungsschlüssel abzuleiten. Dies muss mit dem Passwort übereinstimmen, das du im ShahidCam-Dashboard zum Anzeigen von Streams verwendest.</string>
+    <string name="e2e_encryption_setup_hint">Gib dein ShahidCam-ID-Passwort ein</string>
     <string name="e2e_encryption_setup_title">E2E-Verschlüsselungspasswort festlegen</string>
     <string name="e2e_encryption_title">E2E-Stream-Verschlüsselung</string>
     <string name="enabled">Aktiviert</string>
@@ -1822,7 +1822,7 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="helper_watermark_option">Wähle Overlay-Inhalt: Zeitstempel + Marke, nur Zeitstempel oder keines.</string>
     <string name="home_sidebar_discord">Discord</string>
     <string name="home_sidebar_discord_sub">Tritt der Community bei</string>
-    <string name="home_sidebar_copyright" translatable="false">© CyberShadowPK Lab 2024 – 2026</string>
+    <string name="home_sidebar_copyright" translatable="false">© ShahidCam 2024 – 2026</string>
     <string name="intel_activity_timeline">AKTIVITÄTSZEITLEISTE</string>
     <string name="intel_animals">TIERE</string>
     <string name="intel_detection_breakdown">ERKENNUNGSAUFSCHLÜSSELUNG</string>
@@ -1959,7 +1959,7 @@ Empfohlen: 192000 bps, 48000 Hz für die meisten Benutzer.</string>
     <string name="setting_volume_shutter_title">Lautstärketasten-Auslöser</string>
     <string name="setting_volume_shutter_summary">Die Lautstärketasten dienen als Kameraauslöser auf dem Start-Tab</string>
     <string name="setting_volume_shutter_footer">Die Lautstärketasten werden auf dem Start-Tab zu Ihrem Auslöser:\n• Tippen — Foto aufnehmen\n• Doppeltippen — Kamera wechseln\n• Gedrückt halten — Aufnahme starten oder stoppen\n\nBluetooth-Fernauslöser funktionieren ebenfalls und lösen dieselben Aktionen aus. Die Tasten funktionieren, solange der ShahidCam-Start-Tab geöffnet ist — zukünftige Versionen lassen jede Taste ShahidCam-Aktionen auslösen, auch im Hintergrund.\n\nNutzen Sie vorerst MacroDroid, um ShahidCam-Verknüpfungen zuzuordnen — Sie finden sie unter Einstellungen → Verknüpfungen &amp; Widgets.</string>
-    <string name="shortcuts_macrodroid_template">Offizielle MacroDroid-Vorlage: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252</string>
+    <string name="shortcuts_macrodroid_template">Offizielle MacroDroid-Vorlage: https://github.com/MuhammadShahidh/ShahidCam</string>
     <string name="thermal_guardian_title">Wärmeschutz</string>
     <string name="thermal_guardian_row_subtitle">Aufnahme automatisch anpassen, um Überhitzung zu vermeiden</string>
     <string name="audio_vision_title">Audio Vision</string>
@@ -2237,7 +2237,7 @@ Für die flüssigste Wiedergabe kannst du einen externen Player wie VLC verwende
     <string name="stream_url_label">Stream-URL</string>
     <string name="stream_view_all_endpoints">Alle Endpunkte anzeigen</string>
     <string name="stream_view_all_endpoints_desc">Alle API-Endpunkte anzeigen (GET/POST)</string>
-    <string name="streaming_mode_cloud">CyberShadowPK Cloud</string>
+    <string name="streaming_mode_cloud">ShahidCam Cloud</string>
     <string name="streaming_mode_cloud_desc">Überall per Internet streamen</string>
     <string name="streaming_mode_cloud_featured">EMPFOHLEN</string>
     <string name="streaming_mode_helper">Wähle, wie du deine Kamera streamen möchtest</string>
@@ -2615,7 +2615,7 @@ Für die flüssigste Wiedergabe kannst du einen externen Player wie VLC verwende
     <string name="settings_location_update_interval_5s">5,0 Sekunden</string>
 
     <!-- Annotation toolbar -->
-    <string name="annotation_by_shahidlabs_lab">von CyberShadowPK Lab</string>
+    <string name="annotation_by_shahidlabs_lab">von ShahidCam</string>
     <string name="annotation_quick_access">Schnellzugriff</string>
     <string name="annotation_annotate">Annotieren</string>
     <string name="annotation_enable_tools">Werkzeuge aktivieren</string>

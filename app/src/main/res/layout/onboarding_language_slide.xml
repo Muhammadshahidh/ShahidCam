@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true"
-    android:background="@color/black"
+    android:background="@color/clay_background"
     android:clipChildren="false"
     android:clipToPadding="false"
     xmlns:android="http://schemas.android.com/apk/res/android">
@@ -45,7 +45,7 @@
             android:textSize="26sp"
             android:textStyle="bold"
             android:fontWeight="900"
-            android:textColor="@color/redPastel"
+            android:textColor="@color/clay_primary"
             android:fontFamily="monospace"
             android:layout_marginBottom="10dp" />
 
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:text="@string/onboarding_select_language"
             android:textSize="15sp"
-            android:textColor="@color/white"
+            android:textColor="@color/clay_text_primary"
             android:fontFamily="monospace"
             android:layout_marginBottom="18dp" />
 
@@ -72,7 +72,7 @@
             android:textSize="16sp"
             android:layout_marginBottom="18dp"
             android:backgroundTint="@color/redPastel"
-            android:textColor="@color/white"/>
+            android:textColor="@color/clay_text_primary"/>
 
         <TextView
             android:id="@+id/languageChangeLaterNote"
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:text="@string/language_change_later_note"
             android:textSize="13sp"
-            android:textColor="@color/white"
+            android:textColor="@color/clay_text_primary"
             android:fontFamily="monospace"
             android:layout_marginTop="8dp" />
     </LinearLayout>

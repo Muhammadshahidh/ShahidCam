@@ -33,8 +33,9 @@ import com.shahid.cam.ui.HomeFragment;
 import com.shahid.cam.ui.SettingsHomeFragment;
 import com.shahid.cam.ui.utils.NewFeatureManager;
 import com.shahid.cam.utils.RuntimeCompat;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
+import com.shahid.cam.security.IntruderStorage;
+import com.shahid.cam.ui.EditorComingSoonFragment;
+import com.shahid.cam.ui.IntruderHistoryFragment;
 
 import java.io.File;
 import java.util.Arrays;
@@ -56,7 +57,21 @@ import android.widget.HorizontalScrollView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private BottomNavigationView bottomNavigationView;
+    private View bottomNavigationView;
+    private View navTabHome, navTabMedia, navTabIntruder, navTabEditor, navTabSettings;
+    private ImageView navHomeIcon, navMediaIcon, navIntruderIcon, navEditorIcon, navSettingsIcon;
+    private android.widget.TextView navHomeLabel, tvIntruderBadge;
+    private View settingsBadgeDot;
+    private final android.content.BroadcastReceiver intruderCapturedReceiver = new android.content.BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            refreshIntruderNavBadge();
+            Fragment intruderFrag = getSupportFragmentManager().findFragmentByTag(FRAGMENT_TAG_PREFIX + 2);
+            if (intruderFrag instanceof IntruderHistoryFragment) {
+                ((IntruderHistoryFragment) intruderFrag).reloadRecords();
+            }
+        }
+    };
     private int originalBottomNavColor = 0; // Store original bottom nav color
 
     private boolean doubleBackToExitPressedOnce = false;
@@ -142,12 +157,8 @@ public class MainActivity extends AppCompatActivity {
     public void setBottomNavColor(int color) {
         if (bottomNavigationView != null) {
             if (color == 0) {
-                // Restore original color
-                if (originalBottomNavColor != 0) {
-                    bottomNavigationView.setBackgroundColor(originalBottomNavColor);
-                }
+                bottomNavigationView.setBackgroundResource(R.drawable.clay_bottom_dock_bg);
             } else {
-                // Set custom color
                 bottomNavigationView.setBackgroundColor(color);
             }
         }
@@ -221,9 +232,7 @@ public class MainActivity extends AppCompatActivity {
                 statusBarScrim.setBackgroundColor(colorTopBar);
                 
                 // Restore theme-based icon tint (Snow Veil is light theme, others are dark)
-                String currentTheme = SharedPreferencesManager.getInstance(this).sharedPreferences
-                        .getString(Constants.PREF_APP_THEME, Constants.DEFAULT_APP_THEME);
-                setStatusBarIconsLight("Snow Veil".equals(currentTheme));
+                setStatusBarIconsLight(false);
             } else {
                 // Set custom color (e.g., black for Remote tab)
                 statusBarScrim.setBackgroundColor(color);
@@ -254,9 +263,7 @@ public class MainActivity extends AppCompatActivity {
                 root.setBackgroundColor(bgColor);
                 
                 // Restore theme-based icon tint
-                String currentTheme = SharedPreferencesManager.getInstance(this).sharedPreferences
-                        .getString(Constants.PREF_APP_THEME, Constants.DEFAULT_APP_THEME);
-                setNavigationBarIconsLight("Snow Veil".equals(currentTheme));
+                setNavigationBarIconsLight(true);
             } else {
                 // Set custom color
                 root.setBackgroundColor(color);
@@ -273,40 +280,28 @@ public class MainActivity extends AppCompatActivity {
      */
     private void updateFeatureBadgeVisibility() {
         try {
-            if (bottomNavigationView == null) {
-                return;
+            if (settingsBadgeDot != null) {
+                boolean shouldShowSettingsNavBadge = NewFeatureManager.shouldShowBadge(this, "settings_nav");
+                settingsBadgeDot.setVisibility(shouldShowSettingsNavBadge ? View.VISIBLE : View.GONE);
             }
-            
-            // Handle Settings Nav Badge (separate from watermark option inside settings)
-            boolean shouldShowSettingsNavBadge = NewFeatureManager.shouldShowBadge(this, "settings_nav");
-            FLog.d("MainActivity", "updateFeatureBadgeVisibility: shouldShowSettingsNavBadge=" + shouldShowSettingsNavBadge);
-            
-            if (shouldShowSettingsNavBadge) {
-                // Show badge on Settings nav item as a small dot (no text, no number)
-                try {
-                    com.google.android.material.badge.BadgeDrawable badge = 
-                        bottomNavigationView.getOrCreateBadge(R.id.navigation_settings);
-                    badge.setVisible(true);
-                    badge.clearNumber();
-                    badge.clearText();
-                    badge.setHorizontalPadding(0);
-                    badge.setVerticalPadding(0);
-                    badge.setBackgroundColor(0xFF4CAF50); // Green background
-                    FLog.d("MainActivity", "Badge shown for settings");
-                } catch (Exception e) {
-                    FLog.e("MainActivity", "Error creating settings badge", e);
-                }
-            } else {
-                // Remove badge from Settings nav item
-                try {
-                    bottomNavigationView.removeBadge(R.id.navigation_settings);
-                    FLog.d("MainActivity", "Badge removed for settings");
-                } catch (Exception e) {
-                    FLog.e("MainActivity", "Error removing settings badge", e);
-                }
-            }
+            refreshIntruderNavBadge();
         } catch (Exception e) {
             FLog.e("MainActivity", "Error updating badge visibility", e);
+        }
+    }
+
+    public void refreshIntruderNavBadge() {
+        if (tvIntruderBadge == null) return;
+        try {
+            int count = IntruderStorage.countRecords(this);
+            if (count > 0) {
+                tvIntruderBadge.setText(count > 99 ? "99+" : String.valueOf(count));
+                tvIntruderBadge.setVisibility(View.VISIBLE);
+            } else {
+                tvIntruderBadge.setVisibility(View.GONE);
+            }
+        } catch (Exception ignored) {
+            tvIntruderBadge.setVisibility(View.GONE);
         }
     }
 
@@ -367,8 +362,6 @@ public class MainActivity extends AppCompatActivity {
         });
         // Install splash screen (shows the themed windowSplashScreenAnimatedIcon)
         SplashScreen.installSplashScreen(this);
-        // Apply user-selected theme AFTER splash so postSplashScreenTheme replaced by
-        // dynamic choice
         applyTheme();
 
         // possible)-----------
@@ -493,40 +486,21 @@ public class MainActivity extends AppCompatActivity {
         }
         // startup)-----------
 
-        // Fragment container for tab navigation
+        // Custom 5-item White Claymorphism Bottom Dock
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        if (bottomNavigationView != null) {
-            // Prevent Material from applying its own window insets to the nav view.
-            // The parent nav_container already handles insets; letting Material add its own
-            // bottom padding causes icons to shift above-center on gesture-nav devices.
-            androidx.core.view.ViewCompat.setOnApplyWindowInsetsListener(
-                    bottomNavigationView, (v, insets) -> insets);
-            bottomNavigationView.setPadding(0, 0, 0, 0);
-
-            // Active-tab label mode: only the selected tab shows its label.
-            bottomNavigationView.setLabelVisibilityMode(NavigationBarView.LABEL_VISIBILITY_SELECTED);
-            bottomNavigationView.setItemActiveIndicatorEnabled(false);
-            // Center content (icon + label) vertically within the 64dp dock.
-            bottomNavigationView.setItemGravity(NavigationBarView.ITEM_GRAVITY_CENTER);
-            try {
-                bottomNavigationView.setItemActiveIndicatorColor(
-                        android.content.res.ColorStateList.valueOf(android.graphics.Color.TRANSPARENT));
-            } catch (Exception ignored) { }
-
-            // Apply rounded corners (24dp) via ViewOutlineProvider so the background and
-            // elevation shadow both follow the rounded pill shape reliably across themes.
-            // The background color is resolved from the XML attribute; we only set the shape.
-            final float cornerPx = android.util.TypedValue.applyDimension(
-                    android.util.TypedValue.COMPLEX_UNIT_DIP, 24,
-                    getResources().getDisplayMetrics());
-            bottomNavigationView.setOutlineProvider(new android.view.ViewOutlineProvider() {
-                @Override
-                public void getOutline(android.view.View view, android.graphics.Outline outline) {
-                    outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), cornerPx);
-                }
-            });
-            bottomNavigationView.setClipToOutline(true);
-        }
+        navTabHome = findViewById(R.id.nav_tab_home);
+        navTabMedia = findViewById(R.id.nav_tab_media);
+        navTabIntruder = findViewById(R.id.nav_tab_intruder);
+        navTabEditor = findViewById(R.id.nav_tab_editor);
+        navTabSettings = findViewById(R.id.nav_tab_settings);
+        navHomeIcon = findViewById(R.id.nav_home_icon);
+        navMediaIcon = findViewById(R.id.nav_media_icon);
+        navIntruderIcon = findViewById(R.id.nav_intruder_icon);
+        navEditorIcon = findViewById(R.id.nav_editor_icon);
+        navSettingsIcon = findViewById(R.id.nav_settings_icon);
+        navHomeLabel = findViewById(R.id.nav_home_label);
+        tvIntruderBadge = findViewById(R.id.tv_intruder_badge);
+        settingsBadgeDot = findViewById(R.id.settings_badge_dot);
         
         // Initialize SharedPreferencesManager before using it in fragments
         sharedPreferencesManager = SharedPreferencesManager.getInstance(this);
@@ -605,13 +579,12 @@ public class MainActivity extends AppCompatActivity {
             // Configuration change / process death — FragmentManager restores all added fragments
             // We need to find which was the current one and ensure others are hidden
             int restoredPosition = savedInstanceState.getInt("current_fragment_position", 0);
-            if (restoredPosition < 0 || restoredPosition >= 3) {
+            if (restoredPosition < 0 || restoredPosition >= 5) {
                 restoredPosition = 0;
             }
             androidx.fragment.app.FragmentManager fm = getSupportFragmentManager();
-            
-            // Hide all fragments except the current one, and restore currentFragmentPosition
-            for (int i = 0; i < 3; i++) {
+
+            for (int i = 0; i < 5; i++) {
                 String visibleTag = i == 0 ? getHomeFragmentTagForCurrentMode() : FRAGMENT_TAG_PREFIX + i;
                 for (String tag : getFragmentTagsForPosition(i)) {
                     Fragment f = fm.findFragmentByTag(tag);
@@ -625,29 +598,25 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             currentFragmentPosition = restoredPosition;
+            updateClayDockSelection(restoredPosition);
             scheduleTabPrewarm();
         }
 
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            int itemId = item.getItemId();
-            int targetPosition = -1;
-            
-            if (itemId == R.id.navigation_home) {
-                targetPosition = 0;
-                // Keep the user's chosen icon applied (selection re-renders the item).
-                applyHomeNavIcon();
-            } else if (itemId == R.id.navigation_records) {
-                targetPosition = 1;
-            } else if (itemId == R.id.navigation_settings) {
-                targetPosition = 2;
-            }
-            
-            if (targetPosition != -1) {
-                // Always use instant switch with fade animation
-                switchFragment(targetPosition, true);
-            }
-            return true;
-        });
+        if (navTabHome != null) {
+            navTabHome.setOnClickListener(v -> switchFragment(0, true));
+        }
+        if (navTabMedia != null) {
+            navTabMedia.setOnClickListener(v -> switchFragment(1, true));
+        }
+        if (navTabIntruder != null) {
+            navTabIntruder.setOnClickListener(v -> switchFragment(2, true));
+        }
+        if (navTabEditor != null) {
+            navTabEditor.setOnClickListener(v -> switchFragment(3, true));
+        }
+        if (navTabSettings != null) {
+            navTabSettings.setOnClickListener(v -> switchFragment(4, true));
+        }
 
         // Dock reveal animation – REMOVED: the launch reveal (scale/fade/slide of
         // the bottom nav dock) consumed resources and delayed the dock's presence
@@ -679,45 +648,6 @@ public class MainActivity extends AppCompatActivity {
         setupHomeIconCustomization();
         // or restored from saved state via restoreBarColorsForCurrentTab() inside handleTabSelected.
 
-        // theme change)-----------
-        try {
-            SharedPreferences reopenPrefs = sharedPreferencesManager.sharedPreferences;
-            boolean reopenAppearance = reopenPrefs.getBoolean("reopen_appearance_after_theme", false);
-            if (reopenAppearance) {
-                // Clear flag to avoid loops
-                reopenPrefs.edit().putBoolean("reopen_appearance_after_theme", false).apply();
-                //  Ensure Settings tab selected (index 2)
-                switchFragment(2, false);
-                // Post to allow SettingsHomeFragment attach
-                new Handler(Looper.getMainLooper()).postDelayed(() -> {
-                    try {
-                        com.shahid.cam.ui.AppearanceSettingsFragment frag = new com.shahid.cam.ui.AppearanceSettingsFragment();
-                        OverlayNavUtil.show(this, frag, "AppearanceSettingsFragment");
-                        boolean reopenSheet = reopenPrefs.getBoolean("reopen_theme_sheet_after_theme", false);
-                        if (reopenSheet) {
-                            reopenPrefs.edit().putBoolean("reopen_theme_sheet_after_theme", false).apply();
-                            frag.getLifecycle().addObserver(new androidx.lifecycle.DefaultLifecycleObserver() {
-                                @Override
-                                public void onResume(androidx.lifecycle.LifecycleOwner owner) {
-                                    View v = frag.getView();
-                                    if (v != null) {
-                                        View row = v.findViewById(R.id.row_theme);
-                                        if (row != null) {
-                                            row.postDelayed(row::performClick, 100);
-                                        }
-                                    }
-                                }
-                            });
-                        }
-                    } catch (Exception e) {
-                        FLog.e("ThemeReopen", "Failed to reopen appearance fragment", e);
-                    }
-                }, 100);
-            }
-        } catch (Exception e) {
-            FLog.e("ThemeReopen", "Outer fail", e);
-        }
-        // theme change)-----------
 
         // dpad_settings)-----------
         // Register once so every settings sub-fragment gets proper D-pad focus when opened.
@@ -810,7 +740,7 @@ public class MainActivity extends AppCompatActivity {
                     // RTL-aware tab navigation: reverse direction in RTL layout
                     int direction = isRtl ? (dx > 0 ? 1 : -1) : (dx < 0 ? 1 : -1);
                     int target = currentFragmentPosition + direction;
-                    if (target >= 0 && target <= 2) {
+                    if (target >= 0 && target <= 4) {
                         switchFragment(target, true);
                         swipeHandled = true;
                         swipeCandidate = false;
@@ -862,7 +792,7 @@ public class MainActivity extends AppCompatActivity {
             if (current instanceof com.shahid.cam.ui.GalleryFastScroller) return true;
             if (current instanceof com.google.android.material.chip.Chip) return true;
             if (current instanceof com.google.android.material.chip.ChipGroup) return true;
-            if (current instanceof BottomNavigationView) return true;
+            if (current.getId() == R.id.bottom_navigation) return true;
             if (current.getId() == R.id.textureView || current.getId() == R.id.fullscreenTextureView) return true;
             if (current.getId() == R.id.cardPreview) {
                 // Home camera preview container: while the live preview is showing,
@@ -972,7 +902,7 @@ public class MainActivity extends AppCompatActivity {
             // Handle widget intent to open shortcuts
             if (intent.getBooleanExtra("open_shortcuts_widgets", false)) {
                 // Navigate to Settings tab and then open Shortcuts & Widgets screen
-                switchFragment(2, false); // Settings tab
+                switchFragment(4, false); // Settings tab
                 new Handler(Looper.getMainLooper()).postDelayed(() -> {
                     try {
                         com.shahid.cam.ui.ShortcutsSettingsFragment frag = new com.shahid.cam.ui.ShortcutsSettingsFragment();
@@ -1014,10 +944,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        androidx.localbroadcastmanager.content.LocalBroadcastManager.getInstance(this)
+                .registerReceiver(intruderCapturedReceiver,
+                        new android.content.IntentFilter(Constants.BROADCAST_ON_INTRUDER_CAPTURED));
+        refreshIntruderNavBadge();
     }
 
     @Override
     protected void onStop() {
+        try {
+            androidx.localbroadcastmanager.content.LocalBroadcastManager.getInstance(this)
+                    .unregisterReceiver(intruderCapturedReceiver);
+        } catch (Exception ignored) {}
         super.onStop();
     }
 
@@ -1239,7 +1177,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             // Switch to next tab if not at end
-            if (currentPos < 2) {
+            if (currentPos < 4) {
                 switchFragment(currentPos + 1, true);
                 return true;
             }
@@ -1659,54 +1597,15 @@ public class MainActivity extends AppCompatActivity {
      * This ensures the theme is consistently applied across the entire app
      */
     private void applyTheme() {
-        // Guard: Skip theme application for watch devices
-        // Watch uses dedicated WatchMainActivity with Wear OS-optimized themes
         if (isWatchDevice()) {
             FLog.w("MainActivity", "applyTheme() called on watch device - skipping phone theme application");
             return;
         }
-
-        // Get shared preferences and current theme
-        SharedPreferencesManager sharedPreferencesManager = SharedPreferencesManager.getInstance(this);
-        String themeName = sharedPreferencesManager.sharedPreferences.getString(Constants.PREF_APP_THEME,
-                Constants.DEFAULT_APP_THEME);
-
-        // Ensure we have a valid theme name, default to Crimson Bloom if null or empty
-        if (themeName == null || themeName.isEmpty()) {
-            themeName = Constants.DEFAULT_APP_THEME;
-            sharedPreferencesManager.sharedPreferences.edit()
-                    .putString(Constants.PREF_APP_THEME, Constants.DEFAULT_APP_THEME)
-                    .apply();
-        }
-
-        // Apply appropriate theme based on name
-        if ("Crimson Bloom".equals(themeName)) {
-            setTheme(R.style.Theme_ShahidCam_Red);
-        } else if ("Shahid Dark".equals(themeName)) {
-            setTheme(R.style.Theme_ShahidCam_Amoled);
-        } else if ("Midnight Dusk".equals(themeName)) {
-            setTheme(R.style.Theme_ShahidCam_MidnightDusk); // Always use the custom always-dark theme
-        } else if ("Premium Gold".equals(themeName)) {
-            setTheme(R.style.Theme_ShahidCam_Gold);
-        } else if ("Silent Forest".equals(themeName)) {
-            setTheme(R.style.Theme_ShahidCam_SilentForest);
-        } else if ("Shadow Alloy".equals(themeName)) {
-            setTheme(R.style.Theme_ShahidCam_ShadowAlloy);
-        } else if ("Pookie Pink".equals(themeName)) {
-            setTheme(R.style.Theme_ShahidCam_PookiePink);
-        } else if ("Snow Veil".equals(themeName)) {
-            setTheme(R.style.Theme_ShahidCam_SnowVeil);
-        } else {
-            // Default to Crimson Bloom for any unknown values
-            setTheme(R.style.Theme_ShahidCam_Red);
-            // Save the corrected theme value
-            sharedPreferencesManager.sharedPreferences.edit()
-                    .putString(Constants.PREF_APP_THEME, "Crimson Bloom")
-                    .apply();
-        }
-
-        // Update default clock color based on theme
-        sharedPreferencesManager.updateDefaultClockColorForTheme();
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        setTheme(R.style.Theme_ShahidCam_ClayLight);
+        SharedPreferencesManager spm = SharedPreferencesManager.getInstance(this);
+        spm.sharedPreferences.edit().putString(Constants.PREF_APP_THEME, Constants.DEFAULT_APP_THEME).apply();
+        spm.updateDefaultClockColorForTheme();
     }
 
     /**
@@ -1745,7 +1644,7 @@ public class MainActivity extends AppCompatActivity {
             
             // TRANSACTION 1: Detach all added fragments
             androidx.fragment.app.FragmentTransaction detachTx = fm.beginTransaction();
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 5; i++) {
                 for (String tag : getFragmentTagsForPosition(i)) {
                     Fragment f = fm.findFragmentByTag(tag);
                     if (f != null) {
@@ -1758,7 +1657,7 @@ public class MainActivity extends AppCompatActivity {
             
             // TRANSACTION 2: Re-attach all fragments (they will re-inflate with new orientation's layout)
             androidx.fragment.app.FragmentTransaction attachTx = fm.beginTransaction();
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 5; i++) {
                 String visibleTag = i == 0 ? getHomeFragmentTagForCurrentMode() : FRAGMENT_TAG_PREFIX + i;
                 for (String tag : getFragmentTagsForPosition(i)) {
                     Fragment f = fm.findFragmentByTag(tag);
@@ -1955,7 +1854,7 @@ public class MainActivity extends AppCompatActivity {
      * Applies the user's chosen home nav icon (default house / fighter jet / pilot).
      */
     private void applyHomeNavIcon() {
-        if (bottomNavigationView == null) return;
+        if (navHomeIcon == null) return;
         try {
             if (sharedPreferencesManager == null) {
                 sharedPreferencesManager = SharedPreferencesManager.getInstance(this);
@@ -1969,8 +1868,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 res = R.drawable.ic_house;
             }
-            android.view.MenuItem home = bottomNavigationView.getMenu().findItem(R.id.navigation_home);
-            if (home != null) home.setIcon(res);
+            navHomeIcon.setImageResource(res);
         } catch (Exception e) {
             FLog.w("MainActivity", "applyHomeNavIcon failed: " + e.getMessage());
         }
@@ -1980,24 +1878,10 @@ public class MainActivity extends AppCompatActivity {
      * Long-press the home nav item to pick which icon it shows.
      */
     private void setupHomeIconCustomization() {
-        if (bottomNavigationView == null) return;
-        bottomNavigationView.post(() -> {
-            try {
-                if (bottomNavigationView.getChildCount() == 0) return;
-                View menuView = bottomNavigationView.getChildAt(0);
-                if (!(menuView instanceof ViewGroup)) return;
-                ViewGroup group = (ViewGroup) menuView;
-                if (group.getChildCount() == 0) return;
-                View homeItem = group.getChildAt(0); // menu order: home is first
-                if (homeItem != null) {
-                    homeItem.setOnLongClickListener(v -> {
-                        showHomeIconPicker();
-                        return true;
-                    });
-                }
-            } catch (Exception e) {
-                FLog.w("MainActivity", "setupHomeIconCustomization failed: " + e.getMessage());
-            }
+        if (navTabHome == null) return;
+        navTabHome.setOnLongClickListener(v -> {
+            showHomeIconPicker();
+            return true;
         });
     }
 
@@ -2139,52 +2023,38 @@ public class MainActivity extends AppCompatActivity {
      * Only called the first time a tab is visited — subsequent visits reuse the existing fragment.
      */
     private Fragment createFragmentForPosition(int position) {
-        // Create new fragment if not found
-        Fragment newFragment;
         switch (position) {
             case 0:
-                // Home tab - check current mode
                 String currentMode = sharedPreferencesManager.getCurrentRecordingMode();
-                if (com.shahid.cam.Constants.MODE_SHAHIDREC.equals(currentMode)) {
-                    newFragment = com.shahid.cam.shahidrec.ui.ShahidRecHomeFragment.newInstance();
-                } else {
-                    newFragment = new com.shahid.cam.ui.HomeFragment();
+                if (Constants.MODE_SHAHIDREC.equals(currentMode)) {
+                    return com.shahid.cam.shahidrec.ui.ShahidRecHomeFragment.newInstance();
                 }
+                return new HomeFragment();
+            case 1:
+                return new RecordsFragment();
+            case 2:
+                return IntruderHistoryFragment.newInstance(false);
+            case 3:
+                return new EditorComingSoonFragment();
+            case 4:
+                return new SettingsHomeFragment();
+            default:
+                return new HomeFragment();
+        }
+    }
+
+    private void handleTabSelected(int position) {
+        updateClayDockSelection(position);
+        restoreBarColorsForCurrentTab();
+
+        switch (position) {
+            case 0:
+                applyHomeNavIcon();
                 break;
             case 1:
-                newFragment = new RecordsFragment();
-                break;
-            case 2:
-                newFragment = new com.shahid.cam.ui.SettingsHomeFragment();
-                break;
-            default:
-                newFragment = new com.shahid.cam.ui.HomeFragment();
-        }
-        
-        return newFragment;
-    }
-    
-    /**
-     * Handle tab-specific logic when a tab is selected.
-     * Replaces old ViewPager2.OnPageChangeCallback logic.
-     */
-    private void handleTabSelected(int position) {
-        // Update bottom nav selection
-        int navItemId = getNavItemIdForPosition(position);
-        if (navItemId != -1) {
-            bottomNavigationView.setSelectedItemId(navItemId);
-        }
-        
-        // Restore correct bar colors for the selected tab
-        restoreBarColorsForCurrentTab();
-        
-        // Handle tab-specific callbacks
-        switch (position) {
-            case 1: // Records tab
-                // Trigger lazy loading
                 try {
                     Fragment recordsFragment = getSupportFragmentManager()
-                        .findFragmentByTag(FRAGMENT_TAG_PREFIX + position);
+                            .findFragmentByTag(FRAGMENT_TAG_PREFIX + position);
                     if (recordsFragment instanceof RecordsFragment) {
                         ((RecordsFragment) recordsFragment).onFragmentBecameVisible();
                     }
@@ -2192,19 +2062,47 @@ public class MainActivity extends AppCompatActivity {
                     FLog.e("MainActivity", "Error triggering Records lazy load", e);
                 }
                 break;
-
+            case 2:
+                try {
+                    Fragment intruderFragment = getSupportFragmentManager()
+                            .findFragmentByTag(FRAGMENT_TAG_PREFIX + position);
+                    if (intruderFragment instanceof IntruderHistoryFragment) {
+                        ((IntruderHistoryFragment) intruderFragment).reloadRecords();
+                    }
+                    refreshIntruderNavBadge();
+                } catch (Exception e) {
+                    FLog.e("MainActivity", "Error refreshing Intruder tab", e);
+                }
+                break;
         }
     }
-    
-    /**
-     * Get navigation item ID for a given tab position.
-     */
-    private int getNavItemIdForPosition(int position) {
-        switch (position) {
-            case 0: return R.id.navigation_home;
-            case 1: return R.id.navigation_records;
-            case 2: return R.id.navigation_settings;
-            default: return -1;
+
+    private void updateClayDockSelection(int position) {
+        int activeColor = androidx.core.content.ContextCompat.getColor(this, R.color.clay_primary);
+        int inactiveColor = androidx.core.content.ContextCompat.getColor(this, R.color.clay_text_secondary);
+
+        View[] tabs = {navTabHome, navTabMedia, navTabIntruder, navTabEditor, navTabSettings};
+        ImageView[] icons = {navHomeIcon, navMediaIcon, navIntruderIcon, navEditorIcon, navSettingsIcon};
+
+        for (int i = 0; i < tabs.length; i++) {
+            boolean selected = (i == position);
+            View tab = tabs[i];
+            ImageView icon = icons[i];
+            if (tab != null) {
+                if (selected) {
+                    tab.setBackgroundResource(R.drawable.clay_nav_active_pill_bg);
+                    tab.animate().scaleX(1.04f).scaleY(1.04f).setDuration(140).withEndAction(() ->
+                            tab.animate().scaleX(1f).scaleY(1f).setDuration(120).start()).start();
+                } else {
+                    tab.setBackground(null);
+                }
+            }
+            if (icon != null) {
+                icon.setImageTintList(android.content.res.ColorStateList.valueOf(selected ? activeColor : inactiveColor));
+            }
+        }
+        if (navHomeLabel != null) {
+            navHomeLabel.setTextColor(position == 0 ? activeColor : inactiveColor);
         }
     }
     

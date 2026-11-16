@@ -4,7 +4,7 @@
     <string name="app_icon_description">Vali ikoon ja nimi oma rakendusele. See muudab seda, kuidas see kuvatakse avalehel.</string>
     <string name="check_for_updates">Kontrolli uuendusi</string>
     <string name="accessibility_thumbnail_progress">%1$d%% vaadatud</string>
-    <string name="shahid_sec_info">ShahidCam on osa CyberShadowPK Labi rakenduste seeriast. Lisateabe saamiseks klõpsa allpool \'lähtekoodi vaatamist\'.</string>
+    <string name="shahid_sec_info">ShahidCam on osa ShahidCami rakenduste seeriast. Lisateabe saamiseks klõpsa allpool \'lähtekoodi vaatamist\'.</string>
 
 
     <string name="app_description">
@@ -26,7 +26,7 @@
     <string name="website_title">Veebisait</string>
     <string name="readme_website_subtitle">Ametlik sait</string>
     <string name="privacy_information">Privaatsusteave</string>
-    <string name="copyright_info"> 2024-2025 https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252\nLitsentseeritud GPL-3.0 alusel</string>
+    <string name="copyright_info"> 2024-2025 https://github.com/MuhammadShahidh/ShahidCam\nLitsentseeritud GPL-3.0 alusel</string>
     <string-array name="video_resolutions_keys">
         <item>7680x4320</item>        <!-- 8K -->
         <item>3840x2160</item>        <!-- 4K -->
@@ -203,11 +203,11 @@
     <string name="home_elapsed_font_doto">Doto</string>
     <string name="home_elapsed_font_doto_desc">Kasutab Doto fonti digitaalse taimeri eristuvama välimuse jaoks</string>
     <string name="home_elapsed_flag_option">Lipu aktsent</string>
-    <string name="home_elapsed_flag_option_desc">Kuva või peida CyberShadowPK Labi lipu aktsent taimeri taga</string>
-    <string name="home_elapsed_flag_helper">Vali, kas CyberShadowPK Labi lipu aktsent kuvatakse kulunud taimeri taga.</string>
-    <string name="home_elapsed_flag_show">Kuva CyberShadowPK Labi lipp (vaikimisi)</string>
+    <string name="home_elapsed_flag_option_desc">Kuva või peida ShahidCami lipu aktsent taimeri taga</string>
+    <string name="home_elapsed_flag_helper">Vali, kas ShahidCami lipu aktsent kuvatakse kulunud taimeri taga.</string>
+    <string name="home_elapsed_flag_show">Kuva ShahidCami lipp (vaikimisi)</string>
     <string name="home_elapsed_flag_show_desc">Kuva bränditud lipu aktsent taimeri taga</string>
-    <string name="home_elapsed_flag_hide">Peida CyberShadowPK Labi lipp</string>
+    <string name="home_elapsed_flag_hide">Peida ShahidCami lipp</string>
     <string name="home_elapsed_flag_hide_desc">Hoia kulunud taimeri ala puhtana ilma lipu aktsendita</string>
     <string name="home_elapsed_background_option">Taust</string>
     <string name="home_elapsed_background_option_desc">Vali, kas kulunud aeg asub mustal, valgel või läbipaistval kaardil</string>
@@ -903,7 +903,7 @@
     <string name="widget_black_background_title">Must taust</string>
     <string name="widget_arabic_date_title">Araabia kuupäev</string>
     <string name="widget_arabic_date_format_title">Araabia kuupäeva vorming</string>
-    <string name="widget_branding_title">CyberShadowPKLab bränding</string>
+    <string name="widget_branding_title">ShahidCam bränding</string>
     <string name="widget_time_format_12h">12-tunnine (15:30)</string>
     <string name="widget_time_format_24h">24-tunnine (15:30)</string>
     <string name="widget_option_enabled">Lubatud</string>
@@ -1499,7 +1499,7 @@ Soovitatav: 192000 bps, 48000 Hz enamikele kasutajatele.</string>
     <string name="app_icon_shahid" translatable="false">0xFF0000</string>
     <string name="app_icon_palestine" translatable="false">I❤️Palestine</string>
     <string name="app_icon_pakistan" translatable="false">ShahidCam</string>
-    <string name="app_icon_shahidlabs" translatable="false">CyberShadowPK Lab</string>
+    <string name="app_icon_shahidlabs" translatable="false">ShahidCam</string>
     <string name="app_icon_nooristic" translatable="false">ShahidCam ++</string>
     <string name="app_icon_bat" translatable="false">ShahidCam</string>
     <string name="app_icon_redbinary" translatable="false">$ ~/r00t</string>
@@ -2002,10 +2002,10 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
     <string name="stream_notes_resolution">• Voo suund ja eraldusvõime võetakse sinu tavalistest salvestusseadetest (Video seaded → Eraldusvõime ja suund). Kohanda neid, kui soovid muuta voo mõõtmeid</string>
     <string name="stream_notes_cellular">⚠️ Ainult WiFi piirang: Mobiilivõrgud blokeerivad sissetulevad ühendused. Sujuvaks voogedastuseks mis tahes võrgust (WiFi, LTE, kõikjal), uuenda ShahidCam Pro+-le. Voogedasta üle maailma privaadse genereeritud lingiga — ilma pordi suunamiseta, ilma ruuteri muudatusteta, ilma võrgupiiranguteta</string>
     <string name="stream_notes_android14_screen">⚠️ Android 14+: Süsteemi piirang takistab salvestamist, kui ekraan on välja lülitatud. Töölahendused: (1) Luba \"Musta ekraani režiim\" seadetes → Turvalisus, või (2) Keela ekraani lukustus (ilma PIN/parool/sõrmejäljeta). Mõlemad võimaldavad sujuvat kaugsalvestamist</string>
-    <string name="cloud_account_button_desc">CyberShadowPK Cloud</string>
-    <string name="cloud_button_label">CyberShadowPK Cloud</string>
-    <string name="cloud_button_title">CyberShadowPK Cloud</string>
-    <string name="cloud_account_title">CyberShadowPK Cloud</string>
+    <string name="cloud_account_button_desc">ShahidCam Cloud</string>
+    <string name="cloud_button_label">ShahidCam Cloud</string>
+    <string name="cloud_button_title">ShahidCam Cloud</string>
+    <string name="cloud_account_title">ShahidCam Cloud</string>
     <string name="cloud_account_link">Linki seade</string>
     <string name="cloud_account_unlink">Eemalda linkimine</string>
     <string name="cloud_account_connecting">Ühendamine…</string>
@@ -2013,30 +2013,30 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
     <string name="cloud_account_not_linked">Pole lingitud</string>
     <string name="cloud_account_device_name_hint">Sisesta seadme nimi (nt Minu telefon)</string>
     <string name="cloud_account_device_name_title">Nimeta oma seade</string>
-    <string name="cloud_account_device_name_desc">See nimi kuvatakse sinu CyberShadowPK Cloudi töölaual</string>
+    <string name="cloud_account_device_name_desc">See nimi kuvatakse sinu ShahidCam Cloudi töölaual</string>
     <string name="cloud_account_device_id">Seadme ID</string>
     <string name="cloud_account_link_success">Seade edukalt lingitud!</string>
     <string name="cloud_account_link_failed">Seadme linkimine nurjus. Palun proovi uuesti.</string>
     <string name="cloud_account_unlink_confirm">Kas oled kindel, et soovid selle seadme linkimise eemaldada?</string>
     <string name="cloud_account_unlink_success">Seadme linkimine eemaldatud</string>
-    <string name="cloud_account_webview_title">CyberShadowPK Cloud</string>
+    <string name="cloud_account_webview_title">ShahidCam Cloud</string>
     <string name="cloud_account_login_required">Palun logi sisse, et linkida oma seade</string>
     <string name="cloud_account_helper_text">Eemalda linkimine, et katkestada ühendus oma kontoga. Saad linkida uuesti teise nimega.</string>
     <string name="cloud_streaming_title">Pilve voogedastus</string>
     <string name="cloud_streaming_status_off">Ainult kohalik voogedastus</string>
-    <string name="cloud_streaming_status_on">Üleslaadimine CyberShadowPK Cloudi</string>
+    <string name="cloud_streaming_status_on">Üleslaadimine ShahidCam Cloudi</string>
     <string name="cloud_streaming_not_linked">Linki esmalt seade, et lubada</string>
     <string name="e2e_encryption_title">Otspunktkrüpteerimine</string>
     <string name="e2e_encryption_not_configured">Pole seadistatud — seadista pilve voogedastuse lubamiseks</string>
     <string name="e2e_encryption_configured">Seadistatud — segmendid on otspunktkrüpteeritud</string>
     <string name="e2e_encryption_setup_title">Määra otspunktkrüpteerimise parool</string>
-    <string name="e2e_encryption_setup_hint">Sisesta oma CyberShadowPK ID parool</string>
-    <string name="e2e_encryption_setup_desc">Sinu CyberShadowPK ID parooli kasutatakse voo krüpteerimisvõtme tuletamiseks. See peab vastama paroolile, mida kasutad ShahidCami töölaual voogude vaatamiseks.</string>
+    <string name="e2e_encryption_setup_hint">Sisesta oma ShahidCam ID parool</string>
+    <string name="e2e_encryption_setup_desc">Sinu ShahidCam ID parooli kasutatakse voo krüpteerimisvõtme tuletamiseks. See peab vastama paroolile, mida kasutad ShahidCami töölaual voogude vaatamiseks.</string>
     <string name="e2e_encryption_change_title">Muuda otspunktkrüpteerimise parooli</string>
     <string name="streaming_mode_title">Voogedastuse sihtkoht</string>
     <string name="streaming_mode_local">Kohalik võrk</string>
     <string name="streaming_mode_local_desc">Voogedasta samas WiFi-s olevatesse seadmetesse</string>
-    <string name="streaming_mode_cloud">CyberShadowPK Cloud</string>
+    <string name="streaming_mode_cloud">ShahidCam Cloud</string>
     <string name="streaming_mode_cloud_desc">Voogedasta kõikjal interneti kaudu</string>
     <string name="streaming_mode_cloud_featured">ESILE TÕSTETUD</string>
     <string name="streaming_mode_link_required">Linki seade, et lubada</string>
@@ -2073,7 +2073,7 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
     <string name="setting_volume_shutter_title">Helitugevusklahvi päästik</string>
     <string name="setting_volume_shutter_summary">Helitugevusklahvid toimivad avakuval kaamera päästikutena</string>
     <string name="setting_volume_shutter_footer">Helitugevusklahvid saavad avakuval teie päästikuteks:\n• Puudutus — foto tegemine\n• Topeltpuudutus — kaamera vahetamine\n• Pikk vajutus — salvestuse alustamine või lõpetamine\n\nBluetooth-kaugpäästikud töötavad samuti ja käivitavad samu toiminguid. Klahvid töötavad, kui ShahidCami avakuva on avatud — tulevased versioonid võimaldavad mis tahes nupul käivitada ShahidCami toiminguid ka taustal.\n\nKasutage praegu MacroDroidi ShahidCami otseteede määramiseks — leiate need Seadetes → Otseteed ja vidinad.</string>
-    <string name="shortcuts_macrodroid_template">MacroDroidi ametlik mall: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252</string>
+    <string name="shortcuts_macrodroid_template">MacroDroidi ametlik mall: https://github.com/MuhammadShahidh/ShahidCam</string>
     <string name="thermal_guardian_title">Soojuskaitse</string>
     <string name="thermal_guardian_row_subtitle">Kohanda salvestust automaatselt, et vältida ülekuumenemist</string>
     <string name="audio_vision_title">Helinägemine</string>
@@ -2136,7 +2136,7 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
     <string name="lab_section_about">Teave</string>
     <string name="home_sidebar_discord">Discord</string>
     <string name="home_sidebar_discord_sub">Liitu kogukonnaga</string>
-    <string name="home_sidebar_copyright" translatable="false">© CyberShadowPK Lab 2024 – 2026</string>
+    <string name="home_sidebar_copyright" translatable="false">© ShahidCam 2024 – 2026</string>
     <string name="privacy_black_mode_title">Privaatsuse must ekraan</string>
     <string name="privacy_black_mode_helper">Kui sinu seade tapab rakenduse taustal, saad kasutada seda funktsiooni, et hoida rakendust esiplaanil töötamas.\n\nMusta ekraani ülekate ilmub, tehes sellest, nagu ekraan oleks välja lülitatud, samal ajal kui salvestamine jätkub.\n\nPuuduta ShahidCam ikooni avalehe vahekaardi ülemises päises, et seda aktiveerida.</string>
     <string name="privacy_black_mode_enable_title">Luba privaatsuse must režiim</string>
@@ -2673,7 +2673,7 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
     <string name="settings_location_update_interval_5s">5.0 sekundit</string>
 
     <!-- Annotation toolbar -->
-    <string name="annotation_by_shahidlabs_lab">CyberShadowPK Labi poolt</string>
+    <string name="annotation_by_shahidlabs_lab">ShahidCami poolt</string>
     <string name="annotation_quick_access">Kiirjuurdepääs</string>
     <string name="annotation_annotate">Annoteeri</string>
     <string name="annotation_enable_tools">Luba tööriistad</string>

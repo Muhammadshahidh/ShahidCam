@@ -36,6 +36,8 @@ jobs:
 
       - name: Build Installable APK
         run: ./gradlew assembleDefaultDebug --no-daemon --stacktrace
+      - name: Verify Release Bundle (R8/ShrinkResources)
+        run: ./gradlew bundleDefaultRelease --no-daemon --stacktrace
 
       - name: Upload Installable APK
         uses: actions/upload-artifact@v4

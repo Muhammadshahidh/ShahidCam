@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <!-- Outer soft shadow base -->
+    <path
+        android:fillColor="#DCE7F9"
+        android:pathData="M28,14 L92,14 A20,20 0 0,1 112,34 L112,92 A20,20 0 0,1 92,112 L28,112 A20,20 0 0,1 8,92 L8,34 A20,20 0 0,1 28,14 Z" />
+    <!-- Main white claymorphic body -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#E2ECFC"
+        android:strokeWidth="2"
+        android:pathData="M28,10 L92,10 A20,20 0 0,1 112,30 L112,86 A20,20 0 0,1 92,106 L28,106 A20,20 0 0,1 8,86 L8,30 A20,20 0 0,1 28,10 Z" />
+    <!-- Top sensor visor -->
+    <path
+        android:fillColor="#EFF6FF"
+        android:pathData="M42,24 L78,24 A4,4 0 0,1 82,28 L82,29 A4,4 0 0,1 78,33 L42,33 A4,4 0 0,1 38,29 L38,28 A4,4 0 0,1 42,24 Z" />
+    <!-- Blue status LED -->
+    <path
+        android:fillColor="#3B82F6"
+        android:pathData="M90,28.5 m-4.5,0 a4.5,4.5 0 1,0 9,0 a4.5,4.5 0 1,0 -9,0" />
+    <!-- Outer blue clay halo -->
+    <path
+        android:fillColor="#DBEAFE"
+        android:pathData="M60,64 m-26,0 a26,26 0 1,0 52,0 a26,26 0 1,0 -52,0" />
+    <!-- Main blue lens -->
+    <path
+        android:fillColor="#2563EB"
+        android:pathData="M60,64 m-20,0 a20,20 0 1,0 40,0 a20,20 0 1,0 -40,0" />
+    <!-- Deep lens glass -->
+    <path
+        android:fillColor="#1E3A8A"
+        android:pathData="M60,64 m-11.5,0 a11.5,11.5 0 1,0 23,0 a11.5,11.5 0 1,0 -23,0" />
+    <!-- Lens highlight -->
+    <path
+        android:fillColor="#93C5FD"
+        android:pathData="M53,57 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M66,70 m-1.8,0 a1.8,1.8 0 1,0 3.6,0 a1.8,1.8 0 1,0 -3.6,0" />
+</vector>

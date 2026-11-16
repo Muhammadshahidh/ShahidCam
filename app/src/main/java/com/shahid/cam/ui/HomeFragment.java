@@ -10184,7 +10184,7 @@ public class HomeFragment extends BaseFragment {
             // Restore default ShahidCam text logo.
             stopHeaderBlinkLoop();
             ivAppTitle.setScaleType(android.widget.ImageView.ScaleType.FIT_CENTER);
-            ivAppTitle.setImageResource(R.drawable.menu_icon_unknown);
+            ivAppTitle.setImageResource(R.drawable.ic_shahidcam_avatar);
         }
     }
 

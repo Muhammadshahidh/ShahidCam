@@ -12,8 +12,7 @@
     android:focusableInTouchMode="true"
     android:descendantFocusability="beforeDescendants">
 
-    <!-- Status bar scrim: height is dynamically set via ConstraintSet in MainActivity -->
-    <!-- For phones: height = statusBars.top, For TV/Wear: height = 0 -->
+    <!-- Status bar scrim: height is dynamically set via ConstraintSet / Insets in MainActivity -->
     <View
         android:id="@+id/status_bar_scrim"
         android:layout_width="match_parent"
@@ -37,7 +36,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Full bottom focus scrim around dock -->
+    <!-- Bottom soft focus scrim around floating clay dock -->
     <View
         android:id="@+id/dock_focus_gradient_scrim"
         android:layout_width="match_parent"
@@ -50,55 +49,218 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Floating White Claymorphism 5-Item Bottom Navigation Dock -->
     <FrameLayout
         android:id="@+id/nav_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="@dimen/home_dock_padding"
-        android:paddingEnd="@dimen/home_dock_padding"
-        android:paddingBottom="@dimen/home_dock_padding"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="10dp"
         android:clipChildren="false"
         android:clipToPadding="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
+        <LinearLayout
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/home_dock_height"
+            android:layout_height="68dp"
             android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="6dp"
             android:elevation="12dp"
-            android:background="?attr/colorBottomNav"
-            android:clipToOutline="true"
-            android:focusable="true"
-            android:focusableInTouchMode="false"
-            android:nextFocusUp="@+id/fragment_container"
-            android:nextFocusDown="@+id/bottom_navigation"
-            app:itemIconSize="@dimen/home_dock_icon"
-            app:itemIconTint="@color/bottom_nav_icon_tint"
-            app:itemTextColor="@android:color/white"
-            app:itemActiveIndicatorStyle="@null"
-            app:menu="@menu/bottom_nav_menu" />
+            android:background="@drawable/clay_bottom_dock_bg"
+            android:baselineAligned="false"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <!-- Item 0: Home (Icon + Home Label) -->
+            <LinearLayout
+                android:id="@+id/nav_tab_home"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="2dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:nextFocusUp="@+id/fragment_container"
+                android:contentDescription="@string/nav_home"
+                android:background="@drawable/clay_nav_active_pill_bg">
+
+                <ImageView
+                    android:id="@+id/nav_home_icon"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_house"
+                    android:tint="@color/clay_primary"
+                    android:contentDescription="@null" />
+
+                <TextView
+                    android:id="@+id/nav_home_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/nav_home"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/clay_primary" />
+            </LinearLayout>
+
+            <!-- Item 1: Media / Folder -->
+            <FrameLayout
+                android:id="@+id/nav_tab_media"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="2dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:nextFocusUp="@+id/fragment_container"
+                android:contentDescription="@string/nav_records">
+
+                <ImageView
+                    android:id="@+id/nav_media_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_folder_open"
+                    android:tint="@color/clay_text_secondary"
+                    android:contentDescription="@null" />
+            </FrameLayout>
+
+            <!-- Item 2: Intruder Selfie -->
+            <FrameLayout
+                android:id="@+id/nav_tab_intruder"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="2dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:nextFocusUp="@+id/fragment_container"
+                android:contentDescription="@string/intruder_history_title">
+
+                <ImageView
+                    android:id="@+id/nav_intruder_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_intruder_portrait"
+                    android:tint="@color/clay_text_secondary"
+                    android:contentDescription="@null" />
+
+                <TextView
+                    android:id="@+id/tv_intruder_badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:minWidth="16dp"
+                    android:paddingHorizontal="4dp"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@android:color/white"
+                    android:textSize="9sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/clay_badge_soon_bg"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- Item 3: Editor (Soon badge) -->
+            <FrameLayout
+                android:id="@+id/nav_tab_editor"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="2dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:nextFocusUp="@+id/fragment_container"
+                android:contentDescription="@string/editor_studio_title">
+
+                <ImageView
+                    android:id="@+id/nav_editor_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_editor_clapper"
+                    android:tint="@color/clay_text_secondary"
+                    android:contentDescription="@null" />
+
+                <TextView
+                    android:id="@+id/tv_editor_soon_badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:paddingHorizontal="5dp"
+                    android:paddingVertical="1dp"
+                    android:text="@string/nav_soon_badge"
+                    android:textColor="@android:color/white"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/clay_badge_soon_bg" />
+            </FrameLayout>
+
+            <!-- Item 4: Settings -->
+            <FrameLayout
+                android:id="@+id/nav_tab_settings"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="2dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:nextFocusUp="@+id/fragment_container"
+                android:contentDescription="@string/nav_settings">
+
+                <ImageView
+                    android:id="@+id/nav_settings_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_nav_settings"
+                    android:tint="@color/clay_text_secondary"
+                    android:contentDescription="@null" />
+
+                <View
+                    android:id="@+id/settings_badge_dot"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/badge_update_bg"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+        </LinearLayout>
     </FrameLayout>
 
-    <!-- ********************************************************** -->
-    <!-- *** ADD THIS FRAMELAYOUT FOR OVERLAY FRAGMENTS (like TrashFragment) *** -->
-    <!-- ********************************************************** -->
+    <!-- Overlay fragment container (Settings sub-pages, Trash, etc.) -->
     <FrameLayout
         android:id="@+id/overlay_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
-    android:clickable="true"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:background="?android:colorBackground"
         android:elevation="10dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-    <!-- ********************************************************** -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

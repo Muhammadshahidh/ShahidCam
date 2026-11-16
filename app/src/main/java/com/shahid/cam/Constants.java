@@ -105,7 +105,7 @@ public abstract class Constants {
      * NOTE: Some files may still reference "Midnight Dusk" directly and should be
      * updated to use this constant.
      */
-    public static final String DEFAULT_APP_THEME = "Crimson Bloom"; // Default theme changed from Midnight Dusk to
+    public static final String DEFAULT_APP_THEME = "Clay Light"; // Default theme changed from Midnight Dusk to
     // Crimson Bloom
     public static final String PREF_IS_RECORDING_IN_PROGRESS =
         "is_recording_in_progress";
@@ -655,6 +655,11 @@ public abstract class Constants {
         "com.shahid.cam.ON_DUAL_CAMERA_ERROR";
     public static final String BROADCAST_ON_DUAL_CAMERAS_SWAPPED =
         "com.shahid.cam.ON_DUAL_CAMERAS_SWAPPED";
+    // Intruder Selfie Detection constants
+    public static final String PREF_INTRUDER_SELFIE_ENABLED = "pref_intruder_selfie_enabled";
+    public static final String PREF_INTRUDER_DISCLOSURE_ACCEPTED = "pref_intruder_disclosure_accepted";
+    public static final String BROADCAST_ON_INTRUDER_CAPTURED = "com.shahid.cam.ON_INTRUDER_CAPTURED";
+
     // Accessibility screenshot trigger action (ShahidRec shortcut).
     public static final String ACTION_TRIGGER_SHAHIDREC_SCREENSHOT =
         "com.shahid.cam.ACTION_TRIGGER_SHAHIDREC_SCREENSHOT";

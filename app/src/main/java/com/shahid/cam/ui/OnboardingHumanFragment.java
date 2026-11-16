@@ -131,9 +131,11 @@ public class OnboardingHumanFragment extends Fragment {
             ClickableSpan clickableSpan = new ClickableSpan() {
                 @Override
                 public void onClick(View widget) {
-                    // Open privacy policy in external browser
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252"));
-                    startActivity(intent);
+                    new com.google.android.material.dialog.MaterialAlertDialogBuilder(requireContext())
+                            .setTitle(R.string.privacy_information)
+                            .setMessage(R.string.onboarding_privacy_summary)
+                            .setPositiveButton(android.R.string.ok, null)
+                            .show();
                 }
             };
             

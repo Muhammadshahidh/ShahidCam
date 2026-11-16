@@ -4,7 +4,7 @@
     <string name="app_icon_description">Elige un ícono y nombre para tu app. Esto cambiará cómo aparece en tu pantalla de inicio.</string>
     <string name="check_for_updates">Buscar actualizaciones</string>
     <string name="accessibility_thumbnail_progress">%1$d%% visto</string>
-    <string name="shahid_sec_info">ShahidCam es parte de la suite CyberShadowPK Lab. Para más información, haz clic en \'ver código fuente\' abajo.</string>
+    <string name="shahid_sec_info">ShahidCam es parte de la suite ShahidCam. Para más información, haz clic en \'ver código fuente\' abajo.</string>
 
 
     <string name="app_description">
@@ -26,7 +26,7 @@
     <string name="website_title">Sitio web</string>
     <string name="readme_website_subtitle">Sitio oficial</string>
     <string name="privacy_information">Información de privacidad</string>
-    <string name="copyright_info"> 2024-2025 https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252\nLicenciado bajo GPL-3.0</string>
+    <string name="copyright_info"> 2024-2025 https://github.com/MuhammadShahidh/ShahidCam\nLicenciado bajo GPL-3.0</string>
     <string-array name="video_resolutions_keys">
         <item>7680x4320</item>
         <item>3840x2160</item>
@@ -203,11 +203,11 @@
     <string name="home_elapsed_font_doto">Doto</string>
     <string name="home_elapsed_font_doto_desc">Usa la fuente Doto para un aspecto de temporizador digital más distintivo</string>
     <string name="home_elapsed_flag_option">Indicador de acento</string>
-    <string name="home_elapsed_flag_option_desc">Mostrar u ocultar el indicador de acento CyberShadowPK Lab detrás del temporizador</string>
-    <string name="home_elapsed_flag_helper">Elige si se muestra el indicador de acento CyberShadowPK Lab detrás del temporizador transcurrido.</string>
-    <string name="home_elapsed_flag_show">Mostrar indicador CyberShadowPK Lab (predeterminado)</string>
+    <string name="home_elapsed_flag_option_desc">Mostrar u ocultar el indicador de acento ShahidCam detrás del temporizador</string>
+    <string name="home_elapsed_flag_helper">Elige si se muestra el indicador de acento ShahidCam detrás del temporizador transcurrido.</string>
+    <string name="home_elapsed_flag_show">Mostrar indicador ShahidCam (predeterminado)</string>
     <string name="home_elapsed_flag_show_desc">Mostrar el indicador de acento de marca detrás del temporizador</string>
-    <string name="home_elapsed_flag_hide">Ocultar indicador CyberShadowPK Lab</string>
+    <string name="home_elapsed_flag_hide">Ocultar indicador ShahidCam</string>
     <string name="home_elapsed_flag_hide_desc">Mantener el área del temporizador transcurrido limpia sin el indicador de acento</string>
     <string name="home_elapsed_background_option">Fondo</string>
     <string name="home_elapsed_background_option_desc">Elige si el temporizador transcurrido se sitúa en una tarjeta negra, blanca o transparente</string>
@@ -909,7 +909,7 @@
     <string name="widget_black_background_title">Fondo negro</string>
     <string name="widget_arabic_date_title">Fecha árabe</string>
     <string name="widget_arabic_date_format_title">Formato de fecha árabe</string>
-    <string name="widget_branding_title">Marca CyberShadowPKLab</string>
+    <string name="widget_branding_title">Marca ShahidCam</string>
 
     <!-- Widget Option Descriptions -->
     <string name="widget_time_format_12h">12 horas (3:30 PM)</string>
@@ -1568,7 +1568,7 @@ Recomendado: 192000 bps, 48000 Hz para la mayoría de usuarios.</string>
     <string name="app_icon_shahid" translatable="false">0xFF0000</string>
     <string name="app_icon_palestine" translatable="false">I❤️Palestine</string>
     <string name="app_icon_pakistan" translatable="false">ShahidCam</string>
-    <string name="app_icon_shahidlabs" translatable="false">CyberShadowPK Lab</string>
+    <string name="app_icon_shahidlabs" translatable="false">ShahidCam</string>
     <string name="app_icon_nooristic" translatable="false">ShahidCam ++</string>
     <string name="app_icon_bat" translatable="false">ShahidCam</string>
     <string name="app_icon_redbinary" translatable="false">$ ~/r00t</string>
@@ -2128,11 +2128,11 @@ Para la experiencia de reproducción más fluida, puedes usar un reproductor ext
     <string name="stream_notes_cellular">⚠️ Limitación solo WiFi: Las redes celulares bloquean conexiones entrantes. Para transmisión fluida desde cualquier red (WiFi, LTE, en cualquier lugar), actualiza a ShahidCam Pro+. Transmite desde cualquier lugar globalmente con un enlace privado generado — sin reenvío de puertos, sin cambios de router, sin restricciones de red</string>
     <string name="stream_notes_android14_screen">⚠️ Android 14+: La restricción del sistema impide grabar con la pantalla apagada. Soluciones: (1) Habilita \"Modo de pantalla negra\" en Ajustes → Seguridad, o (2) Desactiva el bloqueo de pantalla (sin PIN/contraseña/huella). Ambos permiten grabación remota fluida</string>
 
-    <!-- CyberShadowPK Cloud / Remote Streaming -->
-    <string name="cloud_account_button_desc">CyberShadowPK Cloud</string>
-    <string name="cloud_button_label">CyberShadowPK Cloud</string>
-    <string name="cloud_button_title">CyberShadowPK Cloud</string>
-    <string name="cloud_account_title">CyberShadowPK Cloud</string>
+    <!-- ShahidCam Cloud / Remote Streaming -->
+    <string name="cloud_account_button_desc">ShahidCam Cloud</string>
+    <string name="cloud_button_label">ShahidCam Cloud</string>
+    <string name="cloud_button_title">ShahidCam Cloud</string>
+    <string name="cloud_account_title">ShahidCam Cloud</string>
     <string name="cloud_account_link">Vincular dispositivo</string>
     <string name="cloud_account_unlink">Desvincular dispositivo</string>
     <string name="cloud_account_connecting">Conectando…</string>
@@ -2140,20 +2140,20 @@ Para la experiencia de reproducción más fluida, puedes usar un reproductor ext
     <string name="cloud_account_not_linked">No vinculado</string>
     <string name="cloud_account_device_name_hint">Ingresa nombre del dispositivo (ej., Mi Teléfono)</string>
     <string name="cloud_account_device_name_title">Nombra tu dispositivo</string>
-    <string name="cloud_account_device_name_desc">Este nombre aparecerá en tu panel de CyberShadowPK Cloud</string>
+    <string name="cloud_account_device_name_desc">Este nombre aparecerá en tu panel de ShahidCam Cloud</string>
     <string name="cloud_account_device_id">ID del dispositivo</string>
     <string name="cloud_account_link_success">¡Dispositivo vinculado exitosamente!</string>
     <string name="cloud_account_link_failed">Error al vincular dispositivo. Por favor intenta de nuevo.</string>
     <string name="cloud_account_unlink_confirm">¿Estás seguro de que quieres desvincular este dispositivo?</string>
     <string name="cloud_account_unlink_success">Dispositivo desvinculado</string>
-    <string name="cloud_account_webview_title">CyberShadowPK Cloud</string>
+    <string name="cloud_account_webview_title">ShahidCam Cloud</string>
     <string name="cloud_account_login_required">Por favor inicia sesión para vincular tu dispositivo</string>
     <string name="cloud_account_helper_text">Desvincula para desconectar de tu cuenta. Puedes vincular de nuevo con un nombre diferente.</string>
 
     <!-- Cloud Streaming -->
     <string name="cloud_streaming_title">Transmisión en la nube</string>
     <string name="cloud_streaming_status_off">Solo transmisión local</string>
-    <string name="cloud_streaming_status_on">Subiendo a CyberShadowPK Cloud</string>
+    <string name="cloud_streaming_status_on">Subiendo a ShahidCam Cloud</string>
     <string name="cloud_streaming_not_linked">Vincula dispositivo primero para habilitar</string>
 
     <!-- E2E Stream Encryption -->
@@ -2161,15 +2161,15 @@ Para la experiencia de reproducción más fluida, puedes usar un reproductor ext
     <string name="e2e_encryption_not_configured">No configurado — configura para habilitar transmisión en la nube</string>
     <string name="e2e_encryption_configured">Configurado — los segmentos están cifrados de extremo a extremo</string>
     <string name="e2e_encryption_setup_title">Establecer contraseña de cifrado E2E</string>
-    <string name="e2e_encryption_setup_hint">Ingresa tu contraseña de CyberShadowPK ID</string>
-    <string name="e2e_encryption_setup_desc">Tu contraseña de CyberShadowPK ID se usa para derivar la clave de cifrado de transmisión. Debe coincidir con la contraseña que usas en el panel de ShahidCam para ver transmisiones.</string>
+    <string name="e2e_encryption_setup_hint">Ingresa tu contraseña de ShahidCam ID</string>
+    <string name="e2e_encryption_setup_desc">Tu contraseña de ShahidCam ID se usa para derivar la clave de cifrado de transmisión. Debe coincidir con la contraseña que usas en el panel de ShahidCam para ver transmisiones.</string>
     <string name="e2e_encryption_change_title">Cambiar contraseña de cifrado E2E</string>
 
     <!-- Streaming Mode Selector -->
     <string name="streaming_mode_title">Destino de transmisión</string>
     <string name="streaming_mode_local">Red local</string>
     <string name="streaming_mode_local_desc">Transmitir a dispositivos en la misma WiFi</string>
-    <string name="streaming_mode_cloud">CyberShadowPK Cloud</string>
+    <string name="streaming_mode_cloud">ShahidCam Cloud</string>
     <string name="streaming_mode_cloud_desc">Transmitir desde cualquier lugar vía internet</string>
     <string name="streaming_mode_cloud_featured">DESTACADO</string>
     <string name="streaming_mode_link_required">Vincula dispositivo para habilitar</string>
@@ -2209,7 +2209,7 @@ Para la experiencia de reproducción más fluida, puedes usar un reproductor ext
     <string name="setting_volume_shutter_title">Disparador por volumen</string>
     <string name="setting_volume_shutter_summary">Las teclas de volumen actúan como obturador en la pestaña de inicio</string>
     <string name="setting_volume_shutter_footer">Las teclas de volumen se convierten en tu obturador en la pestaña de inicio:\n• Toca — toma una foto\n• Doble toca — cambia de cámara\n• Mantén pulsado — inicia o detiene la grabación\n\nLos disparadores remotos Bluetooth también funcionan y activan las mismas acciones. Las teclas funcionan mientras la pestaña de inicio de ShahidCam esté abierta — las versiones futuras permitirán que cualquier tecla active acciones de ShahidCam, incluso en segundo plano.\n\nPor ahora, usa MacroDroid para asignar los accesos directos de ShahidCam — los encontrarás en Ajustes → Accesos directos y widgets.</string>
-    <string name="shortcuts_macrodroid_template">Plantilla oficial de MacroDroid: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252</string>
+    <string name="shortcuts_macrodroid_template">Plantilla oficial de MacroDroid: https://github.com/MuhammadShahidh/ShahidCam</string>
     <string name="thermal_guardian_title">Guardián Térmico</string>
     <string name="thermal_guardian_row_subtitle">Ajustar grabación automáticamente para evitar sobrecalentamiento</string>
     <string name="audio_vision_title">Visión de Audio</string>
@@ -2276,7 +2276,7 @@ Para la experiencia de reproducción más fluida, puedes usar un reproductor ext
     <!-- Home sidebar branding -->
     <string name="home_sidebar_discord">Discord</string>
     <string name="home_sidebar_discord_sub">Únete a la comunidad</string>
-    <string name="home_sidebar_copyright" translatable="false">© CyberShadowPK Lab 2024 – 2026</string>
+    <string name="home_sidebar_copyright" translatable="false">© ShahidCam 2024 – 2026</string>
 
     <!-- Privacy Black Mode Settings -->
     <string name="privacy_black_mode_title">Pantalla negra de privacidad</string>
@@ -2778,7 +2778,7 @@ Para la experiencia de reproducción más fluida, puedes usar un reproductor ext
     <string name="settings_location_update_interval_5s">5.0 segundos</string>
 
     <!-- Annotation toolbar -->
-    <string name="annotation_by_shahidlabs_lab">por CyberShadowPK Lab</string>
+    <string name="annotation_by_shahidlabs_lab">por ShahidCam</string>
     <string name="annotation_quick_access">Acceso rápido</string>
     <string name="annotation_annotate">Anotar</string>
     <string name="annotation_enable_tools">Habilitar herramientas</string>

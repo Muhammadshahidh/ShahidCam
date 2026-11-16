@@ -4,7 +4,7 @@
     <string name="app_icon_description">Pilih ikon dan nama untuk aplikasi Anda. Ini akan mengubah tampilannya di layar utama Anda.</string>
     <string name="check_for_updates">Periksa pembaruan</string>
     <string name="accessibility_thumbnail_progress">%1$d%% ditonton</string>
-    <string name="shahid_sec_info">ShahidCam adalah bagian dari rangkaian CyberShadowPK Lab. Untuk informasi lebih lanjut, klik \'lihat kode sumber\' di bawah ini.</string>
+    <string name="shahid_sec_info">ShahidCam adalah bagian dari rangkaian ShahidCam. Untuk informasi lebih lanjut, klik \'lihat kode sumber\' di bawah ini.</string>
 
 
     <string name="app_description"><![CDATA[
@@ -24,7 +24,7 @@
     <string name="website_title">Situs web</string>
     <string name="readme_website_subtitle">Situs resmi</string>
     <string name="privacy_information">Informasi Privasi</string>
-    <string name="copyright_info">© 2024 https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252\nLicensed under GPL-3.0</string>
+    <string name="copyright_info">© 2024 https://github.com/MuhammadShahidh/ShahidCam\nLicensed under GPL-3.0</string>
     <string-array name="video_resolutions_keys">
         <item>7680x4320</item>        <!-- 8K -->
         <item>3840x2160</item>        <!-- 4K -->
@@ -202,11 +202,11 @@
     <string name="home_elapsed_font_doto">Doto</string>
     <string name="home_elapsed_font_doto_desc">Menggunakan font Doto untuk tampilan timer digital yang lebih khas</string>
     <string name="home_elapsed_flag_option">Bendera aksen</string>
-    <string name="home_elapsed_flag_option_desc">Tampilkan atau sembunyikan bendera aksen CyberShadowPK Lab di belakang timer</string>
-    <string name="home_elapsed_flag_helper">Pilih apakah bendera aksen CyberShadowPK Lab ditampilkan di belakang timer berjalan.</string>
-    <string name="home_elapsed_flag_show">Tampilkan bendera CyberShadowPK Lab (Default)</string>
+    <string name="home_elapsed_flag_option_desc">Tampilkan atau sembunyikan bendera aksen ShahidCam di belakang timer</string>
+    <string name="home_elapsed_flag_helper">Pilih apakah bendera aksen ShahidCam ditampilkan di belakang timer berjalan.</string>
+    <string name="home_elapsed_flag_show">Tampilkan bendera ShahidCam (Default)</string>
     <string name="home_elapsed_flag_show_desc">Tampilkan bendera merek aksen di belakang timer</string>
-    <string name="home_elapsed_flag_hide">Sembunyikan bendera CyberShadowPK Lab</string>
+    <string name="home_elapsed_flag_hide">Sembunyikan bendera ShahidCam</string>
     <string name="home_elapsed_flag_hide_desc">Jaga area timer berjalan tetap bersih tanpa bendera aksen</string>
     <string name="home_elapsed_background_option">Latar belakang</string>
     <string name="home_elapsed_background_option_desc">Pilih apakah timer berjalan berada di kartu hitam, putih, atau transparan</string>
@@ -912,7 +912,7 @@ Tips: Dengan H.265 (HEVC), Anda dapat menggunakan sekitar setengah bitrate H.264
     <string name="widget_black_background_title">Latar Belakang Hitam</string>
     <string name="widget_arabic_date_title">Tanggal Arab</string>
     <string name="widget_arabic_date_format_title">Format Tanggal Arab</string>
-    <string name="widget_branding_title">Merek CyberShadowPKLab</string>
+    <string name="widget_branding_title">Merek ShahidCam</string>
 
     <!-- Widget Option Descriptions -->
     <string name="widget_time_format_12h">12 jam (3:30 PM)</string>
@@ -1606,7 +1606,7 @@ Recommended: 192000 bps, 48000 Hz for most users.</string>
     <string name="app_icon_shahid" translatable="false">0xFF0000</string>
     <string name="app_icon_palestine" translatable="false">I❤️Palestine</string>
     <string name="app_icon_pakistan" translatable="false">ShahidCam</string>
-    <string name="app_icon_shahidlabs" translatable="false">CyberShadowPK Lab</string>
+    <string name="app_icon_shahidlabs" translatable="false">ShahidCam</string>
     <string name="app_icon_nooristic" translatable="false">ShahidCam ++</string>
     <string name="app_icon_bat" translatable="false">ShahidCam</string>
     <string name="app_icon_redbinary" translatable="false">$ ~/r00t</string>
@@ -2184,11 +2184,11 @@ Apakah Anda ingin beralih ke H.264 dan mulai merekam?</string>
     <string name="stream_notes_cellular">⚠️ Batasan hanya WiFi: Jaringan seluler memblokir koneksi masuk. Untuk streaming mulus dari jaringan mana pun (WiFi, LTE, di mana saja), upgrade ke ShahidCam Pro+. Stream dari mana saja secara global dengan tautan pribadi yang dihasilkan—tanpa port forwarding, tanpa perubahan router, tanpa batasan jaringan</string>
     <string name="stream_notes_android14_screen">⚠️ Android 14+: Batasan sistem mencegah perekaman saat layar mati. Solusi: (1) Aktifkan "Mode Layar Hitam" di Pengaturan → Keamanan, atau (2) Nonaktifkan kunci layar (tanpa PIN/kata sandi/sidik jari). Keduanya memungkinkan perekaman jarak jauh yang mulus</string>
     
-    <!-- CyberShadowPK Cloud / Remote Streaming -->
-    <string name="cloud_account_button_desc">CyberShadowPK Cloud</string>
-    <string name="cloud_button_label">CyberShadowPK Cloud</string>
-    <string name="cloud_button_title">CyberShadowPK Cloud</string>
-    <string name="cloud_account_title">CyberShadowPK Cloud</string>
+    <!-- ShahidCam Cloud / Remote Streaming -->
+    <string name="cloud_account_button_desc">ShahidCam Cloud</string>
+    <string name="cloud_button_label">ShahidCam Cloud</string>
+    <string name="cloud_button_title">ShahidCam Cloud</string>
+    <string name="cloud_account_title">ShahidCam Cloud</string>
     <string name="cloud_account_link">Tautkan Perangkat</string>
     <string name="cloud_account_unlink">Lepas Tautan Perangkat</string>
     <string name="cloud_account_connecting">Menghubungkan…</string>
@@ -2196,20 +2196,20 @@ Apakah Anda ingin beralih ke H.264 dan mulai merekam?</string>
     <string name="cloud_account_not_linked">Tidak Tertaut</string>
     <string name="cloud_account_device_name_hint">Masukkan nama perangkat (mis., Ponsel Saya)</string>
     <string name="cloud_account_device_name_title">Beri Nama Perangkat Anda</string>
-    <string name="cloud_account_device_name_desc">Nama ini akan muncul di dasbor CyberShadowPK Cloud Anda</string>
+    <string name="cloud_account_device_name_desc">Nama ini akan muncul di dasbor ShahidCam Cloud Anda</string>
     <string name="cloud_account_device_id">ID Perangkat</string>
     <string name="cloud_account_link_success">Perangkat berhasil ditautkan!</string>
     <string name="cloud_account_link_failed">Gagal menautkan perangkat. Silakan coba lagi.</string>
     <string name="cloud_account_unlink_confirm">Apakah Anda yakin ingin melepaskan tautan perangkat ini?</string>
     <string name="cloud_account_unlink_success">Perangkat dilepas</string>
-    <string name="cloud_account_webview_title">CyberShadowPK Cloud</string>
+    <string name="cloud_account_webview_title">ShahidCam Cloud</string>
     <string name="cloud_account_login_required">Silakan masuk untuk menautkan perangkat Anda</string>
     <string name="cloud_account_helper_text">Lepas tautan untuk memutus dari akun Anda. Anda dapat menautkan lagi dengan nama berbeda.</string>
     
     <!-- Cloud Streaming -->
     <string name="cloud_streaming_title">Streaming Cloud</string>
     <string name="cloud_streaming_status_off">Hanya stream lokal</string>
-    <string name="cloud_streaming_status_on">Mengunggah ke CyberShadowPK Cloud</string>
+    <string name="cloud_streaming_status_on">Mengunggah ke ShahidCam Cloud</string>
     <string name="cloud_streaming_not_linked">Tautkan perangkat terlebih dahulu untuk mengaktifkan</string>
 
     <!-- E2E Stream Encryption -->
@@ -2217,15 +2217,15 @@ Apakah Anda ingin beralih ke H.264 dan mulai merekam?</string>
     <string name="e2e_encryption_not_configured">Belum dikonfigurasi — konfigurasikan untuk mengaktifkan streaming cloud</string>
     <string name="e2e_encryption_configured">Terkonfigurasi — segmen dienkripsi end-to-end</string>
     <string name="e2e_encryption_setup_title">Atur Kata Sandi Enkripsi E2E</string>
-    <string name="e2e_encryption_setup_hint">Masukkan kata sandi CyberShadowPK ID Anda</string>
-    <string name="e2e_encryption_setup_desc">Kata sandi CyberShadowPK ID Anda digunakan untuk menurunkan kunci enkripsi stream. Ini harus cocok dengan kata sandi yang Anda gunakan di dasbor ShahidCam untuk melihat stream.</string>
+    <string name="e2e_encryption_setup_hint">Masukkan kata sandi ShahidCam ID Anda</string>
+    <string name="e2e_encryption_setup_desc">Kata sandi ShahidCam ID Anda digunakan untuk menurunkan kunci enkripsi stream. Ini harus cocok dengan kata sandi yang Anda gunakan di dasbor ShahidCam untuk melihat stream.</string>
     <string name="e2e_encryption_change_title">Ubah Kata Sandi Enkripsi E2E</string>
     
     <!-- Streaming Mode Selector -->
     <string name="streaming_mode_title">Tujuan Streaming</string>
     <string name="streaming_mode_local">Jaringan Lokal</string>
     <string name="streaming_mode_local_desc">Stream ke perangkat di WiFi yang sama</string>
-    <string name="streaming_mode_cloud">CyberShadowPK Cloud</string>
+    <string name="streaming_mode_cloud">ShahidCam Cloud</string>
     <string name="streaming_mode_cloud_desc">Stream dari mana saja melalui internet</string>
     <string name="streaming_mode_cloud_featured">UNGGULAN</string>
     <string name="streaming_mode_link_required">Tautkan perangkat untuk mengaktifkan</string>
@@ -2266,7 +2266,7 @@ Apakah Anda ingin beralih ke H.264 dan mulai merekam?</string>
     <string name="setting_volume_shutter_title">Rana Tombol Volume</string>
     <string name="setting_volume_shutter_summary">Tombol volume berfungsi sebagai rana kamera di tab beranda</string>
     <string name="setting_volume_shutter_footer">Tombol volume menjadi rana kamera Anda di tab beranda:\n• Ketuk — ambil foto\n• Ketuk dua kali — ganti kamera\n• Tahan — mulai atau hentikan rekaman\n\nRemote Bluetooth juga berfungsi dan memicu tindakan yang sama. Tombol berfungsi saat tab beranda ShahidCam terbuka — versi mendatang akan memungkinkan tombol mana pun memicu tindakan ShahidCam, bahkan di latar belakang.\n\nUntuk saat ini, gunakan MacroDroid untuk memetakan pintasan ShahidCam — temukan di Setelan → Pintasan &amp; Widget.</string>
-    <string name="shortcuts_macrodroid_template">Template resmi MacroDroid: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252</string>
+    <string name="shortcuts_macrodroid_template">Template resmi MacroDroid: https://github.com/MuhammadShahidh/ShahidCam</string>
     <string name="thermal_guardian_title">Pelindung Termal</string>
     <string name="thermal_guardian_row_subtitle">Sesuaikan perekaman secara otomatis untuk mencegah panas berlebih</string>
     <string name="audio_vision_title">Visi Audio</string>
@@ -2359,7 +2359,7 @@ Tips: Fitur ini berjalan terus menerus, sehingga nilai lanjutan yang sangat ting
     <!-- Home sidebar branding -->
     <string name="home_sidebar_discord">Discord</string>
     <string name="home_sidebar_discord_sub">Bergabung dengan komunitas</string>
-    <string name="home_sidebar_copyright" translatable="false">© CyberShadowPK Lab 2024 – 2026</string>
+    <string name="home_sidebar_copyright" translatable="false">© ShahidCam 2024 – 2026</string>
 
     <!-- Privacy Black Mode Settings -->
     <string name="privacy_black_mode_title">Layar Hitam Privasi</string>
@@ -2933,7 +2933,7 @@ Dukungan otomasi berbasis intent (Tasker, MacroDroid, dll.) untuk memicu Aplikas
     <string name="settings_location_update_interval_5s">5,0 detik</string>
 
     <!-- Annotation toolbar -->
-    <string name="annotation_by_shahidlabs_lab">oleh CyberShadowPK Lab</string>
+    <string name="annotation_by_shahidlabs_lab">oleh ShahidCam</string>
     <string name="annotation_quick_access">Akses Cepat</string>
     <string name="annotation_annotate">Anotasi</string>
     <string name="annotation_enable_tools">Aktifkan alat</string>

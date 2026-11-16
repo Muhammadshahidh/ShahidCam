@@ -143,6 +143,7 @@ public class AppLock {
 
             @Override
             public void onPINDoesNotMatch() {
+                triggerIntruderCapture("PIN");
                 onUnlockFailed(context.getString(R.string.applock__unlock_error_match_failed));
             }
 
@@ -172,6 +173,7 @@ public class AppLock {
 
             @Override
             public void onPasswordDoesNotMatch() {
+                triggerIntruderCapture("PASSWORD");
                 onUnlockFailed(context.getString(R.string.applock__unlock_error_match_failed));
             }
 
@@ -211,6 +213,14 @@ public class AppLock {
         }
 
         return false;
+    }
+
+    protected void triggerIntruderCapture(String reasonTag) {
+        try {
+            com.shahid.cam.security.IntruderManager.getInstance(context)
+                    .onWrongCredentialAttempt(reasonTag);
+        } catch (Throwable ignored) {
+        }
     }
 
     protected void handleUnlockFailure(String message, UnlockDelegate eventListener) {

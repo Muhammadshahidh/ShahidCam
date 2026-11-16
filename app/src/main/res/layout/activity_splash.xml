@@ -1,14 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black">
+    android:background="@color/clay_bg_canvas"
+    android:padding="28dp">
 
-    <ImageView
-        android:id="@+id/splash_image"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/splash_loading_container"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:src="@drawable/shahidcam_server_room_bg_flag"
-        android:contentDescription="@string/app_name"/>
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:background="@drawable/clay_card_bg">
+
+        <ImageView
+            android:id="@+id/splash_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:src="@drawable/ic_shahidcam_avatar"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:id="@+id/splash_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/app_name"
+            android:textColor="@color/clay_text_primary"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/splash_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/splash_tagline"
+            android:textColor="@color/clay_text_secondary"
+            android:textSize="13sp"
+            android:gravity="center" />
+
+        <ProgressBar
+            android:id="@+id/splash_progress"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="22dp"
+            android:indeterminateTint="@color/clay_accent_blue" />
+
+        <LinearLayout
+            android:id="@+id/splash_error_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/splash_error_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/splash_init_error"
+                android:textColor="@color/clay_danger"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/splash_retry_button"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/clay_button_primary_bg"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:text="@string/universal_retry"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
 </FrameLayout>

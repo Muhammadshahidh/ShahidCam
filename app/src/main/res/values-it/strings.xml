@@ -4,7 +4,7 @@
     <string name="app_icon_description">Scegli un\'icona e un nome per la tua app. Questo cambierà il modo in cui appare sulla schermata home.</string>
     <string name="check_for_updates">Controlla aggiornamenti</string>
     <string name="accessibility_thumbnail_progress">%1$d%% visualizzato</string>
-    <string name="shahid_sec_info">ShahidCam fa parte della suite CyberShadowPK Lab. Per maggiori informazioni, clicca su \'Visualizza codice sorgente\' qui sotto.</string>
+    <string name="shahid_sec_info">ShahidCam fa parte della suite ShahidCam. Per maggiori informazioni, clicca su \'Visualizza codice sorgente\' qui sotto.</string>
 
 
     <string name="app_description">
@@ -26,7 +26,7 @@
     <string name="website_title">Sito web</string>
     <string name="readme_website_subtitle">Sito ufficiale</string>
     <string name="privacy_information">Informazioni sulla privacy</string>
-    <string name="copyright_info">© 2024-2025 https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252\nSotto licenza GPL-3.0</string>
+    <string name="copyright_info">© 2024-2025 https://github.com/MuhammadShahidh/ShahidCam\nSotto licenza GPL-3.0</string>
     <string-array name="video_resolutions_keys">
         <item>7680x4320</item>        <!-- 8K -->
         <item>3840x2160</item>        <!-- 4K -->
@@ -203,11 +203,11 @@
     <string name="home_elapsed_font_doto">Doto</string>
     <string name="home_elapsed_font_doto_desc">Utilizza il font Doto per un aspetto timer digitale più distintivo</string>
     <string name="home_elapsed_flag_option">Accento bandiera</string>
-    <string name="home_elapsed_flag_option_desc">Mostra o nascondi l\'accento bandiera CyberShadowPK Lab dietro il timer</string>
-    <string name="home_elapsed_flag_helper">Scegli se l\'accento bandiera CyberShadowPK Lab viene mostrato dietro il timer trascorso.</string>
-    <string name="home_elapsed_flag_show">Mostra bandiera CyberShadowPK Lab (predefinito)</string>
+    <string name="home_elapsed_flag_option_desc">Mostra o nascondi l\'accento bandiera ShahidCam dietro il timer</string>
+    <string name="home_elapsed_flag_helper">Scegli se l\'accento bandiera ShahidCam viene mostrato dietro il timer trascorso.</string>
+    <string name="home_elapsed_flag_show">Mostra bandiera ShahidCam (predefinito)</string>
     <string name="home_elapsed_flag_show_desc">Visualizza l\'accento bandiera con marchio dietro il timer</string>
-    <string name="home_elapsed_flag_hide">Nascondi bandiera CyberShadowPK Lab</string>
+    <string name="home_elapsed_flag_hide">Nascondi bandiera ShahidCam</string>
     <string name="home_elapsed_flag_hide_desc">Mantieni l\'area del timer trascorso pulita senza l\'accento bandiera</string>
     <string name="home_elapsed_background_option">Sfondo</string>
     <string name="home_elapsed_background_option_desc">Scegli se il timer trascorso si trova su una scheda nera, bianca o trasparente</string>
@@ -904,7 +904,7 @@
     <string name="widget_black_background_title">Sfondo nero</string>
     <string name="widget_arabic_date_title">Data araba</string>
     <string name="widget_arabic_date_format_title">Formato data araba</string>
-    <string name="widget_branding_title">Marchio CyberShadowPKLab</string>
+    <string name="widget_branding_title">Marchio ShahidCam</string>
     <string name="widget_time_format_12h">12 ore (3:30 PM)</string>
     <string name="widget_time_format_24h">24 ore (15:30)</string>
     <string name="widget_option_enabled">Abilitato</string>
@@ -2022,7 +2022,7 @@
     <string name="setting_volume_shutter_title">Otturatore con tasti volume</string>
     <string name="setting_volume_shutter_summary">I tasti volume fungono da otturatore nella scheda Home</string>
     <string name="setting_volume_shutter_footer">I tasti volume diventano il tuo otturatore nella scheda Home:\n• Tocca — scatta una foto\n• Doppio tocco — cambia fotocamera\n• Tieni premuto — avvia o ferma la registrazione\n\nAnche gli scatti remoti Bluetooth funzionano e attivano le stesse azioni. I tasti funzionano mentre la scheda Home di ShahidCam è aperta — le versioni future permetteranno a qualsiasi tasto di attivare le azioni ShahidCam, anche in background.\n\nPer ora, usa MacroDroid per mappare le scorciatoie di ShahidCam — le trovi in Impostazioni → Scorciatoie e widget.</string>
-    <string name="shortcuts_macrodroid_template">Modello ufficiale MacroDroid: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252</string>
+    <string name="shortcuts_macrodroid_template">Modello ufficiale MacroDroid: https://github.com/MuhammadShahidh/ShahidCam</string>
     <string name="thermal_guardian_title">Guardiano Termico</string>
     <string name="thermal_guardian_row_subtitle">Regola automaticamente la registrazione per evitare il surriscaldamento</string>
     <string name="audio_vision_title">Visione Audio</string>
@@ -2337,7 +2337,7 @@
     <string name="app_icon_shahid" translatable="false">0xFF0000</string>
     <string name="app_icon_palestine" translatable="false">I❤️Palestine</string>
     <string name="app_icon_pakistan" translatable="false">ShahidCam</string>
-    <string name="app_icon_shahidlabs" translatable="false">CyberShadowPK Lab</string>
+    <string name="app_icon_shahidlabs" translatable="false">ShahidCam</string>
     <string name="app_icon_nooristic" translatable="false">ShahidCam ++</string>
     <string name="app_icon_bat" translatable="false">ShahidCam</string>
     <string name="app_icon_redbinary" translatable="false">$ ~/r00t</string>
@@ -2350,7 +2350,7 @@
     <string name="app_icon_jet" translatable="false">JF-17: ThunderX</string>
     <string name="app_icon_black_alias_label" translatable="false">\u0020</string>
     <string name="app_icon_minimal" translatable="false">ShahidCam</string>
-    <string name="home_sidebar_copyright" translatable="false">© CyberShadowPK Lab 2024 – 2026</string>
+    <string name="home_sidebar_copyright" translatable="false">© ShahidCam 2024 – 2026</string>
     <string name="export_center">Centro Esportazione</string>
 
     <string name="remote_server_status">Stato server</string>
@@ -2657,7 +2657,7 @@
     <string name="settings_location_update_interval_5s">5,0 secondi</string>
 
     <!-- Annotation toolbar -->
-    <string name="annotation_by_shahidlabs_lab">di CyberShadowPK Lab</string>
+    <string name="annotation_by_shahidlabs_lab">di ShahidCam</string>
     <string name="annotation_quick_access">Accesso rapido</string>
     <string name="annotation_annotate">Annota</string>
     <string name="annotation_enable_tools">Abilita strumenti</string>

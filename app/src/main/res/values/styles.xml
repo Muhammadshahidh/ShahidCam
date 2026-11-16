@@ -6,8 +6,8 @@
 
     <style name="CustomBottomSheetDialogTheme" parent="Theme.MaterialComponents.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
-        <item name="android:navigationBarColor">@color/black</item>
-        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:navigationBarColor">@color/clay_bg_canvas</item>
+        <item name="android:windowLightNavigationBar">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     </style>
 
@@ -17,8 +17,8 @@
 
     <style name="CustomSideSheetDialogTheme" parent="ThemeOverlay.Material3.SideSheetDialog">
         <item name="sideSheetModalStyle">@style/CustomSideSheetStyle</item>
-        <item name="android:navigationBarColor">@color/black</item>
-        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:navigationBarColor">@color/clay_bg_canvas</item>
+        <item name="android:windowLightNavigationBar">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     </style>
 
@@ -41,8 +41,8 @@
         <item name="ensureMinTouchTargetSize">false</item>
         <item name="android:textSize">11sp</item>
         <item name="checkedIconVisible">false</item>
-        <item name="chipStrokeWidth">0dp</item>
-        <item name="chipStrokeColor">@android:color/transparent</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipStrokeColor">@color/clay_border</item>
         <item name="chipCornerRadius">8dp</item>
         <item name="chipStartPadding">6dp</item>
         <item name="chipEndPadding">6dp</item>
@@ -55,7 +55,7 @@
         <item name="chipBackgroundColor">@color/chip_floating_bg_color</item>
         <item name="chipSurfaceColor">@android:color/transparent</item>
         <item name="android:elevation">0dp</item>
-        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColor">@color/chip_floating_text_color</item>
         <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
@@ -107,7 +107,7 @@
     <style name="SettingsDivider" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
-        <item name="android:background">#262626</item>
+        <item name="android:background">#E2E8F0</item>
         <!-- Match SettingsGroupRow horizontal insets (14dp start / 12dp end) -->
         <item name="android:layout_marginStart">14dp</item>
         <item name="android:layout_marginEnd">12dp</item>

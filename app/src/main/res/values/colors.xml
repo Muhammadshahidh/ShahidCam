@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- White Claymorphism Design Tokens -->
+    <color name="clay_bg_canvas">#F4F7FC</color>
+    <color name="clay_surface">#FFFFFF</color>
+    <color name="clay_surface_alt">#F8FAFF</color>
+    <color name="clay_surface_inset">#EEF3FB</color>
+    <color name="clay_border">#E1E8F5</color>
+    <color name="clay_border_strong">#CBD5E1</color>
+    <color name="clay_accent_blue">#2563EB</color>
+    <color name="clay_accent_blue_dark">#1D4ED8</color>
+    <color name="clay_accent_blue_soft">#EFF6FF</color>
+    <color name="clay_accent_blue_pill">#DBEAFE</color>
+    <color name="clay_text_primary">#0F172A</color>
+    <color name="clay_text_secondary">#475569</color>
+    <color name="clay_text_muted">#64748B</color>
+    <color name="clay_badge_soon_bg">#EF4444</color>
+    <color name="clay_danger">#DC2626</color>
+    <color name="clay_danger_soft">#FEE2E2</color>
+    <color name="clay_success">#059669</color>
+    <color name="clay_success_soft">#D1FAE5</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="gray">#1f1e23</color>
+    <color name="gray">#FFFFFF</color>
     <color name="gray500">#9E9E9E</color>
     <color name="base_theme_slider_inactive">#3A2A4A</color> <!-- Very dark purple-tinted gray for midnight dusk theme -->
     <color name="redPastel">#E43C3C</color>
@@ -43,19 +63,19 @@
     <color name="dark_red_card">#3B1818</color> <!-- Very dark, muted red for storage card -->
     <color name="dark_purple_bar">#231942</color> <!-- Very dark purple for dark mode top bar and navbar -->
 
-    <color name="gray_button_filled">#232323</color> <!-- Much darker gray for filled button in all themes -->
+    <color name="gray_button_filled">#EEF3FB</color> <!-- Much darker gray for filled button in all themes -->
     
     <!-- Darker color for storage card across all themes -->
-    <color name="dark_card_background">#171717</color>
+    <color name="dark_card_background">#FFFFFF</color>
     
     <!-- Extra dark color for storage card in Crimson theme -->
     
     <!-- Picker colors for Midnight Dusk theme with purple colors -->
-    <color name="picker_button_background">#cfbafd</color> <!-- Purple primary -->
-    <color name="picker_button_text">#1A1A1A</color> <!-- Dark text -->
-    <color name="picker_icon_tint">#cfbafd</color> <!-- Purple primary -->
-    <color name="picker_slider_active">#cfbafd</color> <!-- Purple primary active -->
-    <color name="picker_slider_inactive">#3A2A4A</color> <!-- Very dark purple-tinted inactive -->
+    <color name="picker_button_background">#2563EB</color> <!-- Purple primary -->
+    <color name="picker_button_text">#FFFFFF</color> <!-- Dark text -->
+    <color name="picker_icon_tint">#2563EB</color> <!-- Purple primary -->
+    <color name="picker_slider_active">#2563EB</color> <!-- Purple primary active -->
+    <color name="picker_slider_inactive">#CBD5E1</color> <!-- Very dark purple-tinted inactive -->
     <color name="crimson_dark_card_background">#1E0E0E</color>
 
     <color name="midnight_dusk_bg">#111113</color>
@@ -67,15 +87,15 @@
     <!-- Segmented Control Colors -->
     <color name="segmented_control_background">#2A2A2A</color>
     <color name="segmented_control_border">#404040</color>
-    <color name="segment_active_color">@color/redPastel</color>
+    <color name="segment_active_color">#2563EB</color>
 
     <!-- Home rail neutral surfaces -->
-    <color name="home_rail_bg_start">#1B1C21</color>
-    <color name="home_rail_bg_end">#15161A</color>
-    <color name="home_rail_card_surface">#23252C</color>
-    <color name="home_rail_card_border">#343841</color>
-    <color name="home_rail_segmented_surface">#262830</color>
-    <color name="home_rail_segmented_border">#3A3E48</color>
+    <color name="home_rail_bg_start">#EEF3FB</color>
+    <color name="home_rail_bg_end">#EEF3FB</color>
+    <color name="home_rail_card_surface">#FFFFFF</color>
+    <color name="home_rail_card_border">#DCE6F5</color>
+    <color name="home_rail_segmented_surface">#EEF3FB</color>
+    <color name="home_rail_segmented_border">#DCE6F5</color>
     
     <!-- Annotation Menu Colors (Dynamic) -->
     <color name="annotation_heading_accent">#4CAF50</color> <!-- Green accent for headings -->
@@ -85,6 +105,10 @@
     <color name="annotation_border_dark">#1E1E22</color> <!-- Subtle dark border that matches overlay theme -->
     <color name="annotation_active_border">#4CAF50</color> <!-- Green border for active state -->
     <color name="annotation_button_bg">#2A2A2A</color> <!-- Consistent background for all tool buttons -->
-    <color name="picker_divider_color">#40FFFFFF</color> <!-- Material wheel divider -->
-    <color name="picker_selected_text_color">#FFFFFF</color> <!-- Material wheel selected text -->
+    <color name="picker_divider_color">#E2E8F0</color> <!-- Material wheel divider -->
+    <color name="picker_selected_text_color">#0F172A</color> <!-- Material wheel selected text -->
+
+    <color name="clay_primary">@color/clay_accent_blue</color>
+    <color name="clay_background">@color/clay_bg_canvas</color>
+    <color name="clay_card_stroke">@color/clay_border_strong</color>
 </resources>

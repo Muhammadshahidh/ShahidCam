@@ -1864,6 +1864,28 @@ public class SharedPreferencesManager {
             .apply();
     }
 
+    public boolean isIntruderSelfieEnabled() {
+        return safeGetBoolean(Constants.PREF_INTRUDER_SELFIE_ENABLED, false);
+    }
+
+    public void setIntruderSelfieEnabled(boolean enabled) {
+        sharedPreferences
+            .edit()
+            .putBoolean(Constants.PREF_INTRUDER_SELFIE_ENABLED, enabled)
+            .apply();
+    }
+
+    public boolean isIntruderDisclosureAccepted() {
+        return safeGetBoolean(Constants.PREF_INTRUDER_DISCLOSURE_ACCEPTED, false);
+    }
+
+    public void setIntruderDisclosureAccepted(boolean accepted) {
+        sharedPreferences
+            .edit()
+            .putBoolean(Constants.PREF_INTRUDER_DISCLOSURE_ACCEPTED, accepted)
+            .apply();
+    }
+
     public static final String PREF_PRIVACY_BLACK_MODE_ENABLED = "privacy_black_mode_enabled";
     public static final String PREF_PRIVACY_BLACK_SWIPE_UP = "privacy_black_swipe_up";
     public static final String PREF_PRIVACY_BLACK_TRIPLE_TAP = "privacy_black_triple_tap";

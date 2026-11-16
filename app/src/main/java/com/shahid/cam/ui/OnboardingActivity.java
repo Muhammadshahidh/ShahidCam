@@ -52,7 +52,7 @@ public class OnboardingActivity extends AppIntro {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         // Force dark mode for onboarding regardless of system theme
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            getDelegate().setLocalNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES);
+            getDelegate().setLocalNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO);
         }
         super.onCreate(savedInstanceState);
 
@@ -99,8 +99,8 @@ public class OnboardingActivity extends AppIntro {
 
         // Fix for indicator dots - use custom colors
         setIndicatorColor(
-                ContextCompat.getColor(this, R.color.white), // Selected dot
-                ContextCompat.getColor(this, R.color.gray500) // Unselected dot
+                ContextCompat.getColor(this, R.color.clay_primary), // Selected dot
+                ContextCompat.getColor(this, R.color.clay_card_stroke) // Unselected dot
         );
 
         // Disable color transitions as our slides don't implement

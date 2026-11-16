@@ -4,7 +4,7 @@
     <string name="app_icon_description">Επιλέξτε ένα εικονίδιο και όνομα για την εφαρμογή σας. Αυτό θα αλλάξει την εμφάνισή της στην αρχική σας οθόνη.</string>
     <string name="check_for_updates">Έλεγχος για Ενημερώσεις</string>
     <string name="accessibility_thumbnail_progress">%1$d%% παρακολουθήθηκε</string>
-    <string name="shahid_sec_info">Το ShahidCam είναι μέρος της σουίτας CyberShadowPK Lab. Για περισσότερες πληροφορίες, κάντε κλικ στην επιλογή «προβολή πηγαίου κώδικα» παρακάτω.</string>
+    <string name="shahid_sec_info">Το ShahidCam είναι μέρος της σουίτας ShahidCam. Για περισσότερες πληροφορίες, κάντε κλικ στην επιλογή «προβολή πηγαίου κώδικα» παρακάτω.</string>
     <string name="app_description">        <![CDATA[    Το ShahidCam είναι μια εφαρμογή εγγραφής βίντεο ανοιχτού κώδικα, χωρίς διαφημίσεις, που δίνει προτεραιότητα στην ιδιωτικότητα, καθώς δεν παρακολουθεί ούτε συλλέγει δεδομένα. Είναι διαθέσιμο αποκλειστικά στο GitHub και μέσω των επίσημων συνδέσμων που αναφέρονται στο README.    <br/><br/>    Το ShahidCam έχει παρουσιαστεί σε δημοφιλή κανάλια YouTube όπως τα <font color="#cfbafd">HowToMen</font> και <font color="#cfbafd">Xtream Droid</font>, καθώς και συζητήθηκε στα <font color="#cfbafd">GrapheneOS</font> και σε 55+ άλλα αξιόλογα σημεία.    ]]>    </string>
     <string name="view_source_code">Προβολή Πηγαίου Κώδικα</string>
     <string name="buy_me_a_coffee">Κέρασέ με έναν καφέ ☕</string>
@@ -16,7 +16,7 @@
     <string name="website_title">Ιστοσελίδα</string>
     <string name="readme_website_subtitle">Επίσημη ιστοσελίδα</string>
     <string name="privacy_information">Πληροφορίες Ιδιωτικότητας</string>
-    <string name="copyright_info"> 2024-2025 https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252\nLicensed under GPL-3.0</string>
+    <string name="copyright_info"> 2024-2025 https://github.com/MuhammadShahidh/ShahidCam\nLicensed under GPL-3.0</string>
     <string-array name="video_resolutions_keys">
         <item>7680x4320</item>        <!-- 8K -->        <item>3840x2160</item>        <!-- 4K -->        <item>2560x1440</item>        <!-- 2K -->        <item>1920x1080</item>        <!-- FHD -->        <item>1280x720</item>        <!-- HD -->        <item>640x480</item>        <!-- SD -->        <item>720x480</item>        <!-- SD -->        <item>480x360</item>        <!-- SD -->    </string-array>
     <string-array name="video_resolutions_values">
@@ -158,11 +158,11 @@
     <string name="home_elapsed_font_doto">Doto</string>
     <string name="home_elapsed_font_doto_desc">Χρησιμοποιεί τη γραμματοσειρά Doto για πιο διακριτική εμφάνιση ψηφιακού χρονοδιακόπτη</string>
     <string name="home_elapsed_flag_option">Σημαία έμφασης</string>
-    <string name="home_elapsed_flag_option_desc">Εμφάνιση ή απόκρυψη της σημαίας έμφασης CyberShadowPK Lab πίσω από τον χρονοδιακόπτη</string>
-    <string name="home_elapsed_flag_helper">Επιλέξτε αν η σημαία έμφασης CyberShadowPK Lab εμφανίζεται πίσω από τον χρονοδιακόπτη.</string>
-    <string name="home_elapsed_flag_show">Εμφάνιση σημαίας CyberShadowPK Lab (Προεπιλογή)</string>
+    <string name="home_elapsed_flag_option_desc">Εμφάνιση ή απόκρυψη της σημαίας έμφασης ShahidCam πίσω από τον χρονοδιακόπτη</string>
+    <string name="home_elapsed_flag_helper">Επιλέξτε αν η σημαία έμφασης ShahidCam εμφανίζεται πίσω από τον χρονοδιακόπτη.</string>
+    <string name="home_elapsed_flag_show">Εμφάνιση σημαίας ShahidCam (Προεπιλογή)</string>
     <string name="home_elapsed_flag_show_desc">Εμφάνιση της σημαίας έμφασης πίσω από τον χρονοδιακόπτη</string>
-    <string name="home_elapsed_flag_hide">Απόκρυψη σημαίας CyberShadowPK Lab</string>
+    <string name="home_elapsed_flag_hide">Απόκρυψη σημαίας ShahidCam</string>
     <string name="home_elapsed_flag_hide_desc">Διατήρηση της περιοχής του χρονοδιακόπτη καθαρή χωρίς σημαία έμφασης</string>
     <string name="home_elapsed_background_option">Φόντο</string>
     <string name="home_elapsed_background_option_desc">Επιλέξτε αν ο χρονοδιακόπτης βρίσκεται σε μαύρη, λευκή ή διαφανή κάρτα</string>
@@ -872,7 +872,7 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="widget_black_background_title">Μαύρο Φόντο</string>
     <string name="widget_arabic_date_title">Αραβική Ημερομηνία</string>
     <string name="widget_arabic_date_format_title">Μορφή Αραβικής Ημερομηνίας</string>
-    <string name="widget_branding_title">Επωνυμία CyberShadowPKLab</string>
+    <string name="widget_branding_title">Επωνυμία ShahidCam</string>
     <!-- Widget Option Descriptions -->
     <string name="widget_time_format_12h">12 ωρών (3:30 ΜΜ)</string>
     <string name="widget_time_format_24h">24 ωρών (15:30)</string>
@@ -1524,7 +1524,7 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="app_icon_shahid" translatable="false">0xFF0000</string>
     <string name="app_icon_palestine" translatable="false">I❤️Palestine</string>
     <string name="app_icon_pakistan" translatable="false">ShahidCam</string>
-    <string name="app_icon_shahidlabs" translatable="false">CyberShadowPK Lab</string>
+    <string name="app_icon_shahidlabs" translatable="false">ShahidCam</string>
     <string name="app_icon_nooristic" translatable="false">ShahidCam ++</string>
     <string name="app_icon_bat" translatable="false">ShahidCam</string>
     <string name="app_icon_redbinary" translatable="false">$ ~/r00t</string>
@@ -2066,11 +2066,11 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="stream_notes_resolution">• Ο προσανατολισμός και η ανάλυση ροής λαμβάνονται από τις κανονικές ρυθμίσεις εγγραφής</string>
     <string name="stream_notes_cellular">⚠️ Περιορισμός μόνο WiFi: Τα δίκτυα κινητής τηλεφωνίας αποκλείουν τις εισερχόμενες συνδέσεις.</string>
     <string name="stream_notes_android14_screen">⚠️ Android 14+: Περιορισμός συστήματος αποτρέπει την εγγραφή όταν η οθόνη είναι κλειστή.</string>
-    <!-- CyberShadowPK Cloud / Remote Streaming -->
-    <string name="cloud_account_button_desc">CyberShadowPK Cloud</string>
-    <string name="cloud_button_label">CyberShadowPK Cloud</string>
-    <string name="cloud_button_title">CyberShadowPK Cloud</string>
-    <string name="cloud_account_title">CyberShadowPK Cloud</string>
+    <!-- ShahidCam Cloud / Remote Streaming -->
+    <string name="cloud_account_button_desc">ShahidCam Cloud</string>
+    <string name="cloud_button_label">ShahidCam Cloud</string>
+    <string name="cloud_button_title">ShahidCam Cloud</string>
+    <string name="cloud_account_title">ShahidCam Cloud</string>
     <string name="cloud_account_link">Σύνδεση Συσκευής</string>
     <string name="cloud_account_unlink">Αποσύνδεση Συσκευής</string>
     <string name="cloud_account_connecting">Σύνδεση…</string>
@@ -2078,33 +2078,33 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="cloud_account_not_linked">Δεν Συνδέθηκε</string>
     <string name="cloud_account_device_name_hint">Εισαγάγετε όνομα συσκευής (π.χ. Το Τηλέφωνό Μου)</string>
     <string name="cloud_account_device_name_title">Ονομάστε τη Συσκευή σας</string>
-    <string name="cloud_account_device_name_desc">Αυτό το όνομα θα εμφανίζεται στον πίνακα ελέγχου CyberShadowPK Cloud</string>
+    <string name="cloud_account_device_name_desc">Αυτό το όνομα θα εμφανίζεται στον πίνακα ελέγχου ShahidCam Cloud</string>
     <string name="cloud_account_device_id">Αναγνωριστικό Συσκευής</string>
     <string name="cloud_account_link_success">Η συσκευή συνδέθηκε επιτυχώς!</string>
     <string name="cloud_account_link_failed">Αποτυχία σύνδεσης συσκευής. Παρακαλούμε δοκιμάστε ξανά.</string>
     <string name="cloud_account_unlink_confirm">Είστε σίγουροι ότι θέλετε να αποσυνδέσετε αυτήν τη συσκευή;</string>
     <string name="cloud_account_unlink_success">Η συσκευή αποσυνδέθηκε</string>
-    <string name="cloud_account_webview_title">CyberShadowPK Cloud</string>
+    <string name="cloud_account_webview_title">ShahidCam Cloud</string>
     <string name="cloud_account_login_required">Παρακαλούμε συνδεθείτε για να συνδέσετε τη συσκευή σας</string>
     <string name="cloud_account_helper_text">Αποσυνδέστε για αποσύνδεση από τον λογαριασμό σας.</string>
     <!-- Cloud Streaming -->
     <string name="cloud_streaming_title">Cloud Streaming</string>
     <string name="cloud_streaming_status_off">Ροή μόνο τοπικά</string>
-    <string name="cloud_streaming_status_on">Μεταφόρτωση στο CyberShadowPK Cloud</string>
+    <string name="cloud_streaming_status_on">Μεταφόρτωση στο ShahidCam Cloud</string>
     <string name="cloud_streaming_not_linked">Συνδέστε πρώτα τη συσκευή</string>
     <!-- E2E Stream Encryption -->
     <string name="e2e_encryption_title">Κρυπτογράφηση E2E Ροής</string>
     <string name="e2e_encryption_not_configured">Δεν έχει ρυθμιστεί</string>
     <string name="e2e_encryption_configured">Ρυθμίστηκε — τα τμήματα είναι κρυπτογραφημένα</string>
     <string name="e2e_encryption_setup_title">Ορισμός Κωδικού Πρόσβασης Κρυπτογράφησης E2E</string>
-    <string name="e2e_encryption_setup_hint">Εισαγάγετε τον κωδικό πρόσβασης CyberShadowPK ID</string>
-    <string name="e2e_encryption_setup_desc">Ο κωδικός πρόσβασης CyberShadowPK ID χρησιμοποιείται για την παραγωγή του κλειδιού κρυπτογράφησης ροής.</string>
+    <string name="e2e_encryption_setup_hint">Εισαγάγετε τον κωδικό πρόσβασης ShahidCam ID</string>
+    <string name="e2e_encryption_setup_desc">Ο κωδικός πρόσβασης ShahidCam ID χρησιμοποιείται για την παραγωγή του κλειδιού κρυπτογράφησης ροής.</string>
     <string name="e2e_encryption_change_title">Αλλαγή Κωδικού Πρόσβασης Κρυπτογράφησης E2E</string>
     <!-- Streaming Mode Selector -->
     <string name="streaming_mode_title">Προορισμός Ροής</string>
     <string name="streaming_mode_local">Τοπικό Δίκτυο</string>
     <string name="streaming_mode_local_desc">Ροή σε συσκευές στο ίδιο WiFi</string>
-    <string name="streaming_mode_cloud">CyberShadowPK Cloud</string>
+    <string name="streaming_mode_cloud">ShahidCam Cloud</string>
     <string name="streaming_mode_cloud_desc">Ροή οπουδήποτε μέσω διαδικτύου</string>
     <string name="streaming_mode_cloud_featured">ΠΡΟΒΟΛΗ</string>
     <string name="streaming_mode_link_required">Συνδέστε τη συσκευή για ενεργοποίηση</string>
@@ -2143,7 +2143,7 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="setting_volume_shutter_title">Σκανδάλη πλήκτρων έντασης</string>
     <string name="setting_volume_shutter_summary">Τα πλήκτρα έντασης λειτουργούν ως κλείστρο κάμερας στην αρχική καρτέλα</string>
     <string name="setting_volume_shutter_footer">Τα πλήκτρα έντασης γίνονται το κλείστρο σας στην αρχική καρτέλα:\n• Πάτημα — λήψη φωτογραφίας\n• Διπλό πάτημα — εναλλαγή κάμερας\n• Παρατεταμένο πάτημα — έναρξη ή διακοπή εγγραφής\n\nΤα τηλεχειριστήρια Bluetooth λειτουργούν επίσης και ενεργοποιούν τις ίδιες ενέργειες. Τα πλήκτρα λειτουργούν όσο η αρχική καρτέλα ShahidCam είναι ανοιχτή — οι μελλοντικές εκδόσεις θα επιτρέπουν σε οποιοδήποτε πλήκτρο να ενεργοποιεί ενέργειες ShahidCam, ακόμη και στο παρασκήνιο.\n\nΠρος το παρόν, χρησιμοποιήστε το MacroDroid για να αντιστοιχίσετε τις συντομεύσεις ShahidCam — θα τις βρείτε στις Ρυθμίσεις → Συντομεύσεις &amp; Widgets.</string>
-    <string name="shortcuts_macrodroid_template">Επίσημο πρότυπο MacroDroid: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252</string>
+    <string name="shortcuts_macrodroid_template">Επίσημο πρότυπο MacroDroid: https://github.com/MuhammadShahidh/ShahidCam</string>
     <string name="thermal_guardian_title">Θερμικός Φύλακας</string>
     <string name="thermal_guardian_row_subtitle">Αυτόματη προσαρμογή εγγραφής για αποφυγή υπερθέρμανσης</string>
     <string name="audio_vision_title">Ηχητική Όραση</string>
@@ -2215,7 +2215,7 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <!-- Home sidebar branding -->
     <string name="home_sidebar_discord">Discord</string>
     <string name="home_sidebar_discord_sub">Εγγραφείτε στην κοινότητα</string>
-    <string name="home_sidebar_copyright" translatable="false">© CyberShadowPK Lab 2024 – 2026</string>
+    <string name="home_sidebar_copyright" translatable="false">© ShahidCam 2024 – 2026</string>
     <!-- Privacy Black Mode Settings -->
     <string name="privacy_black_mode_title">Μαύρη Οθόνη Απορρήτου</string>
     <string name="privacy_black_mode_helper">Αν η συσκευή σας κλείνει την εφαρμογή στο παρασκήνιο, μπορείτε να χρησιμοποιήσετε αυτήν τη λειτουργία για να τη διατηρήσετε σε λειτουργία στο προσκήνιο.
@@ -2770,7 +2770,7 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
     <string name="settings_location_update_interval_5s">5.0 δευτερόλεπτα</string>
 
     <!-- Annotation toolbar -->
-    <string name="annotation_by_shahidlabs_lab">από CyberShadowPK Lab</string>
+    <string name="annotation_by_shahidlabs_lab">από ShahidCam</string>
     <string name="annotation_quick_access">Γρήγορη Πρόσβαση</string>
     <string name="annotation_annotate">Σχολιασμός</string>
     <string name="annotation_enable_tools">Ενεργοποίηση εργαλείων</string>

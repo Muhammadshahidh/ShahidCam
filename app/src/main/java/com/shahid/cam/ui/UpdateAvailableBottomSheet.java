@@ -80,14 +80,14 @@ public class UpdateAvailableBottomSheet extends BottomSheetDialogFragment {
         // Set icon rain to use unknown_icon3
         UpdateRainView updateRainView = view.findViewById(R.id.updateRainView);
         if (updateRainView != null) {
-            updateRainView.setIconResource(R.drawable.unknown_icon3);
+            updateRainView.setIconResource(R.drawable.ic_shahidcam_avatar);
             updateRainView.invalidate(); // ensure redraw/animation
         }
 
         Bundle args = getArguments();
         String version = args != null ? args.getString(ARG_VERSION, "-") : "-";
         String changelog = args != null ? args.getString(ARG_CHANGELOG, "") : "";
-        String tagUrl = args != null ? args.getString(ARG_TAG_URL, "https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252") : "https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252";
+        String tagUrl = args != null ? args.getString(ARG_TAG_URL, "https://github.com/MuhammadShahidh/ShahidCam/releases") : "https://github.com/MuhammadShahidh/ShahidCam/releases";
 
         // Sarcastic message
         TextView tvSarcastic = view.findViewById(R.id.tvSarcasticMessage);

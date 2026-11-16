@@ -60,7 +60,6 @@ public class AppearanceSettingsFragment extends Fragment {
         sharedPreferencesManager = SharedPreferencesManager.getInstance(
             requireContext()
         );
-        setupThemeRow(view);
         setupLanguageRow(view);
         setupAppIconRow(view);
         setupEyeColorRow(view);
@@ -74,172 +73,6 @@ public class AppearanceSettingsFragment extends Fragment {
         // -------------- Update End for this method(onViewCreated)-----------
     }
 
-    // -------------- Refactor Start: theme row -----------
-    private void setupThemeRow(View view) {
-        View row = view.findViewById(R.id.row_theme);
-        TextView value = view.findViewById(R.id.value_theme);
-        if (row == null || value == null) return;
-        String currentTheme =
-            sharedPreferencesManager.sharedPreferences.getString(
-                Constants.PREF_APP_THEME,
-                Constants.DEFAULT_APP_THEME
-            );
-        value.setText(currentTheme);
-        row.setOnClickListener(v -> showThemePicker(value));
-    }
-
-    private void showThemePicker(TextView value) {
-        final String resultKey = "picker_result_theme";
-        getParentFragmentManager().setFragmentResultListener(
-                resultKey,
-                this,
-                (k, b) -> {
-                    if (
-                        b.containsKey(
-                            com.shahid.cam.ui.picker.PickerBottomSheetFragment.BUNDLE_SELECTED_ID
-                        )
-                    ) {
-                        String id = b.getString(
-                            com.shahid.cam.ui.picker.PickerBottomSheetFragment.BUNDLE_SELECTED_ID
-                        );
-                        if (id != null) {
-                            // Persist immediately
-                            sharedPreferencesManager.sharedPreferences
-                                .edit()
-                                .putString(Constants.PREF_APP_THEME, id)
-                                .putBoolean(
-                                    "reopen_appearance_after_theme",
-                                    true
-                                )
-                                .putBoolean(
-                                    "reopen_theme_sheet_after_theme",
-                                    true
-                                )
-                                .apply();
-                            // Update visible value text now
-                            value.setText(id);
-                            // Defer activity recreate until after sheet dismissal animation finishes to preserve
-                            // correct checkmark animation & keep user on Appearance screen.
-                            View root = getView();
-                            if (root != null) {
-                                root.postDelayed(
-                                    () -> {
-                                        if (!isAdded()) return; // fragment no longer attached
-                                        if (
-                                            getActivity() instanceof
-                                            MainActivity
-                                        ) {
-                                            ((MainActivity) requireActivity()).applyThemeFromSettings(
-                                                id
-                                            );
-                                        }
-                                    },
-                                    260
-                                ); // picker uses 160ms dismiss delay; add buffer
-                            }
-                        }
-                    }
-                }
-            );
-        java.util.ArrayList<com.shahid.cam.ui.picker.OptionItem> items =
-            new java.util.ArrayList<>();
-        items.add(
-            new com.shahid.cam.ui.picker.OptionItem(
-                "Crimson Bloom",
-                getString(R.string.theme_red),
-                null,
-                ContextCompat.getColor(
-                    requireContext(),
-                    R.color.red_theme_primary
-                )
-            )
-        );
-        items.add(
-            new com.shahid.cam.ui.picker.OptionItem(
-                "Midnight Dusk",
-                "Midnight Dusk",
-                null,
-                ContextCompat.getColor(requireContext(), R.color.gray)
-            )
-        );
-        items.add(
-            new com.shahid.cam.ui.picker.OptionItem(
-                "Shahid Dark",
-                "Shahid Dark",
-                null,
-                ContextCompat.getColor(requireContext(), R.color.amoled_surface)
-            )
-        );
-        items.add(
-            new com.shahid.cam.ui.picker.OptionItem(
-                "Premium Gold",
-                getString(R.string.theme_gold),
-                null,
-                ContextCompat.getColor(
-                    requireContext(),
-                    R.color.gold_theme_primary
-                )
-            )
-        );
-        items.add(
-            new com.shahid.cam.ui.picker.OptionItem(
-                "Silent Forest",
-                getString(R.string.theme_silentforest),
-                null,
-                ContextCompat.getColor(
-                    requireContext(),
-                    R.color.silentforest_theme_primary
-                )
-            )
-        );
-        items.add(
-            new com.shahid.cam.ui.picker.OptionItem(
-                "Shadow Alloy",
-                getString(R.string.theme_shadowalloy),
-                null,
-                ContextCompat.getColor(
-                    requireContext(),
-                    R.color.shadowalloy_theme_primary
-                )
-            )
-        );
-        items.add(
-            new com.shahid.cam.ui.picker.OptionItem(
-                "Pookie Pink",
-                getString(R.string.theme_pookiepink),
-                null,
-                ContextCompat.getColor(
-                    requireContext(),
-                    R.color.pookiepink_theme_primary
-                )
-            )
-        );
-        items.add(
-            new com.shahid.cam.ui.picker.OptionItem(
-                "Snow Veil",
-                getString(R.string.theme_snowveil),
-                null,
-                Color.WHITE
-            )
-        );
-        String currentTheme =
-            sharedPreferencesManager.sharedPreferences.getString(
-                Constants.PREF_APP_THEME,
-                Constants.DEFAULT_APP_THEME
-            );
-        com.shahid.cam.ui.picker.PickerBottomSheetFragment sheet =
-            com.shahid.cam.ui.picker.PickerBottomSheetFragment.newInstanceGradient(
-                getString(R.string.settings_option_theme),
-                items,
-                currentTheme,
-                resultKey,
-                getString(R.string.helper_theme_option),
-                true
-            );
-        sheet.show(getParentFragmentManager(), "theme_picker_sheet");
-    }
-
-    // -------------- Refactor End: theme row -----------
 
     // -------------- Refactor Start: language row wrapper -----------
     private void setupLanguageRow(View view) {
@@ -747,7 +580,7 @@ public class AppearanceSettingsFragment extends Fragment {
                 getString(R.string.header_logo_default),
                 null,
                 null,
-                R.drawable.menu_icon_unknown));
+                R.drawable.ic_shahidcam_avatar));
         items.add(new com.shahid.cam.ui.picker.OptionItem(
                 Constants.HEADER_LOGO_AVATAR,
                 getString(R.string.header_logo_avatar),

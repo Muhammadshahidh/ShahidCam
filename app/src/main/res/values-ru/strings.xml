@@ -2,7 +2,7 @@
     <string name="app_icon_description">Выберите значок и название для вашего приложения. Это изменит его вид на главном экране.</string>
     <string name="check_for_updates">Проверить наличие обновлений</string>
     <string name="accessibility_thumbnail_progress">%1$d%% просмотрено</string>
-    <string name="shahid_sec_info">ShahidCam является частью пакета CyberShadowPK Lab. Для получения дополнительной информации нажмите «Просмотреть исходный код» ниже.</string>
+    <string name="shahid_sec_info">ShahidCam является частью пакета ShahidCam. Для получения дополнительной информации нажмите «Просмотреть исходный код» ниже.</string>
 
 
     <string name="app_description">
@@ -24,7 +24,7 @@
     <string name="website_title">Веб-сайт</string>
     <string name="readme_website_subtitle">Официальный сайт</string>
     <string name="privacy_information">Политика конфиденциальности</string>
-    <string name="copyright_info">2024-2025 https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252\nЛицензировано по GPL-3.0</string>
+    <string name="copyright_info">2024-2025 https://github.com/MuhammadShahidh/ShahidCam\nЛицензировано по GPL-3.0</string>
     <string-array name="video_resolutions_keys">
         <item>7680x4320</item>        <!-- 8K -->
         <item>3840x2160</item>        <!-- 4K -->
@@ -540,7 +540,7 @@
     <string name="widget_black_background_title">Чёрный фон</string>
     <string name="widget_arabic_date_title">Арабская дата</string>
     <string name="widget_arabic_date_format_title">Формат арабской даты</string>
-    <string name="widget_branding_title">Брендинг CyberShadowPKLab</string>
+    <string name="widget_branding_title">Брендинг ShahidCam</string>
 
     <!-- Widget Option Descriptions -->
     <string name="widget_time_format_12h">12-часовой (3:30 PM)</string>
@@ -1021,7 +1021,7 @@
     <string name="app_icon_shahid" translatable="false">0xFF0000</string>
     <string name="app_icon_palestine" translatable="false">I❤️Palestine</string>
     <string name="app_icon_pakistan" translatable="false">ShahidCam</string>
-    <string name="app_icon_shahidlabs" translatable="false">CyberShadowPK Lab</string>
+    <string name="app_icon_shahidlabs" translatable="false">ShahidCam</string>
     <string name="app_icon_nooristic" translatable="false">ShahidCam ++</string>
     <string name="app_icon_bat" translatable="false">ShahidCam</string>
     <string name="app_icon_redbinary" translatable="false">$ ~/r00t</string>
@@ -1530,15 +1530,15 @@ ShahidCam использует фрагментированный формат M
 
     <string name="home_elapsed_flag_option">Флаг акцента</string>
 
-    <string name="home_elapsed_flag_option_desc">Показать или скрыть флаг акцента CyberShadowPK Lab за таймером</string>
+    <string name="home_elapsed_flag_option_desc">Показать или скрыть флаг акцента ShahidCam за таймером</string>
 
-    <string name="home_elapsed_flag_helper">Выберите, показывать ли флаг акцента CyberShadowPK Lab за таймером прошедшего времени.</string>
+    <string name="home_elapsed_flag_helper">Выберите, показывать ли флаг акцента ShahidCam за таймером прошедшего времени.</string>
 
-    <string name="home_elapsed_flag_show">Показать флаг CyberShadowPK Lab (По умолчанию)</string>
+    <string name="home_elapsed_flag_show">Показать флаг ShahidCam (По умолчанию)</string>
 
     <string name="home_elapsed_flag_show_desc">Отображать фирменный флаг акцента за таймером</string>
 
-    <string name="home_elapsed_flag_hide">Скрыть флаг CyberShadowPK Lab</string>
+    <string name="home_elapsed_flag_hide">Скрыть флаг ShahidCam</string>
 
     <string name="home_elapsed_flag_hide_desc">Оставить область таймера без флага акцента</string>
 
@@ -2654,10 +2654,10 @@ ShahidCam использует фрагментированный формат M
     <string name="button_torch">Фонарик</string>
 
     <!-- Cloud Account -->
-    <string name="cloud_account_button_desc">CyberShadowPK Cloud</string>
+    <string name="cloud_account_button_desc">ShahidCam Cloud</string>
     <string name="cloud_account_connecting">Подключение…</string>
     <string name="cloud_account_device_id">ID устройства</string>
-    <string name="cloud_account_device_name_desc">Это имя будет отображаться в панели CyberShadowPK Cloud</string>
+    <string name="cloud_account_device_name_desc">Это имя будет отображаться в панели ShahidCam Cloud</string>
     <string name="cloud_account_device_name_hint">Введите имя устройства (например, Мой телефон)</string>
     <string name="cloud_account_device_name_title">Назовите устройство</string>
     <string name="cloud_account_helper_text">Отвяжите устройство для отключения от учётной записи. Вы можете привязать его снова с другим именем.</string>
@@ -2667,16 +2667,16 @@ ShahidCam использует фрагментированный формат M
     <string name="cloud_account_linked">Устройство привязано</string>
     <string name="cloud_account_login_required">Пожалуйста, войдите, чтобы привязать устройство</string>
     <string name="cloud_account_not_linked">Не привязано</string>
-    <string name="cloud_account_title">CyberShadowPK Cloud</string>
+    <string name="cloud_account_title">ShahidCam Cloud</string>
     <string name="cloud_account_unlink">Отвязать устройство</string>
     <string name="cloud_account_unlink_confirm">Вы уверены, что хотите отвязать это устройство?</string>
     <string name="cloud_account_unlink_success">Устройство отвязано</string>
-    <string name="cloud_account_webview_title">CyberShadowPK Cloud</string>
-    <string name="cloud_button_label">CyberShadowPK Cloud</string>
-    <string name="cloud_button_title">CyberShadowPK Cloud</string>
+    <string name="cloud_account_webview_title">ShahidCam Cloud</string>
+    <string name="cloud_button_label">ShahidCam Cloud</string>
+    <string name="cloud_button_title">ShahidCam Cloud</string>
     <string name="cloud_streaming_not_linked">Сначала привяжите устройство</string>
     <string name="cloud_streaming_status_off">Только локальная трансляция</string>
-    <string name="cloud_streaming_status_on">Загрузка в CyberShadowPK Cloud</string>
+    <string name="cloud_streaming_status_on">Загрузка в ShahidCam Cloud</string>
     <string name="cloud_streaming_title">Облачная трансляция</string>
 
     <!-- Digital Forensics Preview -->
@@ -2688,8 +2688,8 @@ ShahidCam использует фрагментированный формат M
     <string name="e2e_encryption_change_title">Изменить пароль E2E-шифрования</string>
     <string name="e2e_encryption_configured">Настроено — сегменты зашифрованы сквозным шифрованием</string>
     <string name="e2e_encryption_not_configured">Не настроено — настройте для включения облачной трансляции</string>
-    <string name="e2e_encryption_setup_desc">Ваш пароль CyberShadowPK ID используется для создания ключа шифрования трансляции. Он должен совпадать с паролем, используемым на панели ShahidCam для просмотра трансляций.</string>
-    <string name="e2e_encryption_setup_hint">Введите ваш пароль CyberShadowPK ID</string>
+    <string name="e2e_encryption_setup_desc">Ваш пароль ShahidCam ID используется для создания ключа шифрования трансляции. Он должен совпадать с паролем, используемым на панели ShahidCam для просмотра трансляций.</string>
+    <string name="e2e_encryption_setup_hint">Введите ваш пароль ShahidCam ID</string>
     <string name="e2e_encryption_setup_title">Установить пароль E2E-шифрования</string>
     <string name="e2e_encryption_title">E2E-шифрование трансляции</string>
 
@@ -2797,7 +2797,7 @@ ShahidCam использует фрагментированный формат M
     <string name="fullscreen_torch">Фонарик</string>
 
     <!-- Home Sidebar -->
-    <string name="home_sidebar_copyright" translatable="false">© CyberShadowPK Lab 2024 – 2026</string>
+    <string name="home_sidebar_copyright" translatable="false">© ShahidCam 2024 – 2026</string>
     <string name="home_sidebar_discord">Discord</string>
     <string name="home_sidebar_discord_sub">Присоединяйтесь к сообществу</string>
 
@@ -2881,7 +2881,7 @@ ShahidCam использует фрагментированный формат M
     <string name="setting_volume_shutter_title">Затвор клавишами громкости</string>
     <string name="setting_volume_shutter_summary">Клавиши громкости работают как затвор камеры на главной вкладке</string>
     <string name="setting_volume_shutter_footer">Клавиши громкости становятся затвором на главной вкладке:\n• Касание — фото\n• Двойное касание — смена камеры\n• Долгое нажатие — начать или остановить запись\n\nBluetooth-пульты-затворы тоже работают и запускают те же действия. Клавиши работают, пока открыта главная вкладка ShahidCam — будущие версии позволят любой кнопке запускать действия ShahidCam, даже в фоне.\n\nПока используйте MacroDroid для назначения ярлыков ShahidCam — они в разделе «Настройки → Ярлыки и виджеты».</string>
-    <string name="shortcuts_macrodroid_template">Официальный шаблон MacroDroid: https://whatsapp.com/channel/0029VbCNNEzLCoX9wla4yb2e/1252</string>
+    <string name="shortcuts_macrodroid_template">Официальный шаблон MacroDroid: https://github.com/MuhammadShahidh/ShahidCam</string>
     <string name="thermal_guardian_title">Тепловой Защитник</string>
     <string name="thermal_guardian_row_subtitle">Автоматическая настройка записи для предотвращения перегрева</string>
     <string name="audio_vision_title">Аудио Видение</string>
@@ -3001,7 +3001,7 @@ ShahidCam использует фрагментированный формат M
     <string name="streaming_mode_title">Назначение трансляции</string>
     <string name="streaming_mode_local">Локальная сеть</string>
     <string name="streaming_mode_local_desc">Трансляция на устройства в той же WiFi-сети</string>
-    <string name="streaming_mode_cloud">CyberShadowPK Cloud</string>
+    <string name="streaming_mode_cloud">ShahidCam Cloud</string>
     <string name="streaming_mode_cloud_desc">Трансляция куда угодно через интернет</string>
     <string name="streaming_mode_cloud_featured">РЕКОМЕНДУЕТСЯ</string>
     <string name="streaming_mode_link_required">Привяжите устройство для включения</string>
@@ -3342,7 +3342,7 @@ ShahidCam использует фрагментированный формат M
     <string name="settings_location_update_interval_5s">5.0 секунд</string>
 
     <!-- Annotation toolbar -->
-    <string name="annotation_by_shahidlabs_lab">от CyberShadowPK Lab</string>
+    <string name="annotation_by_shahidlabs_lab">от ShahidCam</string>
     <string name="annotation_quick_access">Быстрый доступ</string>
     <string name="annotation_annotate">Аннотировать</string>
     <string name="annotation_enable_tools">Включить инструменты</string>

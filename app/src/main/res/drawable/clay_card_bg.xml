@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Subtle cool outer shadow rim -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#DCE6F5" />
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+    <!-- Soft raised porcelain clay card -->
+    <item android:bottom="2.5dp" android:right="1dp" android:left="1dp" android:top="0.5dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF" />
+            <stroke android:width="1dp" android:color="#EDF2FB" />
+            <corners android:radius="19dp" />
+        </shape>
+    </item>
+</layer-list>

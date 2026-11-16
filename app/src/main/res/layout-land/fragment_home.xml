@@ -51,7 +51,34 @@
         </FrameLayout>
 
         <!-- App Title (centered) -->
-        <ImageView android:id="@+id/ivAppTitle" android:layout_width="190dp" android:layout_height="40dp" android:src="@drawable/menu_icon_unknown" android:translationX="1dp" android:focusable="true" android:nextFocusUp="@+id/btnHamburgerMenu" android:nextFocusDown="@+id/btnGetPro" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" />
+        <LinearLayout
+            android:id="@+id/headerBrandContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <ImageView
+                android:id="@+id/ivAppTitle"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_shahidcam_avatar"
+                android:focusable="true"
+                android:nextFocusUp="@+id/btnHamburgerMenu"
+                android:nextFocusDown="@+id/btnGetPro"
+                android:contentDescription="@string/app_name" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/app_name"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <!-- Golden Pro Button with Shimmer and Badge -->
         <FrameLayout
@@ -273,10 +300,10 @@
                             android:layout_width="56dp"
                             android:layout_height="44dp"
                             android:layout_gravity="bottom|end"
-                            android:alpha="0.72"
+                            android:alpha="0.16"
                             android:scaleType="fitCenter"
                             android:contentDescription="@null"
-                            android:src="@drawable/shahidcam_server_room_bg_flag"
+                            android:src="@drawable/ic_shahidcam_avatar"
                             android:translationX="0dp"
                             android:translationY="6dp" />
 
