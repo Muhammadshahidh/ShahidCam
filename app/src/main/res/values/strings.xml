@@ -3139,11 +3139,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="intruder_delete_failed_toast">Could not delete record</string>
     <string name="intruder_cleared_toast">All intruder records cleared</string>
     <string name="intruder_disclosure_title">Enable Intruder Selfie Detection?</string>
-    <string name="intruder_disclosure_body">ShahidCam uses your device's front-facing camera to take a single photo when someone enters an incorrect App Lock PIN or password.
-
-• Triggers standard Android camera privacy indicators.
-• Photos are stored strictly in private on-device app storage.
-• Nothing is ever uploaded or shared off your device.</string>
+    <string name="intruder_disclosure_body">ShahidCam uses your device\'s front-facing camera to take a single photo when someone enters an incorrect App Lock PIN or password.\n\n\u2022 Triggers standard Android camera privacy indicators.\n\u2022 Photos are stored strictly in private on-device app storage.\n\u2022 Nothing is ever uploaded or shared off your device.</string>
     <string name="intruder_disclosure_accept">Understand &amp; Continue</string>
     <string name="intruder_no_front_camera_msg">This device does not report a front-facing camera, so intruder selfie capture is not supported.</string>
     <string name="intruder_permission_needed_title">Camera Permission Needed</string>
