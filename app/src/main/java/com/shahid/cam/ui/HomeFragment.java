@@ -281,7 +281,7 @@ public class HomeFragment extends BaseFragment {
      */
     protected MaterialButton buttonStartStop;
     protected MaterialButton buttonPauseResume;
-    protected Button buttonCamSwitch;
+    protected MaterialButton buttonCamSwitch;
     protected MaterialButton buttonTorchSwitch;
     private TextView torchStatusLabel;
     private TextView mirrorStatusLabel;
@@ -5387,15 +5387,17 @@ public class HomeFragment extends BaseFragment {
         buttonMirrorSwitch.setContentDescription(
             getString(enabled ? R.string.front_video_mirror_disable : R.string.front_video_mirror_enable)
         );
-        buttonMirrorSwitch.setBackgroundResource(enabled ? R.drawable.control_button_bg_red : R.drawable.control_button_bg);;
-        buttonMirrorSwitch.setIconTint(ColorStateList.valueOf(Color.WHITE));
+        buttonMirrorSwitch.setBackgroundResource(enabled ? R.drawable.control_button_bg_red : R.drawable.control_button_bg);
+        int clayPrimary = ContextCompat.getColor(requireContext(), R.color.clay_text_primary);
+        int claySecondary = ContextCompat.getColor(requireContext(), R.color.clay_text_secondary);
+        buttonMirrorSwitch.setIconTint(ColorStateList.valueOf(enabled ? Color.WHITE : clayPrimary));
 
         // ON/OFF status label (tiny, bottom-right — avatar-toggle style).
         // White "ON" contrasts with the red fill when flipped; light gray "OFF"
         // sits quietly on the neutral glass.
         if (mirrorStatusLabel != null) {
             String label = enabled ? "ON" : "OFF";
-            int color = enabled ? 0xFFFFFFFF : 0xFFB0BEC5;
+            int color = enabled ? 0xFFFFFFFF : claySecondary;
             if (!label.equals(mirrorStatusLabel.getText().toString())) {
                 mirrorStatusLabel.setText(label);
                 mirrorStatusLabel.setTextColor(color);
@@ -12515,8 +12517,8 @@ public class HomeFragment extends BaseFragment {
             buttonStartStop.setIconTint(ColorStateList.valueOf(Color.WHITE));
         }
         if (buttonPauseResume != null) {
-            buttonPauseResume.setTextColor(primaryText);
-            buttonPauseResume.setIconTint(ColorStateList.valueOf(primaryText));
+            buttonPauseResume.setTextColor(Color.WHITE);
+            buttonPauseResume.setIconTint(ColorStateList.valueOf(Color.WHITE));
         }
         if (buttonTorchSwitch != null) {
             buttonTorchSwitch.setTextColor(primaryText);

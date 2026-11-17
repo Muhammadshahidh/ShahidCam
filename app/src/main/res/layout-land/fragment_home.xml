@@ -978,7 +978,7 @@
             android:layout_height="48dp"
             android:layout_marginStart="4dp" android:clipChildren="false" android:clipToPadding="false">
 
-<com.google.android.material.button.MaterialButton android:id="@+id/buttonMirrorSwitch" android:layout_width="match_parent" android:layout_height="match_parent" app:icon="@drawable/ic_mirror_video" app:iconSize="22dp" app:iconGravity="textStart" app:iconPadding="0dp" android:enabled="false" android:background="@drawable/control_button_bg" app:iconTint="@color/white" app:cornerRadius="15dp" android:visibility="gone"
+<com.google.android.material.button.MaterialButton android:id="@+id/buttonMirrorSwitch" android:layout_width="match_parent" android:layout_height="match_parent" app:icon="@drawable/ic_mirror_video" app:iconSize="22dp" app:iconGravity="textStart" app:iconPadding="0dp" android:enabled="false" android:background="@drawable/control_button_bg" app:iconTint="@color/button_icon_tint_selector" app:cornerRadius="15dp" android:visibility="gone"
             android:nextFocusUp="@+id/cardRailToggleLandscape"
             android:nextFocusDown="@+id/buttonMirrorSwitch" />
 
