@@ -4474,8 +4474,7 @@ ShahidCam 为录制使用分段式 MP4 格式。这意味着视频被保存为�
     <string name="screen_recording_saved">屏幕录制已保存</string>
     <string name="screen_recording_tap_to_view">点击查看您的录制内容</string>
     <string name="notification_action_stop">停止</string>
-    <string name="shahidmic_coming_soon">Mic（麦克风录制）即将推出！</string>
-    <string name="toast_stream_server_starting">流媒体服务器正在启动...</string>
+<string name="toast_stream_server_starting">流媒体服务器正在启动...</string>
     <string name="toast_stream_server_stopped">流媒体服务器已停止</string>
     <string name="toast_no_cloud_viewers">没有连接的云观众</string>
     <string name="toast_no_clients">没有客户端连接</string>

@@ -1,190 +1,134 @@
 package com.shahid.cam.ui.components;
 
-import com.shahid.cam.Log;
-import com.shahid.cam.FLog;
 import android.animation.ArgbEvaluator;
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.view.View;
 import android.view.Gravity;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewParent;
 import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 
 import com.shahid.cam.Constants;
+import com.shahid.cam.FLog;
 import com.shahid.cam.R;
 import com.shahid.cam.SharedPreferencesManager;
 
 /**
- * Component for handling the mode switcher (ShahidCam, ShahidRec, ShahidMic) functionality
- * Follows modular design principles with clean separation of concerns
- * Features smooth animated transitions between modes
+ * Component for handling the 2-mode switcher (ShahidCam camera & ScreenRec).
  */
 public class ModeSwitcherComponent {
     private static final String TAG = "ModeSwitcherComponent";
     private static final int ANIMATION_DURATION = 180;
-    
+    private static final float[] cachedSegmentLefts = new float[2];
+    private static float cachedSegmentWidth = 0f;
+
     private final Context context;
     private final SharedPreferencesManager sharedPreferencesManager;
-    private String currentMode = Constants.MODE_SHAHIDCAM;
     private ModeSwitcherListener listener;
-    
-    // UI References
+
+    private FrameLayout switcherRoot;
     private FrameLayout segmentShahidCam;
     private FrameLayout segmentShahidRec;
-    private FrameLayout segmentShahidMic;
-    private FrameLayout switcherRoot;
-    private View activeIndicator;
     private LinearLayout segmentsContainer;
+    private View activeIndicator;
     private ViewPropertyAnimator activeIndicatorAnimator;
 
-    // Guard during initialization
-    private boolean isInitializing = false;
-
-    // Hold-to-drag: grab the pill, drag between segments, snap on release.
-    private final android.os.Handler dragHandler =
-            new android.os.Handler(android.os.Looper.getMainLooper());
-
-    // Cached segment geometry — computed once on layout, reused everywhere
-    // (state management instead of repeated calculations).
-    private final float[] cachedSegmentLefts = new float[3];
-    private float cachedSegmentWidth = 0f;
+    private final android.os.Handler dragHandler = new android.os.Handler(android.os.Looper.getMainLooper());
     private Runnable dragLongPressRunnable;
     private boolean dragActive = false;
-    private float dragStartRawX = 0f;
+    private float dragDownX = 0f;
+    private float dragDownY = 0f;
     private float dragBaseX = 0f;
-    private int dragHighlightedSegment = -1;
-    
-    /**
-     * Interface for mode switcher callbacks
-     */
+    private int dragHighlightedSegment = 0;
+
+    private String currentMode = Constants.MODE_SHAHIDCAM;
+    private boolean isInitializing = true;
+
     public interface ModeSwitcherListener {
         void onModeSelected(String mode);
         void onComingSoonRequested(String modeName);
     }
-    
-    /**
-     * Constructor
-     * @param context Application context
-     */
-    public ModeSwitcherComponent(@NonNull Context context) {
+
+    public ModeSwitcherComponent(Context context) {
         this.context = context;
         this.sharedPreferencesManager = SharedPreferencesManager.getInstance(context);
     }
-    
-    /**
-     * Initialize the mode switcher with the provided view
-     * @param rootView The root view containing the mode switcher
-     */
-    public void initialize(@NonNull View rootView) {
-        try {
-            isInitializing = true;
 
+    public void initialize(View rootView) {
+        try {
             segmentShahidCam = rootView.findViewById(R.id.segment_shahidcam);
             segmentShahidRec = rootView.findViewById(R.id.segment_shahidrec);
-            segmentShahidMic = rootView.findViewById(R.id.segment_shahidmic);
             switcherRoot = rootView.findViewById(R.id.mode_switcher_root);
             activeIndicator = rootView.findViewById(R.id.segment_active_indicator);
             segmentsContainer = rootView.findViewById(R.id.mode_switcher_segments);
+
             if (switcherRoot == null && activeIndicator != null && activeIndicator.getParent() instanceof FrameLayout) {
                 switcherRoot = (FrameLayout) activeIndicator.getParent();
-                FLog.d(TAG, "initialize: recovered switcherRoot from activeIndicator parent");
             }
             if (switcherRoot == null && segmentsContainer != null && segmentsContainer.getParent() instanceof FrameLayout) {
                 switcherRoot = (FrameLayout) segmentsContainer.getParent();
-                FLog.d(TAG, "initialize: recovered switcherRoot from segmentsContainer parent");
             }
-            FLog.d(TAG, "initialize: switcherRoot=" + (switcherRoot != null)
-                    + " activeIndicator=" + (activeIndicator != null)
-                    + " segmentsContainer=" + (segmentsContainer != null));
 
-            if (segmentShahidCam == null || segmentShahidRec == null || segmentShahidMic == null) {
+            if (segmentShahidCam == null || segmentShahidRec == null || switcherRoot == null) {
                 FLog.e(TAG, "Segment views missing");
                 return;
             }
 
-            // Position the pill as soon as layout is known (first frame, no delay),
-            // and re-position on layout changes (e.g. rotation). Never interrupt a
-            // running slide/pulse animation — that would teleport the pill or leave
-            // it stuck scaled.
             switcherRoot.addOnLayoutChangeListener((v, l, t, r, b, ol, ot, orr, ob) -> {
                 updateCachedSegmentGeometry();
-                if (!dragActive && !isInitializing && v.getWidth() > 0
-                        && activeIndicatorAnimator == null) {
+                if (!dragActive && !isInitializing && v.getWidth() > 0 && activeIndicatorAnimator == null) {
                     updateActiveIndicator(currentMode, false);
                 }
             });
 
-            // Show/hide ShahidRec NEW badge based on NewFeatureManager
-            View badgeShahidRec = rootView.findViewById(R.id.badge_shahidrec);
-            if (badgeShahidRec != null) {
-                try {
-                    boolean shouldShowShahidRecBadge = com.shahid.cam.ui.utils.NewFeatureManager.shouldShowBadge(context, "shahidrec");
-                    badgeShahidRec.setVisibility(shouldShowShahidRecBadge ? View.VISIBLE : View.GONE);
-                    FLog.d(TAG, "ShahidRec badge visibility: " + (shouldShowShahidRecBadge ? "VISIBLE" : "GONE"));
-                } catch (Exception e) {
-                    FLog.e(TAG, "Error managing ShahidRec badge visibility", e);
-                    badgeShahidRec.setVisibility(View.GONE);
-                }
-            }
-
-            // Resolve persisted mode (fallback if invalid / coming soon)
             String persisted = sharedPreferencesManager.getCurrentRecordingMode();
-            if (Constants.MODE_FADMIC.equals(persisted)) persisted = Constants.MODE_SHAHIDCAM;
+            if (!Constants.MODE_SHAHIDCAM.equals(persisted) && !Constants.MODE_SHAHIDREC.equals(persisted)) {
+                persisted = Constants.MODE_SHAHIDCAM;
+                sharedPreferencesManager.setCurrentRecordingMode(persisted);
+            }
             currentMode = persisted;
 
             segmentShahidCam.setBackground(null);
             segmentShahidRec.setBackground(null);
-            segmentShahidMic.setBackground(null);
 
-            // Set text colors immediately (before view is shown) to prevent flicker
-            // This must happen synchronously, not in post()
-            android.widget.TextView tvShahidCam = (android.widget.TextView) segmentShahidCam.getChildAt(0);
-            android.widget.TextView tvShahidRec = (android.widget.TextView) segmentShahidRec.getChildAt(0);
-            android.widget.TextView tvShahidMic = (android.widget.TextView) segmentShahidMic.getChildAt(0);
-            
-            int whiteColor = ContextCompat.getColor(context, android.R.color.white);
-            int grayColor = ContextCompat.getColor(context, R.color.amoled_text_secondary);
-            
-            if (tvShahidCam != null) {
-                tvShahidCam.setTextColor(Constants.MODE_SHAHIDCAM.equals(currentMode) ? whiteColor : grayColor);
-                tvShahidCam.setTypeface(null, Constants.MODE_SHAHIDCAM.equals(currentMode) ? android.graphics.Typeface.BOLD : android.graphics.Typeface.NORMAL);
+            android.widget.TextView tvCam = (android.widget.TextView) segmentShahidCam.getChildAt(0);
+            android.widget.TextView tvRec = (android.widget.TextView) segmentShahidRec.getChildAt(0);
+
+            int activeTextColor = ContextCompat.getColor(context, android.R.color.white);
+            int inactiveTextColor = ContextCompat.getColor(context, R.color.clay_text_secondary);
+
+            if (tvCam != null) {
+                boolean active = Constants.MODE_SHAHIDCAM.equals(currentMode);
+                tvCam.setTextColor(active ? activeTextColor : inactiveTextColor);
+                tvCam.setTypeface(null, active ? android.graphics.Typeface.BOLD : android.graphics.Typeface.NORMAL);
             }
-            if (tvShahidRec != null) {
-                tvShahidRec.setTextColor(Constants.MODE_SHAHIDREC.equals(currentMode) ? whiteColor : grayColor);
-                tvShahidRec.setTypeface(null, Constants.MODE_SHAHIDREC.equals(currentMode) ? android.graphics.Typeface.BOLD : android.graphics.Typeface.NORMAL);
-            }
-            if (tvShahidMic != null) {
-                tvShahidMic.setTextColor(Constants.MODE_FADMIC.equals(currentMode) ? whiteColor : grayColor);
-                tvShahidMic.setTypeface(null, Constants.MODE_FADMIC.equals(currentMode) ? android.graphics.Typeface.BOLD : android.graphics.Typeface.NORMAL);
+            if (tvRec != null) {
+                boolean active = Constants.MODE_SHAHIDREC.equals(currentMode);
+                tvRec.setTextColor(active ? activeTextColor : inactiveTextColor);
+                tvRec.setTypeface(null, active ? android.graphics.Typeface.BOLD : android.graphics.Typeface.NORMAL);
             }
 
-            // Set backgrounds after text is set
-            // Use post() to ensure view is fully laid out
-            // Keep isInitializing true until post() completes to prevent animation
             rootView.post(() -> {
                 setExclusiveSelected(currentMode, null);
-                isInitializing = false; // Now allow animations on user clicks
+                isInitializing = false;
             });
 
             setupClickListeners();
             FLog.d(TAG, "ModeSwitcher initialized (active=" + currentMode + ")");
         } catch (Exception e) {
             FLog.e(TAG, "Error initializing ModeSwitcher", e);
-            isInitializing = false; // Reset on error
+            isInitializing = false;
         }
     }
 
-    /**
-     * Set one mode as active, others as inactive.
-     * The moving indicator is the only visual active-pill source.
-     */
     private void setExclusiveSelected(String mode, Runnable onTransitionComplete) {
         String previousMode = currentMode;
         boolean shouldAnimateTransition = !isInitializing && previousMode != null && !previousMode.equals(mode);
@@ -198,55 +142,23 @@ public class ModeSwitcherComponent {
             }
         }
 
-        if (isInitializing) {
-            FLog.v(TAG, "setExclusiveSelected - isInitializing=true, only backgrounds applied, skipping text");
-        } else {
-            FLog.d(TAG, "setExclusiveSelected - user click, current=" + previousMode + ", new=" + mode);
-
+        if (!isInitializing) {
             if (Constants.MODE_SHAHIDCAM.equals(previousMode) && !Constants.MODE_SHAHIDCAM.equals(mode)) {
                 styleText(segmentShahidCam, false, false);
-                FLog.d(TAG, "Deactivating ShahidCam (was active)");
             } else if (Constants.MODE_SHAHIDREC.equals(previousMode) && !Constants.MODE_SHAHIDREC.equals(mode)) {
                 styleText(segmentShahidRec, false, false);
-                FLog.d(TAG, "Deactivating ShahidRec (was active)");
-            } else if (Constants.MODE_FADMIC.equals(previousMode) && !Constants.MODE_FADMIC.equals(mode)) {
-                styleText(segmentShahidMic, false, false);
-                FLog.d(TAG, "Deactivating ShahidMic (was active)");
             }
-
             if (Constants.MODE_SHAHIDCAM.equals(mode)) {
                 styleText(segmentShahidCam, true, true);
-                FLog.d(TAG, "Activating ShahidCam (animating)");
             } else if (Constants.MODE_SHAHIDREC.equals(mode)) {
                 styleText(segmentShahidRec, true, true);
-                FLog.d(TAG, "Activating ShahidRec (animating)");
-            } else if (Constants.MODE_FADMIC.equals(mode)) {
-                styleText(segmentShahidMic, true, true);
-                FLog.d(TAG, "Activating ShahidMic (animating)");
             }
         }
-
-        FLog.d(TAG, String.format("setExclusiveSelected(%s): ShahidCam=%b ShahidRec=%b ShahidMic=%b",
-            mode, Constants.MODE_SHAHIDCAM.equals(mode),
-            Constants.MODE_SHAHIDREC.equals(mode),
-            Constants.MODE_FADMIC.equals(mode)));
     }
 
     private void applyTextStatesInstant(String mode) {
         styleText(segmentShahidCam, Constants.MODE_SHAHIDCAM.equals(mode), false);
         styleText(segmentShahidRec, Constants.MODE_SHAHIDREC.equals(mode), false);
-        styleText(segmentShahidMic, Constants.MODE_FADMIC.equals(mode), false);
-    }
-    
-    /**
-     * Apply background programmatically - no drawable files needed
-     * Creates a simple rounded rectangle with solid color
-     */
-    private void applyBackground(FrameLayout segment, boolean active, boolean animate) {
-        if (segment == null) return;
-        segment.setSelected(active);
-        segment.setBackground(null);
-        FLog.d(TAG, "applyBackground: " + segment.getId() + " active=" + active + " animate=" + animate);
     }
 
     private void updateActiveIndicator(String mode, boolean animate) {
@@ -254,7 +166,7 @@ public class ModeSwitcherComponent {
     }
 
     private void updateActiveIndicator(String mode, boolean animate, Runnable onAnimationComplete) {
-        if (switcherRoot == null || activeIndicator == null) return;
+        if (activeIndicator == null || switcherRoot == null) return;
         FrameLayout target = getSegmentForMode(mode);
         if (target == null) return;
 
@@ -268,24 +180,15 @@ public class ModeSwitcherComponent {
             }
             final int targetHeight = resolvedTargetHeight;
             if (targetWidth <= 0) {
-                // Use the cached geometry (state from the last layout pass) so the
-                // pill is in place on the very first frame.
                 int segIndex = segmentIndexForMode(mode);
                 targetWidth = (int) cachedSegmentWidth;
                 targetLeft = (int) cachedSegmentLefts[segIndex];
             }
             if (targetWidth <= 0 || targetHeight <= 0) {
-                FLog.w(TAG, "updateActiveIndicator: invalid target size mode=" + mode
-                        + " width=" + targetWidth + " height=" + targetHeight);
                 return;
             }
-
             cancelActiveIndicatorAnimation();
             FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) activeIndicator.getLayoutParams();
-            // IDEMPOTENCY GUARD — critical: setLayoutParams() triggers requestLayout(),
-            // and the root's onLayoutChangeListener re-runs this method on every layout
-            // pass. Without skipping identical params, that ping-pongs into an infinite
-            // layout loop (the "requestLayout improperly called during layout" flood).
             boolean paramsDirty = lp.gravity != (Gravity.TOP | Gravity.START)
                     || lp.leftMargin != 0 || lp.topMargin != 0
                     || lp.width != targetWidth || lp.height != targetHeight;
@@ -294,10 +197,11 @@ public class ModeSwitcherComponent {
             lp.topMargin = 0;
             lp.width = targetWidth;
             lp.height = targetHeight;
+
             if (activeIndicator.getBackground() == null
                     || activeIndicator.getBackground().getConstantState() == null
                     || !activeIndicator.getBackground().getConstantState().equals(
-                            context.getDrawable(R.drawable.segment_active_background).getConstantState())) {
+                            ContextCompat.getDrawable(context, R.drawable.segment_active_background).getConstantState())) {
                 activeIndicator.setBackgroundResource(R.drawable.segment_active_background);
             }
             activeIndicator.setVisibility(View.VISIBLE);
@@ -307,25 +211,20 @@ public class ModeSwitcherComponent {
             if (Math.abs(activeIndicator.getY() - targetTop) > 0.5f) {
                 activeIndicator.setY(targetTop);
             }
-
             if (!animate) {
                 if (Math.abs(activeIndicator.getX() - targetLeft) > 0.5f) {
                     activeIndicator.setX(targetLeft);
                 }
-                FLog.v(TAG, "updateActiveIndicator: positioned mode=" + mode + " left=" + targetLeft);
                 if (onAnimationComplete != null) {
                     onAnimationComplete.run();
                 }
                 return;
             }
 
-            float startLeft = activeIndicator.getX();
             final float finalLeft = targetLeft;
             unclipHierarchy(activeIndicator);
             boolean alreadyScaled = activeIndicator.getScaleX() > 1.05f;
             if (alreadyScaled) {
-                // Drag-release: the pill is already grown — slide at the current
-                // scale, then settle to normal ONCE. No re-grow, no two phases.
                 activeIndicatorAnimator = activeIndicator.animate()
                         .x(targetLeft)
                         .setDuration(ANIMATION_DURATION + 70L)
@@ -337,21 +236,17 @@ public class ModeSwitcherComponent {
                                     .setDuration(220)
                                     .setInterpolator(new android.view.animation.OvershootInterpolator(1.4f))
                                     .withEndAction(() -> {
-                                        // Run AFTER the scale-down completes so the
-                                        // rebuild never cuts the settle motion.
                                         if (onAnimationComplete != null) {
                                             onAnimationComplete.run();
                                         }
                                     })
                                     .start();
-                            FLog.d(TAG, "updateActiveIndicator: animation end mode=" + mode + " left=" + finalLeft);
                         });
             } else {
-                // Click: grow + slide, then spring back.
                 activeIndicatorAnimator = activeIndicator.animate()
                         .x(targetLeft)
-                        .scaleX(1.12f)
-                        .scaleY(1.12f)
+                        .scaleX(1.10f)
+                        .scaleY(1.10f)
                         .setDuration(ANIMATION_DURATION + 70L)
                         .setInterpolator(new FastOutSlowInInterpolator())
                         .withEndAction(() -> {
@@ -366,10 +261,8 @@ public class ModeSwitcherComponent {
                                         }
                                     })
                                     .start();
-                            FLog.d(TAG, "updateActiveIndicator: animation end mode=" + mode + " left=" + finalLeft);
                         });
             }
-            FLog.d(TAG, "updateActiveIndicator: animating mode=" + mode + " fromLeft=" + Math.round(startLeft) + " toLeft=" + targetLeft);
         };
 
         if (target.getWidth() > 0 && target.getHeight() > 0) {
@@ -387,20 +280,8 @@ public class ModeSwitcherComponent {
     }
 
     private void animatePillFlow(String fromMode, String toMode, Runnable onTransitionComplete) {
-        applyBackground(segmentShahidCam, false, false);
-        applyBackground(segmentShahidRec, false, false);
-        applyBackground(segmentShahidMic, false, false);
-
-        FrameLayout fromSegment = getSegmentForMode(fromMode);
-        FrameLayout toSegment = getSegmentForMode(toMode);
-        int fromLeft = fromSegment != null ? switcherRoot.getPaddingLeft() + fromSegment.getLeft() : -1;
-        int toLeft = toSegment != null ? switcherRoot.getPaddingLeft() + toSegment.getLeft() : -1;
-        int fromWidth = fromSegment != null ? fromSegment.getWidth() : -1;
-        int toWidth = toSegment != null ? toSegment.getWidth() : -1;
-        FLog.d(TAG, "animatePillFlow: from=" + fromMode + " to=" + toMode
-                + " fromLeft=" + fromLeft + " toLeft=" + toLeft
-                + " fromWidth=" + fromWidth + " toWidth=" + toWidth);
-
+        if (segmentShahidCam != null) segmentShahidCam.setBackground(null);
+        if (segmentShahidRec != null) segmentShahidRec.setBackground(null);
         updateActiveIndicator(toMode, true, () -> {
             if (onTransitionComplete != null) {
                 onTransitionComplete.run();
@@ -408,214 +289,124 @@ public class ModeSwitcherComponent {
         });
     }
 
-    /**
-     * Style text (color and weight) with optional animation
-     * @param segment The segment to style
-     * @param active Whether this segment is active
-     * @param animate Whether to animate the color change
-     */
     private void styleText(FrameLayout segment, boolean active, boolean animate) {
         if (segment == null) return;
         android.widget.TextView tv = (android.widget.TextView) segment.getChildAt(0);
         if (tv == null) return;
-        
+
+        int activeColor = ContextCompat.getColor(context, android.R.color.white);
+        int inactiveColor = ContextCompat.getColor(context, R.color.clay_text_secondary);
+        int targetColor = active ? activeColor : inactiveColor;
         int currentColor = tv.getCurrentTextColor();
-        int targetColor = ContextCompat.getColor(context, active ? android.R.color.white : R.color.amoled_text_secondary);
+
         tv.setTypeface(null, active ? android.graphics.Typeface.BOLD : android.graphics.Typeface.NORMAL);
-        
-        // Only change color if it's actually different
-        if (currentColor == targetColor) {
-            FLog.v(TAG, "styleText - segment=" + segment.getId() + " already has correct color, skipping");
-            return;
-        }
-        
-        FLog.d(TAG, "styleText - segment=" + segment.getId() + ", active=" + active + ", animate=" + animate);
-        
-        if (animate) {
-            ValueAnimator anim = ValueAnimator.ofObject(new ArgbEvaluator(), currentColor, targetColor);
-            anim.setDuration(ANIMATION_DURATION);
-            anim.addUpdateListener(a -> tv.setTextColor((Integer) a.getAnimatedValue()));
-            anim.start();
-            FLog.d(TAG, "Text color animation STARTED for segment " + segment.getId());
+        if (animate && currentColor != targetColor) {
+            animateTextColor(tv, currentColor, targetColor);
         } else {
-            // No animation - instant color change
             tv.setTextColor(targetColor);
-            FLog.d(TAG, "Text color set INSTANTLY for segment " + segment.getId());
         }
     }
-    
-    /**
-     * Setup click listeners for all segments
-     */
+
     private void setupClickListeners() {
         if (segmentShahidCam != null) {
             segmentShahidCam.setOnClickListener(v -> handleModeClick(Constants.MODE_SHAHIDCAM));
         }
-        
         if (segmentShahidRec != null) {
             segmentShahidRec.setOnClickListener(v -> handleModeClick(Constants.MODE_SHAHIDREC));
         }
-        
-        if (segmentShahidMic != null) {
-            segmentShahidMic.setOnClickListener(v -> handleModeClick(Constants.MODE_FADMIC));
-            setupDragToSwitch();
-        }
-
-        // Unclip the whole hierarchy once at init so the pill can overflow
-        // freely on ALL interactions (clicks, press nudge, drags) from the start.
-        unclipHierarchy(activeIndicator);
-        updateCachedSegmentGeometry();
+        installPillDragListeners();
     }
-    
-    /**
-     * Handle mode selection clicks
-     * @param mode The selected mode
-     */
+
     private void handleModeClick(String mode) {
-        FLog.d(TAG, "Mode clicked: " + mode);
-        
-        if (isInitializing) return;
-
-        if (mode.equals(currentMode)) return; // no-op
-
-        if (Constants.MODE_FADMIC.equals(mode)) { // blocked mode
-            showComingSoonToast(context.getString(R.string.shahidmic_coming_soon));
-            if (listener != null) listener.onComingSoonRequested("ShahidMic");
+        if (mode.equals(currentMode)) {
             return;
         }
-
-        Runnable modeSelectionAction = () -> {
-            if (listener == null) return;
-            switch (mode) {
-                case Constants.MODE_SHAHIDCAM:
-                    listener.onModeSelected(mode);
-                    break;
-                case Constants.MODE_SHAHIDREC:
-                    try {
-                        com.shahid.cam.ui.utils.NewFeatureManager.markFeatureAsSeen(context, "shahidrec");
-                        View badgeShahidRec = segmentShahidRec.getRootView().findViewById(R.id.badge_shahidrec);
-                        if (badgeShahidRec != null) {
-                            badgeShahidRec.setVisibility(View.GONE);
-                        }
-                    } catch (Exception e) {
-                        FLog.e(TAG, "Error marking ShahidRec badge as seen", e);
-                    }
-                    listener.onModeSelected(mode);
-                    break;
-                default:
-                    break;
-            }
-        };
-
-        setExclusiveSelected(mode, modeSelectionAction);
+        String previousMode = currentMode;
         currentMode = mode;
-        sharedPreferencesManager.setCurrentRecordingMode(currentMode);
-        FLog.d(TAG, "Mode switched -> " + currentMode);
+        setExclusiveSelected(mode, () -> {
+            if (listener != null) {
+                listener.onModeSelected(mode);
+            }
+        });
+        sharedPreferencesManager.setCurrentRecordingMode(mode);
+        FLog.d(TAG, "Mode switched from " + previousMode + " to " + mode);
     }
-    
-    /**
-     * Hold + drag the active pill between segments; it scales up while grabbed,
-     * follows the finger, and snaps to the nearest segment on release.
-     */
-    private void setupDragToSwitch() {
-        if (switcherRoot == null || activeIndicator == null) return;
-        // The segments are clickable children, so the root's OnTouchListener never
-        // fires — attach the gesture listener to each segment instead.
-        android.view.View.OnTouchListener dragListener = (v, event) -> {
-            switch (event.getActionMasked()) {
-                case android.view.MotionEvent.ACTION_DOWN:
-                    cancelDragLongPress();
-                    dragStartRawX = event.getRawX();
-                    dragBaseX = activeIndicator.getX();
-                    dragActive = false;
-                    // Touch press feedback: nudge the pill up slightly.
-                    activeIndicator.animate().scaleX(1.06f).scaleY(1.06f)
-                            .setDuration(90).start();
-                    dragLongPressRunnable = () -> {
-                        if (switcherRoot == null || activeIndicator == null) return;
-                        grabPill();
-                    };
-                    dragHandler.postDelayed(dragLongPressRunnable, 300L);
-                    return false; // let normal taps/segment clicks work
-                case android.view.MotionEvent.ACTION_MOVE: {
-                    float dx = event.getRawX() - dragStartRawX;
-                    if (!dragActive) {
-                        // Click-and-drag: grab the pill immediately once the finger
-                        // moves past the touch slop (no long-press required).
-                        if (Math.abs(dx) > android.view.ViewConfiguration
-                                .get(context).getScaledTouchSlop()) {
-                            cancelDragLongPress();
-                            grabPill();
-                        } else {
-                            return false;
-                        }
-                    }
-                    if (dragActive) {
-                        // Free drag: the pill follows the finger 1:1. It only
-                        // snaps (instantly, no animation lag) once its center gets
-                        // close to a segment center — a gentle magnetic pull.
-                        float maxX = Math.max(0f,
-                                switcherRoot.getWidth() - activeIndicator.getWidth());
-                        float targetX = Math.max(0f, Math.min(maxX, dragBaseX + dx));
-                        activeIndicator.setX(targetX);
 
-                        int seg = nearestSegment(targetX);
-                        float segLeft = cachedSegmentLefts[seg];
-                        float segCenter = segmentCenter(seg);
-                        float pillCenter = targetX + activeIndicator.getWidth() / 2f;
-                        if (Math.abs(pillCenter - segCenter) < cachedSegmentWidth * 0.22f) {
-                            // Magnetic: within the capture zone, snap to the segment.
-                            activeIndicator.setX(segLeft);
-                        }
-                        if (seg != dragHighlightedSegment) {
-                            dragHighlightedSegment = seg;
-                            if (com.shahid.cam.Utils.hapticsAllowedForUi(activeIndicator.getContext())) {
-                                activeIndicator.performHapticFeedback(
-                                        android.view.HapticFeedbackConstants.CLOCK_TICK);
-                            }
-                        }
-                        return true;
-                    }
-                    return false;
-                }
-                case android.view.MotionEvent.ACTION_UP:
-                case android.view.MotionEvent.ACTION_CANCEL: {
+    @SuppressLint("ClickableViewAccessibility")
+    private void installPillDragListeners() {
+        if (switcherRoot == null || activeIndicator == null) return;
+        final int touchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
+        final long longPressMs = Math.max(ViewConfiguration.getLongPressTimeout(), 300);
+
+        View.OnTouchListener dragListener = (v, ev) -> {
+            switch (ev.getActionMasked()) {
+                case MotionEvent.ACTION_DOWN:
+                    dragDownX = ev.getRawX();
+                    dragDownY = ev.getRawY();
+                    dragActive = false;
+                    updateCachedSegmentGeometry();
                     cancelDragLongPress();
-                    setPillDragGate(false);
-                    if (!dragActive && activeIndicatorAnimator == null) {
-                        // Plain tap: revert the press nudge (selection animation,
-                        // if any, takes over with its own pulse).
-                        activeIndicator.animate().scaleX(1f).scaleY(1f)
-                                .setDuration(150)
-                                .setInterpolator(new FastOutSlowInInterpolator())
-                                .start();
-                    }
-                    if (dragActive) {
-                        dragActive = false;
-                        float centerX = activeIndicator.getX() + activeIndicator.getWidth() / 2f;
-                        int seg = nearestSegment(centerX);
-                        String mode = modeForSegment(seg);
-                        if (mode != null && !mode.equals(currentMode)) {
-                            // Mode change: let handleModeClick drive ONE smooth
-                            // slide+pulse to the segment — no settle-then-jump.
-                            handleModeClick(mode);
-                            // Blocked mode (e.g. ShahidMic): glide back to the current mode.
-                            if (!mode.equals(currentMode)) {
-                                settlePillToSegment(segmentIndexForMode(currentMode));
-                            }
-                        } else {
-                            // Same mode: settle the scale + stay on the segment.
-                            settlePillToSegment(seg);
-                        }
-                        return true;
-                    }
+                    dragLongPressRunnable = this::grabPill;
+                    dragHandler.postDelayed(dragLongPressRunnable, longPressMs);
                     return false;
+
+                case MotionEvent.ACTION_MOVE: {
+                    float dx = ev.getRawX() - dragDownX;
+                    float dy = ev.getRawY() - dragDownY;
+                    if (!dragActive) {
+                        if (Math.hypot(dx, dy) > touchSlop) {
+                            cancelDragLongPress();
+                        }
+                        return false;
+                    }
+                    float maxX = switcherRoot.getPaddingLeft() + cachedSegmentWidth;
+                    float minX = switcherRoot.getPaddingLeft();
+                    float clampedX = Math.max(minX, Math.min(maxX, dragBaseX + dx));
+                    activeIndicator.setX(clampedX);
+                    int hovered = nearestSegment(clampedX);
+                    if (hovered != dragHighlightedSegment) {
+                        dragHighlightedSegment = hovered;
+                        if (com.shahid.cam.Utils.hapticsAllowedForUi(activeIndicator.getContext())) {
+                            activeIndicator.performHapticFeedback(android.view.HapticFeedbackConstants.CLOCK_TICK);
+                        }
+                    }
+                    return true;
                 }
+
+                case MotionEvent.ACTION_UP:
+                case MotionEvent.ACTION_CANCEL:
+                    cancelDragLongPress();
+                    if (!dragActive) {
+                        return false;
+                    }
+                    boolean canceled = (ev.getActionMasked() == MotionEvent.ACTION_CANCEL);
+                    dragActive = false;
+                    setPillDragGate(false);
+                    int targetSeg = canceled ? segmentIndexForMode(currentMode) : dragHighlightedSegment;
+                    String targetMode = modeForSegment(targetSeg);
+                    if (!canceled && !targetMode.equals(currentMode)) {
+                        String previousMode = currentMode;
+                        currentMode = targetMode;
+                        styleText(segmentShahidCam, Constants.MODE_SHAHIDCAM.equals(targetMode), true);
+                        styleText(segmentShahidRec, Constants.MODE_SHAHIDREC.equals(targetMode), true);
+                        sharedPreferencesManager.setCurrentRecordingMode(targetMode);
+                        updateActiveIndicator(targetMode, true, () -> {
+                            if (listener != null) {
+                                listener.onModeSelected(targetMode);
+                            }
+                        });
+                        FLog.d(TAG, "Mode dragged from " + previousMode + " to " + targetMode);
+                    } else {
+                        settlePillToSegment(segmentIndexForMode(currentMode));
+                    }
+                    return true;
+
                 default:
                     return false;
             }
         };
-        FrameLayout[] segments = { segmentShahidCam, segmentShahidRec, segmentShahidMic };
+
+        FrameLayout[] segments = { segmentShahidCam, segmentShahidRec };
         for (FrameLayout seg : segments) {
             if (seg != null) seg.setOnTouchListener(dragListener);
         }
@@ -623,18 +414,14 @@ public class ModeSwitcherComponent {
 
     private void grabPill() {
         if (switcherRoot == null || activeIndicator == null || dragActive) return;
-        // Belt-and-suspenders: unclip every ancestor so the scaled pill can
-        // overflow freely in all directions.
         unclipHierarchy(activeIndicator);
-        // Scale from the exact center so growth is symmetric on all sides.
         activeIndicator.setPivotX(activeIndicator.getWidth() / 2f);
         activeIndicator.setPivotY(activeIndicator.getHeight() / 2f);
         cancelActiveIndicatorAnimation();
         dragBaseX = activeIndicator.getX();
         dragActive = true;
         dragHighlightedSegment = nearestSegment(dragBaseX);
-        // Pick-up: scale up like the quick-action reorder.
-        activeIndicator.animate().scaleX(1.15f).scaleY(1.15f).setDuration(150).start();
+        activeIndicator.animate().scaleX(1.12f).scaleY(1.12f).setDuration(150).start();
         if (com.shahid.cam.Utils.hapticsAllowedForUi(activeIndicator.getContext())) {
             activeIndicator.performHapticFeedback(android.view.HapticFeedbackConstants.LONG_PRESS);
         }
@@ -664,7 +451,7 @@ public class ModeSwitcherComponent {
 
     private void setPillDragGate(boolean active) {
         try {
-            android.content.Context c = switcherRoot != null ? switcherRoot.getContext() : context;
+            Context c = switcherRoot != null ? switcherRoot.getContext() : context;
             if (c instanceof com.shahid.cam.MainActivity) {
                 ((com.shahid.cam.MainActivity) c).setModePillDragActive(active);
             }
@@ -675,11 +462,11 @@ public class ModeSwitcherComponent {
 
     private void updateCachedSegmentGeometry() {
         if (switcherRoot == null) return;
-        float rootW = switcherRoot.getWidth();
+        float rootW = switcherRoot.getWidth() - switcherRoot.getPaddingLeft() - switcherRoot.getPaddingRight();
         if (rootW <= 0f) return;
-        cachedSegmentWidth = rootW / 3f;
+        cachedSegmentWidth = rootW / 2f;
         float pad = switcherRoot.getPaddingLeft();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
             cachedSegmentLefts[i] = pad + i * cachedSegmentWidth;
         }
     }
@@ -692,11 +479,10 @@ public class ModeSwitcherComponent {
     }
 
     private int nearestSegment(float indicatorLeft) {
-        float center = indicatorLeft
-                + (activeIndicator != null ? activeIndicator.getWidth() / 2f : 0f);
+        float center = indicatorLeft + (activeIndicator != null ? activeIndicator.getWidth() / 2f : 0f);
         int best = 0;
         float bestDist = Float.MAX_VALUE;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
             float d = Math.abs(center - segmentCenter(i));
             if (d < bestDist) {
                 bestDist = d;
@@ -707,21 +493,17 @@ public class ModeSwitcherComponent {
     }
 
     private String modeForSegment(int index) {
-        if (index == 1) return Constants.MODE_SHAHIDREC;
-        if (index == 2) return Constants.MODE_FADMIC;
-        return Constants.MODE_SHAHIDCAM;
+        return index == 1 ? Constants.MODE_SHAHIDREC : Constants.MODE_SHAHIDCAM;
     }
 
     private int segmentIndexForMode(String mode) {
-        if (Constants.MODE_SHAHIDREC.equals(mode)) return 1;
-        if (Constants.MODE_FADMIC.equals(mode)) return 2;
-        return 0;
+        return Constants.MODE_SHAHIDREC.equals(mode) ? 1 : 0;
     }
 
     private void settlePillToSegment(int index) {
         if (activeIndicator == null || switcherRoot == null) return;
-        float targetLeft = cachedSegmentLefts[index];
         if (cachedSegmentWidth <= 0f) updateCachedSegmentGeometry();
+        float targetLeft = cachedSegmentLefts[index];
         cancelActiveIndicatorAnimation();
         activeIndicator.animate()
                 .x(targetLeft)
@@ -737,12 +519,6 @@ public class ModeSwitcherComponent {
         }
     }
 
-    /**
-     * Update the active state visual indicator
-     * @param activeMode The currently active mode
-     */
-    private void updateActiveState(String activeMode) { setExclusiveSelected(activeMode, null); }
-
     private void syncActiveStateInstant(String activeMode) {
         if (activeMode == null) return;
         currentMode = activeMode;
@@ -752,94 +528,32 @@ public class ModeSwitcherComponent {
         applyTextStatesInstant(activeMode);
         isInitializing = previousInitializing;
     }
-    
-    /**
-     * Reset segment to inactive state with smooth animation
-     * @param segment The segment to reset
-     */
-    private void resetSegmentState(FrameLayout segment) { }
-    
-    /**
-     * Set segment to active state with smooth animation
-     * @param segment The segment to activate
-     */
-    private void setSegmentActive(FrameLayout segment) { }
-    
-    /**
-     * Animate background drawable change with smooth transition
-     * @param segment The segment to animate
-     * @param toActive Whether animating to active or inactive state
-     */
-    private void animateBackgroundChange(FrameLayout segment, boolean toActive) { }
-    
-    /**
-     * Animate text color change
-     * @param textView The TextView to animate
-     * @param fromColor Starting color
-     * @param toColor Ending color
-     */
+
     private void animateTextColor(android.widget.TextView textView, int fromColor, int toColor) {
         ValueAnimator colorAnimator = ValueAnimator.ofObject(new ArgbEvaluator(), fromColor, toColor);
         colorAnimator.setDuration(ANIMATION_DURATION);
-        colorAnimator.addUpdateListener(animator -> 
-            textView.setTextColor((Integer) animator.getAnimatedValue()));
+        colorAnimator.addUpdateListener(animator ->
+                textView.setTextColor((Integer) animator.getAnimatedValue()));
         colorAnimator.start();
     }
-    
-    /**
-     * Get the segment view for a specific mode
-     * @param mode The mode to get segment for
-     * @return The corresponding FrameLayout segment
-     */
+
     private FrameLayout getSegmentForMode(String mode) {
-        switch (mode) {
-            case Constants.MODE_SHAHIDCAM: return segmentShahidCam;
-            case Constants.MODE_SHAHIDREC: return segmentShahidRec;
-            case Constants.MODE_FADMIC: return segmentShahidMic;
-            default: return null;
-        }
+        return Constants.MODE_SHAHIDREC.equals(mode) ? segmentShahidRec : segmentShahidCam;
     }
-    
-    /**
-     * Show coming soon toast message
-     * @param modeName The name of the mode
-     */
-    private void showComingSoonToast(String modeName) {
-        // modeName is already a complete sentence (e.g. "ShahidMic (Mic Recording)
-        // coming soon!") — never append, that duplicated "coming soon" in the toast.
-        Toast.makeText(context, modeName, Toast.LENGTH_SHORT).show();
-        FLog.d(TAG, "Showed coming soon toast for: " + modeName);
-    }
-    
-    /**
-     * Set the mode switcher listener
-     * @param listener The listener to set
-     */
+
     public void setListener(ModeSwitcherListener listener) {
         this.listener = listener;
     }
-    
-    /**
-     * Get the current active mode
-     * @return The current mode
-     */
+
     public String getCurrentMode() {
         return currentMode;
     }
-    
-    /**
-     * Programmatically set the active mode
-     * @param mode The mode to set as active
-     */
+
     public void setActiveMode(String mode) {
         syncActiveStateInstant(mode);
     }
-    
-    /**
-     * Check if the component is properly initialized
-     * @return true if initialized, false otherwise
-     */
+
     public boolean isInitialized() {
-        return segmentShahidCam != null && segmentShahidRec != null && segmentShahidMic != null;
+        return segmentShahidCam != null && segmentShahidRec != null;
     }
 }

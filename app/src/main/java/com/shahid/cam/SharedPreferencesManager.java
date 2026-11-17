@@ -92,83 +92,27 @@ public class SharedPreferencesManager {
 
     private static final String PREF_KEY_CLOCK_CARD_COLOR = "clock_card_color";
 
-    // This will be set dynamically based on theme
-    public static String DEFAULT_CLOCK_CARD_COLOR = "#673AB7"; // Initial value: Purple
+    // This will be set dynamically based on Light vs Dark Claymorphism
+    public static String DEFAULT_CLOCK_CARD_COLOR = "#FFFFFF";
 
-    /**
-     * Gets the currently set clock card color.
-     * For AMOLED theme, special handling ensures the clock card always uses Dark
-     * Grey.
-     */
     public String getClockCardColor() {
-        String currentTheme = sharedPreferences.getString(
-            com.shahid.cam.Constants.PREF_APP_THEME,
-            Constants.DEFAULT_APP_THEME
-        );
-
-        // Special case for AMOLED theme - always return Dark Grey
-        if (
-            currentTheme != null &&
-            (currentTheme.equalsIgnoreCase("AMOLED") ||
-                currentTheme.equalsIgnoreCase("Amoled") ||
-                currentTheme.equalsIgnoreCase("Shahid Dark"))
-        ) {
-            return "#424242"; // Dark Grey for AMOLED
-        } else if (currentTheme.equals("Crimson Bloom")) {
-            return "#F44336"; // Red for Red theme
-        } else if (currentTheme.equals("Premium Gold")) {
-            return "#FFD700"; // Gold for Premium Gold theme
-        } else if (currentTheme.equals("Silent Forest")) {
-            return "#26A69A"; // Green for Silent Forest theme
-        } else if (currentTheme.equals("Shadow Alloy")) {
-            return "#A5A9AB"; // Silver for Shadow Alloy theme
-        } else if (currentTheme.equals("Pookie Pink")) {
-            return "#F06292"; // Pink for Pookie Pink theme
-        } else if (currentTheme.equals("Snow Veil")) {
-            return "#E0E0E0"; // Light Grey for Snow Veil theme
+        String defaultForMode = isDarkModeEnabled() ? "#131C31" : "#FFFFFF";
+        String stored = sharedPreferences.getString(PREF_KEY_CLOCK_CARD_COLOR, defaultForMode);
+        if (stored == null || stored.isEmpty() || "#673AB7".equalsIgnoreCase(stored)) {
+            return defaultForMode;
         }
-
-        // For other themes or default
-        return sharedPreferences.getString(
-            PREF_KEY_CLOCK_CARD_COLOR,
-            DEFAULT_CLOCK_CARD_COLOR
-        );
+        return stored;
     }
 
-    /**
-     * Updates the default clock card color based on the current theme.
-     * This should be called whenever the theme changes or on app startup.
-     */
     public void updateDefaultClockColorForTheme() {
-        String currentTheme = sharedPreferences.getString(
-            com.shahid.cam.Constants.PREF_APP_THEME,
-            Constants.DEFAULT_APP_THEME
-        );
-
-        // Only update if the theme changes and the color wasn't manually set by the
-        // user
-        if (currentTheme != null) {
-            if (
-                currentTheme.equalsIgnoreCase("AMOLED") ||
-                currentTheme.equalsIgnoreCase("Amoled") ||
-                currentTheme.equalsIgnoreCase("Shahid Dark")
-            ) {
-                setClockCardColor("#424242"); // Dark Grey for AMOLED
-            } else if (currentTheme.equals("Crimson Bloom")) {
-                setClockCardColor("#F44336"); // Red for Red theme
-            } else if (currentTheme.equals("Premium Gold")) {
-                setClockCardColor("#FFD700"); // Gold for Gold theme
-            } else if (currentTheme.equals("Silent Forest")) {
-                setClockCardColor("#26A69A"); // Green for Silent Forest theme
-            } else if (currentTheme.equals("Shadow Alloy")) {
-                setClockCardColor("#A5A9AB"); // Silver for Shadow Alloy theme
-            } else if (currentTheme.equals("Pookie Pink")) {
-                setClockCardColor("#F06292"); // Pink for Pookie Pink theme
-            } else if (currentTheme.equals("Snow Veil")) {
-                setClockCardColor("#E0E0E0"); // Light Grey for Snow Veil theme
-            } else {
-                setClockCardColor(DEFAULT_CLOCK_CARD_COLOR); // Default purple for other themes
-            }
+        String stored = sharedPreferences.getString(PREF_KEY_CLOCK_CARD_COLOR, null);
+        if (stored == null
+                || "#673AB7".equalsIgnoreCase(stored)
+                || "#FFFFFF".equalsIgnoreCase(stored)
+                || "#131C31".equalsIgnoreCase(stored)
+                || "#E0E0E0".equalsIgnoreCase(stored)
+                || "#424242".equalsIgnoreCase(stored)) {
+            setClockCardColor(isDarkModeEnabled() ? "#131C31" : "#FFFFFF");
         }
     }
 

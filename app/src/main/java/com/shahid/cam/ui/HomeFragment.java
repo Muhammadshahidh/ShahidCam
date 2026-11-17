@@ -4357,18 +4357,12 @@ public class HomeFragment extends BaseFragment {
                                         );
                                     } else {
                                         // Use appropriate default color based on theme
-                                        if (isSnowVeilTheme) {
-                                            tileZoom.setTextColor(
-                                                Color.parseColor("#424242")
-                                            ); // Dark gray for Snow Veil
-                                        } else {
-                                            tileZoom.setTextColor(
-                                                ContextCompat.getColor(
-                                                    requireContext(),
-                                                    android.R.color.white
-                                                )
-                                            );
-                                        }
+                                        tileZoom.setTextColor(
+                                            ContextCompat.getColor(
+                                                requireContext(),
+                                                R.color.clay_text_primary
+                                            )
+                                        );
                                     }
                                 }
                             } catch (Exception ignored) {}
@@ -4501,10 +4495,7 @@ public class HomeFragment extends BaseFragment {
         }
 
         applyModeSwitcherTheming(themeName);
-
-        if ("Snow Veil".equals(themeName)) {
-            applySnowVeilThemeToUI(view);
-        }
+        applySnowVeilThemeToUI(view);
 
         setupStatsCardNavigation(view);
 
@@ -4616,42 +4607,10 @@ public class HomeFragment extends BaseFragment {
         // the duplicate block that animated the wrapper here was removed (it
         // caused the control row to re-center with a slide on cold start).
 
-        View btnGetPro = view.findViewById(R.id.btnGetPro);
-        View proBadgeDot = view.findViewById(R.id.proBadgeDot);
-        
-        if (btnGetPro != null) {
-            Utils.attachPressScale(btnGetPro);
-            // Update badge visibility based on pro feature state
-            if (proBadgeDot != null) {
-                try {
-                    MainActivity mainActivity = (MainActivity) getActivity();
-                    if (mainActivity != null && mainActivity.shouldShowProBadge()) {
-                        proBadgeDot.setVisibility(View.VISIBLE);
-                    } else {
-                        proBadgeDot.setVisibility(View.GONE);
-                    }
-                } catch (Exception e) {
-                    FLog.e(TAG, "Error checking pro badge state", e);
-                }
-            }
-            
-            btnGetPro.setOnClickListener(v -> {
-                // Mark pro feature as seen when clicking Pro button
-                try {
-                    com.shahid.cam.ui.utils.NewFeatureManager.markFeatureAsSeen(requireContext(), "pro");
-                    // Hide badge after clicking
-                    if (proBadgeDot != null) {
-                        proBadgeDot.setVisibility(View.GONE);
-                    }
-                } catch (Exception e) {
-                    FLog.e(TAG, "Error marking pro as seen", e);
-                }
-                
-                // Open ShahidCam Pro Activity
-                Intent intent = new Intent(getActivity(), ShahidCamProActivity.class);
-                startActivity(intent);
-            });
-            // ShimmerTextView handles its own shimmer animation
+        View btnTopMoreMenu = view.findViewById(R.id.btn_top_more_menu);
+        if (btnTopMoreMenu != null) {
+            Utils.attachPressScale(btnTopMoreMenu);
+            btnTopMoreMenu.setOnClickListener(this::showTopOverflowMenu);
         }
 
         // -----
@@ -8117,7 +8076,7 @@ public class HomeFragment extends BaseFragment {
                         tileAfStatusIcon.setTextColor(
                             afMode ==
                                 android.hardware.camera2.CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_VIDEO
-                                ? android.graphics.Color.WHITE
+                                ? ContextCompat.getColor(requireContext(), R.color.clay_text_primary)
                                 : ContextCompat.getColor(requireContext(), R.color.orange_accent)
                         );
                     }
@@ -8131,21 +8090,9 @@ public class HomeFragment extends BaseFragment {
                         );
                     boolean isSnowVeilTheme = "Snow Veil".equals(currentTheme);
 
-                    if (isSnowVeilTheme) {
-                        tileAfToggle.setTextColor(Color.parseColor("#424242")); // Dark gray for Snow Veil
-                    } else {
-                        // Use theme's colorOnSurface for other themes
-                        android.util.TypedValue typedValue =
-                            new android.util.TypedValue();
-                        requireContext()
-                            .getTheme()
-                            .resolveAttribute(
-                                com.google.android.material.R.attr.colorOnSurface,
-                                typedValue,
-                                true
-                            );
-                        tileAfToggle.setTextColor(typedValue.data);
-                    }
+                    tileAfToggle.setTextColor(
+                        ContextCompat.getColor(requireContext(), R.color.clay_text_primary)
+                    );
                     // theme)-----------
                 }
             } catch (Exception ignored) {}
@@ -8203,21 +8150,9 @@ public class HomeFragment extends BaseFragment {
                             currentTheme
                         );
 
-                        if (isSnowVeilTheme) {
-                            tileExp.setTextColor(Color.parseColor("#424242")); // Dark gray for Snow Veil
-                        } else {
-                            // Use theme's colorOnSurface for other themes
-                            android.util.TypedValue typedValue =
-                                new android.util.TypedValue();
-                            requireContext()
-                                .getTheme()
-                                .resolveAttribute(
-                                    com.google.android.material.R.attr.colorOnSurface,
-                                    typedValue,
-                                    true
-                                );
-                            tileExp.setTextColor(typedValue.data);
-                        }
+                        tileExp.setTextColor(
+                            ContextCompat.getColor(requireContext(), R.color.clay_text_primary)
+                        );
                         tileExp.setScaleX(1f);
                         tileExp.setScaleY(1f);
                         FLog.d(
@@ -8273,16 +8208,12 @@ public class HomeFragment extends BaseFragment {
                         );
                     } else {
                         // Use appropriate default color based on theme
-                        if (isSnowVeilTheme) {
-                            tileZoom.setTextColor(Color.parseColor("#424242")); // Dark gray for Snow Veil
-                        } else {
-                            tileZoom.setTextColor(
-                                ContextCompat.getColor(
-                                    requireContext(),
-                                    android.R.color.white
-                                )
-                            );
-                        }
+                        tileZoom.setTextColor(
+                                            ContextCompat.getColor(
+                                                requireContext(),
+                                                R.color.clay_text_primary
+                                            )
+                                        );
                     }
                     // theme)-----------
                 }
@@ -8832,11 +8763,7 @@ public class HomeFragment extends BaseFragment {
         if (active) {
             return ContextCompat.getColor(requireContext(), R.color.orange_accent);
         }
-        if ("Snow Veil".equals(sharedPreferencesManager.sharedPreferences.getString(
-                Constants.PREF_APP_THEME, Constants.DEFAULT_APP_THEME))) {
-            return Color.parseColor("#424242");
-        }
-        return android.graphics.Color.WHITE;
+        return ContextCompat.getColor(requireContext(), R.color.clay_text_primary);
     }
 
     /** Scale/fade/overshoot animation for the tile status labels (torch-style). */
@@ -12521,123 +12448,109 @@ public class HomeFragment extends BaseFragment {
      * Apply Snow Veil theme specific fixes for text contrast and colors
      */
     private void applySnowVeilSpecificFixes(View rootView) {
-        // Find storage card and ensure all text is black
+        if (!isAdded() || getContext() == null) return;
+        int primary = ContextCompat.getColor(requireContext(), R.color.clay_text_primary);
+        int secondary = ContextCompat.getColor(requireContext(), R.color.clay_text_secondary);
         CardView cardStorage = rootView.findViewById(R.id.cardStorage);
         if (cardStorage != null) {
-            // Force all text in storage card to black for better contrast on white
-            // background
-            setTextColorsRecursive(
-                cardStorage,
-                Color.BLACK,
-                Color.parseColor("#424242")
-            );
+            setTextColorsRecursive(cardStorage, primary, secondary);
         }
-
-        // Find any other text views that might need contrast fixes
-        // This ensures all text is properly visible on the light theme
         View[] textContainers = {
             rootView.findViewById(R.id.cardStats),
             rootView.findViewById(R.id.cardClock),
         };
-
         for (View container : textContainers) {
             if (container != null) {
-                setTextColorsRecursive(
-                    container,
-                    Color.BLACK,
-                    Color.parseColor("#424242")
-                );
+                setTextColorsRecursive(container, primary, secondary);
             }
         }
     }
 
+    private void showTopOverflowMenu(@NonNull View anchor) {
+        if (!isAdded() || getContext() == null) return;
+        androidx.appcompat.widget.PopupMenu popup = new androidx.appcompat.widget.PopupMenu(requireContext(), anchor);
+        boolean isDark = SharedPreferencesManager.getInstance(requireContext()).isDarkModeEnabled();
+        popup.getMenu().add(android.view.Menu.NONE, 1, 1, isDark ? R.string.menu_light_mode : R.string.menu_dark_mode);
+        popup.getMenu().add(android.view.Menu.NONE, 2, 2, R.string.menu_permissions);
+        popup.getMenu().add(android.view.Menu.NONE, 3, 3, R.string.menu_intruder_history);
+        popup.getMenu().add(android.view.Menu.NONE, 4, 4, R.string.menu_app_lock);
+        popup.getMenu().add(android.view.Menu.NONE, 5, 5, R.string.menu_about);
+        popup.setOnMenuItemClickListener(item -> {
+            if (!isAdded()) return false;
+            int id = item.getItemId();
+            if (id == 1) {
+                if (getActivity() instanceof MainActivity) {
+                    ((MainActivity) getActivity()).toggleDarkMode(!isDark);
+                }
+                return true;
+            } else if (id == 2) {
+                if (getActivity() instanceof MainActivity) {
+                    ((MainActivity) getActivity()).switchFragment(3, true);
+                }
+                return true;
+            } else if (id == 3) {
+                if (getActivity() instanceof MainActivity) {
+                    ((MainActivity) getActivity()).switchFragment(2, true);
+                }
+                return true;
+            } else if (id == 4) {
+                OverlayNavUtil.show(requireActivity(), new SecuritySettingsFragment(), "SecuritySettingsFragment");
+                return true;
+            } else if (id == 5) {
+                OverlayNavUtil.show(requireActivity(), new AboutFragment(), "AboutFragment");
+                return true;
+            }
+            return false;
+        });
+        popup.show();
+    }
     /**
      * Apply tinting only to main action buttons
      */
     private void applyButtonTinting() {
-        // Only tint the main action buttons that we already have references to
-        // This avoids searching for IDs that might not exist
-
-        // Start/Stop button
+        if (!isAdded() || getContext() == null) return;
+        int primaryText = ContextCompat.getColor(requireContext(), R.color.clay_text_primary);
         if (buttonStartStop != null) {
-            buttonStartStop.setTextColor(Color.BLACK);
-            buttonStartStop.setIconTint(ColorStateList.valueOf(Color.BLACK));
+            buttonStartStop.setTextColor(Color.WHITE);
+            buttonStartStop.setIconTint(ColorStateList.valueOf(Color.WHITE));
         }
-
-        // Pause/Resume button
         if (buttonPauseResume != null) {
-            buttonPauseResume.setTextColor(Color.BLACK);
-            buttonPauseResume.setIconTint(ColorStateList.valueOf(Color.BLACK));
+            buttonPauseResume.setTextColor(primaryText);
+            buttonPauseResume.setIconTint(ColorStateList.valueOf(primaryText));
         }
-
-        // Torch switch button - special handling for on/off state
         if (buttonTorchSwitch != null) {
-            buttonTorchSwitch.setTextColor(Color.BLACK);
-
-            // Only set black icon tint if torch is OFF
-            // For ON state, preserve the yellow color by not setting a black tint
+            buttonTorchSwitch.setTextColor(primaryText);
             if (!isTorchOn) {
-                buttonTorchSwitch.setIconTint(
-                    ColorStateList.valueOf(Color.BLACK)
-                );
+                buttonTorchSwitch.setIconTint(ColorStateList.valueOf(primaryText));
             } else {
-                // Use yellow/amber color for the torch when it's ON
-                buttonTorchSwitch.setIconTint(
-                    ColorStateList.valueOf(Color.parseColor("#FFC107"))
-                );
+                buttonTorchSwitch.setIconTint(ColorStateList.valueOf(Color.parseColor("#F59E0B")));
             }
         }
-
-        // Camera switch button
         if (buttonCamSwitch != null) {
-            buttonCamSwitch.setTextColor(Color.BLACK);
+            buttonCamSwitch.setTextColor(primaryText);
+            buttonCamSwitch.setIconTint(ColorStateList.valueOf(primaryText));
         }
-
-        // Recording tiles - apply dark colors for Snow Veil theme visibility
         if (tileAfToggle != null) {
-            // Use dark gray instead of black for better visibility on light background
-            tileAfToggle.setTextColor(Color.parseColor("#424242"));
+            tileAfToggle.setTextColor(primaryText);
         }
-
         if (tileExp != null) {
-            // Check if exposure is active (orange tint should be preserved)
             if (aeLocked || currentEvIndex != 0) {
-                // Keep orange tint for active state
-                tileExp.setTextColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.orange_accent
-                    )
-                );
+                tileExp.setTextColor(ContextCompat.getColor(requireContext(), R.color.orange_accent));
             } else {
-                // Use dark gray for inactive state
-                tileExp.setTextColor(Color.parseColor("#424242"));
+                tileExp.setTextColor(primaryText);
             }
         }
-
         if (tileZoom != null) {
-            // Check if zoom is active (not at 1.0x)
-            SharedPreferencesManager sp = SharedPreferencesManager.getInstance(
-                requireContext()
-            );
+            SharedPreferencesManager sp = SharedPreferencesManager.getInstance(requireContext());
             CameraType currentCamera = sp.getCameraSelection();
             float currentZoom = sp.getSpecificZoomRatio(currentCamera);
-
             if (Math.abs(currentZoom - 1.0f) > 0.01f) {
-                // Keep orange tint for active zoom
-                tileZoom.setTextColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.orange_accent
-                    )
-                );
+                tileZoom.setTextColor(ContextCompat.getColor(requireContext(), R.color.orange_accent));
             } else {
-                // Use dark gray for default zoom
-                tileZoom.setTextColor(Color.parseColor("#424242"));
+                tileZoom.setTextColor(primaryText);
             }
         }
     }
-
     /**
      * Apply Shahid Dark theme styling to recording control tiles
      */
@@ -12806,11 +12719,8 @@ public class HomeFragment extends BaseFragment {
 
             View segmentShahidCam = root.findViewById(R.id.segment_shahidcam);
             View segmentShahidRec = root.findViewById(R.id.segment_shahidrec);
-            View segmentShahidMic = root.findViewById(R.id.segment_shahidmic);
-
             if (segmentShahidCam != null) segmentShahidCam.setBackground(null);
             if (segmentShahidRec != null) segmentShahidRec.setBackground(null);
-            if (segmentShahidMic != null) segmentShahidMic.setBackground(null);
         } catch (Exception e) {
             FLog.w(
                 "HomeFragment",
@@ -12830,42 +12740,30 @@ public class HomeFragment extends BaseFragment {
         CardView cardStorage = rootView.findViewById(R.id.cardStorage);
         CardView cardClock = rootView.findViewById(R.id.cardClock);
 
-        // Stats card text — tvVideoCount and tvVideoSize preserve their XML colors
-        // via android:tag="preserve_color" so no extra colour handling is needed here.
+        int primary = ContextCompat.getColor(requireContext(), R.color.clay_text_primary);
+        int secondary = ContextCompat.getColor(requireContext(), R.color.clay_text_secondary);
+
         if (cardStats != null) {
-            // Force all text in the stats card to black (Snow Veil theme — white background).
             forceForceMakeAllTextBlack(cardStats);
         }
-
-        // Storage info card text - use white text since it has dark background
         if (cardStorage != null) {
             makeStorageCardTextWhite(cardStorage);
         }
-
-        // Direct access to known TextViews for clock
         if (tvClock != null) {
-            tvClock.setTextColor(Color.BLACK);
+            tvClock.setTextColor(primary);
         }
-
         if (tvDateEnglish != null) {
-            tvDateEnglish.setTextColor(Color.BLACK);
+            tvDateEnglish.setTextColor(secondary);
         }
-
         if (tvDateArabic != null) {
-            tvDateArabic.setTextColor(Color.BLACK);
+            tvDateArabic.setTextColor(secondary);
         }
-
-        // Update colors for storage widget TextViews - use white for dark background
-        if (tvCameraTitle != null) tvCameraTitle.setTextColor(Color.WHITE);
-        if (tvCameraSubtitle != null) tvCameraSubtitle.setTextColor(
-            Color.WHITE
-        );
+        if (tvCameraTitle != null) tvCameraTitle.setTextColor(primary);
+        if (tvCameraSubtitle != null) tvCameraSubtitle.setTextColor(secondary);
         applyTimeLeftAccentPreference();
-        if (tvEstimateSubtitle != null) tvEstimateSubtitle.setTextColor(
-            Color.parseColor("#B0B0B0")
-        );
-        if (tvSpaceTitle != null) tvSpaceTitle.setTextColor(Color.WHITE);
-        if (tvSpaceSubtitle != null) tvSpaceSubtitle.setTextColor(Color.WHITE);
+        if (tvEstimateSubtitle != null) tvEstimateSubtitle.setTextColor(secondary);
+        if (tvSpaceTitle != null) tvSpaceTitle.setTextColor(primary);
+        if (tvSpaceSubtitle != null) tvSpaceSubtitle.setTextColor(secondary);
         updateElapsedHeroAppearance();
 
         // Keep semantic colors for icons but ensure they're visible on light background
@@ -13513,8 +13411,8 @@ public class HomeFragment extends BaseFragment {
         String selectedId = sharedPreferencesManager != null
                 ? sharedPreferencesManager.sharedPreferences.getString(
                         Constants.PREF_HOME_ELAPSED_BACKGROUND,
-                        ELAPSED_BACKGROUND_BLACK)
-                : ELAPSED_BACKGROUND_BLACK;
+                        ELAPSED_BACKGROUND_WHITE)
+                : ELAPSED_BACKGROUND_WHITE;
 
         getParentFragmentManager().setFragmentResultListener(
                 ELAPSED_BACKGROUND_RESULT_KEY,
@@ -13523,7 +13421,7 @@ public class HomeFragment extends BaseFragment {
                     if (bundle == null) return;
                     String selected = bundle.getString(
                             com.shahid.cam.ui.picker.PickerBottomSheetFragment.BUNDLE_SELECTED_ID,
-                            ELAPSED_BACKGROUND_BLACK);
+                            ELAPSED_BACKGROUND_WHITE);
                     if (sharedPreferencesManager != null) {
                         sharedPreferencesManager.sharedPreferences.edit()
                                 .putString(Constants.PREF_HOME_ELAPSED_BACKGROUND, selected)
@@ -13960,18 +13858,21 @@ public class HomeFragment extends BaseFragment {
     }
 
     private void updateElapsedHeroAppearance() {
-        if (cardElapsedHero == null) {
+        if (cardElapsedHero == null || !isAdded() || getContext() == null) {
             return;
         }
-
         String backgroundPref = sharedPreferencesManager != null
                 ? sharedPreferencesManager.sharedPreferences.getString(
                         Constants.PREF_HOME_ELAPSED_BACKGROUND,
-                        ELAPSED_BACKGROUND_BLACK)
-                : ELAPSED_BACKGROUND_BLACK;
+                        ELAPSED_BACKGROUND_WHITE)
+                : ELAPSED_BACKGROUND_WHITE;
         boolean useBlackCard = ELAPSED_BACKGROUND_BLACK.equals(backgroundPref);
         boolean useWhiteCard = ELAPSED_BACKGROUND_WHITE.equals(backgroundPref);
-
+        int claySurface = ContextCompat.getColor(requireContext(), R.color.clay_surface);
+        int clayPrimaryText = ContextCompat.getColor(requireContext(), R.color.clay_text_primary);
+        int claySecondaryText = ContextCompat.getColor(requireContext(), R.color.clay_text_secondary);
+        int clayWarning = ContextCompat.getColor(requireContext(), R.color.clay_warning);
+        int claySuccess = ContextCompat.getColor(requireContext(), R.color.clay_success);
         int backgroundColor;
         int strokeColor;
         int railStrokeColor = resolveThemeColor(R.attr.homeRailCardBorder);
@@ -13979,33 +13880,32 @@ public class HomeFragment extends BaseFragment {
         int subtitleColor;
         int iconColor;
         int stateIconRes;
-
         if (isModePausedForElapsedAppearance()) {
             backgroundColor = useBlackCard
                     ? Color.parseColor("#E6000000")
-                    : useWhiteCard ? Color.parseColor("#F7F3EE") : Color.TRANSPARENT;
+                    : useWhiteCard ? claySurface : Color.TRANSPARENT;
             strokeColor = useBlackCard || useWhiteCard ? railStrokeColor : Color.TRANSPARENT;
-            titleColor = useWhiteCard ? Color.parseColor("#6C4B12") : Color.parseColor("#FFF6E2");
-            subtitleColor = useWhiteCard ? Color.parseColor("#A07024") : Color.parseColor("#D8B06C");
-            iconColor = useWhiteCard ? Color.parseColor("#A07024") : Color.parseColor("#C8923A");
+            titleColor = useWhiteCard ? clayWarning : Color.parseColor("#FFF6E2");
+            subtitleColor = useWhiteCard ? clayWarning : Color.parseColor("#D8B06C");
+            iconColor = useWhiteCard ? clayWarning : Color.parseColor("#C8923A");
             stateIconRes = R.drawable.pause_rounded;
         } else if (isModeRecordingForElapsedAppearance()) {
             backgroundColor = useBlackCard
                     ? Color.parseColor("#E6000000")
-                    : useWhiteCard ? Color.parseColor("#F7FBF8") : Color.TRANSPARENT;
+                    : useWhiteCard ? claySurface : Color.TRANSPARENT;
             strokeColor = useBlackCard || useWhiteCard ? railStrokeColor : Color.TRANSPARENT;
-            titleColor = useWhiteCard ? Color.parseColor("#165B36") : Color.parseColor("#EDFFF4");
-            subtitleColor = useWhiteCard ? Color.parseColor("#2F8A5A") : Color.parseColor("#8DE0AC");
-            iconColor = useWhiteCard ? Color.parseColor("#2F8A5A") : Color.parseColor("#56C889");
+            titleColor = useWhiteCard ? claySuccess : Color.parseColor("#EDFFF4");
+            subtitleColor = useWhiteCard ? claySuccess : Color.parseColor("#8DE0AC");
+            iconColor = useWhiteCard ? claySuccess : Color.parseColor("#56C889");
             stateIconRes = R.drawable.play_button_rounded;
         } else {
             backgroundColor = useBlackCard
                     ? Color.parseColor("#E6000000")
-                    : useWhiteCard ? Color.parseColor("#F4F6F8") : Color.TRANSPARENT;
+                    : useWhiteCard ? claySurface : Color.TRANSPARENT;
             strokeColor = useBlackCard || useWhiteCard ? railStrokeColor : Color.TRANSPARENT;
-            titleColor = useWhiteCard ? Color.parseColor("#33424C") : Color.parseColor("#C9D5DE");
-            subtitleColor = useWhiteCard ? Color.parseColor("#667682") : Color.parseColor("#90A4AE");
-            iconColor = useWhiteCard ? Color.parseColor("#667682") : Color.parseColor("#6B7C88");
+            titleColor = useBlackCard ? Color.parseColor("#C9D5DE") : clayPrimaryText;
+            subtitleColor = useBlackCard ? Color.parseColor("#90A4AE") : claySecondaryText;
+            iconColor = useBlackCard ? Color.parseColor("#6B7C88") : ContextCompat.getColor(requireContext(), R.color.clay_accent_blue);
             stateIconRes = R.drawable.play_button_rounded;
         }
 
@@ -14055,7 +13955,7 @@ public class HomeFragment extends BaseFragment {
                     }
 
                     // Make regular text white for dark background
-                    textView.setTextColor(Color.WHITE);
+                    textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.clay_text_primary));
 
                     // Handle if the text has any spans (HTML formatting)
                     CharSequence textContent = textView.getText();
@@ -14065,7 +13965,7 @@ public class HomeFragment extends BaseFragment {
                             textContent
                         );
                         newText.setSpan(
-                            new ForegroundColorSpan(Color.WHITE),
+                            new ForegroundColorSpan(ContextCompat.getColor(requireContext(), R.color.clay_text_primary)),
                             0,
                             newText.length(),
                             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
@@ -14090,7 +13990,7 @@ public class HomeFragment extends BaseFragment {
                 View child = viewGroup.getChildAt(i);
                 if (child instanceof TextView) {
                     TextView textView = (TextView) child;
-                    textView.setTextColor(Color.BLACK);
+                    textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.clay_text_primary));
 
                     // Handle if the text has any spans (HTML formatting)
                     CharSequence text = textView.getText();
@@ -14098,7 +13998,7 @@ public class HomeFragment extends BaseFragment {
                         // Create a new SpannableString that preserves formatting but forces black color
                         SpannableString newText = new SpannableString(text);
                         newText.setSpan(
-                            new ForegroundColorSpan(Color.BLACK),
+                            new ForegroundColorSpan(ContextCompat.getColor(requireContext(), R.color.clay_text_primary)),
                             0,
                             newText.length(),
                             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE

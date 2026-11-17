@@ -175,9 +175,9 @@
                     android:visibility="gone" />
             </FrameLayout>
 
-            <!-- Item 3: Editor (Soon badge) -->
+            <!-- Item 3: Permissions Dashboard -->
             <FrameLayout
-                android:id="@+id/nav_tab_editor"
+                android:id="@+id/nav_tab_permissions"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -185,31 +185,26 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:nextFocusUp="@+id/fragment_container"
-                android:contentDescription="@string/editor_studio_title">
+                android:contentDescription="@string/nav_permissions">
 
                 <ImageView
-                    android:id="@+id/nav_editor_icon"
+                    android:id="@+id/nav_permissions_icon"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_editor_clapper"
+                    android:src="@drawable/ic_nav_permissions"
                     android:tint="@color/clay_text_secondary"
                     android:contentDescription="@null" />
 
-                <TextView
-                    android:id="@+id/tv_editor_soon_badge"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <View
+                    android:id="@+id/permissions_badge_dot"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
                     android:layout_gravity="top|end"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="4dp"
-                    android:paddingHorizontal="5dp"
-                    android:paddingVertical="1dp"
-                    android:text="@string/nav_soon_badge"
-                    android:textColor="@android:color/white"
-                    android:textSize="8sp"
-                    android:textStyle="bold"
-                    android:background="@drawable/clay_badge_soon_bg" />
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/badge_update_bg"
+                    android:visibility="gone" />
             </FrameLayout>
 
             <!-- Item 4: Settings -->

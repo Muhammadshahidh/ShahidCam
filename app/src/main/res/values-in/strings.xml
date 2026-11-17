@@ -2807,9 +2807,7 @@ Dukungan otomasi berbasis intent (Tasker, MacroDroid, dll.) untuk memicu Aplikas
 
     <string name="notification_action_stop">Berhenti</string>
 
-    <string name="shahidmic_coming_soon">Mic (Rekam Mic) segera hadir!</string>
-
-    <string name="toast_stream_server_starting">Server streaming dimulai…</string>
+<string name="toast_stream_server_starting">Server streaming dimulai…</string>
 
     <string name="toast_stream_server_stopped">Server streaming dihentikan</string>
 

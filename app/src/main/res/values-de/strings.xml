@@ -2500,8 +2500,7 @@ Für die flüssigste Wiedergabe kannst du einen externen Player wie VLC verwende
     <string name="screen_recording_saved">Bildschirmaufnahme gespeichert</string>
     <string name="screen_recording_tap_to_view">Tippe, um deine Aufnahme anzusehen</string>
     <string name="notification_action_stop">Stopp</string>
-    <string name="shahidmic_coming_soon">Mic (Mikrofonaufnahme) kommt bald!</string>
-    <string name="toast_stream_server_starting">Streamserver wird gestartet...</string>
+<string name="toast_stream_server_starting">Streamserver wird gestartet...</string>
     <string name="toast_stream_server_stopped">Streamserver gestoppt</string>
     <string name="toast_no_cloud_viewers">Keine Cloud-Zuschauer verbunden</string>
     <string name="toast_no_clients">Keine Clients verbunden</string>

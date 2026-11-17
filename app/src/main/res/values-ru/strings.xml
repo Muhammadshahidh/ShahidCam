@@ -3233,8 +3233,7 @@ ShahidCam использует фрагментированный формат M
     <string name="screen_recording_saved">Запись экрана сохранена</string>
     <string name="screen_recording_tap_to_view">Нажмите, чтобы просмотреть запись</string>
     <string name="notification_action_stop">Стоп</string>
-    <string name="shahidmic_coming_soon">Mic (Запись с микрофона) скоро!</string>
-    <string name="toast_stream_server_starting">Запуск сервера трансляции...</string>
+<string name="toast_stream_server_starting">Запуск сервера трансляции...</string>
     <string name="toast_stream_server_stopped">Сервер трансляции остановлен</string>
     <string name="toast_no_cloud_viewers">Нет подключённых облачных зрителей</string>
     <string name="toast_no_clients">Нет подключённых клиентов</string>

@@ -25,7 +25,7 @@ import com.shahid.cam.SharedPreferencesManager;
 
 /**
  * LocationPrivacySettingsFragment
- * Extracted from legacy SettingsFragment: now ONLY location embed toggle (watermark moved to WatermarkSettingsFragment)
+ * Extracted from legacy SettingsFragment: now ONLY location embed toggle (location embed settings)
  * EXACT preference keys & permission flow preserved.
  */
 public class LocationPrivacySettingsFragment extends Fragment {

@@ -105,10 +105,6 @@ public class HomeFragmentHelper {
                 recreateHomeFragment();
                 break;
 
-            case Constants.MODE_FADMIC:
-                // Future: Handle mic recording mode
-                FLog.d(TAG, "ShahidMic mode will be implemented in future");
-                break;
         }
     }
 
@@ -166,7 +162,7 @@ public class HomeFragmentHelper {
             return;
         }
         String mode = sharedPreferencesManager.getCurrentRecordingMode();
-        if (Constants.MODE_FADMIC.equals(mode)) {
+        if (!Constants.MODE_SHAHIDREC.equals(mode)) {
             mode = Constants.MODE_SHAHIDCAM;
         }
         modeSwitcherComponent.setActiveMode(mode);

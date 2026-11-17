@@ -4278,9 +4278,7 @@
 
     <string name="notification_action_stop">إيقاف</string>
 
-    <string name="shahidmic_coming_soon">Mic (تسجيل الميكروفون) قريبًا!</string>
-
-    <string name="toast_stream_server_starting">جارٍ تشغيل خادم البث...</string>
+<string name="toast_stream_server_starting">جارٍ تشغيل خادم البث...</string>
 
     <string name="toast_stream_server_stopped">تم إيقاف خادم البث</string>
 

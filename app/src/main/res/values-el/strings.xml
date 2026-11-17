@@ -2644,9 +2644,7 @@ Fun fact: 10/Ιουλ/2024 04:47 ΜΜ είναι όταν κυκλοφόρησε
 
     <string name="notification_action_stop">Διακοπή</string>
 
-    <string name="shahidmic_coming_soon">Mic (Εγγραφή Μικροφώνου) σύντομα!</string>
-
-    <string name="toast_stream_server_starting">Ο διακομιστής ροής εκκινεί...</string>
+<string name="toast_stream_server_starting">Ο διακομιστής ροής εκκινεί...</string>
 
     <string name="toast_stream_server_stopped">Ο διακομιστής ροής σταμάτησε</string>
 

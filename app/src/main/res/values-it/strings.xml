@@ -2531,9 +2531,7 @@
 
     <string name="notification_action_stop">Ferma</string>
 
-    <string name="shahidmic_coming_soon">Mic (Registrazione microfono) in arrivo!</string>
-
-    <string name="toast_stream_server_starting">Avvio server streaming…</string>
+<string name="toast_stream_server_starting">Avvio server streaming…</string>
 
     <string name="toast_stream_server_stopped">Server streaming fermato</string>
 

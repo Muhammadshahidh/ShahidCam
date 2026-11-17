@@ -4212,8 +4212,6 @@ For the smoothest playback experience, you can use an external player like VLC. 
 
 <string name="notification_action_stop">Arrêter</string>
 
-<string name="shahidmic_coming_soon">Mic (Enregistrement micro) arrive bientôt !</string>
-
 <string name="toast_stream_server_starting">Serveur de streaming démarrage…</string>
 
 <string name="toast_stream_server_stopped">Serveur de streaming arrêté</string>

@@ -164,6 +164,30 @@ public class RecordsSidebarFragment extends DialogFragment {
             });
         }
     // End hide thumbnails section
+        View darkRow = view.findViewById(R.id.row_dark_mode);
+        com.shahid.cam.ui.AvatarToggleView darkSwitch = view.findViewById(R.id.row_dark_mode_switch);
+        TextView darkState = view.findViewById(R.id.row_dark_mode_state);
+        boolean currentDark = prefs.isDarkModeEnabled();
+        if (darkState != null) {
+            darkState.setText(currentDark ? getString(R.string.theme_clay_dark) : getString(R.string.theme_clay_light));
+        }
+        if (darkSwitch != null) {
+            darkSwitch.setChecked(currentDark);
+            darkSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+                if (darkState != null) {
+                    darkState.setText(isChecked ? getString(R.string.theme_clay_dark) : getString(R.string.theme_clay_light));
+                }
+                dismissAllowingStateLoss();
+                if (getActivity() instanceof com.shahid.cam.MainActivity) {
+                    ((com.shahid.cam.MainActivity) getActivity()).toggleDarkMode(isChecked);
+                }
+            });
+        }
+        if (darkRow != null) {
+            darkRow.setOnClickListener(v -> {
+                if (darkSwitch != null) darkSwitch.performClick();
+            });
+        }
 
     }
 

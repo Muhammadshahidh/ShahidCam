@@ -3,53 +3,78 @@
     android:id="@+id/mode_switcher_root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="@dimen/home_switcher_margin_h"
-    android:layout_marginTop="@dimen/home_switcher_margin_top"
-    android:layout_marginEnd="@dimen/home_switcher_margin_h"
-    android:layout_marginBottom="0dp"
+    android:background="@drawable/segmented_control_background"
+    android:padding="@dimen/home_switcher_padding"
+    android:layout_marginStart="0dp"
+    android:layout_marginEnd="0dp"
+    android:layout_marginTop="0dp"
+    android:layout_marginBottom="@dimen/home_switcher_margin_b"
     android:clipChildren="false"
-    android:clipToPadding="false"
-    android:background="@drawable/segmented_control_background">
+    android:clipToPadding="false">
 
+    <!-- Moving active pill background behind text -->
     <View
         android:id="@+id/segment_active_indicator"
         android:layout_width="0dp"
         android:layout_height="@dimen/home_switcher_height"
-        android:background="@drawable/segment_active_background" />
+        android:layout_gravity="top|start"
+        android:background="@drawable/segment_active_background"
+        android:visibility="invisible" />
 
+    <!-- Segments Container -->
     <LinearLayout
         android:id="@+id/mode_switcher_segments"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" android:clipChildren="false" android:clipToPadding="false">
+        android:orientation="horizontal"
+        android:baselineAligned="false"
+        android:clipChildren="false"
+        android:clipToPadding="false">
 
         <!-- ShahidCam Segment -->
-        <FrameLayout android:id="@+id/segment_shahidcam" android:layout_width="0dp" android:layout_height="@dimen/home_switcher_height" android:layout_weight="1" android:clickable="true" android:focusable="true"
-            android:nextFocusUp="@+id/btnGetPro"
-            android:nextFocusDown="@+id/rowCamera" android:clipChildren="false" android:clipToPadding="false">
+        <FrameLayout
+            android:id="@+id/segment_shahidcam"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/home_switcher_height"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:nextFocusUp="@+id/btn_top_more_menu"
+            android:nextFocusDown="@+id/rowCamera"
+            android:clipChildren="false"
+            android:clipToPadding="false">
 
-            <TextView android:id="@+id/text_shahidcam" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="ShahidCam" android:textSize="@dimen/home_switcher_text" />
+            <TextView
+                android:id="@+id/text_shahidcam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="ShahidCam"
+                android:textStyle="bold"
+                android:textSize="@dimen/home_switcher_text" />
         </FrameLayout>
 
-        <!-- ShahidRec Segment -->
-        <FrameLayout android:id="@+id/segment_shahidrec" android:layout_width="0dp" android:layout_height="@dimen/home_switcher_height" android:layout_weight="1" android:clickable="true" android:focusable="true"
-            android:nextFocusUp="@+id/btnGetPro"
-            android:nextFocusDown="@+id/rowCamera" android:clipChildren="false" android:clipToPadding="false">
+        <!-- ScreenRec Segment -->
+        <FrameLayout
+            android:id="@+id/segment_shahidrec"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/home_switcher_height"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:nextFocusUp="@+id/btn_top_more_menu"
+            android:nextFocusDown="@+id/rowCamera"
+            android:clipChildren="false"
+            android:clipToPadding="false">
 
-            <TextView android:id="@+id/text_shahidrec" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="ShahidRec" android:textSize="@dimen/home_switcher_text" />
-
-            <!-- NEW Badge for ShahidRec -->
-            <TextView android:id="@+id/badge_shahidrec" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/new_badge_background" android:text="@string/badge_new" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="7sp" android:paddingStart="3dp" android:paddingEnd="3dp" android:paddingTop="1dp" android:paddingBottom="1dp" android:minWidth="10dp" android:gravity="center" android:layout_gravity="top|end" android:layout_marginTop="1dp" android:layout_marginEnd="1dp" android:visibility="visible" />
-        </FrameLayout>
-
-        <!-- ShahidMic Segment -->
-        <FrameLayout android:id="@+id/segment_shahidmic" android:layout_width="0dp" android:layout_height="@dimen/home_switcher_height" android:layout_weight="1" android:clickable="true" android:focusable="true"
-            android:nextFocusUp="@+id/btnGetPro"
-            android:nextFocusDown="@+id/rowCamera" android:clipChildren="false" android:clipToPadding="false">
-
-            <TextView android:id="@+id/text_shahidmic" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="ShahidMic" android:textSize="@dimen/home_switcher_text" />
+            <TextView
+                android:id="@+id/text_shahidrec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/mode_screenrec"
+                android:textSize="@dimen/home_switcher_text" />
         </FrameLayout>
 
     </LinearLayout>
-
 </FrameLayout>

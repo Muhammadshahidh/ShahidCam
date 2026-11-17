@@ -120,15 +120,6 @@ public class HomeSidebarFragment extends DialogFragment {
             closeButton.setOnClickListener(v -> dismiss());
         }
 
-        // Profiles row
-        View profilesRow = view.findViewById(R.id.row_profiles);
-        if (profilesRow != null) {
-            profilesRow.setOnClickListener(v -> {
-                showProfilesComingSoon();
-                dismiss();
-            });
-        }
-
         // What's New row
         View whatsNewRow = view.findViewById(R.id.row_whats_new);
         if (whatsNewRow != null) {
@@ -260,7 +251,7 @@ public class HomeSidebarFragment extends DialogFragment {
         }
 
         // Discord branding row
-        View discordRow = view.findViewById(R.id.row_discord_branding);
+        View discordRow = view.findViewById(R.id.row_contact_developer);
         if (discordRow != null) {
             com.shahid.cam.Utils.attachPressScale(discordRow);
             discordRow.setOnClickListener(v -> {
@@ -281,25 +272,6 @@ public class HomeSidebarFragment extends DialogFragment {
     public void onDestroyView() {
         super.onDestroyView();
         // AvatarToggleView handles its own animation cleanup via onDetachedFromWindow().
-    }
-
-    private void showProfilesComingSoon() {
-        try {
-            ArrayList<OptionItem> items = new ArrayList<>();
-            items.add(new OptionItem("profiles",
-                    "Set up multiple profiles with different configurations and switch between them instantly.\n\n"
-                    + "Example use cases:\n"
-                    + "• Low storage mode — reduced resolution & bitrate\n"
-                    + "• High quality mode — max resolution & FPS\n"
-                    + "• Night mode — optimized exposure settings\n"
-                    + "• Share profiles across devices", (String) null));
-            PickerBottomSheetFragment picker = PickerBottomSheetFragment.newInstance(
-                    "Profiles", items, "profiles", "profile_coming_soon",
-                    "Coming in a future update", true);
-            picker.show(getParentFragmentManager(), "profiles_coming_soon");
-        } catch (Exception e) {
-            FLog.w("HomeSidebar", "Failed to show profiles info", e);
-        }
     }
 
     @Override
@@ -364,7 +336,7 @@ public class HomeSidebarFragment extends DialogFragment {
         if (section == null) return;
         com.shahid.cam.services.UpdateCheckService.UpdateCheckResult r =
                 com.shahid.cam.services.UpdateCheckService.getLastResult();
-        if (r == null || !r.hasAnyUpdate()) { section.setVisibility(View.GONE); return; }
+        if (r == null || (!r.hasStable && !r.hasBeta)) { section.setVisibility(View.GONE); return; }
         section.setVisibility(View.VISIBLE);
 
         String cur = getAppVersion();
@@ -384,14 +356,6 @@ public class HomeSidebarFragment extends DialogFragment {
                     dismiss();
                 });
         else hideCard(view, R.id.card_update_beta);
-
-        if (r.hasPro) setupCard(view, R.id.card_update_pro, R.id.tv_pro_version,
-                cur, r.proVersion, () -> {
-                    ProUpdateBottomSheet.newInstance(r.proVersion, r.proUrl, cur)
-                            .show(getParentFragmentManager(), "ProSheet");
-                    dismiss();
-                });
-        else hideCard(view, R.id.card_update_pro);
     }
 
     private void setupCard(View v, int cardId, int verId, String cur, String latest, Runnable onClick) {
@@ -405,13 +369,7 @@ public class HomeSidebarFragment extends DialogFragment {
         // Determine colors based on card type
         int currentColor = 0xFFFF5252; // Default red for current version
         int newColor = 0xFF66BB6A;     // Default green for new version
-        
-        if (cardId == R.id.card_update_pro) {
-            currentColor = 0xFFFFFFFF;  // White for Pro current version
-            newColor = 0xFFFFD700;      // Gold for Pro new version
-        }
-        
-        sp.setSpan(new android.text.style.ForegroundColorSpan(currentColor), 0, curEnd, 0);
+sp.setSpan(new android.text.style.ForegroundColorSpan(currentColor), 0, curEnd, 0);
         sp.setSpan(new android.text.style.ForegroundColorSpan(newColor), curEnd, text.length(), 0);
         t.setText(sp);
         c.setVisibility(View.VISIBLE);

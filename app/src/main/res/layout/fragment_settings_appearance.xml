@@ -67,6 +67,46 @@ app:layout_constraintTop_toTopOf="parent"
 
 >
 
+                        <!-- Dark Mode Row -->
+            <LinearLayout
+                android:id="@+id/row_dark_mode"
+                style="@style/SettingsGroupRow"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+                <TextView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center"
+                    android:text="dark_mode"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/materialicons"
+                    android:textColor="@color/clay_accent_blue" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/setting_dark_mode_title"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="?attr/colorHeading" />
+                <TextView
+                    android:id="@+id/value_dark_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/theme_clay_light"
+                    android:textColor="@color/clay_text_secondary"
+                    android:textSize="13sp" />
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_arrow_right"
+                    android:tint="@android:color/darker_gray" />
+            </LinearLayout>
+
+            <View style="@style/SettingsDivider" />
+
             <!-- Language Row (compact) -->
             <LinearLayout
                 android:id="@+id/row_language"

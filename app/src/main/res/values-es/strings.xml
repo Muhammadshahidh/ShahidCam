@@ -2660,9 +2660,7 @@ Para la experiencia de reproducción más fluida, puedes usar un reproductor ext
     <string name="notification_action_stop">Detener</string>
 
     <!-- Mic -->
-    <string name="shahidmic_coming_soon">¡Mic (grabación de micrófono) próximo!</string>
-
-    <!-- Toasts -->
+<!-- Toasts -->
     <string name="toast_stream_server_starting">Iniciando servidor de streaming...</string>
     <string name="toast_stream_server_stopped">Servidor de streaming detenido</string>
     <string name="toast_no_cloud_viewers">No hay espectadores en la nube conectados</string>

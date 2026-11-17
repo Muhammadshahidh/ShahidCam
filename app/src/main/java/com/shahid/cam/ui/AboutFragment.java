@@ -103,9 +103,11 @@ public class AboutFragment extends BaseFragment {
 
         StringBuilder qnaContent = new StringBuilder();
         int count = Math.min(questions.length, answers.length);
+        String qHex = String.format("#%06X", (0xFFFFFF & androidx.core.content.ContextCompat.getColor(requireContext(), R.color.clay_text_primary)));
+        String aHex = String.format("#%06X", (0xFFFFFF & androidx.core.content.ContextCompat.getColor(requireContext(), R.color.clay_text_secondary)));
         for (int i = 0; i < count; i++) {
-            qnaContent.append("<b><font color='#0F172A'>").append(questions[i]).append("</font></b><br>")
-                    .append("<font color='#475569'>").append(answers[i]).append("</font><br><br>");
+            qnaContent.append("<b><font color='").append(qHex).append("'>").append(questions[i]).append("</font></b><br>")
+                    .append("<font color='").append(aHex).append("'>").append(answers[i]).append("</font><br><br>");
         }
         TextView privacyInfoContent = cardView.findViewById(R.id.privacy_info_content);
         if (privacyInfoContent == null) return;

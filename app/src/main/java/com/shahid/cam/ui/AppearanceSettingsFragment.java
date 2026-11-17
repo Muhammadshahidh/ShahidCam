@@ -60,6 +60,7 @@ public class AppearanceSettingsFragment extends Fragment {
         sharedPreferencesManager = SharedPreferencesManager.getInstance(
             requireContext()
         );
+        setupDarkModeRow(view);
         setupLanguageRow(view);
         setupAppIconRow(view);
         setupEyeColorRow(view);
@@ -73,6 +74,21 @@ public class AppearanceSettingsFragment extends Fragment {
         // -------------- Update End for this method(onViewCreated)-----------
     }
 
+
+        private void setupDarkModeRow(View view) {
+        View row = view.findViewById(R.id.row_dark_mode);
+        TextView value = view.findViewById(R.id.value_dark_mode);
+        if (row == null || value == null) return;
+        boolean isDark = sharedPreferencesManager.isDarkModeEnabled();
+        value.setText(isDark ? R.string.theme_clay_dark : R.string.theme_clay_light);
+        row.setOnClickListener(v -> {
+            boolean nextDark = !sharedPreferencesManager.isDarkModeEnabled();
+            value.setText(nextDark ? R.string.theme_clay_dark : R.string.theme_clay_light);
+            if (getActivity() instanceof MainActivity) {
+                ((MainActivity) getActivity()).toggleDarkMode(nextDark);
+            }
+        });
+    }
 
     // -------------- Refactor Start: language row wrapper -----------
     private void setupLanguageRow(View view) {

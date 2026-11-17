@@ -41,12 +41,9 @@ public class SettingsHomeFragment extends Fragment {
     // View references for mode-specific groups
     private View dividerAfterVideo;
     private View dividerAfterAudio;
-    private View dividerAfterWatermark;
 
     private View groupVideoQuick;
     private View groupAudioQuick;
-    private View groupWatermarkFrame;   // the FrameLayout wrapping watermark row + badge
-    private View groupWatermarkBadge;
     private View groupScreenRecording;
     private View dividerBeforeScreenRec;
 
@@ -56,6 +53,7 @@ public class SettingsHomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_settings_home, container, false);
 
         setupModeSelector(root);
+        setupMoreMenu(root);
         setupRowHandlers(root);
         wireAppInlineRows(root);
         cacheGroupReferences(root);
@@ -63,7 +61,6 @@ public class SettingsHomeFragment extends Fragment {
         // Apply initial filter
         applyModeFilter(SettingsMode.ALL, root);
         refreshAppInlineValues(root);
-        manageBadgeVisibility(root);
 
         // Request focus on first settings row for D-pad navigation (TV support)
         root.post(() -> {
@@ -270,7 +267,6 @@ public class SettingsHomeFragment extends Fragment {
 
         boolean showVideo = (mode == SettingsMode.ALL || mode == SettingsMode.SHAHIDCAM);
         boolean showAudio = (mode == SettingsMode.ALL || mode == SettingsMode.SHAHIDCAM);
-        boolean showWatermark = (mode == SettingsMode.ALL || mode == SettingsMode.SHAHIDCAM);
         boolean showScreenRec = (mode == SettingsMode.ALL || mode == SettingsMode.SHAHIDREC);
 
         // Collect all animatable views with their target visibility
@@ -278,12 +274,8 @@ public class SettingsHomeFragment extends Fragment {
         addViewAnim(viewAnims, groupVideoQuick, showVideo);
         addViewAnim(viewAnims, dividerAfterVideo, showVideo);
         addViewAnim(viewAnims, groupAudioQuick, showAudio);
-        addViewAnim(viewAnims, dividerAfterAudio, showAudio);
-        addViewAnim(viewAnims, groupWatermarkFrame, showWatermark);
-        addViewAnim(viewAnims, groupWatermarkBadge, showWatermark);
-        addViewAnim(viewAnims, dividerAfterWatermark, showWatermark);
+        addViewAnim(viewAnims, dividerAfterAudio, showAudio && showScreenRec);
         addViewAnim(viewAnims, groupScreenRecording, showScreenRec);
-        addViewAnim(viewAnims, dividerBeforeScreenRec, showScreenRec);
 
         // Animate items together: hide all first, then show all
         // This creates a unified transition instead of cascading row-by-row
@@ -346,8 +338,7 @@ public class SettingsHomeFragment extends Fragment {
     /** Hide any divider that is immediately followed by GONE rows or is the last visible item. */
     private void fixTrailingDividers() {
         fixTrailingDividerInGroup(dividerAfterVideo, groupAudioQuick);
-        fixTrailingDividerInGroup(dividerAfterAudio, groupWatermarkFrame);
-        fixTrailingDividerInGroup(dividerAfterWatermark, groupScreenRecording);
+        fixTrailingDividerInGroup(dividerAfterAudio, groupScreenRecording);
         fixTrailingDividerInGroup(dividerBeforeScreenRec, groupScreenRecording);
     }
 
@@ -364,12 +355,7 @@ public class SettingsHomeFragment extends Fragment {
         groupVideoQuick = root.findViewById(R.id.group_video_quick);
         groupAudioQuick = root.findViewById(R.id.group_audio_quick);
 
-        // Watermark is wrapped in FrameLayout — find the parent FrameLayout
-        View watermarkRow = root.findViewById(R.id.group_watermark_quick);
-        if (watermarkRow != null && watermarkRow.getParent() instanceof ViewGroup) {
-            groupWatermarkFrame = (View) watermarkRow.getParent();
-        }
-        groupWatermarkBadge = root.findViewById(R.id.watermark_new_badge);
+
 
         groupScreenRecording = root.findViewById(R.id.group_screen_recording);
 
@@ -384,10 +370,7 @@ public class SettingsHomeFragment extends Fragment {
                     View prev = i > 0 ? card.getChildAt(i - 1) : null;
                     View next = i + 1 < childCount ? card.getChildAt(i + 1) : null;
 
-                    if (prev instanceof FrameLayout) {
-                        // Divider after watermark FrameLayout
-                        if (dividerAfterWatermark == null) dividerAfterWatermark = child;
-                    } else if (next != null && next.getId() == R.id.group_screen_recording) {
+                    if (next != null && next.getId() == R.id.group_screen_recording) {
                         dividerBeforeScreenRec = child;
                     } else if (prev instanceof LinearLayout && prev.getId() == R.id.group_video_quick) {
                         dividerAfterVideo = child;
@@ -415,7 +398,6 @@ public class SettingsHomeFragment extends Fragment {
                 getParentFragmentManager(), "prefs_backup");
         });
         // App section rows (onboarding/auto-update/debug) are wired in wireAppInlineRows()
-        bindRow(root, R.id.group_watermark_quick, () -> openSubFragment(new WatermarkSettingsFragment()));
         bindRow(root, R.id.group_about, () -> openSubFragment(new AboutFragment()));
 
         // Tutorial YouTube CTA
@@ -572,17 +554,37 @@ public class SettingsHomeFragment extends Fragment {
         sheet.show(getParentFragmentManager(), "debug_logging_switch_sheet");
     }
 
-    /** Show or hide the watermark NEW badge based on whether the feature has been seen. */
-    private void manageBadgeVisibility(View root) {
-        try {
-            TextView watermarkBadge = root.findViewById(R.id.watermark_new_badge);
-            if (watermarkBadge != null) {
-                android.content.SharedPreferences prefs = requireContext()
-                        .getSharedPreferences("app_prefs", android.content.Context.MODE_PRIVATE);
-                boolean hasSeen = prefs.getBoolean("seen_watermark", false);
-                watermarkBadge.setVisibility(hasSeen ? View.GONE : View.VISIBLE);
-            }
-        } catch (Exception ignore) {}
+    private void setupMoreMenu(View root) {
+        View btnMore = root.findViewById(R.id.btn_settings_more_menu);
+        if (btnMore == null) return;
+        btnMore.setOnClickListener(anchor -> {
+            if (!isAdded() || getContext() == null) return;
+            androidx.appcompat.widget.PopupMenu popup = new androidx.appcompat.widget.PopupMenu(requireContext(), anchor);
+            boolean isDark = com.shahid.cam.SharedPreferencesManager.getInstance(requireContext()).isDarkModeEnabled();
+            popup.getMenu().add(android.view.Menu.NONE, 1, 1, isDark ? R.string.menu_light_mode : R.string.menu_dark_mode);
+            popup.getMenu().add(android.view.Menu.NONE, 2, 2, R.string.menu_permissions);
+            popup.getMenu().add(android.view.Menu.NONE, 3, 3, R.string.menu_intruder_history);
+            popup.getMenu().add(android.view.Menu.NONE, 4, 4, R.string.menu_about);
+            popup.setOnMenuItemClickListener(item -> {
+                if (!isAdded()) return false;
+                int id = item.getItemId();
+                if (id == 1 && getActivity() instanceof com.shahid.cam.MainActivity) {
+                    ((com.shahid.cam.MainActivity) getActivity()).toggleDarkMode(!isDark);
+                    return true;
+                } else if (id == 2 && getActivity() instanceof com.shahid.cam.MainActivity) {
+                    ((com.shahid.cam.MainActivity) getActivity()).switchFragment(3, true);
+                    return true;
+                } else if (id == 3 && getActivity() instanceof com.shahid.cam.MainActivity) {
+                    ((com.shahid.cam.MainActivity) getActivity()).switchFragment(2, true);
+                    return true;
+                } else if (id == 4) {
+                    openSubFragment(new AboutFragment());
+                    return true;
+                }
+                return false;
+            });
+            popup.show();
+        });
     }
 
     /**

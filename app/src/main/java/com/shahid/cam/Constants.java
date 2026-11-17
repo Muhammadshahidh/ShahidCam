@@ -122,7 +122,6 @@ public abstract class Constants {
     // Mode switcher constants
     public static final String MODE_SHAHIDCAM = "SHAHIDCAM";
     public static final String MODE_SHAHIDREC = "SHAHIDREC";
-    public static final String MODE_FADMIC = "FADMIC";
 
     // Fragment result keys used by PickerBottomSheetFragment listeners
     public static final String RK_EXPOSURE_COMPENSATION =

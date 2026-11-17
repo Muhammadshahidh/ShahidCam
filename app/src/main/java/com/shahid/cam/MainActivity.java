@@ -34,7 +34,7 @@ import com.shahid.cam.ui.SettingsHomeFragment;
 import com.shahid.cam.ui.utils.NewFeatureManager;
 import com.shahid.cam.utils.RuntimeCompat;
 import com.shahid.cam.security.IntruderStorage;
-import com.shahid.cam.ui.EditorComingSoonFragment;
+import com.shahid.cam.ui.PermissionsFragment;
 import com.shahid.cam.ui.IntruderHistoryFragment;
 
 import java.io.File;
@@ -58,10 +58,11 @@ import android.widget.HorizontalScrollView;
 public class MainActivity extends AppCompatActivity {
 
     private View bottomNavigationView;
-    private View navTabHome, navTabMedia, navTabIntruder, navTabEditor, navTabSettings;
-    private ImageView navHomeIcon, navMediaIcon, navIntruderIcon, navEditorIcon, navSettingsIcon;
+    private View navTabHome, navTabMedia, navTabIntruder, navTabPermissions, navTabSettings;
+    private ImageView navHomeIcon, navMediaIcon, navIntruderIcon, navPermissionsIcon, navSettingsIcon;
     private android.widget.TextView navHomeLabel, tvIntruderBadge;
     private View settingsBadgeDot;
+    private View permissionsBadgeDot;
     private final android.content.BroadcastReceiver intruderCapturedReceiver = new android.content.BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -262,8 +263,9 @@ public class MainActivity extends AppCompatActivity {
                 int bgColor = resolveThemeColor(this, android.R.attr.colorBackground);
                 root.setBackgroundColor(bgColor);
                 
-                // Restore theme-based icon tint
-                setNavigationBarIconsLight(true);
+                // Restore theme-based icon tint based on Light vs Dark Claymorphism
+                boolean isDark = SharedPreferencesManager.getInstance(this).isDarkModeEnabled();
+                setNavigationBarIconsLight(!isDark);
             } else {
                 // Set custom color
                 root.setBackgroundColor(color);
@@ -285,6 +287,7 @@ public class MainActivity extends AppCompatActivity {
                 settingsBadgeDot.setVisibility(shouldShowSettingsNavBadge ? View.VISIBLE : View.GONE);
             }
             refreshIntruderNavBadge();
+            refreshPermissionsBadge();
         } catch (Exception e) {
             FLog.e("MainActivity", "Error updating badge visibility", e);
         }
@@ -491,16 +494,17 @@ public class MainActivity extends AppCompatActivity {
         navTabHome = findViewById(R.id.nav_tab_home);
         navTabMedia = findViewById(R.id.nav_tab_media);
         navTabIntruder = findViewById(R.id.nav_tab_intruder);
-        navTabEditor = findViewById(R.id.nav_tab_editor);
+        navTabPermissions = findViewById(R.id.nav_tab_permissions);
         navTabSettings = findViewById(R.id.nav_tab_settings);
         navHomeIcon = findViewById(R.id.nav_home_icon);
         navMediaIcon = findViewById(R.id.nav_media_icon);
         navIntruderIcon = findViewById(R.id.nav_intruder_icon);
-        navEditorIcon = findViewById(R.id.nav_editor_icon);
+        navPermissionsIcon = findViewById(R.id.nav_permissions_icon);
         navSettingsIcon = findViewById(R.id.nav_settings_icon);
         navHomeLabel = findViewById(R.id.nav_home_label);
         tvIntruderBadge = findViewById(R.id.tv_intruder_badge);
         settingsBadgeDot = findViewById(R.id.settings_badge_dot);
+        permissionsBadgeDot = findViewById(R.id.permissions_badge_dot);
         
         // Initialize SharedPreferencesManager before using it in fragments
         sharedPreferencesManager = SharedPreferencesManager.getInstance(this);
@@ -611,8 +615,8 @@ public class MainActivity extends AppCompatActivity {
         if (navTabIntruder != null) {
             navTabIntruder.setOnClickListener(v -> switchFragment(2, true));
         }
-        if (navTabEditor != null) {
-            navTabEditor.setOnClickListener(v -> switchFragment(3, true));
+        if (navTabPermissions != null) {
+            navTabPermissions.setOnClickListener(v -> switchFragment(3, true));
         }
         if (navTabSettings != null) {
             navTabSettings.setOnClickListener(v -> switchFragment(4, true));
@@ -1601,11 +1605,28 @@ public class MainActivity extends AppCompatActivity {
             FLog.w("MainActivity", "applyTheme() called on watch device - skipping phone theme application");
             return;
         }
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        setTheme(R.style.Theme_ShahidCam_ClayLight);
         SharedPreferencesManager spm = SharedPreferencesManager.getInstance(this);
-        spm.sharedPreferences.edit().putString(Constants.PREF_APP_THEME, Constants.DEFAULT_APP_THEME).apply();
+        spm.applySavedNightMode();
+        setTheme(R.style.Theme_ShahidCam_ClayLight);
         spm.updateDefaultClockColorForTheme();
+    }
+
+    public void toggleDarkMode(boolean enableDark) {
+        SharedPreferencesManager spm = SharedPreferencesManager.getInstance(this);
+        spm.setDarkModeEnabled(enableDark);
+        spm.applySavedNightMode();
+        spm.updateDefaultClockColorForTheme();
+        recreate();
+    }
+
+    public void refreshPermissionsBadge() {
+        if (permissionsBadgeDot == null) return;
+        try {
+            int missing = PermissionsFragment.getMissingCorePermissionCount(this);
+            permissionsBadgeDot.setVisibility(missing > 0 ? View.VISIBLE : View.GONE);
+        } catch (Exception e) {
+            FLog.w("MainActivity", "refreshPermissionsBadge failed: " + e.getMessage());
+        }
     }
 
     /**
@@ -2035,7 +2056,7 @@ public class MainActivity extends AppCompatActivity {
             case 2:
                 return IntruderHistoryFragment.newInstance(false);
             case 3:
-                return new EditorComingSoonFragment();
+                return new PermissionsFragment();
             case 4:
                 return new SettingsHomeFragment();
             default:
@@ -2074,6 +2095,18 @@ public class MainActivity extends AppCompatActivity {
                     FLog.e("MainActivity", "Error refreshing Intruder tab", e);
                 }
                 break;
+            case 3:
+                try {
+                    Fragment permissionsFragment = getSupportFragmentManager()
+                            .findFragmentByTag(FRAGMENT_TAG_PREFIX + position);
+                    if (permissionsFragment instanceof PermissionsFragment) {
+                        ((PermissionsFragment) permissionsFragment).refreshPermissionStates();
+                    }
+                    refreshPermissionsBadge();
+                } catch (Exception e) {
+                    FLog.e("MainActivity", "Error refreshing Permissions tab", e);
+                }
+                break;
         }
     }
 
@@ -2081,8 +2114,8 @@ public class MainActivity extends AppCompatActivity {
         int activeColor = androidx.core.content.ContextCompat.getColor(this, R.color.clay_primary);
         int inactiveColor = androidx.core.content.ContextCompat.getColor(this, R.color.clay_text_secondary);
 
-        View[] tabs = {navTabHome, navTabMedia, navTabIntruder, navTabEditor, navTabSettings};
-        ImageView[] icons = {navHomeIcon, navMediaIcon, navIntruderIcon, navEditorIcon, navSettingsIcon};
+        View[] tabs = {navTabHome, navTabMedia, navTabIntruder, navTabPermissions, navTabSettings};
+        ImageView[] icons = {navHomeIcon, navMediaIcon, navIntruderIcon, navPermissionsIcon, navSettingsIcon};
 
         for (int i = 0; i < tabs.length; i++) {
             boolean selected = (i == position);

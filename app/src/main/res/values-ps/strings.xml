@@ -488,7 +488,7 @@ Tawsiya shwee: 192000 bps, 48000 Hz da aksar karwonko lapara.</string>
     <string name="fix_video_saf_write_fail">Repaired file SAF folder ta likh nashu. Da app storage ki save sho.</string>
     <string name="fix_video_saf_success">Video repair sho! Save sho da num sara: %1$s.</string>
     <string name="fix_video_saf_export">Repaired file da app storage na export ya share kawalai shay.</string>
-    <string name="full_changelog_info">For full changelog, head to the Home tab and open the hamburger menu, then select "What's New".</string>
+    <string name="full_changelog_info">For full changelog, head to the Home tab and open the hamburger menu, then select "What\'s New".</string>
 <!-- ================================================ -->
     <!-- Auto-generated Roman Pashto translations         -->
     <!-- Total entries: 1663                        -->
@@ -2568,9 +2568,7 @@ How to read: "Zone 42N — 372,684m E, 3,512,334m N" = Zone 42 pa Northern hemis
 
     <string name="notification_action_stop">Band Ka</string>
 
-    <string name="shahidmic_coming_soon">Mic (Mic Recording) zur razai!</string>
-
-    <string name="toast_stream_server_starting">Stream server shuru kegi…</string>
+<string name="toast_stream_server_starting">Stream server shuru kegi…</string>
 
     <string name="toast_stream_server_stopped">Stream server band shwe</string>
 

@@ -5,15 +5,14 @@
     android:viewportWidth="120"
     android:viewportHeight="120">
     <path
-        android:fillColor="#EFF6FF"
+        android:fillColor="@color/clay_accent_blue_soft"
         android:pathData="M60,60 m-52,0 a52,52 0 1,0 104,0 a52,52 0 1,0 -104,0" />
     <path
-        android:fillColor="#DBEAFE"
+        android:fillColor="@color/clay_accent_blue_pill"
         android:pathData="M60,20 L90,32 V58 C90,78 76,94 60,101 C44,94 30,78 30,58 V32 L60,20 Z" />
     <path
-        android:fillColor="#2563EB"
+        android:fillColor="@color/clay_accent_blue"
         android:pathData="M60,26 L84,36 V57 C84,73 73,87 60,93 C47,87 36,73 36,57 V36 L60,26 Z" />
-    <!-- Camera lens / eye inside shield -->
     <path
         android:fillColor="#FFFFFF"
         android:pathData="M60,57 m-13,0 a13,13 0 1,0 26,0 a13,13 0 1,0 -26,0" />

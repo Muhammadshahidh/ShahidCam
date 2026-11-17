@@ -2547,9 +2547,7 @@ Sujuvama esitamise kogemuse jaoks saad kasutada välist esitajat nagu VLC. Siisk
 
     <string name="notification_action_stop">Peata</string>
 
-    <string name="shahidmic_coming_soon">Mic (Mikrofoni salvestus) on peagi tulemas!</string>
-
-    <string name="toast_stream_server_starting">Voo server käivitub...</string>
+<string name="toast_stream_server_starting">Voo server käivitub...</string>
 
     <string name="toast_stream_server_stopped">Voo server peatas</string>
 

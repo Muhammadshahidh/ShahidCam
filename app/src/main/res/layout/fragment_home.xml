@@ -66,7 +66,7 @@
                 android:src="@drawable/ic_shahidcam_avatar"
                 android:focusable="true"
                 android:nextFocusUp="@+id/btnHamburgerMenu"
-                android:nextFocusDown="@+id/btnGetPro"
+                android:nextFocusDown="@+id/btn_top_more_menu"
                 android:contentDescription="@string/app_name" />
             <TextView
                 android:layout_width="wrap_content"
@@ -77,50 +77,29 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
-
-        <!-- Golden Pro Button with Shimmer and Badge -->
+        <!-- Top Three-Dot Overflow Menu -->
         <FrameLayout
-            android:id="@+id/proBtnContainer"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/home_pro_btn_h"
-            android:layout_marginEnd="4dp"
+            android:id="@+id/moreMenuContainer"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:clipChildren="false" android:clipToPadding="false">
+            app:layout_constraintEnd_toEndOf="parent">
 
-            <com.shahid.cam.ui.ShimmerTextView 
-                android:id="@+id/btnGetPro"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/home_pro_btn_h"
-                android:paddingHorizontal="@dimen/home_pro_btn_padding_h"
-                android:background="@drawable/bg_golden_header_button"
-                android:text="@string/shahidcam_pro_header_button"
-                android:textAllCaps="true"
-                android:textColor="#1A1A1A"
-                android:textSize="@dimen/home_pro_btn_text"
-                android:textStyle="bold"
-                android:fontFamily="@font/ubuntu_regular"
-                android:gravity="center_vertical"
-                android:drawableStart="@drawable/ic_crown"
-                android:drawablePadding="0dp"
-                android:drawableTint="#1A1A1A"
-                android:focusable="true"
+            <ImageView
+                android:id="@+id/btn_top_more_menu"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:padding="6dp"
+                android:src="@drawable/ic_more_vert"
+                android:tint="@android:color/white"
+                android:contentDescription="@string/more_options"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:focusable="true"
                 android:nextFocusUp="@+id/ivAppTitle"
                 android:nextFocusDown="@+id/segment_shahidcam" />
-
-            <!-- Pro Badge Dot -->
-            <View
-                android:id="@+id/proBadgeDot"
-                android:layout_width="8dp"
-                android:layout_height="8dp"
-                android:layout_gravity="top|end"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="2dp"
-                android:background="@drawable/badge_update_bg"
-                android:visibility="gone" />
-
         </FrameLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -144,7 +123,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header_bar">
 
-    <!-- Mode Switcher (ShahidCam, ShahidRec, ShahidMic) -->
+    <!-- Mode Switcher (ShahidCam, ScreenRec) -->
     <include android:id="@+id/mode_switcher" layout="@layout/mode_switcher_segmented" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/home_switcher_margin_h" android:layout_marginEnd="@dimen/home_switcher_margin_h" android:layout_marginTop="0dp" android:clipChildren="false" />
 
     <LinearLayout android:id="@+id/layoutCards" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="0dp" android:orientation="horizontal" android:clipChildren="false" android:clipToPadding="false">
@@ -163,12 +142,12 @@
                     android:layout_marginBottom="@dimen/home_row_margin_b" 
                     android:clickable="true" 
                     android:focusable="true"
-                    android:nextFocusUp="@+id/btnGetPro"
+                    android:nextFocusUp="@+id/btn_top_more_menu"
                     android:nextFocusDown="@+id/rowEstimateTime"
                     app:cardBackgroundColor="@android:color/transparent" 
                     app:cardCornerRadius="10dp" 
                     app:cardElevation="0dp" 
-                    app:rippleColor="#22FFFFFF" 
+                    app:rippleColor="@color/clay_accent_blue_soft" 
                     app:strokeWidth="0dp" android:stateListAnimator="@null">
 
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="@dimen/home_row_padding_h" android:paddingTop="@dimen/home_row_padding_v" android:paddingEnd="@dimen/home_row_padding_h" android:paddingBottom="@dimen/home_row_padding_v" android:clipChildren="false" android:clipToPadding="false">
@@ -185,7 +164,7 @@
 
                         </LinearLayout>
 
-                        <ImageView android:layout_width="@dimen/home_chevron_size" android:layout_height="@dimen/home_chevron_size" android:layout_marginStart="2dp" android:src="@drawable/ic_arrow_right" android:tint="#555555" android:contentDescription="@string/desc_open_settings" />
+                        <ImageView android:layout_width="@dimen/home_chevron_size" android:layout_height="@dimen/home_chevron_size" android:layout_marginStart="2dp" android:src="@drawable/ic_arrow_right" android:tint="@color/clay_text_secondary" android:contentDescription="@string/desc_open_settings" />
 
                     </LinearLayout>
 
@@ -199,9 +178,9 @@
                     android:layout_marginEnd="@dimen/home_divider_margin_e"
                     android:layout_marginBottom="@dimen/home_divider_margin_b"
                     android:alpha="0.5"
-                    android:background="#22FFFFFF" />
+                    android:background="@color/clay_divider" />
 
-                <com.google.android.material.card.MaterialCardView android:id="@+id/rowEstimateTime" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/home_row_margin_b" android:clickable="true" android:focusable="true" app:cardBackgroundColor="@android:color/transparent" app:cardCornerRadius="10dp" app:cardElevation="0dp" app:rippleColor="#22FFFFFF" app:strokeWidth="0dp"
+                <com.google.android.material.card.MaterialCardView android:id="@+id/rowEstimateTime" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/home_row_margin_b" android:clickable="true" android:focusable="true" app:cardBackgroundColor="@android:color/transparent" app:cardCornerRadius="10dp" app:cardElevation="0dp" app:rippleColor="@color/clay_accent_blue_soft" app:strokeWidth="0dp"
                     android:nextFocusUp="@+id/rowCamera"
                     android:nextFocusDown="@+id/rowStorageAvailable" android:stateListAnimator="@null">
 
@@ -219,7 +198,7 @@
 
                         </LinearLayout>
 
-                        <ImageView android:layout_width="@dimen/home_chevron_size" android:layout_height="@dimen/home_chevron_size" android:layout_marginStart="2dp" android:src="@drawable/ic_arrow_right" android:tint="#555555" android:contentDescription="@string/desc_open_settings" />
+                        <ImageView android:layout_width="@dimen/home_chevron_size" android:layout_height="@dimen/home_chevron_size" android:layout_marginStart="2dp" android:src="@drawable/ic_arrow_right" android:tint="@color/clay_text_secondary" android:contentDescription="@string/desc_open_settings" />
 
                     </LinearLayout>
 
@@ -232,10 +211,10 @@
                     android:layout_marginEnd="@dimen/home_divider_margin_e"
                     android:layout_marginBottom="@dimen/home_divider_margin_b"
                     android:alpha="0.5"
-                    android:background="#22FFFFFF" />
+                    android:background="@color/clay_divider" />
 
                 <!-- Available Space Row -->
-                <com.google.android.material.card.MaterialCardView android:id="@+id/rowStorageAvailable" android:layout_width="match_parent" android:layout_height="wrap_content" android:clickable="true" android:focusable="true" app:cardBackgroundColor="@android:color/transparent" app:cardCornerRadius="10dp" app:cardElevation="0dp" app:rippleColor="#22FFFFFF" app:strokeWidth="0dp"
+                <com.google.android.material.card.MaterialCardView android:id="@+id/rowStorageAvailable" android:layout_width="match_parent" android:layout_height="wrap_content" android:clickable="true" android:focusable="true" app:cardBackgroundColor="@android:color/transparent" app:cardCornerRadius="10dp" app:cardElevation="0dp" app:rippleColor="@color/clay_accent_blue_soft" app:strokeWidth="0dp"
                     android:nextFocusUp="@+id/rowEstimateTime"
                     android:nextFocusDown="@+id/cardClock" android:stateListAnimator="@null">
 
@@ -259,7 +238,7 @@
 
                         </LinearLayout>
 
-                        <ImageView android:layout_width="@dimen/home_chevron_size" android:layout_height="@dimen/home_chevron_size" android:layout_marginStart="2dp" android:src="@drawable/ic_arrow_right" android:tint="#555555" android:contentDescription="@string/desc_open_settings" />
+                        <ImageView android:layout_width="@dimen/home_chevron_size" android:layout_height="@dimen/home_chevron_size" android:layout_marginStart="2dp" android:src="@drawable/ic_arrow_right" android:tint="@color/clay_text_secondary" android:contentDescription="@string/desc_open_settings" />
 
                     </LinearLayout>
 
@@ -279,7 +258,7 @@
             app:cardBackgroundColor="@android:color/transparent"
             app:cardCornerRadius="12dp"
             app:cardElevation="0dp"
-            app:rippleColor="#22FFFFFF"
+            app:rippleColor="@color/clay_accent_blue_soft"
             app:strokeWidth="0dp"
             android:nextFocusUp="@+id/rowStorageAvailable"
             android:nextFocusDown="@+id/cardClock">
@@ -390,7 +369,7 @@
 
         <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="@dimen/home_rail_gutter" android:layout_weight="1" android:orientation="vertical" android:clipChildren="false" android:clipToPadding="false">
 
-            <com.google.android.material.card.MaterialCardView android:id="@+id/cardClock" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/home_rail_card_gap" android:clickable="true" android:focusable="true" app:cardBackgroundColor="?attr/homeRailCardSurface" app:cardCornerRadius="8dp" app:cardElevation="2dp" app:rippleColor="#22FFFFFF" app:strokeWidth="0dp"
+            <com.google.android.material.card.MaterialCardView android:id="@+id/cardClock" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/home_rail_card_gap" android:clickable="true" android:focusable="true" app:cardBackgroundColor="?attr/homeRailCardSurface" app:cardCornerRadius="8dp" app:cardElevation="2dp" app:rippleColor="@color/clay_accent_blue_soft" app:strokeWidth="0dp"
                 android:nextFocusUp="@+id/cardElapsedHero"
                 android:nextFocusDown="@+id/cardStats" android:stateListAnimator="@null">
 
@@ -410,7 +389,7 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.card.MaterialCardView android:id="@+id/cardStats" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/home_rail_card_gap" android:clickable="true" android:focusable="true" app:cardBackgroundColor="?attr/homeRailCardSurface" app:cardCornerRadius="8dp" app:cardElevation="2dp" app:rippleColor="#22FFFFFF" app:strokeColor="?attr/homeRailCardBorder" app:strokeWidth="1dp"
+            <com.google.android.material.card.MaterialCardView android:id="@+id/cardStats" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/home_rail_card_gap" android:clickable="true" android:focusable="true" app:cardBackgroundColor="?attr/homeRailCardSurface" app:cardCornerRadius="8dp" app:cardElevation="2dp" app:rippleColor="@color/clay_accent_blue_soft" app:strokeColor="?attr/homeRailCardBorder" app:strokeWidth="1dp"
                 android:nextFocusUp="@+id/cardClock"
                 android:nextFocusDown="@+id/tile_af_toggle" android:stateListAnimator="@null">
 
@@ -429,7 +408,7 @@
                         </LinearLayout>
                     </LinearLayout>
 
-                    <ImageView android:layout_width="@dimen/home_chevron_size" android:layout_height="@dimen/home_chevron_size" android:layout_gravity="center" android:layout_marginStart="2dp" android:src="@drawable/ic_arrow_right" android:tint="#555555" android:contentDescription="@string/desc_open_video_stats" />
+                    <ImageView android:layout_width="@dimen/home_chevron_size" android:layout_height="@dimen/home_chevron_size" android:layout_gravity="center" android:layout_marginStart="2dp" android:src="@drawable/ic_arrow_right" android:tint="@color/clay_text_secondary" android:contentDescription="@string/desc_open_video_stats" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -473,7 +452,7 @@
             android:layout_height="@dimen/home_fold_icon"
             android:layout_gravity="center"
             android:src="@drawable/ic_expand_more"
-            android:tint="#555555" />
+            android:tint="@color/clay_text_secondary" />
     </FrameLayout>
 
 
@@ -956,7 +935,7 @@
             android:layout_height="@dimen/home_control_btn_size"
             android:layout_marginEnd="@dimen/home_control_gap" android:clipChildren="false" android:clipToPadding="false">
 
-        <com.google.android.material.button.MaterialButton android:id="@+id/buttonTorchSwitch" android:layout_width="match_parent" android:layout_height="match_parent" style="@style/Widget.MaterialComponents.Button.OutlinedButton" app:icon="@drawable/ic_flashlight_on" app:iconSize="@dimen/home_control_icon_torch" app:iconTint="@color/button_icon_tint_selector" app:iconGravity="textStart" app:iconPadding="0dp" android:insetLeft="0dp" android:insetTop="0dp" android:insetRight="0dp" android:insetBottom="0dp" android:paddingStart="0dp" android:paddingEnd="0dp" app:rippleColor="#22FFFFFF" android:background="@drawable/control_button_bg" android:enabled="false" app:cornerRadius="@dimen/home_control_corner"
+        <com.google.android.material.button.MaterialButton android:id="@+id/buttonTorchSwitch" android:layout_width="match_parent" android:layout_height="match_parent" style="@style/Widget.MaterialComponents.Button.OutlinedButton" app:icon="@drawable/ic_flashlight_on" app:iconSize="@dimen/home_control_icon_torch" app:iconTint="@color/button_icon_tint_selector" app:iconGravity="textStart" app:iconPadding="0dp" android:insetLeft="0dp" android:insetTop="0dp" android:insetRight="0dp" android:insetBottom="0dp" android:paddingStart="0dp" android:paddingEnd="0dp" app:rippleColor="@color/clay_accent_blue_soft" android:background="@drawable/control_button_bg" android:enabled="false" app:cornerRadius="@dimen/home_control_corner"
             android:nextFocusUp="@+id/cardElapsedHero"
             android:nextFocusDown="@+id/buttonStartStop" />
 

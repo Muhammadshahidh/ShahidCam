@@ -2766,7 +2766,6 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="notification_action_stop">Stop</string>
 
     <!-- Mic -->
-    <string name="shahidmic_coming_soon">Mic (Mic Recording) coming soon!</string>
 
     <!-- Toast messages -->
     <string name="toast_stream_server_starting">Stream server starting...</string>
@@ -3104,7 +3103,7 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="splash_tagline">Private Recorder &amp; Intruder Guard</string>
     <string name="splash_init_error">Could not prepare ShahidCam startup state.</string>
     <string name="universal_retry">Retry</string>
-    <string name="settings_appearance_subtitle">Language, app icon, header logo &amp; eye color</string>
+    <string name="settings_appearance_subtitle">Dark mode, language, app icon &amp; eye color</string>
     <string name="settings_security_section_lock">App Access &amp; Discretion</string>
     <string name="settings_security_section_intruder">Intruder Detection</string>
     <string name="setting_intruder_selfie_title">Wrong Password Intruder Selfie</string>
@@ -3149,15 +3148,6 @@ For the smoothest playback experience, you can use an external player like VLC. 
     <string name="intruder_enabled_toast">Intruder Selfie Detection enabled</string>
     <string name="intruder_applock_recommended_msg">Intruder Detection triggers only when App Lock is turned on. Would you like to set up App Lock now?</string>
     <string name="intruder_configure_applock">Configure App Lock</string>
-    <string name="editor_studio_title">ShahidCam Editor</string>
-    <string name="nav_soon_badge">Soon</string>
-    <string name="editor_coming_soon_title">Video &amp; Photo Editor Coming Soon</string>
-    <string name="editor_coming_soon_desc">A fast, on-device media studio tailored for your ShahidCam captures is currently in development.</string>
-    <string name="editor_planned_title">Planned On-Device Tools</string>
-    <string name="editor_planned_trim">Lossless trim, split, and quick highlight cuts for saved recordings</string>
-    <string name="editor_planned_audio">Audio balance, background noise cleanup, and clean clip export</string>
-    <string name="editor_planned_privacy">On-device face blur and sensitive metadata stripping before sharing</string>
-    <string name="editor_open_media">Open Saved Media</string>
     <string name="about_app_summary">ShahidCam is an independent, privacy-first Android camera, screen recorder, and local intruder protection tool crafted with clean on-device workflows.</string>
     <string name="about_developer_section">DEVELOPER</string>
     <string name="about_developer_name">Shahid Hussain</string>
@@ -3171,10 +3161,6 @@ For the smoothest playback experience, you can use an external player like VLC. 
         <item quantity="one">%d captured attempt</item>
         <item quantity="other">%d captured attempts</item>
     </plurals>
-
-    <string name="editor_coming_soon_heading">Video &amp; Photo Editor Coming Soon</string>
-    <string name="editor_planned_watermark">Custom watermark overlays, titles, and trim adjustments</string>
-    <string name="editor_planned_export">Fast offline export with preserved quality and privacy</string>
     <string name="intruder_delete_single_title">Delete Capture?</string>
     <string name="intruder_delete_single_msg">Permanently remove this captured intruder photo from private app storage?</string>
     <string name="intruder_clear_all_msg">Permanently delete all captured intruder photos from private app storage?</string>
@@ -3182,4 +3168,53 @@ For the smoothest playback experience, you can use an external player like VLC. 
         <item quantity="one">%d captured attempt</item>
         <item quantity="other">%d captured attempts</item>
     </plurals>
+
+    <!-- Permissions Dashboard -->
+    <string name="nav_permissions">Permissions</string>
+    <string name="permissions_dashboard_title">Permissions Dashboard</string>
+    <string name="permissions_dashboard_subtitle">Manage camera, audio, storage &amp; background access</string>
+    <string name="perm_section_core">Core Recording &amp; Protection</string>
+    <string name="perm_section_background">Background Execution &amp; System</string>
+    <string name="perm_summary_ready_title">All Core Permissions Ready</string>
+    <string name="perm_summary_ready_desc">Camera, audio, media access, and notifications are configured for local recording and intruder selfie protection.</string>
+    <string name="perm_summary_attention_title">%d Core Permission(s) Needed</string>
+    <string name="perm_summary_attention_desc">Grant the highlighted permissions below so recording and intruder detection work reliably.</string>
+    <string name="perm_camera_title">Camera Access</string>
+    <string name="perm_camera_desc">Required for video capture and optional wrong-password intruder selfies.</string>
+    <string name="perm_mic_title">Microphone Audio</string>
+    <string name="perm_mic_desc">Required when recording audio with camera videos or screen recordings.</string>
+    <string name="perm_storage_title">Media &amp; Video Access</string>
+    <string name="perm_storage_desc">Lets ShahidCam save and display your local video library reliably.</string>
+    <string name="perm_notifications_title">Recording Notifications</string>
+    <string name="perm_notifications_desc">Displays active background recording status and security alerts on Android 13+.</string>
+    <string name="perm_battery_title">Background Battery Unrestricted</string>
+    <string name="perm_battery_desc">Prevents Android battery savers from interrupting long background recordings.</string>
+    <string name="perm_overlay_title">Floating Controls Overlay</string>
+    <string name="perm_overlay_desc">Allows optional floating tools while using ScreenRec over other apps.</string>
+    <string name="perm_app_settings_title">Android App Permissions</string>
+    <string name="perm_app_settings_desc">Open system app info to review or revoke any granted permission anytime.</string>
+    <string name="perm_privacy_guarantee_title">On-Device Privacy Commitment</string>
+    <string name="perm_privacy_guarantee_desc">ShahidCam never requests Device Administrator or Accessibility permissions for intruder capture, respects Android system camera privacy indicators, and stores all recordings and intruder photos strictly on your device.</string>
+    <string name="perm_status_granted">Granted</string>
+    <string name="perm_status_allowed">Allowed</string>
+    <string name="perm_status_unrestricted">Unrestricted</string>
+    <string name="perm_action_allow">Allow</string>
+    <string name="perm_action_manage">Manage</string>
+    <string name="perm_action_optimize">Optimize</string>
+    <string name="perm_denied_toast">Permission denied. You can grant it anytime from here or Android Settings.</string>
+    <string name="perm_open_settings_message">This permission was denied permanently. Open Android App Settings to allow it manually.</string>
+    <string name="perm_battery_already_unrestricted">Battery usage is already unrestricted for ShahidCam.</string>
+    <string name="perm_cannot_open_settings">Unable to open Android App Settings on this device.</string>
+
+    <!-- Overflow Menu & Appearance -->
+    <string name="mode_screenrec">ScreenRec</string>
+    <string name="menu_dark_mode">Switch to Dark Mode</string>
+    <string name="menu_light_mode">Switch to Light Mode</string>
+    <string name="menu_permissions">Permissions Dashboard</string>
+    <string name="menu_intruder_history">Intruder History</string>
+    <string name="menu_app_lock">App Lock &amp; Security</string>
+    <string name="menu_about">About ShahidCam</string>
+    <string name="setting_dark_mode_title">Appearance Mode</string>
+    <string name="theme_clay_light">White Clay (Light)</string>
+    <string name="theme_clay_dark">Slate Clay (Dark)</string>
 </resources>

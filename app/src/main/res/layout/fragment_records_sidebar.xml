@@ -59,7 +59,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginStart="14dp"
         android:layout_marginEnd="12dp"
-        app:dividerColor="#262626"/>
+        app:dividerColor="@color/clay_divider"/>
 
     <!-- Group: Sorting -->
     <TextView
@@ -126,7 +126,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="14dp"
             android:layout_marginEnd="12dp"
-            app:dividerColor="#262626"/>
+            app:dividerColor="@color/clay_divider"/>
 
         <!-- View Mode Row (moved from FAB) -->
         <LinearLayout
@@ -233,6 +233,64 @@
             </LinearLayout>
             <com.shahid.cam.ui.AvatarToggleView
                 android:id="@+id/row_hide_thumbnails_switch"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Dark Mode Group Card -->
+    <TextView
+        android:id="@+id/dark_mode_group_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:text="@string/settings_appearance_title"
+        android:textColor="?attr/colorHeading"
+        android:textStyle="bold"/>
+    <LinearLayout
+        android:id="@+id/dark_mode_group_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/settings_group_card_bg"
+        android:orientation="vertical"
+        android:paddingVertical="4dp">
+        <LinearLayout
+            android:id="@+id/row_dark_mode"
+            style="@style/SettingsGroupRow">
+            <TextView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="12dp"
+                android:gravity="center"
+                android:fontFamily="@font/materialicons"
+                android:text="dark_mode"
+                android:textColor="@color/clay_accent_blue"
+                android:textSize="20sp" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/setting_dark_mode_title"
+                    android:textColor="?attr/colorHeading"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+                <TextView
+                    android:id="@+id/row_dark_mode_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/clay_text_secondary"
+                    android:textSize="12sp"
+                    android:text="@string/theme_clay_light"/>
+            </LinearLayout>
+            <com.shahid.cam.ui.AvatarToggleView
+                android:id="@+id/row_dark_mode_switch"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
                 android:layout_gravity="center_vertical"
