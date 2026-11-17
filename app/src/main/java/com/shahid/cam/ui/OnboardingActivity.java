@@ -52,7 +52,10 @@ public class OnboardingActivity extends AppIntro {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         // Force dark mode for onboarding regardless of system theme
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            getDelegate().setLocalNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO);
+            boolean dark = com.shahid.cam.SharedPreferencesManager.getInstance(this).isDarkModeEnabled();
+            getDelegate().setLocalNightMode(dark
+                    ? androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
+                    : androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO);
         }
         super.onCreate(savedInstanceState);
 

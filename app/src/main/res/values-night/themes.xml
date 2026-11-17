@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Base.Theme.ShahidCam" parent="Theme.ShahidCam.ClayLight" />
+    <style name="Base.Theme.ShahidCam" parent="Theme.ShahidCam.ClayLight">
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+
+    <style name="Theme.ShahidCam.Splash" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/clay_bg_canvas</item>
+        <item name="windowSplashScreenBackground">@color/clay_bg_canvas</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_shahidcam_avatar</item>
+        <item name="android:statusBarColor">@color/clay_bg_canvas</item>
+        <item name="android:navigationBarColor">@color/clay_bg_canvas</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="postSplashScreenTheme">@style/Theme.ShahidCam.ClayLight</item>
+    </style>
 </resources>

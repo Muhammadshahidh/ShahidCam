@@ -22,6 +22,11 @@ import java.util.WeakHashMap;
 
 public class PINInputView extends LinearLayout implements TextWatcher {
 
+    public interface OnPinCompletedListener {
+        void onPinCompleted(String pin);
+    }
+
+
     private Paint itemTextPaint;
     private Paint itemBackgroundPaint;
 
@@ -35,6 +40,8 @@ public class PINInputView extends LinearLayout implements TextWatcher {
     private String passwordCharacter;
 
     private WeakHashMap<PINItemView, PINItemAnimator> animators = new WeakHashMap<PINItemView, PINItemAnimator>();
+    private OnPinCompletedListener pinCompletedListener;
+    private Runnable pendingAutoSubmit;
 
     public PINInputView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -84,6 +91,10 @@ public class PINInputView extends LinearLayout implements TextWatcher {
     }
 
     public PINInputView reset() {
+        if (pendingAutoSubmit != null) {
+            removeCallbacks(pendingAutoSubmit);
+            pendingAutoSubmit = null;
+        }
         this.lastText = "";
         this.editText.setText("");
 
@@ -173,6 +184,18 @@ public class PINInputView extends LinearLayout implements TextWatcher {
         else if(lastText.length() < text.length()){
             animateLastIn();
             this.lastText = text;
+            if (text.length() == inputViewsCount && pinCompletedListener != null) {
+                if (pendingAutoSubmit != null) {
+                    removeCallbacks(pendingAutoSubmit);
+                }
+                pendingAutoSubmit = () -> {
+                    pendingAutoSubmit = null;
+                    if (pinCompletedListener != null && getText().length() == inputViewsCount) {
+                        pinCompletedListener.onPinCompleted(getText());
+                    }
+                };
+                postDelayed(pendingAutoSubmit, 110);
+            }
         }
     }
 
@@ -210,6 +233,10 @@ public class PINInputView extends LinearLayout implements TextWatcher {
 
     public String getText() {
         return editText.getText().toString();
+    }
+
+    public void setOnPinCompletedListener(OnPinCompletedListener listener) {
+        this.pinCompletedListener = listener;
     }
 
     public void setOnEditorActionListener(TextView.OnEditorActionListener actionListener) {

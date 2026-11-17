@@ -12,7 +12,7 @@ public class ShahidCamApplication extends Application implements DefaultLifecycl
     @Override
     public void onCreate() {
         super.onCreate();
-        androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO);
+        SharedPreferencesManager.getInstance(this).applySavedNightMode();
         ProcessLifecycleOwner.get().getLifecycle().addObserver(this);
         // Room DB open + invalidation observer registration is deferred off the
         // main thread: cold start must not block on SQLite open. The observer

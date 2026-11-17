@@ -21,9 +21,12 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.guardanis.applock.AppLock;
+import com.guardanis.applock.dialogs.UnlockDialogBuilder;
 import com.shahid.cam.Constants;
 import com.shahid.cam.MainActivity;
 import com.shahid.cam.R;
+import com.shahid.cam.SharedPreferencesManager;
 import com.shahid.cam.security.IntruderManager;
 import com.shahid.cam.security.IntruderRecord;
 import com.shahid.cam.security.IntruderStorage;
@@ -36,7 +39,6 @@ import java.util.concurrent.Executors;
  * stored strictly inside ShahidCam private internal storage.
  */
 public class IntruderHistoryFragment extends Fragment implements IntruderHistoryAdapter.Listener {
-
     private static final String ARG_IS_OVERLAY = "arg_is_overlay";
 
     private RecyclerView recyclerView;
@@ -48,6 +50,8 @@ public class IntruderHistoryFragment extends Fragment implements IntruderHistory
     private Button btnStatusAction;
     private IntruderHistoryAdapter adapter;
     private ExecutorService ioExecutor;
+    private boolean isOverlay = false;
+    private boolean unlockPromptShowing = false;
 
     private final BroadcastReceiver captureReceiver = new BroadcastReceiver() {
         @Override
@@ -78,7 +82,7 @@ public class IntruderHistoryFragment extends Fragment implements IntruderHistory
         ioExecutor = Executors.newSingleThreadExecutor();
 
         View backBtn = view.findViewById(R.id.back_button);
-        boolean isOverlay = getArguments() != null && getArguments().getBoolean(ARG_IS_OVERLAY, false);
+        isOverlay = getArguments() != null && getArguments().getBoolean(ARG_IS_OVERLAY, false);
         if (backBtn != null) {
             backBtn.setVisibility(isOverlay ? View.VISIBLE : View.GONE);
             backBtn.setOnClickListener(v -> OverlayNavUtil.dismiss(requireActivity()));
@@ -107,14 +111,14 @@ public class IntruderHistoryFragment extends Fragment implements IntruderHistory
                 captureReceiver, new IntentFilter(Constants.BROADCAST_ON_INTRUDER_CAPTURED));
 
         refreshStatusCard();
-        reloadRecords();
+        checkAppLockAndLoad();
     }
 
     @Override
     public void onResume() {
         super.onResume();
         refreshStatusCard();
-        reloadRecords();
+        checkAppLockAndLoad();
     }
 
     @Override
@@ -122,15 +126,49 @@ public class IntruderHistoryFragment extends Fragment implements IntruderHistory
         super.onHiddenChanged(hidden);
         if (!hidden && isAdded()) {
             refreshStatusCard();
-            reloadRecords();
+            checkAppLockAndLoad();
         }
     }
 
     public void onFragmentBecameVisible() {
         if (isAdded()) {
             refreshStatusCard();
-            reloadRecords();
+            checkAppLockAndLoad();
         }
+    }
+
+    private void checkAppLockAndLoad() {
+        if (!isAdded()) return;
+        SharedPreferencesManager spm = SharedPreferencesManager.getInstance(requireContext());
+        boolean lockRequired = spm.isAppLockEnabled()
+                && !spm.isAppLockSessionUnlocked()
+                && AppLock.isEnrolled(requireContext());
+        if (!lockRequired) {
+            if (recyclerView != null) recyclerView.setAlpha(1f);
+            reloadRecords();
+            return;
+        }
+        if (unlockPromptShowing) return;
+        unlockPromptShowing = true;
+        if (recyclerView != null) recyclerView.setVisibility(View.INVISIBLE);
+        if (emptyState != null) emptyState.setVisibility(View.GONE);
+        new UnlockDialogBuilder(requireActivity())
+                .onUnlocked(() -> {
+                    unlockPromptShowing = false;
+                    spm.setAppLockSessionUnlocked(true);
+                    if (recyclerView != null) recyclerView.setAlpha(1f);
+                    reloadRecords();
+                })
+                .onCanceled(() -> {
+                    unlockPromptShowing = false;
+                    if (!isAdded()) return;
+                    if (isOverlay) {
+                        OverlayNavUtil.dismiss(requireActivity());
+                    } else if (getActivity() instanceof MainActivity) {
+                        ((MainActivity) getActivity()).switchFragment(0, true);
+                    }
+                })
+                .show();
     }
 
     @Override
@@ -158,6 +196,7 @@ public class IntruderHistoryFragment extends Fragment implements IntruderHistory
         boolean hasFrontCam = IntruderManager.hasFrontCamera(ctx);
         boolean hasPerm = IntruderManager.hasCameraPermission(ctx);
         boolean enabled = manager.isFeatureEnabled();
+        boolean lockReady = SharedPreferencesManager.getInstance(ctx).isAppLockEnabled() && AppLock.isEnrolled(ctx);
 
         if (!hasFrontCam) {
             tvStatusTitle.setText(R.string.intruder_status_no_camera);
@@ -166,6 +205,11 @@ public class IntruderHistoryFragment extends Fragment implements IntruderHistory
         } else if (enabled && !hasPerm) {
             tvStatusTitle.setText(R.string.intruder_status_perm_needed);
             tvStatusDesc.setText(R.string.intruder_status_perm_needed_desc);
+            btnStatusAction.setVisibility(View.VISIBLE);
+            btnStatusAction.setText(R.string.intruder_configure_btn);
+        } else if (enabled && !lockReady) {
+            tvStatusTitle.setText(R.string.intruder_status_applock_needed);
+            tvStatusDesc.setText(R.string.intruder_status_applock_needed_desc);
             btnStatusAction.setVisibility(View.VISIBLE);
             btnStatusAction.setText(R.string.intruder_configure_btn);
         } else if (enabled) {
@@ -183,6 +227,10 @@ public class IntruderHistoryFragment extends Fragment implements IntruderHistory
 
     public void reloadRecords() {
         if (!isAdded() || ioExecutor == null || ioExecutor.isShutdown()) return;
+        SharedPreferencesManager spm = SharedPreferencesManager.getInstance(requireContext());
+        if (spm.isAppLockEnabled() && !spm.isAppLockSessionUnlocked() && AppLock.isEnrolled(requireContext())) {
+            return;
+        }
         final Context appCtx = requireContext().getApplicationContext();
         ioExecutor.execute(() -> {
             List<IntruderRecord> records = IntruderStorage.listRecords(appCtx);

@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import java.lang.ref.WeakReference;
 
-public class PINInputController implements TextView.OnEditorActionListener {
+public class PINInputController implements TextView.OnEditorActionListener, PINInputView.OnPinCompletedListener {
 
     public interface InputEventListener {
         public void onInputEntered(String input);
@@ -22,6 +22,7 @@ public class PINInputController implements TextView.OnEditorActionListener {
         this.inputView = new WeakReference<PINInputView>(inputView);
 
         inputView.setOnEditorActionListener(this);
+        inputView.setOnPinCompletedListener(this);
     }
 
     public PINInputController ensureKeyboardVisible() {
@@ -52,6 +53,17 @@ public class PINInputController implements TextView.OnEditorActionListener {
     public PINInputController setInputEventListener(InputEventListener eventListener) {
         this.eventListener = new WeakReference<InputEventListener>(eventListener);
         return this;
+    }
+
+    @Override
+    public void onPinCompleted(String pin) {
+        PINInputView inputView = this.inputView.get();
+        if (inputView == null)
+            return;
+        InputEventListener eventListener = this.eventListener.get();
+        if (eventListener != null)
+            eventListener.onInputEntered(pin);
+        inputView.reset();
     }
 
     @Override

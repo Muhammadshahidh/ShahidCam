@@ -87,6 +87,9 @@ public abstract class Constants {
 
     public static final String PREF_VIDEO_CODEC = "video_codec";
     public static final String PREF_APP_THEME = "app_theme";
+    public static final String PREF_DARK_MODE_ENABLED = "pref_dark_mode_enabled";
+    public static final String THEME_CLAY_LIGHT = "Clay Light";
+    public static final String THEME_CLAY_DARK = "Clay Dark";
     
     // Remote Authentication Constants
     public static final String PREF_REMOTE_AUTH_ENABLED = "remote_auth_enabled";

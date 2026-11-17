@@ -24,6 +24,11 @@ public final class OverlayNavUtil {
         // Fragment container doesn't use swipe gestures, no need to disable input
         activity.getSupportFragmentManager()
                 .beginTransaction()
+                .setCustomAnimations(
+                        R.anim.slide_in_right,
+                        R.anim.slide_out_left,
+                        R.anim.slide_in_left,
+                        R.anim.slide_out_right)
                 .replace(R.id.overlay_fragment_container, fragment, tag)
                 .addToBackStack(tag)
                 .commitAllowingStateLoss();

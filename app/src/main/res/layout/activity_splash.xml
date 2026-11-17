@@ -13,15 +13,32 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="32dp"
+        android:paddingStart="28dp"
+        android:paddingTop="34dp"
+        android:paddingEnd="28dp"
+        android:paddingBottom="30dp"
         android:background="@drawable/clay_card_bg">
 
-        <ImageView
-            android:id="@+id/splash_image"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:src="@drawable/ic_shahidcam_avatar"
-            android:contentDescription="@string/app_name" />
+        <FrameLayout
+            android:layout_width="124dp"
+            android:layout_height="124dp"
+            android:gravity="center">
+
+            <View
+                android:id="@+id/splash_halo"
+                android:layout_width="116dp"
+                android:layout_height="116dp"
+                android:layout_gravity="center"
+                android:background="@drawable/clay_nav_active_pill_bg" />
+
+            <ImageView
+                android:id="@+id/splash_image"
+                android:layout_width="92dp"
+                android:layout_height="92dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_shahidcam_avatar"
+                android:contentDescription="@string/app_name" />
+        </FrameLayout>
 
         <TextView
             android:id="@+id/splash_title"
@@ -45,11 +62,13 @@
 
         <ProgressBar
             android:id="@+id/splash_progress"
-            style="?android:attr/progressBarStyleSmall"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:layout_marginTop="22dp"
-            android:indeterminateTint="@color/clay_accent_blue" />
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="148dp"
+            android:layout_height="6dp"
+            android:layout_marginTop="24dp"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/clay_accent_blue"
+            android:progressBackgroundTint="@color/clay_border" />
 
         <LinearLayout
             android:id="@+id/splash_error_container"

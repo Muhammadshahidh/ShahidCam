@@ -1848,6 +1848,26 @@ public class SharedPreferencesManager {
      *
      * @return true if app lock is enabled, false otherwise
      */
+    public boolean isDarkModeEnabled() {
+        return safeGetBoolean(Constants.PREF_DARK_MODE_ENABLED, false);
+    }
+
+    public void setDarkModeEnabled(boolean enabled) {
+        sharedPreferences
+            .edit()
+            .putBoolean(Constants.PREF_DARK_MODE_ENABLED, enabled)
+            .putString(Constants.PREF_APP_THEME,
+                    enabled ? Constants.THEME_CLAY_DARK : Constants.THEME_CLAY_LIGHT)
+            .apply();
+    }
+
+    public void applySavedNightMode() {
+        androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(
+                isDarkModeEnabled()
+                        ? androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
+                        : androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO);
+    }
+
     public boolean isAppLockEnabled() {
         return safeGetBoolean(PREF_APP_LOCK_ENABLED, false);
     }

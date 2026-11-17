@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Unified White Claymorphism Application Theme -->
-    <style name="Theme.ShahidCam.ClayLight" parent="Theme.Material3.Light.NoActionBar">
+    <style name="Theme.ShahidCam.ClayLight" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:fontFamily">@font/ubuntu_regular</item>
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
 
@@ -88,7 +88,7 @@
     <style name="Base.Theme.ShahidCam" parent="Theme.ShahidCam.ClayLight" />
 
     <!-- Lightweight White Claymorphism Splash Theme (no dark flash, no artificial wait) -->
-    <style name="Theme.ShahidCam.Splash" parent="Theme.Material3.Light.NoActionBar">
+    <style name="Theme.ShahidCam.Splash" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:windowBackground">@color/clay_bg_canvas</item>
         <item name="windowSplashScreenBackground">@color/clay_bg_canvas</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_shahidcam_avatar</item>
@@ -216,7 +216,7 @@
         <item name="materialAlertDialogBodyTextStyle">@style/MaterialAlertDialog.Body</item>
     </style>
 
-    <style name="Theme.ShahidCam.TransparentDialog" parent="Theme.Material3.Light.Dialog.Alert">
+    <style name="Theme.ShahidCam.TransparentDialog" parent="Theme.Material3.DayNight.Dialog.Alert">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowContentOverlay">@null</item>

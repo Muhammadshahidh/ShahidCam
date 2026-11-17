@@ -1,22 +1,22 @@
 package com.shahid.cam;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
 import com.shahid.cam.ui.WatchMainActivity;
 import com.shahid.cam.utils.RuntimeCompat;
 
 /**
- * Lightweight startup router for ShahidCam.
- * Initializes essential preferences on the first frame without artificial wait delays,
- * and shows an honest retry state if startup initialization fails.
+ * Lightweight DayNight Claymorphism startup router for ShahidCam.
+ * Initializes essential preferences on the first frame without artificial blocking delays,
+ * plays a crisp camera-lens aperture reveal, and offers retry feedback if startup init fails.
  */
-public class SplashActivity extends Activity {
-
+public class SplashActivity extends AppCompatActivity {
     private View loadingContainer;
     private ProgressBar progressBar;
     private View errorContainer;
@@ -25,6 +25,7 @@ public class SplashActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferencesManager.getInstance(getApplicationContext()).applySavedNightMode();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
@@ -32,24 +33,43 @@ public class SplashActivity extends Activity {
         progressBar = findViewById(R.id.splash_progress);
         errorContainer = findViewById(R.id.splash_error_container);
         errorText = findViewById(R.id.splash_error_text);
+
+        View halo = findViewById(R.id.splash_halo);
         ImageView iv = findViewById(R.id.splash_image);
         View retryBtn = findViewById(R.id.splash_retry_button);
 
-        if (iv != null) {
-            iv.setScaleX(0.92f);
-            iv.setScaleY(0.92f);
-            iv.setAlpha(0.85f);
-            iv.animate().scaleX(1f).scaleY(1f).alpha(1f).setDuration(180).start();
+        DecelerateInterpolator ease = new DecelerateInterpolator();
+        if (halo != null) {
+            halo.setScaleX(0.84f);
+            halo.setScaleY(0.84f);
+            halo.setAlpha(0.5f);
+            halo.animate().scaleX(1f).scaleY(1f).alpha(1f).setDuration(220).setInterpolator(ease).start();
         }
-        if (retryBtn != null) {
-            retryBtn.setOnClickListener(v -> performRealStartup());
+        if (iv != null) {
+            iv.setScaleX(0.86f);
+            iv.setScaleY(0.86f);
+            iv.setRotation(-10f);
+            iv.setAlpha(0.75f);
+            iv.animate()
+                    .scaleX(1f)
+                    .scaleY(1f)
+                    .rotation(0f)
+                    .alpha(1f)
+                    .setDuration(200)
+                    .setInterpolator(ease)
+                    .withEndAction(this::performRealStartup)
+                    .start();
+        } else {
+            View root = getWindow() != null ? getWindow().getDecorView() : loadingContainer;
+            if (root != null) {
+                root.post(this::performRealStartup);
+            } else {
+                performRealStartup();
+            }
         }
 
-        View root = getWindow() != null ? getWindow().getDecorView() : loadingContainer;
-        if (root != null) {
-            root.post(this::performRealStartup);
-        } else {
-            performRealStartup();
+        if (retryBtn != null) {
+            retryBtn.setOnClickListener(v -> performRealStartup());
         }
     }
 
@@ -59,9 +79,7 @@ public class SplashActivity extends Activity {
         }
         if (errorContainer != null) errorContainer.setVisibility(View.GONE);
         if (progressBar != null) progressBar.setVisibility(View.VISIBLE);
-
         try {
-            // Warm up preferences and resolve device form-factor destination immediately.
             SharedPreferencesManager.getInstance(getApplicationContext());
             Class<?> destination = RuntimeCompat.shouldUseWatchUi(SplashActivity.this)
                     ? WatchMainActivity.class

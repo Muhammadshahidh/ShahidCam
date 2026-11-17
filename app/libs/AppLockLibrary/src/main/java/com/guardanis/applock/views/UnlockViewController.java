@@ -1,6 +1,7 @@
 package com.guardanis.applock.views;
 
 import android.Manifest;
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -201,6 +202,15 @@ public class UnlockViewController extends AppLockViewController implements AppLo
     @Override
     public void onFailureLimitExceeded(String message) {
         setDescription(message);
+        View shakeTarget = displayVariant == DisplayVariant.PASSWORD_UNLOCK
+                ? (passwordInputView != null ? passwordInputView.get() : null)
+                : (pinInputView != null ? pinInputView.get() : null);
+        if (shakeTarget != null) {
+            ObjectAnimator.ofFloat(shakeTarget, "translationX",
+                    0f, -18f, 18f, -12f, 12f, -6f, 6f, 0f)
+                    .setDuration(320)
+                    .start();
+        }
     }
 
     @Override
